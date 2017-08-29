@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers]
+                                        :following, :followers, :lista]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
@@ -12,6 +12,33 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
     @microposts = @user.microposts.paginate(page: params[:page])
+    @comment = Comment.new( :micropost => @micropost )
+  end
+
+  def lista
+    @ciudad = current_user.ciudad
+    @user = User.where(:ciudad => @ciudad)
+    #@users = @user.find_by_sql(
+      #'SELECT relationships.followed_id, users.id  
+      #FROM users 
+      #INNER JOIN relationships 
+      #ON users.id = followed_id 
+      #GROUP BY users.id 
+      #ORDER BY count(followed_id) 
+      #DESC')
+      
+    @users = @user.find_by_sql(
+      'SELECT     users.id,
+      COUNT       (relationships.followed_id)
+      AS          numbersOfFollowers
+      FROM        relationships
+      LEFT JOIN   users
+      ON          relationships.followed_id = users.id
+      GROUP BY    users.name
+      ORDER BY    count(followed_id) 
+      DESC
+      ') 
+    
   end
 
   def new
@@ -67,7 +94,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto)
     end
 
     # Before filters

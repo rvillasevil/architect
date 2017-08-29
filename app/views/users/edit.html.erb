@@ -1,29 +1,108 @@
-<% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<div class="container">
+  <% provide(:title, "Edit user") %>
+  <h1>Update your profile</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+        <%= f.label :ciudad %>
+        <%= f.select :ciudad, [
+            'Albacete',
+            'Alicante',
+            'Almería',
+            'Álava',
+            'Asturias',
+            'Ávila',
+            'Badajoz',
+            'Illes Balears',
+            'Barcelona',
+            'Bizkaia',
+            'Burgos',
+            'Cáceres',
+            'Cádiz',
+            'Cantabria',
+            'Castellón',
+            'Ciudad Real',
+            'Córdoba',
+            'A Coruña',
+            'Cuenca',
+            'Gipuzkoa',
+            'Girona',
+            'Granada',
+            'Guadalajara',
+            'Huelva',
+            'Huesca',
+            'Jaén',
+            'León',
+            'Lleida',
+            'Lugo',
+            'Madrid',
+            'Málaga',
+            'Murcia',
+            'Navarra',
+            'Ourense',
+            'Palencia',
+            'Las Palmas',
+            'Pontevedra',
+            'La Rioja',
+            'Salamanca',
+            'Santa Cruz de Tenerife',
+            'Segovia',
+            'Sevilla',
+            'Soria',
+            'Tarragona',
+            'Teruel',
+            'Toledo',
+            'Valencia',
+            'Valladolid',
+            'Zamora',
+            'Zaragoza',
+            'Ceuta',
+            'Melilla'] %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.label :autonomia %>
+        <%= f.select :autonomia, [
+            'Andalucía',
+            'Aragón',
+            'Principado de Asturias',
+            'Islas Baleares',
+            'Canarias',
+            'Cantabria',
+            'Castilla-La Mancha',
+            'Castilla y León',
+            'Cataluña',
+            'Comunidad Valenciana',
+            'Extremadura',
+            'Galicia',
+            'La Rioja',
+            'Comunidad de Madrid',
+            'Región de Murcia',
+            'Comunidad Foral de Navarra',
+            'País Vasco'
+            ] %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.label :profesion %>
+        <%= f.text_field :profesion, class: 'form-control' %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
+
+      <% end %>
     </div>
   </div>
 </div>

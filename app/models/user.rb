@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -18,6 +19,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  mount_uploader :foto, PictureUploader
+  validates :foto, presence: true
+  has_many :votes
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -99,6 +103,7 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+
 
   private
 

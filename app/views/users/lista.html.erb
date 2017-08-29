@@ -1,0 +1,30 @@
+
+<% provide(:title, 'Lista de usuarios') %>
+<h3>Nuestros representantes en <%= @ciudad %></h3>
+<h4></h4>
+<ul class="users">
+<% 
+=begin %>
+	<% @user.each do |user|%>
+	<li><%= user.name %> <%= user.profesion %> <%= user.followers.size %>  <%= user.ciudad %><li>
+	<% end %>
+<%
+=end %>
+ <!-- es necesario pasar esto al controlador para quitarlo de aqui y poner varios rankins a la vez -->
+<li><%= @users.each do |x| %>
+    <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
+    <%= x.followers.count %> 
+
+	<% end %></li>
+
+
+<div class="user_avatars">
+
+</div>
+</ul>
+
+
+
+
+<!-- order('count(appointments.id) DESC')
+

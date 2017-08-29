@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609220802) do
+ActiveRecord::Schema.define(version: 20170828085320) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "contenido"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -18,7 +27,20 @@ ActiveRecord::Schema.define(version: 20160609220802) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "picture"
+    t.string   "video"
+    t.string   "hashtag1"
+    t.string   "hashtag2"
+    t.string   "hashtag3"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "pueblos", force: :cascade do |t|
+    t.integer  "id_provincia"
+    t.integer  "cod_municipio"
+    t.integer  "DC"
+    t.string   "nombre"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -44,7 +66,21 @@ ActiveRecord::Schema.define(version: 20160609220802) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "ciudad"
+    t.string   "profesion"
+    t.string   "foto"
+    t.integer  "followers_count",   default: 0
+    t.string   "autonomia"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "micropost_id"
+    t.integer  "user_id"
+    t.integer  "like"
+    t.integer  "dislike"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

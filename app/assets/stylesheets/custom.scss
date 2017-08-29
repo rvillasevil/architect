@@ -29,6 +29,31 @@ textarea {
   margin-bottom: 10px;
 }
 
+/* imagenes fondo */
+
+.backgroundimg {
+  background-image: url('ciudad5.jpg');
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  height: 100vh;
+
+  width: 100%;
+
+  display: flex;
+
+  color: white;
+
+  text-align: center;
+
+  align-items: center;
+
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,6 +61,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-size: 4.5em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2center {
+  font-size: 4.5em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h1center {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h4center {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h1center {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
@@ -249,16 +302,22 @@ input {
 
 .microposts {
   list-style: none;
-  padding: 0;
+  padding: 1px;
+  background-color: white;
   li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    padding: 10px;
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
   }
   .user {
     margin-top: 5em;
-    padding-top: 0;
+    padding-left: 5px;
   }
   .content {
+    position: relative;
+    padding-top: 10px;
     display: block;
     margin-left: 60px;
     img {
@@ -267,15 +326,76 @@ input {
     }
   }
   .timestamp {
+    font-size: 11px;
+    position: relative;
     color: $gray-light;
-    display: block;
-    margin-left: 60px;
+    float: right;
+    margin-right: 20px;
+    padding-top: 20px;
   }
+
   .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
+    position: relative;
+    padding-top: 5px;
+    margin-left: 5px;
   }
+  .hashtag {
+    position: relative;
+    display: block;
+    padding-top: 25px;
+    text-align: right;
+    margin-right: 15px;
+  }
+
+  .comments {
+  position: relative;
+  padding-top: 10px;
+  margin-left: 40px;
+  padding-bottom: 5px;
+  }
+
+  .comentario {
+  position: relative;
+  display: block;
+  padding-top: 10px;
+  margin-left: 40px;
+  padding-bottom: 5px;
+  }
+
+  .numbercomments {
+  position: relative;
+  display: block;
+    padding-top: 5px;
+    text-align: right;
+    margin-right: 15px;
+  font-size: 15px;
+  color: $gray-light;
+  }
+
+  .votes {
+  position: relative;
+  display: block;
+    padding-top: 5px;
+    text-align: right;
+    margin-right: 15px;
+  font-size: 15px;
+  color: $gray-light;
+  }
+
+  .picture_content {
+  position:relative;
+  display: block;
+  padding-top: 20px;
+  padding-botom: 30px;
+  max-height: 500px;
+  overflow: hidden;
+  height: expression(this.scrollHeight > 501? "500px" : "auto" );
+  left: 30px;
+  top:10px;
+  
+}
+
+
 }
 
 aside {
@@ -287,7 +407,37 @@ aside {
 
 span.picture {
   margin-top: 10px;
+  margin-left: 50px
   input {
     border: 0;
+    width: 100%;
   }
+}
+
+
+
+.video-responsive {
+position: relative;
+padding-bottom: 65%; /* 16/9 ratio */
+padding-top: 20px; /* IE6 workaround*/
+overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+position: absolute;
+top: 15px;
+left: 15px;
+width: 100%;
+height: 90%;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
 }

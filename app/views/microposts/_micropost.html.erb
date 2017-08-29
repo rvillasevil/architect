@@ -1,15 +1,160 @@
 <li id="micropost-<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
+ <!-- <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %> -->
+  <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 65 if micropost.user.foto? %>
+
+        <span class="user"><%= link_to micropost.user.name, micropost.user %>
+          <span class="timestamp">
+            Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+            <% if current_user?(micropost.user) %>
+              <%= link_to "delete", micropost, method: :delete,
+                                               data: { confirm: "You sure?" } %>
+            <% end %>
+          </span>
+        </span>
+
+        
+
+<!--  Contenido texto -->
   <span class="content">
-    <%= micropost.content %>
-    <%= image_tag micropost.picture.url if micropost.picture? %>
+    <%= micropost.content %> 
   </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    <% if current_user?(micropost.user) %>
-      <%= link_to "delete", micropost, method: :delete,
-                                       data: { confirm: "You sure?" } %>
+
+<!--  Imagen --> 
+  <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "90%"  if micropost.picture? %> 
+  </div>
+
+
+
+<!--  video -->
+  <% if micropost.video? %>
+    <div class="video-responsive">
+      <iframe
+      src="https://www.youtube.com/embed/<%= micropost.video %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <% end %>
+
+<!-- votos -->
+  <span class="votes">
+    <%= form_for([micropost, Vote.new]) do |f| %>
+          <%= f.hidden_field :user_id, :value => current_user.id %> 
+          <%= f.hidden_field :like, :value => 1 %> 
+          <%= f.hidden_field :dislike, :value => 0 %> 
+          <!-- tenemos que decirle que me ponga el número de votos de cada micropost independiente -->
+
+      <div class="btn-group btn-group-xs" role="group" aria-label="...">
+        <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.count_by_sql(
+      'SELECT COUNT (like)
+      FROM          votes
+      WHERE         like = "1";
+      ') %></span>
+      </div>
+      <% end %>
     <% end %>
   </span>
+
+  <span class="votes">
+      <%= form_for([micropost, Vote.new]) do |f| %>
+
+          <%= f.hidden_field :user_id, :value => current_user.id %> 
+          <%= f.hidden_field :like, :value => 0 %> 
+          <%= f.hidden_field :dislike, :value => 1 %> 
+
+        <div class="btn-group btn-group-xs" role="group" aria-label="...">
+          <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = Vote.count_by_sql(
+        'SELECT COUNT (like)
+        FROM          votes
+        WHERE         dislike = "1";
+        ') %></span>
+      </div>
+          <% end %>
+        <% end %>
+  </span>
+
+
+
+  
+
+  
+
+<!-- hashtags -->
+  <% if micropost.hashtag1? %>
+    <span class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>          <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></span>
+  <% end %>
+
+<!-- comentarios -->
+  <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
+
+
+
+<% 
+=begin %>
+  <span class="votes">
+    <%= form_for([micropost, Vote.new]) do |f| %>
+      <div class="field">
+          <%= f.hidden_field :user_id, :value => current_user.id %> 
+
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </span>
+<%
+=end %>
+
+<!-- comentarios -->
+
+  <% micropost.comments.each do |comment| %>
+        <span class="comentario">
+          <% if micropost.comments.any? %>
+                <h5><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+                <%= link_to comment.user.name, comment.user %>        <%= comment.contenido %></h5>
+                <h6><%= comment.created_at %></h6>
+          <% else %>
+          <% end %>         
+        </span>
+  <% end %>
+
+
+
+  <h2>Add a comment:</h2>
+  <%= form_for([micropost, Comment.new]) do |f| %>
+    <div class="field">
+        <%= f.text_area :contenido, placeholder: "Add a comment" %><br/>
+        <%= f.hidden_field :user_id, :value => current_user.id %> 
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+ 
+
+<% 
+=begin %>
+  <ul>
+    <%= render(partial: 'comments/comment', collection: micropost.comments) %>
+  </ul>
+<%
+=end %>
+
+  
+<!--
+  <% if micropost.hashtag2? %>
+
+  <div class="hashtag">
+  <span class="label label-info">
+  <%= micropost.hashtag2 %></span> 
+  </div>
+
+  <% end %>
+
+  <% if micropost.hashtag3? %>
+
+  <div class="hashtag">
+  <span class="label label-info"><% micropost.hashtag3 %></span>
+  </div>
+  <% end %>
+-->
+
 </li>

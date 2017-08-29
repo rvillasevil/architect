@@ -1,34 +1,60 @@
-<% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
+<div class="container">
+  <% if logged_in? %>
+    <div class="row">
+      <aside class="col-sm-2">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+
+      </aside>
+      <div class="col-sm-7">
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
+      </div>
+      <div class="col-sm-3">
+        <h4>Tus Listas electorales</h4>
+        <%= render 'shared/lista' %>
+      </div>
+    </div>
+  <% else %>
+</div>
+
+  <div class="row backgroundimg">
+    <div class="container">
+      <h1>Welcome to PARTY (name in beta)</h1>
+      <h2><font size="6" font color="#090462">PARTY it´s a new technology driven political party  for everyone.<p>Everyone can be elected. All of us participate. We decide!.</p></font>
+      </h2>
+
+        <div class="container">
+            <h1 class="h1"></h1>
+              <div class="wrapper">
+                <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+                <%= link_to "Already a member, enter", login_path, class: "btn btn-lg btn-primary" %>
+              </div>
+        </div>
+
+    </div>
+      
+  </div>
+
+  <div class="container">
+   <div class="center jumbotron">
+      <h4>Party its a place where choose the future representatives of all places, from your small town to yout conuntry.</h4>
+      <h4>Its a place where you can express yourself about all around you and make changes about it.</h4>
+
+       <h3>You can participate two differents ways, being part of the election where you have to defend the decission are taken in the assembliess or</h3>
+
+       <h3>You can participate in the assemblies were decide the mains lines of each specialty, Environment, Architecture, Health, Education, Guns...</h3>
+
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
   </div>
-<% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
-
-    <h2>
-      This is the home page for the
-      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-      sample application.
-    </h2>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
-
-  <%= link_to image_tag("rails.png", alt: "Rails logo"),
-              'http://rubyonrails.org/' %>
-<% end %>
+    <%= link_to image_tag("kitten.jpg", alt: "Rails logo"),
+                '' %>
+  <% end %>

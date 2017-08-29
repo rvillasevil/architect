@@ -1,4 +1,11 @@
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
+<%= image_tag current_user.foto.url, size: 150 if current_user.foto? %>
 <h1><%= current_user.name %></h1>
 <span><%= link_to "view my profile", current_user %></span>
-<span><%= pluralize(current_user.microposts.count, "micropost") %></span>
+<span class="badge"><%=  pluralize(current_user.microposts.count, "micropost") %></span>
+
+<h3><%= link_to current_user.ciudad, '/lista' %></h3>
+
+<h3><%= link_to current_user.autonomia, '/lista' %></h3>
+
+
+<h3><%= current_user.profesion %></h3>

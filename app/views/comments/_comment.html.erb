@@ -1,0 +1,24 @@
+
+  <h2>Comentario</h2>
+<li>
+  <%= comment.contenido %>
+<% if comment.created_at %>
+  <p><small><%= time_ago_in_words(comment.created_at) %> ago</small></p>
+<% end %>
+
+
+<% 
+=begin %>  
+
+	<%= form_for [@micropost, Comment.new] do |f| %>
+    <%= f.text_area :contenido, placeholder: "Add a Reply" %><br/>
+    <%= f.submit "Reply"  %>
+	<% end %>
+<% 
+=end %>
+
+  <ul>
+
+  </ul>
+
+</li>
