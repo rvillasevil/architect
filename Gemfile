@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.4p230"
+
 gem 'rails',                   '5.0.0.1'
 gem 'bcrypt',                  '3.1.11'
 gem 'faker',                   '1.6.6'
@@ -47,6 +49,7 @@ end
 
 group :production do
   gem 'pg',   '0.18.4'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
