@@ -15,14 +15,15 @@
         
 
 <!--  Contenido texto -->
-  <span class="content">
-    <%= micropost.content %> 
-  </span>
+        <span class="content">
+          <%= micropost.content %> 
+        </span>
 
-<!--  Imagen --> 
-  <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "90%"  if micropost.picture? %> 
-  </div>
-
+<!--  Imagen -->
+  <% if micropost.picture? %>
+    <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "90%"   %> 
+    </div>
+  <% end %>
 
 
 <!--  video -->
@@ -33,57 +34,102 @@
     </div>
   <% end %>
 
-<!-- votos -->
-  <span class="votes">
-    <%= form_for([micropost, Vote.new]) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %> 
-          <%= f.hidden_field :like, :value => 1 %> 
-          <%= f.hidden_field :dislike, :value => 0 %> 
-          <!-- tenemos que decirle que me ponga el número de votos de cada micropost independiente -->
+<!--  links -->
 
-      <div class="btn-group btn-group-xs" role="group" aria-label="...">
-        <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.count_by_sql(
-      'SELECT COUNT (like)
-      FROM          votes
-      WHERE         like = "1";
-      ') %></span>
-      </div>
-      <% end %>
-    <% end %>
-  </span>
+  <% if micropost.link? %>
+    <span class="container"> 
+      <div class="links">
+   <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
+        <h4><span class= "content"><%= @title = doc.at_css("title").text %></span></h4>
 
-  <span class="votes">
-      <%= form_for([micropost, Vote.new]) do |f| %>
-
-          <%= f.hidden_field :user_id, :value => current_user.id %> 
-          <%= f.hidden_field :like, :value => 0 %> 
-          <%= f.hidden_field :dislike, :value => 1 %> 
-
-        <div class="btn-group btn-group-xs" role="group" aria-label="...">
-          <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = Vote.count_by_sql(
-        'SELECT COUNT (like)
-        FROM          votes
-        WHERE         dislike = "1";
-        ') %></span>
-      </div>
-          <% end %>
-        <% end %>
-  </span>
-
-
-
-  
-
-  
-
-<!-- hashtags -->
-  <% if micropost.hashtag1? %>
-    <span class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>          <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></span>
+    </span>
   <% end %>
+<% 
+=begin %>        
+        <%= @imagen = doc.at_css("img")["src"] %>
+        <%# @imagen4 = doc.at_css("img")["width"] %>
+        <%# @imagen5 = doc.xpath("//img").each do |item| %>
+          <%# img_attributes = item.attributes.values %>
+            <%# img_attributes.each do |attr| %>
+              <%# p attr.value >= "100" %>
+              <%# attr.select { |heigth| height("height") >= 100 } %>
+            <%# end %>
 
-<!-- comentarios -->
-  <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
+            
+        <span class="container"><ul>
+        <%= @imagen5 = doc.xpath("//img[@width>'100'][@src]").each do |item| %>
+            <li><%= p (@src = item["src"]) %></li></ul></span>
 
+
+
+        <!--- <% if @src =! nil %> -->
+          <span class="picture_content"> <%= image_tag (@src), class: "img-responsive", size: 100  %></span>
+        <% end %>
+<%
+=end %>
+        <!-- <% if micropost.link != nil %> -->
+          <span class= "content"><%= link_to (micropost.link.scan( /([^>]*)./).first.last), micropost.link %></span>
+        <% end %>
+       </div> 
+
+
+<% 
+=begin %>
+      <%= url = micropost.link %>
+      <%= doc = Nokogiri::HTML(open(url)) %>
+      <%= puts doc.at_css("title").text %>
+      <%= doc.css(".item").each do |item| %>
+      <%= title = item.at_css("#articulo-titulo").text %>
+      <%= price = item.at_css("").text[/\$[0-9\.]+/] %>
+      <%= puts "#{title} - #{price}" %>
+      <%= puts item.at_css("#articulo-titulo")[:href] %>
+<%
+=end %>    
+    
+
+  <div class="container">
+    <!-- votos -->
+      <!-- necesitamos poner el update de votos del usuario -->
+        <!-- votos positivos -->
+        <div class="col-sm-2">
+          <%= form_for([micropost, Vote.new]) do |f| %>
+              <%= f.hidden_field :user_id, :value => current_user.id %>
+              <%= f.hidden_field :like, :value => 1 %> 
+              <%= f.hidden_field :dislike, :value => 0 %> 
+                <!-- tenemos que decirle que me ponga el número de votos de cada micropost independiente -->
+            
+              <span class="votes">     
+                <div class="btn-group btn-group-md">
+                  <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>
+                  <% end %>   
+          <% end %>
+            
+          <!-- votos negativos -->
+          
+            <%= form_for([micropost, Vote.new]) do |f| %>
+              <%= f.hidden_field :user_id, :value => current_user.id %> 
+              <%= f.hidden_field :like, :value => 0 %> 
+              <%= f.hidden_field :dislike, :value => 1 %> 
+
+              <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>        
+            <% end %>
+            </div>
+          <% end %>
+        </div>
+
+
+    <!-- hashtags -->
+    <div class="col-sm-2">
+      <% if micropost.hashtag1? %>
+        <span class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>          <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></span>
+      <% end %>
+    </div>
+
+    <div class="col-sm-2">
+    <!-- comentarios -->
+      <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
+    </div>
+</div>
 
 
 <% 
@@ -105,7 +151,7 @@
 
 <!-- comentarios -->
 
-  <% micropost.comments.each do |comment| %>
+  <% micropost.comments.order("created_at desc").take(3).each do |comment| %>
         <span class="comentario">
           <% if micropost.comments.any? %>
                 <h5><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>

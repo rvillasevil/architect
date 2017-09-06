@@ -7,6 +7,8 @@ class StaticPagesController < ApplicationController
       @listado = current_user.ciudad
       @users = User.where(:ciudad => @listado).paginate(page: params[:page])
     end
+      
+    
   end
 
   def help

@@ -22,7 +22,6 @@ class MicropostsController < ApplicationController
   def hashtag
 
     @micropost = Micropost.find(params[:id])
-
     @microposts = Micropost.where(:hashtag1 => @micropost.hashtag1).paginate(page: params[:page])
 
 
@@ -36,7 +35,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture, :video, :hashtag1, :hashtag2,:hashtag3)
+      params.require(:micropost).permit(:content, :picture, :video, :hashtag1, :hashtag2,:hashtag3, :link)
     end
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])

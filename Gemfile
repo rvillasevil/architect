@@ -18,6 +18,10 @@ gem 'turbolinks',              '5.0.0'
 gem 'jbuilder',                '2.4.1'
 gem 'octicons_helper'
 
+gem 'wdm'
+
+require 'open-uri'
+
 group :development, :test do
   gem 'sqlite3', '1.3.11'
   gem 'byebug',  '9.0.0', platform: :mri

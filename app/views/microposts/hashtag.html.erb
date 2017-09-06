@@ -1,3 +1,27 @@
-<h2><%= "Recent posts in "%><h1><%= @micropost.hashtag1 %></h1></h2>
+<div class="container">
+	<div class="container">
+		<h2><%= "Recent posts in "%><h1><%= @micropost.hashtag1 %></h1></h2>
+	</div>
 
-<%= render @microposts %>
+
+
+	<div class="row">
+	      <aside class="col-sm-2">
+	        <section class="user_info">
+	          <%= render 'shared/user_info' %>
+	        </section>
+	        <section class="stats">
+	          <%= render 'shared/stats' %>
+	        </section>
+
+	      </aside>
+	      <div class="col-sm-7">
+	        <h3>Micropost Feed</h3>
+	        <%= render @microposts %>
+	      </div>
+	      <div class="col-sm-3">
+	        <h4>Tus Listas electorales</h4>
+	        <%= render 'shared/lista' %>
+	      </div>
+	</div>
+</div>

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # encoding: UTF-8
   has_many :microposts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",

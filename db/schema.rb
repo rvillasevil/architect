@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828085320) do
+ActiveRecord::Schema.define(version: 20170901120244) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170828085320) do
     t.string   "hashtag1"
     t.string   "hashtag2"
     t.string   "hashtag3"
+    t.string   "link"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 

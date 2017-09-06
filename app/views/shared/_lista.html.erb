@@ -13,7 +13,8 @@
 <%
 =end %>
  <!-- es necesario pasar esto al controlador para quitarlo de aqui y poner varios rankins a la vez -->
-<%= @users = User.find_by_sql(
+
+<!-- <%= @users = User.find_by_sql(
       'SELECT   	users.id,
       COUNT     	(relationships.followed_id)
       AS        	numbersOfFollowers
@@ -23,9 +24,8 @@
       GROUP BY    	users.name	
       ORDER BY 		count(followed_id) 
       DESC
-      ') %>
+      ') %> -->
 
-<%= "#{@users[1]}" %>
 
 <li><%= @users.each do |x| %>
     <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
@@ -49,7 +49,7 @@
 <%
 =end %>
  <!-- es necesario pasar esto al controlador para quitarlo de aqui y poner varios rankins a la vez -->
-<%= @users = User.find_by_sql(
+<!-- <%= @users = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)
       AS          numbersOfFollowers
@@ -59,7 +59,7 @@
       GROUP BY          users.name  
       ORDER BY          count(followed_id) 
       DESC
-      ') %>
+      ') %> -->
 
 <%= "#{@users[1]}" %>
 

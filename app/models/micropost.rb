@@ -1,4 +1,5 @@
 class Micropost < ApplicationRecord
+# encoding: UTF-8
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
