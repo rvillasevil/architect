@@ -18,7 +18,11 @@ gem 'turbolinks',              '5.0.0'
 gem 'jbuilder',                '2.4.1'
 gem 'octicons_helper'
 
-gem 'wdm'
+
+
+
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
 
 require 'open-uri'
 
