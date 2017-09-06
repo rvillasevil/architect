@@ -5,19 +5,13 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  adapter: sqlite3
   pool: 5
-  #adapter: sqlite3
-  #pool: 5
-  #timeout: 5000
+  timeout: 5000
 
 development:
   <<: *default
   database: db/development.sqlite3
-  encoding: utf8
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,7 +21,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
   <<: *default
   database: db/production.sqlite3
