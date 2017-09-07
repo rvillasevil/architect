@@ -12,12 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170901120244) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "micropost_id"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "contenido"
   end
 
@@ -32,7 +34,16 @@ ActiveRecord::Schema.define(version: 20170901120244) do
     t.string   "hashtag2"
     t.string   "hashtag3"
     t.string   "link"
-    t.index ["user_id"], name: "index_microposts_on_user_id"
+    t.index ["user_id"], name: "index_microposts_on_user_id", using: :btree
+  end
+
+  create_table "municipios", force: :cascade do |t|
+    t.integer  "provincia_id"
+    t.integer  "municipio_id"
+    t.integer  "codmunicipio"
+    t.string   "nombre"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pueblos", force: :cascade do |t|
@@ -49,9 +60,9 @@ ActiveRecord::Schema.define(version: 20170901120244) do
     t.integer  "followed_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["followed_id"], name: "index_relationships_on_followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+    t.index ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -72,7 +83,7 @@ ActiveRecord::Schema.define(version: 20170901120244) do
     t.string   "foto"
     t.integer  "followers_count",   default: 0
     t.string   "autonomia"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   create_table "votes", force: :cascade do |t|
@@ -84,4 +95,5 @@ ActiveRecord::Schema.define(version: 20170901120244) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "microposts", "users"
 end

@@ -20,8 +20,7 @@ gem 'turbolinks',              '5.0.0'
 gem 'jbuilder',                '2.4.1'
 gem 'octicons_helper'
 
-
-
+gem 'pg'
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
@@ -29,7 +28,7 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 require 'open-uri'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.11'
+
   gem 'byebug',  '9.0.0', platform: :mri
 end
 
@@ -48,7 +47,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg',   '0.18.4'
   gem 'rails_12factor'
 end
 
