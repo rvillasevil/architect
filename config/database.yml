@@ -26,6 +26,5 @@ test:
 
 production:
   <<: *postgresql
-  database: project1_production
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV['RAILS_MAX_THREADS']  %>
