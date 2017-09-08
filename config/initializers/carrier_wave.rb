@@ -7,5 +7,5 @@ if Rails.env.production?
       :aws_secret_access_key => ENV['S3_SECRET_ACCESS_KEY'],
       :region 				 =>	'eu-west-2'
     }
-    config.fog_directory     =>  ENV['S3_BUCKET']
+    config.fog_directory     =  ENV['S3_BUCKET']
 end
