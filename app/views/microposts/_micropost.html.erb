@@ -67,7 +67,7 @@
         <% end %>
 <%
 =end %>
-        <!-- <% if micropost.link != nil %> -->
+        <!-- <% if micropost.link? %> -->
           <span class= "content"><%= link_to (micropost.link.scan( /([^>]*)./).first.last), micropost.link %></span>
         <% end %>
        </div> 

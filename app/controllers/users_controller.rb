@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       FROM        relationships
       LEFT JOIN   users
       ON          relationships.followed_id = users.id
-      GROUP BY    users.name
+      GROUP BY    users.id
       ORDER BY    count(followed_id) 
       DESC
       ') 

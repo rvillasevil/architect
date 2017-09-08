@@ -25,3 +25,9 @@
 
 # Ignore uploaded test images.
 /public/uploads
+
+#Ignore keys from external storage
+/config/application.yml
+/config/database.yml
+
+/config/environment/development.rb
