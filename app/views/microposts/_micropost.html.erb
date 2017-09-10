@@ -86,7 +86,7 @@
 <%
 =end %>    
     
-
+</span>
   <div class="container">
     <!-- votos -->
       <!-- necesitamos poner el update de votos del usuario -->
@@ -97,15 +97,18 @@
               <%= f.hidden_field :like, :value => 1 %> 
               <%= f.hidden_field :dislike, :value => 0 %> 
                 <!-- tenemos que decirle que me ponga el número de votos de cada micropost independiente -->
-            
+      
               <span class="votes">     
                 <div class="btn-group btn-group-md">
                   <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>
                   <% end %>   
           <% end %>
-            
+                </div>
+              </span>
+        </div>
+
+        <div class="container">          
           <!-- votos negativos -->
-          
             <%= form_for([micropost, Vote.new]) do |f| %>
               <%= f.hidden_field :user_id, :value => current_user.id %> 
               <%= f.hidden_field :like, :value => 0 %> 
@@ -113,7 +116,6 @@
 
               <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>        
             <% end %>
-            </div>
           <% end %>
         </div>
 
@@ -129,7 +131,7 @@
     <!-- comentarios -->
       <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
     </div>
-</div>
+
 
 
 <% 
