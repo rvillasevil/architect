@@ -7,7 +7,7 @@
   box-sizing:         border-box;
 }
 
-@media (min-width: 576px) { /* imagenes fondo */
+@media (max-width: 576px) { /* imagenes fondo */
 
 .backgroundimg {
   background-image: url('helicopter.jpg');
@@ -30,11 +30,13 @@
 
   align-items: center;
 
-} }
-@media (min-width: 768px) { /* imagenes fondo */
+} 
+
+}
+@media (min-width: 576px) { /* imagenes fondo */
 
 .backgroundimg {
-  background-image: url('carsjpg');
+  background-image: url('cars.jpg');
 
   background-size: cover;
 
@@ -54,7 +56,9 @@
 
   align-items: center;
 
-} }
+} 
+
+}
 @media (min-width: 992px) { /* imagenes fondo */
 
 .backgroundimg {
@@ -78,7 +82,9 @@
 
   align-items: center;
 
-} }
+} 
+
+}
 @media (min-width: 1200px) { /* imagenes fondo */
 
 .backgroundimg {
@@ -102,7 +108,9 @@
 
   align-items: center;
 
-} }
+} 
+
+}
 
 
 /* universal */
