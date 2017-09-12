@@ -74,7 +74,8 @@ h1center {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  padding: 10px;
+  margin:   5px;
   text-align: center;
   font-weight: normal;
   color: #777;
@@ -204,7 +205,8 @@ h1center {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  padding: 10px;
+  margin:   5px;
   text-align: center;
   font-weight: normal;
   color: #777;
@@ -333,7 +335,8 @@ h1center {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  padding: 10px;
+  margin:   5px;
   text-align: center;
   font-weight: normal;
   color: #777;
@@ -461,7 +464,8 @@ h1center {
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  padding: 10px;
+  margin:   5px;
   text-align: center;
   font-weight: normal;
   color: #777;
@@ -766,6 +770,7 @@ input {
   .timestamp {
     font-size: 11px;
     position: relative;
+    display: inline;
     color: $gray-light;
     float: right;
     margin-right: 20px;
@@ -779,7 +784,7 @@ input {
   }
   .hashtag {
     position: relative;
-    display: block;
+    display: inline;
     padding: 5px;
     text-align: right;
     margin-right: 15px;
@@ -795,14 +800,12 @@ input {
   .comentario {
   position: relative;
   display: block;
-  padding-top: 10px;
-  margin-left: 40px;
-  padding-bottom: 5px;
+  margin-left: 20px;
   }
 
   .numbercomments {
   position: relative;
-  display: block;
+  display: inline;
     padding: 5px;
     text-align: right;
   font-size: 15px;
@@ -838,7 +841,6 @@ input {
   margin: 15px 15px 15px 15px;
   padding: 10px 10px 10px;
   }
-
 
 }
 

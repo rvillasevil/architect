@@ -1,49 +1,41 @@
 <li id="micropost-<%= micropost.id %>">
- <!-- <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %> -->
-  <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 65 if micropost.user.foto? %>
-
+    <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 65 if micropost.user.foto? %>
         <span class="user"><%= link_to micropost.user.name, micropost.user %>
           <span class="timestamp">
             Posted <%= time_ago_in_words(micropost.created_at) %> ago.
             <% if current_user?(micropost.user) %>
-              <%= link_to "delete", micropost, method: :delete,
-                                               data: { confirm: "You sure?" } %>
-            <% end %>
+              <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+              <% end %>
           </span>
         </span>
 
-        
 
-<!--  Contenido texto -->
-        <span class="content">
-          <%= micropost.content %> 
-        </span>
-
-<!--  Imagen -->
-  <% if micropost.picture? %>
-    <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "90%"   %> 
-    </div>
-  <% end %>
-
-
-<!--  video -->
-  <% if micropost.video? %>
-    <div class="video-responsive">
-      <iframe
-      src="https://www.youtube.com/embed/<%= micropost.video %>" frameborder="0" allowfullscreen></iframe>
-    </div>
-  <% end %>
-
-<!--  links -->
-
-  <% if micropost.link? %>
-    <span class="container"> 
-      <div class="links">
-   <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
-        <h4><span class= "content"><%= @title = doc.at_css("title").text %></span></h4>
-
+    <!--  Contenido texto -->
+    <span class="content">
+      <%= micropost.content %> 
     </span>
-  <% end %>
+    <!--  Imagen -->
+    <% if micropost.picture? %>
+      <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "90%"   %> 
+      </div>
+    <% end %>
+
+    <!--  video -->
+    <% if micropost.video? %>
+      <div class="video-responsive">
+        <iframe
+        src="https://www.youtube.com/embed/<%= micropost.video %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+    <% end %>
+
+    <!--  links -->
+    <% if micropost.link? %>
+      <span class="container"> 
+        <div class="links">
+     <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
+          <h4><span class= "content"><%= @title = doc.at_css("title").text %></span></h4>
+      </span>
+    <% end %>
 <% 
 =begin %>        
         <%= @imagen = doc.at_css("img")["src"] %>
@@ -70,7 +62,6 @@
         <!-- <% if micropost.link? %> -->
           <span class= "content"><%= link_to (micropost.link.scan( /([^>]*)./).first.last), micropost.link %></span>
         <% end %>
-       </div> 
 
 
 <% 
@@ -85,54 +76,43 @@
       <%= puts item.at_css("#articulo-titulo")[:href] %>
 <%
 =end %>    
-    
-</span>
-  <div class="container">
+<table class="table">
+  <thead>
+    <tr>
     <!-- votos -->
-      <!-- necesitamos poner el update de votos del usuario -->
-        <!-- votos positivos -->
-        <div class="col-sm-2">
-          <%= form_for([micropost, Vote.new]) do |f| %>
-              <%= f.hidden_field :user_id, :value => current_user.id %>
-              <%= f.hidden_field :like, :value => 1 %> 
-              <%= f.hidden_field :dislike, :value => 0 %> 
-                <!-- tenemos que decirle que me ponga el número de votos de cada micropost independiente -->
-      
-              <span class="votes">     
-                <div class="btn-group btn-group-md">
-                  <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>
-                  <% end %>   
+    <!-- necesitamos poner el update de votos del usuario -->
+    <!-- votos positivos -->
+      <th><%= form_for([micropost, Vote.new]) do |f| %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :like, :value => 1 %> 
+      <%= f.hidden_field :dislike, :value => 0 %> 
+      <!-- tenemos que decirle que me ponga el número de votos de cada micropost independiente --> 
+      <span class="votes">     
+        <div class="btn-group btn-group-md">
+          <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>
+          <% end %>   
           <% end %>
-                </div>
-              </span>
-        </div>
-
-        <div class="container">          
-          <!-- votos negativos -->
-            <%= form_for([micropost, Vote.new]) do |f| %>
-              <%= f.hidden_field :user_id, :value => current_user.id %> 
-              <%= f.hidden_field :like, :value => 0 %> 
-              <%= f.hidden_field :dislike, :value => 1 %> 
-
-              <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>        
-            <% end %>
+        </div></th>
+      <!-- votos negativos -->
+        <th><%= form_for([micropost, Vote.new]) do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %> 
+        <%= f.hidden_field :like, :value => 0 %> 
+        <%= f.hidden_field :dislike, :value => 1 %> 
+          <%= button_tag(class: "btn btn-default") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>      
           <% end %>
-        </div>
+        <% end %>
+        </span></th>
+      <!-- hashtags -->
+        <% if micropost.hashtag1? %>
+        <th><div class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>          <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></div>
+        <% end %></th>
+      <!-- comentarios -->
+        <th><div class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</div>
+      </span></th>
 
-
-    <!-- hashtags -->
-    <div class="col-sm-2">
-      <% if micropost.hashtag1? %>
-        <span class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>          <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></span>
-      <% end %>
-    </div>
-
-    <div class="col-sm-2">
-    <!-- comentarios -->
-      <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
-    </div>
-
-
+    </tr>
+  </thead>
+</table>
 
 <% 
 =begin %>
@@ -165,18 +145,21 @@
   <% end %>
 
 
-
-  <h2>Add a comment:</h2>
   <%= form_for([micropost, Comment.new]) do |f| %>
     <div class="field">
-        <%= f.text_area :contenido, placeholder: "Add a comment" %><br/>
+        <%= f.text_area :contenido, placeholder: "Add a comment" %>
         <%= f.hidden_field :user_id, :value => current_user.id %> 
     </div>
     <div class="actions">
       <%= f.submit %>
     </div>
-  <% end %>
  
+
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Add a comment" aria-describedby="basic-addon2">
+    <span class="input-group-addon" id="basic-addon2">@example.com</span>
+  </div> 
+<% end %>
 
 <% 
 =begin %>
@@ -204,5 +187,4 @@
   </div>
   <% end %>
 -->
-
 </li>
