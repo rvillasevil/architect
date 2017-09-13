@@ -138,9 +138,10 @@
 
     <%= f.text_area :contenido, placeholder: "Add a comment..." %>
     <%= f.hidden_field :user_id, :value => current_user.id %></li>
-    <li><%= button_tag( :class => "button_green") do %><span class="glyphicon-white glyphicon-share-alt white"></span></li>
+    <li><div class="actions">
+      <%= f.submit "Comment" %>
+    </div></li>
   </ul>
-    <% end %> 
   <% end %>
 
   
