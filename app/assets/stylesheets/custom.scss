@@ -752,7 +752,7 @@ input {
     border-bottom: 1px solid #d9d9d9;
     border-left: 1px solid #d9d9d9;
     border-right: 1px solid #d9d9d9;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
   }
   .user {
     margin-top: 5em;
@@ -789,7 +789,6 @@ input {
     display: inline;
     padding: 5px;
     text-align: right;
-    margin-right: 15px;
   }
 
   .comments {
@@ -857,6 +856,7 @@ input {
     line-height: 16px;
     li {
     list-style-type: none;
+    display: inline;
     border: 0px;
     padding: 3px;
     width: 100%;
@@ -887,15 +887,14 @@ input {
     width: 100%;
     display: flex;
     overflow: auto;
-    margin: 1px;
     font-size: 12px;
-    padding: 1px;
-    border-bottom: 1px solid #e6e9ec;
+    padding: 1px; 
     line-height: 16px;
     li {
     list-style-type: none;
     border: 0px;
     padding: 3px;
+    margin-bottom: 0px;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     -webkit-padding: 10px;
