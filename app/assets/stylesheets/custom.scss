@@ -752,6 +752,7 @@ input {
     border-bottom: 1px solid #d9d9d9;
     border-left: 1px solid #d9d9d9;
     border-right: 1px solid #d9d9d9;
+    margin-bottom: 3px;
   }
   .user {
     margin-top: 5em;
@@ -760,8 +761,9 @@ input {
   .content {
     position: relative;
     padding-top: 10px;
+    padding-bottom: 10px;
     display: block;
-    margin-left: 20px;
+    margin-left: 10px;
     img {
       display: block;
       padding: 5px 0;
@@ -800,24 +802,29 @@ input {
   .comentario {
   position: relative;
   display: block;
-  margin-left: 20px;
+  margin-left: 05px;
+  background-color: #f7f7ff;
+    h6{
+    display: inline-block;
+    }
   }
 
   .numbercomments {
   position: relative;
+  font-size: 12px;
   display: inline;
     padding: 5px;
     text-align: right;
-  font-size: 15px;
   color: $gray-light;
   }
 
+  
+
   .votes {
   position: relative;
-  display: block;
-  padding-top: 5px;
+  display: inline-block;
+  padding: 5px;
   text-align: right;
-  margin-right: 15px;
   font-size: 15px;
   color: $gray-light;
   }
@@ -825,22 +832,75 @@ input {
   .picture_content {
   position:relative;
   display: block;
-  padding-top: 20px;
-  padding-botom: 30px;
-  max-height: 500px;
+  padding: 1px;
+  max-height: 400px;
   overflow: hidden;
-  height: expression(this.scrollHeight > 501? "500px" : "auto" );
-  left: 30px;
-  top:10px;
+  height: expression(this.scrollHeight > 401? "400px" : "auto" );
+  padding-top: 8px;
 }
 
   .links {
   border-style: solid;
   border-width: 1px;
   border-color: #d9d9d9;
-  margin: 15px 15px 15px 15px;
-  padding: 10px 10px 10px;
+  margin: 4px;
+  padding: 5px;
   }
+
+  .social_elements {
+    display: flex;
+    overflow: auto;
+    margin: 1px;
+    font-size: 12px;
+    padding: 1px;
+    border-bottom: 1px solid #e6e9ec;
+    line-height: 16px;
+    li {
+    list-style-type: none;
+    border: 0px;
+    padding: 3px;
+    width: 100%;
+    margin: 5px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding: 10px;
+    }
+  }
+
+  textarea {
+  margin-bottom: 2px;
+  margin-top: 0px;
+  padding: 3px;
+  border-top: 1px solid #e6e9ec;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  }
+
+  input {
+  margin-bottom: 5px;
+  }
+  .post_comment {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    margin: 1px;
+    font-size: 12px;
+    padding: 1px;
+    border-bottom: 1px solid #e6e9ec;
+    line-height: 16px;
+    li {
+    list-style-type: none;
+    border: 0px;
+    padding: 3px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding: 10px;
+    }
+  }  
 
 }
 
