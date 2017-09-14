@@ -32,29 +32,25 @@
     <% end %>
 
     <!--  links -->
-  <% if micropost.link? %>
-    <div class="links">
-    <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
-    <h4 style="margin: 2px"><span class= "content" style="padding-top: 5px"><%= @title = doc.at_css("title").text %></span></h4>
-    <span class= "content" style="padding-top: 5px">
-
-     <% if doc.xpath('//img') != nil %> 
-      <!--<%= @src = (doc.xpath('//img[@width > 300 or @height >= 100]/@src').map {|a| a.value }) %>-->
-    <% else %>  
-      <%= @src = doc.xpath('//image[@width > 50 or @height >= 50]/@src').map {|a| a.value } %>
+  <div class="links">  
+    <% if micropost.link? %>
+      <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
+      <h4><span class= "content" style="padding-top: 5px; margin-left: : 2px; "><%= @title = doc.at_css("title").text %></span></h4>
+      <span class= "content" style="padding-top: 5px"></span>
+       <%= @src = doc.xpath('//img[@width > 300 or @alt = @title]/@src')  %> 
+       <% if @src != nil %>
+        <div class="picture_content" style="max-height: 400" >
+          <%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>
+        </div>
     <% end %>
-      <div class="picture_content" style="max-height: 400" >
-        <%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>
-      </div>
-  </span>
+  <% end %>
 
-  <% if micropost.link? %>
-  <a style="margin-left: 7px">
-      <%= link_to (micropost.link.scan( /([^>]*)./).first.last), micropost.link %></a>   
-    </div>
-  <% end %>  
-    
 
+    <% if micropost.link? %>
+      <a style="margin-left: 7px">
+        <%= link_to (micropost.link.scan( /([^>]*)./).first.last), micropost.link %></a>       
+    <% end %>    
+  </div>
 <% 
 =begin %>        
         <%= @imagen = doc.at_css("img")["src"] %>
@@ -98,26 +94,25 @@
 <!-- votos positivos -->
   <ul class="social_elements">
     <li>
-    <%= form_for([micropost, Vote.new]) do |f| %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.hidden_field :like, :value => 1 %> 
-        <%= f.hidden_field :dislike, :value => 0 %> 
+      <%= form_for([micropost, Vote.new]) do |f| %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :like, :value => 1 %> 
+          <%= f.hidden_field :dislike, :value => 0 %> 
 
-      <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true" ><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Like
-        <% end %>   
-        <% end %>
-    </span>
-  </li>
+        <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true" ><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Like
+          <% end %>   
+          <% end %>
+      </span>
+    </li>
   <!-- votos negativos -->
-  <li>
-    <%= form_for([micropost, Vote.new]) do |f| %>
-      <%= f.hidden_field :user_id, :value => current_user.id %> 
-      <%= f.hidden_field :like, :value => 0 %> 
-      <%= f.hidden_field :dislike, :value => 1 %>
-      <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Dislike     
-      <% end %>
-    <% end %>
-      
+    <li>
+      <%= form_for([micropost, Vote.new]) do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %> 
+        <%= f.hidden_field :like, :value => 0 %> 
+        <%= f.hidden_field :dislike, :value => 1 %>
+        <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Dislike     
+        <% end %>
+      <% end %>    
     </li>
     <!-- hashtags -->
     <li>
@@ -164,4 +159,3 @@
   <% end %>
 -->
 </li>
-<% end %>
