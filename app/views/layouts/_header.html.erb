@@ -94,9 +94,7 @@
 
 <!-- @media (min-width: 992px) { -->
   <style type="text/css">
-    body {
-      padding-top: 0px;
-    }
+
 
     .icon-bar {
         width: 100%;
@@ -116,11 +114,11 @@
     }
 
     .icon-bar a:hover {
-        background-color: #25b88c;
+        background-color: #004d99;
     }
 
     .active {
-        background-color: #555 !important;
+        background-color: #004d99 !important;
     }
 
     .text_grande{
@@ -135,11 +133,15 @@
       <%= link_to root_path do %>
       <i class="fa fa-home"></i><span class="text_grande">Home</span>
       <% end %>
-      <%= link_to following_user_path(@user) do %>
+      <%= link_to following_user_path(current_user) do %>
       <i class="fa fa-circle-o-notch" aria-hidden="true"></i><span class="text_grande">Circles</span>
       <% end %>
       <%= link_to users_path do %>
       <i class="fa fa-users" aria-hidden="true"></i><span class="text_grande">Users</span>
+      <% end %>
+      <%= link_to '/lista' do %>
+      <i class="fa fa-list-ol" aria-hidden="true"></i>
+      <span class="text_grande">Ranks</span>
       <% end %>
       <%= link_to '/lista' do %>
       <i class="fa fa-list-ol" aria-hidden="true"></i>
