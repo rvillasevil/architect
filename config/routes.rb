@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
 
   get '/lista', to: "users#lista"
+  get '/circles', to: "users#following"
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
