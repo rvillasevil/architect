@@ -37,7 +37,7 @@
       <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
       <h4><span class= "content" style="padding-top: 5px; margin-left: : 2px; "><%= @title = doc.at_css("title").text %></span></h4>
       <span class= "content" style="padding-top: 5px"></span>
-       <%= @src = doc.xpath('//img[@width > 300 or @alt = @title]/@src')  %> 
+       <%= @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %> 
        <% if @src != nil %>
         <div class="picture_content" style="max-height: 400" >
           <%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>

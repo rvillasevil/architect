@@ -1,7 +1,7 @@
 <div class="container">
   <% if logged_in? %>
     <div class="row">
-      <aside class="col-sm-2">
+      <aside class="col-sm-2" style="background-color: #f4f4f4;">
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
@@ -10,7 +10,7 @@
         </section>
 
       </aside>
-      <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px;">
+      <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
