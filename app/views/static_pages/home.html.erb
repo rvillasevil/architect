@@ -14,7 +14,7 @@
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
-        <h3>Micropost Feed</h3>
+        <h4 style="margin: 3px; border-bottom: 1px solid #bfbfbf;">Home</h4>
         <%= render 'shared/feed' %>
       </div>
       <div class="col-sm-3">
@@ -25,7 +25,7 @@
   <% else %>
 </div>
 
-  <div class="row backgroundimg">
+  <div class="backgroundimg">
     <div class="container">
       <h1>Welcome to PARTY (name in beta)</h1>
       <h2><font size="6" font color="#090462">PARTY it´s a new technology driven political party  for everyone.<p>Everyone can be elected. All of us participate. We decide!.</p></font>
@@ -55,6 +55,4 @@
       <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
   </div>
-    <%= link_to image_tag("kitten.jpg", alt: "Rails logo"),
-                '' %>
   <% end %>

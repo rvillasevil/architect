@@ -1,101 +1,108 @@
 <!-- Colapsable -->
-
-
-<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Share something</button>
-
-<div id="demo" class="collapse">
-<!-- Formulario del micropost -->
-
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="margin: 5px;">Share something</button>
+    <div id="demo" class="collapse">
+    <!-- Formulario del micropost -->
     <%= form_for(@micropost, html: { multipart: true }) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-          <div class="field">
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <ul style="list-style-type: none; -webkit-padding-start: 5px;">
+        <li style="display: inline-flex; margin-top: 10px;">
+            <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
+        </li>
+        <li style="display: inline-flex; width: 90%;">
             <%= f.text_area :content, placeholder: "Your comments" %>
-          </div>
+        </li>
 
-            <div class="field">
-                <%= f.text_field :video, placeholder: "Or send us a video. Just copy the video code from youtube" %>
-            </div>
-      <h5>Send us a picture</h5>
-          <span class="picture">
-            <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-          </span>
+    </ul>
+    <div class="iconos-share">
+        <ul style="display: inline-flex; list-style-type: none;">
+            <li style="display: inline;">
+                    <%= f.text_field :video, placeholder: "Or send us a video. Just copy the video code from youtube" %>      
+            </li>
+            <li style="display: inline;">
+                <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+            </li>
+            
+            
+         </ul>
+         <ul style="display: inline-flex; list-style-type: none;">
+            <li style="display: inline; margin-bottom: 0px; width: 50%;">
+                <%= f.select :hashtag1, [
+                        '',
+                        'Family',
+                        'People rights',
+                        'Education',
+                        'Energy',
+                        'Environment',
+                        'Health Care',
+                        'Immigration',
+                        'Jobs and Economy',
+                        'National Security',
+                        'Goverments',
+                        'Elderly',
+                        'Science and Technology',
+                        'Voting',
+                        'Reforms and Proposals',
+                        'Sports',
+                        'Daily Life'] %>
+            </li>  
+            <li style="display: inline; margin: 0px;">
+                    <%= f.text_field :link, placeholder: "Or maybe a link" %>
+            </li>
+        </ul>
+    </div>
+    
 
-      <h5>Hashtags</h5>
-
-      <div class="col-xs-4">
-            <%= f.select :hashtag1, [
-            '',
-            'Family',
-            'People rights',
-            'Education',
-            'Energy',
-            'Environment',
-            'Health Care',
-            'Immigration',
-            'Jobs and Economy',
-            'National Security',
-            'Goverments',
-            'Elderly',
-            'Science and Technology',
-            'Voting',
-            'Reforms and Proposals',
-            'Sports',
-            'Daily Life'] %>
+    <!--
+        <div class="col-xs-3">
+        <%= f.select :hashtag2, [
+        '',
+        'Family',
+        'People rights',
+        'Education',
+        'Energy',
+        'Environment',
+        'Health Care',
+        'Immigration',
+        'Jobs and Economy',
+        'National Security',
+        'Goverments',
+        'Elderly',
+        'Science and Technology',
+        'Voting',
+        'Reforms and Proposals',
+        'Sports',
+        'Daily Life'] %>
         </div>
 
-<!--
-    <div class="col-xs-3">
-    <%= f.select :hashtag2, [
-    '',
-    'Family',
-    'People rights',
-    'Education',
-    'Energy',
-    'Environment',
-    'Health Care',
-    'Immigration',
-    'Jobs and Economy',
-    'National Security',
-    'Goverments',
-    'Elderly',
-    'Science and Technology',
-    'Voting',
-    'Reforms and Proposals',
-    'Sports',
-    'Daily Life'] %>
-    </div>
+        <div class="col-xs-3">
+        <%= f.select :hashtag3, [
+        '',
+        'Family',
+        'People rights',
+        'Education',
+        'Energy',
+        'Environment',
+        'Health Care',
+        'Immigration',
+        'Jobs and Economy',
+        'National Security',
+        'Goverments',
+        'Elderly',
+        'Science and Technology',
+        'Voting',
+        'Reforms and Proposals',
+        'Sports',
+        'Daily Life'] %>
+        </div>
+    -->
+      
 
-    <div class="col-xs-3">
-    <%= f.select :hashtag3, [
-    '',
-    'Family',
-    'People rights',
-    'Education',
-    'Energy',
-    'Environment',
-    'Health Care',
-    'Immigration',
-    'Jobs and Economy',
-    'National Security',
-    'Goverments',
-    'Elderly',
-    'Science and Technology',
-    'Voting',
-    'Reforms and Proposals',
-    'Sports',
-    'Daily Life'] %>
-    </div>
--->
-  <%= f.submit "Post", class: "btn btn-info" %>
-
-<!-- links -->
-    <div class="field">
-        <%= f.text_area :link, placeholder: "Or maybe a link" %>
-    </div>
-
-<% end %>
+    <!-- links -->
+        
+        <%= f.submit "Post", class: "btn btn-info" %>
+    <% end %>
 </div>
-
 
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {

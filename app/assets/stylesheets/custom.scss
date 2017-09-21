@@ -10,7 +10,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@media (max-width: 576px) { /* imagenes fondo */
+@media (max-width: 576px) { 
+/* imagenes fondo */
 
 .backgroundimg {
   background-image: url('helicopter.jpg');
@@ -123,7 +124,8 @@ footer ul li {
 }
 
 }
-@media (min-width: 576px) { /* imagenes fondo */
+@media (min-width: 576px) { 
+/* imagenes fondo */
 
 .backgroundimg {
   background-image: url('cars.jpg');
@@ -146,6 +148,8 @@ footer ul li {
 
   align-items: center;
 
+  padding: 0px;
+
 } 
 
 /* typography */
@@ -237,7 +241,8 @@ footer ul li {
 }
 
 }
-@media (min-width: 992px) { /* imagenes fondo */
+@media (min-width: 992px) { 
+/* imagenes fondo */
 
 .backgroundimg {
   background-image: url('plane.jpg');
@@ -260,6 +265,8 @@ footer ul li {
 
   align-items: center;
 
+  padding: 0px;
+
 } 
 /* typography */
 
@@ -350,7 +357,8 @@ footer ul li {
 }
 
 }
-@media (min-width: 1200px) { /* imagenes fondo */
+@media (min-width: 1200px) { 
+/* imagenes fondo */
 
 .backgroundimg {
   background-image: url('ciudad5.jpg');
@@ -372,6 +380,8 @@ footer ul li {
   text-align: center;
 
   align-items: center;
+
+  padding: 0px;
 } 
 /* typography */
 
@@ -473,6 +483,7 @@ body {
 section {
   overflow: auto;
 }
+
 
 textarea {
   resize: vertical;
@@ -867,4 +878,39 @@ height: 90%;
 .button {
     position: absolute;
     top: 50%;
+}
+
+.micropost_form {
+  textarea {
+  border: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6e9ec;
+  padding-top: 10px; 
+}
+  .iconos-share {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  border: 1px solid #e6e9ec;
+    textarea {
+    width: 100%;
+    }
+    ul {
+    padding-left: 3px;
+    }
+    li {
+    list-style-type: none;
+    padding: 5px;
+    }
+    select {
+    margin-bottom: 3px;
+    }
+    file_input {
+    width: 25%;
+    border: #e6e9ec;
+    }
+
+  }
 }
