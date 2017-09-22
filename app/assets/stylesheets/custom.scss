@@ -440,40 +440,6 @@ p {
 }
 
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-}
-
-
 /* universal */
 
 body {
@@ -497,6 +463,38 @@ textarea {
   margin-bottom: 10px;
 }
 
+}
+
+/* header */
+
+
+
+header {
+  
+}
+@media (max-width: 576px) {
+  header li {
+    margin-right: 5px;
+    width: 100%;
+    }  
+}
+@media (min-width: 576px) {
+  header li {
+    margin-right: 40px;
+    width: 100%;
+    }
+}
+header p {
+  margin: 0px;
+  font-size: 0.9em;
+  }
+header ul {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+header i {
+  margin-left: 8px;
+}
 
 /* footer */
 
@@ -881,6 +879,7 @@ height: 90%;
 }
 
 .micropost_form {
+  background-color: white;
   textarea {
   border: 0px;
   margin-top: 10px;
@@ -914,6 +913,10 @@ height: 90%;
 
   .share-content {
   border: 1px solid #bfbfbf;
+    textarea {
+    margin: 0px;
+    border: 0px;
+    }
   }
 
   #test {
