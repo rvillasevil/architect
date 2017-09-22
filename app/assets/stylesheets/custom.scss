@@ -887,13 +887,12 @@ height: 90%;
   margin-bottom: 10px;
   border-bottom: 1px solid #e6e9ec;
   padding-top: 10px; 
-}
+  }
   .iconos-share {
   display: inline;
   padding: 0px;
   margin: 0px;
   width: 100%;
-  border: 1px solid #e6e9ec;
     textarea {
     width: 100%;
     }
@@ -911,6 +910,37 @@ height: 90%;
     width: 25%;
     border: #e6e9ec;
     }
+  }
 
+  .share-content {
+  border: 1px solid #bfbfbf;
+  }
+
+  #test {
+    position: relative;
+    padding: 5px;
+  }
+
+  #test .wrapper {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+  test .wrapper:hover {
+    opacity: 0.5;
+  }
+
+  test button {
+    background-color: #ccc;
+    border: none;
+    color: #666;
+    padding: 3px 5px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    z-index: 1;
   }
 }

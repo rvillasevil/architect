@@ -11,10 +11,9 @@
 
       </aside>
       <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
-        <section class="micropost_form">
+        <section class="micropost_form" style="margin-bottom: 5px;">
           <%= render 'shared/micropost_form' %>
         </section>
-        <h4 style="margin: 3px; border-bottom: 1px solid #bfbfbf;">Home</h4>
         <%= render 'shared/feed' %>
       </div>
       <div class="col-sm-3">
@@ -22,8 +21,9 @@
         <%= render 'shared/lista' %>
       </div>
     </div>
-  <% else %>
-</div>
+  </div>
+<% else %>
+
 
   <div class="backgroundimg">
     <div class="container">
