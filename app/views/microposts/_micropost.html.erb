@@ -1,17 +1,25 @@
 <li id="micropost-<%= micropost.id %>">
-    <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 50 if micropost.user.foto? %>
 
-    <span display="inline-block"><%= link_to micropost.user.name, micropost.user %>
-      <span>
-        <%= micropost.user.followers.count %>
-      </span>
+  <span >
+      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 50 if micropost.user.foto? %>
+  </span>
+      <ul class="user-data">
+        <li>
+          <%= link_to micropost.user.name, micropost.user %>
+        </li>
+        <li style="display: inline-flex; font-size: 11px;">
+          <%= micropost.user.followers.count %> followers
+        </li>
+        <li style="font-size: 11px;">
+          Mayor of Bargas
+        </li>
+      </ul>
       <span class="timestamp">
         Posted <%= time_ago_in_words(micropost.created_at) %> ago.
         <% if current_user?(micropost.user) %>
           <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
         <% end %>
       </span>
-    </span>
 
     <!--  Contenido texto -->
     <span class="content">
@@ -91,7 +99,7 @@
 <!-- votos -->
 <!-- necesitamos poner el update de votos del usuario -->
 <!-- votos positivos -->
-  <ul class="social_elements">
+  <ul class="social_elements" style="margin-bottom: 5px;">
     <li>
       <%= form_for([micropost, Vote.new]) do |f| %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -128,7 +136,7 @@
     <% micropost.comments.order("created_at desc").take(3).each do |comment| %>
       <span class="comentario">
         <% if micropost.comments.any? %>
-          <h5><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+          <h5 style="margin: 0px; padding-top: 5px;"><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
                   <%= link_to comment.user.name, comment.user %>        <%= comment.contenido %></h5>
                   <h6><%= comment.created_at %></h6>
         <% else %>
@@ -136,9 +144,9 @@
     </span>
     <% end %>
   <!-- create comment -->
-  <ul class="post_comment">
+  <ul class="post_comment" style="border-top: 1px solid #e6e9ec; margin-top: 5px; width: 100%; display: inline-flex;">
     <li><%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %></li>
-    <li><%= form_for([micropost, Comment.new]) do |f| %>
+    <li style="width: 80%;"><%= form_for([micropost, Comment.new]) do |f| %>
 
     <%= f.text_area :contenido, placeholder: "Add a comment..." %>
     <%= f.hidden_field :user_id, :value => current_user.id %></li>
