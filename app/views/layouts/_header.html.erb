@@ -1,33 +1,44 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #3399ff;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="align-content: right">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
       <div class="icons-list">
-      <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 85%;">
+        <% if logged_in? %>
+      <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 83%;">
         <li>
           <%= link_to root_path do %>
-            <i class="fa fa-home" style="padding-left: 18px;"></i><p>500plazas</p>
+            <i class="fa fa-home" aria-hidden="true" style="color: white"></i><p style="color: white">500plazas</p>
           <% end %>
         </li>
+          
         <li>
           <%= link_to following_user_path(current_user) do %>
-            <i class="fa fa-circle-o-notch" aria-hidden="true"></i><p>Circles</p>
+            <i class="fa fa-circle-o-notch" aria-hidden="true" style="color: white"></i><p style="color: white">Circles</p>
           <% end %>
         </li>
         <li>
           <%= link_to '/lista' do %>
-            <i class="fa fa-list-ol" aria-hidden="true"></i><p>Ranks</p>
+            <i class="fa fa-list-ol" aria-hidden="true" style="color: white"></i><p style="color: white">Ranks</p>
           <% end %>
         </li>
         <li>
           <%= link_to users_path do %>
-            <i class="fa fa-users" aria-hidden="true"></i><p>Users</p>
+            <i class="fa fa-users" aria-hidden="true" style="color: white"></i><p style="color: white">Users</p>
           <% end %>
         </li>
+        <% else %>
+          <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 85%;">
+            <li>
+              <%= link_to root_path do %>
+              <i class="fa fa-home" style="padding-left: 18px;" style="color: white"></i><p style="color: white">500plazas</p>
+            <% end %>
+            </li>
+          <% end %>
+        </ul>
       </ul>
     </div>
     </div>
@@ -47,9 +58,9 @@
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right" style="width: 20%;">
-            <li class="dropdown" style="width: 120px;" >
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 3px; padding-right: 3px; font-size: 0.9em; "><span class="glyphicon glyphicon-user"></span>
-                 My Account <b class="caret"></b>
+            <li class="dropdown" >
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 3px; padding-right: 3px; font-size: 0.9em; "><span class="glyphicon glyphicon-user" style="color: white"></span>
+                 <span style="color: white">My Account</span><b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", current_user %></li>
@@ -61,7 +72,9 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Log in", login_path %></li>
+            <%= link_to login_path do %>
+            <i class="fa fa-sign-in" style="margin-top: 10px;"></i><p>Login</p>
+            <% end %>
           <% end %>
       </ul>
     </div>

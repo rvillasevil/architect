@@ -10,379 +10,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@media (max-width: 576px) { 
-/* imagenes fondo */
-
-.backgroundimg {
-  background-image: url('helicopter.jpg');
-
-  background-size: cover;
-
-  background-position: center center;
-
-  background-repeat: no-repeat;
-
-  height: 100vh;
-
-  width: 100%;
-
-  display: flex;
-
-  color: white;
-
-  text-align: center;
-
-  align-items: center;
-} 
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+body {
+  padding-top: 60px;
 }
 
-h1 {
-  font-size: 4.5em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2center {
-  font-size: 4.5em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h1center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h4center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h1center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  padding: 10px;
-  margin:   5px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-}
-@media (min-width: 576px) { 
-/* imagenes fondo */
-
-.backgroundimg {
-  background-image: url('cars.jpg');
-
-  background-size: cover;
-
-  background-position: center center;
-
-  background-repeat: no-repeat;
-
-  height: 100vh;
-
-  width: 100%;
-
-  display: flex;
-
-  color: white;
-
-  text-align: center;
-
-  align-items: center;
-
-  padding: 0px;
-
-} 
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 4.5em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2center {
-  font-size: 4.5em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h1center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h4center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h1center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  padding: 10px;
-  margin:   5px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-}
-@media (min-width: 992px) { 
-/* imagenes fondo */
-
-.backgroundimg {
-  background-image: url('plane.jpg');
-
-  background-size: cover;
-
-  background-position: center center;
-
-  background-repeat: no-repeat;
-
-  height: 100vh;
-
-  width: 100%;
-
-  display: flex;
-
-  color: white;
-
-  text-align: center;
-
-  align-items: center;
-
-  padding: 0px;
-
-} 
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 4.5em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2center {
-  font-size: 4.5em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h1center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h4center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h1center {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  padding: 10px;
-  margin:   5px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
-}
-@media (min-width: 1200px) { 
-/* imagenes fondo */
-
-.backgroundimg {
-  background-image: url('ciudad5.jpg');
-
-  background-size: cover;
-
-  background-position: center center;
-
-  background-repeat: no-repeat;
-
-  height: 100vh;
-
-  width: 100%;
-
-  display: flex;
-
-  color: white;
-
-  text-align: center;
-
-  align-items: center;
-
-  padding: 0px;
-} 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -442,9 +73,6 @@ p {
 
 /* universal */
 
-body {
-  padding-top: 60px;
-}
 
 section {
   overflow: auto;
@@ -463,7 +91,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-}
 
 /* header */
 
@@ -476,12 +103,15 @@ header {
   header li {
     margin-right: 5px;
     width: 100%;
+    text-align: center;
     }  
 }
 @media (min-width: 576px) {
-  header li {
+header li {
     margin-right: 40px;
     width: 100%;
+    text-align: center;
+    color: white;
     }
 }
 header p {
@@ -493,7 +123,13 @@ header ul {
   margin-left: 10px;
 }
 header i {
-  margin-left: 8px;
+
+}
+header li:hover {
+  background-color: #004d99;
+}
+.active {
+  background-color: #004d99 !important;
 }
 
 /* footer */
@@ -946,4 +582,71 @@ height: 90%;
     top: 0;
     z-index: 1;
   }
+}
+/*-----------------------------------------------------------------
+/* imagenes fondo */
+@media (max-width: 576px) { 
+.backgroundimg {
+  background-image: url('helicopter.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+}
+}
+/*-----------------------------------------------------------
+/* imagenes fondo */
+@media (min-width: 576px) { 
+.backgroundimg {
+  background-image: url('cars.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 0px;
+}
+} 
+/*----------------------------------------------------------------
+/* imagenes fondo */
+@media (min-width: 992px) { 
+.backgroundimg {
+  background-image: url('plane.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 0px;
+}
+} 
+/*-------------------------------------------------------------------
+/* imagenes fondo */
+@media (min-width: 1200px) { 
+.backgroundimg {
+  background-image: url('ciudad5.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  padding: 0px;
+} 
 }
