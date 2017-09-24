@@ -54,8 +54,8 @@
 
 
     <% if micropost.link? %>
-      <a style="margin-left: 7px">
-        <%= link_to (micropost.link.scan( /([^>]*)./).first.last), micropost.link %></a>       
+      <a style="padding: 5px; overflow: hidden; text-overflow:ellipsis;">
+        <%= link_to truncate(micropost.link.scan( /([^>]*)./).first.last, :length => 30), micropost.link %></a>       
     <% end %>    
   </div>
 <% 
@@ -100,7 +100,7 @@
 <!-- necesitamos poner el update de votos del usuario -->
 <!-- votos positivos -->
   <ul class="social_elements" style="margin-bottom: 5px;">
-    <li>
+    <li style="display: inline-flex;">
       <%= form_for([micropost, Vote.new]) do |f| %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :like, :value => 1 %> 
@@ -110,9 +110,9 @@
           <% end %>   
           <% end %>
       </span>
-    </li>
+
   <!-- votos negativos -->
-    <li>
+
       <%= form_for([micropost, Vote.new]) do |f| %>
         <%= f.hidden_field :user_id, :value => current_user.id %> 
         <%= f.hidden_field :like, :value => 0 %> 
@@ -122,41 +122,41 @@
       <% end %>    
     </li>
     <!-- hashtags -->
-    <li>
+    <li style="padding-top: 10px;">
       <% if micropost.hashtag1? %>
         <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to micropost.hashtag1,hashtag_micropost_path(micropost) %></a>
       <% end %>
     </li>
     <!-- comentarios -->
-    <li>
+    <li style="padding-top: 10px;">
       <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
     </li>
   </ul>
-  <!-- comentarios -->
+  <!-- comentarios --> 
+<div class="" style="background-color: #f2f2f2;">  
     <% micropost.comments.order("created_at desc").take(3).each do |comment| %>
       <span class="comentario">
         <% if micropost.comments.any? %>
-          <h5 style="margin: 0px; padding-top: 5px;"><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
-                  <%= link_to comment.user.name, comment.user %>        <%= comment.contenido %></h5>
-                  <h6><%= comment.created_at %></h6>
+          <span style="margin: 0px; padding-top: 5px;"><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+                  <%= link_to comment.user.name, comment.user %>        <%= comment.contenido %></span>
+                  <span class="" style="font-size: 11px; color: #8c8c8c;"> <%= time_ago_in_words(comment.created_at) %> ago.</span>
         <% else %>
       <% end %>         
     </span>
     <% end %>
-  <!-- create comment -->
-  <ul class="post_comment" style="border-top: 1px solid #e6e9ec; margin-top: 5px; width: 100%; display: inline-flex;">
-    <li><%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %></li>
-    <li style="width: 80%;"><%= form_for([micropost, Comment.new]) do |f| %>
+    <!-- create comment -->
+    <ul class="post_comment" style="border-top: 1px solid #e6e9ec; padding-top: 5px; width: 100%; display: inline-flex; ">
+      <li style="background-color: #f2f2f2;"><%= image_tag (current_user.foto.url), class: "img-circle", size: 30 if current_user.foto? %></li>
+      <li style="width: 80%; background-color: #f2f2f2;"><%= form_for([micropost, Comment.new]) do |f| %>
 
-    <%= f.text_area :contenido, placeholder: "Add a comment..." %>
-    <%= f.hidden_field :user_id, :value => current_user.id %></li>
-    <li><div class="actions">
-      <%= f.submit "Comment" %>
-    </div></li>
-  </ul>
-  <% end %>
-
-  
+      <%= f.text_area :contenido, placeholder: "Add a comment..." %>
+      <%= f.hidden_field :user_id, :value => current_user.id %></li>
+      <li style="background-color: #f2f2f2;"><div class="actions">
+        <%= f.submit "Comment" %>
+      </div></li>
+    </ul>
+    <% end %>
+</div>
 <!--
   <% if micropost.hashtag2? %>
     <div class="hashtag">

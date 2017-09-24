@@ -12,6 +12,7 @@
 
 body {
   padding-top: 60px;
+  background-color: #f3f3f3;
 }
 
 /* typography */
@@ -315,9 +316,10 @@ input {
     border-bottom: 1px solid #bfbfbf;
     border-left: 1px solid #bfbfbf;
     border-right: 1px solid #bfbfbf;
-    margin-bottom: 8px;
-    box-shadow: 10px 10px 5px #f4f4f4;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 5px #cbcbcd;
     background-color: white;
+    border-radius: 5px;
   }
   .user {
     margin-top: 5em;
@@ -354,6 +356,7 @@ input {
     display: inline;
     padding: 5px;
     text-align: right;
+    color: #7e7e81;
   }
 
   .comments {
@@ -367,8 +370,9 @@ input {
   position: relative;
   display: block;
   margin-left: 05px;
-  padding-left: 3px;
-  background-color: #dfe6f4;
+  padding-left: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
     h6{
     display: inline-block;
     }
@@ -407,7 +411,7 @@ input {
   border-width: 1px;
   border-color: #d9d9d9;
   margin: 4px;
-  padding: 5px;
+  padding: 0px;
   }
 
   .social_elements {
@@ -420,6 +424,7 @@ input {
     line-height: 16px;
     li {
     list-style-type: none;
+    text-align: center;
     display: inline;
     border: 0px;
     padding: 3px;
@@ -534,6 +539,8 @@ height: 90%;
 
 .micropost_form {
   background-color: white;
+  box-shadow: 0px 5px 5px #cbcbcd;
+
   textarea {
   border: 0px;
   margin-top: 10px;
@@ -541,6 +548,7 @@ height: 90%;
   border-bottom: 1px solid #e6e9ec;
   padding-top: 10px; 
   }
+
   .iconos-share {
   display: inline;
   padding: 0px;
