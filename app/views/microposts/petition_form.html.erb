@@ -4,16 +4,24 @@
     <!-- Formulario del micropost -->
     <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
+    <%= f.hidden_field :petition, :value => true %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
 <div class="share-content">
     <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px;">
         <li style="display: inline-flex; margin-top: 10px;">
             <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
         </li>
         <li style="display: inline-flex; width: 90%; margin: 0px;">
+            <p>
+                Explain your proposals, the problem and the  solution you are proposing: 
+            </p>
             <%= f.text_area :content, placeholder: "Share something with the community..." %>
         </li>
 
     </ul>
+    <span>
+        <%= f.text_area :title, placeholder: "Title for the petition..." %>
+    </span>
     <div class="iconos-share">
         <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; border-bottom: 1px solid #e6e9ec; border-top: 1px solid #e6e9ec; padding-left: 15px;">
             <li style="width: 30%;">
@@ -65,7 +73,6 @@
                 </ul>
             </li>
             <li>
-                <%= f.hidden_field :petition, :value => false %>
                 <%= f.submit "Post", class: "btn btn-info btn-sm" %>
             </li>  
         </ul>

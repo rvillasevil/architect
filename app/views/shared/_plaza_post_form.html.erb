@@ -65,10 +65,10 @@
                 </ul>
             </li>
             <li>
-                <%= f.hidden_field :petition, :value => false %>
                 <%= f.submit "Post", class: "btn btn-info btn-sm" %>
             </li>  
         </ul>
+        <%= f.hidden_field :plaza_id, value: @user.id %>
     </div>
 </div>
 <!-- </div> -->

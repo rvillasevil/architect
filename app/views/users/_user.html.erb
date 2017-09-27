@@ -1,10 +1,13 @@
 <li>
-  <%= image_tag user.foto.url, size: 50 if user.foto? %>
+  <%= image_tag user.foto.url, class: "img-circle", size: 50 if user.foto? %>
   <% else %>
-  <% gravatar_for user, size: 50 %>
 
-
+  <% if user.plaza? %>
+  Plaza <%= link_to user.name, user %>
+  <% else %>
   <%= link_to user.name, user %>
+  <% end %>
+
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>

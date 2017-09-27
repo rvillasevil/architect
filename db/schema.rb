@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901120244) do
+ActiveRecord::Schema.define(version: 20170926152635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20170901120244) do
     t.string   "hashtag2"
     t.string   "hashtag3"
     t.string   "link"
+    t.integer  "plaza_id"
+    t.boolean  "petition"
+    t.string   "title"
     t.index ["user_id"], name: "index_microposts_on_user_id", using: :btree
   end
 
@@ -83,6 +86,8 @@ ActiveRecord::Schema.define(version: 20170901120244) do
     t.string   "foto"
     t.integer  "followers_count",   default: 0
     t.string   "autonomia"
+    t.boolean  "plaza"
+    t.integer  "created_by"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

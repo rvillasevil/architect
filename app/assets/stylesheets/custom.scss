@@ -12,7 +12,7 @@
 
 body {
   padding-top: 60px;
-  background-color: #f3f3f3;
+  background-color: #e9e9e9;
 }
 
 /* typography */
@@ -309,13 +309,10 @@ input {
 .microposts {
   list-style: none;
   padding: 1px;
-  background-color: white;
+  background-color: #e9e9e9;
   li {
-    padding: 10px;
-    border-top: 1px solid #bfbfbf;
-    border-bottom: 1px solid #bfbfbf;
-    border-left: 1px solid #bfbfbf;
-    border-right: 1px solid #bfbfbf;
+    padding: 15px;
+    
     margin-bottom: 10px;
     box-shadow: 0px 5px 5px #cbcbcd;
     background-color: white;
@@ -540,6 +537,8 @@ height: 90%;
 .micropost_form {
   background-color: white;
   box-shadow: 0px 5px 5px #cbcbcd;
+  margin-bottom: 10px;
+  margin-top: 5px;
 
   textarea {
   border: 0px;
@@ -609,6 +608,144 @@ height: 90%;
     z-index: 1;
   }
 }
+
+.plaza_post_form {
+  background-color: white;
+  box-shadow: 0px 5px 5px #cbcbcd;
+
+  textarea {
+  border: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6e9ec;
+  padding-top: 10px; 
+  }
+
+  .iconos-share {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+    textarea {
+    width: 100%;
+    }
+    ul {
+    padding-left: 3px;
+    }
+    li {
+    list-style-type: none;
+    padding: 5px;
+    }
+    select {
+    margin-bottom: 3px;
+    }
+    file_input {
+    width: 25%;
+    border: #e6e9ec;
+    }
+  }
+
+  .share-content {
+  border: 1px solid #bfbfbf;
+    textarea {
+    margin: 0px;
+    border: 0px;
+    }
+  }
+
+
+  #test {
+    position: relative;
+    padding: 5px;
+  }
+
+  #test .wrapper {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+  test .wrapper:hover {
+    opacity: 0.5;
+  }
+
+  test button {
+    background-color: #ccc;
+    border: none;
+    color: #666;
+    padding: 3px 5px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+  }
+}
+  
+   .background-imagen {
+   background-image: url('helicopter.jpg');
+   width: 100%;
+   padding: 0px;
+   margin: 0px;
+   }
+
+.ul-petitions {
+  list-style: none;
+  padding-left: 0px;
+  p {
+  border-top: 0.7px solid #bfbfbf;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+  }
+  li {
+  background-color: white;
+  padding-left: 0px;
+  }
+  .title-petition {
+  display: block;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e6e9ec;
+  padding-left: 15px;
+  }
+  .social_elements {
+    display: flex;
+    overflow: auto;
+    margin: 1px;
+    font-size: 12px;
+    padding: 1px;
+    border-bottom: 1px solid #e6e9ec;
+    line-height: 16px;
+    padding-left: 20px;
+    li {
+    list-style-type: none;
+    text-align: center;
+    display: inline;
+    border: 0px;
+    padding: 3px;
+    width: 100%;
+    margin: 5px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding: 10px;
+    box-shadow: 0px 0px 0px white;
+    }
+  }
+  .encabezado {
+  font-size: 12px; 
+  width: 100%;
+  padding-top: 10px;
+  text-align: right;
+  padding-left: 15px;
+  padding-bottom: 12px;
+  li {
+  }
+  }
+}
+
+
 /*-----------------------------------------------------------------
 /* imagenes fondo */
 @media (max-width: 576px) { 

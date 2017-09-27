@@ -1,5 +1,6 @@
+<% if @micropost.plaza_id != nil %>
 <div class="container">
-  <% provide(:title, @user.name) %>
+  <% provide(:title, "Petition") %>
   <div class="row">
     <aside class="col-md-4">
       <section>
@@ -13,18 +14,15 @@
       </section>
     </aside>
     <div class="col-md-8">
-      <%= render 'follow_form' if logged_in? %>
-      <section class="micropost_form">
-        <%= render 'shared/plaza_post_form' %>
-      </section>
-      <% if @microposts.any? %>
-        <h4>Posts (<%= @microposts.count %>)</h4>
+        <h4>Posts</h4>
         <ol class="microposts">
-          <%= render @microposts %>
+          <p><%= @micropost.title %></p>
+          <p><%= @micropost.content %></p>
+          <p><%= @micropost.user.name %></p>
+
         </ol>
-        <%= will_paginate @microposts %>
-      <% end %>
-      
     </div>
   </div>
 </div>
+<% else %>
+<% end %>

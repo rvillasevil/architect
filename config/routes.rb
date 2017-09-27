@@ -3,20 +3,30 @@ Rails.application.routes.draw do
 
   get '/lista', to: "users#lista"
 
-  get    '/help',    to: 'static_pages#help'
-  get    '/about',   to: 'static_pages#about'
-  get    '/contact', to: 'static_pages#contact'
-  get    '/signup',  to: 'users#new'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get    '/help',     to: 'static_pages#help'
+  get    '/about',    to: 'static_pages#about'
+  get    '/contact',  to: 'static_pages#contact'
+  get    '/signup',   to: 'users#new'
+  get    '/login',    to: 'sessions#new'
+  post   '/login',    to: 'sessions#create'
+  delete '/logout',   to: 'sessions#destroy'
+  get   '/lista',     to: "users#lista"
+  get   '/circles',   to: "users#following"
+  get   '/new_plaza', to: 'users#new_plaza'
+  get   '/plazas',    to: 'users#plazas'
+  get   '/petition',  to: 'microposts#petition_form'
+  get   '/micropost', to: 'microposts#show'
+  get   '/petitions', to: 'microposts#petition_index'
+
   resources :users do
     member do
       get :following, :followers
     end
 
-  get '/lista', to: "users#lista"
-  get '/circles', to: "users#following"
+  resources :users do
+    resources :users
+    end
+  
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
@@ -40,7 +50,6 @@ Rails.application.routes.draw do
   end
 
   resources :votes
-
 
   resources :relationships,       only: [:create, :destroy]
 end

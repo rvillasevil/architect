@@ -5,7 +5,7 @@ class VotesController < ApplicationController
 	@vote = @micropost.votes.build(vote_params)
 		if 	@vote.save
 			flash[:success] = "Voto añadido"
-			redirect_to root_url
+			redirect_to :back
 		else
 			@feed_items = []
       		render 'static_pages/home'

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers, :lista]
+                                        :following, :followers, :lista, :new_plaza, :plazas]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
@@ -8,11 +8,26 @@ class UsersController < ApplicationController
     @users = User.where(activated: true).paginate(page: params[:page])
   end
 
+  def plazas
+    @users = User.where(plaza: true).paginate(page: params[:page])
+  end
+
   def show
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = Micropost.where(:user_id => @user.id).paginate(page: params[:page])
+    if @microposts.empty?
+      @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page])
+    else 
+    end
     @comment = Comment.new( :micropost => @micropost )
+    @micropost  = current_user.microposts.build 
+    #@posts = Micropost.find_by_sql(
+      #'SELECT       microposts.id
+      #FROM          microposts
+      #LEFT JOIN     users
+      #ON            microposts.plaza_id = user_id
+      #')
   end
 
   def lista
@@ -45,12 +60,16 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def new_plaza
+    @plaza = User.new
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      redirect_to :back #root_url
     else
       render 'new'
     end
@@ -94,7 +113,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto)
+                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza)
     end
 
     # Before filters

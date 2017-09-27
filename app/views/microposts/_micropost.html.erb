@@ -1,5 +1,5 @@
 <li id="micropost-<%= micropost.id %>">
-
+<span class="posts">
   <span >
       <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 50 if micropost.user.foto? %>
   </span>
@@ -11,13 +11,16 @@
           <%= micropost.user.followers.count %> followers
         </li>
         <li style="font-size: 11px;">
-          Mayor of Bargas
+          <%= micropost.plaza_id %>
+          <%= @plaza = User.where(:id => micropost.plaza_id) %>
+          <%= @plaza_name%>
+
         </li>
       </ul>
       <span class="timestamp">
         Posted <%= time_ago_in_words(micropost.created_at) %> ago.
         <% if current_user?(micropost.user) %>
-          <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+          <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost.id %>
         <% end %>
       </span>
 
@@ -165,4 +168,5 @@
     </div>
   <% end %>
 -->
+</span>
 </li>

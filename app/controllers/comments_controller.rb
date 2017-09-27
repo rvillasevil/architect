@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 	@comment = @micropost.comments.build(comment_params)
 		if 	@comment.save
 			flash[:success] = "Comentario añadido"
-			redirect_to root_url
+			redirect_to :back
 		else
 			@feed_items = []
       		render 'static_pages/home'
