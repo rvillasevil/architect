@@ -4,6 +4,17 @@
     <!-- Formulario del micropost -->
     <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
+<span class="emoticons">
+    <ul class="" style="display: inline-flex; list-style: none; text-align: center; width: 100%; padding-left: 0px; padding-top: 10px;">
+        <li style="width: 25%; background-color: #f2f4ff;" onclick="divVisibility('Div1');"><i class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></i> Post</li>  
+        <li style="width: 25%; background-color: #c6ffe8;" onclick="divVisibility('Div2');"><i class="fa fa-smile-o fa-lg" aria-hidden="true"></i> Needs</li>  
+        <li style="width: 25%; background-color: #ffffcc;" onclick="divVisibility('Div3');"><i class="fa fa-frown-o fa-lg" aria-hidden="true"></i> Problems</li>  
+        <li style="width: 25%; background-color: #ffc6c6;" onclick="divVisibility('Div4');"><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i> Love</li>
+    </ul>
+</span>
+
+<!-------------------------------------------------------- -->
+<div id="Div1" style="">
 <div class="share-content">
     <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px;">
         <li style="display: inline-flex; margin-top: 10px;">
@@ -17,33 +28,30 @@
     <div class="iconos-share">
         <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; border-bottom: 1px solid #e6e9ec; border-top: 1px solid #e6e9ec; padding-left: 15px;">
             <li style="width: 30%;">
-                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#link"><span class="fa fa-newspaper-o fa-2x" aria-hidden="true"></span> Link </button>
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#link"><span class="fa fa-newspaper-o fa-lg" aria-hidden="true"></span> Link </button>
                     <div id="link" class="collapse">
                 <%= f.text_field :link, placeholder: "Or maybe a link" %>
                     </div>           
             </li>
             <li style="width: 30%;">
-                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#video"><span class="fa fa-video-camera fa-2x" aria-hidden="true"></span> Video </button>
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#video"><span class="fa fa-video-camera fa-lg" aria-hidden="true"></span> Video </button>
                     <div id="video" class="collapse">
                 <%= f.text_field :video, placeholder: "Or send us a video. Just copy the video code from youtube" %>
                     </div>
             </li>
             <li style="padding: 0px; width: 25%; margin-left: 10px;">
-                    <div id="test">
-                        <div class="wrapper" style="margin-top: 12px; margin-bottom: 0px;">
-                            <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
-                        </div>
-                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-2x" aria-hidden="true"></span> Image </button>
+                <div id="test">
+                    <div class="wrapper" style="margin-top: 12px; margin-bottom: 0px;">
+                        <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+                    </div>
+                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
                 </div>
             </li>
         </ul>
         <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px;">
-            <li style="display: inline; margin-bottom: 0px; width: 50%;">
-                <ul style="display: inline-flex;">
-                    <li>
-                        <span class="fa fa-hashtag" aria-hidden="true">Hashtag </span>
-                    </li>
-                    <li style="padding: 3px;"><%= f.select :hashtag1, [
+                <li style="padding: 3px; width: 60%; margin-left: 15px; margin-right: 15px;">
+                    <span class="fa fa-hashtag" aria-hidden="true">Hashtag </span>
+                    <%= f.select :hashtag1, [
                         '',
                         'Family',
                         'People rights',
@@ -61,40 +69,18 @@
                         'Reforms and Proposals',
                         'Sports',
                         'Daily Life'] %>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <%= f.hidden_field :petition, :value => false %>
-                <%= f.submit "Post", class: "btn btn-info btn-sm" %>
-            </li>  
-        </ul>
+                </li>
+                <li style="width: 30%; padding-top: 12px;" >
+                    <%= f.hidden_field :petition, :value => false %>
+                    <%= f.hidden_field :hashtag2, :value => "posts" %>
+                    <%= f.submit "Post", class: "btn btn-info btn-sm" %> 
+                </li>
+            </ul>
     </div>
 </div>
-<!-- </div> -->
-
+</div>
+<!-- </div> -->    
     <!--
-        <div class="col-xs-3">
-        <%= f.select :hashtag2, [
-        '',
-        'Family',
-        'People rights',
-        'Education',
-        'Energy',
-        'Environment',
-        'Health Care',
-        'Immigration',
-        'Jobs and Economy',
-        'National Security',
-        'Goverments',
-        'Elderly',
-        'Science and Technology',
-        'Voting',
-        'Reforms and Proposals',
-        'Sports',
-        'Daily Life'] %>
-        </div>
-
         <div class="col-xs-3">
         <%= f.select :hashtag3, [
         '',
@@ -115,10 +101,232 @@
         'Sports',
         'Daily Life'] %>
         </div>
-    -->
-      
-        
-    <% end %>    
+    -->  
+
+
+<div id="Div2" style="display: none;">
+<div class="share-content">
+    <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px;">
+        <li style="display: inline-flex; margin-top: 10px;">
+            <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
+        </li>
+        <li style="display: inline-flex; width: 90%; margin: 0px;">
+            <%= f.text_area :content, placeholder: "Share something you need..." %>
+        </li>
+    </ul>
+    <div class="iconos-share">
+        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; border-bottom: 1px solid #e6e9ec; border-top: 1px solid #e6e9ec; padding-left: 15px;">
+            <li style="width: 30%;">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#link2"><span class="fa fa-newspaper-o fa-lg" aria-hidden="true"></span> Link </button>
+                    <div id="link2" class="collapse">
+                <%= f.text_field :link, placeholder: "Or maybe a link" %>
+                    </div>           
+            </li>
+            <li style="width: 30%;">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#video2"><span class="fa fa-video-camera fa-lg" aria-hidden="true"></span> Video </button>
+                    <div id="video2" class="collapse">
+                <%= f.text_field :video, placeholder: "Or send us a video. Just copy the video code from youtube" %>
+                    </div>
+            </li>
+            <li style="padding: 0px; width: 25%; margin-left: 10px;">
+                <div id="test">
+                    <div class="wrapper" style="margin-top: 12px; margin-bottom: 0px;">
+                        <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+                    </div>
+                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
+                </div>
+            </li>
+        </ul>
+        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px;">
+                <li style="padding: 3px; width: 60%; margin-left: 15px; margin-right: 15px;">
+                    <span class="fa fa-hashtag" aria-hidden="true">Hashtag </span>
+                    <%= f.select :hashtag1, [
+                        '',
+                        'Family',
+                        'People rights',
+                        'Education',
+                        'Energy',
+                        'Environment',
+                        'Health Care',
+                        'Immigration',
+                        'Jobs and Economy',
+                        'National Security',
+                        'Goverments',
+                        'Elderly',
+                        'Science and Technology',
+                        'Voting',
+                        'Reforms and Proposals',
+                        'Sports',
+                        'Daily Life'] %>
+                </li>
+                <li style="width: 30%; padding-top: 12px;" >
+                    <%= f.hidden_field :petition, :value => false %>
+                    <%= f.hidden_field :hashtag2, :value => "needs" %>
+                    <%= f.submit "Post", class: "btn btn-info btn-sm" %> 
+                </li>
+            </ul>
+    </div>
+</div>
+</div>
+
+<div id="Div3" style="display: none; ">
+<div class="share-content">
+    <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px;">
+        <li style="display: inline-flex; margin-top: 10px;">
+            <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
+        </li>
+        <li style="display: inline-flex; width: 90%; margin: 0px;">
+            <%= f.text_area :content, placeholder: "Share the problems detected..." %>
+        </li>
+
+    </ul>
+    <div class="iconos-share">
+        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; border-bottom: 1px solid #e6e9ec; border-top: 1px solid #e6e9ec; padding-left: 15px;">
+            <li style="width: 30%;">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#link3"><span class="fa fa-newspaper-o fa-lg" aria-hidden="true"></span> Link </button>
+                    <div id="link3" class="collapse">
+                <%= f.text_field :link, placeholder: "Or maybe a link" %>
+                    </div>           
+            </li>
+            <li style="width: 30%;">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#video3"><span class="fa fa-video-camera fa-lg" aria-hidden="true"></span> Video </button>
+                    <div id="video3" class="collapse">
+                <%= f.text_field :video, placeholder: "Or send us a video. Just copy the video code from youtube" %>
+                    </div>
+            </li>
+            <li style="padding: 0px; width: 25%; margin-left: 10px;">
+                <div id="test">
+                    <div class="wrapper" style="margin-top: 12px; margin-bottom: 0px;">
+                        <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+                    </div>
+                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
+                </div>
+            </li>
+        </ul>
+        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px;">
+                <li style="padding: 3px; width: 60%; margin-left: 15px; margin-right: 15px;">
+                    <span class="fa fa-hashtag" aria-hidden="true">Hashtag </span>
+                    <%= f.select :hashtag1, [
+                        '',
+                        'Family',
+                        'People rights',
+                        'Education',
+                        'Energy',
+                        'Environment',
+                        'Health Care',
+                        'Immigration',
+                        'Jobs and Economy',
+                        'National Security',
+                        'Goverments',
+                        'Elderly',
+                        'Science and Technology',
+                        'Voting',
+                        'Reforms and Proposals',
+                        'Sports',
+                        'Daily Life'] %>
+                </li>
+                <li style="width: 30%; padding-top: 12px;" >
+                    <%= f.hidden_field :petition, :value => false %>
+                    <%= f.hidden_field :hashtag2, :value => "problems" %>
+                    <%= f.submit "Post", class: "btn btn-info btn-sm" %> 
+                </li>
+            </ul>
+    </div>
+</div>
+</div>
+
+<div id="Div4" style="display: none; "> 
+<div class="share-content">
+    <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px;">
+        <li style="display: inline-flex; margin-top: 10px;">
+            <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
+        </li>
+        <li style="display: inline-flex; width: 90%; margin: 0px;">
+            <%= f.text_area :content, placeholder: "Share things that you love from your community..." %>
+        </li>
+
+    </ul>
+    <div class="iconos-share">
+        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; border-bottom: 1px solid #e6e9ec; border-top: 1px solid #e6e9ec; padding-left: 15px;">
+            <li style="width: 30%;">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#link4"><span class="fa fa-newspaper-o fa-lg" aria-hidden="true"></span> Link </button>
+                    <div id="link4" class="collapse">
+                <%= f.text_field :link, placeholder: "Or maybe a link" %>
+                    </div>           
+            </li>
+            <li style="width: 30%;">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#video4"><span class="fa fa-video-camera fa-lg" aria-hidden="true"></span> Video </button>
+                    <div id="video4" class="collapse">
+                <%= f.text_field :video, placeholder: "Or send us a video. Just copy the video code from youtube" %>
+                    </div>
+            </li>
+            <li style="padding: 0px; width: 25%; margin-left: 10px;">
+                <div id="test">
+                    <div class="wrapper" style="margin-top: 12px; margin-bottom: 0px;">
+                        <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+                    </div>
+                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
+                </div>
+            </li>
+        </ul>
+        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px;">
+                <li style="padding: 3px; width: 60%; margin-left: 15px; margin-right: 15px;">
+                    <span class="fa fa-hashtag" aria-hidden="true">Hashtag </span>
+                    <%= f.select :hashtag1, [
+                        '',
+                        'Family',
+                        'People rights',
+                        'Education',
+                        'Energy',
+                        'Environment',
+                        'Health Care',
+                        'Immigration',
+                        'Jobs and Economy',
+                        'National Security',
+                        'Goverments',
+                        'Elderly',
+                        'Science and Technology',
+                        'Voting',
+                        'Reforms and Proposals',
+                        'Sports',
+                        'Daily Life'] %>
+                </li>
+                <li style="width: 30%; padding-top: 12px;" >
+                    <%= f.hidden_field :petition, :value => false %>
+                    <%= f.hidden_field :hashtag2, :value => "love" %>
+                    <%= f.submit "Post", class: "btn btn-info btn-sm" %> 
+                </li>
+            </ul>
+    </div>
+</div>
+</div>
+
+<% end %>
+
+<script>
+ var divs = ["Div1", "Div2", "Div3", "Div4"];
+    var visibleDivId = null;
+    function divVisibility(divId) {
+      if(visibleDivId === divId) {
+        visibleDivId = null;
+      } else {
+        visibleDivId = divId;
+      }
+      hideNonVisibleDivs();
+    }
+    function hideNonVisibleDivs() {
+      var i, divId, div;
+      for(i = 0; i < divs.length; i++) {
+        divId = divs[i];
+        div = document.getElementById(divId);
+        if(visibleDivId === divId) {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      }
+    }
+</script>
 
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {

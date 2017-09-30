@@ -104,26 +104,38 @@
 <!-- votos positivos -->
   <ul class="social_elements" style="margin-bottom: 5px;">
     <li style="display: inline-flex;">
-      <%= form_for([micropost, Vote.new]) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :like, :value => 1 %> 
-          <%= f.hidden_field :dislike, :value => 0 %> 
-
-        <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true" ><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Like
-          <% end %>   
+    
+    <%= form_for([micropost, Vote.new], remote: true) do |f| %>
+      <% if (@voto_usuario = micropost.votes.select(:user_id == current_user.id)).empty? %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :like, :value => 1 %> 
+        <%= f.hidden_field :dislike, :value => 0 %> 
+          <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Like
           <% end %>
-      </span>
-
+      <% else %>
+        <!-- <%= @vote = micropost.votes.select(:user_id == current_user.id) %> -->
+        <%= link_to update_like_micropost_vote_path(micropost, @vote[0]), :class => "btn btn-default btn-sm" do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>
+          Like
+        <% end %> 
+      <% end %>      
+    <% end %>
   <!-- votos negativos -->
-
-      <%= form_for([micropost, Vote.new]) do |f| %>
-        <%= f.hidden_field :user_id, :value => current_user.id %> 
+  <%= form_for([micropost, Vote.new], remote: true) do |f| %>
+      <% if (@voto_usuario = micropost.votes.select(:user_id == current_user.id)).empty? %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.hidden_field :like, :value => 0 %> 
-        <%= f.hidden_field :dislike, :value => 1 %>
-        <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Dislike     
-        <% end %>
-      <% end %>    
-    </li>
+        <%= f.hidden_field :dislike, :value => 1 %> 
+          <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Like
+          <% end %>
+      <% else %>
+        <!-- <%= @vote = micropost.votes.select(:user_id == current_user.id) %> -->
+        <%= link_to update_dislike_micropost_vote_path(micropost, @vote[0]), :class => "btn btn-default btn-sm" do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosPositivos = micropost.votes.where(:dislike => 1).count %></span>
+          Like
+        <% end %> 
+      <% end %>      
+    <% end %>
+
+
     <!-- hashtags -->
     <li style="padding-top: 10px;">
       <% if micropost.hashtag1? %>

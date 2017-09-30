@@ -71,9 +71,9 @@
 
         <%= f.hidden_field :plaza, :value => true %>
         <%= f.hidden_field :created_by, :value => current_user.id %>
-        <%= f.hidden_field :email, :value => "#{SecureRandom.hex(10)}@email.com" %>
-        <%= f.hidden_field :password, :value => "#{SecureRandom.hex(10)}" %>
-        <%# f.hidden_field :activated, :value => true %>
+        <%# f.hidden_field :email, :value => "#{SecureRandom.hex(10)}@email.com" %>
+        <%# f.hidden_field :password, :value => "#{SecureRandom.hex(10)}" %>
+        <%= f.hidden_field :activated, :value => true %>
 
         <%= f.submit "Create Plaza", class: "btn btn-primary" %>
       <% end %>

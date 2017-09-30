@@ -17,24 +17,27 @@
         </section>
         <%= render 'shared/feed' %>
       </div>
-      <div class="col-sm-3">
-        <h4>Tus Listas electorales</h4>
-        <%= render 'shared/lista' %>
-        <%= link_to "New plaza!", '/new_plaza', class: "btn btn-lg btn-primary" %>
-        <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-primary" %>
-      </div>
+      <aside class="listas">
+          <div class="col-sm-3">
+            <h4>Tus Listas electorales</h4>
+            <%= render 'shared/lista' %>
+            <%= link_to "New plaza!", '/new_plaza', class: "btn btn-lg btn-primary" %>
+            <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-primary" %>
+          </div>
+      </aside>
+
   </div>
 </div>
 <% else %>
 
 
-  <div class="backgroundimg" >
-    <div class="container">
+  <div class="backgroundimg">
+    <div class="container" >
       <h1>Welcome to PARTY (name in beta)</h1>
       <h2><font size="6" font color="#090462">PARTY it´s a new technology driven political party  for everyone.<p>Everyone can be elected. All of us participate. We decide!.</p></font>
       </h2>
 
-        <div class="container">
+        <div class="container" >
             <h1 class="h1"></h1>
               <div class="wrapper">
                 <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>

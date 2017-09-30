@@ -12,18 +12,36 @@ class VotesController < ApplicationController
 	    end
   	end
 
-  	def destroy
-	    @vote.destroy
-	    flash[:success] = "vote deleted"
-	    redirect_to request.referrer || root_url
-  	end
+  def destroy
+	  @vote.destroy
+	   flash[:success] = "vote deleted"
+	   redirect_to request.referrer || root_url
+  end
 
-  	def index
-  		@user = User.find(params[:id])
-  		@voter = User.where(:user_id => vote.user.id)
-  		@micropost = Micropost.find(params[:id])
-  		@votes = @micropost.votes.paginate(page: params[:page])
-  	end
+  def index
+  	@user = User.find(params[:id])
+  	@voter = User.where(:user_id => vote.user.id)
+  	@micropost = Micropost.find(params[:id])
+  	@votes = @micropost.votes.paginate(page: params[:page])
+  end
+
+  def update_like
+    @micropost = Micropost.find(params[:micropost_id])
+    if @micropost.votes.select(:user_id == current_user.id).update(like: 1, dislike: 0)
+      flash[:success] = "Voto actualizado"
+      redirect_to :back
+    else
+    end
+  end
+
+  def update_dislike
+    @micropost = Micropost.find(params[:micropost_id])
+    if @micropost.votes.select(:user_id == current_user.id).update(like: 0, dislike: 1)
+      flash[:success] = "Voto actualizado"
+      redirect_to :back
+    else
+    end
+  end
 
 
  private
