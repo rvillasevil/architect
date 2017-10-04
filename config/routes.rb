@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   get     '/petition',  to: 'microposts#petition_form'
   get     '/micropost', to: 'microposts#show'
   get     '/petitions', to: 'microposts#petition_index'
+  post    '/plazas',            to: 'plazas#create'
+  delete  '/dejardeseguir',     to: 'groups#destroy'
+  post    '/seguir',            to: 'groups#create'
 
   resources :users do
     member do
@@ -47,14 +50,15 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :comments
+    resources :plazas
+    resources :groups
   end
 
   resources :comments do
     resources :comments
   end
 
-  resources :votes 
-
-
+  resources :votes
+  
   resources :relationships,       only: [:create, :destroy]
 end

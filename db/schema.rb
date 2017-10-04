@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928191019) do
+ActiveRecord::Schema.define(version: 20171001005350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20170928191019) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "contenido"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.integer  "plaza_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plaza_id"], name: "index_groups_on_plaza_id", using: :btree
+    t.index ["user_id", "plaza_id"], name: "index_groups_on_user_id_and_plaza_id", unique: true, using: :btree
+    t.index ["user_id"], name: "index_groups_on_user_id", using: :btree
   end
 
   create_table "microposts", force: :cascade do |t|
@@ -47,11 +57,18 @@ ActiveRecord::Schema.define(version: 20170928191019) do
     t.integer "dc"
   end
 
+  create_table "plazas", force: :cascade do |t|
+    t.string   "name"
+    t.string   "ciudad"
+    t.string   "foto"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "provincia", force: :cascade do |t|
-    t.integer  "id_provincia"
-    t.string   "provincia"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer "id_provincia"
+    t.string  "provincia"
   end
 
   create_table "pueblos", force: :cascade do |t|

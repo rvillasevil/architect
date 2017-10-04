@@ -6,7 +6,7 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to '/petitions' #root_url
+      redirect_to :back #root_url
     else
       @feed_items = []
       render 'static_pages/home'
@@ -20,16 +20,12 @@ class MicropostsController < ApplicationController
   end
 
   def hashtag
-
     @micropost = Micropost.find(params[:id])
     @microposts = Micropost.where(:hashtag1 => @micropost.hashtag1).paginate(page: params[:page])
-
-
     #@user = User.find(params[:id])
     #redirect_to root_url and return unless @user.activated?
     #@microposts = @user.microposts.paginate(page: params[:page])
     #@users = User.where(:ciudad => @listado).paginate(page: params[:page])
-
   end
 
   def petition_form

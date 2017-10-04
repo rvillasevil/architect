@@ -15,7 +15,7 @@
     <div class="col-md-8">
       <%= render 'follow_form' if logged_in? %>
       <section class="micropost_form">
-        <%= render 'shared/plaza_post_form' %>
+        <%= render 'shared/micropost_form' %>
       </section>
       <% if @microposts.any? %>
         <h4>Posts (<%= @microposts.count %>)</h4>

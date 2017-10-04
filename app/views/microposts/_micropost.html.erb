@@ -1,48 +1,52 @@
 <li id="micropost-<%= micropost.id %>">
-<span class="posts">
-  <span >
-      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 50 if micropost.user.foto? %>
+<div class="title-post">
+  <% if micropost.title? %>
+      <p><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></p>
+  <% else %>
+  <% end %>
+</div>
+<div class="post" style="background-color: #e6fff5; margin: -15px;">
+  <span style="padding-left: 15px; margin-top: 10px;">
+    <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 40 if micropost.user.foto? %>
   </span>
-      <ul class="user-data">
-        <li>
-          <%= link_to micropost.user.name, micropost.user %>
-        </li>
-        <li style="display: inline-flex; font-size: 11px;">
-          <%= micropost.user.followers.count %> followers
-        </li>
-        <li style="font-size: 11px;">
-          <%= micropost.plaza_id %>
-          <%= @plaza = User.where(:id => micropost.plaza_id) %>
-          <%= @plaza_name%>
-
-        </li>
-      </ul>
-      <span class="timestamp">
-        Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-        <% if current_user?(micropost.user) %>
-          <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost.id %>
-        <% end %>
-      </span>
-
-    <!--  Contenido texto -->
-    <span class="content">
-      <%= micropost.content %> 
-    </span>
-    <!--  Imagen -->
-    <% if micropost.picture? %>
-      <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "100%"   %> 
-      </div>
+  <ul class="user-data" style="background-color: transparent; padding-left: 5px; padding-top: 5px;">
+    <li>
+      <%= link_to micropost.user.name, micropost.user %>
+    </li>
+    <li style="display: inline-flex; font-size: 11px; ">
+      <%= micropost.user.followers.count %> followers
+    </li>
+    <li style="font-size: 11px;">
+      <%= micropost.plaza_id %>
+      <%= @plaza = User.where(:id => micropost.plaza_id) %>
+      <%= @plaza_name%>
+    </li>
+  </ul>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    <% if current_user?(micropost.user) %>
+      <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost.id %>
     <% end %>
+  </span>
+</div>
+  <!--  Contenido texto -->
+  <span class="content">
+    <%= micropost.content %> 
+  </span>
+  <!--  Imagen -->
+  <% if micropost.picture? %>
+    <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "100%"   %> 
+    </div>
+  <% end %>
 
-    <!--  video -->
-    <% if micropost.video? %>
-      <div class="video-responsive">
-        <iframe
-        src="https://www.youtube.com/embed/<%= micropost.video %>" frameborder="0" allowfullscreen></iframe>
-      </div>
-    <% end %>
+  <!--  video -->
+  <% if micropost.video? %>
+    <div class="video-responsive">
+      <iframe src="https://www.youtube.com/embed/<%= micropost.video %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <% end %>
 
-    <!--  links -->
+  <!--  links -->
   <div class="links">  
     <% if micropost.link? %>
       <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->

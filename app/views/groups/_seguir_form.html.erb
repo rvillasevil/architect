@@ -1,0 +1,9 @@
+<%# unless current_user?(@user) %>
+  <div id="seguir_form">
+  <% if (@siguiendo = Group.where(:plaza_id => @plaza.id).any?) == true %>
+    <%= render 'groups/dejardeseguir' %>
+  <% else %>
+    <%= render 'groups/seguir' %>
+  <% end %>
+  </div>
+<%# end %>

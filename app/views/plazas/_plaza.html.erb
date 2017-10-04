@@ -1,0 +1,13 @@
+<li>
+  <%= image_tag plaza.foto.url, class: "img-circle", size: 50 if plaza.foto? %>
+  <% else %>
+  <%# Link para acceser a las plazas del usuario %>
+  Plaza <%= link_to plaza.name, user_plaza_path(id: plaza.id) %>
+  <%# Link para acceser a todas las plazas en genral para realizar la búsqueda %>
+  Plazas <%= link_to plaza.name, plazas_path %>
+
+  <%# if current_user.admin? && !current_user?(user) %>
+    | <%# link_to "delete", plaza, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <%# end %>
+</li>

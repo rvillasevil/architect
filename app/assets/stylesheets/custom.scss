@@ -13,6 +13,7 @@
 body {
   padding-top: 60px;
   background-color: #e9e9e9;
+  font-family: 'Montserrat', serif;
 }
 
 /* typography */
@@ -247,6 +248,12 @@ aside {
   }
   strong {
     display: block;
+  }
+}
+
+.plaza_stats {
+  img-rounded {
+  border-radius: 12px;
   }
 }
 
@@ -497,13 +504,21 @@ input {
     margin: 0px;
     padding: 0px;
     box-shadow: 0px 0px 0px white;
+    background-color: transparent;
     }
   }
 
   .img-circle {
   vertical-align: top;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  }
+  .title-post {
+  text-align: left;
+  padding-bottom: 10px;
   }
 }
+/* ----------------------- Micropost */
 
 aside {
   textarea {
@@ -565,7 +580,6 @@ height: 90%;
   }
 
   .emoticons {
-
   li {
   background-color: #f2f4ff;
   margin-left: 5px;
@@ -712,10 +726,15 @@ height: 90%;
 }
   
    .background-imagen {
-   background-image: url('helicopter.jpg');
-   width: 100%;
-   padding: 0px;
-   margin: 0px;
+    background-image: url('city.jpg');
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
    }
 
 .ul-petitions {
@@ -773,12 +792,100 @@ height: 90%;
   }
 }
 
+.plaza_post_form {
+  background-color: white;
+  box-shadow: 0px 5px 5px #cbcbcd;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+
+  textarea {
+  border: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6e9ec;
+  padding-top: 10px; 
+  }
+
+  .emoticons {
+  li {
+  background-color: #f2f4ff;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  padding: 3px;
+  font-size: 12px;
+  }
+  }
+
+  .iconos-share {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+    textarea {
+    width: 100%;
+    }
+    ul {
+    padding-left: 3px;
+    }
+    li {
+    list-style-type: none;
+    padding: 5px;
+    }
+    select {
+    margin-bottom: 3px;
+    }
+    file_input {
+    width: 25%;
+    border: #e6e9ec;
+    }
+  }
+
+  .share-content {
+  border: 1px solid #f2f2f2;
+    textarea {
+    margin: 0px;
+    border: 0px;
+    }
+  }
+
+  #test {
+    position: relative;
+    padding: 5px;
+  }
+
+  #test .wrapper {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+  test .wrapper:hover {
+    opacity: 0.5;
+  }
+
+  test button {
+    background-color: #ccc;
+    border: none;
+    color: #666;
+    padding: 3px 5px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+
 
 /*-----------------------------------------------------------------
 /* imagenes fondo */
 @media (max-width: 576px) { 
 .backgroundimg {
-  background-image: url('helicopter.jpg');
+  background-image: url('ciudad5.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -794,7 +901,7 @@ height: 90%;
 /* imagenes fondo */
 @media (min-width: 576px) { 
 .backgroundimg {
-  background-image: url('cars.jpg');
+  background-image: url('ciudad5.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -811,7 +918,7 @@ height: 90%;
 /* imagenes fondo */
 @media (min-width: 992px) { 
 .backgroundimg {
-  background-image: url('plane.jpg');
+  background-image: url('ciudad5.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

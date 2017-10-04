@@ -11,18 +11,18 @@
       <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 75%;">
         <li>
           <%= link_to root_path do %>
-            <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">500plazas</p>
+            <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">loobIN</p>
           <% end %>
         </li>
           
         <li>
-          <%= link_to '/plazas' do %>
-            <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Plazas</p>
+          <%= link_to user_plazas_path(current_user) do %>
+            <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">MyLoobis</p>
           <% end %>
         </li>
         <li>
           <%= link_to '/lista' do %>
-            <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Lists</p>
+            <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Candidates</p>
           <% end %>
         </li>
         <li>

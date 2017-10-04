@@ -38,7 +38,6 @@ class UsersController < ApplicationController
       ORDER BY    count(followed_id) 
       DESC
       ') 
-    
   end
 
   def new

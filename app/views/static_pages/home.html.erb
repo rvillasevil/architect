@@ -1,7 +1,6 @@
-<div class="container">
-  <% if logged_in? %>
+<% if logged_in? %>
+  <div class="container">
     <div class="row">
-      
       <aside class="col-sm-2" style="">
         <section class="user_info">
           <%= render 'shared/user_info' %>
@@ -28,20 +27,17 @@
 
   </div>
 </div>
+
 <% else %>
-
-
-  <div class="backgroundimg">
+<div class="backgroundimg">
     <div class="container" >
-      <h1>Welcome to PARTY (name in beta)</h1>
-      <h2><font size="6" font color="#090462">PARTY it´s a new technology driven political party  for everyone.<p>Everyone can be elected. All of us participate. We decide!.</p></font>
-      </h2>
-
+      <h1 style="font-size: 45px; line-height: 18px;">Welcome to <span style="font-size: 60px;">loobIN <span style="font-size: 30px;">(name in beta)</span></ span> <p>Best party ever.</p></h1> 
+      <h3><span style="padding-right: 50px; ">Candidates.</span><span style="padding-right: 50px; padding-left: 50px;">Platform.</span><span style=" padding-left: 50px;">Petitions.</span></h3>
         <div class="container" >
             <h1 class="h1"></h1>
               <div class="wrapper">
                 <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-                <%= link_to "Already a member, enter", login_path, class: "btn btn-lg btn-primary" %>
+                <%= link_to "Login", login_path, class: "btn btn-lg btn-primary" %>
               </div>
         </div>
 
@@ -57,7 +53,11 @@
        <h3>You can participate two differents ways, being part of the election where you have to defend the decission are taken in the assembliess or</h3>
 
        <h3>You can participate in the assemblies were decide the mains lines of each specialty, Environment, Architecture, Health, Education, Guns...</h3>
-
+      <h3 style="text-align: left">PARTY it´s a new technology driven political platform for everyone.<p>It´s have 3 main pillars:</p>
+        <p><b>Representatives:</b> everyone now can be a representative. They are the conexion with the political field.</p>
+        <p><b>Platform:</b> Where we express ourselves in a political way, discover needs in your community, detects and support detected problems in your expertise field, show to the worls what's you really love...</p>
+        <p><b>Petitions:</b> Take action pillar, sometime we need to take decisions. Elaborate by ourselves, approved and corrected by expertise lobbies and sended to the person that needs to know.</p>
+      </h3>
       <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
   </div>

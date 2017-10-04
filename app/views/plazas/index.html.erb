@@ -1,0 +1,14 @@
+<div class="container">
+	<% provide(:title, 'All Plazas') %>
+	<h1>All users</h1>
+
+	<%= will_paginate %>
+
+	<ul class="users">
+	  <%= render @plazas %>
+	</ul>
+
+	<%= link_to "New plaza", new_user_plaza_path %>
+
+	<%= will_paginate %>
+</div>
