@@ -1,4 +1,4 @@
-<% if @micropost.plaza_id != nil %>
+<%# if @micropost.plaza_id != nil %>
 <div class="container">
   <% provide(:title, "Petition") %>
   <div class="row">
@@ -14,16 +14,15 @@
       </section>
     </aside>
     <div class="col-md-8">
-        <h4>Posts</h4>
-        <ol class="microposts">
-          <p><%= @micropost.title %></p>
-          <p><%= @micropost.content %></p>
-          <p><%= @micropost.user.name %></p>
-          <%= render @micropost %>
-
-        </ol>
+      <h4>Posts</h4>
+      <ol class="microposts">
+        <p><%= @micropost.title %></p>
+        <p><%= @micropost.content %></p>
+        <p><%= @micropost.user.name %></p>
+        <%= render @micropost %>
+      </ol>
     </div>
   </div>
 </div>
-<% else %>
-<% end %>
+<%# else %>
+<%# end %>

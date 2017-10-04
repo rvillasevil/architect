@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
-    @microposts = Micropost.where(:user_id => @user.id).paginate(page: params[:page])
+    @microposts = Micropost.where(:user_id => @user.id).paginate(page: params[:page], per_page: 10)
     if @microposts.empty?
-      @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page])
+      @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page], per_page: 10)
     else 
     end
     @comment = Comment.new( :micropost => @micropost )
