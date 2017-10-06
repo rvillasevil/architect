@@ -1,0 +1,12 @@
+<div class="container">
+  <% provide(:title, 'Popular') %>
+  <h3>Lo más votado en loobIN</h3>
+  <ul class="microposts">
+    <li>
+      <%= @microposts.each do |micropost| %>
+        <%= render(@micropost = Micropost.where(:id => micropost).paginate(page: params[:page], per_page: 10)) %>
+      <% end %>
+      <%# render(:partial => 'microposts/micropost_popular', :collection => @micropost) %>
+    </li>
+  </ul>
+</div>

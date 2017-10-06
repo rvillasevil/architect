@@ -1,0 +1,13 @@
+<div class="container">
+	<% provide(:title, 'All Plazas') %>
+	<h1>All plazas</h1>
+	<ul class="plazas">
+		<% @plazas.each do |plaza| %>
+		<li>
+		  <%= image_tag plaza.foto.url, class: "img-circle", size: 50 if plaza.foto? %>
+		  Plaza <%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %>
+		  <% end %>
+		</li>
+	</ul>
+	<%= will_paginate %>
+</div>

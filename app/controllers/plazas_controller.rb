@@ -6,6 +6,7 @@ class PlazasController < ApplicationController
    	@user = current_user
     @plaza = @user.plazas.build(plaza_params)
     if @plaza.save
+      
       flash[:success] = "Plaza created!"
       redirect_to user_plazas_path(@user) #root_url
     else
@@ -18,7 +19,16 @@ class PlazasController < ApplicationController
   end
 
   def index
-  	@plazas = current_user.plazas.paginate(page: params[:page])
+    #Plazas seguidas por el usuario
+    plaza_ids = "SELECT plaza_id FROM groups
+                WHERE  user_id = :user_id"
+    # Select the post where user_id
+    @plazas = Plaza.where("id IN (#{plaza_ids})       
+                          OR user_id = :user_id", user_id: current_user.id).paginate(page: params[:page])
+  end
+
+  def all_index
+    @plazas = Plaza.all.paginate(page: params[:page])
   end
 
   def destroy
@@ -31,7 +41,7 @@ class PlazasController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @plaza = Plaza.find(params[:id])
-    @microposts = Micropost.where(:plaza_id == @plaza.id).paginate(page: params[:page])
+    @microposts = Micropost.where(:plaza_id => @plaza.id).paginate(page: params[:page])
     @micropost  = current_user.microposts.build
     @group = current_user.groups.build
     @seguidores = Group.where(:plaza_id => @plaza.id)

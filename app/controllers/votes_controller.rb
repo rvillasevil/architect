@@ -1,4 +1,5 @@
 class VotesController < ApplicationController
+before_action :logged_in_user, only: [:create, :destroy, :index, :update_like, :update_dislike]
 
 	def create
 	@micropost = Micropost.find(params[:micropost_id])
@@ -27,7 +28,7 @@ class VotesController < ApplicationController
 
   def update_like
     @micropost = Micropost.find(params[:micropost_id])
-    if @micropost.votes.select(:user_id == current_user.id).update(like: 1, dislike: 0)
+    if @micropost.votes.where(:user_id => current_user.id).update(like: 1, dislike: 0)
       flash[:success] = "Voto actualizado"
       redirect_to :back
     else
@@ -36,7 +37,7 @@ class VotesController < ApplicationController
 
   def update_dislike
     @micropost = Micropost.find(params[:micropost_id])
-    if @micropost.votes.select(:user_id == current_user.id).update(like: 0, dislike: 1)
+    if @micropost.votes.where(:user_id => current_user.id).update(like: 0, dislike: 1)
       flash[:success] = "Voto actualizado"
       redirect_to :back
     else

@@ -4,7 +4,7 @@
 <div class="user_avatars">
 
 
-<ul class="users">
+      <ul class="users", style="padding-left: 10px;">
 <% 
 =begin %>
 	<% @user.each do |user|%>
@@ -27,20 +27,16 @@
       ') %> -->
 
 
-<li><%= @users.each do |x| %>
-    <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
-
-	<% end %></li>
-
-</div>
+      <li><%= @users.each do |x| %>
+          <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
+      	<% end %>     
+      </li>
+       </div>
 </ul>
 
 <h4><%= current_user.autonomia %></h4>
-<h4></h4>
 <div class="user_avatars">
-
-
-<ul class="users">
+<ul class="users", style="padding-left: 10px;">
 <% 
 =begin %>
       <% @user.each do |user|%>
@@ -61,12 +57,10 @@
       DESC
       ') %> -->
 
-<%= "#{@users[1]}" %>
-
-<li><%= @users.each do |x| %>
-    <%= render (@user = User.where(:id => x.id).where(:autonomia => current_user.autonomia)) %>
-
-      <% end %></li>
-
+      <%= "#{@users[1]}" %>
+      <li><%= @users.each do |x| %>
+            <%= render (@user = User.where(:id => x.id).where(:autonomia => current_user.autonomia)) %>
+            <% end %>
+      </li>
 </div>
 </ul>

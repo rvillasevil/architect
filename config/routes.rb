@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get     '/help',      to: 'static_pages#help'
   get     '/about',     to: 'static_pages#about'
   get     '/contact',   to: 'static_pages#contact'
+  get     '/popular',   to: 'static_pages#popular'
   get     '/signup',    to: 'users#new'
   get     '/login',     to: 'sessions#new'
   post    '/login',     to: 'sessions#create'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   get     '/micropost', to: 'microposts#show'
   get     '/petitions', to: 'microposts#petition_index'
   post    '/plazas',            to: 'plazas#create'
+  get     '/allplazas', to: 'plazas#all_index'
   delete  '/dejardeseguir',     to: 'groups#destroy'
   post    '/seguir',            to: 'groups#create'
 
@@ -54,11 +56,8 @@ Rails.application.routes.draw do
     resources :groups
   end
 
-  resources :comments do
-    resources :comments
-  end
+  resources :plazas
 
-  resources :votes
   
   resources :relationships,       only: [:create, :destroy]
 end

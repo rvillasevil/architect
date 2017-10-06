@@ -93,8 +93,6 @@ class User < ApplicationRecord
     #Plazas seguidas por el usuario
     plaza_ids = "SELECT plaza_id FROM groups
                 WHERE  user_id = :user_id"
-    #Seleccionar votos de personas que sigues
-    voto_ids = "SELECT "
     # Select the post where user_id
     Micropost.where("user_id IN (#{following_ids})       
                      OR user_id = :user_id

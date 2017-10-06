@@ -3,15 +3,17 @@
   <% provide(:title, "Petition") %>
   <div class="row">
     <aside class="col-md-4">
-      <section>
-        <h1>
-          <%= image_tag @user.foto.url, size: 150 if current_user.foto? %>
-          <%= @user.name %>
-        </h1>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
-      </section>
+      <% if logged_in? %> 
+        <section>
+          <h1>
+            <%= image_tag @user.foto.url, size: 150 if current_user.foto? %>
+            <%= @user.name %>
+          </h1>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+      <% end %>
     </aside>
     <div class="col-md-8">
       <h4>Posts</h4>
