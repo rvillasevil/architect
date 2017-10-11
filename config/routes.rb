@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get     '/allplazas', to: 'plazas#all_index'
   delete  '/dejardeseguir',     to: 'groups#destroy'
   post    '/seguir',            to: 'groups#create'
+  get     '/popular',           to: 'static_pages#popular'
+  get     '/index_municipios',  to: 'municipios#index'
 
   resources :users do
     member do
@@ -58,6 +60,7 @@ Rails.application.routes.draw do
 
   resources :plazas
 
+  resources :municipios, only: [:index]
   
   resources :relationships,       only: [:create, :destroy]
 end

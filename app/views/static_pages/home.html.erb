@@ -11,17 +11,28 @@
       </aside>
 
       <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
+        
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
+        <div class="home_popular">
+          <ul>
+            <li>
+              <%= link_to "Home", root_url %>  
+            </li>
+            <li>
+              <%= link_to "Most voted", '/popular'  %>
+            </li>
+          </ul>
+        </div>
+        <%= render 'microposts/petition_short' %>
         <%= render 'shared/feed' %>
       </div>
       <aside class="listas">
           <div class="col-sm-3">
             <h4>Tus Listas electorales</h4>
             <%= render 'shared/lista' %>
-            <%= link_to "New plaza!", '/new_plaza', class: "btn btn-lg btn-primary" %>
-            <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-primary" %>
+            <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-link" %>
           </div>
       </aside>
 

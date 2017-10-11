@@ -13,8 +13,9 @@
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label :ciudad %>
-        <%= f.select :ciudad, [
+        <%= f.label "Municipio" %>
+        <%= f.select(:ciudad, Municipio.all.collect {|p| [ p.nombre ] }) %>
+        <%# f.select :ciudad, [
             'Albacete',
             'Alicante',
             'Almería',

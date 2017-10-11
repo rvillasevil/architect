@@ -1,6 +1,16 @@
 <div class="container">
   <% provide(:title, 'Popular') %>
   <h3>Lo más votado en loobIN</h3>
+  <div class="home_popular">
+    <ul>
+      <li>
+        <%= link_to "Home", root_url %>  
+      </li>
+      <li>
+        <%= link_to "Most Voted", '/popular'  %>
+      </li>
+    </ul>
+  </div>
   <ul class="microposts">
     <li>
       <%= @microposts.each do |micropost| %>

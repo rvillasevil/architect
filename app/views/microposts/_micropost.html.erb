@@ -2,11 +2,43 @@
 <div class="petition-title">
   <% if micropost.title? %>
   <div class="if-petition">Petition</div>
-    <h4><b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b></h4>
-  
+    <h4><b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b></h4> 
 <% else %>
 <% end %>
 </div>
+
+<ul class="voters">
+  <li>
+    <% @voted = Vote.where(:micropost_id => micropost.id) %>
+    <% @voted.each do |voted| %>
+      <!-- <%= @voter = User.where(:id => voted.user_id)  %>-->
+      <% @voter.each do |voter| %>
+
+        <% if logged_in? %>
+          <% micropost.user.following.each do |seguido| %>
+            <% if seguido == voter %>
+              <b><%= p voter.name %></b>  ha votado
+              <% if voted.like == 1 %>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"> |   </i>
+              <% else %>
+                <i class="fa fa-thumbs-o-down" aria-hidden="true"> |   </i>
+              <% end %>
+            <% end %>
+          <% end %>
+
+        <% else %>
+          <b><%= p voter.name %></b> ha votado
+          <% if voted.like == 1 %>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"> |   </i>
+          <% else %>
+            <i class="fa fa-thumbs-o-down" aria-hidden="true"> |   </i>
+          <% end %>
+        <% end %>
+
+      <% end %>
+    <% end %>
+  </li>
+</ul>
 
 <div class="header-post" style="">
   <span style="padding-left: 15px; margin-top: 10px;">
@@ -69,7 +101,7 @@
       <span class= "title-link"><%= @title = doc.at_css("title").text %></span>
        <!-- <%= @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %> -->
        <% if @src != nil %>
-        <div class="picture_content" style="max-height: 400, padding-bottom: 8px;" >
+        <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
         <%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>
         </div>
       <% end %>
@@ -120,7 +152,10 @@
 <!-- votos -->
 <!-- necesitamos poner el update de votos del usuario -->
 <!-- votos positivos -->
-  <ul class="social_elements">
+<ul class="social_elements">
+  <% if logged_in? %>
+
+  
     <li style="display: inline-flex;">
     <% if (@voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id)).empty? %>
       <%= form_for([micropost, Vote.new], remote: true) do |f| %>
@@ -136,7 +171,14 @@
       <% end %>       
     <% end %>
 
+<% else %>
+  <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+  <% end %>
+<% end %>
+
   <!-- votos negativos -->
+<% if logged_in? %>
+
   <% if (@voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id)).empty? %>
     <%= form_for([micropost, Vote.new], remote: true) do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -151,6 +193,10 @@
     <% end %>    
   <% end %> 
 
+<% else %>
+  <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Down
+  <% end %>
+<% end %>
     <!-- hashtags -->
     <li style="padding-top: 10px; text-align: right;">
       <% if micropost.hashtag1? %>

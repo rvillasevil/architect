@@ -4,7 +4,7 @@
 <div class="user_avatars">
 
 
-      <ul class="users", style="padding-left: 10px;">
+      
 <% 
 =begin %>
 	<% @user.each do |user|%>
@@ -21,18 +21,17 @@
       FROM      	relationships
       LEFT JOIN 	users
       ON        	relationships.followed_id = users.id
-      GROUP BY    	users.id	
-      ORDER BY 		count(followed_id) 
+      GROUP BY    users.id	
+      ORDER BY 	count(followed_id) 
       DESC
       ') %> -->
 
-
-      <li><%= @users.each do |x| %>
-          <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
-      	<% end %>     
-      </li>
-       </div>
-</ul>
+      <ul class="users", style="padding-left: 10px;">
+            <% @users.each do |x| %>
+            <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
+            <% end %>     
+      </ul>
+</div>
 
 <h4><%= current_user.autonomia %></h4>
 <div class="user_avatars">
@@ -52,15 +51,14 @@
       FROM        relationships
       LEFT JOIN   users
       ON          relationships.followed_id = users.id
-      GROUP BY          users.id  
-      ORDER BY          count(followed_id) 
+      GROUP BY    users.id  
+      ORDER BY    count(followed_id) 
       DESC
       ') %> -->
 
-      <%= "#{@users[1]}" %>
-      <li><%= @users.each do |x| %>
-            <%= render (@user = User.where(:id => x.id).where(:autonomia => current_user.autonomia)) %>
-            <% end %>
-      </li>
+      <% @users.each do |x| %>
+      <%= render (@user = User.where(:id => x.id).where(:autonomia => current_user.autonomia)) %>
+      <% end %>
+      </ul>
 </div>
-</ul>
+

@@ -115,6 +115,14 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  def self.text_seach(query)
+    if query.present?
+      where("name @@ :q", q: "%#{query}")
+    else
+      scoped
+    end
+  end
+
 
   private
 

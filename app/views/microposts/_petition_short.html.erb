@@ -1,0 +1,25 @@
+<ul class="petition_short">
+  <% @petitions.take(3).each do |petition| %>
+    <li>
+      <div>
+        <% if petition.picture? %>
+          <div class="picture_content"> <%= image_tag (petition.picture.url), class: "img-responsive", width: "100%" %> 
+          </div>
+        <% end %>
+        <span>
+          <!-- <%= @votosPositivos = petition.votes.where(:like => 1).count %> -->
+          <!-- <%= @votosNegativos = petition.votes.where(:dislike => 1).count %> -->
+          <!-- <%= @votosTotales = @votosPositivos + @votosNegativos %> -->
+          <% if @votosTotales != 0 %>
+            <!-- <%= @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %> -->
+            <b><span class="porcentaje"> <%= @porcentaje %>% </span></b>
+          <% else %>
+            <!-- <%= @porcentaje = 0 %> -->
+            <b><span class="porcentaje"> <%= @porcentaje %>% </span></b>
+          <% end %>
+        </span>
+        <span><b><%= link_to petition.title, controller: "microposts", action: "show", id: petition.id %></b></span>
+      </div>
+    </li>
+  <% end %>
+</ul>

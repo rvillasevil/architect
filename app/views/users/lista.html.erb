@@ -5,7 +5,7 @@
 	<ul class="users">
 
 	 <!-- es necesario pasar esto al controlador para quitarlo de aqui y poner varios rankins a la vez -->
-	<li><%= @users.each do |x| %>
+	<li><% @users.each do |x| %>
 	    <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
 	    <%= x.followers.count %> 
 
