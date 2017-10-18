@@ -1,0 +1,19 @@
+
+	<% @pueblo = Plaza.where(:name => current_user.ciudad) %>
+	<% if @pueblo.any? %>	
+		<% @pueblo.each do |pueblo| %>
+			<% @siguiendo_pueblo = Group.where(:user_id => current_user.id).where(:plaza_id => pueblo.id) %>
+			<% if @siguiendo_pueblo.any? %>
+			<% else %>
+				<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px; font-size: 12px;">
+				Por defecto tenemos desactivada tu asociación a la plaza <%= pueblo.name %>, pero sería muy interesante que lo siguieras para estar al tanto de todo lo que ocurre dentro.
+				<b><%= link_to pueblo.name, user_plaza_path(:id => pueblo.id, :user_id => current_user.id) %></b>
+				</div>
+			<% end %>
+		<% end %>
+	<% else %>
+	<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px;">
+		Actualmente no está creado el loobi de tu municipio. <%= link_to "Crealo", new_user_plaza_path(current_user)  %>
+	</div>
+	<% end %>
+	

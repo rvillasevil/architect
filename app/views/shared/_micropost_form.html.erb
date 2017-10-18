@@ -1,10 +1,10 @@
 
 <span class="emoticons">
     <ul class="" style="display: inline-flex; list-style: none; text-align: center; width: 100%; padding-left: 0px; padding-top: 10px;">
-        <li style="width: 25%; background-color: #f2f4ff;" onclick="divVisibility('Div1');"><i class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></i> Post</li>  
-        <li style="width: 25%; background-color: #c6ffe8;" onclick="divVisibility('Div2');"><i class="fa fa-smile-o fa-lg" aria-hidden="true"></i> Needs</li>  
-        <li style="width: 25%; background-color: #ffffcc;" onclick="divVisibility('Div3');"><i class="fa fa-frown-o fa-lg" aria-hidden="true"></i> Problems</li>  
-        <li style="width: 25%; background-color: #ffc6c6;" onclick="divVisibility('Div4');"><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i> Love</li>
+        <li style="width: 25%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div1');"><i class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></i> Post</li>  
+        <li style="width: 25%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div2');"><i class="fa fa-smile-o fa-lg" aria-hidden="true"></i> Needs</li>  
+        <li style="width: 25%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div3');"><i class="fa fa-frown-o fa-lg" aria hidden="true"></i> Problems</li>  
+        <li style="width: 25%; background-color: #c2d7f9; padding: 10px;" onclick="divVisibility('Div4');"><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i> <b>Consulta</b></li>
     </ul>
 </span>
 
@@ -241,9 +241,11 @@
 </div>
 <% end %>
 
-<!-- Formulario del micropost -->
-    <%= form_for(@micropost, html: { multipart: true }) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+<!-- Formulario de la consulta -->
+<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.hidden_field :petition, :value => true %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
 
 <div id="Div4" style="display: none; "> 
 <div class="share-content">
@@ -252,7 +254,15 @@
             <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
         </li>
         <li style="display: inline-flex; width: 90%; margin: 0px;">
-            <%= f.text_area :content, placeholder: "Share things that you love from your community..." %>
+            <ul style="padding-left: 0px; width: 110%;">
+                <li style="display: inline-flex; width: 100%; margin: 0px;">
+                    <%= f.text_field :title, placeholder: "Título para la consulta..." %>
+                </li>
+                <li style="display: inline-flex; width: 100%; margin: 0px;">
+                    <%= f.text_area :content, placeholder: "Describe lo mejor posible el problema que has detectado y acompañalo con imágenes o links para explicar de la mejor forma posible el problema..." %>        
+                </li>
+            </ul>
+            
         </li>
 
     </ul>

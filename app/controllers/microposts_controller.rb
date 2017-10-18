@@ -36,6 +36,17 @@ class MicropostsController < ApplicationController
 
   def petition_index
     @microposts = Micropost.where(user_id: current_user.id).where(:petition => true).paginate(page: params[:page])
+    @candidates = User.find_by_sql(
+      'SELECT     users.id,
+      COUNT       (relationships.followed_id)
+      AS          numbersOfFollowers
+      FROM        relationships
+      LEFT JOIN   users
+      ON          relationships.followed_id = users.id
+      GROUP BY    users.id  
+      ORDER BY  count(followed_id) 
+      DESC
+      ')
   end
 
   private

@@ -96,6 +96,8 @@
         <%= f.label "", "Your picture" %>
         <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
 
+        <%= f.label "Add your linkedIN profile, just copy your link." %>
+        <%= f.text_field :linkedin, class: 'form-control' %>
 
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>

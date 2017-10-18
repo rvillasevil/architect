@@ -1,13 +1,49 @@
-<div class="container">
-	<% provide(:title, 'All Plazas') %>
-	<h1>All plazas</h1>
-	<ul class="plazas">
-		<% @plazas.each do |plaza| %>
-		<li>
-		  <%= image_tag plaza.foto.url, class: "img-circle", size: 50 if plaza.foto? %>
-		  Plaza <%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %>
-		  <% end %>
-		</li>
-	</ul>
-	<%= will_paginate %>
-</div>
+<% provide(:title, 'All Plazas') %>
+	<div class="container">
+    <div class="row">
+      <aside class="col-sm-2" style="">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+      </aside>
+      <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
+      	<h1 style="font-size: 30px;">Todos los loobies</h1>
+				<ul class="plazas">
+  				<% @plazas.each do |plaza| %>
+          <li style="display: block;">
+            <ul style="list-style: none; padding-left: 0px; display: inline-flex; ">
+              <li style="border: 0px; padding: 5px;">
+                <%= image_tag plaza.foto.url, class: "img-circle", size: 50 if plaza.foto? %>
+              </li>
+              <li style="border: 0px; padding: 10px 0px;">
+                <ul style="display: inline-block; list-style: none; padding-left: 5px;">
+                  <li style="padding: 0px;">
+                    <b>Loobi <%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
+                  </li>
+                  <li style="padding: 0px; border: 0px; font-size: 12px;">
+                    <%= @seguidores = Group.where(:plaza_id => plaza.id).count %> seguidores
+                    <% if logged_in? %>
+                      <% if current_user.admin?  %>
+                      | <%= link_to "delete", plaza, method: :delete,
+                                      data: { confirm: "You sure?" } %>
+                      <% end %>
+                    <% end %>
+                  </li>
+                </ul>   
+              </li>  
+            </ul>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <aside>
+        <div class="col-sm-3">
+          <h4>Nuestros candidatos</h4>
+        </div>
+      </aside>
+			<%= will_paginate %>
+  	</div>
+	</div>

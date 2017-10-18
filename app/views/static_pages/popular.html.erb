@@ -1,22 +1,40 @@
-<div class="container">
-  <% provide(:title, 'Popular') %>
-  <h3>Lo más votado en loobIN</h3>
-  <div class="home_popular">
-    <ul>
-      <li>
-        <%= link_to "Home", root_url %>  
-      </li>
-      <li>
-        <%= link_to "Most Voted", '/popular'  %>
-      </li>
-    </ul>
+<% provide(:title, 'Popular') %>
+  <div class="container">
+    <div class="row">
+      <aside class="col-sm-2" style="">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+      </aside>
+
+      <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
+        <%= render 'static_pages/sigue_plaza' %> 
+        <h1 style="font-size: 30px;">Lo más votado en loobIN</h1>
+        <div class="home_popular">
+          <ul>
+            <li>
+              <%= link_to "Home", root_url %>  
+            </li>
+            <li>
+              <%= link_to "Most voted", '/popular'  %>
+            </li>
+          </ul>
+        </div>
+        <ul class="microposts">
+          <% @microposts.each do |micropost| %>
+            <%= render(@micropost = Micropost.where(:id => micropost).paginate(page: params[:page], per_page: 10)) %>
+          <% end %>
+        </ul>
+      </div>
+      <aside>
+          <div class="col-sm-3">
+            <h4>Nuestros candidatos</h4>
+            <%= render 'shared/lista' %>
+            <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-link" %>
+          </div>
+      </aside>
   </div>
-  <ul class="microposts">
-    <li>
-      <%= @microposts.each do |micropost| %>
-        <%= render(@micropost = Micropost.where(:id => micropost).paginate(page: params[:page], per_page: 10)) %>
-      <% end %>
-      <%# render(:partial => 'microposts/micropost_popular', :collection => @micropost) %>
-    </li>
-  </ul>
 </div>

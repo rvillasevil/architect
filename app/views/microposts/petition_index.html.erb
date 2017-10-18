@@ -13,17 +13,17 @@
     <div class="col-sm-7">
 		<h1 style="font-size: 30px;">Your petitions</h1>
 		<ul class="ul-petitions">
-		<%= @microposts.each do |micropost| %>
+		<% @microposts.each do |micropost| %>
 		<li>
 			<!--  Introducción -->
-				<ul class="encabezado" style="list-style: none; padding-right: 15px; display: inline-flex; text-align: left; width: 100%;">
+				<ul class="encabezado" style="list-style: none; padding-right: 15px; display: inline-flex; text-align: left; width: 100%;margin-bottom: 10px;">
 					<li style="text-align: left; width: 1%; position: absolute; left: 10px;">
 						<%= render (@plaza =  User.where(:id => micropost.plaza_id)) %>
 					</li>
 					<li style="text-align: right; padding-top: 15px;">
 						
 					</li>
-					<li style="text-align: right; padding-top: 15px; position: absolute; right: 25px;">
+					<li style="text-align: right; position: absolute; right: 25px;">
 						<ul style="display: inline-block; list-style: none"><li>
 						<span class="numbercomments"><span class="fa fa-thumbs-o-up" aria-hidden="true"></span>          <%= micropost.votes.count %>  votantes</span></li>
 						<li><% if micropost.hashtag1? %>
@@ -156,8 +156,6 @@
   <div class="col-sm-3">
     <h4>Tus Listas electorales</h4>
       <%= render 'shared/lista' %>
-      <%= link_to "New plaza!", '/new_plaza', class: "btn btn-lg btn-primary" %>
-      <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-primary" %>
     </div>
   </div>
 

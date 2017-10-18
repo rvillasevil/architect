@@ -1,5 +1,5 @@
 <ul class="petition_short">
-  <% @petitions.take(3).each do |petition| %>
+  <% @popular_petitions.take(3).each do |petition| %>
     <li>
       <div>
         <% if petition.picture? %>
@@ -7,14 +7,14 @@
           </div>
         <% end %>
         <span>
-          <!-- <%= @votosPositivos = petition.votes.where(:like => 1).count %> -->
-          <!-- <%= @votosNegativos = petition.votes.where(:dislike => 1).count %> -->
-          <!-- <%= @votosTotales = @votosPositivos + @votosNegativos %> -->
+          <% @votosPositivos = petition.votes.where(:like => 1).count %>
+          <% @votosNegativos = petition.votes.where(:dislike => 1).count %>
+          <% @votosTotales = @votosPositivos + @votosNegativos %>
           <% if @votosTotales != 0 %>
-            <!-- <%= @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %> -->
+            <% @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %>
             <b><span class="porcentaje"> <%= @porcentaje %>% </span></b>
           <% else %>
-            <!-- <%= @porcentaje = 0 %> -->
+            <% @porcentaje = 0 %>
             <b><span class="porcentaje"> <%= @porcentaje %>% </span></b>
           <% end %>
         </span>

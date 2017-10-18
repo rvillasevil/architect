@@ -12,7 +12,10 @@
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label "Municipio" %>
+        <%= f.label :foto, "Tu foto" %>
+        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
+
+        <%= f.label "Selecciona tu círculo municipal para poder ser candidato" %>
         <%= f.select(:ciudad, Municipio.all.collect {|p| [ p.nombre ] }) %>
         <%# f.select :ciudad, [
             'Albacete',
@@ -68,7 +71,7 @@
             'Ceuta',
             'Melilla'] %>
 
-        <%= f.label :autonomia %>
+        <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
         <%= f.select :autonomia, [
             'Andalucía',
             'Aragón',
@@ -91,11 +94,9 @@
 
         
 
-        <%= f.label :profesion %>
+        <%= f.label "Selecciona tu círculo profesional para debatir sobre los temas importantes" %>
         <%= f.text_field :profesion, class: 'form-control' %>
-
-        <%= f.label :foto, "Tu foto" %>
-        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
+        
 
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control' %>

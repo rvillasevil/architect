@@ -11,6 +11,30 @@
       <section class="stats">
         <%= render 'shared/stats' %>
       </section>
+      <section>
+        <h5>
+          <b>Perfil de linkedIN</b>
+          <h5><%= link_to image_tag("linkedinlogo.png", size: 25), "#{@user.linkedin}" if @user.linkedin? %></h5>
+        </h5>
+        <h5>
+          <b>Si el usuario desempeña algun cargo o forma parte de alguna lista electoral</b>
+        </h5>
+        <h5>
+          <b>Consultas hechas por el usuario</b>
+          <% @consultas = @user.microposts.where(:petition => true) %>
+          <h5><%= @numero_consultas = @user.microposts.where(:petition => true).count %></h5>
+        </h5>
+        <h5>
+          <b>Número de votos a favor que tiene esta persona</b>
+          <% @votos_positivos = @consultas.each do |consulta| %>
+          <h5><%= @votos_positivos = [Vote.where(:micropost_id => consulta).sum(:like)] %></h5>
+          <%= @votos_positivos.inject(:+) %>
+          <% end %>
+        </h5>
+        <h5>
+          <b>Número de votos en contra</b>
+        </h5>
+      </section>
     </aside>
     <div class="col-md-8">
       <%= render 'follow_form' if logged_in? %>

@@ -1,64 +1,51 @@
-<% provide(:title, 'Lista de usuarios') %>
-<h4><%= current_user.ciudad %></h4>
-<h4></h4>
-<div class="user_avatars">
-
-
-      
-<% 
-=begin %>
-	<% @user.each do |user|%>
-	<li><%= user.name %> <%= user.profesion %> <%= user.followers.size %>  <%= user.ciudad %><li>
-	<% end %>
-<%
-=end %>
- <!-- es necesario pasar esto al controlador para quitarlo de aqui y poner varios rankins a la vez -->
-
-<!-- <%= @users = User.find_by_sql(
-      'SELECT   	users.id,
-      COUNT     	(relationships.followed_id)
-      AS        	numbersOfFollowers
-      FROM      	relationships
-      LEFT JOIN 	users
-      ON        	relationships.followed_id = users.id
-      GROUP BY    users.id	
-      ORDER BY 	count(followed_id) 
-      DESC
-      ') %> -->
-
-      <ul class="users", style="padding-left: 10px;">
-            <% @users.each do |x| %>
-            <%= render (@user = User.where(:id => x.id).where(:ciudad => current_user.ciudad)) %>
-            <% end %>     
-      </ul>
+<h5><b><%= current_user.ciudad %></b></h5>
+<div class="candidates_home">
+	<ul>	
+		<% @candidates.take(10).each do |candidate| %>
+			<% @candidate = User.where(:id => candidate.id).where(:ciudad => current_user.ciudad) %>
+			<% @candidate.each do |candidate2| %>
+				<ul style="display: inline-flex;">
+					<li>
+						<%= image_tag candidate2.foto.url, class: "img-circle", size: 40 if candidate2.foto? %>	
+					</li>
+					<ul style="display: inline-block;">
+						<li style="padding-top: 3px; padding-left: 3px; font-size: 12px; margin-bottom: 0px;">
+							<b><%= link_to candidate2.name, candidate2 %></b>
+						</li>
+						<li style="font-size: 11px; margin-top: 0px; padding-left: 3px;">
+							<%= candidate2.followers.count %> seguidores
+						</li>
+					</ul>
+				</ul>
+			<% end %>
+		<% end %> 
+	</ul>	
 </div>
 
-<h4><%= current_user.autonomia %></h4>
-<div class="user_avatars">
-<ul class="users", style="padding-left: 10px;">
-<% 
-=begin %>
-      <% @user.each do |user|%>
-      <li><%= user.name %> <%= user.profesion %> <%= user.followers.size %>  <%= user.ciudad %><li>
-      <% end %>
-<%
-=end %>
- <!-- es necesario pasar esto al controlador para quitarlo de aqui y poner varios rankins a la vez -->
-<!-- <%= @users = User.find_by_sql(
-      'SELECT     users.id,
-      COUNT       (relationships.followed_id)
-      AS          numbersOfFollowers
-      FROM        relationships
-      LEFT JOIN   users
-      ON          relationships.followed_id = users.id
-      GROUP BY    users.id  
-      ORDER BY    count(followed_id) 
-      DESC
-      ') %> -->
-
-      <% @users.each do |x| %>
-      <%= render (@user = User.where(:id => x.id).where(:autonomia => current_user.autonomia)) %>
-      <% end %>
-      </ul>
+<h5><b><%= current_user.autonomia %></b></h5>
+<div class="candidates_home">
+	<ul>	
+		<% @candidates.take(10).each do |candidate| %>
+			<% @candidate = User.where(:id => candidate.id).where(:autonomia => current_user.autonomia) %>
+			<% @candidate.each do |candidate2| %>
+				<ul style="display: inline-flex;">
+					<li>
+						<%= image_tag candidate2.foto.url, class: "img-circle", size: 40 if candidate2.foto? %>	
+					</li>
+					<ul style="display: inline-block;">
+						<li style="padding-top: 3px; padding-left: 3px; font-size: 12px; margin-bottom: 0px;">
+							<b><%= link_to candidate2.name, candidate2 %></b>
+						</li>
+						<li style="font-size: 11px; margin-top: 0px; padding-left: 3px;">
+							<%= candidate2.followers.count %> seguidores
+						</li>
+					</ul>
+				</ul>
+			<% end %>
+		<% end %> 
+	</ul>	
 </div>
+
+
+
 

@@ -1,14 +1,30 @@
-<div class="container">
-	<% provide(:title, 'All Plazas') %>
-	<h1>All users</h1>
-
-	<%= will_paginate %>
-
-	<ul class="users">
-	  <%= render @plazas %>
-	</ul>
-	<%= link_to "View all plazas", '/allplazas' %>
-	<%= link_to "New plaza", new_user_plaza_path %>
-
-	<%= will_paginate %>
-</div>
+<% provide(:title, 'All Plazas') %>
+	<div class="container">
+    <div class="row">
+      <aside class="col-sm-2" style="">
+        <section class="user_info">
+          <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+        <section>
+        	<p><b><%= link_to "View all plazas", '/allplazas' %></b></p>
+					<p><b><%= link_to "New plaza", new_user_plaza_path %></b></p>
+        </section>
+      </aside>
+      <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
+      	<h1 style="font-size: 40px;">Todos tus loobies</h1>
+				<ul class="plazas">
+	  			<%= render @plazas %>
+				</ul>
+      </div>
+      <aside>
+        <div class="col-sm-3">
+          <h4>Nuestros candidatos</h4>
+          <h4>Círculos recomendados para tí.</h4>
+        </div>
+      </aside>
+			<%= will_paginate %>
+  	</div>
+	</div>

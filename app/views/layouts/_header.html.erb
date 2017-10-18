@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #3399ff; border-bottom: 0px;">
+<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: black; border-bottom: 0px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -8,51 +8,51 @@
       </button>
       <div class="icons-list">
         <% if logged_in? %>
-      <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 75%;">
-        <li>
-          <%= link_to root_path do %>
-            <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">loobIN</p>
-          <% end %>
-        </li>
-          
-        <li>
-          <%= link_to user_plazas_path(current_user) do %>
-            <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">MyCircles</p> <!-- MyLoobis -->
-          <% end %>
-        </li>
-        <li>
-          <%= link_to '/lista' do %>
-            <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Candidates</p>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to users_path do %>
-            <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Users</p>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to '/petitions' do %>
-            <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Petitions</p>
-          <% end %>
-        </li>
-        <% else %>
-          <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 30%; text-align: center; ">
-            <li style="text-align: center;">
+          <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 75%;">
+            <li>
               <%= link_to root_path do %>
-              <i class="fa fa-home fa-lg" style="color: white"></i><p style="color: white">500plazas</p>
-            <% end %>
+                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">loobIN</p>
+              <% end %>
             </li>
-          <% end %>
-        </ul>
-      </ul>
-    </div>
+          
+            <li>
+              <%= link_to user_plazas_path(current_user) do %>
+                <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Círculos</p> <!-- MyLoobis -->
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '/lista' do %>
+                <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Candidatos</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+                <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Usuarios</p>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to '/petitions' do %>
+                <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Consultas</p>
+              <% end %>
+            </li>
+        <% else %>
+            <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 30%; text-align: center; ">
+              <li style="text-align: center;">
+                <%= link_to root_path do %>
+                  <i class="fa fa-home fa-lg" style="color: white"></i><p style="color: white">loobIN</p>
+                <% end %>
+              </li>
+            </ul> 
+          </ul>
+        <% end %>
+      </div>
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
+      <% if logged_in? %>
+        <ul style="display: inline-flex; list-style: none; width: 50%; padding-left: 0px;">
 
-          <% if logged_in? %>
-    <ul style="display: inline-flex; list-style: none; width: 50%; padding-left: 0px;">
-      <li style="margin: 0px;">
+      <!-- <li style="margin: 0px;">
         <form class="navbar-form navbar-right" role="search" style="width: 100%; padding-left: 3px;">
           <div class="form-group input-group">
             <input type="text" class="form-control" placeholder="Search..">
@@ -63,30 +63,30 @@
             </span>        
           </div>
         </form>
-      </li>
-      <li style="margin: 0px;">
-        <ul class="nav navbar-nav navbar-right" style="width: 100%;">
-          <li class="dropdown" >
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 3px; padding-right: 3px; font-size: 0.9em; "><span class="glyphicon glyphicon-user" style="color: white; text-align: center;"></span>
-            <span style="color: white">My Account</span><b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu" >
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                  <%= link_to "Log out", logout_path, method: "delete" %>
+      </li> -->
+
+          <li style="margin: 0px;">
+            <ul class="nav navbar-nav navbar-right" style="width: 100%;">
+              <li class="dropdown" >
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 3px; padding-right: 3px; font-size: 0.9em; "><span class="glyphicon glyphicon-user" style="color: white; text-align: center;"></span>
+                  <span style="color: white">My Account</span><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" >
+                  <li><%= link_to "Profile", current_user %></li>
+                  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Log out", logout_path, method: "delete" %>
+                  </li>
+                </ul>
               </li>
-            </ul>
-          </li>
-          <% else %>
-            <%= link_to login_path do %>
+      <% else %>
+          <%= link_to login_path do %>
             <i class="fa fa-sign-in fa-lg" style="margin-top: 10px; color: white"></i><p style="color: white">Login</p>
-            <% end %>
           <% end %>
-      </ul>
-    </li>
-  </ul>
+        </ul>  
+      <% end %>
+    </ul>
   </div>
   </div>
 </header>

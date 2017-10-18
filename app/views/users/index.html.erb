@@ -1,13 +1,26 @@
 <div class="container">
 	<% provide(:title, 'All users') %>
-
-	<h1>All users</h1>
-
-	<%= will_paginate %>
-
-	<ul class="users">
-	  <%= render @users %>
-	</ul>
-
-	<%= will_paginate %>
+	<div class="row">
+	  <aside class="col-sm-2" style="">
+	    <section class="user_info">
+	      <%= render 'shared/user_info' %>
+	    </section>
+	    <section class="stats">
+	      <%= render 'shared/stats' %>
+	    </section>
+	  </aside>
+	  <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
+			<h1 style="font-size: 30px;">All users</h1>
+			<ul class="users">
+	  		<%= render @users %>
+			</ul>
+			<%= will_paginate %>
+	  </div>
+				<aside>
+	        <div class="col-sm-3">
+	          <h4>Nuestros candidatos</h4>
+	        </div>
+	      </aside>
+				<%= will_paginate %>
+	 </div>
 </div>

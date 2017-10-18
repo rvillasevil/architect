@@ -26,8 +26,7 @@ class UsersController < ApplicationController
 
   def lista
     @ciudad = current_user.ciudad
-    @user = User.where(:ciudad => @ciudad)
-    @users = @user.find_by_sql(
+    @candidatos_pueblo = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)
       AS          numbersOfFollowers
@@ -38,6 +37,28 @@ class UsersController < ApplicationController
       ORDER BY    count(followed_id) 
       DESC
       ') 
+    @candidatos_autonomia = User.find_by_sql(
+      'SELECT     users.id,
+      COUNT       (relationships.followed_id)
+      AS          numbersOfFollowers
+      FROM        relationships
+      LEFT JOIN   users
+      ON          relationships.followed_id = users.id
+      GROUP BY    users.id
+      ORDER BY    count(followed_id) 
+      DESC
+      ')
+    @candidatos_mundo = User.find_by_sql(
+      'SELECT     users.id,
+      COUNT       (relationships.followed_id)
+      AS          numbersOfFollowers
+      FROM        relationships
+      LEFT JOIN   users
+      ON          relationships.followed_id = users.id
+      GROUP BY    users.id
+      ORDER BY    count(followed_id) 
+      DESC
+      ')
   end
 
   def new
@@ -114,7 +135,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza)
+                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin)
     end
 
     def plaza_params

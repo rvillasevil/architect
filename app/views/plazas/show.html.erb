@@ -11,6 +11,34 @@
       <section class="stats">
         <%= render 'plazas/plaza_stats' %>
       </section>
+      <section>
+        <h5>
+          <b>Mostrar si es administrativa</b>
+        </h5>
+        <h5>
+          <b>Número de seguidores que tiene esta plaza</b>
+          <h5><%= Group.where(:plaza_id => @plaza.id).count %> usuarios.</h5>
+        </h5>
+        <h5>
+          <b>Número de peticiones de la plaza</b>
+          <h5><%= Micropost.where(:plaza_id => @plaza.id).where(:petition => true).count %></h5>
+        </h5>
+        <h5>
+          <b>Needs</b>
+          <h5><%= Micropost.where(:plaza_id => @plaza.id).where(:hashtag2 => "needs").count %></h5>
+        </h5>
+        <h5>
+          <b>Problemas</b>
+          <h5><%= Micropost.where(:plaza_id => @plaza.id).where(:hashtag2 => "problems").count %></h5>
+        </h5>
+        <h5>
+          <b>Love</b>
+          <h5><%= Micropost.where(:plaza_id => @plaza.id).where(:hashtag2 => "love").count %></h5>
+        </h5>
+        <h5>
+          <b>Si es administrativa mostrar los candidatos??</b>
+        </h5>
+      </section>
     </aside>
     <div class="col-md-8">
       <%= render 'groups/seguir_form' if logged_in? %>

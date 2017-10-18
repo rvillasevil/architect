@@ -11,7 +11,7 @@
   <li>
     <% @voted = Vote.where(:micropost_id => micropost.id) %>
     <% @voted.each do |voted| %>
-      <!-- <%= @voter = User.where(:id => voted.user_id)  %>-->
+      <% @voter = User.where(:id => voted.user_id)  %>
       <% @voter.each do |voter| %>
 
         <% if logged_in? %>
@@ -42,13 +42,13 @@
 
 <div class="header-post" style="">
   <span style="padding-left: 15px; margin-top: 10px;">
-    <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 40 if micropost.user.foto? %>
+    <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 45 if micropost.user.foto? %>
   </span>
   <ul class="user-data" style="background-color: transparent;">
     <li style="font-size: 15px;">
       <% if micropost.plaza_id? %>
         <b><%= link_to micropost.user.name, micropost.user %></b>
-        <!-- <%= @plaza =  Plaza.where(:id => micropost.plaza_id) %> -->
+        <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
         <span class="plaza-seguida"> ha publicado en 
           <b>
             <% @plaza.each do |plaza| %>
@@ -78,9 +78,14 @@
   </ul>
 </div>
   <!--  Contenido texto -->
-  <span class="content">
-    <%= micropost.content %> 
-  </span>
+    <span class="content">
+      <% if micropost.petition == true %>
+        <%= truncate(micropost.content, :length => 200) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %>
+      <% else %>
+        <%= micropost.content %>
+      <% end %>  
+    </span>
+     
   <!--  Imagen -->
   <% if micropost.picture? %>
     <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "100%"   %> 
@@ -97,19 +102,19 @@
   <!--  links -->
   <% if micropost.link? %>
     <div class="links">  
-      <!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
-      <span class= "title-link"><%= @title = doc.at_css("title").text %></span>
-       <!-- <%= @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %> -->
+      <% doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %>
+      <div class= "title-link"><b><%= @title = doc.at_css("title").text %></b></div>
+       <% @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %>
        <% if @src != nil %>
         <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
         <%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>
         </div>
       <% end %>
   
-      <span class="enlace-texto">
-        <%= link_to truncate(micropost.link.scan( /([^>]*)./).first.last, :length => 30), micropost.link %></span>
+      <div class="enlace_texto">
+        <%= link_to truncate(micropost.link.scan( /([^>]*)./).first.last, :length => 30), micropost.link %></div>
     </div>       
-  <% end %>    
+  <% end %>
   
 <% 
 =begin %>        
@@ -135,22 +140,9 @@
 <%
 =end %>
   
-<% 
-=begin %>
-      <%= url = micropost.link %>
-      <%= doc = Nokogiri::HTML(open(url)) %>
-      <%= puts doc.at_css("title").text %>
-      <%= doc.css(".item").each do |item| %>
-      <%= title = item.at_css("#articulo-titulo").text %>
-      <%= price = item.at_css("").text[/\$[0-9\.]+/] %>
-      <%= puts "#{title} - #{price}" %>
-      <%= puts item.at_css("#articulo-titulo")[:href] %>
-<%
-=end %>
 
 
 <!-- votos -->
-<!-- necesitamos poner el update de votos del usuario -->
 <!-- votos positivos -->
 <ul class="social_elements">
   <% if logged_in? %>

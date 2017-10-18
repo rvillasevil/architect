@@ -30,4 +30,6 @@
 /config/application.yml
 /config/database.yml
 
+/config/secrets.yml
+
 /config/environment/development.rb

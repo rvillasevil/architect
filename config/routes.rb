@@ -18,11 +18,12 @@ Rails.application.routes.draw do
   get     '/micropost', to: 'microposts#show'
   get     '/petitions', to: 'microposts#petition_index'
   post    '/plazas',            to: 'plazas#create'
-  get     '/allplazas', to: 'plazas#all_index'
+  get     '/allplazas',         to: 'plazas#all_index'
   delete  '/dejardeseguir',     to: 'groups#destroy'
   post    '/seguir',            to: 'groups#create'
   get     '/popular',           to: 'static_pages#popular'
   get     '/index_municipios',  to: 'municipios#index'
+  get     '/ir_a_tu_plaza',     to: 'plazas#show'
 
   resources :users do
     member do
