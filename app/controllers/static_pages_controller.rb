@@ -4,7 +4,6 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
-      @popular_petitions = Micropost.where(petition: true)
       @petitions = Micropost.find_by_sql(
       'SELECT     microposts.id,
       COUNT       (votes.micropost_id)

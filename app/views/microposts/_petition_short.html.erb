@@ -1,25 +1,37 @@
-<ul class="petition_short">
-  <% @popular_petitions.take(3).each do |petition| %>
-    <li>
-      <div>
-        <% if petition.picture? %>
-          <div class="picture_content"> <%= image_tag (petition.picture.url), class: "img-responsive", width: "100%" %> 
-          </div>
-        <% end %>
-        <span>
-          <% @votosPositivos = petition.votes.where(:like => 1).count %>
-          <% @votosNegativos = petition.votes.where(:dislike => 1).count %>
-          <% @votosTotales = @votosPositivos + @votosNegativos %>
-          <% if @votosTotales != 0 %>
-            <% @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %>
-            <b><span class="porcentaje"> <%= @porcentaje %>% </span></b>
-          <% else %>
-            <% @porcentaje = 0 %>
-            <b><span class="porcentaje"> <%= @porcentaje %>% </span></b>
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            El Mundo quiere conocer tu opinión sobre:
+          </li>
+          <% @petitions.each do |petition| %>
+            <% @post_ordenados_votos = Micropost.where(:id => petition.id) %>
+            <% @post_ordenados_votos.take(3).each do |popular_petition| %>
+              <% if popular_petition.title? %>
+                <li class="lista_block">
+                  <ul class="inline">
+                    <li class="inline">
+                      <%= image_tag popular_petition.picture.url, class: "img-circle", size: 55 if popular_petition.picture? %>
+                    </li>
+                    <li class="inline">
+                      <span class="nombres"><%= link_to popular_petition.title, popular_petition %></b></span>
+                    </li>
+                    <li class="right" style="padding-top: 10px;">
+                      <% @votosPositivos = popular_petition.votes.where(:like => 1).count %>
+                      <% @votosNegativos = popular_petition.votes.where(:dislike => 1).count %>
+                      <% @votosTotales = @votosPositivos + @votosNegativos %>
+                      <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      <% if @votosTotales != 0 %>
+                        <% @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %>
+                        <%= @porcentaje %> %
+                      <% else %>
+                        <% @porcentaje = 0 %>
+                        <%= @porcentaje %>% 
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              <% end %>
+            <% end %>
           <% end %>
-        </span>
-        <span><b><%= link_to petition.title, controller: "microposts", action: "show", id: petition.id %></b></span>
+        </ul>
       </div>
-    </li>
-  <% end %>
-</ul>

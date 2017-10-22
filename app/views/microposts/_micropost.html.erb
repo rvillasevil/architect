@@ -3,8 +3,8 @@
   <% if micropost.title? %>
   <div class="if-petition">Petition</div>
     <h4><b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b></h4> 
-<% else %>
-<% end %>
+  <% else %>
+  <% end %>
 </div>
 
 <ul class="voters">
@@ -41,50 +41,49 @@
 </ul>
 
 <div class="header-post" style="">
-  <span style="padding-left: 15px; margin-top: 10px;">
-    <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 45 if micropost.user.foto? %>
-  </span>
-  <ul class="user-data" style="background-color: transparent;">
-    <li style="font-size: 15px;">
-      <% if micropost.plaza_id? %>
-        <b><%= link_to micropost.user.name, micropost.user %></b>
-        <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
-        <span class="plaza-seguida"> ha publicado en 
-          <b>
-            <% @plaza.each do |plaza| %>
-              <%= p plaza.name %>
-            <% end %>
-          </b></span>
-      <% else %>
-        <b><%= link_to micropost.user.name, micropost.user %></b>
-      <% end %>
+  <ul class="user-data" style="background-color: transparent; display: inline-flex;">
+    <li style="padding-left: 10px; margin-top: 5px;">
+      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 45 if micropost.user.foto? %>
     </li>
-    <li style="display: inline-flex; font-size: 12px; ">
-      <%= micropost.user.followers.count %> followers
-    </li>
-    <li>
-      <span class="timestamp">
-        Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-        <% if current_user?(micropost.user) %>
-          <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost.id %>
-        <% end %>
-      </span>
-    </li>
-    <li style="font-size: 11px;">
-      <%# micropost.plaza_id %>
-      <%# @plaza = User.where(:id => micropost.plaza_id).first %>
-      <%# @plaza_name%>
+    <li style="font-size: 14px;">
+      <ul style="display: inline-block; list-style: none; padding-left: 5px;">
+        <li>
+          <% if micropost.plaza_id? %>
+            <b><%= link_to micropost.user.name, micropost.user %></b>
+            <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
+            <span class="plaza-seguida"> ha publicado en 
+              <b>
+                <% @plaza.each do |plaza| %>
+                  <%= p plaza.name %>
+                <% end %>
+              </b></span>
+          <% else %>
+            <b><%= link_to micropost.user.name, micropost.user %></b>
+          <% end %>
+        </li>
+        <li style="display: inline-flex; font-size: 12px; ">
+          <%= micropost.user.followers.count %> followers
+        </li>
+        <li>
+          <span class="timestamp">
+            Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+          <% if current_user?(micropost.user) %>
+            <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost.id %>
+          <% end %>
+          </span>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>
   <!--  Contenido texto -->
-    <span class="content">
+    <div class="content">
       <% if micropost.petition == true %>
         <%= truncate(micropost.content, :length => 200) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %>
       <% else %>
         <%= micropost.content %>
       <% end %>  
-    </span>
+    </div>
      
   <!--  Imagen -->
   <% if micropost.picture? %>
@@ -140,14 +139,11 @@
 <%
 =end %>
   
-
-
 <!-- votos -->
 <!-- votos positivos -->
 <ul class="social_elements">
   <% if logged_in? %>
 
-  
     <li style="display: inline-flex;">
     <% if (@voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id)).empty? %>
       <%= form_for([micropost, Vote.new], remote: true) do |f| %>
@@ -163,10 +159,10 @@
       <% end %>       
     <% end %>
 
-<% else %>
-  <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+  <% else %>
+    <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+    <% end %>
   <% end %>
-<% end %>
 
   <!-- votos negativos -->
 <% if logged_in? %>
@@ -189,31 +185,37 @@
   <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Down
   <% end %>
 <% end %>
-    <!-- hashtags -->
-    <li style="padding-top: 10px; text-align: right;">
-      <% if micropost.hashtag1? %>
-        <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to micropost.hashtag1,hashtag_micropost_path(micropost) %></a>
-      <% end %>
-    </li>
 
-    <!-- comentarios -->
-    <li style="padding-top: 10px;">
-      <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
-    </li>
-  </ul>
+  <!-- hashtags -->
+  <li style="padding-top: 10px;">
+    <% if micropost.hashtag1? %>
+      <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to micropost.hashtag1,hashtag_micropost_path(micropost), {style: "color: #777777"} %></a>
+    <% end %>
+  </li>
+
+  <!-- comentarios -->
+  <li style="padding-top: 10px;">
+    <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
+  </li>
+</ul>
 
 <!-- comentarios --> 
 <div class="fondo-comments" %>  
   <% micropost.comments.order("created_at desc").take(3).each do |comment| %>
-    <span class="comentario">
+    <div class="comentario">
       <% if micropost.comments.any? %>
-        <span style="margin: 0px; padding-top: 5px;"><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
-          <b style="font-size: 13px;"><%= link_to comment.user.name, comment.user %></b>        <span style="font-size: 13px;"><%= comment.contenido %></span></span>
-          <span class="" style="font-size: 11px; color: #8c8c8c;"> <%= time_ago_in_words(comment.created_at) %> ago.</span>
-        <% else %>
+      <div>
+        <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+        <div style="padding-top: 5px; display: inline-block;">
+          <b><%= link_to comment.user.name, comment.user %></b>     <%= comment.contenido %>      <span class="timestamp" style="font-size: 11px;"><%= time_ago_in_words(comment.created_at) %> ago.</span>  
+        </div>
+      </div> 
+      <% else %>
       <% end %>         
-    </span>
+    </div>
     <% end %>
+
+
   <% if logged_in? %>
     <!-- create comment -->
     <ul class="post_comment" style="border-top: 1px solid #e6e9ec; padding-top: 5px; width: 100%; display: inline-flex; ">

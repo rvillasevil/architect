@@ -12,8 +12,9 @@
 
 body {
   padding-top: 60px;
-  background-color: #eaf2ff;
+  background-color: #eaeeee;
   /* font-family: 'Montserrat', regular; */
+  /* font-family: "PT Serif", regular; */
 }
 
 /* typography */
@@ -348,6 +349,7 @@ input {
 /* Users index */
 
 .users {
+  columns: 2;
   list-style: none;
   margin: 0;
   ul {
@@ -360,14 +362,89 @@ input {
   }
 }
 
-.plazas {
+.lista {
   list-style: none;
-  display: block;
+  ul {
+    padding: 10px 0px;
+
+  }
   li {
-  padding: 10px;
-  border-bottom: 1px solid $gray-lighter;
+    display: inline-flex;
+    background-color: white;
+    border: 1px solid $gray-lighter;
+    width: 100%;
   }
 }
+
+.plazas {
+  padding-left: 0px;
+  margin-top: 10px;
+  ul {
+    display: inline-block;
+    list-style: none;
+  }
+  li {
+    list-style: none;
+    padding: 10px;
+    background-color: white;
+  }
+}
+
+.texto_plaza {
+  li {
+    padding: 0px;
+  }
+}
+
+.aside_content {
+  background-color: white;
+  border: 1px solid #dddfe2;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  ul {
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px solid #e6e9ec;
+  }
+  li.titulo {
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  li.lista_block {
+    display: block;
+    padding: 5px 10px;
+  }
+  ul.principal {
+    margin-bottom: 0px;
+    padding-left: 0px;
+  }
+  .inline {
+    display: inline-flex;
+    padding-left: 0px;     
+    li {
+      border: 0px;
+      font-size: 13px;
+    }
+    .right {
+      position: absolute;
+      right: 20px;
+      padding-top: 0px;
+      button {
+        font-size: 13px;
+        margin-top: 10px;
+        padding: 5px;
+      }
+    }
+    .nombres {
+      font-size: 13px;
+      padding: 5px 5px;
+      width: 80%;
+    }
+  }
+}
+
 
 .petition_short {
   background-color: white;
@@ -399,6 +476,37 @@ input {
   ol {
   padding-top: 5px;
   }
+}
+
+.candidate_list {
+  list-style: none;
+  background-color: white;
+  padding: 10px 0px;
+  display: inline-flex;
+  width: 100%;
+  border-bottom: 1px solid $gray-lighter;
+  ul {
+    list-style: none;
+    padding-left: 20px;
+    padding-top: 2px;    
+  }
+  li {
+    border: 0px;
+    padding: 0px;
+  }
+  .texto {
+    padding-left: 10px;
+    li {
+    }
+  }
+}
+
+.instrucciones {
+  background-color: #f2f5ff;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 13px;
 }
 
 /* plazas */
@@ -491,12 +599,12 @@ input {
 }
 
 
-/* microposts */
+/* -------------------- microposts --------------------- */
 
 .microposts {
   list-style: none;
   padding: 0px;
-  background-color: #e9e9e9;
+  background-color: #eaeeee;
   li {
     padding: 15px;
     margin-bottom: 15px;
@@ -546,6 +654,7 @@ input {
   }
 
   .comentario {
+  font-size: 13px;
   position: relative;
   display: block;
   margin-left: 5px;
@@ -614,9 +723,7 @@ input {
   border-style: solid;
   border-width: 1px;
   border-color: #d9d9d9;
-  margin: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 8px 5px;
     picture_link {
     margin-left: -10px;
     margin-right: -10px;
@@ -653,6 +760,8 @@ input {
     -webkit-margin-end: 0px;
     -webkit-padding: 10px;
     box-shadow: 0px 0px 0px white;
+    }
+    button {
     }
   }
 
@@ -699,9 +808,10 @@ input {
     padding-top: 0px;
     padding-left: 5px;
     position: relative;
-    top: 3px;
     font-size: 0px;
-    padding-top: 3px;
+    ul {
+      display: inline-flex;
+    }
     li {
     border: 0px;
     margin: 0px;
@@ -715,7 +825,9 @@ input {
   vertical-align: top;
   margin-top: 0px;
   margin-bottom: 0px;
+  padding: 0px;
   }
+
   .petition-title {
   text-align: left;
   padding-bottom: 15px;
@@ -725,10 +837,7 @@ input {
   }
 
   .header-post {
-  /* background-color: #e6fff5; */
-  padding-top: 0px;
   margin: -15px;
-  padding-top: 10px;
   border-top: 1px solid #e6e9ec;
     h4 {
     margin-top: 5px;
@@ -752,7 +861,7 @@ input {
   }
 
   .plaza-seguida {
-  font-size: 14px;
+  font-size: 12px;
   }
 
   .btn {
@@ -760,7 +869,8 @@ input {
   }
 }
 
-/* ----------------------- Micropost */
+/* --------------------------------------- Micropost ----------*/
+
 
 aside {
   textarea {
@@ -911,7 +1021,7 @@ height: 100%;
   list-style: none;
   padding-left: 0px;
   p {
-  border-top: 0.7px solid #bfbfbf;
+  border-top: 0.7px solid #e6e9ec;
   padding-left: 10px;
   padding-right: 10px;
   margin: 0px;
@@ -922,10 +1032,9 @@ height: 100%;
   }
   .title-petition {
   display: block;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #e6e9ec;
-  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
   }
   .social_elements {
     display: flex;
@@ -1050,6 +1159,15 @@ height: 100%;
     top: 0;
     z-index: 1;
   }
+}
+
+.picture_content_petition_index {
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.img_petition_index {
+  width: 100%;
 }
 
 

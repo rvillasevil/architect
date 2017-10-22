@@ -14,7 +14,7 @@
 		<h1 style="font-size: 30px;">Your petitions</h1>
 		<ul class="ul-petitions">
 		<% @microposts.each do |micropost| %>
-		<li>
+		<li style="border: 1px solid #e6e9ec; margin-bottom: 20px;">
 			<!--  Introducción -->
 				<ul class="encabezado" style="list-style: none; padding-right: 15px; display: inline-flex; text-align: left; width: 100%;margin-bottom: 10px;">
 					<li style="text-align: left; width: 1%; position: absolute; left: 10px;">
@@ -30,86 +30,25 @@
 						  <span class="hashtag" style="padding-left: 15px;"><span class="fa fa-tags" aria-hidden="true"></span>  <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></span></li></ul>
 						<% end %>
 					</li>
-				</ul> 
+				</ul>
+
+			<!--  Imagen -->
+			<% if micropost.picture? %>
+				      <div class="picture_content_petition_index"> <%= image_tag (micropost.picture.url), class: "img_petition_index" %> 
+				      </div>
+			<% end %>	
+
 			<!--  Titulo -->
 			<span class="title-petition" style="font-size: 18px; color: black;">
 				<%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %> 
 			</span>
 
-			<!--  Imagen -->
-			<% if micropost.picture? %>
-				      <div class="picture_content"> <%= image_tag (micropost.picture.url), class: "img-responsive", width: "100%"   %> 
-				      </div>
-			<% end %>
-
 			<!--  Contenido texto -->
-			<p><span class="content" style="padding-left: 10px;">
-				<%= truncate(micropost.content, :length => 300) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %></span> 
-	   		</span></p>	    
-<%
-=begin %>
-			<!--  video -->
-			<% if micropost.video? %>
-				<div class="video-responsive">
-				    <iframe
-				        src="https://www.youtube.com/embed/<%= micropost.video %>" frameborder="0" allowfullscreen></iframe>
-				</div>
-			<% end %>
+			<div class="content" style="padding-left: 10px; padding-right: 5px; font-style: 14px;">
+				<%= truncate(micropost.content, :length => 150) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %></span> 
+	   		</div>
 
-			<!--  links -->
-			<div class="links">  
-				<% if micropost.link? %>
-				<!-- <%= doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %> -->
-				<h4><span class= "content" style="padding-top: 5px; margin-left: : 2px; "><%= @title = doc.at_css("title").text %></span></h4>
-				<!-- <%= @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %> -->
-					<% if @src != nil %>
-						<div class="picture_content" style="max-height: 400" >
-						<%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>
-						 </div>  
-					<% end %>
-				<% end %>
-				<% if micropost.link? %>
-				  <a style="padding: 5px; overflow: hidden; text-overflow:ellipsis;">
-				   <%= link_to truncate(micropost.link.scan( /([^>]*)./).first.last, :length => 30), micropost.link %></a>       
-				<% end %>	
-			</div>
-
-			<!-- votos -->
-			<!-- necesitamos poner el update de votos del usuario -->
-			<!-- votos positivos -->
-			<ul class="social_elements" style="margin-bottom: 5px;">
-				<!-- hashtags -->
-				<li style="display: inline-flex;">
-      <%= form_for([micropost, Vote.new]) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :like, :value => 1 %> 
-          <%= f.hidden_field :dislike, :value => 0 %> 
-
-        <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-up" aria-hidden="true" ><%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Like
-          <% end %>   
-          <% end %>
-      		</span>
-
-  <!-- votos negativos -->
-
-	      <%= form_for([micropost, Vote.new]) do |f| %>
-	        <%= f.hidden_field :user_id, :value => current_user.id %> 
-	        <%= f.hidden_field :like, :value => 0 %> 
-	        <%= f.hidden_field :dislike, :value => 1 %>
-	        <%= button_tag(class: "btn btn-default btn-sm") do %><span class="glyphicon glyphicon-hand-down" aria-hidden="true"><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Dislike     
-	        <% end %>
-	      <% end %>    
-    		</li>
-				<li style="padding-top: 10px; width: 30%;">
-						    <% if micropost.hashtag1? %>
-						        <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to micropost.hashtag1,hashtag_micropost_path(micropost) %></a>
-						    <% end %>
-				</li>
-<%
-=end %>
-				
-				
-
+	   	<!-- Usuario -->
 			<ul style="padding: 10px; list-style: none; display: inline-flex; background-color: white; width: 100%;">
 				<li style="display: inline-flex;">
 		  			<span>
@@ -128,25 +67,12 @@
 		        		</li>
 		      		</ul>
 		      	</li>
+
 						<!-- comentarios -->
 						<li style="padding-top: 10px; position: absolute; right: 20px;">
 							<span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
 						</li>
 			</ul>
-
-			<!-- comentarios --> 
-			<div class="" style="background-color: #f2f2f2; padding: 10px; margin-bottom: 30px;">  
-				<% micropost.comments.order("created_at desc").take(3).each do |comment| %>
-				<span class="comentario">
-					<% if micropost.comments.any? %>
-					  <span style="margin: 0px; padding-top: 5px;"><%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
-					  <%= link_to comment.user.name, comment.user %>        <%= comment.contenido %></span>
-					  <span class="" style="font-size: 11px; color: #8c8c8c;"> <%= time_ago_in_words(comment.created_at) %> ago.</span>
-						</span>
-					<% end %>         
-				<% end %>
-			</div>
-			<!-- fin comments -->
 
 		<% end %>
 		</li>

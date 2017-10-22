@@ -1,6 +1,7 @@
-<% provide(:title, 'All Plazas') %>
+<% provide(:title, 'Todos los círculos') %>
 	<div class="container">
     <div class="row">
+
       <aside class="col-sm-2" style="">
         <section class="user_info">
           <%= render 'shared/user_info' %>
@@ -9,41 +10,66 @@
           <%= render 'shared/stats' %>
         </section>
       </aside>
+
       <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
-      	<h1 style="font-size: 30px;">Todos los loobies</h1>
-				<ul class="plazas">
-  				<% @plazas.each do |plaza| %>
-          <li style="display: block;">
-            <ul style="list-style: none; padding-left: 0px; display: inline-flex; ">
-              <li style="border: 0px; padding: 5px;">
-                <%= image_tag plaza.foto.url, class: "img-circle", size: 50 if plaza.foto? %>
+        <div class="instrucciones">
+          Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
+        </div>
+        <ul class="plazas">
+          <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+            <ul style="display: inline-flex; padding: 0px;">
+              <li>
+                <span style="font-size: 16px;"><b>Todos los círculos</b></span>
               </li>
-              <li style="border: 0px; padding: 10px 0px;">
-                <ul style="display: inline-block; list-style: none; padding-left: 5px;">
-                  <li style="padding: 0px;">
-                    <b>Loobi <%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
-                  </li>
-                  <li style="padding: 0px; border: 0px; font-size: 12px;">
-                    <%= @seguidores = Group.where(:plaza_id => plaza.id).count %> seguidores
-                    <% if logged_in? %>
-                      <% if current_user.admin?  %>
-                      | <%= link_to "delete", plaza, method: :delete,
-                                      data: { confirm: "You sure?" } %>
-                      <% end %>
-                    <% end %>
-                  </li>
-                </ul>   
-              </li>  
+              <li>
+                <span style="font-size: 14px;"><b><%= link_to "Tus Círculos", user_plazas_path(current_user) %></b></span>
+              </li>
+              <li style="padding-top: 3px; position: absolute; right: 10px;">
+                <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
+              </li>
             </ul>
           </li>
+          <%# render @plazas %>
+          <% @plazas.each do |plaza| %>
+            <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
+              <ul style="display: inline-flex; padding-left: 15px;">
+                <li style="padding: 10px 0px;">
+                  <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+                </li>
+                <li style="padding: 0px">
+                  <ul class="texto_plaza" style="padding-left: 10px; padding-top: 5px;">
+                    <li>
+                      Círculo <b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
+                    </li>
+                    <li style="font-size: 13px;">
+                      <b><%= Group.where(:plaza_id => plaza.id).count %> seguidores.</b>
+                    </li>
+                    <li style="font-size: 13px; color: #8c8c8c;" >
+                      <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> peticiones.
+                    </li>
+                    <li>
+                      <% if logged_in? %>
+                        <% if current_user.admin?  %>
+                      | <%= link_to "delete", plaza, method: :delete,
+                                      data: { confirm: "You sure?" } %>
+                        <% end %>
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           <% end %>
+          <%= will_paginate %>
         </ul>
       </div>
+
       <aside>
         <div class="col-sm-3">
           <h4>Nuestros candidatos</h4>
         </div>
       </aside>
+
 			<%= will_paginate %>
   	</div>
 	</div>

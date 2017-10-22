@@ -21,7 +21,7 @@ class PlazasController < ApplicationController
   def index
     #Plazas seguidas por el usuario
     plaza_ids = "SELECT plaza_id FROM groups
-                WHERE  user_id = :user_id"
+                  WHERE  user_id = :user_id"
     # Select the post where user_id
     @plazas = Plaza.where("id IN (#{plaza_ids})       
                           OR user_id = :user_id", user_id: current_user.id).paginate(page: params[:page])
@@ -42,10 +42,11 @@ class PlazasController < ApplicationController
     @user = User.find(params[:user_id])
     @plaza = Plaza.find(params[:id])
     @microposts = Micropost.where(:plaza_id => @plaza.id).paginate(page: params[:page])
+    @peticiones = Micropost.where(:plaza_id => @plaza.id).where(:petition => true)
+    @votos = Vote.where(:micropost_id => @microposts).where(:like == 1)
     @micropost  = current_user.microposts.build
     @group = current_user.groups.build
     @seguidores = Group.where(:plaza_id => @plaza.id)
-    #@seguidor para determinar el número de seguidores y su link a una página donde estén todos será necesario escribir el código en sql para acceder a ellos.
   end
 
   private

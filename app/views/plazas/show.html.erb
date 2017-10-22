@@ -1,15 +1,12 @@
 <div class="container">
   <% provide(:title, @plaza.name) %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-2">
       <section>
         <h1>
-          <%= image_tag @plaza.foto.url, class: "img-rounded", size: 100 if @plaza.foto? %>
+          <%= image_tag @plaza.foto.url, class: "img", size: 150  if @plaza.foto? %>
           <%= @plaza.name %>
         </h1>
-      </section>
-      <section class="stats">
-        <%= render 'plazas/plaza_stats' %>
       </section>
       <section>
         <h5>
@@ -40,7 +37,7 @@
         </h5>
       </section>
     </aside>
-    <div class="col-md-8">
+    <div class="col-md-6">
       <%= render 'groups/seguir_form' if logged_in? %>
       <%= render 'plazas/plaza_post_form' %>
       <% if @microposts.any? %>
@@ -50,7 +47,113 @@
         </ol>
         <%= will_paginate @microposts %>
       <% end %>
-      
+    </div>
+    <div class="col-md-4" style="margin-top: 12px;">
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Posicion del usuario dentro del círculo
+          </li>
+          <li class="inline">
+            0
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Comunidad
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-user-o" aria-hidden="true"></i>   Seguidores
+              </li>
+              <li class="right">
+                <%= @seguidores.count %>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-envelope-open-o" aria-hidden="true"></i>   Iniciativas
+              </li>
+              <li class="right">
+                <%= @peticiones.count %>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-hand-o-up" aria-hidden="true"></i>   Votos totales
+              </li>
+              <li class="right">
+                <%= @votos.count %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Iniciativas/Propuestas/Votaciones
+          </li>
+          <% @peticiones.each do |petition| %>
+          <li class="lista_block">
+            <ul class="inline">
+              <li class="inline">
+                <%= image_tag petition.picture.url, class: "img-circle", size: 55 if petition.picture? %>
+              </li>
+              <li class="inline">
+                <span class="nombres"><%= link_to petition.title, petition %></b></span>
+              </li>
+              <li class="right" style="padding-top: 10px;">
+                <% @votos = Vote.where(:micropost_id => petition) %>
+                <% @votos_realizados = @votos.count %>
+                <% @votos_positivos = @votos.where(:like => true).count %>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= @votos_positivos*100/(@votos_realizados) %> %
+              </li>
+            </ul>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Usuarios
+            <% @seguidores.each do |seguidor| %>
+              <% @usuario = User.where(:id => seguidor.user_id) %>
+              <% @usuario.each do |usuario| %>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li class="inline">
+                <%= image_tag usuario.foto.url, class: "img-circle", size: 55 if usuario.foto? %>
+              </li>
+              <li class="inline">
+                <span class="nombres"><%= link_to usuario.name, usuario %></b></span>
+              </li>
+              <li class="right">
+                <% if current_user.following?(usuario) %>
+                  <button type="button" class="btn btn-light btn-sm">Siguiendo</button>
+                <% else %>
+                  <button type="button" class="btn btn-primary btn-sm"><%= link_to "Seguir", usuario, {style: "color: white"} %></button>
+                <% end %>
+              </li>
+            </ul>
+              <% end %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

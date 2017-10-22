@@ -6,7 +6,7 @@
   <li style="border: 0px; padding: 10px 0px;">
     <ul style="display: inline-block; list-style: none; padding-left: 5px;">
       <li style="padding: 0px;">
-        <b>Plaza <%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
+        Círculo <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
       </li>
       <li style="padding: 0px; border: 0px; font-size: 12px;">
         <%= @seguidores = Group.where(:plaza_id => plaza.id).count %> seguidores

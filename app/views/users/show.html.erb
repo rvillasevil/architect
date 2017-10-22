@@ -1,15 +1,12 @@
 <div class="container">
   <% provide(:title, @user.name) %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-2">
       <section>
         <h1>
           <%= image_tag @user.foto.url, size: 150 if current_user.foto? %>
           <%= @user.name %>
         </h1>
-      </section>
-      <section class="stats">
-        <%= render 'shared/stats' %>
       </section>
       <section>
         <h5>
@@ -36,7 +33,8 @@
         </h5>
       </section>
     </aside>
-    <div class="col-md-8">
+
+    <div class="col-md-6">
       <%= render 'follow_form' if logged_in? %>
       <% if @microposts.any? %>
         <h4>Posts (<%= @microposts.count %>)</h4>
@@ -45,7 +43,114 @@
         </ol>
         <%= will_paginate @microposts %>
       <% end %>
-      
+    </div>
+
+    <div class="col-md-4" style="margin-top: 12px;">
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Posicion del usuario dentro del círculo
+          </li>
+          <li class="inline">
+            0
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Comunidad
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                Seguidores
+              </li>
+              <li class="right">
+                <a href="<%= followers_user_path(@user) %>">
+                  <%= @user.followers.count %>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                Seguidos
+              </li>
+              <li class="right">
+                <a href="<%= following_user_path(@user) %>">
+                  <%= @user.following.count %>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                Iniciativas
+              </li>
+              <li class="right">
+                <%= @microposts.where(:petition => true).count %>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                Votos totales
+              </li>
+              <li class="right">
+                <%= Vote.where(:micropost_id => @microposts).count %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Temas que interesan al usuario
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <% @microposts.take(3).each do |post| %>
+                  <b><%= link_to post.hashtag1, {:controller => "microposts", action: "hashtag", :id => post.id}  %></b>  
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Tus Iniciativas/Propuestas/Votaciones
+          </li>
+          <% @peticiones.each do |petition| %>
+          <li class="lista_block">
+            <ul class="inline">
+              <li class="inline">
+                <%= image_tag petition.picture.url, class: "img-circle", size: 55 if petition.picture? %>
+              </li>
+              <li class="inline">
+                <span class="nombres"><%= link_to petition.title, petition %></b></span>
+              </li>
+              <li class="right" style="padding-top: 10px;">
+                <% @votos = Vote.where(:micropost_id => petition) %>
+                <% @votos_realizados = @votos.count %>
+                <% @votos_positivos = @votos.where(:like => true).count %>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= @votos_positivos*100/(@votos_realizados) %> %
+              </li>
+            </ul>
+            <% end %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
