@@ -2,16 +2,16 @@
 <% if logged_in? %>
   <div class="container">
     <div class="row">
-        <aside class="col-sm-2" style="width: 15%;">
-          <section class="user_info">
+        <div class="col-sm-2">
+          <div>
             <%= render 'shared/user_info' %>
-          </section>
-          <section class="stats">
+          </div>
+          <div class="stats">
             <%= render 'shared/stats' %>
-          </section>
-        </aside>
+          </div>
+        </div>
 
-      <div class="col-sm-5" style="width: 50%;">
+      <div class="col-sm-6">
         <%= render 'static_pages/sigue_plaza' %> 
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
@@ -30,8 +30,11 @@
         <%= render 'shared/feed' %>
       </div>
       <aside>
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <%= render 'microposts/petition_short' %>
+            <h5><b>Iniciativas que tienes pendientes</b></h5>
+            <h5><b>Filtrar por tus intereses</b></h5>
+
             <h5><b>Nuestros candidatos</b></h5>
             <%= render 'shared/lista' %>
             <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-link" %>

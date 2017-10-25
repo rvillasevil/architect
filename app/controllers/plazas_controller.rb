@@ -8,7 +8,7 @@ class PlazasController < ApplicationController
     if @plaza.save
       
       flash[:success] = "Plaza created!"
-      redirect_to user_plazas_path(@user) #root_url
+      redirect_to  root_url
     else
       render :back
     end
@@ -52,7 +52,7 @@ class PlazasController < ApplicationController
   private
 
     def plaza_params
-      params.require(:plaza).permit(:name, :ciudad, :foto, :user_id)
+      params.require(:plaza).permit(:name, :ciudad, :foto, :user_id, :description)
     end
     def correct_user
       @plaza = current_user.plazas.find_by(id: params[:id])

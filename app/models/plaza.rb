@@ -2,7 +2,7 @@ class Plaza < ApplicationRecord
 	belongs_to :user
 	default_scope -> { order(created_at: :desc) }
 	validates :user_id, presence: true
-  validates :name, presence: true, length: { maximum: 200 }
+  validates :name, presence: true, length: { maximum: 200 }, uniqueness: true
   mount_uploader :foto, PictureUploader
   validates :foto, presence: true
   validate  :picture_size

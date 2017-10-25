@@ -1,88 +1,115 @@
 <div class="container">
 <% provide(:title, 'Petitions') %>    
 	<div class="row">
-    <aside class="col-sm-2" style="">
-      <section class="user_info">
+    <div class="col-sm-2" style="">
+      <div class="user_info">
         <%= render 'shared/user_info' %>
-      </section>
-      <section class="stats">
+      </div>
+      <div class="stats">
         <%= render 'shared/stats' %>
-      </section>
-    </aside>
+      </div>
+    </div>
 
-    <div class="col-sm-7">
-		<h1 style="font-size: 30px;">Your petitions</h1>
-		<ul class="ul-petitions">
-		<% @microposts.each do |micropost| %>
-		<li style="border: 1px solid #e6e9ec; margin-bottom: 20px;">
-			<!--  Introducción -->
-				<ul class="encabezado" style="list-style: none; padding-right: 15px; display: inline-flex; text-align: left; width: 100%;margin-bottom: 10px;">
-					<li style="text-align: left; width: 1%; position: absolute; left: 10px;">
-						<%= render (@plaza =  User.where(:id => micropost.plaza_id)) %>
-					</li>
-					<li style="text-align: right; padding-top: 15px;">
-						
-					</li>
-					<li style="text-align: right; position: absolute; right: 25px;">
-						<ul style="display: inline-block; list-style: none"><li>
-						<span class="numbercomments"><span class="fa fa-thumbs-o-up" aria-hidden="true"></span>          <%= micropost.votes.count %>  votantes</span></li>
-						<li><% if micropost.hashtag1? %>
-						  <span class="hashtag" style="padding-left: 15px;"><span class="fa fa-tags" aria-hidden="true"></span>  <%= link_to micropost.hashtag1, hashtag_micropost_path(micropost) %></span></li></ul>
-						<% end %>
-					</li>
-				</ul>
+	  <div class="col-sm-6">
+	  	<div class="instrucciones" style="margin-top: 15px;">
+	  		<h4>Es necesario precisar las peticiones que son especificas del usuario, pendientes, de sus plazas y sugueridas según sus intereses</h4>
+	  	</div>
+	   	
 
-			<!--  Imagen -->
-			<% if micropost.picture? %>
-				      <div class="picture_content_petition_index"> <%= image_tag (micropost.picture.url), class: "img_petition_index" %> 
-				      </div>
-			<% end %>	
+	   	<% @petitions.each do |micropost| %>
+	   		<% if micropost.petition == true %>
+					<div class="petition_index">
+						<div class="principal">
+							<div>
+								<!--  Imagen -->
+								<% if micropost.picture? %>
+							    <div class="picture_content_petition_index"> <%= image_tag (micropost.picture.url), class: "img_petition_index" %> 
+							    </div>
+								<% end %>
+							</div>
+							
+							<div class="title-petition">
+								<!--  Titulo -->
+									<b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
+							</div>
 
-			<!--  Titulo -->
-			<span class="title-petition" style="font-size: 18px; color: black;">
-				<%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %> 
-			</span>
+							<div class="content">
+								<!--  Contenido texto -->
+									<%= truncate(micropost.content, :length => 150) %>
+									<%= link_to ".more", controller: "microposts", action: "show", id: micropost.id %>
+							</div>
 
-			<!--  Contenido texto -->
-			<div class="content" style="padding-left: 10px; padding-right: 5px; font-style: 14px;">
-				<%= truncate(micropost.content, :length => 150) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %></span> 
-	   		</div>
+							<div class="votos_seguidores">
+								<% @seguidores = current_user.following.count %>
+								<% @votos_post_seguidores = Vote.where(micropost_id: micropost).where(user_id: current_user.following) %>
+								<% @votos_post_seguidores.each do |votos_seguidores| %>
+									<% @seguido_voto = User.where(id: votos_seguidores.user_id) %>
+									<% @seguido_voto.each do |seguido| %>
+										<b><%= link_to seguido.name, seguido, {style: "color: #7e7e81;"} %></b>&nbsp;
+										<% if votos_seguidores.like == 1 %>
+						          <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: green;"></i>&nbsp;
+						          <% if micropost.petition == true %>
+						            apoya la iniciativa &nbsp;&nbsp;|&nbsp;&nbsp;
+						          <% else %>
+						            le gusta el post &nbsp;&nbsp;|&nbsp;&nbsp;
+						          <% end %>
+						        <% else %>
+						          <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: red;"></i>&nbsp;
+						          <% if micropost.petition == true %>
+						            rechaza la iniciativa &nbsp;&nbsp;|&nbsp;&nbsp;
+						          <% else %>
+						            no le gusta el post &nbsp;&nbsp;|&nbsp;&nbsp;
+						          <% end %>
+						        <% end %>
+									<% end %>
+								<% end %>
+							</div>
 
-	   	<!-- Usuario -->
-			<ul style="padding: 10px; list-style: none; display: inline-flex; background-color: white; width: 100%;">
-				<li style="display: inline-flex;">
-		  			<span>
-		      			<%= image_tag (micropost.user.foto.url), class: "img-circle", size: 38 if micropost.user.foto? %>
-		  			</span>
-		  		</li>
-		      	<li>	
-		      		<ul style="list-style: none; padding: 0px; padding-left: 5px; width: 100%; margin: 0px;">
-		        		<li>
-		          			<%= link_to micropost.user.name, micropost.user %>
-		        		</li>
-		        		<li style="display: inline-flex; font-size: 11px;">
-		          			<%= micropost.user.followers.count %> followers
-		        		</li>
-		        		<li style="font-size: 11px;">
-		        		</li>
-		      		</ul>
-		      	</li>
+							<div class="usuario">
+								<ul class="usuario">
+									<li class="block">
+							      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 38 if micropost.user.foto? %>
+							  	</li>
+							    <li>	
+							      <ul class="block">
+							        <li style="width: 70%;">
+							          <b><%= link_to micropost.user.name, micropost.user %></b>
 
-						<!-- comentarios -->
-						<li style="padding-top: 10px; position: absolute; right: 20px;">
-							<span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= micropost.comments.count %> comentarios</span>
-						</li>
-			</ul>
+								    	<% if micropost.hashtag1? %>
+												 sobre &nbsp; <span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #777777;"} %></b>
+											 <% end %>
 
-		<% end %>
-		</li>
-		</ul>
+												<% if micropost.plaza_id? %>
+													<% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
+													<% @plaza.each do |plaza| %>
+														en&nbsp;&nbsp;<i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<b><%= link_to plaza.name, user_plaza_path(id: @plaza, user_id: current_user), {style: "color: #777777;"} %>.</b>
+													<% end %>
+												<% end %>
+											</li>
+								    </ul>
+								  </li>
+							    <li>
+										<ul class="lista_derecha">
+											<li>
+												<span class="fa fa-thumbs-o-up" aria-hidden="true"></span>&nbsp;&nbsp;<%= micropost.votes.count %>&nbsp;&nbsp;votantes
+										  </li>
+										  <li>
+												<span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;&nbsp;<%= micropost.comments.count %>&nbsp; comentarios</span>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<% end %>
+	   	<% end %>
+		</div>
+
+	<div class="col-sm-3">
+	  <h4>Tus Listas electorales</h4>
+	    <%= render 'shared/lista' %>
 	</div>
 
-  <div class="col-sm-3">
-    <h4>Tus Listas electorales</h4>
-      <%= render 'shared/lista' %>
-    </div>
   </div>
-
 </div>

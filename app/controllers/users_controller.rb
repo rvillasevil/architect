@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     redirect_to root_url and return unless @user.activated?
     @microposts = Micropost.where(:user_id => @user.id).paginate(page: params[:page], per_page: 10)
     @peticiones = Micropost.where(:user_id => @user.id).where(:petition => true)
+    @peticiones_all = Micropost.where(:petition => true)
+    @plazas_grupos = Group.where(:user_id => @user.id)
+
     if @microposts.empty?
       @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page], per_page: 10)
     else 
@@ -95,11 +98,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit_administrative
+    @user = User.find(params[:id])
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to edit
     else
       render 'edit'
     end
@@ -136,7 +143,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin)
+                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin, :description, :provincia)
     end
 
     def plaza_params

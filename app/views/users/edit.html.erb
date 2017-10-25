@@ -2,95 +2,57 @@
   <% provide(:title, "Edit user") %>
   <h1>Update your profile</h1>
 
+  
+
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= form_for(@user) do |f| %>
+      <%= form_for(@user)  do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control' %>.
+
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
 
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label "Municipio" %>
-        <%= f.select(:ciudad, Municipio.all.collect {|p| [ p.nombre ] }) %>
-        <%# f.select :ciudad, [
-            'Albacete',
-            'Alicante',
-            'Almería',
-            'Álava',
-            'Asturias',
-            'Ávila',
-            'Badajoz',
-            'Illes Balears',
-            'Barcelona',
-            'Bizkaia',
-            'Burgos',
-            'Cáceres',
-            'Cádiz',
-            'Cantabria',
-            'Castellón',
-            'Ciudad Real',
-            'Córdoba',
-            'A Coruña',
-            'Cuenca',
-            'Gipuzkoa',
-            'Girona',
-            'Granada',
-            'Guadalajara',
-            'Huelva',
-            'Huesca',
-            'Jaén',
-            'León',
-            'Lleida',
-            'Lugo',
-            'Madrid',
-            'Málaga',
-            'Murcia',
-            'Navarra',
-            'Ourense',
-            'Palencia',
-            'Las Palmas',
-            'Pontevedra',
-            'La Rioja',
-            'Salamanca',
-            'Santa Cruz de Tenerife',
-            'Segovia',
-            'Sevilla',
-            'Soria',
-            'Tarragona',
-            'Teruel',
-            'Toledo',
-            'Valencia',
-            'Valladolid',
-            'Zamora',
-            'Zaragoza',
-            'Ceuta',
-            'Melilla'] %>
+        <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
+        <% if current_user.autonomia? %>
+            <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
+            <%= f.select :autonomia, [
+                'Andalucía',
+                'Aragón',
+                'Principado de Asturias',
+                'Islas Baleares',
+                'Canarias',
+                'Cantabria',
+                'Castilla-La Mancha',
+                'Castilla y León',
+                'Cataluña',
+                'Comunidad Valenciana',
+                'Extremadura',
+                'Galicia',
+                'La Rioja',
+                'Comunidad de Madrid',
+                'Región de Murcia',
+                'Comunidad Foral de Navarra',
+                'País Vasco'
+                ] %>
+            <% if current_user.provincia? %>
+                <% @provincia = Provincia.where(provincia: current_user.provincia).first %>
+                <% @municipios = Municipio.where(id_provincia: @provincia.id_provincia) %>
+                <%= f.select(:provincia, Provincia.all.collect {|p| [ p.provincia ]} ) %>
+                <% if  current_user.ciudad? %>
+                    <%= f.select(:ciudad, @municipios.collect {|p| [ p.nombre ]} ) %>
+                <% else %>
+                <% end %>
+            <% end %>
+        <% else %>
+        <% end %>
 
-        <%= f.label :autonomia %>
-        <%= f.select :autonomia, [
-            'Andalucía',
-            'Aragón',
-            'Principado de Asturias',
-            'Islas Baleares',
-            'Canarias',
-            'Cantabria',
-            'Castilla-La Mancha',
-            'Castilla y León',
-            'Cataluña',
-            'Comunidad Valenciana',
-            'Extremadura',
-            'Galicia',
-            'La Rioja',
-            'Comunidad de Madrid',
-            'Región de Murcia',
-            'Comunidad Foral de Navarra',
-            'País Vasco'
-            ] %>
-
-        <%= f.label :profesion %>
+        <%= f.label "Selecciona tu círculo profesional para debatir sobre los temas importantes" %>
         <%= f.text_field :profesion, class: 'form-control' %>
 
         <%= f.label "", "Your picture" %>

@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
-      @petitions = Micropost.find_by_sql(
+      @post_ordenados = Micropost.find_by_sql(
       'SELECT     microposts.id,
       COUNT       (votes.micropost_id)
       AS          numbersOfVotes
@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
       ORDER BY    count(micropost_id) 
       DESC
       ')
+      @popular_petitions = Micropost.where(id: @post_ordenados).where(petition: true)
       @candidates = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)
@@ -26,6 +27,7 @@ class StaticPagesController < ApplicationController
       ORDER BY    count(followed_id) 
       DESC
       ')
+
     end
   end
 

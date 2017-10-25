@@ -1,19 +1,59 @@
-
-	<% @pueblo = Plaza.where(:name => current_user.ciudad) %>
-	<% if @pueblo.any? %>	
-		<% @pueblo.each do |pueblo| %>
-			<% @siguiendo_pueblo = Group.where(:user_id => current_user.id).where(:plaza_id => pueblo.id) %>
-			<% if @siguiendo_pueblo.any? %>
+	<div style="margin-top: 15px;">
+		<% @pueblo = Plaza.where(:name => current_user.ciudad) %>
+			<% if @pueblo.any? %>	
+				<% @pueblo.each do |pueblo| %>
+					<% @siguiendo_pueblo = Group.where(:user_id => current_user.id).where(:plaza_id => pueblo.id) %>
+					<% if @siguiendo_pueblo.any? %>
+					<% else %>
+						<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px; font-size: 12px;">
+						Por defecto tenemos desactivada tu asociación a la plaza <%= pueblo.name %>, pero sería muy interesante que lo siguieras para estar al tanto de todo lo que ocurre dentro.
+						<b><%= link_to pueblo.name, user_plaza_path(:id => pueblo.id, :user_id => current_user.id) %></b>
+						</div>
+					<% end %>
+				<% end %>
 			<% else %>
-				<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px; font-size: 12px;">
-				Por defecto tenemos desactivada tu asociación a la plaza <%= pueblo.name %>, pero sería muy interesante que lo siguieras para estar al tanto de todo lo que ocurre dentro.
-				<b><%= link_to pueblo.name, user_plaza_path(:id => pueblo.id, :user_id => current_user.id) %></b>
+				<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px;font-size: 12px;">
+					No está creado el círculo de tu ciudad. <b><%= link_to "Créalo", new_user_plaza_path(current_user, name: current_user.ciudad)  %></b>
 				</div>
 			<% end %>
-		<% end %>
-	<% else %>
-	<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px;">
-		Actualmente no está creado el loobi de tu municipio. <%= link_to "Crealo", new_user_plaza_path(current_user)  %>
 	</div>
-	<% end %>
+	<div style="margin-top: 5px;">
+		<% @provincia = Plaza.where(:name => current_user.provincia) %>
+			<% if @provincia.any? %>	
+				<% @provincia.each do |provincia| %>
+					<% @siguiendo_provincia = Group.where(:user_id => current_user.id).where(:plaza_id => provincia.id) %>
+					<% if @siguiendo_provincia.any? %>
+					<% else %>
+						<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px; font-size: 12px;">
+						Por defecto tenemos desactivada tu asociación a la plaza <%= provincia.name %>, pero sería muy interesante que lo siguieras para estar al tanto de todo lo que ocurre dentro.
+						<b><%= link_to provincia.name, user_plaza_path(:id => provincia.id, :user_id => current_user.id) %></b>
+						</div>
+					<% end %>
+				<% end %>
+			<% else %>
+				<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px;font-size: 12px;">
+					No está creado el círculo de tu provincia. <b>	<%= link_to "Créalo", new_user_plaza_path(current_user, name: current_user.provincia)  %></b>
+				</div>
+			<% end %>
+	</div>
+	<div style="margin-top: 5px;">
+		<% @autonomia = Plaza.where(:name => current_user.autonomia) %>
+			<% if @autonomia.any? %>	
+				<% @autonomia.each do |autonomia| %>
+					<% @siguiendo_autonomia = Group.where(:user_id => current_user.id).where(:plaza_id => autonomia.id) %>
+					<% if @siguiendo_autonomia.any? %>
+					<% else %>
+						<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px; font-size: 12px;">
+						Por defecto tenemos desactivada tu asociación a la plaza <%= autonomia.name %>, pero sería muy interesante que lo siguieras para estar al tanto de todo lo que ocurre dentro.
+						<b><%= link_to autonomia.name, user_plaza_path(:id => autonomia.id, :user_id => current_user.id) %></b>
+						</div>
+					<% end %>
+				<% end %>
+			<% else %>
+				<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 5px 10px;font-size: 12px;">
+					No está creado el círculo de tu autonomía. <b><%= link_to "Créalo", new_user_plaza_path(current_user, name: current_user.autonomia)  %></b>
+				</div>
+			<% end %>
+	</div>
+	
 	

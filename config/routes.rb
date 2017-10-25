@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get     '/circles',   to: "users#following"
   get     '/new_plaza', to: 'users#new_plaza'
   get     '/plazas',    to: 'users#following_plaza'
+  get     '/edit_administrative', to: 'users#edit_administrative'
   get     '/petition',  to: 'microposts#petition_form'
   get     '/micropost', to: 'microposts#show'
   get     '/petitions', to: 'microposts#petition_index'

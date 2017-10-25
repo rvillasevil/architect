@@ -1,4 +1,4 @@
- Prefix Verb   URI Pattern                                                  Controller#Action
+  Prefix Verb   URI Pattern                                                  Controller#Action
                          root GET    /                                                            static_pages#home
                         lista GET    /lista(.:format)                                             users#lista
                          help GET    /help(.:format)                                              static_pages#help
@@ -13,6 +13,7 @@
                       circles GET    /circles(.:format)                                           users#following
                     new_plaza GET    /new_plaza(.:format)                                         users#new_plaza
                        plazas GET    /plazas(.:format)                                            users#following_plaza
+          edit_administrative GET    /edit_administrative(.:format)                               users#edit_administrative
                      petition GET    /petition(.:format)                                          microposts#petition_form
                     micropost GET    /micropost(.:format)                                         microposts#show
                     petitions GET    /petitions(.:format)                                         microposts#petition_index

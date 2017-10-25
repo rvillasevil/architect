@@ -11,7 +11,7 @@
 @import "font-awesome";
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
   background-color: #eaeeee;
   /* font-family: 'Montserrat', regular; */
   /* font-family: "PT Serif", regular; */
@@ -269,10 +269,74 @@ aside {
 }
 
 .plaza_stats {
+  background-color: white;
+  border: 1px solid #dddfe2; 
+
+  .background_img {
+    background-image: url('fondo_ciudad_user.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 0px;
+    list-style: none;
+    
+  }
+  .plaza_name_img {
+    text-align: center;
+    list-style: none;
+    padding-left: 0px;
+    margin-top: -45px;
+    ul {
+      text-align: center;
+      
+    }
+  }
+  .plaza_img {
+    position: relative;
+    padding-top: 30px;
+    display: block;
+    margin: auto;
+  }
+  .plaza_name {
+    padding: 10px 10px;
+    font-size: 18px;
+    /*font-family: Georgia, sans-serif, serif;*/
+    font-weight: 150;
+    line-height: 18px;
+    letter-spacing: normal;
+  }
+  .plaza_stats {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .description {
+    padding: 20px 5px;
+    font-size: 13px;
+    color: #7e7e81;
+  }
+}  
+
+@media (max-width: 992px) {
+  .plaza_stats {
+    margin-top: 0px;
+    margin-bottom: 12px;
+  }
+}
+@media (min-width: 992px) {
+  .plaza_stats {
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+}
+
   img-rounded {
   border-radius: 12px;
   }
-}
 
 .user_avatars {
   padding-left: 10px;
@@ -401,6 +465,7 @@ input {
   border: 1px solid #dddfe2;
   margin-bottom: 12px;
   border-radius: 3px;
+  align-items: center;
   ul {
     list-style: none;
   }
@@ -429,7 +494,7 @@ input {
     }
     .right {
       position: absolute;
-      right: 20px;
+      right: 25px;
       padding-top: 0px;
       button {
         font-size: 13px;
@@ -598,6 +663,76 @@ input {
   }
 }
 
+.petition_index {
+  ul {
+    margin-bottom: 0px;
+  }
+  .principal {
+    border: 1px solid #dddfe2;
+    list-style: none; 
+    margin-bottom: 25px;
+    background-color: white;
+  }
+  ul.encabezado {
+    list-style: none;
+    background-color: white;
+    padding-left: 0px;
+  }
+  .title-petition {
+    padding: 10px 10px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .content {
+    padding: 0px 10px 10px 10px;
+  }
+  .votos_seguidores {
+    padding: 0px 10px 10px 10px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $gray-light;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .encabezado {
+    ul.alineado_derecha {
+      display: block;
+      position: absolute;
+      right: 40px;
+      list-style: none;
+      padding: 0px;
+    }
+    li {
+      padding: 0px;
+    }
+  }
+  .usuario {
+    font-size: 13px;
+    color: $gray-light;
+    padding: 10px 10px;
+    list-style: none;
+    ul {
+      list-style: none;
+      display: inline-flex;
+    }
+    .block {
+      display: inline-block;
+      padding-left: 0px;
+      li {
+        padding-left: 5px;
+        align-items: center;
+      }
+    }
+    .lista_derecha {
+      display: block;
+      position: absolute;
+      right: 30px;
+      
+    }
+  }
+
+}
+
 
 /* -------------------- microposts --------------------- */
 
@@ -618,7 +753,7 @@ input {
   }
   .content {
     position: relative;
-    padding-top: 30px;
+    padding-top: 15px;
     padding-bottom: 10px;
     display: block;
     img {
@@ -731,8 +866,9 @@ input {
     .title-link {
     padding-left: 10px;
     margin-top: 5px;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
+    font-family: Georgia, sans-serif, serif;
     }
     .enlace_texto {
     padding-top: 5px;
@@ -806,11 +942,12 @@ input {
     list-style: none;
     padding-left: 0px;
     padding-top: 0px;
-    padding-left: 5px;
+    padding-left: 0px;
     position: relative;
     font-size: 0px;
     ul {
       display: inline-flex;
+      padding-left: 0px;
     }
     li {
     border: 0px;
@@ -836,16 +973,24 @@ input {
   padding-bottom: 0px;
   }
 
+
+
   .header-post {
-  margin: -15px;
+  margin: 0px;
   border-top: 1px solid #e6e9ec;
     h4 {
     margin-top: 5px;
     }
+    .plaza_hashtag {
+      p {
+        font-size: 13px;
+      line-height: 14px;
+      }
+    }
   }
 
   .if-petition {
-  font-size: 9px;
+  font-size: 10px;
   color: $gray-light;
   padding-top: 3px;
   }
@@ -867,7 +1012,74 @@ input {
   .btn {
 
   }
+  .votos_seguidores {
+    display: block;
+    padding-left: 0px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $gray-light;
+  }
+
 }
+.petition_show {
+  
+  .title_show {
+    font-size: 34px;
+    font-family: Georgia, sans-serif, serif;
+    font-weight: 150;
+    line-height: 38px;
+    letter-spacing: normal;
+    
+    text-align: center;
+  }
+
+  @media (max-width: 992px) {
+    .col-md-10 {
+      padding-left: 0px;
+    }
+    .content_show {
+      padding: 0px 0px;
+      font-size: 16px;
+      line-height: 26px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .title_show {
+      padding: 10px 5px;
+    }
+    .comentario {
+      padding-left: 0px;
+    }
+    .social_elements {
+      padding-left: 0px;
+    }
+    .header-post {
+      text-align: center;
+    }
+  }
+  @media (min-width: 992px) {
+    .content_show {
+      padding: 0px 50px;
+      font-size: 16px;
+      line-height: 26px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .title_show {
+      padding: 10px 60px;
+    }
+    .comentario  {
+      padding-left: 90px;
+    }
+    .social_elements  {
+      padding-left: 90px;
+    }
+    .header-post {
+      text-align: center;
+    }
+  }
+}
+
 
 /* --------------------------------------- Micropost ----------*/
 

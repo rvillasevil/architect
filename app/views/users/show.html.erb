@@ -1,38 +1,115 @@
 <div class="container">
   <% provide(:title, @user.name) %>
   <div class="row">
-    <aside class="col-md-2">
-      <section>
-        <h1>
-          <%= image_tag @user.foto.url, size: 150 if current_user.foto? %>
-          <%= @user.name %>
-        </h1>
-      </section>
-      <section>
-        <h5>
-          <b>Perfil de linkedIN</b>
-          <h5><%= link_to image_tag("linkedinlogo.png", size: 25), "#{@user.linkedin}" if @user.linkedin? %></h5>
-        </h5>
-        <h5>
-          <b>Si el usuario desempeña algun cargo o forma parte de alguna lista electoral</b>
-        </h5>
-        <h5>
-          <b>Consultas hechas por el usuario</b>
-          <% @consultas = @user.microposts.where(:petition => true) %>
-          <h5><%= @numero_consultas = @user.microposts.where(:petition => true).count %></h5>
-        </h5>
-        <h5>
-          <b>Número de votos a favor que tiene esta persona</b>
-          <% @votos_positivos = @consultas.each do |consulta| %>
-          <h5><%= @votos_positivos = [Vote.where(:micropost_id => consulta).sum(:like)] %></h5>
-          <%= @votos_positivos.inject(:+) %>
-          <% end %>
-        </h5>
-        <h5>
-          <b>Número de votos en contra</b>
-        </h5>
-      </section>
-    </aside>
+    <div class="col-md-2">
+      <div class="plaza_stats">
+        <div>
+          <div class="background_img"></div>
+          <ul class="plaza_name_img">
+            <li>
+              <div class="plaza_img">
+                  <%= image_tag @user.foto.url, class: "img-circle", size: 75  if @user.foto? %> 
+              </div>
+            </li>
+            <li>
+              <div class="plaza_name">
+                <%= @user.name %>
+              </div>
+            </li>
+            <% if @user.description? %>
+            <li class="description">
+              <%= @user.description %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Posicion del usuario dentro del círculo
+          </li>
+          <li class="lista_block">
+            0
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="inline" style="margin-bottom: 0px;">
+          <li class="titulo">
+            Perfil de linkedIN
+          </li>
+          <li class="lista_block" style="position: absolute; right: 25px;">
+            <%= link_to image_tag("linkedinlogo.png", size: 25), "#{@user.linkedin}" if @user.linkedin? %> 
+          </li>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Comunidad
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-user-o" aria-hidden="true"></i>   Seguidores
+              </li>
+              <li class="right">
+                <a href="<%= followers_user_path(@user) %>">
+                  <%= @user.followers.count %>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-user-o" aria-hidden="true"></i>   Seguidos
+              </li>
+              <li class="right">
+                <a href="<%= following_user_path(@user) %>">
+                  <%= @user.following.count %>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-envelope-open-o" aria-hidden="true"></i>   Iniciativas
+              </li>
+              <li class="right">
+                <%= @microposts.where(:petition => true).count %>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-hand-o-up" aria-hidden="true"></i>   Votos totales
+              </li>
+              <li class="right">
+                <%= Vote.where(:micropost_id => @microposts).count %>
+              </li>
+            </ul>
+          </li>
+          <li class="lista_block">
+            <ul class="inline">
+              <li>
+                <i class="fa fa-circle-o" aria-hidden="true"></i>   Círculos con los que colabora
+              </li>
+              <li class="right">
+                <%= @plazas_grupos.count %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
 
     <div class="col-md-6">
       <%= render 'follow_form' if logged_in? %>
@@ -46,68 +123,7 @@
     </div>
 
     <div class="col-md-4" style="margin-top: 12px;">
-      <div class="aside_content">
-        <ul class="principal">
-          <li class="titulo">
-            Posicion del usuario dentro del círculo
-          </li>
-          <li class="inline">
-            0
-          </li>
-        </ul>
-      </div>
-
-      <div class="aside_content">
-        <ul class="principal">
-          <li class="titulo">
-            Comunidad
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                Seguidores
-              </li>
-              <li class="right">
-                <a href="<%= followers_user_path(@user) %>">
-                  <%= @user.followers.count %>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                Seguidos
-              </li>
-              <li class="right">
-                <a href="<%= following_user_path(@user) %>">
-                  <%= @user.following.count %>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                Iniciativas
-              </li>
-              <li class="right">
-                <%= @microposts.where(:petition => true).count %>
-              </li>
-            </ul>
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                Votos totales
-              </li>
-              <li class="right">
-                <%= Vote.where(:micropost_id => @microposts).count %>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      
 
       <div class="aside_content">
         <ul class="principal">
@@ -135,22 +151,102 @@
           <li class="lista_block">
             <ul class="inline">
               <li class="inline">
-                <%= image_tag petition.picture.url, class: "img-circle", size: 55 if petition.picture? %>
+                <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
               </li>
               <li class="inline">
-                <span class="nombres"><%= link_to petition.title, petition %></b></span>
+                <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
               </li>
               <li class="right" style="padding-top: 10px;">
                 <% @votos = Vote.where(:micropost_id => petition) %>
                 <% @votos_realizados = @votos.count %>
+                <% if @votos_realizados != 0 %>
                 <% @votos_positivos = @votos.where(:like => true).count %>
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= @votos_positivos*100/(@votos_realizados) %> %
+                <% else %>
+                  0 %
+                <% end %>
               </li>
             </ul>
             <% end %>
           </li>
         </ul>
       </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Iniciativas que apoya <%= @user.name %>
+          </li>
+          <% @votos = Vote.where(:user_id => @user.id).where(like: 1) %>
+          <% @votos.each do |voto| %>
+            <% @peticiones_votadas = @peticiones_all.where(id: voto.micropost_id) %>
+            <% @peticiones_votadas.each do |petition| %>
+              <li class="lista_block">
+                <ul class="inline">
+                  <li class="inline">
+                    <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
+                  </li>
+                  <li class="inline">
+                    <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
+                  </li>
+                  <li class="right" style="padding-top: 10px;">
+                  </li>
+                </ul>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Iniciativas que rechaza <%= @user.name %>
+          </li>
+          <% @votos = Vote.where(:user_id => @user.id).where(dislike: 1) %>
+          <% @votos.each do |voto| %>
+            <% @peticiones_votadas = @peticiones_all.where(id: voto.micropost_id) %>
+            <% @peticiones_votadas.take(5).each do |petition| %>
+              <li class="lista_block">
+                <ul class="inline">
+                  <li class="inline">
+                    <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
+                  </li>
+                  <li class="inline">
+                    <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
+                  </li>
+                  <li class="right" style="padding-top: 10px;">
+                  </li>
+                </ul>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="aside_content">
+        <ul class="principal">
+          <li class="titulo">
+            Círculos en los que participa <%= @user.name %>
+          </li>
+          <% @plazas_grupos.each do |grupo| %>
+            <% @plaza_seguida = Plaza.where(:id => grupo.plaza_id) %>
+            <% @plaza_seguida.each do |plaza| %>
+              <li class="lista_block">
+                <ul class="inline">
+                  <li class="inline">
+                    <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+                  </li>
+                  <li class="inline">
+                    <span class="nombres" style="width: 100%;"><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b></span>
+                  </li>
+                </ul>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+
     </div>
   </div>
 </div>

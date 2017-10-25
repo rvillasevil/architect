@@ -74,6 +74,9 @@
                 <ul class="dropdown-menu" >
                   <li><%= link_to "Profile", current_user %></li>
                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                  <li>
+                    <%= link_to "Selecciona tu círculo municipal", edit_administrative_path(id: current_user), class: "btn btn-primary" %>
+                  </li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Log out", logout_path, method: "delete" %>

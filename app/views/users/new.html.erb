@@ -9,14 +9,44 @@
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
 
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
 
         <%= f.label :foto, "Tu foto" %>
         <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
 
+        <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
+        <%= f.select :autonomia, [
+            'Andalucía',
+            'Aragón',
+            'Principado de Asturias',
+            'Islas Baleares',
+            'Canarias',
+            'Cantabria',
+            'Castilla-La Mancha',
+            'Castilla y León',
+            'Cataluña',
+            'Comunidad Valenciana',
+            'Extremadura',
+            'Galicia',
+            'La Rioja',
+            'Comunidad de Madrid',
+            'Región de Murcia',
+            'Comunidad Foral de Navarra',
+            'País Vasco'
+            ] %>
+
+
+        <%= f.label "Selecciona tu círculo provincial para poder ser candidato" %>
+        <%= f.collection_select :provincia, Provincia.order(:provincia), :id, :provincia, include_blank: false  %>
+        <%= p @provincia %>
+
         <%= f.label "Selecciona tu círculo municipal para poder ser candidato" %>
-        <%= f.select(:ciudad, Municipio.all.collect {|p| [ p.nombre ] }) %>
+        <%# f.select(:ciudad, Municipio.all.collect {|p| [ p.nombre ]}, ) %>
+        <%= f.collection_select :ciudad, Municipio.order(:nombre), :id, :nombre, include_blank: false  %>
         <%# f.select :ciudad, [
             'Albacete',
             'Alicante',
@@ -70,27 +100,6 @@
             'Zaragoza',
             'Ceuta',
             'Melilla'] %>
-
-        <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
-        <%= f.select :autonomia, [
-            'Andalucía',
-            'Aragón',
-            'Principado de Asturias',
-            'Islas Baleares',
-            'Canarias',
-            'Cantabria',
-            'Castilla-La Mancha',
-            'Castilla y León',
-            'Cataluña',
-            'Comunidad Valenciana',
-            'Extremadura',
-            'Galicia',
-            'La Rioja',
-            'Comunidad de Madrid',
-            'Región de Murcia',
-            'Comunidad Foral de Navarra',
-            'País Vasco'
-            ] %>
 
         
 

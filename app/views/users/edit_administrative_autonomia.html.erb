@@ -1,0 +1,23 @@
+<div class="container">
+  <% provide(:title, "Edit user") %>
+  <h1 style="font-size: 30px;"><b>Selecciona tus círclos administrativos</b></h1>
+  <h2>Los círculos donde podrás ser candidato del mejor partido del mundo</h2>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+
+        <% if current_user.provincia? %>
+            <% @provincia = Provincia.where(provincia: current_user.provincia).first %>
+            <% @municipios = Municipio.where(id_provincia: @provincia.id_provincia) %>
+            Selecciona tu círculo municipal en <b><%= @provincia.provincia %></b> para poder ser candidato
+            <%= f.select(:provincia, @municipios.collect {|p| [ p.nombre ]} ) %>
+        <% end %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+        
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,81 +1,75 @@
 <li id="micropost-<%= micropost.id %>">
-<div class="petition-title">
-  <% if micropost.title? %>
-  <div class="if-petition">Petition</div>
-    <h4><b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b></h4> 
-  <% else %>
-  <% end %>
-</div>
-
-<ul class="voters">
-  <li>
-    <% @voted = Vote.where(:micropost_id => micropost.id) %>
-    <% @voted.each do |voted| %>
-      <% @voter = User.where(:id => voted.user_id)  %>
-      <% @voter.each do |voter| %>
-
-        <% if logged_in? %>
-          <% micropost.user.following.each do |seguido| %>
-            <% if seguido == voter %>
-              <b><%= p voter.name %></b>  ha votado
-              <% if voted.like == 1 %>
-                <i class="fa fa-thumbs-o-up" aria-hidden="true"> |   </i>
-              <% else %>
-                <i class="fa fa-thumbs-o-down" aria-hidden="true"> |   </i>
-              <% end %>
-            <% end %>
-          <% end %>
-
-        <% else %>
-          <b><%= p voter.name %></b> ha votado
-          <% if voted.like == 1 %>
-            <i class="fa fa-thumbs-o-up" aria-hidden="true"> |   </i>
+  <div>
+    <% if micropost.title? %>
+      <div class="if-petition">Petition</div>
+        <h4>
+          <b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
+        </h4>
+      </div> 
+    <% else %>
+    <% end %>
+  
+  <div class="votos_seguidores">
+    <% @followings = current_user.following.count %>
+    <% @votos_post_seguidores = Vote.where(micropost_id: micropost).where(user_id: current_user.following) %>
+    <% @votos_post_seguidores.each do |votos_seguidores| %>
+      <% @seguido_voto = User.where(id: votos_seguidores.user_id) %>
+      <% @seguido_voto.each do |seguido| %>
+        <b><%= link_to seguido.name, seguido, {style: "color: #7e7e81;"} %></b>&nbsp;
+        <% if votos_seguidores.like == 1 %>
+          <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: green;"></i>&nbsp;
+          <% if micropost.petition == true %>
+            apoya la iniciativa &nbsp;&nbsp;|&nbsp;&nbsp;
           <% else %>
-            <i class="fa fa-thumbs-o-down" aria-hidden="true"> |   </i>
+            le gusta el post &nbsp;&nbsp;|&nbsp;&nbsp;
+          <% end %>
+        <% else %>
+          <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: red;"></i>&nbsp;
+          <% if micropost.petition == true %>
+            rechaza la iniciativa &nbsp;&nbsp;|&nbsp;&nbsp;
+          <% else %>
+            no le gusta el post &nbsp;&nbsp;|&nbsp;&nbsp;
           <% end %>
         <% end %>
-
       <% end %>
-    <% end %>
-  </li>
-</ul>
+    <% end %>            
+  </div>
 
-<div class="header-post" style="">
-  <ul class="user-data" style="background-color: transparent; display: inline-flex;">
-    <li style="padding-left: 10px; margin-top: 5px;">
-      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 45 if micropost.user.foto? %>
-    </li>
-    <li style="font-size: 14px;">
-      <ul style="display: inline-block; list-style: none; padding-left: 5px;">
-        <li>
-          <% if micropost.plaza_id? %>
-            <b><%= link_to micropost.user.name, micropost.user %></b>
-            <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
-            <span class="plaza-seguida"> ha publicado en 
-              <b>
-                <% @plaza.each do |plaza| %>
-                  <%= p plaza.name %>
+
+  <div class="header-post">
+    <ul class="user-data" style="background-color: transparent; display: inline-flex;">
+      <li style="padding-left: 10px; margin-top: 5px;">
+        <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 45 if micropost.user.foto? %>
+      </li>
+      <li style="font-size: 14px;">
+        <ul style="display: inline-block; list-style: none; padding-left: 5px;">
+          <li>
+            <% if micropost.plaza_id? %>
+              <b><%= link_to micropost.user.name, micropost.user %></b>
+              <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
+              <span class="plaza-seguida"> ha publicado en &nbsp; <i class="fa fa-circle-o" aria-hidden="true"></i> <% @plaza.each do |plaza| %>
+                <b><%= link_to plaza.name, user_plaza_path(user_id: current_user, id: plaza.id), {style: "color: #7e7e81;"} %>
+                </b></span>
                 <% end %>
-              </b></span>
-          <% else %>
-            <b><%= link_to micropost.user.name, micropost.user %></b>
-          <% end %>
-        </li>
-        <li style="display: inline-flex; font-size: 12px; ">
-          <%= micropost.user.followers.count %> followers
-        </li>
-        <li>
-          <span class="timestamp">
-            Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-          <% if current_user?(micropost.user) %>
-            <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost.id %>
-          <% end %>
-          </span>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
+            <% else %>
+              <b><%= link_to micropost.user.name, micropost.user %></b>
+            <% end %>
+          </li>
+          <li style="display: inline-flex; font-size: 12px; ">
+            <%= micropost.user.followers.count %> followers
+          </li>
+          <li>
+            <span class="timestamp">
+              Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+            <% if current_user?(micropost.user) %>
+              <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" }, id: micropost %>
+            <% end %>
+            </span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <!--  Contenido texto -->
     <div class="content">
       <% if micropost.petition == true %>
@@ -102,7 +96,7 @@
   <% if micropost.link? %>
     <div class="links">  
       <% doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859') %>
-      <div class= "title-link"><b><%= @title = doc.at_css("title").text %></b></div>
+      <div class= "title-link"><%= @title = doc.at_css("title").text %></div>
        <% @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %>
        <% if @src != nil %>
         <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
