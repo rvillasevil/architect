@@ -1,24 +1,7 @@
 
-  <h2>Comentario</h2>
-<li>
-  <%= comment.contenido %>
-<% if comment.created_at %>
-  <p><small><%= time_ago_in_words(comment.created_at) %> ago</small></p>
-<% end %>
-
-
-<% 
-=begin %>  
-
-	<%= form_for [@micropost, Comment.new] do |f| %>
-    <%= f.text_area :contenido, placeholder: "Add a Reply" %><br/>
-    <%= f.submit "Reply"  %>
+	<% @micropost.comments.order("created_at desc").take(1).each do |comment| %>
+	  <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+	 	<div style="padding-top: 5px; display: inline-block;">
+	  	<b><%= link_to comment.user.name, comment.user %></b>     <%= comment.contenido %>      <span class="timestamp" style="font-size: 11px;"><%= time_ago_in_words(comment.created_at) %> ago.</span>  
+	  </div>
 	<% end %>
-<% 
-=end %>
-
-  <ul>
-
-  </ul>
-
-</li>

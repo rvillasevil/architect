@@ -222,7 +222,7 @@ aside {
 .home_popular {
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid $gray-lighter;
+  
   ul {
   list-style: none;
   display: flex;
@@ -741,11 +741,12 @@ input {
   padding: 0px;
   background-color: #eaeeee;
   li {
-    padding: 15px;
+    padding: 20px;
+    margin: 0px;
     margin-bottom: 15px;
-    box-shadow: 0px 5px 5px #cbcbcd;
+    /*box-shadow: 0px 5px 5px #cbcbcd;*/
     background-color: white;
-    border-radius: 3px;
+    border: 1px solid #d9d9d9;
   }
   .user {
     margin-top: 5em;
@@ -799,16 +800,35 @@ input {
     h6{
     display: inline-block;
     }
+    ul {
+      padding: 0px;
+      display: inline-flex;
+      list-style: none;
+      background-color: #f6f7f9;
+    }
+    li {
+      background-color: #f6f7f9;
+      box-shadow: 0px 0px 0px #cbcbcd;
+      border: 0px;
+    }
+    li.imagen {
+      padding: 0px;
+      align-items: center;
+      margin: 0px;
+    }
+    li.texto {
+      padding: 0px 5px;
+      margin: 0px;
+    }
   }
 
   .fondo-comments {
   border-top: 1px solid #e6e9ec;
   background-color: #f6f7f9;
-  margin-right: -15px;
-  margin-left: -15px;
-  margin-bottom: -15px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-right: -20px;
+  margin-left: -20px;
+  margin-bottom: -20px;
+  padding: 10px 10px;
   }
 
   .numbercomments {
@@ -850,9 +870,9 @@ input {
   max-height: 400px;
   overflow: hidden;
   height: expression(this.scrollHeight > 401? "400px" : "auto" );
-  margin-left: -15px;
-  margin-right: -15px;
-}
+  margin-left: -20px;
+  margin-right: -20px;
+  }
 
   .links {
   border-style: solid;
@@ -866,7 +886,7 @@ input {
     .title-link {
     padding-left: 10px;
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 10px;
     font-family: Georgia, sans-serif, serif;
     }
@@ -914,7 +934,13 @@ input {
   input {
   margin-bottom: 5px;
   }
+
+  .fondo_create_comment {
+    margin: 0px -20px;
+  }
+
   .post_comment {
+    border-top: 1px solid #e6e9ec;
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
@@ -922,9 +948,15 @@ input {
     display: flex;
     overflow: auto;
     font-size: 12px;
-    padding: 1px; 
+    padding: 10px 10px; 
     line-height: 16px;
+    background-color: #f6f7f9;
+    ul {
+      background-color: #f6f7f9;
+      padding-left: 15px 10px;
+    }
     li {
+    background-color: #f6f7f9;
     list-style-type: none;
     border: 0px;
     padding: 3px;
@@ -934,7 +966,12 @@ input {
     -webkit-padding: 10px;
     box-shadow: 0px 0px 0px white;
     }
-  }  
+  } 
+
+  btn.actions {
+    padding: 2px;
+  }
+
   .user-data {
     margin-top: -10px;
     color: $gray-light;
@@ -1103,8 +1140,8 @@ span.picture {
 
 
 .video-responsive {
-margin-left: -15px;
-margin-right: -15px;
+margin-left: -20px;
+margin-right: -20px;
 position: relative;
 padding-bottom: 65%; /* 16/9 ratio */
 padding-top: 20px; /* IE6 workaround*/

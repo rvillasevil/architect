@@ -24,7 +24,7 @@ class PlazasController < ApplicationController
                   WHERE  user_id = :user_id"
     # Select the post where user_id
     @plazas = Plaza.where("id IN (#{plaza_ids})       
-                          OR user_id = :user_id", user_id: current_user.id).paginate(page: params[:page])
+                          OR user_id = :user_id", user_id: current_user.id).paginate(page: params[:page], :per_page => 10)
   end
 
   def all_index

@@ -4,13 +4,16 @@ class CommentsController < ApplicationController
 	@micropost = Micropost.find(params[:micropost_id])
 	@comment = @micropost.comments.build(comment_params)
 		if 	@comment.save
-			flash[:success] = "Comentario añadido"
-			redirect_to :back
+			respond_to do |format|
+        format.html { 
+          redirect_back fallback_location: root_url 
+        }
+        format.js
+      end
 		else
-			@feed_items = []
-      		render 'static_pages/home'
-	    end
-  	end
+
+	 end
+  end
 
   	def destroy
 	    @comment.destroy

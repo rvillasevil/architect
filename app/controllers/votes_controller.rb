@@ -10,8 +10,8 @@ before_action :logged_in_user, only: [:create, :destroy, :index, :update_like, :
 		else
 			@feed_items = []
       		render 'static_pages/home'
-	    end
-  	end
+	   end
+  end
 
   def destroy
 	  @vote.destroy
@@ -42,6 +42,10 @@ before_action :logged_in_user, only: [:create, :destroy, :index, :update_like, :
       redirect_to :back
     else
     end
+  end
+
+  def edit
+    @vote = Vote.find(params[:id])
   end
 
 

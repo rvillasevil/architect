@@ -1,6 +1,6 @@
-<%= form_for(@group, url: '/seguir', method: :post) do |f| %>
+<%= form_for(@group, url: '/seguir', method: :post, remote: true) do |f| %>
 	<%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= f.hidden_field :plaza_id, :value => @plaza.id %>
+	<%= f.hidden_field :plaza_id, :value => params[:id] %>
 
 <%= f.submit "Unite al círculo para estar actualizado", class: "btn btn-primary" %>
 <% end %>
