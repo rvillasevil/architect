@@ -6,6 +6,19 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
+    @users = if params[:tern]
+      User.where('name @@ :t or description @@ :t', t: params[:tern]).order('created_at DESC').paginate(page: params[:page])
+    else
+      User.where(activated: true).paginate(page: params[:page])
+    end
+    @tus_grupos = Group.where(user_id: current_user)
+    @tus_grupos.each do |tus_grupos|
+      @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id)
+      @users_grupos.each do |users_grupos|
+        @users_plazas = User.where(id: users_grupos.user_id)
+        @plaza_user = Plaza.where(id: users_grupos.plaza_id)
+      end
+    end
   end
 
   def plazas
@@ -143,7 +156,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin, :description, :provincia)
+                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin, :description, :provincia, :tern)
     end
 
     def plaza_params

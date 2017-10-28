@@ -9,18 +9,105 @@
 	      <%= render 'shared/stats' %>
 	    </section>
 	  </aside>
-	  <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
-			<h1 style="font-size: 30px;">All users</h1>
-			<ul class="users">
-	  		<%= render @users %>
-			</ul>
-			<%= will_paginate %>
-	  </div>
-				<aside>
-	        <div class="col-sm-3">
-	          <h4>Nuestros candidatos</h4>
-	        </div>
-	      </aside>
-				<%= will_paginate %>
-	 </div>
+	  <div class="col-sm-7">
+	  	<div class="instrucciones" style="margin-top: 15px;">
+          Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
+      </div>
+        <ul class="plazas">
+          <li class="search">
+          	<ul class="search_form" style="width: 100%;">
+							<%= form_tag(users_path, method: :get) do %>
+							<li class="boton_search">
+								<%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px;" %>
+							</li>
+							<li style="display: inline-flex; width: 70%;">
+								<%= text_field_tag :tern, params[:tern], placeholder: ' Enter search term...', style: "margin: 0px;" %>
+							</li>
+							<% end %>
+						</ul>
+					</li>
+					<li class="titulo">
+            <ul>
+              <li>
+                <span style="font-size: 14px;"><b><%= link_to "Todos los usuarios", users_path %></b></span>
+              </li>
+            </ul>
+          </li>
+          <li style="padding: 0px;">
+          	<div class="elementos">
+          		<%# render @users %>
+          		<%# will_paginate %>
+	          	<% @users.each do |user| %> 
+	          		<ul class="master">
+	          			<li style="border-bottom: 1px solid #dddfe2;">
+	          				<ul class="foto_texto">
+			          			<li class="foto">
+												<%= image_tag user.foto.url, class: "img-circle", size: 55 if user.foto? %>
+											</li>
+											<li class="texto">
+												<ul>
+													<li>
+														<b><%= link_to user.name, user %></b>
+													</li>
+													<li style="font-size: 13px;">
+														<b><%= user.followers.count %> seguidores.</b>
+													</li>
+													<li style="font-size: 13px;  color: #8c8c8c;">
+														<% @post_plaza = Micropost.where(:user_id => user.id) %>
+														<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
+														<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos totales.
+													</li>
+													<li style="font-size: 13px; color: #8c8c8c;">
+														<%= @post_plaza_petition.count %> iniciativas totales.
+													</li>
+													</li>
+												</ul>
+											</li>	          					
+	          				</ul>
+	          			</li>
+									<li>
+										<ul class="boton">
+											<li>
+												<% if current_user.following?(user) %>
+													<button type="button" class="btn btn-light btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
+												<% else %>
+													<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+													</button>
+												<% end %>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							<% end %>         		
+          	</div>
+          </li>
+				</ul>
+			</div>
+
+			<%# ya no es necesario paginarlo porque ya pasa por el if y no está paginado %>
+			
+  	<div class="col-sm-3">
+    	<h4>Usuarios sugeridos</h4>
+    	<% @tus_grupos = Group.where(user_id: current_user) %>
+  		<% @tus_grupos.each do |tus_grupos| %>
+    		<% @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id) %>
+    			<% @users_grupos.each do |users_grupos| %>
+      			<% @users_plazas = User.where(id: users_grupos.user_id) %>
+      			<% @plazas_users = Plaza.where(id: users_grupos.plaza_id) %>
+      			<% @plazas_users.each do |plazas_users| %>
+      			<% @users_plazas.each do |users_plazas| %>
+      				<% if current_user.following?(users_plazas) %>
+      				<% else %>
+      					<%= users_plazas.name if users_plazas != current_user %>
+      					<%= plazas_users.name if users_plazas != current_user %>
+      				<% end %>
+      			<% end %>
+      			<% end %>
+    		<% end %>
+  		<% end %>
+  	</div>
+
+	</div>
 </div>
+
+				

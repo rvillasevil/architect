@@ -241,9 +241,9 @@
             <li class="imagen">
               <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
             </li>
-            <li class="texto">
+            <li class="texto" style="width: 88%;">
               <div style="padding-top: 5px; display: inline-block;">
-                <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
+                <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px; display: inline-flex;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
               </div>
             </li>
           </ul>

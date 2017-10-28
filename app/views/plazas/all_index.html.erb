@@ -11,25 +11,41 @@
         </section>
       </aside>
 
-      <div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
-        <div class="instrucciones">
+      <div class="col-sm-7">
+        <div class="instrucciones" style="margin-top: 15px;">
           Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
         </div>
         <ul class="plazas">
-          <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-            <ul style="display: inline-flex; padding: 0px;">
+          <li class="search">
+            <ul class="search_form" style="width: 100%;">
+              <%= form_tag('allplazas', method: :get) do %>
+              <li class="boton_search">
+                <%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px;" %>
+                
+              </li>
+              <li style="display: inline-flex; width: 70%;">
+                <%= text_field_tag :tern, params[:tern], placeholder: ' Enter search term...', style: "margin: 0px;" %>
+              </li>
+              <% end %>
+            </ul>
+          </li>  
+          <li class="titulo">
+            <ul>
               <li>
-                <span style="font-size: 16px;"><b>Todos los círculos</b></span>
+                <span style="font-size: 15px;"><b><%= link_to "Todos los círculos", 'allplazas' %></b></span>
               </li>
               <li>
                 <span style="font-size: 14px;"><b><%= link_to "Tus Círculos", user_plazas_path(current_user) %></b></span>
               </li>
-              <li style="padding-top: 3px; position: absolute; right: 10px;">
+              <li class="right">
                 <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
               </li>
             </ul>
           </li>
           <%# render @plazas %>
+
+          
+
           <% @plazas.each do |plaza| %>
             <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
               <ul style="display: inline-flex; padding-left: 15px;">
@@ -50,8 +66,7 @@
                     <li>
                       <% if logged_in? %>
                         <% if current_user.admin?  %>
-                      | <%= link_to "delete", plaza, method: :delete,
-                                      data: { confirm: "You sure?" } %>
+                          | <%= link_to "delete", plaza, method: :delete, data: { confirm: "You sure?" } %>
                         <% end %>
                       <% end %>
                     </li>

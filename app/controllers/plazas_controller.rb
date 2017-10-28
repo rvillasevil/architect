@@ -29,6 +29,11 @@ class PlazasController < ApplicationController
 
   def all_index
     @plazas = Plaza.all.paginate(page: params[:page])
+    @plazas = if params[:tern]
+      Plaza.where('name @@ :t or description @@ :t', t: params[:tern]).order('created_at DESC').paginate(page: params[:page])
+    else
+      Plaza.all.paginate(page: params[:page])
+    end
   end
 
   def destroy

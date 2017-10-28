@@ -1,4 +1,3 @@
-  Prefix Verb   URI Pattern                                                  Controller#Action
                          root GET    /                                                            static_pages#home
                         lista GET    /lista(.:format)                                             users#lista
                          help GET    /help(.:format)                                              static_pages#help
