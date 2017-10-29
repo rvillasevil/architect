@@ -48,8 +48,8 @@ Rails.application.routes.draw do
     resources :comments
     resources :votes do
       member do
-        get :update_like
-        get :update_dislike
+        put :update_like
+        put :update_dislike
       end
     end
   end

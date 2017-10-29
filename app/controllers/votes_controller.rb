@@ -5,11 +5,15 @@ before_action :logged_in_user, only: [:create, :destroy, :index, :update_like, :
 	@micropost = Micropost.find(params[:micropost_id])
 	@vote = @micropost.votes.build(vote_params)
 		if 	@vote.save
-			flash[:success] = "Voto añadido"
-			redirect_to :back
+      respond_to do |format|
+        format.html { 
+          redirect_back fallback_location: root_url 
+        }
+        format.js
+      end
 		else
 			@feed_items = []
-      		render 'static_pages/home'
+      render 'static_pages/home'
 	   end
   end
 
@@ -29,8 +33,12 @@ before_action :logged_in_user, only: [:create, :destroy, :index, :update_like, :
   def update_like
     @micropost = Micropost.find(params[:micropost_id])
     if @micropost.votes.where(:user_id => current_user.id).update(like: 1, dislike: 0)
-      flash[:success] = "Voto actualizado"
-      redirect_to :back
+      respond_to do |format|
+        format.html { 
+          redirect_back fallback_location: root_url 
+        }
+        format.js
+      end
     else
     end
   end
@@ -38,14 +46,14 @@ before_action :logged_in_user, only: [:create, :destroy, :index, :update_like, :
   def update_dislike
     @micropost = Micropost.find(params[:micropost_id])
     if @micropost.votes.where(:user_id => current_user.id).update(like: 0, dislike: 1)
-      flash[:success] = "Voto actualizado"
-      redirect_to :back
+      respond_to do |format|
+        format.html { 
+          redirect_back fallback_location: root_url 
+        }
+        format.js
+      end
     else
     end
-  end
-
-  def edit
-    @vote = Vote.find(params[:id])
   end
 
 

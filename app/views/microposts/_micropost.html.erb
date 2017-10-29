@@ -45,7 +45,7 @@
         <ul style="display: inline-block; list-style: none; padding-left: 5px;">
           <li>
             <% if micropost.plaza_id? %>
-              <b><%= link_to micropost.user.name, micropost.user %></b>
+              <b><%= link_to micropost.user.name, micropost.user, {style:"color: #0084B4;"} %></b>
               <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
               <span class="plaza-seguida"> ha publicado en &nbsp; <i class="fa fa-circle-o" aria-hidden="true"></i> <% @plaza.each do |plaza| %>
                 <b><%= link_to plaza.name, user_plaza_path(user_id: current_user, id: plaza.id), {style: "color: #7e7e81;"} %>
@@ -136,10 +136,16 @@
 <!-- votos -->
 <!-- votos positivos -->
 <ul class="social_elements">
-  <% if logged_in? %>
-    <li style="display: inline-flex;">
-      <% if (@voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id)).empty? %>
+    <div id="vote<%= micropost.id %>">
+      <%# @votosPositivos = micropost.votes.where(:like => 1).count %>
+      <%# @votosNegativos = micropost.votes.where(:dislike => 1).count %>
+      <% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id) %>
+    
 
+  <% if logged_in? %>
+
+    <li style="display: inline-flex;">
+      <% if @voto_usuario.empty? %>
         <%= form_for([micropost, Vote.new], remote: true) do |f| %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :like, :value => 1 %> 
@@ -147,14 +153,26 @@
             <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
             <% end %>
         <% end %>
-
       <% else %>
-
+<%
+=begin%>
         <%= link_to update_like_micropost_vote_path(micropost, @voto_usuario), :class => "btn btn-link btn-sm" do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>
             Up
         <% end %> 
+<%
+=end%>
+        <% @micropost = micropost %>
+        <% @voto_usuario.each do |voto_usuario| %>
+          <%= form_tag(update_like_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
+              
+              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+              <% end %>
+          <% end %>
+        <% end %>
+      
 
       <% end %>
+
 
   <% else %>
     <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
@@ -162,23 +180,32 @@
     </div>
   <% end %>
 
-    <!-- votos negativos -->
-  
+<!-- votos negativos -->
     <% if logged_in? %>
 
-      <% if (@voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id)).empty? %>
+      <% if @voto_usuario.empty? %>
         <%= form_for([micropost, Vote.new], remote: true) do |f| %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :like, :value => 0 %> 
           <%= f.hidden_field :dislike, :value => 1 %> 
           <%= button_tag(class: "btn btn-link btn-sm") do %>
-            <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i> Down 
+            <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>  Down 
           <% end %>
         <% end %>
-        <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>
+        
       <% else %>
+<%
+=begin%>
         <%= link_to update_dislike_micropost_vote_path(micropost, @voto_usuario), :class => "btn btn-link btn-sm" do %>
           <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %> Down <% end %>
+<%
+=end%>
+        <% @voto_usuario.each do |voto_usuario| %>
+          <%= form_tag(update_dislike_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
+              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Up
+              <% end %>
+          <% end %>
+        <% end %>
           
       <% end %> 
 
@@ -186,13 +213,13 @@
       <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Down    
       <% end %>
     <% end %>
-  
+  </div>
 
 
   <!-- hashtags -->
   <li style="padding-top: 10px;">
     <% if micropost.hashtag1? %>
-      <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to micropost.hashtag1,hashtag_micropost_path(micropost), {style: "color: #777777"} %></a>
+      <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;<%= link_to micropost.hashtag1,hashtag_micropost_path(micropost), {style: "color: #777777"} %></a>
     <% end %>
   </li>
 
@@ -216,7 +243,7 @@
               <%= f.hidden_field :user_id, :value => current_user.id %>
           </li>
           <li>
-              <%= f.submit "Comment", class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #337ab7;" %>
+              <%= f.submit "Comment", class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #0084B4; border: 0px;" %>
             <% end %>
           </li>
         </ul>  
@@ -241,8 +268,8 @@
             <li class="imagen">
               <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
             </li>
-            <li class="texto" style="width: 88%;">
-              <div style="padding-top: 5px; display: inline-block;">
+            <li class="texto" style="width: 85%;">
+              <div style="padding-top: 5px; word-wrap: break-word; line-break: strict; overflow-wrap: break-word;">
                 <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px; display: inline-flex;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
               </div>
             </li>

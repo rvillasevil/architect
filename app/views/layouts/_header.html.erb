@@ -1,14 +1,8 @@
-<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: black; border-bottom: 0px;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
+<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px;">
+  <div class="container-fluid" style="align-content: center; display: flex; justify-content: center; width: 70%;">
       <div class="icons-list">
         <% if logged_in? %>
-          <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 75%;">
+          <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 100%;">
             <li>
               <%= link_to root_path do %>
                 <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">loobIN</p>
@@ -35,43 +29,14 @@
                 <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Consultas</p>
               <% end %>
             </li>
-        <% else %>
-            <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 30%; text-align: center; ">
-              <li style="text-align: center;">
-                <%= link_to root_path do %>
-                  <i class="fa fa-home fa-lg" style="color: white"></i><p style="color: white">loobIN</p>
-                <% end %>
-              </li>
-            </ul> 
-          </ul>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <% if logged_in? %>
-        <ul style="display: inline-flex; list-style: none; width: 50%; padding-left: 0px;">
-
-      <!-- <li style="margin: 0px;">
-        <form class="navbar-form navbar-right" role="search" style="width: 100%; padding-left: 3px;">
-          <div class="form-group input-group">
-            <input type="text" class="form-control" placeholder="Search..">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
-            </span>        
-          </div>
-        </form>
-      </li> -->
-
-          <li style="margin: 0px;">
-            <ul class="nav navbar-nav navbar-right" style="width: 100%;">
-              <li class="dropdown" >
+            <li>
+              
+            </li>
+            <li class="dropdown" style="display: inline-flex;">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 3px; padding-right: 3px; font-size: 0.9em; "><span class="glyphicon glyphicon-user" style="color: white; text-align: center;"></span>
                   <span style="color: white">My Account</span><b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li>
                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                   <li>
@@ -83,13 +48,21 @@
                   </li>
                 </ul>
               </li>
-      <% else %>
-          <%= link_to login_path do %>
-            <i class="fa fa-sign-in fa-lg" style="margin-top: 10px; color: white"></i><p style="color: white">Login</p>
-          <% end %>
-        </ul>  
-      <% end %>
-    </ul>
-  </div>
+        <% else %>
+            <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 30%; text-align: center; ">
+              <li style="text-align: center;">
+                <%= link_to root_path do %>
+                  <i class="fa fa-home fa-lg" style="color: white"></i><p style="color: white">loobIN</p>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to login_path do %>
+                  <i class="fa fa-sign-in fa-lg" style="margin-top: 10px; color: white"></i><p style="color: white">Login</p>
+                <% end %>
+              </li>
+            </ul> 
+          </ul>
+        <% end %>
+      </div>
   </div>
 </header>

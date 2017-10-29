@@ -1,0 +1,24 @@
+<% @votosPositivos = @micropost.votes.where(:like => 1).count %>
+<% @votosPositivos = @micropost.votes.where(:dislike => 1).count %>
+<% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: @micropost.id) %>
+
+<!-- Votos positivos ya una vez creados -->
+		<ul class="social_elements">
+			<li style="display: inline-flex;">
+        <% @voto_usuario.each do |voto_usuario| %>
+          <%= form_tag(update_like_micropost_vote_path(micropost_id: @micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
+              
+              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = @micropost.votes.where(:like => 1).count %></span>  Up
+              <% end %>
+          <% end %>
+        <% end %>
+
+<!-- Votos Negativos ya una vez creados -->
+				<% @voto_usuario.each do |voto_usuario| %>
+	        <%= form_tag(update_dislike_micropost_vote_path(micropost_id: @micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
+	            <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Up
+	            <% end %>
+	        <% end %>
+	      <% end %>
+	    </li>
+	  </ul>

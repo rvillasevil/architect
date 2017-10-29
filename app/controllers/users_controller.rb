@@ -11,14 +11,6 @@ class UsersController < ApplicationController
     else
       User.where(activated: true).paginate(page: params[:page])
     end
-    @tus_grupos = Group.where(user_id: current_user)
-    @tus_grupos.each do |tus_grupos|
-      @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id)
-      @users_grupos.each do |users_grupos|
-        @users_plazas = User.where(id: users_grupos.user_id)
-        @plaza_user = Plaza.where(id: users_grupos.plaza_id)
-      end
-    end
   end
 
   def plazas

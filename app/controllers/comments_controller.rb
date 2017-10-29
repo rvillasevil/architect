@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       end
 		else
 
-	 end
+	   end
   end
 
   	def destroy

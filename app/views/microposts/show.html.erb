@@ -167,9 +167,19 @@
                   <% end %>
               <% end %>
             <% else %>
+<%
+=begin%>
               <%= link_to update_like_micropost_vote_path(@micropost, @voto_usuario), :class => "btn btn-link btn-sm" do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = @micropost.votes.where(:like => 1).count %></span>
                   Up
-              <% end %>       
+              <% end %>
+<%
+=end%>
+              <% @voto_usuario.each do |voto_usuario| %>
+                <%= form_tag(update_like_micropost_vote_path(micropost_id: @micropost, id: voto_usuario), method: :put) do |f| %>
+                    <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = @micropost.votes.where(:like => 1).count %></span>  Up
+                    <% end %>
+                <% end %>
+              <% end %>
             <% end %>
 
           <% else %>
@@ -189,11 +199,21 @@
               <% end %>
             <% end %>
           <% else %>
+<%
+=begin%>
             <%= link_to update_dislike_micropost_vote_path(@micropost, @voto_usuario), :class => "btn btn-link btn-sm" do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>
                   Down
             <% end %>    
+          
+<%
+=end%>
+            <% @voto_usuario.each do |voto_usuario| %>
+              <%= form_tag(update_dislike_micropost_vote_path(micropost_id: @micropost, id: voto_usuario), method: :put) do |f| %>
+                  <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Up
+                  <% end %>
+              <% end %>
+            <% end %>
           <% end %> 
-
         <% else %>
           <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Down
           <% end %>
@@ -253,7 +273,7 @@
               <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
             </li>
             <li class="texto">
-              <div style="padding-top: 5px; display: inline-block;">
+              <div style="padding-top: 5px; word-wrap: break-word;">
                 <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
               </div>
             </li>

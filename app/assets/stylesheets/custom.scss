@@ -12,10 +12,28 @@
 
 body {
   padding-top: 50px;
-  background-color: #eaeeee;
+  /*background-color: #eaeeee;*/
+  background-color: #e6ecf0;
+  word-wrap: break-word;
   /* font-family: 'Montserrat', regular; */
   /* font-family: "PT Serif", regular; */
 }
+
+@media (min-width: 992px) {
+  .col-sm-6 {
+
+  }
+}
+
+@media (max-width: 992px) {
+  .col-sm-6 {
+    padding: 0px;
+  }
+  .col-sm-2 {
+    padding: 0px;
+  }
+}
+
 
 /* typography */
 
@@ -232,6 +250,12 @@ aside {
   li {
   width: 50%;
   text-align: center;
+  }
+  li.home {
+    border-bottom: 3px solid green;
+  }
+  li.popular:hover {
+    color: green;
   }
 } 
 
@@ -832,8 +856,9 @@ input {
   list-style: none;
   padding: 0px;
   background-color: #eaeeee;
+  word-wrap: break-word;
   li {
-    padding: 20px;
+    padding: 10px;
     margin: 0px;
     margin-bottom: 15px;
     /*box-shadow: 0px 5px 5px #cbcbcd;*/
@@ -916,10 +941,10 @@ input {
 
   .fondo-comments {
   border-top: 1px solid #e6e9ec;
-  background-color: #f6f7f9;
-  margin-right: -20px;
-  margin-left: -20px;
-  margin-bottom: -20px;
+  background-color: #f5f8fa;
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-bottom: -10px;
   padding: 10px 10px;
   }
 
@@ -1028,7 +1053,7 @@ input {
   }
 
   .fondo_create_comment {
-    margin: 0px -20px;
+    margin: 0px -10px;
   }
 
   .post_comment {
