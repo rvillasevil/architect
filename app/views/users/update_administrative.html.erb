@@ -1,0 +1,33 @@
+<div class="container">
+  <% provide(:title, "Edit user") %>
+  <h1 style="font-size: 30px;"><b>Selecciona tus círclos administrativos</b></h1>
+  <h2>Los círculos donde podrás ser candidato del mejor partido del mundo</h2>
+  <div class="row">
+    <div id="formulario" class="col-md-6 col-md-offset-3">
+        <%= form_for(update_administrative_user_path(current_user), remote: true) do |f| %>
+        <%# render 'shared/error_messages', object: f.object %>
+            <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
+            <%= f.select :autonomia, [
+                'Andalucía',
+                'Aragón',
+                'Principado de Asturias',
+                'Islas Baleares',
+                'Canarias',
+                'Cantabria',
+                'Castilla-La Mancha',
+                'Castilla y León',
+                'Cataluña',
+                'Comunidad Valenciana',
+                'Extremadura',
+                'Galicia',
+                'La Rioja',
+                'Comunidad de Madrid',
+                'Región de Murcia',
+                'Comunidad Foral de Navarra',
+                'País Vasco'
+                ] %>
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

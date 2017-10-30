@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get     '/circles',   to: "users#following"
   get     '/new_plaza', to: 'users#new_plaza'
   get     '/plazas',    to: 'users#following_plaza'
-  get     '/edit_administrative', to: 'users#edit_administrative'
   get     '/petition',  to: 'microposts#petition_form'
   get     '/micropost', to: 'microposts#show'
   get     '/petitions', to: 'microposts#petition_index'
@@ -29,13 +28,17 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :following, :followers
+      get :edit_administrative
+      put :update_administrative
+      put :update_administrative_ciudad
+      put :update_circles_administrative
     end
 
   resources :users do
     resources :users
     end
-  
   end
+
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
@@ -50,6 +53,7 @@ Rails.application.routes.draw do
       member do
         put :update_like
         put :update_dislike
+        put :update_circles_adminstrative
       end
     end
   end

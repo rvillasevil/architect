@@ -2,48 +2,14 @@
   <% provide(:title, "Edit user") %>
   <h1 style="font-size: 30px;"><b>Selecciona tus círclos administrativos</b></h1>
   <h2>Los círculos donde podrás ser candidato del mejor partido del mundo</h2>
-
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+    <div id="formulario" class="col-md-6 col-md-offset-3">
+        <%= form_tag(update_administrative_user_path(current_user), remote: true, method: :put) do |f| %>
+        <%# render 'shared/error_messages', object: f.object %>
 
-
-        <% if current_user.autonomia? %>
-            <% if current_user.provincia? %>
-                <% @provincia = Provincia.where(provincia: current_user.provincia).first %>
-                <% @municipios = Municipio.where(id_provincia: @provincia.id_provincia) %>
-            <% end %>
-            <% if  current_user.provincia? %>
-                <%= f.select(:ciudad, @municipios.collect {|p| [ p.nombre ]} ) %>
-            <% else %>
-                <%= f.select(:provincia, Provincia.all.collect {|p| [ p.provincia ]} ) %>
-            <% end %>
-        <% else %>
-            <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
-            <%= f.select :autonomia, [
-                'Andalucía',
-                'Aragón',
-                'Principado de Asturias',
-                'Islas Baleares',
-                'Canarias',
-                'Cantabria',
-                'Castilla-La Mancha',
-                'Castilla y León',
-                'Cataluña',
-                'Comunidad Valenciana',
-                'Extremadura',
-                'Galicia',
-                'La Rioja',
-                'Comunidad de Madrid',
-                'Región de Murcia',
-                'Comunidad Foral de Navarra',
-                'País Vasco'
-                ] %>
-        <% end %>
-
-        <%= f.submit "Save changes", class: "btn btn-primary" %>
-        
+            <%= label_tag "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
+            <%= select_tag(:autonomia, options_for_select(Comunidad.all.collect {|p| [ p.comunidad ]} )) %>
+        <%= submit_tag "Save changes", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

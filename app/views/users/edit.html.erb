@@ -18,6 +18,9 @@
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
 
+        <%= f.label :pais %>
+        <%= f.select(:pais, Pai.all.collect {|p| [ p.paisnombre ]} ) %>
+
         <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
         <% if current_user.autonomia? %>
             <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>

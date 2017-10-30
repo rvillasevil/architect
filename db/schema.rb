@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024150757) do
+ActiveRecord::Schema.define(version: 20171029191138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20171024150757) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "contenido"
+  end
+
+  create_table "comunidads", force: :cascade do |t|
+    t.string  "comunidad"
+    t.integer "capital_id"
+  end
+
+  create_table "estados", force: :cascade do |t|
+    t.integer "ubicacionpaisid"
+    t.string  "estadonombre"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -57,6 +67,10 @@ ActiveRecord::Schema.define(version: 20171024150757) do
     t.integer "dc"
   end
 
+  create_table "pais", force: :cascade do |t|
+    t.string "paisnombre"
+  end
+
   create_table "plazas", force: :cascade do |t|
     t.string   "name"
     t.string   "ciudad"
@@ -70,6 +84,7 @@ ActiveRecord::Schema.define(version: 20171024150757) do
   create_table "provincia", force: :cascade do |t|
     t.integer "id_provincia"
     t.string  "provincia"
+    t.integer "comunidad_id"
   end
 
   create_table "pueblos", force: :cascade do |t|
@@ -114,6 +129,7 @@ ActiveRecord::Schema.define(version: 20171024150757) do
     t.string   "linkedin"
     t.string   "description"
     t.string   "provincia"
+    t.string   "pais"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 

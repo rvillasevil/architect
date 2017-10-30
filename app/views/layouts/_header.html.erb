@@ -1,61 +1,58 @@
-<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px;">
-  <div class="container-fluid" style="align-content: center; display: flex; justify-content: center; width: 70%;">
-      <div class="icons-list">
+<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px; height: 40px; min-height: 45px;">
+  <div class="container">
+      <div class="icons_list">
         <% if logged_in? %>
-          <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 100%;">
-            <li>
+          <ul class="icons">
+            <li class="dropdown">
               <%= link_to root_path do %>
-                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">loobIN</p>
+                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>loobIN</span>
+              <% end %>
+            </li>
+            <li class="dropdown">
+              <%= link_to user_plazas_path(current_user) do %>
+                <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Círculos</span>
+              <% end %>
+            </li>
+            <li class="dropdown">
+              <%= link_to '/lista' do %>
+                <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Candidatos</span>
+              <% end %>
+            </li>
+            <li class="dropdown">
+              <%= link_to users_path do %>
+                <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Usuarios</span>
+              <% end %>
+            </li>
+            <li class="dropdown">
+              <%= link_to '/petitions' do %>
+                <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Consultas</span>
               <% end %>
             </li>
           
-            <li>
-              <%= link_to user_plazas_path(current_user) do %>
-                <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Círculos</p> <!-- MyLoobis -->
-              <% end %>
-            </li>
-            <li>
-              <%= link_to '/lista' do %>
-                <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Candidatos</p>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to users_path do %>
-                <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Usuarios</p>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to '/petitions' do %>
-                <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i><p style="color: white">Consultas</p>
-              <% end %>
-            </li>
-            <li>
-              
-            </li>
-            <li class="dropdown" style="display: inline-flex;">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left: 3px; padding-right: 3px; font-size: 0.9em; "><span class="glyphicon glyphicon-user" style="color: white; text-align: center;"></span>
-                  <span style="color: white">My Account</span><b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><%= link_to "Profile", current_user %></li>
-                  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                  <li>
-                    <%= link_to "Selecciona tu círculo municipal", edit_administrative_path(id: current_user), class: "btn btn-primary" %>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
+            <li class="dropdown" >
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-lg" aria-hidden="true" style="text-align: center; color: white;"></i>&nbsp;
+              <span>My Account</span><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" style="left: auto; right: 0px;">
+                <li><%= link_to "Profile", current_user %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li>
+                    <%= link_to "Círculos", edit_administrative_user_path( current_user), class: "btn btn-primary" %>
+                </li>
+                <li class="divider"></li>
+                <li>
                     <%= link_to "Log out", logout_path, method: "delete" %>
-                  </li>
-                </ul>
-              </li>
+                </li>
+              </ul>
+            </li>
         <% else %>
-            <ul style="display: inline-flex; list-style: none; margin-top: 8px; padding-left: 5px; width: 30%; text-align: center; ">
-              <li style="text-align: center;">
+            <ul>
+              <li class="icons">
                 <%= link_to root_path do %>
                   <i class="fa fa-home fa-lg" style="color: white"></i><p style="color: white">loobIN</p>
                 <% end %>
               </li>
-              <li>
+              <li class="icons">
                 <%= link_to login_path do %>
                   <i class="fa fa-sign-in fa-lg" style="margin-top: 10px; color: white"></i><p style="color: white">Login</p>
                 <% end %>

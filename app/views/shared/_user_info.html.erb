@@ -143,7 +143,7 @@
   		<!-- Autonomia -->
   		<h6 style="margin-bottom: 2px;">Círculo autonómico</h6>
       <%= current_user.autonomia if current_user.autonomia %>
-  		<% @autonomia = Plaza.where(:name => current_user.autonomia) %>
+  		<% @autonomia = Plaza.where(name: current_user.autonomia) %>
   		<% if @autonomia.any? %>	
   				<% @autonomia.each do |autonomia| %>
   					<h5 style="margin-top: 2px; font-size: 12px;padding-left: 5px;"><%= image_tag autonomia.foto.url, class: "img-circle", size: 40 if autonomia.foto? %>  <%= link_to autonomia.name, user_plaza_path(:id => autonomia.id, :user_id => current_user.id) %></h5>

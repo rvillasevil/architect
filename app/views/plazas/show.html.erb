@@ -115,7 +115,9 @@
 
           <% @votos = Vote.where(:micropost_id => petition) %>
           <% @votos_realizados = @votos.count %>
-          <% @votos_completado = (@votos_realizados*100/(@seguidores.count)) %>
+          <% if @seguidores != 0%>
+            <% @votos_completado = (@votos_realizados*100/(@seguidores.count)) %>
+          <% end %>
           <% @votos_positivos = @votos.where(:like => true).count %>
           <% @porcentaje = (@votos_positivos*100/(@votos_realizados)) %>
 

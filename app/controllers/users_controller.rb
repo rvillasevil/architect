@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers, :lista, :new_plaza, :plazas, :following_plaza, :show]
-  before_action :correct_user,   only: [:edit, :update]
+                                        :following, :followers, :lista, :new_plaza, :plazas, :following_plaza, :show, :update_administrative,]
+  before_action :correct_user,   only: [:edit, :update, :update_administrative]
   before_action :admin_user,     only: :destroy
 
   def index
@@ -107,6 +107,42 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update_administrative
+    @user = User.find(params[:id])
+    if @user.update_attributes(autonomia: params[:autonomia], provincia: params[:provincia], ciudad: params[:ciudad])
+      respond_to do |format|
+        format.html { 
+          redirect_back fallback_location: root_url 
+        }
+        format.js
+      end
+    else
+    end
+  end
+
+  def update_administrative_ciudad
+    @user = User.find(params[:id])
+    if @user.update_attributes(ciudad: params[:ciudad], provincia: params[:provincia])
+      respond_to do |format|
+        format.html { 
+          redirect_back fallback_location: root_url 
+        }
+        format.js
+      end
+    else
+    end
+  end
+
+  def update_circles_administrative
+    @user = User.find(params[:id])
+    if @user.update_attributes(ciudad: params[:ciudad])
+      flash[:success] = "Círculos actualizados!"
+      redirect_to root_url
+    else
+      redirect_back fallback_location: root_url
+    end
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
@@ -148,7 +184,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin, :description, :provincia, :tern)
+                                   :password_confirmation, :ciudad, :autonomia,:profesion, :foto, :created_by, :plaza, :linkedin, :description, :provincia, :pais, :tern)
     end
 
     def plaza_params

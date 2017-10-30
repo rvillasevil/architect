@@ -118,6 +118,42 @@ textarea {
 
 
 header {
+  .icons_list {
+    font-size: 13px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    text-align: center;
+    list-style: none;
+    span {
+      color: white;
+      font-weight: bold;
+    }
+    ul.icons {
+      list-style: none;
+      display: inline-flex;
+      padding: 0px;
+      width: 100%;
+      margin: 0px;
+    }
+    li.icons {
+      display: inline-flex;
+      width: 15%;
+      margin: 0px;
+      a {
+        align-items: center;
+        text-align: center;
+      }
+    }
+    li.dropdown {
+      padding: 10px 0px;
+      width: 25%;
+      margin: 0px;
+      @media (max-width: 768px) {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
   
 }
 @media (max-width: 576px) {
@@ -147,10 +183,11 @@ header i {
 
 }
 header li:hover {
-  background-color: #004d99;
+  border-bottom: 5px solid white;
+  background-color: #0096cc;
 }
 .active {
-  background-color: #004d99 !important;
+  border-bottom: 5px solid white !important;
 }
 
 /* footer */
@@ -983,7 +1020,8 @@ input {
   .picture_content {
   position:relative;
   display: block;
-  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
   max-height: 400px;
   overflow: hidden;
   height: expression(this.scrollHeight > 401? "400px" : "auto" );

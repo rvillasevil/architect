@@ -163,7 +163,5 @@ class User < ApplicationRecord
       self.activation_digest = User.digest(activation_token)
     end
 
-    #Chek if the user created is a plaza
-
 end
 
