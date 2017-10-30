@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px; height: 40px; min-height: 45px;">
+<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px; height: 40px; min-height: 50px;">
   <div class="container">
       <div class="icons_list">
         <% if logged_in? %>
@@ -31,7 +31,7 @@
           
             <li class="dropdown" >
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-lg" aria-hidden="true" style="text-align: center; color: white;"></i>&nbsp;
-              <span>My Account</span><b class="caret"></b>
+              <span>Account</span><b class="caret" style="display: none;"></b>
               </a>
               <ul class="dropdown-menu" style="left: auto; right: 0px;">
                 <li><%= link_to "Profile", current_user %></li>
