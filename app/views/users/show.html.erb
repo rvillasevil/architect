@@ -21,6 +21,9 @@
               <%= @user.description %>
             </li>
             <% end %>
+            <li>
+              <%= render 'follow_form' if logged_in? %>
+            </li>
           </ul>
         </div>
       </div>
@@ -41,7 +44,7 @@
           <li class="titulo">
             Perfil de linkedIN
           </li>
-          <li class="lista_block" style="position: absolute; right: 25px;">
+          <li class="lista_block" style="position: absolute; right: 20px;">
             <%= link_to image_tag("linkedinlogo.png", size: 25), "#{@user.linkedin}" if @user.linkedin? %> 
           </li>
         </ul>
@@ -107,18 +110,20 @@
             </ul>
           </li>
         </ul>
-      </div>
+      </div> 
       
     </div>
 
     <div class="col-md-6" style="margin-top: 15px;">
-      <%= render 'follow_form' if logged_in? %>
+      
       <% if @microposts.any? %>
         <h5>Posts (<%= @microposts.count %>)</h5>
         <ol class="microposts">
           <%= render @microposts %>
         </ol>
         <%= will_paginate @microposts %>
+      <% else %>
+        El usuario <%= @user.name %> no tiene publicaciones, pero te mostramos algunos usuarios que podrían interesarte. 
       <% end %>
     </div>
 
@@ -228,8 +233,9 @@
         <ul class="principal">
           <li class="titulo">
             Círculos en los que participa <%= @user.name %>
+            <span style="position: absolute; right: 25px;"><%= link_to "Ver todos", user_plazas_path(user_id: @user) %></span>
           </li>
-          <% @plazas_grupos.each do |grupo| %>
+          <% @plazas_grupos.take(5).each do |grupo| %>
             <% @plaza_seguida = Plaza.where(:id => grupo.plaza_id) %>
             <% @plaza_seguida.each do |plaza| %>
               <li class="lista_block">
@@ -243,6 +249,7 @@
                 </ul>
               </li>
             <% end %>
+
           <% end %>
         </ul>
       </div>

@@ -1,33 +1,34 @@
 <% provide(:title, 'Tus Círculos') %>
 	<div class="container">
     <div class="row">
-      <aside class="col-sm-2" style="">
+      <aside class="col-sm-2">
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
         <section class="stats">
           <%= render 'shared/stats' %>
         </section>
-        <section>
-        	<p></p>
-					<p></p>
-        </section>
       </aside>
       <div class="col-sm-7">
-        <div class="instrucciones" style="margin-top: 15px;">
-          Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
+        <div class="instrucciones" style="margin-top: 10px;">
+          Nuestros representantes de cada círculo administrativo. Son aquellos que tienen una mayor participación dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
         </div>
 				<ul class="plazas">
-          <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+           <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+            <span style="font-size: 15px;"><b>Todos los círculos de 
+              <% @usuario = User.find(params[:user_id]) %>
+              <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
+              <% if params[:user_id] = current_user %>
+                <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
+              <% end %>
+          </li>         
+          <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
             <ul style="display: inline-flex; padding: 0px;">
-              <li>
-                <span style="font-size: 15px;"><b>Todos tus círculos</b></span>
+              <li style="padding: 5px;">
+                <span style="font-size: 13px;"><b><%= link_to "Ver todos los círculos", '/allplazas' %></b></span>
               </li>
-              <li>
-                <span style="font-size: 14px;"><b><%= link_to "Ver todos los círculos", '/allplazas' %></b></span>
-              </li>
-              <li style="padding-top: 3px; position: absolute; right: 15px;">
-                <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
+              <li style="padding-top: 0px; padding-bottom: 3px; position: absolute; right: 15px;">
+                <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 12px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
               </li>
             </ul>
           </li>

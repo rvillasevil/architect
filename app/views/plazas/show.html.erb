@@ -21,6 +21,9 @@
               <%= @plaza.description %>
             </li>
             <% end %>
+            <li>
+              <%= render 'groups/seguir_form' if logged_in? %>
+            </li>
           </ul>
         </div>
       </div>
@@ -36,7 +39,7 @@
                 <i class="fa fa-user-o" aria-hidden="true"></i>   Seguidores
               </li>
               <li class="right">
-                <%= @seguidores.count %>
+                <%= @grupo_seguidores.count %>
               </li>
             </ul>
           </li>
@@ -80,7 +83,7 @@
 
     <div class="col-md-6" style="margin-top: 15px; padding: 0px;">
 
-      <%= render 'groups/seguir_form' if logged_in? %>
+      
       <div style="margin-top: 10px;">
        <%= render 'plazas/plaza_post_form'if logged_in? %>
       </div>
@@ -89,6 +92,8 @@
           <%= render @microposts %>
         </ol>
         <%= will_paginate @microposts %>
+      <% else %>
+        El círculo <%= @plaza.name %> no tiene publicaciones. Sé el primero en publicar o mira los siguientes posts realizados en círculos relacionados.  
       <% end %>
     </div>
     <div class="col-md-4" style="margin-top: 12px;">
@@ -104,24 +109,25 @@
         </ul>
       </div>
 
-      
-
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
             Resoluciones (más de 2/3 seguidores)
+            <%= @votos_seguidores.count if @votos_seguidores != nil %>
           </li>
           <% @peticiones.each do |petition| %>
 
           <% @votos = Vote.where(:micropost_id => petition) %>
           <% @votos_realizados = @votos.count %>
-          <% if @seguidores != 0%>
-            <% @votos_completado = (@votos_realizados*100/(@seguidores.count)) %>
+          <% if @grupo_seguidores.count == 0 %>
+            <% @votos_completado = 0 %>
+          <% else %>
+            <% @votos_completado = (@votos_seguidores.count*100/(@grupo_seguidores.count)) %>
           <% end %>
           <% @votos_positivos = @votos.where(:like => true).count %>
           <% @porcentaje = (@votos_positivos*100/(@votos_realizados)) %>
 
-          <% if @votos_completado >= 2/3*100 %>
+          <% @valor_limite = 67 %>
             <li class="lista_block">
               <ul class="inline">
                 <li class="inline">
@@ -130,20 +136,22 @@
                 <li class="inline" style="width: 60%;">
                   <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
                 </li>
-                <li class="right">
+                <li class="right" style="align-items: center;">
                     <i class="fa fa-percent" aria-hidden="true"></i>
-                    <%= @votos_completado %>
-
-                  <% if @porcentaje >= 1/2*100 %>
-                    <button type="button" class="btn btn-success">Aprobada</button>
+                  <%= @votos_completado %>
+                  <% if @votos_completado >= @valor_limite %>
+                    <% if @porcentaje >= 1/2*100 %>
+                      <button type="button" class="btn btn-success">Aprobada</button>
+                    <% else %>
+                      <button type="button" class="btn btn-danger">Denegada</button>
+                    <% end %>
                   <% else %>
-                    <button type="button" class="btn btn-danger">Denegada</button>
+                    &nbsp;<button type="button" class="btn btn-danger" style="background-color: white; border: 1px solid red; color: red;">In progress</button>
                   <% end %>
                 </li>
               </ul>
             <% end %>
-            <% end %>
-            </li>
+          </li>
         </ul>
       </div>
 
@@ -180,12 +188,14 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Usuarios
-          </li>  
-            <% @seguidores.each do |seguidor| %>
+            Otros usuarios
+          </li> 
+            <%# if @grupo_seguidores != 0 %> 
+            <% @grupo_seguidores.count %>
+            <% @grupo_seguidores.each do |seguidor| %>
               <% @usuario = User.where(:id => seguidor.user_id) %>
               <% @usuario.each do |usuario| %>
-              <% unless usuario == current_user %>
+              <% if usuario == current_user %>
               <li class="lista_block">
                 <ul class="inline">
                   <li class="inline">
@@ -202,9 +212,12 @@
                     <% end %>
                   </li>
                 </ul>
+              <% else %>
+                Eres el único usuario de este grupo, comparte publicaciones con tus amigos para llenarlo.
               <% end %>
               <% end %>
-            <% end %>  
+            <% end %>
+            <%# end %>  
           </li>
         </ul>
       </div>

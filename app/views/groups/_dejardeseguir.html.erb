@@ -15,5 +15,5 @@
 		<%= f.hidden_field :user_id, :value => current_user.id %>
 		<%= f.hidden_field :plaza_id, :value => params[:id] %>
 		<%= f.hidden_field :id, :value => @group.id %>
-		<%= f.submit "Abandonar el círculo (dejarás de recibir información sobre él).", class: "btn" %>
+		<%= f.submit "Abandonar el círculo", class: "btn btn-light", style: "border: 1px solid #0084B4; background-color: white;"  %>
 	<% end %>

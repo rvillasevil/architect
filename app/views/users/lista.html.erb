@@ -9,15 +9,15 @@
           <%= render 'shared/stats' %>
         </section>
       </aside> 
-  		<div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; ">
+  		<div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; margin-top: 10px;">
   			<div class="instrucciones">
-  				Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
+  				Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
   			</div>
 				<ul style="list-style: none; padding-left: 0px;">
 					
 					<li style="width: 100%; margin-bottom: 10px;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6;">
-							<span style="font-size: 16px;"><b>Candidatos en <%= current_user.ciudad %></b></span>
+							<span style="font-size: 15px;"><b>Representantes en <%= current_user.ciudad %></b></span>
 						</li>
 								<% @candidatos_pueblo.take(10).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:ciudad => current_user.ciudad) %>
@@ -29,7 +29,7 @@
 									    	</li>
 									    	<li>
 									    		<ul class="texto">
-									    			<li>
+									    			<li style="width: 90%;">
 										    		<b><%= link_to candidate.name, candidate %></b>
 										    		</li>
 										    		<li style="font-size: 13px;">
@@ -40,11 +40,11 @@
 										    		<% if @plaza_votos != nil %>
 											    	<% @post_plaza = Micropost.where(:plaza_id => @plaza_votos.id).where(:user_id => candidate.id) %>
 											    	<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
-											    	<li style="font-size: 13px; color: #8c8c8c;">
+											    	<li style="font-size: 13px; color: #8c8c8c; width: 90%;">
 											    		<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos en <%= current_user.ciudad %>.
 
 											    	</li>
-											    	<li style="font-size: 13px; color: #8c8c8c;">
+											    	<li style="font-size: 13px; color: #8c8c8c; width: 90%;">
 											    		<%= @post_plaza_petition.count %> iniciativas en <%= current_user.ciudad %>.
 											    	</li>
 											    	<% else %>
@@ -59,7 +59,7 @@
 										    	<ul style="display: inline-flex; width: 100%;">
 											    	<li style="position: absolute; right: 20px; ">
 													    <% if current_user.following?(candidate) %>
-													    	<button type="button" class="btn btn-light btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
+													    	<button type="button" class="btn btn-default btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
 													    <% else %>
 																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", candidate, {style: "color: white"} %></span></button>
 													    <% end %>
@@ -73,7 +73,7 @@
 
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<span style="font-size: 16px;"><b>Candidatos en <%= current_user.autonomia %></b></span>
+							<span style="font-size: 15px;"><b>Representantes en <%= current_user.autonomia %></b></span>
 						</li>
 								<% @candidatos_autonomia.take(10).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:autonomia => current_user.autonomia) %>
@@ -84,7 +84,7 @@
 									    	</li>
 									    	<li>
 									    		<ul class="texto">
-									    			<li>
+									    			<li  style="width: 90%;">
 										    		<b><%= link_to candidate.name, candidate %></b>
 										    		</li>
 										    		<li style="font-size: 13px;">
@@ -95,11 +95,11 @@
 											    	<% if @plaza_votos != nil %>
 											    	<% @post_plaza = Micropost.where(:plaza_id => @plaza_votos.id).where(:user_id => candidate.id) %>
 											    	<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
-											    	<li style="font-size: 13px; color: #8c8c8c;">
+											    	<li style="font-size: 13px; color: #8c8c8c; width: 90%;">
 											    		<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos en <%= current_user.autonomia %>.
 
 											    	</li>
-											    	<li style="font-size: 13px; color: #8c8c8c;">
+											    	<li style="font-size: 13px; color: #8c8c8c; width: 90%;">
 											    		<%= @post_plaza_petition.count %> iniciativas en <%= current_user.autonomia %>.
 											    	</li>
 											    	<% else %>
@@ -114,7 +114,7 @@
 										    	<ul style="display: inline-flex; width: 100%;">
 											    	<li style="position: absolute; right: 20px; ">
 													    <% if current_user.following?(candidate) %>
-													    	<button type="button" class="btn btn-light btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
+													    	<button type="button" class="btn btn-default btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
 													    <% else %>
 																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", candidate, {style: "color: white"} %></span></button>
 															<% end %>
@@ -128,7 +128,7 @@
 					
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<span style="font-size: 16px;"><b>Candidatos en el Mundo</b></span>
+							<span style="font-size: 15px;"><b>Representantes en el Mundo</b></span>
 						</li>
 								<% @candidatos_mundo.take(10).each do |x| %>
 									<% @user = User.where(:id => x.id) %>
@@ -139,19 +139,19 @@
 									    	</li>
 									    	<li>
 									    		<ul class="texto">
-									    			<li>
+									    			<li style="width: 90%;">
 										    		<b><%= link_to candidate.name, candidate %></b>
 										    		</li>
 										    		<li style="font-size: 13px;">
 										    			<b><%= candidate.followers.count %> seguidores.</b>
 										    		</li>
-										    		<li style="font-size: 13px;  color: #8c8c8c;">
+										    		<li style="font-size: 13px;  color: #8c8c8c; width: 90%;">
 										    			<% @post_plaza = Micropost.where(:user_id => candidate.id) %>
 										    			<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
-									    				<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos totales.
+									    				<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos.
 											    	</li>
-											    	<li style="font-size: 13px; color: #8c8c8c;">
-											    		<%= @post_plaza_petition.count %> iniciativas totales.
+											    	<li style="font-size: 13px; color: #8c8c8c; width: 90%;">
+											    		<%= @post_plaza_petition.count %> iniciativas.
 											    	</li>
 										    	</ul>
 										    </li>
@@ -159,7 +159,7 @@
 										    	<ul style="display: inline-flex; width: 100%;">
 											    	<li style="position: absolute; right: 20px; ">
 													    <% if current_user.following?(candidate) %>
-													    	<button type="button" class="btn btn-light btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
+													    	<button type="button" class="btn btn-default btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
 													    <% else %>
 																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", candidate, {style: "color: white"} %></span></button>
 															<% end %>

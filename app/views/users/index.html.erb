@@ -39,12 +39,12 @@
           		<%# will_paginate %>
 	          	<% @users.each do |user| %> 
 	          		<ul class="master">
-	          			<li style="border-bottom: 1px solid #dddfe2;">
-	          				<ul class="foto_texto">
+	          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
+	          				<ul class="foto_texto"" >
 			          			<li class="foto">
 												<%= image_tag user.foto.url, class: "img-circle", size: 55 if user.foto? %>
 											</li>
-											<li class="texto">
+											<li class="texto" style="width: 80%;">
 												<ul>
 													<li>
 														<b><%= link_to user.name, user %></b>
@@ -65,17 +65,13 @@
 											</li>	          					
 	          				</ul>
 	          			</li>
-									<li>
-										<ul class="boton">
-											<li>
-												<% if current_user.following?(user) %>
-													<button type="button" class="btn btn-light btn-sm"><span style="font-size: 13px;">Siguiendo</span></button>
-												<% else %>
-													<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
-													</button>
-												<% end %>
-											</li>
-										</ul>
+									<li class="boton">
+										<% if current_user.following?(user) %>
+											<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
+										<% else %>
+											<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+											</button>
+										<% end %>
 									</li>
 								</ul>
 							<% end %>         		
@@ -86,8 +82,10 @@
 
 			<%# ya no es necesario paginarlo porque ya pasa por el if y no está paginado %>
 			
-  	<div class="col-sm-3">
-    	<h4>Usuarios sugeridos</h4>
+  <div class="col-sm-3">
+  	<div class="usuarios_sugeridos">
+    	<h4>A quien seguir</h4>
+    	<h4><%= current_user.name %> hecha un vistazo a las siguientes personas:</h4>
     	<% @tus_grupos = Group.where(user_id: current_user) %>
   		<% @tus_grupos.each do |tus_grupos| %>
     		<% @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id) %>
@@ -96,15 +94,22 @@
       			<% @plazas_users = Plaza.where(id: users_grupos.plaza_id) %>
       			<% @plazas_users.each do |plazas_users| %>
       			<% @users_plazas.each do |users_plazas| %>
-      				<% if current_user.following?(users_plazas) %>
-      				<% else %>
-      					<%= users_plazas.name if users_plazas != current_user %>
-      					<%= plazas_users.name if users_plazas != current_user %>
+      				<% unless current_user.following?(users_plazas) %>
+	  						<li>
+	  							<% if users_plazas != current_user %>
+		  							<%= link_to users_plazas.name, users_plazas  %>
+		  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> en <i class="fa fa-circle-o" aria-hidden="true"></i> 
+		    						<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
+		    						<%= image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
+		    					<% end %>	
+	  						</li>
       				<% end %>
       			<% end %>
       			<% end %>
     		<% end %>
-  		<% end %>
+  		<% end %>  		
+  	</div>
+
   	</div>
 
 	</div>

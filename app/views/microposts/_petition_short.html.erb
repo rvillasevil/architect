@@ -21,7 +21,7 @@
                         <%= image_tag popular_petition.picture.url, size: 50 if popular_petition.picture? %>
                     </li>
                     <li class="inline">
-                      <span class="nombres"><%= link_to popular_petition.title, micropost_path(id: popular_petition) %></b></span>
+                      <span class="nombres" style="color:#0084B4;"><%= link_to popular_petition.title, micropost_path(id: popular_petition) %></b></span>
                     </li>
                     <li class="right" style="padding-top: 10px;">
                       <% @votosPositivos = popular_petition.votes.where(:like => 1).count %>

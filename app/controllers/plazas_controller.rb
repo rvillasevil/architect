@@ -19,12 +19,13 @@ class PlazasController < ApplicationController
   end
 
   def index
+    @user = User.find(params[:user_id])
     #Plazas seguidas por el usuario
     plaza_ids = "SELECT plaza_id FROM groups
                   WHERE  user_id = :user_id"
     # Select the post where user_id
     @plazas = Plaza.where("id IN (#{plaza_ids})       
-                          OR user_id = :user_id", user_id: current_user.id).paginate(page: params[:page], :per_page => 10)
+                          OR user_id = :user_id", user_id: @user).paginate(page: params[:page], :per_page => 10)
   end
 
   def all_index
@@ -51,7 +52,13 @@ class PlazasController < ApplicationController
     @votos = Vote.where(:micropost_id => @microposts).where(:like == 1)
     @micropost  = current_user.microposts.build
     @group = current_user.groups.build
-    @seguidores = Group.where(:plaza_id => @plaza.id)
+    @grupo_seguidores = Group.where(:plaza_id => @plaza.id)
+    @grupo_seguidores.each do |seguidor|
+      @seguidor = User.where(id: seguidor.user_id)
+      @seguidor.each do |voter|
+        @votos_seguidores = @votos.where(user_id: voter)
+      end
+    end
   end
 
   private

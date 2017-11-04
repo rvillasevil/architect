@@ -22,19 +22,30 @@ body {
   }
 }
 
-@media (min-width: 992px) {
-  .col-sm-6 {
+/* color: #0084B4; */
 
-  }
-}
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .col-sm-6 {
     padding: 0px;
   }
   .col-sm-2 {
     padding: 0px;
   }
+  .col-sm-4 {
+    padding: 0px;
+  }
+  .col-sm-7 {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (max-width: 992px) {
+
 }
 
 
@@ -123,7 +134,7 @@ textarea {
 header {
   .icons_list {
     font-size: 14px;
-    font-family: "Segoe UI",Arial,sans-serif;
+    /*font-family: "Segoe UI",Arial,sans-serif;*/
     text-align: center;
     list-style: none;
     span {
@@ -148,9 +159,10 @@ header {
     }
     li.dropdown {
       text-decoration: none;
-      padding: 10px 0px;
+      padding-top: 10px;
       width: 25%;
       margin: 0px;
+      height: 50px;
       @media (max-width: 768px) {
         span {
           display: block;
@@ -350,18 +362,19 @@ aside {
     align-items: center;
     padding: 0px;
     list-style: none;
-    
   }
+
   .plaza_name_img {
     text-align: center;
     list-style: none;
     padding-left: 0px;
     margin-top: -45px;
+    margin-bottom: 0px;
     ul {
       text-align: center;
-      
     }
   }
+
   .plaza_img {
     position: relative;
     padding-top: 30px;
@@ -564,6 +577,9 @@ input {
       border: 1px solid #e6e9ec;
       margin: 5px;
       width: 95%;
+      @media (max-width: 992px) {
+        display: inline-flex;
+      }
     }
     .foto_texto {
       display: inline-flex;
@@ -596,9 +612,16 @@ input {
       }
     }
     .boton {
-      width: 100%;
+      width: 20%;
       text-align: center;
-      padding: 0px;
+      padding: 5px;
+      @media (max-width: 992px) {
+        display: inline-flex;
+        position: absolute;
+        right: 30px;
+        padding-top: 30px;
+        padding-right: 10px;
+      }
     }
   }
 }
@@ -610,6 +633,14 @@ input {
 @media (min-width: 992px) {
   .elementos {
     columns: 2;
+  }
+}
+
+.usuarios_sugeridos {
+  list-style: none;
+  font-size: 13px;
+  li{
+    list-style: none;
   }
 }
 
@@ -650,6 +681,7 @@ input {
     li {
       border: 0px;
       font-size: 13px;
+      align-items: center;
     }
     .right {
       position: absolute;
@@ -897,7 +929,7 @@ input {
 
 .microposts {
   list-style: none;
-  padding: 0px;
+  padding-left: 0px;
   background-color: #eaeeee;
   word-wrap: break-word;
   li {
@@ -1109,9 +1141,13 @@ input {
     display: flex;
     overflow: auto;
     font-size: 12px;
-    padding: 10px 10px; 
+    padding-top: 3px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px; 
     line-height: 16px;
     background-color: #f6f7f9;
+    align-items: center;
     ul {
       background-color: #f6f7f9;
       padding-left: 15px 10px;
@@ -1188,8 +1224,8 @@ input {
   }
 
   .if-petition {
-  font-size: 10px;
-  color: $gray-light;
+  font-size: 12px;
+  color: white;
   padding-top: 3px;
   }
 

@@ -34,9 +34,6 @@
               <li>
                 <span style="font-size: 15px;"><b><%= link_to "Todos los círculos", 'allplazas' %></b></span>
               </li>
-              <li>
-                <span style="font-size: 14px;"><b><%= link_to "Tus Círculos", user_plazas_path(current_user) %></b></span>
-              </li>
               <li class="right">
                 <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
               </li>

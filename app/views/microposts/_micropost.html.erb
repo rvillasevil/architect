@@ -1,14 +1,16 @@
 <li id="micropost-<%= micropost.id %>">
   <div>
     <% if micropost.title? %>
-      <div class="if-petition">Petition</div>
+      <%= button_tag(class: "btn btn-primary btn-sm", style: "background-color: #0084B4;") do %>
+        <div class="if-petition"><b>Causa</b></div>
+      <% end %>
         <h4>
-          <b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
+          <b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id, style: "color: black;" %></b>
         </h4>
-      </div> 
     <% else %>
     <% end %>
-  
+  </div>
+
   <div class="votos_seguidores">
     <% @followings = current_user.following.count %>
     <% @votos_post_seguidores = Vote.where(micropost_id: micropost).where(user_id: current_user.following) %>
@@ -47,7 +49,7 @@
             <% if micropost.plaza_id? %>
               <b><%= link_to micropost.user.name, micropost.user, {style:"color: #0084B4;"} %></b>
               <% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
-              <span class="plaza-seguida"> ha publicado en &nbsp; <i class="fa fa-circle-o" aria-hidden="true"></i> <% @plaza.each do |plaza| %>
+              <span class="plaza-seguida"> ha publicado en &nbsp;<i class="fa fa-circle-o fa-lg" aria-hidden="true"></i> <% @plaza.each do |plaza| %>
                 <b><%= link_to plaza.name, user_plaza_path(user_id: current_user, id: plaza.id), {style: "color: #7e7e81;"} %>
                 </b></span>
                 <% end %>
@@ -139,18 +141,19 @@
     <div id="vote<%= micropost.id %>">
       <%# @votosPositivos = micropost.votes.where(:like => 1).count %>
       <%# @votosNegativos = micropost.votes.where(:dislike => 1).count %>
-      <% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id) %>
-    
+
+
+    <% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id) %>
 
   <% if logged_in? %>
-
     <li style="display: inline-flex;">
+
       <% if @voto_usuario.empty? %>
         <%= form_for([micropost, Vote.new], remote: true) do |f| %>
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :like, :value => 1 %> 
           <%= f.hidden_field :dislike, :value => 0 %> 
-            <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+            <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: green;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
             <% end %>
         <% end %>
       <% else %>
@@ -165,7 +168,7 @@
         <% @voto_usuario.each do |voto_usuario| %>
           <%= form_tag(update_like_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
               
-              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: green;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
               <% end %>
           <% end %>
         <% end %>
@@ -175,7 +178,7 @@
 
 
   <% else %>
-    <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+    <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: green;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
       <% end %>
     </div>
   <% end %>
@@ -189,7 +192,7 @@
           <%= f.hidden_field :like, :value => 0 %> 
           <%= f.hidden_field :dislike, :value => 1 %> 
           <%= button_tag(class: "btn btn-link btn-sm") do %>
-            <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>  Down 
+            <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: red;"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>  Down 
           <% end %>
         <% end %>
         
@@ -202,7 +205,7 @@
 =end%>
         <% @voto_usuario.each do |voto_usuario| %>
           <%= form_tag(update_dislike_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
-              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Up
+              <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: red;"></i>  <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Up
               <% end %>
           <% end %>
         <% end %>
@@ -210,10 +213,11 @@
       <% end %> 
 
     <% else %>
-      <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Down    
+      <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: red; background-color: red;"></i><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Down    
       <% end %>
     <% end %>
   </div>
+
 
 
   <!-- hashtags -->
@@ -249,7 +253,6 @@
         </ul>  
       </div>
       
-
 <% else %>
   <ul class="post_comment" style="border-top: 1px solid #e6e9ec; padding-top: 5px; width: 100%; display: inline-flex; ">
     <li style="background-color: #f2f2f2; padding-left: 15px;"><%= link_to "Plase login to comment.", '/login' %></li>

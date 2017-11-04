@@ -14,7 +14,6 @@
 	  	<div class="instrucciones" style="margin-top: 15px;">
 	  		<h4>Es necesario precisar las peticiones que son especificas del usuario, pendientes, de sus plazas y sugueridas según sus intereses</h4>
 	  	</div>
-	   	
 
 	   	<% @petitions.each do |micropost| %>
 	   		<% if micropost.petition == true %>
@@ -106,7 +105,8 @@
 	   	<% end %>
 		</div>
 
-	<div class="col-sm-3">
+	<div class="col-sm-3" style="margin-top: 15px;">
+		<%= link_to "New petition!", '/petition', class: "btn btn-lg btn-danger" %>
 	  <h4>Tus Listas electorales</h4>
 	    <%= render 'shared/lista' %>
 	</div>

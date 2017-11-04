@@ -1,37 +1,46 @@
 <header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px; height: 40px; min-height: 50px;">
-  <div class="container">
+  <div class="container" style="padding: 0px;">
       <div class="icons_list">
         <% if logged_in? %>
-          <ul class="icons">
+          <ul class="icons" style="width: 100%;">
             <li class="dropdown">
               <%= link_to root_path do %>
-                <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>loobIN</span>
-              <% end %>
+                <div>
+                  <i class="fa fa-home fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>loobIN</span>
+                </div>
+              <% end %>               
             </li>
             <li class="dropdown">
               <%= link_to user_plazas_path(current_user) do %>
-                <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Círculos</span>
+                <div>
+                   <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Círculos</span>       
+                </div>
               <% end %>
             </li>
             <li class="dropdown">
-              <%= link_to '/lista' do %>
-                <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Candidatos</span>
+              <%= link_to '/lista' do %>              
+                <div>
+                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Candidatos</span>                
+                </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to users_path do %>
-                <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Usuarios</span>
+                <div>
+                  <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Usuarios</span>                
+                </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to '/petitions' do %>
-                <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Consultas</span>
+                <div>
+                  <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Consultas</span> 
+                </div>
               <% end %>
             </li>
-          
             <li class="dropdown" >
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-lg" aria-hidden="true" style="text-align: center; color: white;"></i>&nbsp;
-              <span>Account</span><b class="caret" style="display: none;"></b>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-lg" aria-hidden="true" style="text-align: center; color: white;"></i>&nbsp;<b class="caret" style="display: inline-flex; color: white;"></b>&nbsp;
+              <span>Account</span>
               </a>
               <ul class="dropdown-menu" style="left: auto; right: 0px;">
                 <li><%= link_to "Profile", current_user %></li>
