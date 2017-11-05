@@ -2,21 +2,19 @@
 <% if logged_in? %>
   <div class="container">
     <div class="row">
-        <div class="col-sm-2">
-          <div>
-            <%= render 'shared/user_info' %>
-          </div>
-          <div class="stats">
-            <%= render 'shared/stats' %>
-          </div>
+      <div class="col-sm-2">
+        <div>
+          <%= render 'shared/user_info' %>
         </div>
-
+        <div class="stats">
+          <%= render 'shared/stats' %>
+        </div>
+      </div>
       <div class="col-sm-6">
         <%= render 'static_pages/sigue_plaza' %> 
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
-        
         <div class="home_popular">
           <ul>
             <li class="home">
@@ -29,40 +27,39 @@
         </div>
         <%= render 'shared/feed' %>
       </div>
-      <aside>
-          <div class="col-sm-4">
-            <%= render 'microposts/petition_short' %>
-            <h5><b>Iniciativas que tienes pendientes</b></h5>
-            <h5><b>Filtrar por tus intereses</b></h5>
+      <div class="col-sm-4">
+        <%= render 'microposts/petition_short' %>
 
-            <h5><b>Nuestros candidatos</b></h5>
-            <%= render 'shared/lista' %>
-            <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-link" %>
-          </div>
-      </aside>
+        <%= render 'plazas/action_short' %>
 
+        <%= render 'plazas/causa_short' %>
+        <h5><b>Iniciativas que tienes pendientes</b></h5>
+        <h5><b>Filtrar por tus intereses</b></h5>
+
+        <h5><b>Nuestros candidatos</b></h5>
+        <%= render 'shared/lista' %>
+        <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-link" %>
+      </div>
+    </div>
   </div>
-</div>
 
 <% else %>
-<div class="backgroundimg">
+  <div class="backgroundimg">
     <div class="container" >
       <h1 style="font-size: 45px; line-height: 18px;">Welcome to <span style="font-size: 60px;">loobIN <span style="font-size: 30px;">(name in beta)</span></ span> <p>Best party ever.</p></h1> 
       <h3><span style="padding-right: 50px; ">Candidates.</span><span style="padding-right: 50px; padding-left: 50px;">Platform.</span><span style=" padding-left: 50px;">Petitions.</span></h3>
-        <div class="container" >
-            <h1 class="h1"></h1>
-              <div class="wrapper">
-                <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-                <%= link_to "Login", login_path, class: "btn btn-lg btn-primary" %>
-              </div>
+      <div class="container" >
+        <h1 class="h1"></h1>
+        <div class="wrapper">
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+          <%= link_to "Login", login_path, class: "btn btn-lg btn-primary" %>
         </div>
-
-    </div>
-      
+      </div>
+    </div>   
   </div>
 
   <div class="container">
-   <div class="center jumbotron">
+    <div class="center jumbotron">
       <h4>Party its a place where choose the future representatives of all places, from your small town to yout conuntry.</h4>
       <h4>Its a place where you can express yourself about all around you and make changes about it.</h4>
 
@@ -77,4 +74,4 @@
       <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
   </div>
-  <% end %>
+<% end %>

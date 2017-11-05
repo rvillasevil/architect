@@ -10,34 +10,114 @@
         </section>
       </aside>
       <div class="col-sm-7">
-        <div class="instrucciones" style="margin-top: 10px;">
-          Nuestros representantes de cada círculo administrativo. Son aquellos que tienen una mayor participación dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
-        </div>
-				<ul class="plazas">
-           <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-            <span style="font-size: 15px;"><b>Todos los círculos de 
+
+<% @action = params[:accion] %>
+<% @causa = params[:causa] %>
+
+        <% if @action != "true" %>
+          <% if @causa != "true" %>
+            <div class="instrucciones" style="margin-top: 10px;">
+              Nuestros representantes de cada círculo administrativo. Son aquellos que tienen una mayor participación dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
+            </div>
+            <ul class="plazas">
+              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+                <span style="font-size: 15px;"><b>Todos los círculos de 
+                <% @usuario = User.find(params[:user_id]) %>
+                <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
+                <% if params[:user_id] = current_user %>
+                  <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
+                <% end %>
+              </li>         
+              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
+                <ul style="display: inline-flex; padding: 0px;">
+                  <li style="padding: 5px;">
+                    <span style="font-size: 13px;"><b><%= link_to "Ver todos los círculos", '/allplazas' %></b></span>
+                  </li>
+                  <li style="padding-top: 0px; padding-bottom: 3px; position: absolute; right: 15px;">
+                    <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 12px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
+                  </li>
+                </ul>
+              </li>
+          <% else %>
+              <div class="instrucciones" style="margin-top: 10px;">
+              Las causas con las que te sientes identificado, a myor número de seguidores mayor influencia en el mundo tendrá tu causa.
+            </div>
+            <ul class="plazas">
+              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+                <span style="font-size: 15px;"><b>Todos los círculos de 
+                <% @usuario = User.find(params[:user_id]) %>
+                <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
+                <% if params[:user_id] = current_user %>
+                  <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
+                <% end %>
+              </li>         
+              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
+                <ul style="display: inline-flex; padding: 0px;">
+                  <li style="padding: 5px;">
+                    <span style="font-size: 13px;"><b><%= link_to "Ver todos los círculos", '/allplazas' %></b></span>
+                  </li>
+                  <li style="padding-top: 0px; padding-bottom: 3px; position: absolute; right: 15px;">
+                    <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 12px;"><%= link_to "Nueva causa", new_user_plaza_path(:user_id => current_user.id, causa: "true"), {style: "color: white"} %></span>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+          <% end %>
+        <% else %>
+          <div class="instrucciones" style="margin-top: 10px;">
+              Las acciones en las que participas. A mayor número de personas sigan la causa mayor impacto tendrá en todo el mundo, haciendo de éste un lugar mejor. Pueden ser causas de reciclaje, de adoptar gatitos o de oposición frente a determinadas conductas sociales.
+          </div>
+          <ul class="plazas">
+            <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+              <span style="font-size: 15px;"><b>Todos los círculos de 
               <% @usuario = User.find(params[:user_id]) %>
               <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
               <% if params[:user_id] = current_user %>
                 <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
               <% end %>
-          </li>         
-          <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
-            <ul style="display: inline-flex; padding: 0px;">
-              <li style="padding: 5px;">
-                <span style="font-size: 13px;"><b><%= link_to "Ver todos los círculos", '/allplazas' %></b></span>
-              </li>
-              <li style="padding-top: 0px; padding-bottom: 3px; position: absolute; right: 15px;">
-                <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 12px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
-              </li>
-            </ul>
-          </li>
-	  			<%# render @plazas %>
-          <% @plazas.each do |plaza| %>
+            </li>         
+            <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
+              <ul style="display: inline-flex; padding: 0px;">
+                <li style="padding: 5px;">
+                  <span style="font-size: 13px;"><b><%= link_to "Ver todos los círculos", '/allplazas' %></b></span>
+                </li>
+                <li style="padding-top: 0px; padding-bottom: 3px; position: absolute; right: 15px;">
+                  <button type="button" class="btn btn-primary btn-sm">        <span style="font-size: 12px;"><%= link_to "Nueva acción", new_user_plaza_path(:user_id => current_user.id, accion: "true"), {style: "color: white"} %></span>
+                  </button>
+                </li>
+              </ul>
+            </li>
+        <% end %>
+
+
+
+
+<!-- Plazas que no son acciones -->
+        <% if @action != "true" %>
+          <% if @causa != "true" %>
+          No cambiamos plaza <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
+          <% else %>
+          Cambiamos a Causas <% @plazas = @plazas.where(causa: true) %>
+          <% end %>
+        <% else %>
+        Cambiamos a Actions <% @plazas = @plazas.where(action: true) %>
+        <% end %>
+
+        <% @plazas.each do |plaza| %>
             <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
               <ul style="display: inline-flex; padding-left: 15px;">
                 <li style="padding: 10px 0px;">
-                  <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+
+        <% if @action != "true" %>
+          <% if @causa != "true" %>
+          <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+          <% else %>
+          <%= image_tag plaza.foto.url, class: "img", size: 55 if plaza.foto? %>
+          <% end %>
+        <% else %>
+          <%= image_tag plaza.foto.url, class: "img", size: 55 if plaza.foto? %>
+        <% end %>
+
                 </li>
                 <li style="padding: 0px;">
                   <ul class="texto_plaza" style="padding-left: 10px; padding-top: 5px;">
@@ -69,8 +149,10 @@
                 </li>
               </ul>
             </li>
-          <% end %>
-				</ul>
+        <% end %>
+
+<!--                                         -->
+        </ul>
       </div>
       <aside>
         <div class="col-sm-3">

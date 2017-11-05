@@ -238,18 +238,19 @@
           <% @plazas_grupos.take(5).each do |grupo| %>
             <% @plaza_seguida = Plaza.where(:id => grupo.plaza_id) %>
             <% @plaza_seguida.each do |plaza| %>
-              <li class="lista_block">
-                <ul class="inline">
-                  <li class="inline">
-                    <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
-                  </li>
-                  <li class="inline">
-                    <span class="nombres" style="width: 100%;"><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b></span>
-                  </li>
-                </ul>
-              </li>
+              <% if plaza.action != true %>
+                <li class="lista_block">
+                  <ul class="inline">
+                    <li class="inline">
+                      <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+                    </li>
+                    <li class="inline">
+                      <span class="nombres" style="width: 100%;"><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b></span>
+                    </li>
+                  </ul>
+                </li>
+              <% end %>
             <% end %>
-
           <% end %>
         </ul>
       </div>

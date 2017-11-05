@@ -1,20 +1,33 @@
 <div class="container">
   <% provide(:title, 'New Plaza') %>
   <h1 style="font-size: 30px;">Nuevo círculo</h1>
+  <% @causa = params[:causa] %>
+  <% @action = params[:accion] %>
   <% @nombre = params[:name] %>
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for(@plaza) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-        
-        <% if @nombre != nil %>
-            <p>Círculo <b><%= @nombre %></b></p>
-            <%= f.hidden_field :name, value: [@nombre] %>
-        <% else %>
-            <%= f.label :name %>
+
+        <% if @causa != "true" %>
+          <% if @action != "true" %>
+            <% if @nombre != nil %>
+              <p>Círculo <b><%= p @nombre %></b></p>
+              <%= f.hidden_field :name, value: [@nombre] %>
+            <% else %>
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'form-control' %>
+            <% end %>
+          <% else %>
+            <%= f.label "Nombre para tu acción" %>
             <%= f.text_field :name, class: 'form-control' %>
+            <%= f.hidden_field :action, :value => true %>
+          <% end %>
+        <% else %>
+          <%= f.label "Título para tu causa" %>
+          <%= f.text_field :name, class: 'form-control' %>
+          <%= f.hidden_field :causa, :value => true %>
         <% end %>
-         
 
         <%= f.label :description %>
         <%= f.text_field :description, class: 'form-control' %>

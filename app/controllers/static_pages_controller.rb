@@ -27,7 +27,8 @@ class StaticPagesController < ApplicationController
       ORDER BY    count(followed_id) 
       DESC
       ')
-
+      @actions = Plaza.where(action: true)
+      @causas = Plaza.where(causa: true)
     end
   end
 

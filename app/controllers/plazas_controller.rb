@@ -61,10 +61,15 @@ class PlazasController < ApplicationController
     end
   end
 
+  def index_actions
+    @grupos = Group.where(user_id: current_user)
+    @plazas = Plaza.where(action: true).where(id: @grupos.plaza_id)
+  end
+
   private
 
     def plaza_params
-      params.require(:plaza).permit(:name, :ciudad, :foto, :user_id, :description)
+      params.require(:plaza).permit(:name, :ciudad, :foto, :user_id, :description, :causa, :action)
     end
     def correct_user
       @plaza = current_user.plazas.find_by(id: params[:id])

@@ -2,10 +2,10 @@
 <!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" style="margin: 5px;">Share something</button>
     <div id="demo" class="collapse"> -->
     <!-- Formulario del micropost -->
-    <%= form_for(@micropost, html: { multipart: true }) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <%= f.hidden_field :petition, :value => true %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
+<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<%= f.hidden_field :petition, :value => true %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
 <div class="share-content">
     <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px;">
         <li style="display: inline-flex; margin-top: 10px;">

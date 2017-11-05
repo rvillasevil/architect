@@ -39,38 +39,37 @@
               </li>
             </ul>
           </li>
-          <%# render @plazas %>
-
-          
 
           <% @plazas.each do |plaza| %>
-            <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
-              <ul style="display: inline-flex; padding-left: 15px;">
-                <li style="padding: 10px 0px;">
-                  <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
-                </li>
-                <li style="padding: 0px">
-                  <ul class="texto_plaza" style="padding-left: 10px; padding-top: 5px;">
-                    <li>
-                      Círculo <b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
-                    </li>
-                    <li style="font-size: 13px;">
-                      <b><%= Group.where(:plaza_id => plaza.id).count %> seguidores.</b>
-                    </li>
-                    <li style="font-size: 13px; color: #8c8c8c;" >
-                      <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> peticiones.
-                    </li>
-                    <li>
-                      <% if logged_in? %>
-                        <% if current_user.admin?  %>
-                          | <%= link_to "delete", plaza, method: :delete, data: { confirm: "You sure?" } %>
+            <% if plaza.action != true %>
+              <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
+                <ul style="display: inline-flex; padding-left: 15px;">
+                  <li style="padding: 10px 0px;">
+                    <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+                  </li>
+                  <li style="padding: 0px">
+                    <ul class="texto_plaza" style="padding-left: 10px; padding-top: 5px;">
+                      <li>
+                        Círculo <b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
+                      </li>
+                      <li style="font-size: 13px;">
+                        <b><%= Group.where(:plaza_id => plaza.id).count %> seguidores.</b>
+                      </li>
+                      <li style="font-size: 13px; color: #8c8c8c;" >
+                        <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> peticiones.
+                      </li>
+                      <li>
+                        <% if logged_in? %>
+                          <% if current_user.admin?  %>
+                            | <%= link_to "delete", plaza, method: :delete, data: { confirm: "You sure?" } %>
+                          <% end %>
                         <% end %>
-                      <% end %>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            <% end %>
           <% end %>
           <%= will_paginate %>
         </ul>

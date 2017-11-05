@@ -1,0 +1,23 @@
+<div class="aside_content" style="margin-top: 15px;">
+  <ul class="principal">
+    <li class="titulo">
+      <%= link_to "Tus causas", user_plazas_path(user_id: current_user, causa: true) %>
+    </li>
+    <% @causas.take(5).each do |causa| if @causas.any? %>
+      <li class="lista_block">
+        <ul class="inline">
+          <li>
+            <%= link_to causa.name, user_plaza_path(user_id: current_user, id: causa) %>
+          </li>
+          <li class="inline" style="align-items: center;">
+              <%= image_tag causa.foto.url, size: 50 if causa.foto? %>
+          </li>
+          <li class="inline">
+            <span class="nombres" style="color:#0084B4;"><%=  causa.description %></b></span>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

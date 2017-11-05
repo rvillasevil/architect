@@ -1,45 +1,45 @@
-      <div class="aside_content" style="margin-top: 15px;">
-        <ul class="principal">
-          <li class="titulo">
-            El Mundo quiere conocer tu opinión sobre:
+<div class="aside_content" style="margin-top: 15px;">
+  <ul class="principal">
+    <li class="titulo">
+      El Mundo quiere conocer tu opinión sobre:
+    </li>
+    <% @popular_petitions.take(10).each do |popular_petition| %>
+      <% if popular_petition.title? %>
+      
+      <!-- comprobamos que el usuario ya ha votado -->
+
+      <%# @votos_usuario = Vote.where(user_id: current_user).where(micropost_id: popular_petition) %>
+        <%# if @votos_usuario != nil %>
+          <!-- <div class="instrucciones"> 
+           Actualmente no tienes ninguna petición pendiente 
+          </div> -->
+        <%# else %>
+
+          <li class="lista_block">
+            <ul class="inline">
+              <li class="inline" style="align-items: center;">
+                  <%= image_tag popular_petition.picture.url, size: 50 if popular_petition.picture? %>
+              </li>
+              <li class="inline">
+                <span class="nombres" style="color:#0084B4;"><%= link_to popular_petition.title, micropost_path(id: popular_petition) %></b></span>
+              </li>
+              <li class="right" style="padding-top: 10px;">
+                <% @votosPositivos = popular_petition.votes.where(:like => 1).count %>
+                <% @votosNegativos = popular_petition.votes.where(:dislike => 1).count %>
+                <% @votosTotales = @votosPositivos + @votosNegativos %>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                <% if @votosTotales != 0 %>
+                  <% @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %>
+                  <%= @porcentaje %> %
+                <% else %>
+                  <% @porcentaje = 0 %>
+                  <%= @porcentaje %>% 
+                <% end %>
+              </li>
+            </ul>
           </li>
-          <% @popular_petitions.take(10).each do |popular_petition| %>
-            <% if popular_petition.title? %>
-            
-            <!-- comprobamos que el usuario ya ha votado -->
-
-            <%# @votos_usuario = Vote.where(user_id: current_user).where(micropost_id: popular_petition) %>
-              <%# if @votos_usuario != nil %>
-                <!-- <div class="instrucciones"> 
-                 Actualmente no tienes ninguna petición pendiente 
-                </div> -->
-              <%# else %>
-
-                <li class="lista_block">
-                  <ul class="inline">
-                    <li class="inline" style="align-items: center;">
-                        <%= image_tag popular_petition.picture.url, size: 50 if popular_petition.picture? %>
-                    </li>
-                    <li class="inline">
-                      <span class="nombres" style="color:#0084B4;"><%= link_to popular_petition.title, micropost_path(id: popular_petition) %></b></span>
-                    </li>
-                    <li class="right" style="padding-top: 10px;">
-                      <% @votosPositivos = popular_petition.votes.where(:like => 1).count %>
-                      <% @votosNegativos = popular_petition.votes.where(:dislike => 1).count %>
-                      <% @votosTotales = @votosPositivos + @votosNegativos %>
-                      <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                      <% if @votosTotales != 0 %>
-                        <% @porcentaje = (@votosPositivos * 100 / (@votosPositivos + @votosNegativos)) %>
-                        <%= @porcentaje %> %
-                      <% else %>
-                        <% @porcentaje = 0 %>
-                        <%= @porcentaje %>% 
-                      <% end %>
-                    </li>
-                  </ul>
-                </li>
-              <% end %>  
-            <%# end %>
-          <% end %>
-        </ul>
-      </div>
+        <% end %>  
+      <%# end %>
+    <% end %>
+  </ul>
+</div>

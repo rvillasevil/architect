@@ -6,17 +6,17 @@
           <%= f.hidden_field :user_id, :value => current_user.id %>
           <%= f.hidden_field :like, :value => 0 %> 
           <%= f.hidden_field :dislike, :value => 1 %> 
-          <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Down
+          <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Down
           <% end %>
         <% end %>
       <% else %>
-        <%= link_to update_dislike_micropost_vote_path(@micropost, @voto_usuario), :class => "btn btn-link btn-sm" do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>
+        <%= link_to update_dislike_micropost_vote_path(@micropost, @voto_usuario), :class => "btn btn-link btn-sm" do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>
               Down
         <% end %>    
       <% end %> 
 
     <% else %>
-      <%= button_tag(class: "btn btn-link btn-sm") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Down
+      <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosNegativos = @micropost.votes.where(:dislike => 1).count %></span>  Down
       <% end %>
     <% end %>
   </div>
