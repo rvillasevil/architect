@@ -47,6 +47,19 @@ class MicropostsController < ApplicationController
       ORDER BY    count(followed_id) 
       DESC
       ')
+    @microposts = Micropost.where(petition: true).paginate(page: params[:page])
+    @post_ordenados = Micropost.find_by_sql(
+      'SELECT     microposts.id,
+      COUNT       (votes.micropost_id)
+      AS          numbersOfVotes
+      FROM        votes
+      LEFT JOIN   microposts
+      ON          votes.micropost_id = microposts.id
+      GROUP BY    microposts.id
+      ORDER BY    count(votes.micropost_id) 
+      DESC
+      ')
+    @popular_petitions = Micropost.where(id: @post_ordenados).where(petition: true)
   end
 
   private

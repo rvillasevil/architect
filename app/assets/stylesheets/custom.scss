@@ -38,6 +38,9 @@ body {
   .col-sm-7 {
     padding: 5px;
   }
+  .col-sm-8 {
+    padding: 0px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -162,7 +165,8 @@ header {
       padding-top: 10px;
       width: 25%;
       margin: 0px;
-      height: 50px;
+      height: 45px;
+      font-size: 13px;
       @media (max-width: 768px) {
         span {
           display: block;
@@ -201,7 +205,7 @@ header i {
 
 }
 header li:hover {
-  border-bottom: 5px solid white;
+  border-bottom: 3px solid white;
   background-color: #0096cc;
 }
 .active {
@@ -344,6 +348,24 @@ aside {
   }
   strong {
     display: block;
+  }
+}
+
+.plazas_info {
+  list-style: none;
+  background-color: white;
+  border: 1px solid #dddfe2;
+  ul {
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  li {
+    list-style: none;
+    border-bottom: 1px solid #e6e9ec;
+    padding: 5px;
+  }
+  span {
+    font-size: 13px;
   }
 }
 

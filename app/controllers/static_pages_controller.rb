@@ -12,7 +12,19 @@ class StaticPagesController < ApplicationController
       LEFT JOIN   microposts
       ON          votes.micropost_id = microposts.id
       GROUP BY    microposts.id
-      ORDER BY    count(micropost_id) 
+      ORDER BY    count(votes.micropost_id) 
+      DESC
+      ')
+     @petitions_masvotadas = Micropost.find_by_sql(
+      'SELECT     microposts.id,
+      COUNT       (votes.micropost_id)
+      AS          numbersOfVotes
+      FROM        votes
+      LEFT JOIN   microposts
+      ON          votes.micropost_id = microposts.id
+      WHERE       microposts.petition = true
+      GROUP BY    microposts.id
+      ORDER BY    count(votes.micropost_id) 
       DESC
       ')
       @popular_petitions = Micropost.where(id: @post_ordenados).where(petition: true)
@@ -27,13 +39,13 @@ class StaticPagesController < ApplicationController
       ORDER BY    count(followed_id) 
       DESC
       ')
-      @actions = Plaza.where(action: true)
-      @causas = Plaza.where(causa: true)
+      @grupos_acciones = Group.where(user_id: current_user)
+
     end
   end
 
   def popular
-    @microposts = Micropost.find_by_sql(
+    @posts_masvotados = Micropost.find_by_sql(
       'SELECT     microposts.id,
       COUNT       (votes.micropost_id)
       AS          numbersOfVotes
@@ -41,9 +53,22 @@ class StaticPagesController < ApplicationController
       LEFT JOIN   microposts
       ON          votes.micropost_id = microposts.id
       GROUP BY    microposts.id
-      ORDER BY    count(micropost_id) 
+      ORDER BY    count(votes.micropost_id) 
       DESC
       ')
+     @petitions_masvotadas = Micropost.find_by_sql(
+      'SELECT     microposts.id,
+      COUNT       (votes.micropost_id)
+      AS          numbersOfVotes
+      FROM        votes
+      LEFT JOIN   microposts
+      ON          votes.micropost_id = microposts.id
+      WHERE       microposts.petition = true
+      GROUP BY    microposts.id
+      ORDER BY    count(votes.micropost_id) 
+      DESC
+      ')
+    @popular_petitions = Micropost.where(id: @post_ordenados).where(petition: true)
     @candidates = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)

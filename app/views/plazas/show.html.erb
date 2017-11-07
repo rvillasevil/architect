@@ -194,27 +194,30 @@
             <% @grupo_seguidores.count %>
             <% @grupo_seguidores.each do |seguidor| %>
               <% @usuario = User.where(:id => seguidor.user_id) %>
-              <% @usuario.each do |usuario| %>
-              <% if usuario == current_user %>
-              <li class="lista_block">
-                <ul class="inline">
-                  <li class="inline">
-                    <%= image_tag usuario.foto.url, class: "img-circle", size: 55 if usuario.foto? %>
-                  </li>
-                  <li class="inline">
-                    <span class="nombres"><%= link_to usuario.name, usuario %></b></span>
-                  </li>
-                  <li class="right">
-                    <% if current_user.following?(usuario) %>
-                      <button type="button" class="btn btn-light btn-sm">Siguiendo</button>
-                    <% else %>
-                      <button type="button" class="btn btn-primary btn-sm"><%= link_to "Seguir", usuario, {style: "color: white"} %></button>
-                    <% end %>
-                  </li>
-                </ul>
+              <% if @usuario.any? %>
+                <% @usuario.each do |usuario| %>
+                  <% if usuario != current_user %>
+                  <li class="lista_block">
+                    <ul class="inline">
+                      <li class="inline">
+                        <%= image_tag usuario.foto.url, class: "img-circle", size: 55 if usuario.foto? %>
+                      </li>
+                      <li class="inline">
+                        <span class="nombres"><%= link_to usuario.name, usuario %></b></span>
+                      </li>
+                      <li class="right">
+                        <% if current_user.following?(usuario) %>
+                          <button type="button" class="btn btn-light btn-sm">Siguiendo</button>
+                        <% else %>
+                          <button type="button" class="btn btn-primary btn-sm"><%= link_to "Seguir", usuario, {style: "color: white"} %></button>
+                        <% end %>
+                      </li>
+                    </ul>
+                  <% end %>
+                <% end %>
               <% else %>
-                Eres el único usuario de este grupo, comparte publicaciones con tus amigos para llenarlo.
-              <% end %>
+                No hay usuarios.
+                Añade amigos para apoyar todo lo que se desarrolle aqui.
               <% end %>
             <% end %>
             <%# end %>  
