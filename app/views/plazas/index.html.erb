@@ -5,23 +5,20 @@
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
-        <section class="stats">
-          <%= render 'shared/stats' %>
-        </section>
       </aside>
-      <div class="col-sm-7">
+      <div class="col-sm-6">
 
 <% @action = params[:accion] %>
 <% @causa = params[:causa] %>
 
         <% if @action != "true" %>
           <% if @causa != "true" %>
-            <div class="instrucciones" style="margin-top: 10px;">
+            <div class="instrucciones" style="margin-top: 15px;">
               Nuestros representantes de cada círculo administrativo. Son aquellos que tienen una mayor participación dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
             </div>
             <ul class="plazas">
               <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-                <span style="font-size: 15px;"><b>Todos los círculos de 
+                <span style="align-items: center; padding-top: 10px;"><b>Todos los círculos de 
                 <% @usuario = User.find(params[:user_id]) %>
                 <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
                 <% if params[:user_id] = current_user %>
@@ -44,7 +41,7 @@
             </div>
             <ul class="plazas">
               <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-                <span style="font-size: 15px;"><b>Todos los círculos de 
+                <span style="align-items: center; padding-top: 10px;"><b>Todos los círculos de 
                 <% @usuario = User.find(params[:user_id]) %>
                 <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
                 <% if params[:user_id] = current_user %>
@@ -95,12 +92,12 @@
 <!-- Plazas que no son acciones -->
         <% if @action != "true" %>
           <% if @causa != "true" %>
-          <h5><b>Círculos</b></h5> <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
+          <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Tus Círculos</b></div> <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
           <% else %>
-          <h5><b>Causas</b></h5> <% @plazas = @plazas.where(causa: true) %>
+          <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Causas</b></div> <% @plazas = @plazas.where(causa: true) %>
           <% end %>
         <% else %>
-        <h5><b>Acciones</b></h5> <% @plazas = @plazas.where(action: true) %>
+        <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Acciones</b></div> <% @plazas = @plazas.where(action: true) %>
         <% end %>
 
         <% @plazas.each do |plaza| %>
@@ -160,13 +157,11 @@
             </li>
         <% end %>
 
-<!--                                         -->
         </ul>
       </div>
       <aside>
-        <div class="col-sm-3">
-          <h4>Nuestros candidatos</h4>
-          <h4>Círculos recomendados para tí.</h4>
+        <div class="col-sm-3" style="margin-top: 15px;">
+          <%= render 'plazas/plazas_recomendadas' %>
         </div>
       </aside>
   	</div>

@@ -30,7 +30,7 @@
         </div>
         <ul class="microposts">
           <%# render @microposts %>
-          <% @posts_masvotados.take(20).each do   |posts_masvotados| %>
+          <% @posts_masvotados.take(15).each do   |posts_masvotados| %>
             <% @microposts = Micropost.where(id: posts_masvotados).paginate(page: params[:page]) %>
             <%= render @microposts %>
           <% end %>

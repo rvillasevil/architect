@@ -60,6 +60,18 @@ class MicropostsController < ApplicationController
       DESC
       ')
     @popular_petitions = Micropost.where(id: @post_ordenados).where(petition: true)
+    @petitions_masvotadas = Micropost.find_by_sql(
+      'SELECT     microposts.id,
+      COUNT       (votes.micropost_id)
+      AS          numbersOfVotes
+      FROM        votes
+      LEFT JOIN   microposts
+      ON          votes.micropost_id = microposts.id
+      WHERE       microposts.petition = true
+      GROUP BY    microposts.id
+      ORDER BY    count(votes.micropost_id) 
+      DESC
+      ')
   end
 
   private

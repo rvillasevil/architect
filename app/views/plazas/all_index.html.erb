@@ -1,18 +1,15 @@
 <% provide(:title, 'Todos los círculos') %>
 	<div class="container">
     <div class="row">
-
       <aside class="col-sm-2" style="">
         <section class="user_info">
           <%= render 'shared/user_info' %>
-        </section>
-        <section class="stats">
-          <%= render 'shared/stats' %>
         </section>
       </aside>
 
       <div class="col-sm-7">
         <div class="instrucciones" style="margin-top: 15px;">
+          <i class="fa fa-info fa-lg" aria-hidden="true"></i>&nbsp;
           Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
         </div>
         <ul class="plazas">
@@ -47,15 +44,15 @@
 
           <% if @action != "true" %>
             <% if @causa != "true" %>
-            Círculos <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
+            <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Todos los Círculos</b></div> <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
             <% else %>
-              Causas <% @plazas = @plazas.where(causa: true) %>
+              <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Causas</b></div> <% @plazas = @plazas.where(causa: true) %>
             <% end %>
           <% else %>
-            Acciones <% @plazas = @plazas.where(action: true) %>
+            <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Acciones</b></div> <% @plazas = @plazas.where(action: true) %>
           <% end %>
 
-          <% @plazas.each do |plaza| %>
+          <% @plazas.first(20).each do |plaza| %>
             <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
               <ul style="display: inline-flex; padding-left: 15px;">
                 <li style="padding: 10px 0px;">
@@ -66,12 +63,12 @@
                     <li>
                     <% if @action != "true" %>
                       <% if @causa != "true" %>
-                      <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(causa: nil).where(action: nil) %>
+                        Círculo <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(causa: nil).where(action: nil) %>
                       <% else %>
                         <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(causa: true) %>
                       <% end %>
                     <% else %>
-                      <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(action: true) %>
+                        <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(action: true) %>
                     <% end %>
                       <b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
                     </li>
@@ -98,11 +95,11 @@
       </div>
 
       <aside>
-        <div class="col-sm-3">
-          <h4>Nuestros candidatos</h4>
+        <div class="col-sm-3" style="margin-top: 15px;">
+          <%= render 'plazas/plazas_recomendadas' %>
         </div>
       </aside>
-
+      
 			<%= will_paginate %>
   	</div>
 	</div>

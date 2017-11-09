@@ -1,23 +1,86 @@
-<div class="background-imagen">
-    <div class="container">
-      <% provide(:title, 'Sign up') %>
-      <h1>Sign up</h1>
-
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <%= form_for(@user) do |f| %>
-            <%= render 'shared/error_messages', object: f.object %>
-            <%= f.label :name, "Tu nombre", style: "color: white;" %>
-            <%= f.text_field :name, class: 'form-control', :placeholder => "Tu nombre y apellidos para tu usuario" %>
-
-            <%= f.label :description, style: "color: white;" %>
-            <%= f.text_field :description, class: 'form-control', placeholder: "Descríbete para completar tu perfil político" %>
-
-            <%= f.label :email, style: "color: white;" %>
-            <%= f.email_field :email, class: 'form-control', placeholder: "Te mandaremos el correo de activación a la cuenta de correo electrónico" %>
-
-            <%= f.label :foto, "Tu foto", style: "color: white;" %>
-            <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %>
+<div class="container" style="background-color: white; width: 100vw">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="new_inicio">
+              <% provide(:title, 'Sign up') %>
+              
+              <div class="titulo">
+                <h3>Para comenzar, vamos a crear su cuenta.</h3>
+                <h5 style="margin-top: 25px;">Resgistrarse en assemblyn es fácil y gratis; además tú eliges el momento de ser representante de algún círculo administrativo.</h5>  
+              </div>
+                <ul class="titulo">
+                  <li class="element">
+                    <ul>
+                        <li>
+                            <i class="fa fa-id-badge fa-2x" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <b>Sólo lo justo</b>
+                            <p><h5>Con muy pocos datos podrás crear tu cuenta en XXX</h5></p>
+                        </li>
+                    </ul>   
+                  </li>
+                  <li class="element">
+                    <ul>
+                        <li>
+                            <i class="fa fa-envelope-open-o fa-2x" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <b>Círculos administrativos</b>
+                            <p><h5>Para poder ser candidato son necesarios especificar los círculos administativos a los que perteneces, pero no es necesario que nos los indiques ahora.</h5></p>
+                        </li>
+                    </ul>               
+                  </li>
+                  <li class="element">
+                    <ul>
+                        <li>
+                            <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                        </li>
+                        <li>
+                            <b>Amigos</b>
+                            <p><h5>Para poder tener mayor representación invita a tus amigos a entrar en XXX, cuantos más seamos mejor!</h5></p>
+                        </li>
+                    </ul>               
+                  </li>
+                </ul>
+                <ul class="form">
+                    <%= form_for(@user) do |f| %>
+                    <li>
+                        <%= render 'shared/error_messages', object: f.object %>
+                        <%= f.label :name, "Tu nombre", style: "color: grey; font-weight: lighter;" %>
+                        <%= f.text_field :name, class: 'form-control', :placeholder => "Tu nombre y apellidos para tu usuario" %>
+                    </li>
+                    <li>
+                        <%= f.label :description, style: "color: grey; font-weight: lighter;" %>
+                        <%= f.text_field :description, class: 'form-control', placeholder: "Descríbete para completar tu perfil político" %>
+                    </li>
+                    <li>
+                        <%= f.label :email, style: "color: grey; font-weight: lighter;" %>
+                        <%= f.email_field :email, class: 'form-control', placeholder: "Te mandaremos el correo de activación a la cuenta de correo electrónico" %>
+                    </li>
+                    <li>
+                        <%= f.label :foto, "Tu foto", style: "color: grey; font-weight: lighter;" %>
+                        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png", style: "color: white;" %>
+                    </li>
+                    <li>
+                        <%= f.label :password, style: "color: grey; font-weight: lighter;" %>
+                        <%= f.password_field :password, class: 'form-control' %>
+                    </li>
+                    <li>
+                        <%= f.label :password_confirmation, "Confirmation", style: "color: grey; font-weight: lighter;" %>
+                        <%= f.password_field :password_confirmation, class: 'form-control' %>
+                        <%= f.hidden_field :plaza, :value => false %>
+                        <%= f.hidden_field :activated, :value => true %>
+                    </li>
+                    <li> 
+                        <%= f.submit "Crea mi cuenta", class: "btn btn-primary" %>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>            
 
             <%# f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
             <%# f.select :autonomia, [
@@ -108,17 +171,8 @@
             <%# f.text_field :profesion, class: 'form-control' %>
             
 
-            <%= f.label :password, style: "color: white;" %>
-            <%= f.password_field :password, class: 'form-control' %>
+            
 
-            <%= f.label :password_confirmation, "Confirmation", style: "color: white;" %>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
-            <%= f.hidden_field :plaza, :value => false %>
-            <%= f.hidden_field :activated, :value => true %>
+            
 
-            <%= f.submit "Crea mi cuenta", class: "btn btn-primary" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-</div>
+            

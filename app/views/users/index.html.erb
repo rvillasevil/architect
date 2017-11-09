@@ -6,7 +6,7 @@
 	      <%= render 'shared/user_info' %>
 	    </section>
 	    <section class="stats">
-	      <%= render 'shared/stats' %>
+	      <%# render 'shared/stats' %>
 	    </section>
 	  </aside>
 	  <div class="col-sm-7">
@@ -37,43 +37,47 @@
           	<div class="elementos">
           		<%# render @users %>
           		<%# will_paginate %>
-	          	<% @users.each do |user| %> 
-	          		<ul class="master">
-	          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
-	          				<ul class="foto_texto"" >
-			          			<li class="foto">
-												<%= image_tag user.foto.url, class: "img-circle", size: 55 if user.foto? %>
-											</li>
-											<li class="texto" style="width: 80%;">
-												<ul>
-													<li>
-														<b><%= link_to user.name, user %></b>
-													</li>
-													<li style="font-size: 13px;">
-														<b><%= user.followers.count %> seguidores.</b>
-													</li>
-													<li style="font-size: 13px;  color: #8c8c8c;">
-														<% @post_plaza = Micropost.where(:user_id => user.id) %>
-														<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
-														<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos totales.
-													</li>
-													<li style="font-size: 13px; color: #8c8c8c;">
-														<%= @post_plaza_petition.count %> iniciativas totales.
-													</li>
-													</li>
-												</ul>
-											</li>	          					
-	          				</ul>
-	          			</li>
-									<li class="boton">
-										<% if current_user.following?(user) %>
-											<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
-										<% else %>
-											<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
-											</button>
-										<% end %>
-									</li>
-								</ul>
+	          	<% @users.first(20).each do |user| %> 
+	          		<% if user != current_user %>
+		          		<ul class="master">
+		          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
+		          				<ul class="foto_texto"" >
+				          			<li class="foto">
+													<%= image_tag user.foto.url, class: "img-circle", size: 55 if user.foto? %>
+												</li>
+												<li class="texto" style="width: 80%;">
+													<ul>
+														<li>
+															<b style="font-size: 13px;"><%= link_to user.name, user %></b>
+														</li>
+														<li style="font-size: 13px;">
+															<b><%= user.followers.count %> seguidores.</b>
+														</li>
+														<li style="font-size: 13px;  color: #8c8c8c;">
+															<% @post_plaza = Micropost.where(:user_id => user.id) %>
+															<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
+															<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos totales.
+														</li>
+														<li style="font-size: 13px; color: #8c8c8c;">
+															<%= @post_plaza_petition.count %> iniciativas totales.
+														</li>
+														</li>
+													</ul>
+												</li>	          					
+		          				</ul>
+		          			</li>
+										<li class="boton">
+											<% if current_user != user %>
+												<% if current_user.following?(user) %>
+													<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
+												<% else %>
+													<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+													</button>
+												<% end %>
+											<% end %>
+										</li>
+									</ul>
+								<% end %>
 							<% end %>         		
           	</div>
           </li>
@@ -82,27 +86,36 @@
 
 			<%# ya no es necesario paginarlo porque ya pasa por el if y no está paginado %>
 			
-  <div class="col-sm-3">
+  <div class="col-sm-3" style="margin-top: 15px;">
   	<div class="usuarios_sugeridos">
-    	<h4>A quien seguir</h4>
-    	<h4><%= current_user.name %> hecha un vistazo a las siguientes personas:</h4>
+  		<div style="border-bottom: 1px solid #e6e9ec; padding: 10px;">
+	      <b><%= current_user.name %> hecha un vistazo a las siguientes personas:</b>
+	    </div>
     	<% @tus_grupos = Group.where(user_id: current_user) %>
-  		<% @tus_grupos.each do |tus_grupos| %>
+  		<% @tus_grupos.first(5).each do |tus_grupos| %>
     		<% @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id) %>
-    			<% @users_grupos.each do |users_grupos| %>
+    			<% @users_grupos.first(3).each do |users_grupos| %>
       			<% @users_plazas = User.where(id: users_grupos.user_id) %>
       			<% @plazas_users = Plaza.where(id: users_grupos.plaza_id) %>
-      			<% @plazas_users.each do |plazas_users| %>
-      			<% @users_plazas.each do |users_plazas| %>
+      			<% @plazas_users.first(3).each do |plazas_users| %>
+      			<% @users_plazas.first(3).each do |users_plazas| %>
       				<% unless current_user.following?(users_plazas) %>
-	  						<li>
-	  							<% if users_plazas != current_user %>
-		  							<%= link_to users_plazas.name, users_plazas  %>
-		  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> en <i class="fa fa-circle-o" aria-hidden="true"></i> 
-		    						<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
-		    						<%= image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
-		    					<% end %>	
-	  						</li>
+	      				<% if users_plazas != current_user %>
+		      				<% if plazas_users.name != current_user.autonomia %>
+			  						<li>
+			  							<ul style="display: inline-flex; align-items: center; padding: 5px;">
+						  					<li style="display: block; padding: 5px;">
+					  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> 
+					  						</li>
+					  						<li style="padding-left: 5px;">
+						  						<%= link_to users_plazas.name, users_plazas %> 
+						  						 en <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
+					    						<%# image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
+					    					</li>
+			  							</ul>
+			  						</li>
+			  					<% end %>
+		  					<% end %>
       				<% end %>
       			<% end %>
       			<% end %>

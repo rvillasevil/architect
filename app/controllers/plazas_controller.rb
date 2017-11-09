@@ -69,7 +69,7 @@ class PlazasController < ApplicationController
   private
 
     def plaza_params
-      params.require(:plaza).permit(:name, :ciudad, :foto, :user_id, :description, :causa, :action)
+      params.require(:plaza).permit(:name, :ciudad, :foto, :user_id, :description, :causa, :action, :administrative)
     end
     def correct_user
       @plaza = current_user.plazas.find_by(id: params[:id])

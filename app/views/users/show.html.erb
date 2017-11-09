@@ -1,7 +1,7 @@
 <div class="container">
   <% provide(:title, @user.name) %>
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-sm-2">
       <div class="plaza_stats">
         <div>
           <div class="background_img"></div>
@@ -26,17 +26,6 @@
             </li>
           </ul>
         </div>
-      </div>
-
-      <div class="aside_content">
-        <ul class="principal">
-          <li class="titulo">
-            Posicion del usuario dentro del círculo
-          </li>
-          <li class="lista_block">
-            0
-          </li>
-        </ul>
       </div>
 
       <div class="aside_content">
@@ -110,26 +99,10 @@
             </ul>
           </li>
         </ul>
-      </div> 
-      
-    </div>
-
-    <div class="col-md-6" style="margin-top: 15px;">
-      
-      <% if @microposts.any? %>
-        <h5>Posts (<%= @microposts.count %>)</h5>
-        <ol class="microposts">
-          <%= render @microposts %>
-        </ol>
-        <%= will_paginate @microposts %>
-      <% else %>
-        El usuario <%= @user.name %> no tiene publicaciones, pero te mostramos algunos usuarios que podrían interesarte. 
-      <% end %>
+      </div>
     </div>
 
     <div class="col-md-4" style="margin-top: 12px;">
-      
-
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
@@ -139,6 +112,7 @@
             <ul class="inline">
               <li>
                 <% @microposts.take(3).each do |post| %>
+                  <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>
                   <b><%= link_to post.hashtag1, {:controller => "microposts", action: "hashtag", :id => post.id}  %></b>  
                 <% end %>
               </li>
@@ -150,9 +124,9 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Tus Iniciativas/Propuestas/Votaciones
+            Consultas ciudadanas creadas
           </li>
-          <% @peticiones.each do |petition| %>
+          <% @peticiones.first(5).each do |petition| %>
           <li class="lista_block">
             <ul class="inline">
               <li class="inline">
@@ -180,12 +154,12 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Iniciativas que apoya <%= @user.name %>
+            Iniciativas apoyadas por <%= @user.name %>
           </li>
           <% @votos = Vote.where(:user_id => @user.id).where(like: 1) %>
-          <% @votos.each do |voto| %>
+          <% @votos.first(10).each do |voto| %>
             <% @peticiones_votadas = @peticiones_all.where(id: voto.micropost_id) %>
-            <% @peticiones_votadas.each do |petition| %>
+            <% @peticiones_votadas.first(5).each do |petition| %>
               <li class="lista_block">
                 <ul class="inline">
                   <li class="inline">
@@ -206,12 +180,12 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Iniciativas que rechaza <%= @user.name %>
+            Iniciativas rechazadas por <%= @user.name %>
           </li>
           <% @votos = Vote.where(:user_id => @user.id).where(dislike: 1) %>
-          <% @votos.each do |voto| %>
+          <% @votos.first(10).each do |voto| %>
             <% @peticiones_votadas = @peticiones_all.where(id: voto.micropost_id) %>
-            <% @peticiones_votadas.take(5).each do |petition| %>
+            <% @peticiones_votadas.first(5).each do |petition| %>
               <li class="lista_block">
                 <ul class="inline">
                   <li class="inline">
@@ -235,7 +209,7 @@
             Círculos en los que participa <%= @user.name %>
             <span style="position: absolute; right: 25px;"><%= link_to "Ver todos", user_plazas_path(user_id: @user) %></span>
           </li>
-          <% @plazas_grupos.take(5).each do |grupo| %>
+          <% @plazas_grupos.first(5).each do |grupo| %>
             <% @plaza_seguida = Plaza.where(:id => grupo.plaza_id) %>
             <% @plaza_seguida.each do |plaza| %>
               <% if plaza.action != true %>
@@ -255,6 +229,23 @@
         </ul>
       </div>
 
+      <%= render 'plazas/action_short' %>
+
+      <%= render 'plazas/causa_short' %>
+
     </div>
+
+    <div class="col-sm-6" style="margin-top: 15px;">
+      <% if @microposts.any? %>
+        <h5 style="padding-left: 10px;">Posts (<%= @microposts.count %>)</h5>
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
+        <%= will_paginate @microposts %>
+      <% else %>
+        El usuario <%= @user.name %> no tiene publicaciones, pero te mostramos algunos usuarios que podrían interesarte. 
+      <% end %>
+    </div>
+
   </div>
 </div>

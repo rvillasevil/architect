@@ -24,13 +24,16 @@ class UsersController < ApplicationController
     @peticiones = Micropost.where(:user_id => @user.id).where(:petition => true)
     @peticiones_all = Micropost.where(:petition => true)
     @plazas_grupos = Group.where(:user_id => @user.id)
-
+    # De acciones / causas / consultas _short
+    @grupos_acciones = Group.where(user_id: current_user)
+    
     if @microposts.empty?
       @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page], per_page: 10)
     else 
     end
     @comment = Comment.new( :micropost => @micropost )
     @micropost  = current_user.microposts.build 
+
   end
 
   def lista
