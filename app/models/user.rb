@@ -121,11 +121,12 @@ class User < ApplicationRecord
     # Select the post where user_id
     Micropost.where("user_id IN (#{following_ids})       
                      OR user_id = :user_id
+                     OR plaza_id = null
                      OR plaza_id IN (#{plaza_ids})
                      OR id IN (#{post_from_votes})", user_id: id)
     
   end
-
+  
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)

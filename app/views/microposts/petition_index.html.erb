@@ -79,7 +79,7 @@
 													<% if micropost.plaza_id? %>
 														<% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
 														<% @plaza.each do |plaza| %>
-															en&nbsp;&nbsp;<i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<b><%= link_to plaza.name, user_plaza_path(id: @plaza, user_id: current_user), {style: "color: #777777;"} %>.</b>
+															en&nbsp;&nbsp;<i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<b><%= link_to plaza.name, user_plaza_path(id: plaza, user_id: current_user), {style: "color: #777777;"} %>.</b>
 														<% end %>
 													<% end %>
 												</li>

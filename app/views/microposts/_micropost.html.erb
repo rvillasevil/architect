@@ -1,7 +1,7 @@
 <li id="micropost-<%= micropost.id %>">
   <div>
     <% if micropost.title? %>
-        <span style="width: 25%; background-color: #c2d7f9; padding: 5px; font-size: 12px; border-radius: 15px;"><i class="fa fa-file-text-o" aria-hidden="true"></i><b> Consulta</b></span>
+        <span style="width: 25%; background-color: #c2d7f9; padding: 5px; font-size: 12px; border-radius: 15px;"><i class="fa fa-file-text-o" aria-hidden="true"></i><b> Consulta ciudadana</b></span>
         <h4>
           <b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
         </h4>
@@ -74,7 +74,7 @@
                   <% if @plaza.causa != true %>
                     <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
                   <% else %>
-                  <i class="fa fa-bullhorn fa-lg" aria-hidden="true"></i>
+                  <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
                   <% end %>
                 <% else %>
                   <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
@@ -209,7 +209,7 @@
 
   <!-- comentarios -->
   <li style="padding-top: 10px; text-align: left;">
-    <span class="numbercomments"><b><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></b>         <%= micropost.comments.count %> comentarios</span>
+    <span class="numbercomments"><b><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></b>&nbsp;<%= micropost.comments.count %> comentarios</span>
   </li>
 </ul>
 
@@ -227,7 +227,9 @@
               <%= f.hidden_field :user_id, :value => current_user.id %>
           </li>
           <li>
-              <%= f.submit "Comment", class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #0084B4; border: 0px;" %>
+            <%= button_tag(class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #c2d7f9; color: black; border: 0px;m padding-left: 5px; padding-right: 5px;") do %>
+              Comment
+            <% end %>
             <% end %>
           </li>
         </ul>  
@@ -261,5 +263,9 @@
       </div>
     <% end %>
   </div>
-</span>
+
+  <div class="show_more">
+    <%= link_to "Mostar todo", micropost_path(id: micropost), style: "color: grey;" %>
+  </div>
+
 </li>

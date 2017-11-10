@@ -1,8 +1,28 @@
 <div class="aside_content" style="margin-top: 15px;">
   <ul class="principal">
     <li class="titulo">
-      <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-      &nbsp;<%= link_to "Tus actions", user_plazas_path(user_id: current_user, accion: true) %>
+      <% @usuario = params[:id] %>
+      <% if @usuario != nil %>
+        <ul style="padding: 0px; display: inline-flex;">
+          <li style="border: 0px;">
+            <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
+            &nbsp;Acciones
+          </li>
+          <li style="position: absolute; right: 30px; border: 0px;">
+            <%= link_to "Ver todos", user_plazas_path(user_id: params[:id], accion: true) %>
+          </li>
+        </ul>
+      <% else %>
+        <ul style="padding: 0px; display: inline-flex;">
+          <li style="border: 0px;">
+            <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
+            &nbsp;Acciones
+          </li>
+          <li style="position: absolute; right: 30px; border: 0px;">
+            <%= link_to "Ver todos", user_plazas_path(user_id: current_user, accion: true) %>
+          </li>
+        </ul>
+      <% end %>
     </li>
     <% @grupos_acciones.each do |grupos_acciones| %>
        <% @plazas_acciones = Plaza.where(id: grupos_acciones.plaza_id) %>

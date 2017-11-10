@@ -3,7 +3,7 @@
 		<%# render 'comments/comment' %>
 
 			<% @comentarios = Comment.where(micropost_id: @micropost) %>
-				<% @micropost.comments.order("created_at desc").first(3).each do |comment| %>
+				<% @micropost.comments.order("created_at desc").first(50).each do |comment| %>
      			<div class="comentario" style="word-wrap: break-word;">
         		<div>
           		<%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
@@ -12,4 +12,4 @@
           		</div>
         		</div>
       		</div>
-    		<% end %>        
+    		<% end %>  

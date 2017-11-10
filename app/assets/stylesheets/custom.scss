@@ -11,7 +11,7 @@
 @import "font-awesome";
 
 body {
-  padding-top: 40px;
+  padding-top: 50px;
   /*background-color: #eaeeee;*/
   background-color: #e6ecf0;
   word-wrap: break-word;
@@ -171,13 +171,16 @@ header {
       }
     }
     li.dropdown {
+      align-items: center;
       text-decoration: none;
       padding-top: 10px;
       width: 25%;
       margin: 0px;
-      height: 45px;
+      height: 50px;
       font-size: 13px;
+      padding-top: 15px;
       @media (max-width: 768px) {
+        padding-top: 10px;
         span {
           display: block;
           font-weight: normal;
@@ -277,7 +280,7 @@ footer ul li {
   }
   ul.titulo {
     display: inline-flex;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 0px;
     column-count: 3;
     border-bottom: 1px solid $gray-lighter;
@@ -287,7 +290,7 @@ footer ul li {
     }
     li{
       list-style: none;
-      padding: 0px 10px;
+      padding: 0px 0px;
     }
   }
   ul.form {
@@ -308,10 +311,12 @@ footer ul li {
   }
   li.element {
     list-style: none;
-    width: 30%;
+    width: 35%;
+    padding: 0px 5px;
     @media (max-width: 768px) {
       width: 100%;
       border-bottom: 1px solid $gray-lighter;
+      padding-top: 15px;
     }
   }
 }
@@ -845,8 +850,9 @@ input {
     color: white;
   }
   .picture_content {
-    max-height: 100px;
+    max-height: 200px;
     overflow: hidden;
+
   }
 }
 
@@ -940,10 +946,13 @@ input {
   }
 
   .share-content {
-  border: 1px solid #f2f2f2;
     textarea {
     margin: 0px;
     border: 0px;
+    }
+    input {
+      border: 1px solid #e6e9ec;
+      font-size: 11px;
     }
   }
 
@@ -1144,14 +1153,19 @@ input {
   margin-bottom: -10px;
   padding: 10px 10px;
   }
+  .show_more {
+  float: right;
+  margin-top: -8px;
+  font-size: 11px;
+  }
 
   .numbercomments {
   position: relative;
   font-size: 12px;
   display: inline;
-    padding: 5px;
-    text-align: right;
-  color: $gray-light;
+  padding: 5px;
+  text-align: right;
+  color: #595959;
   }
 
   .votes {
@@ -1339,7 +1353,7 @@ input {
     }
     .plaza_hashtag {
       p {
-        font-size: 13px;
+      font-size: 13px;
       line-height: 14px;
       }
     }
@@ -1408,7 +1422,7 @@ input {
       padding-left: 0px;
     }
     .social_elements {
-      padding-left: 0px;
+      
     }
     .header-post {
       text-align: center;
@@ -1429,12 +1443,13 @@ input {
       padding-left: 90px;
     }
     .social_elements  {
-      padding-left: 90px;
+      
     }
     .header-post {
       text-align: center;
     }
   }
+
 }
 
 

@@ -204,10 +204,16 @@
       </div>
 
       <div class="aside_content">
-        <ul class="principal">
+        <ul class="principal" >
           <li class="titulo">
-            Círculos en los que participa <%= @user.name %>
-            <span style="position: absolute; right: 25px;"><%= link_to "Ver todos", user_plazas_path(user_id: @user) %></span>
+            <ul style="padding: 0px; display: inline-flex;">
+              <li style="width: 80%; border: 0px;">
+                Círculos en los que participa <%= @user.name %>
+              </li>
+              <li style="position: absolute; right: 30px; border: 0px;">
+                <span style=""><%= link_to "Ver todos", user_plazas_path(user_id: @user) %></span>
+              </li>
+            </ul>
           </li>
           <% @plazas_grupos.first(5).each do |grupo| %>
             <% @plaza_seguida = Plaza.where(:id => grupo.plaza_id) %>

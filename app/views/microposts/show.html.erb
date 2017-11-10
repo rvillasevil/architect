@@ -27,6 +27,7 @@
             <div class="title_show">
               <%= @micropost.title %>
           <% else %>
+            <div class="title_show">
           <% end %>
         </div>
 
@@ -61,18 +62,27 @@
             <li style="padding-left: 10px; margin-top: 5px;">
               <%= image_tag (@micropost.user.foto.url), class: "img-circle", size: 45 if @micropost.user.foto? %>
             </li>
-            <li style="font-size: 14px;">
+            <li style="font-size: 14px; text-align: left;">
               <ul style="display: inline-block; list-style: none; padding-left: 5px;">
-                <li class="plaza_hashtag">
+                <li class="plaza_hashtag" >
                   <% if @micropost.plaza_id? %>
                     <b><%= link_to @micropost.user.name, @micropost.user %></b>
-                    <% @plaza =  Plaza.where(:id => @micropost.plaza_id) %>
-                    <p style="font-size: 13px; line-height: 17px; margin: 0px;">ha publicado en&nbsp;&nbsp;<i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;
-                      <b>
-                        <% @plaza.each do |plaza| %>
-                          <%= p plaza.name %>
+                    <% @plaza =  Plaza.find_by(:id => @micropost.plaza_id) %>
+                    <p style="font-size: 13px; line-height: 17px; margin: 0px;">
+                      <% if @plaza != nil %>
+                        <% if @plaza.action != true %>
+                          <% if @plaza.causa != true %>
+                            ha publicado en&nbsp;<i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
+                          <% else %>
+                          ha publicado en&nbsp;<i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+                          <% end %>
+                        <% else %>
+                          ha publicado en&nbsp;<i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
                         <% end %>
-                      </b></p>
+                        <b><%= link_to @plaza.name, user_plaza_path(user_id: current_user, id: @plaza.id), {style: "color: #7e7e81;"} %>
+                      <% end %>
+                </b>
+                    </p>
                       <% if @micropost.hashtag1? %><p style="font-size: 13px; line-height: 17px; margin: 0px;">
                         sobre &nbsp; <span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to @micropost.hashtag1, hashtag_micropost_path(@micropost), {style: "color: #777777;"} %></b></p>
                       <% end %>
@@ -85,6 +95,7 @@
                 </li>
                 <li>
                   <span class="timestamp">
+                    <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
                     Posted <%= time_ago_in_words(@micropost.created_at) %> ago.
                   </span>
                 </li>
@@ -128,34 +139,13 @@
           </div>       
         <% end %>
           
-<% 
-=begin %>        
-                <%= @imagen = doc.at_css("img")["src"] %>
-                <%# @imagen4 = doc.at_css("img")["width"] %>
-                <%# @imagen5 = doc.xpath("//img").each do |item| %>
-                  <%# img_attributes = item.attributes.values %>
-                    <%# img_attributes.each do |attr| %>
-                      <%# p attr.value >= "100" %>
-                      <%# attr.select { |heigth| height("height") >= 100 } %>
-                    <%# end %>
-
-                    
-                <span class="container"><ul>
-                <%= @imagen5 = doc.xpath("//img[@width>'100'][@src]").each do |item| %>
-                    <li><%= p (@src = item["src"]) %></li></ul></span>
-
-
-
-                <!--- <% if @src =! nil %> -->
-                  <span class="picture_content"> <%= image_tag (@src), class: "img-responsive", size: 100  %></span>
-                <% end %>
-<%
-=end %>
           
 <!-- votos -->
 <!-- votos positivos -->
-  <ul class="social_elements">
-    <div id="vote<%= @micropost.id %>">
+<ul class="social_elements">
+<div id="vote<%= @micropost.id %>">
+  
+    
       <%# @votosPositivos = micropost.votes.where(:like => 1).count %>
       <%# @votosNegativos = micropost.votes.where(:dislike => 1).count %>
 <% if logged_in? %>
@@ -210,15 +200,19 @@
     </div>
 
     <!-- hashtags -->
-    <li style="padding-top: 10px;">
+    <li style="padding-top: 10px; text-align: right;">
       <% if @micropost.hashtag1? %>
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle-o fa-stack-2x"></i>
+        <i class="fa fa-user fa-stack-1x"></i>
+      </span>
         <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to @micropost.hashtag1,hashtag_micropost_path(@micropost), {style: "color: #777777"} %></a>
       <% end %>
     </li>
 
     <!-- comentarios -->
-    <li style="padding-top: 10px;">
-      <span class="numbercomments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>          <%= @micropost.comments.count %> comentarios</span>
+    <li style="padding-top: 10px; text-align: left;">
+      <span class="numbercomments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i>          <%= @micropost.comments.count %> comentarios</span>
     </li>
   </ul>
 
@@ -237,7 +231,9 @@
             <%= f.hidden_field :user_id, :value => current_user.id %>
         </li>
         <li>
-            <%= f.submit "Comment", class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #337ab7;" %>
+            <%= button_tag(class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #c2d7f9; border: 0px; color: black;") do %>
+              Comment
+            <% end %>
           <% end %>
         </li>
       </ul>  
@@ -253,10 +249,10 @@
 
   <!-- comentarios --> 
   
-
-  <div id="<%= @micropost.id %>" class="fondo-comments" %>
-    <% @micropost.comments.order("created_at desc").take(20).each do |comment| %>
-      <div class="comentario" style="padding: 4px 5px;">
+  
+  <div id="consulta-<%= @micropost.id %>" class="fondo-comments" %>
+    <% @micropost.comments.order("created_at desc").first(50).each do |comment| %>
+      <div class="comentario">
         <% if @micropost.comments.any? %>
           <ul>
             <li class="imagen">
@@ -272,6 +268,7 @@
       </div>
     <% end %>
   </div>
+
         </span>
         </li>
       </ol>

@@ -7,6 +7,10 @@
         </section>
       </aside>
 
+<!-- Plazas que no son acciones -->
+<% @action = params[:accion] %>
+<% @causa = params[:causa] %>
+
       <div class="col-sm-7">
         <div class="instrucciones" style="margin-top: 15px;">
           <i class="fa fa-info fa-lg" aria-hidden="true"></i>&nbsp;
@@ -33,14 +37,24 @@
                 <span style="font-size: 15px;"><b><%= link_to "Atras", :back %></b></span>
               </li>
               <li class="right">
-                <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
+              <% if @action != "true" %>
+                <% if @causa != "true" %>
+                  <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span>
+                  </button>
+                <% else %>
+                  <button type="button" class="btn btn-primary btn-sm">
+                  <span style="font-size: 12px;"><%= link_to "Nueva causa", new_user_plaza_path(:user_id => current_user.id, causa: "true"), {style: "color: white"} %></span>
+                  </button>
+                <% end %>
+              <% else %>
+                  <button type="button" class="btn btn-primary btn-sm">        <span style="font-size: 12px;"><%= link_to "Nueva acción", new_user_plaza_path(:user_id => current_user.id, accion: "true"), {style: "color: white"} %></span>
+                  </button>
+              <% end %>
               </li>
             </ul>
           </li>
 
-          <!-- Plazas que no son acciones -->
-          <% @action = params[:accion] %>
-          <% @causa = params[:causa] %>
+
 
           <% if @action != "true" %>
             <% if @causa != "true" %>

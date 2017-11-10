@@ -1,6 +1,6 @@
 <div class="container">
   <% provide(:title, 'New Plaza') %>
-  <h1 style="font-size: 30px;">Nuevo círculo</h1>
+  <h1 style="font-size: 30px; margin-bottom: 15px;">Crear</h1>
   <% @causa = params[:causa] %>
   <% @action = params[:accion] %>
   <% @nombre = params[:name] %>
@@ -14,6 +14,51 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
+      <div class="new_inicio">
+        <div class="titulo" style="text-align: center;">
+          <h3 style="margin-top: 0px;">De acuerdo, vamos a crearlo.</h3>
+          <h5 style="margin-top: 25px;">Se convertirá en una forma de relacionarse entre personas.</h5>
+          <h5>
+            Puedes crear un círculo para incluir a personas con algo en común, hacer un llamamiento en favor de una acción común como el medio ambiente o expresar un ideal.
+          </h5>  
+        </div>
+          <ul class="titulo">
+            <li class="element" style="padding: 10px 5px;">
+              <ul>
+                  <li>
+                      <i class="fa fa-circle-o fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                      <b>Círculos</b>
+                      <p><h5>Compartimos un tema en común</h5></p>
+                  </li>
+              </ul>   
+            </li>
+            <li class="element" style="padding: 10px 5px;">
+              <ul>
+                  <li>
+                      <i class="fa fa-bolt fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                      <b>Acciones</b>
+                      <p><h5>Haz un llamamiento a participar en acciones comunes.</h5></p>
+                  </li>
+              </ul>               
+            </li>
+            <li class="element" style="padding: 10px 5px;">
+              <ul>
+                  <li>
+                      <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                      <b>Ideales</b>
+                      <p><h5>Habla con personas afines a una forma de pensar</h5></p>
+                  </li>
+              </ul>               
+            </li>
+          </ul>
+        </div>
+
       <%= form_for(@plaza) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
 
@@ -42,11 +87,11 @@
         <%= f.text_field :description, class: 'form-control' %>
 
 
-        <%= f.label :foto, "Foto del círculo" %>
+        <%= f.label :foto, "Una imagen que lo describa" %>
         <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
 
         <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.submit "Create your Circle", class: "btn btn-primary" %>
+        <%= f.submit "Crear", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

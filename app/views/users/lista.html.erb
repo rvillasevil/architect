@@ -1,12 +1,12 @@
 <% provide(:title, 'Ranks') %>
 	<div class="container">
     <div class="row">
-      <aside class="col-sm-2" style="">
+      <aside class="col-sm-2">
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
         <section class="stats">
-          <%= render 'shared/stats' %>
+          <%# render 'shared/stats' %>
         </section>
       </aside> 
   		<div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; margin-top: 10px;">
@@ -14,12 +14,12 @@
   				Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
   			</div>
 				<ul style="list-style: none; padding-left: 0px;">
-					
 					<li style="width: 100%; margin-bottom: 10px;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6;">
 							<span style="font-size: 15px;"><b>Representantes en <%= current_user.ciudad %></b></span>
 						</li>
-								<% @candidatos_pueblo.take(10).each do |x| %>
+							<% if @candidatos_pueblo.any? %>
+								<% @candidatos_pueblo.first(10).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:ciudad => current_user.ciudad) %>
 								    <%  @user.each do |candidate| %>
 									    <ul class="candidate_list" style="padding-left: 20px;">
@@ -27,7 +27,7 @@
 									    	<li style="padding-top: 10px;">
 									    		<%= image_tag candidate.foto.url, class: "img-circle", size: 55 if candidate.foto? %>
 									    	</li>
-									    	<li>
+									    	<li style="width: 100%;">
 									    		<ul class="texto">
 									    			<li style="width: 90%;">
 										    		<b><%= link_to candidate.name, candidate %></b>
@@ -69,6 +69,7 @@
 									    </ul>
 								    <% end %>
 								<% end %>
+							<% end %>
 					</li>
 
 					<li style="width: 100%;">
@@ -82,7 +83,7 @@
 									    	<li style="padding-top: 10px;">
 									    		<%= image_tag candidate.foto.url, class: "img-circle", size: 55 if candidate.foto? %>
 									    	</li>
-									    	<li>
+									    	<li style="width: 100%;">
 									    		<ul class="texto">
 									    			<li  style="width: 90%;">
 										    		<b><%= link_to candidate.name, candidate %></b>
@@ -137,7 +138,7 @@
 									    	<li style="padding-top: 10px;">
 									    		<%= image_tag candidate.foto.url, class: "img-circle", size: 55 if candidate.foto? %>
 									    	</li>
-									    	<li>
+									    	<li style="width: 100%;">
 									    		<ul class="texto">
 									    			<li style="width: 90%;">
 										    		<b><%= link_to candidate.name, candidate %></b>

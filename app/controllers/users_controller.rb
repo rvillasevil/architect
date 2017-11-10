@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @peticiones_all = Micropost.where(:petition => true)
     @plazas_grupos = Group.where(:user_id => @user.id)
     # De acciones / causas / consultas _short
-    @grupos_acciones = Group.where(user_id: current_user)
+    @grupos_acciones = Group.where(user_id: @user)
     
     if @microposts.empty?
       @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page], per_page: 10)
@@ -37,7 +37,10 @@ class UsersController < ApplicationController
   end
 
   def lista
-    @ciudad = current_user.ciudad
+    # Usuario que solo son de la ciudad del user
+    users_ciudad = ("SELECT id FROM users
+                    WHERE ciudad = :ciudad")
+
     @candidatos_pueblo = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)
