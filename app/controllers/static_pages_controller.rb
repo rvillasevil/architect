@@ -15,6 +15,17 @@ class StaticPagesController < ApplicationController
       ORDER BY    count(votes.micropost_id) 
       DESC
       ')
+    @posts_masvotados = Micropost.find_by_sql(
+      'SELECT     microposts.id,
+      COUNT       (votes.micropost_id)
+      AS          numbersOfVotes
+      FROM        votes
+      LEFT JOIN   microposts
+      ON          votes.micropost_id = microposts.id
+      GROUP BY    microposts.id
+      ORDER BY    count(votes.micropost_id) 
+      DESC
+      ')
      @petitions_masvotadas = Micropost.find_by_sql(
       'SELECT     microposts.id,
       COUNT       (votes.micropost_id)

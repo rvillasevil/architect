@@ -26,6 +26,43 @@
             </li>
           </ul>
         </div>
+        <div style="background-color: white; padding-left: 10px; padding-top: 5px; font-family: Georgia, sans-serif, serif; color: grey;">
+          <b>BEST IN DEMOS</b>
+        </div>
+        <div class="scroll_masvotados">
+          <% @posts_masvotados.first(6).each do |posts_popular| %>
+            <% @posts_popular = Micropost.where(id: posts_popular) %>
+            <% @posts_popular.first(6).each do |post_popular| %>
+              <li>
+                <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
+                  <div>
+                    <% if post_popular.picture? %>
+                      <%= image_tag (post_popular.picture.url), class: "img", size: 180, style: "position: absolute, bottom: 0px;" %>
+                      <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
+                    <% else %>
+                      <% if post_popular.link? %>
+                        <% doc = Nokogiri::HTML(open(post_popular.link), nil, 'UTF-8', 'ISO-8859') %>
+                        <div class= "title-link">
+                          <%= truncate((@title = doc.at_css("title").text), length: 150) %>
+                        </div>
+                        <div class="enlace_texto">
+                          <%= truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30) %>
+                        </div>
+                      <% else %>
+                        <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+                <span style="color: grey; font-size: 12px;">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  <%= post_popular.comments.count %> comments | 
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 
+                </span>
+              </li>
+            <% end %>
+        <% end %>  
+        </div>
         <% if @feed_items.any? %>
           <%= render 'shared/feed' %>
         <% else %>
