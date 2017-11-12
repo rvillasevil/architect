@@ -1,5 +1,5 @@
 <% if current_user.autonomia != nil %>	
-	<div style="margin-top: 15px;">
+	<div>
 		<% @pueblo = Plaza.where(:name => current_user.ciudad) %>
 			<% if @pueblo.any? %>	
 				<% @pueblo.each do |pueblo| %>

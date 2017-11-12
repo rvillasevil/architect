@@ -2,32 +2,24 @@
 <% if logged_in? %>
   <div class="container">
     <div class="row">
-      <div class="col-sm-2">
-        <div>
+      <aside class="col-sm-2">
+        <section class="user_info">
           <%= render 'shared/user_info' %>
-          <%= render 'shared/plazas_info' %>
-        </div>
+          <%= render 'shared/plazas_info' %>          
+        </section>
         <div class="stats">
           <%# render 'shared/stats' %>
         </div>
-      </div>
+      </aside>
       <div class="col-sm-6">
         <%= render 'static_pages/sigue_plaza' %> 
-        <section class="micropost_form" style="margin-top: 15px;">
+        <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
-        <div class="home_popular">
-          <ul>
-            <li class="home">
-              <%= link_to "Home", root_url %>
-            </li>
-            <li class="popular">
-              <%= link_to "Most voted", '/popular' %>
-            </li>
-          </ul>
-        </div>
-        <div style="background-color: white; padding-left: 10px; padding-top: 5px; font-family: Georgia, sans-serif, serif; color: grey;">
+
+        <div style="background-color: white; padding-left: 10px; padding: 5px; color: grey;     border-bottom: 1px solid #e6e9ec;">
           <b>BEST IN DEMOS</b>
+          <span style="float: right;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
         </div>
         <div class="scroll_masvotados">
           <% @posts_masvotados.first(6).each do |posts_popular| %>
@@ -42,12 +34,14 @@
                     <% else %>
                       <% if post_popular.link? %>
                         <% doc = Nokogiri::HTML(open(post_popular.link), nil, 'UTF-8', 'ISO-8859') %>
-                        <div class= "title-link">
-                          <%= truncate((@title = doc.at_css("title").text), length: 150) %>
-                        </div>
-                        <div class="enlace_texto">
-                          <%= truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30) %>
-                        </div>
+                        <% if doc != nil %>
+                          <div class= "title-link">
+                            <%= truncate((@title = doc.at_css("title").text), length: 150) %>
+                          </div>
+                          <div class="enlace_texto">
+                            <%= truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30) %>
+                          </div>
+                        <% end %>
                       <% else %>
                         <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
                       <% end %>
@@ -62,6 +56,16 @@
               </li>
             <% end %>
         <% end %>  
+        </div>
+        <div class="home_popular">
+          <ul>
+            <li class="home">
+              <%= link_to "HOME", root_url, style: "color: grey;" %>
+            </li>
+            <li class="popular">
+              <%= link_to "POPULAR", '/popular', style: "color: grey;" %>
+            </li>
+          </ul>
         </div>
         <% if @feed_items.any? %>
           <%= render 'shared/feed' %>
