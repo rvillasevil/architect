@@ -1,7 +1,7 @@
 <div class="container">
 	<% provide(:title, 'All users') %>
 	<div class="row">
-	  <aside class="col-sm-2" style="">
+	  <aside class="col-sm-2">
 	    <section class="user_info">
 	      <%= render 'shared/user_info' %>
 	    </section>
@@ -33,49 +33,67 @@
               </li>
             </ul>
           </li>
-          <li style="padding: 0px;">
+          <li style="padding: 0px; background-color: #e6ecf0;">
           	<div class="elementos">
-          		<%# render @users %>
-          		<%# will_paginate %>
-	          	<% @users.first(20).each do |user| %> 
+	          	<% @users.first(20).each do |user| %>
 	          		<% if user != current_user %>
 		          		<ul class="master">
 		          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
-		          				<ul class="foto_texto"" >
+		          				<ul class="foto_texto">
 				          			<li class="foto">
-													<%= image_tag user.foto.url, class: "img-circle", size: 55 if user.foto? %>
+													<%= image_tag user.foto.url, class: "img-rounded", size: 55 if user.foto? %>
 												</li>
 												<li class="texto" style="width: 80%;">
 													<ul>
 														<li>
-															<b style="font-size: 13px;"><%= link_to user.name, user %></b>
+															<b><%= link_to user.name, user %></b>
 														</li>
-														<li style="font-size: 13px;">
-															<b><%= user.followers.count %> seguidores.</b>
+															<span style="font-weight: lighter; font-size: 13px; color: #7e7e81;"><%= user.description %></span>
 														</li>
-														<li style="font-size: 13px;  color: #8c8c8c;">
-															<% @post_plaza = Micropost.where(:user_id => user.id) %>
-															<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
-															<%= @votos = Vote.where(:micropost_id => @post_plaza).count %> votos totales.
-														</li>
-														<li style="font-size: 13px; color: #8c8c8c;">
-															<%= @post_plaza_petition.count %> iniciativas totales.
-														</li>
+														<li style="font-size: 12px; padding-top: 10px;">
+															<%= user.ciudad %> |
+															<%= user.autonomia %>
 														</li>
 													</ul>
 												</li>	          					
 		          				</ul>
 		          			</li>
-										<li class="boton">
-											<% if current_user != user %>
-												<% if current_user.following?(user) %>
-													<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
-												<% else %>
-													<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
-													</button>
-												<% end %>
-											<% end %>
-										</li>
+		          			<li>
+		          				<ul style="display: inline-flex; padding-left: 0px; width: 100%;">
+												<li class="boton">
+													<% if current_user != user %>
+														<% if current_user.following?(user) %>
+															<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
+														<% else %>
+															<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+															</button>
+														<% end %>
+													<% end %>
+												</li>	
+												<li style="float: right;">
+													<ul style="padding: 0px; display: inline-flex; text-align: right;">
+														<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+															<b><%= user.followers.count %></b>
+															&nbsp;<i class="fa fa-users" aria-hidden="true"></i>
+														</li>
+														<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+															<% @post_plaza = Micropost.where(:user_id => user.id) %>
+															<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
+															<%= @votos = Vote.where(:micropost_id => @post_plaza).where(like: 1).count %>&nbsp;
+															<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+														</li>
+														<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+															<%= @votos = Vote.where(:micropost_id => @post_plaza).where(dislike: 1).count %>&nbsp;
+															<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+														</li>
+														<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+															<%= @post_plaza_petition.count %>&nbsp;
+															<i class="fa fa-file-text-o" aria-hidden="true"></i>
+														</li>														
+													</ul>
+												</li>
+		          				</ul>
+		          			</li>
 									</ul>
 								<% end %>
 							<% end %>         		

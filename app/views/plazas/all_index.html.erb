@@ -86,11 +86,14 @@
                     <% end %>
                       <b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id) %></b>
                     </li>
-                    <li style="font-size: 13px;">
-                      <b><%= Group.where(:plaza_id => plaza.id).count %> seguidores.</b>
+                    <li style="font-size: 13px; color: #7e7e81;">
+                      <%= plaza.description %>
                     </li>
-                    <li style="font-size: 13px; color: #8c8c8c;" >
-                      <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> peticiones.
+                    <li style="font-size: 13px; padding-top: 10px;">
+                      <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
+                      <b><%= Group.where(:plaza_id => plaza.id).count %> seguidores</b>&nbsp;&nbsp;|&nbsp;&nbsp;
+                      <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                      &nbsp;<%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> peticiones.
                     </li>
                     <li>
                       <% if logged_in? %>

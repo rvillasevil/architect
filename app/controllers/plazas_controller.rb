@@ -6,11 +6,11 @@ class PlazasController < ApplicationController
    	@user = current_user
     @plaza = @user.plazas.build(plaza_params)
     if @plaza.save
-      
       flash[:success] = "Plaza created!"
       redirect_to  root_url
     else
-      render :back
+      flash[:danger] = "No ha podido crearte, prueba con otro nombre y que no se te olvide la imagen!"
+      redirect_back(fallback_location: new_user_plaza_path(current_user))
     end
   end
 

@@ -250,26 +250,44 @@
   <!-- comentarios --> 
   
   
-  <div id="consulta-<%= @micropost.id %>" class="fondo-comments" %>
-    <% @micropost.comments.order("created_at desc").first(50).each do |comment| %>
-      <div class="comentario">
-        <% if @micropost.comments.any? %>
-          <ul>
-            <li class="imagen">
-              <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
-            </li>
-            <li class="texto">
-              <div style="padding-top: 5px; word-wrap: break-word;">
-                <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
+          
+            <% @micropost.comments.order("created_at desc").first(30).each do |comment| %>
+              <div class="comentario">
+                <% if @micropost.comments.any? %>
+                  <% if comment.reply.blank? %>
+                    <ul class="reply1" style="display: inline-flex;">
+                      <div id="consulta-<%= @micropost.id %>" class="fondo-comments" %>
+                        <li class="imagen">
+                          <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+                        </li>
+                        <li class="texto">
+                          <div style="padding-top: 5px; word-wrap: break-word;">
+                            <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
+                          </div>
+                        </li>
+                        
+                        <li style="width: 85%;">
+                          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+                            <%= f.text_area :contenido, placeholder: "Add a comment..." %>
+                            <%= f.hidden_field :user_id, :value => current_user.id %>
+                        </li>
+                        <li>
+                            <%= button_tag(class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #c2d7f9; border: 0px; color: black;") do %>
+                            Comment
+                            <% end %>
+                          <% end %>
+                        </li>
+                        <div id="comment_form<%= @micropost.id %>">
+                          
+                        </div>
+                      </div>
+                    </ul>
+                  <% end %>
+                <% end %> 
               </div>
-            </li>
-          </ul>
-        <% end %> 
-      </div>
-    <% end %>
-  </div>
+            <% end %>
+          
 
-        </span>
         </li>
       </ol>
       </div>

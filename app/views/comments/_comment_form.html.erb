@@ -1,0 +1,14 @@
+              
+
+              <div style="display: inline-flex;">
+                <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+                  <%= f.text_area :contenido, placeholder: "Add a comment..." %>
+                  <%= f.hidden_field :user_id, :value => current_user.id %>
+                  <%= f.hidden_field :reply, value: @comentarios %>
+              </div>
+              <div style="display: inline-flex;">
+                  <%= button_tag(class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #c2d7f9; border: 0px; color: black;") do %>
+                  Reply
+                  <% end %>
+                <% end %>
+              </div>

@@ -2,14 +2,16 @@ class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :hashtag]
   before_action :correct_user,   only: :destroy
 
+
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to :back #root_url
     else
+      flash[:danger] = "El contenido no puede estar vacío"
       @feed_items = []
-      render 'static_pages/home'
+      redirect_to :back
     end
   end
 

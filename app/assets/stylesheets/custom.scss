@@ -27,22 +27,22 @@ body {
 
 @media (max-width: 768px) {
   .col-sm-6 {
-    padding: 0px;
+    padding: 5px;
   }
   .col-sm-2 {
     padding: 0px;
   }
   .col-sm-4 {
-    padding: 0px;
+    padding: 5px;
   }
   .col-sm-7 {
     padding: 5px;
   }
   .col-sm-8 {
-    padding: 0px;
+    padding: 5px;
   }
   .col-md-10 {
-    padding: 0px;
+    padding: 5px;
     .petition_show {
       margin-top: 0px;
     }
@@ -668,11 +668,11 @@ input {
 
     ul.master {
       padding-left: 0px;
-      border: 1px solid #e6e9ec;
+      border: 1px solid #dddfe2;
       margin: 5px;
-      width: 95%;
+      width: 98%;
       @media (max-width: 992px) {
-        display: inline-flex;
+        /*display: inline-flex;*/
       }
     }
     .foto_texto {
@@ -706,15 +706,15 @@ input {
       }
     }
     .boton {
-      width: 20%;
-      text-align: center;
+      width: 80%;
+      text-align: left;
       padding: 5px;
       @media (max-width: 992px) {
-        display: inline-flex;
+        /*display: inline-flex;
         position: absolute;
         right: 30px;
         padding-top: 30px;
-        padding-right: 10px;
+        padding-right: 10px;*/
       }
     }
     .btn {
