@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+require 'open-uri'
+
   def home
     if logged_in?
       @micropost  = current_user.microposts.build

@@ -27,7 +27,7 @@
 			            <% if (@reply1 = Comment.where(reply: comment)).any? %>
 			              <% @reply1.each do |reply1| %>
 			              <% @user1 = User.find_by(id: reply1.user_id) %>
-                      <span style="display: block; line-height: 10px;"><b><%= @user1.name %></b></span>
+                      <span style="display: block; line-height: 10px;"><%= @user1.name %></span>
 			                <%= reply1.contenido %>
 			                <li class="reply">
 							          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
@@ -39,7 +39,7 @@
 							            <% if (@reply2 = Comment.where(reply: reply1)).any? %>
 							              <% @reply2.each do |reply2| %>
 							              <% @user2 = User.find_by(id: reply2.user_id) %>
-                              <span style="display: block; line-height: 10px;"><b><%= @user2.name %></b></span>
+                              <span style="display: block; line-height: 10px;"><%= @user2.name %></span>
 							                <%= reply2.contenido %>
 							                <li class="reply">
 											          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
@@ -51,7 +51,7 @@
 										            <% if (@reply3 = Comment.where(reply: reply2)).any? %>
 										              <% @reply3.each do |reply3| %>
 										              <% @user3 = User.find_by(id: reply3.user_id) %>
-                                    <span style="display: block; line-height: 10px;"><b><%= @user3.name %></b></span>
+                                    <span style="display: block; line-height: 10px;"><%= @user3.name %></span>
 										                <%= reply3.contenido %>
 										                <li class="reply">
 														          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
@@ -63,7 +63,7 @@
 													            <% if (@reply4 = Comment.where(reply: reply3)).any? %>
 													              <% @reply4.each do |reply4| %>
 													              <% @user4 = User.find_by(id: reply4.user_id) %>
-                                          <span style="display: block; line-height: 10px;"><b><%= @user4.name %></b></span>
+                                          <span style="display: block; line-height: 10px;"><%= @user4.name %></span>
 													                <%= reply4.contenido %>
 													                <li class="reply">
 																	          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
@@ -75,7 +75,7 @@
 																            <% if (@reply5 = Comment.where(reply: reply4)).any? %>
 																              <% @reply5.each do |reply5| %>
 																              <% @user5 = User.find_by(id: reply5.user_id) %>
-                                              <span style="display: block; line-height: 10px;"><b><%= @user5.name %></b></span>
+                                              <span style="display: block; line-height: 10px;"><%= @user5.name %></span>
 																                <%= reply5.contenido %>
 																                <li class="reply">
 																				          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>

@@ -2,6 +2,8 @@ class PlazasController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :index, :show, :new]
   before_action :correct_user,   only: :destroy
 
+  require 'open-uri'
+
    def create
    	@user = current_user
     @plaza = @user.plazas.build(plaza_params)

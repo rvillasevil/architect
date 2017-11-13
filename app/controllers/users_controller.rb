@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update, :update_administrative]
   before_action :admin_user,     only: :destroy
 
+  require 'open-uri'
+
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
     @users = if params[:tern]

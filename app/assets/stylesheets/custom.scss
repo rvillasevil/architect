@@ -1495,12 +1495,16 @@ input {
 
 
 /* --------------------------------------- Micropost ----------*/
+
 /* ----------------------------------MICROPOSTS#SHOW------------*/
+
 .comentario {
-  color: grey;
+  
   span {
     margin-top: 8px;
     display: inline-flex;
+    color: grey;
+    font-weight: lighter;
   }
   textarea {
     margin: 0px;
@@ -1509,7 +1513,7 @@ input {
     margin: 0px;
   }
   .reply {
-    font-size: 12px;
+    font-size: 13px;
     list-style: none;
     display: block;
     padding-left: 20px;
@@ -1517,7 +1521,7 @@ input {
     padding-left: 20px;
   }
   .reply1 {
-    font-size: 12px;
+    font-size: 13px;
     list-style: none;
     display: block;
     margin-left: 10px;
@@ -1526,7 +1530,7 @@ input {
   }
   .reply2 {
     list-style: none;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     margin-left: 10px;
     border-left: 1px solid #d9d9d9;
@@ -1534,7 +1538,7 @@ input {
   }
   .reply3 {
     list-style: none;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     margin-left: 5px;
     border-left: 1px solid #d9d9d9;
@@ -1542,7 +1546,7 @@ input {
   }
   .reply4 {
     list-style: none;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     margin-left: 10px;
     border-left: 1px solid #d9d9d9;
@@ -1550,7 +1554,7 @@ input {
   }
   .reply5 {
     list-style: none;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     margin-left: 10px;
     border-left: 1px solid #d9d9d9;
@@ -1559,7 +1563,7 @@ input {
   }
   .reply6 {
     list-style: none;
-    font-size: 12px;
+    font-size: 13px;
     display: block;
     margin-left: 10px;
     border-left: 1px solid #d9d9d9;
