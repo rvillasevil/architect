@@ -48,7 +48,11 @@ Rails.application.routes.draw do
     end
   end
   resources :microposts do
-    resources :comments
+    resources :comments do
+      member do
+        put :create
+      end
+    end
     resources :votes do
       member do
         put :update_like

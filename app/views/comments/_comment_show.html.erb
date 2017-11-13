@@ -2,9 +2,114 @@
 	
 		<%# render 'comments/comment' %>
 
+			<div id="consulta-<%= @micropost.id %>" class="fondo-comments" %>
+				<% @micropost.comments.order("created_at desc").first(30).each do |comment| %>
+		      <div class="comentario" style="font-size: 12px;">
+		        <% if @micropost.comments.any? %>
+		          <% if comment.reply.blank? %>
+		            <ul class="comment" style="display: inline-flex;">
+		              <li class="imagen">
+		                <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+		              </li>
+		              <li class="texto">
+		                <div style="padding-top: 5px; word-wrap: break-word;">
+		                  <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
+		                </div>
+		              </li>
+							    <li style="width: 85%;">
+					          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+					          	<% @comment = comment %>
+											<%= render 'comments/comment_form', f: f %>
+					          <% end %>
+					        </li>
+		            </ul>
+		            <div class="reply1">
+			            <% if (@reply1 = Comment.where(reply: comment)).any? %>
+			              <% @reply1.each do |reply1| %>
+			              <% @user1 = User.find_by(id: reply1.user_id) %>
+                      <span style="display: block; line-height: 10px;"><b><%= @user1.name %></b></span>
+			                <%= reply1.contenido %>
+			                <li class="reply">
+							          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+							          	<% @comment = reply1 %>
+													<%= render 'comments/comment_form', f: f %>
+							          <% end %>
+							        </li>
+											  <div class="reply2">
+							            <% if (@reply2 = Comment.where(reply: reply1)).any? %>
+							              <% @reply2.each do |reply2| %>
+							              <% @user2 = User.find_by(id: reply2.user_id) %>
+                              <span style="display: block; line-height: 10px;"><b><%= @user2.name %></b></span>
+							                <%= reply2.contenido %>
+							                <li class="reply">
+											          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+											          	<% @comment = reply2 %>
+																	<%= render 'comments/comment_form', f: f %>
+											          <% end %>
+											        </li>
+														  <div class="reply3">
+										            <% if (@reply3 = Comment.where(reply: reply2)).any? %>
+										              <% @reply3.each do |reply3| %>
+										              <% @user3 = User.find_by(id: reply3.user_id) %>
+                                    <span style="display: block; line-height: 10px;"><b><%= @user3.name %></b></span>
+										                <%= reply3.contenido %>
+										                <li class="reply">
+														          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+														          	<% @comment = reply3 %>
+																				<%= render 'comments/comment_form', f: f %>
+														          <% end %>
+														        </li>
+																	  <div class="reply4">
+													            <% if (@reply4 = Comment.where(reply: reply3)).any? %>
+													              <% @reply4.each do |reply4| %>
+													              <% @user4 = User.find_by(id: reply4.user_id) %>
+                                          <span style="display: block; line-height: 10px;"><b><%= @user4.name %></b></span>
+													                <%= reply4.contenido %>
+													                <li class="reply">
+																	          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+																	          	<% @comment = reply4 %>
+																							<%= render 'comments/comment_form', f: f %>
+																	          <% end %>
+																	        </li>
+																				  <div class="reply5">
+																            <% if (@reply5 = Comment.where(reply: reply4)).any? %>
+																              <% @reply5.each do |reply5| %>
+																              <% @user5 = User.find_by(id: reply5.user_id) %>
+                                              <span style="display: block; line-height: 10px;"><b><%= @user5.name %></b></span>
+																                <%= reply5.contenido %>
+																                <li class="reply">
+																				          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+																				          	<% @comment = reply5 %>
+																										<%= render 'comments/comment_form', f: f %>
+																				          <% end %>
+																				        </li>
+																							  <div class="reply6" >
+																			            <% if (@reply6 = Comment.where(reply: reply5)).any? %>
+																			              <% @reply6.each do |reply6| %><% @user6 = User.find_by(id: reply6.user_id) %>
+                                                    <span style="display: block; line-height: 10px;"><b><%= @user6.name %></b></span>
+																			                <%= reply6.contenido %>
+																			              <% end %>
+																			            <% end %>            
+																          			</div>																				        
+																              <% end %>
+																            <% end %>            
+													          			</div>																	        
+													              <% end %>
+													            <% end %>            
+										          			</div>														        
+										              <% end %>
+										            <% end %>            
+							          			</div>											        
+							              <% end %>
+							            <% end %>            
+				          			</div>
+			              <% end %>
+			            <% end %>            
+          			</div>
+		          <% end %>
+		        <% end %> 
+		      </div>
+		    <% end %>
+      </div>
 
-          		<%= image_tag (@comment.user.foto.url), class: "img-circle", size: 30 if @comment.user.foto? %>
-          		<div style="padding-top: 5px; display: inline-block; width: 85%;">
-            		<b><%= link_to @comment.user.name, @comment.user %></b>     <%= @comment.contenido %>      <span class="timestamp" style="font-size: 11px;"><%= time_ago_in_words(@comment.created_at) %> ago.</span>  
-          	</div>
 
