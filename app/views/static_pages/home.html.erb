@@ -33,10 +33,13 @@
                       <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
                     <% else %>
                       <% if post_popular.link? %>
-                        <% doc = Nokogiri::HTML(open(post_popular.link), nil, 'UTF-8', 'ISO-8859') %>
-                        <% if doc != nil %>
+                        <% @doc = Nokogiri::HTML(open(post_popular.link), nil, 'UTF-8', 'ISO-8859') %>
+                        <% if @doc != nil %>
                           <div class= "title-link">
-                            <%= truncate((@title = doc.at_css("title").text), length: 150) %>
+                            <% @title = @doc.at_css("title").text %>
+                            <% if @title != nil %>
+                              <%= truncate(@title, length: 150) %>
+                            <% end %>
                           </div>
                           <div class="enlace_texto">
                             <%= truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30) %>
