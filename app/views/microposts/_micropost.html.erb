@@ -129,7 +129,11 @@
   <% if micropost.link? %>
     <div class="links">  
       <% if (doc = Nokogiri::HTML(open(micropost.link), nil, 'UTF-8', 'ISO-8859')) != nil %>
-        <div class= "title-link"><%= @title = doc.at_css("title").text if @title != nil %></div>
+        <div class= "title-link"><% @title = doc.at_css("title").text %>
+          <% if @title != nil %>
+            <%= @title %>
+          <% end %>
+        </div>
         <% @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %>
           <% if @src != nil %>
           <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
