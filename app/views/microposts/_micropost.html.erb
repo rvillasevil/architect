@@ -130,9 +130,9 @@
     <div class="links">
     <% doc = Nokogiri::HTML(open(micropost.link, 'User-Agent' => 'ruby'), nil, 'UTF-8', 'ISO-8859') %>  
       <% if doc != nil %>
-        <div class= "title-link"><% title = doc.at_css("title").text %>
+        <div class= "title-link"><% title = doc.at_css("title") %>
           <% if title != nil %>
-            <%= title %>
+            <%= title.text %>
           <% end %>
         </div>
         <% src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %>
