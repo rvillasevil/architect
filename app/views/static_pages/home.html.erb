@@ -33,7 +33,7 @@
                       <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
                     <% else %>
                       <% if post_popular.link? %>
-                        <% @doc = Nokogiri::HTML(open(post_popular.link), nil, 'UTF-8', 'ISO-8859') %>
+                        <% @doc = Nokogiri::HTML(open(post_popular.link, 'User-Agent' => 'ruby'), nil, 'UTF-8', 'ISO-8859') %>
                         <% if @doc != nil %>
                           <div class= "title-link">
                             <% @title = @doc.at_css("title").text %>
