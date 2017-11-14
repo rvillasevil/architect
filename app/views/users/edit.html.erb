@@ -21,6 +21,9 @@
         <%= f.label :pais %>
         <%= f.select(:pais, Pai.all.collect {|p| [ p.paisnombre ]} ) %>
 
+<%
+=begin%>
+
         <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
         <% if current_user.autonomia? %>
             <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
@@ -54,6 +57,8 @@
             <% end %>
         <% else %>
         <% end %>
+<%
+=end%>
 
         <%= f.label "Selecciona tu círculo profesional para debatir sobre los temas importantes" %>
         <%= f.text_field :profesion, class: 'form-control' %>
