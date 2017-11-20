@@ -128,6 +128,8 @@
   <!--  links -->
   <% if micropost.link? %>
     <div class="links">
+<%
+=begin%>
     <% doc = Nokogiri::HTML(open(micropost.link, 'User-Agent' => 'ruby'), nil, 'UTF-8', 'ISO-8859') %>  
       <% if doc != nil %>
         <div class= "title-link"><% title = doc.at_css("title") %>
@@ -142,9 +144,22 @@
           </div>
         <% end %>
       <% end %>
+<%
+=end%>
+      <div class= "title-link">
+        <% if micropost.title_link != nil %>
+          <%= micropost.title_link %>
+        <% end %>
+      </div>
+      <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
+        <% if micropost.photo_link != nil %>
+          <%= image_tag (micropost.photo_link), class: "img-responsive", width: "100%" %>
+        <% end %>
+      </div>
   
       <div class="enlace_texto">
-        <%= link_to truncate(micropost.link.scan( /([^>]*)./).first.last, :length => 30), micropost.link %></div>
+        <%= link_to truncate(micropost.link.scan( /([^>]*)./).first.last, :length => 30), micropost.link %>
+      </div>
     </div>       
   <% end %>
   

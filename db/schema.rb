@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111232334) do
+ActiveRecord::Schema.define(version: 20171120135021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20171111232334) do
     t.boolean  "petition"
     t.string   "title"
     t.integer  "reply"
+    t.string   "title_link"
+    t.string   "photo_link"
     t.index ["user_id"], name: "index_microposts_on_user_id", using: :btree
   end
 

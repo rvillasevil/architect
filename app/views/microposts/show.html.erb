@@ -123,21 +123,21 @@
         <!--  links -->
         <% if @micropost.link? %>
           <div class="links">  
-            <% if (doc = Nokogiri::HTML(open(@micropost.link), nil, 'UTF-8', 'ISO-8859')) != nil %>
-              <div class= "title-link">
-                <b><%= @title = doc.at_css("title").text %></b>
-              </div>
-              <% @src = doc.xpath('//body//img[@width > 300 or @alt = @title]/@src')  %>
-              <% if @src != nil %>
-                <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
-                <%= image_tag (@src.first), class: "img-responsive", width: "100%" if @src.any? %>
-                </div>
+            <div class= "title-link">
+              <% if @micropost.title_link != nil %>
+                <%= @micropost.title_link %>
               <% end %>
-            <% end %>
-          
+            </div>
+            <div class="picture_link" style="max-height: 400, padding-bottom: 8px;" >
+              <% if @micropost.photo_link != nil %>
+                <%= image_tag (@micropost.photo_link), class: "img-responsive", width: "100%" %>
+              <% end %>
+            </div>
+        
             <div class="enlace_texto">
-              <%= link_to truncate(@micropost.link.scan( /([^>]*)./).first.last, :length => 30), @micropost.link %></div>
-          </div>       
+              <%= link_to truncate(@micropost.link.scan( /([^>]*)./).first.last, :length => 30), @micropost.link %>
+            </div>
+          </div>      
         <% end %>
           
           

@@ -6,7 +6,19 @@ class MicropostsController < ApplicationController
 
 
   def create
-    @micropost = current_user.microposts.build(micropost_params)
+    if params[:micropost][:link] != ""
+      doc = Nokogiri::HTML(open(params[:micropost][:link], 'User-Agent' => 'ruby'), nil, 'UTF-8', 'ISO-8859')
+    
+      title = doc.at_css("title").text
+      #photo = doc.xpath('//body//img[@width > 300 or @alt = title]/@src').first
+      photo = doc.xpath('//body//img[@width > 300 or @alt = title]/@src').first
+      #largest_image = doc.search("img").sort_by{|image| image.attributes["height"].value.to_i * image.attributes["width"].value.to_i}.pop
+      #link = doc.at_css("#content//h2/a")[:href]
+
+      #Traveldeal.create(:title => title, :price => price, :url => link)
+    end
+
+    @micropost = current_user.microposts.build(content: params[:micropost][:content], hashtag1: params[:micropost][:hashtag1], hashtag2: params[:micropost][:hashtag2], link: params[:micropost][:link], video: params[:micropost][:video], picture: params[:micropost][:picture], plaza_id: params[:micropost][:plaza_id], title_link: title, photo_link: photo)
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to :back #root_url
@@ -81,7 +93,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture, :video, :hashtag1, :hashtag2,:hashtag3, :link, :plaza_id, :id, :petition, :title)
+      params.require(:micropost).permit(:content, :picture, :video, :hashtag1, :hashtag2,:hashtag3, :link, :plaza_id, :id, :petition, :title, :title_link, :photo_link)
     end
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
