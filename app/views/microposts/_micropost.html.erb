@@ -106,7 +106,7 @@
   <!--  Contenido texto -->
     <div class="content">
       <% if micropost.petition == true %>
-        <%= truncate(micropost.content, :length => 200) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %>
+        <%= truncate(micropost.content, :length => 400) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %>
       <% else %>
         <%= micropost.content %>
       <% end %>  

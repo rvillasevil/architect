@@ -17,8 +17,7 @@ class MicropostsController < ApplicationController
 
       #Traveldeal.create(:title => title, :price => price, :url => link)
     end
-
-    @micropost = current_user.microposts.build(content: params[:micropost][:content], hashtag1: params[:micropost][:hashtag1], hashtag2: params[:micropost][:hashtag2], link: params[:micropost][:link], video: params[:micropost][:video], picture: params[:micropost][:picture], plaza_id: params[:micropost][:plaza_id], title_link: title, photo_link: photo)
+    @micropost = current_user.microposts.build(content: params[:micropost][:content], title: params[:micropost][:title], petition: params[:micropost][:petition], hashtag1: params[:micropost][:hashtag1], hashtag2: params[:micropost][:hashtag2], link: params[:micropost][:link], video: params[:micropost][:video], picture: params[:micropost][:picture], plaza_id: params[:micropost][:plaza_id], title_link: title, photo_link: photo)
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to :back #root_url
