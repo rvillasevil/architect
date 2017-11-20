@@ -33,18 +33,14 @@
                       <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
                     <% else %>
                       <% if post_popular.link? %>
-                        <% @doc = Nokogiri::HTML(open(post_popular.link, 'User-Agent' => 'ruby'), nil, 'UTF-8', 'ISO-8859') %>
-                        <% if @doc != nil %>
-                          <div class= "title-link">
-                            <% @title = @doc.at_css("title") %>
-                            <% if @title != nil %>
-                              <%= truncate(@title.text, length: 150) %>
-                            <% end %>
-                          </div>
-                          <div class="enlace_texto">
-                            <%= truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30) %>
-                          </div>
-                        <% end %>
+                        <div class= "title-link">
+                          <% if post_popular.title_link != nil %>
+                            <%= truncate(post_popular.title_link, length: 150) %>
+                          <% end %>
+                        </div>
+                        <div class="enlace_texto">
+                          <%= link_to truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30), post_popular.link %>
+                        </div>
                       <% else %>
                         <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
                       <% end %>
