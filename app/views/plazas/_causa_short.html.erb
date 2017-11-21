@@ -5,8 +5,8 @@
       <% if @usuario != nil %>
         <ul style="padding: 0px; display: inline-flex;">
           <li style="border: 0px;">
-            <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-            &nbsp;Causas
+            <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+            &nbsp;<h3 style="font-size: 18px; margin: 0px;"><b>Causas</b></h3>
           </li>
           <li style="position: absolute; right: 30px; border: 0px;">
             <%= link_to "Ver todos", user_plazas_path(user_id: params[:id], causa: true) %>
@@ -14,9 +14,9 @@
         </ul>
       <% else %>
         <ul style="padding: 0px; display: inline-flex;">
-          <li style="border: 0px;">
-            <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-            &nbsp;Causas
+          <li style="border: 0px; display: inline-flex;">
+            <i class="fa fa-heart-o fa-lg" aria-hidden="true"></i>
+            &nbsp;<h3 style="font-size: 18px; margin: 0px;"><b>Causas</b></h3>
           </li>
           <li style="position: absolute; right: 30px; border: 0px;">
             <%= link_to "Ver todos", user_plazas_path(user_id: current_user, causa: true) %>

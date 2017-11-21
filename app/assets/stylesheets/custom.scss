@@ -1503,7 +1503,10 @@ input {
     margin-top: 8px;
     display: inline-flex;
     color: grey;
-    font-weight: lighter;
+  }
+  span.contenido {
+    padding-left: 35px;
+    margin: 0px;
   }
   textarea {
     margin: 0px;

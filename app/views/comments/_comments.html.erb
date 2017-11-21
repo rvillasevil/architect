@@ -4,12 +4,16 @@
 
 			<% @comentarios = Comment.where(micropost_id: @micropost) %>
 				<% @micropost.comments.order("created_at desc").first(3).each do |comment| %>
-     			<div class="comentario" style="word-wrap: break-word;">
-        		<div>
-          		<%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
-          		<div style="padding-top: 5px; display: inline-block; width: 85%;">
-            		<b><%= link_to comment.user.name, comment.user %></b>     <%= comment.contenido %>      <span class="timestamp" style="font-size: 11px;"><%= time_ago_in_words(comment.created_at) %> ago.</span>  
-          		</div>
-        		</div>
+     			<div class="comentario" style="word-wrap: break-word; display: inline-flex; width: 100%; padding: 5px;">
+            <ul style="width: 100%;">
+          		<li class="imagen">
+            		<%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+              </li>
+              <li class="texto" style="width: 85%;">
+            		<div style="padding-top: 5px; display: inline-block; width: 85%;">
+              		<b><%= link_to comment.user.name, comment.user %></b>     <%= truncate(comment.contenido, length: 300) %>      <span class="timestamp" style="font-size: 11px;"><%= time_ago_in_words(comment.created_at) %> ago.</span>  
+            		</div>
+              </li>
+            </ul>
       		</div>
     		<% end %>        

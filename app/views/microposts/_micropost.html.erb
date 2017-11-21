@@ -104,7 +104,7 @@
     </ul>
   </div>
   <!--  Contenido texto -->
-    <div class="content">
+    <div class="content" style="font-size: 14px;">
       <% if micropost.petition == true %>
         <%= truncate(micropost.content, :length => 400) %><span style="position: absolute; right: 20px;"><%= link_to "...more", controller: "microposts", action: "show", id: micropost.id %>
       <% else %>
@@ -234,56 +234,64 @@
   </li>
 </ul>
 
-    <% if logged_in? %>
-      <!-- create comment -->
-      <div class="fondo_create_comment">
-        <ul class="post_comment">
-          <li>
-            <%= image_tag (current_user.foto.url), class: "img-circle", size: 30 if current_user.foto? %>
-            
-          </li>
-          <li style="width: 85%;">
-            <%= form_for([micropost, Comment.new], remote: true) do |f| %>
-              <%= f.text_area :contenido, placeholder: "Add a comment..." %>
-              <%= f.hidden_field :user_id, :value => current_user.id %>
-          </li>
-          <li>
-            <%= button_tag(class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #c2d7f9; color: black; border: 0px;m padding-left: 5px; padding-right: 5px;") do %>
-              Comment
-            <% end %>
-            <% end %>
-          </li>
-        </ul>  
-      </div>
-      
-<% else %>
-  <ul class="post_comment" style="border-top: 1px solid #e6e9ec; padding-top: 5px; width: 100%; display: inline-flex; background-color: white; margin-bottom: 5px;">
-    <li style="background-color: #c2d7f9; padding: 5px; border-radius: 10px; font-size: 13px;"><b><%= link_to "Plase login to comment or vote", '/login' %></b></li> &nbsp;&nbsp;or&nbsp;&nbsp;
-    <li style="background-color: #c2d7f9; padding: 5px; border-radius: 10px; font-size: 13px;"><b><%= link_to "Singup", '/signup' %></b></li>
-  </ul>
-<% end %>
+<!-- Create and comments -->
+<!-- -------------------------------------------------------------------------- -->
 
-  <!-- comentarios --> 
-  
-  <% @micropost = micropost %>
-  <div id="<%= micropost.id %>" class="fondo-comments" %>
-    <% micropost.comments.order("created_at desc").take(3).each do |comment| %>
-      <div class="comentario" style="padding: 4px 5px;">
-        <% if micropost.comments.any? %>
-          <ul>
-            <li class="imagen">
-              <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+    <button type="button" class="btn btn-link btn-sm" data-toggle="collapse" data-target="#comentarios<%= micropost.id %>"><i class="fa fa-reply" aria-hidden="true"></i></button>
+    <div id="comentarios<%= micropost.id %>" class="collapse">
+      <% if logged_in? %>
+        <!-- create comment -->
+        <div class="fondo_create_comment">
+          <ul class="post_comment">
+            <li>
+              <%= image_tag (current_user.foto.url), class: "img-circle", size: 30 if current_user.foto? %>
+              
             </li>
-            <li class="texto" style="width: 85%;">
-              <div style="padding-top: 5px; word-wrap: break-word; line-break: strict; overflow-wrap: break-word;">
-                <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px; display: inline-flex;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
-              </div>
+            <li style="width: 85%;">
+              <%= form_for([micropost, Comment.new], remote: true) do |f| %>
+                <%= f.text_area :contenido, placeholder: "Add a comment..." %>
+                <%= f.hidden_field :user_id, :value => current_user.id %>
             </li>
-          </ul>
-        <% end %> 
+            <li>
+              <%= button_tag(class: "btn btn-primary btn-sm", style: "padding: 5px 3px; background-color: #c2d7f9; color: black; border: 0px;m padding-left: 5px; padding-right: 5px;") do %>
+                Comment
+              <% end %>
+              <% end %>
+            </li>
+          </ul>  
+        </div>
+        
+      <% else %>
+        <ul class="post_comment" style="border-top: 1px solid #e6e9ec; padding-top: 5px; width: 100%; display: inline-flex; background-color: white; margin-bottom: 5px;">
+          <li style="background-color: #c2d7f9; padding: 5px; border-radius: 10px; font-size: 13px;"><b><%= link_to "Plase login to comment or vote", '/login' %></b></li> &nbsp;&nbsp;or&nbsp;&nbsp;
+          <li style="background-color: #c2d7f9; padding: 5px; border-radius: 10px; font-size: 13px;"><b><%= link_to "Singup", '/signup' %></b></li>
+        </ul>
+
+      <% end %>
+    
+      <!-- comentarios --> 
+      <% @micropost = micropost %>
+      <div id="<%= micropost.id %>" class="fondo-comments" %>
+        <% micropost.comments.order("created_at desc").take(3).each do |comment| %>
+          <div class="comentario" style="padding: 4px 5px;">
+            <% if micropost.comments.any? %>
+              <ul style="width: 100%;">
+                <li class="imagen">
+                  <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+                </li>
+                <li class="texto" style="width: 85%; display: inline-flex;">
+                  <div style="padding-top: 5px; word-wrap: break-word; line-break: strict; overflow-wrap: break-word; width: 100%;">
+                    <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= truncate(comment.contenido, length: 300) %><span class="timestamp" style="font-size: 11px; margin: 0px; padding: 0px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>
+                  </div>
+                </li>
+              </ul>
+            <% end %> 
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+
+    </div>
+<!-- -------------------------------------------------------------------------- -->
 
   <div class="show_more">
     <%= link_to "Mostar todo", micropost_path(id: micropost), style: "color: grey;" %>

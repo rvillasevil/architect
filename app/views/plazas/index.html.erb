@@ -17,14 +17,6 @@
               Nuestros representantes de cada círculo administrativo. Son aquellos que tienen una mayor participación dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
             </div>
             <ul class="plazas">
-              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-                <span style="align-items: center; padding-top: 10px;"><b>Todos los círculos de 
-                <% @usuario = User.find(params[:user_id]) %>
-                <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
-                <% if params[:user_id] = current_user %>
-                  <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
-                <% end %>
-              </li>         
               <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
                 <ul style="display: inline-flex; padding: 0px;">
                   <li style="padding: 5px;">
@@ -34,20 +26,30 @@
                     <button type="button" class="btn btn-primary btn-sm"><span style="font-size: 12px;"><%= link_to "Nuevo círculo", new_user_plaza_path(:user_id => current_user.id), {style: "color: white"} %></span></button>
                   </li>
                 </ul>
-              </li>
+              </li>              
+              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; padding: 0px;">
+                <ul style="padding: 0px; width: 100%;">
+                  <li style="display: inline-flex; width: 80%;">
+                    <span style="align-items: center; padding-top: 10px;"><h3 style="font-size: 18px; margin: 0px;">
+                      <b>Círculos de 
+                      <% @usuario = User.find(params[:user_id]) %>
+                      <%= @usuario.name %>&nbsp;&nbsp;</b></h3>
+                    </span>                     
+                  </li>
+                  <li style="display: inline-flex; float: right;">
+                    <% if params[:user_id] = current_user %>
+                      <span>
+                        <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
+                      </span>
+                    <% end %>                       
+                  </li>
+                </ul>
+              </li>         
           <% else %>
             <div class="instrucciones" style="margin-top: 10px;">
               Las causas con las que te sientes identificado, a myor número de seguidores mayor influencia en el mundo tendrá tu causa.
             </div>
             <ul class="plazas">
-              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-                <span style="align-items: center; padding-top: 10px;"><b>Todos los círculos de 
-                <% @usuario = User.find(params[:user_id]) %>
-                <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
-                <% if params[:user_id] = current_user %>
-                  <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
-                <% end %>
-              </li>         
               <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
                 <ul style="display: inline-flex; padding: 0px;">
                   <li style="padding: 5px;">
@@ -58,21 +60,21 @@
                     </button>
                   </li>
                 </ul>
-              </li>
+              </li>              
+              <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+                <span style="align-items: center; padding-top: 10px;"><h3 style="font-size: 18px; margin: 0px;"><b>Causas de 
+                <% @usuario = User.find(params[:user_id]) %>
+                <%= @usuario.name %>&nbsp;&nbsp;</b></h3></span>    
+                <% if params[:user_id] = current_user %>
+                  <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
+                <% end %>
+              </li>         
           <% end %>
         <% else %>
           <div class="instrucciones" style="margin-top: 10px;">
               Las acciones en las que participas. A mayor número de personas sigan la causa mayor impacto tendrá en todo el mundo, haciendo de éste un lugar mejor. Pueden ser causas de reciclaje, de adoptar gatitos o de oposición frente a determinadas conductas sociales.
           </div>
           <ul class="plazas">
-            <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
-              <span style="font-size: 15px;"><b>Todos los círculos de 
-              <% @usuario = User.find(params[:user_id]) %>
-              <%= @usuario.name %>&nbsp;&nbsp;</b></span>    
-              <% if params[:user_id] = current_user %>
-                <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
-              <% end %>
-            </li>         
             <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%; ">
               <ul style="display: inline-flex; padding: 0px;">
                 <li style="padding: 5px;">
@@ -83,7 +85,15 @@
                   </button>
                 </li>
               </ul>
-            </li>
+            </li>            
+            <li style="border-bottom: 1px solid #eeeeee; display: inline-flex; width: 100%;">
+              <span style="align-items: center; padding-top: 10px;"><h3 style="font-size: 18px; margin: 0px;"><b>Acciones de 
+              <% @usuario = User.find(params[:user_id]) %>
+              <%= @usuario.name %>&nbsp;&nbsp;</b></h3></span>    
+              <% if params[:user_id] = current_user %>
+                <%= image_tag @usuario.foto.url, class: "img-circle", size: 40 if @usuario.foto? %>
+              <% end %>
+            </li>         
         <% end %>
 
 
@@ -92,12 +102,12 @@
 <!-- Plazas que no son acciones -->
         <% if @action != "true" %>
           <% if @causa != "true" %>
-          <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Tus Círculos</b></div> <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
+            <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
           <% else %>
-          <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Causas</b></div> <% @plazas = @plazas.where(causa: true) %>
+            <% @plazas = @plazas.where(causa: true) %>
           <% end %>
         <% else %>
-        <div style="background-color: white; border-bottom: 1px solid #e6e9ec; padding: 5px;"><b>Acciones</b></div> <% @plazas = @plazas.where(action: true) %>
+          <% @plazas = @plazas.where(action: true) %>
         <% end %>
 
         <% @plazas.each do |plaza| %>

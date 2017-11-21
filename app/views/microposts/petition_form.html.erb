@@ -1,5 +1,8 @@
 <div class="container">
-<% provide(:title, 'Consultas') %>    
+<% provide(:title, 'Consultas') %> 
+
+    <% @plaza = params[:plaza] %>
+
     <div class="row">
     <aside class="col-sm-2">
       <section class="user_info">
@@ -7,9 +10,12 @@
       </section>
     </aside>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="margin-top: 15px; ">
         <section class="micropost_form">
-            <h1 style="font-size: 30px; text-align: left; margin: 30px 0px; padding: 10px; border-bottom: 1px solid #f2f2f2;">Consulta ciudadana para todos los públicos</h1>  
+            <div style="padding: 20px 10px;">
+                <span style="font-size: 25px; margin: 0px;"><b>Consulta ciudadana para todos los públicos</b></span>                 
+            </div>
+ 
 
 
             <!-------------------------------------------------------- -->
@@ -17,79 +23,121 @@
             <%= form_for(@micropost, html: { multipart: true }) do |f| %>
                 <%= render 'shared/error_messages', object: f.object %>
                     <div class="share-content">
-                        <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px; border-bottom: 1px solid #f2f2f2;">
-                            <h1 style="font-size: 20px; text-align: left; margin: 10px 0px; ">Empezemos por el título</h1>  
-                            <span>
-                                <%= f.text_area :title, placeholder: "Título para la consulta..." %>
-                            </span>
-                            <h1 style="font-size: 20px; text-align: left; margin: 10px 0px; ">Describe lo máximo posible tu idea<span style="font-size: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;(Sin límite de caracteres)</span></h1>
-                            <li style="display: inline-flex; margin-top: 10px;">
-                                <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
-                            </li>
-                            <li style="display: inline-flex; width: 90%; margin: 0px;">
-                                <%= f.text_area :content, placeholder: "Expon tu consulta..." %>
-                            </li>
-
-                        </ul>
-
-                    </div>
-                <span class="emoticons">
-                    <h1 style="font-size: 20px; text-align: left; margin: 10px 0px; padding: 10px;">Añade un link, un video de Youtube o una imagen que ayude a la descripción</h1>  
-
-                    <ul class="" style="display: inline-flex; list-style: none; text-align: center; width: 100%; padding-left: 0px; padding-top: 5px; margin-bottom: 5px;">
-                        <li style="width: 25%; background-color: #c2d7f9; padding: 10px;";"><i class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></i><span> Consulta</span></li>  
-                        <li style="width: 25%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div1');"><i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i><span> Link</span></li>  
-                        <li style="width: 25%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div2');"><i class="fa fa-video-camera fa-lg" aria hidden="true"></i><span> Video</span></li>  
-                        <li style="width: 25%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div3');"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i><span> Imagen</span></li>
-                    </ul>
-                </span>                
-
-                <div id="Div1" style="display: none;">
-                    <div class="share-content">
-                        <div class="iconos-share">
-                            <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 5px;">
-                                <li style="width: 100%; display: inline-flex;">
-                                    <i class="fa fa-newspaper-o fa-lg" aria-hidden="true" style="padding: 8px;"></i>
-                                    <%= f.text_field :link, placeholder: "Mándanos un link, simplemente cópialo de la barra de direcciones", style: "margin-bottom: 3px;" %>
-
+                        <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px; border-bottom: 1px solid #f2f2f2; padding: 0px;">
+                            <ul style="padding: 0px; display: inline-flex; list-style: none; width: 100%;">
+                                <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div4');">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i></i><span> Título</span>
                                 </li>
+                                <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div5');">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i></i><span> Contenido</span>
+                                </li> 
+                                <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div6');">
+                                    <i class="fa fa-arrow-down" aria-hidden="true"></i></i><span> Adjuntar</span>
+                                </li>                                                               
                             </ul>
-                        </div>
-                    </div>
-                </div>
 
-                <div id="Div2" style="display: none; ">
-                    <div class="share-content">
-                        <div class="iconos-share">
-                            <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px;  padding-left: 5px;">
-                     
-                                <li style="width: 100%; display: inline-flex;">
-                                    <i class="fa fa-video-camera fa-lg" aria hidden="true" style="padding: 8px;"></i>
-                                    <%= f.text_field :video, placeholder: "O quizá un video. Copia el codigo del video de Youtube", style: "margin-bottom: 3px;" %>
+                            <div id="Div4">
+                                <li style="padding: 10px;">
+                                    <span style="font-size: 25px; text-align: left; margin: 10px 0px;"><b>Empezemos por el título</b></span>
+                                </li>
+                                <li>
+                                    <span style="padding: 10px; width: 85%;">
+                                        <%= f.text_area :title, placeholder: "Título para la consulta...", style: "border: 1px solid #dbd9db; width: 95%;" %>
+                                    </span>                                
                                 </li>
 
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="Div3" style="display: none; "> 
-                    <div class="share-content">
-                        <div class="iconos-share">
-                            <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 15px;">
-                                <li style="padding: 0px; width: 100%; margin-left: 10px;">
-                                    <div id="test">
-                                        <div class="wrapper" style="margin-top: 5px; padding-bottom: 10px; height: 30px;">
-                                            <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
-                                        </div>
-                                        <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
+                                <li>
+                                    <div style="padding: 10px; background-color: #f2f4ff !important; margin: 20px; border: 1px solid #dbd9db; border-radius: 10px;">
+                                        <p><b>Que sea corto y conciso</b></p>
+                                        <p>Ejemplo: "Compren huevos orgánicos de granja para sus restaurantes"
+    Esto no: "No más trato inhumano de pollos en jaulas que son alimentados a la fuerza..."</p>
+                                        <p><b>Céntrate en la solución</b></p>
+                                        <p>Ejemplo: "Elevar el salario mínimo en Canarias a 15€ la hora"
+    Esto no: "No más desigualdad de ingresos en Canarias"</p>
+                                        <p><b>Comunica la urgencia</b></p>
+                                        <p>Ejemplo: "Aprueben el tratamiento que puede salvar la vida de mi hija antes de que sea demasiado tarde"</p>
                                     </div>
+                                </li>                                
+                            </div>
+                            <div id="Div5" style="display: none;">
+                                <li style="padding: 10px;">
+                                    <span style="font-size: 25px; text-align: left; margin: 10px 0px;"><b>Describe lo máximo posible tu idea.</b></span>
                                 </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                                <li>
+                                    <span style="padding: 10px; width: 85%;">
+                                        <%= f.text_area :content, placeholder: "Expon tu consulta...", style: "border: 1px solid #dbd9db; width: 95%; height: 150px;" %>
+                                    </span>
+                                </li>
+                                <li>
+                                    <div style="padding: 10px; background-color: #f6f4f6 !important; margin: 20px; border: 1px solid #dbd9db; border-radius: 10px;">
+                                        <p><b>Que sea corto y conciso</b></p>
+                                        <p>Ejemplo: "Compren huevos orgánicos de granja para sus restaurantes"
+    Esto no: "No más trato inhumano de pollos en jaulas que son alimentados a la fuerza..."</p>
+                                        <p><b>Céntrate en la solución</b></p>
+                                        <p>Ejemplo: "Elevar el salario mínimo en Canarias a 15€ la hora"
+    Esto no: "No más desigualdad de ingresos en Canarias"</p>
+                                        <p><b>Comunica la urgencia</b></p>
+                                        <p>Ejemplo: "Aprueben el tratamiento que puede salvar la vida de mi hija antes de que sea demasiado tarde"</p>
+                                    </div>
+                                </li>                                                               
+                            </div>
+                            <span class="emoticons">
+                                <span style="font-size: 16px; text-align: left; margin: 10px 0px; padding: 10px;"><b>Añade un link, un video de Youtube o una imagen que ayude a la descripción</b></span>
 
+                                <ul class="" style="display: inline-flex; list-style: none; text-align: center; width: 100%; padding-left: 0px; padding-top: 5px; margin-bottom: 5px;">
+                                    <li style="width: 32%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div1');"><i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i><span> Link</span></li>  
+                                    <li style="width: 32%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div2');"><i class="fa fa-video-camera fa-lg" aria hidden="true"></i><span> Video</span></li>  
+                                    <li style="width: 32%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div3');"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i><span> Imagen</span></li>
+                                </ul>
+                            </span>                
+
+                            <div id="Div1" style="display: none;">
+                                <div class="share-content">
+                                    <div class="iconos-share">
+                                        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 5px;">
+                                            <li style="width: 100%; display: inline-flex;">
+                                                <i class="fa fa-newspaper-o fa-lg" aria-hidden="true" style="padding: 8px;"></i>
+                                                <%= f.text_field :link, placeholder: "Mándanos un link, simplemente cópialo de la barra de direcciones", style: "margin-bottom: 3px;" %>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="Div2" style="display: none; ">
+                                <div class="share-content">
+                                    <div class="iconos-share">
+                                        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px;  padding-left: 5px;">
+                                 
+                                            <li style="width: 100%; display: inline-flex;">
+                                                <i class="fa fa-video-camera fa-lg" aria hidden="true" style="padding: 8px;"></i>
+                                                <%= f.text_field :video, placeholder: "O quizá un video. Copia el codigo del video de Youtube", style: "margin-bottom: 3px;" %>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="Div3" style="display: none; "> 
+                                <div class="share-content">
+                                    <div class="iconos-share">
+                                        <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 15px;">
+                                            <li style="padding: 0px; width: 100%; margin-left: 10px;">
+                                                <div id="test">
+                                                    <div class="wrapper" style="margin-top: 5px; padding-bottom: 10px; height: 30px;">
+                                                        <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+                                                    </div>
+                                                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>                                                      
+                        </ul>
+                    </div>
                 <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 0px;">
                     <li style="padding-top: 8px; width: 60%; margin-left: 5px; margin-right: 15px; display: inline-flex;">
                         <i class="fa fa-hashtag" aria-hidden="true" style="padding-top: 5px;"></i>&nbsp;
@@ -97,15 +145,17 @@
                     </li>
                     <li style="width: 30%; padding-top: 5px; font-size: 11px;" >
                         <%= f.hidden_field :petition, :value => true %>
+                        <% if @plaza != nil %>
+                            <%= f.hidden_field :plaza_id, :value => @plaza %>
+                        <% end %>
                         <%= f.hidden_field :hashtag2, :value => "posts" %>
                         <%= f.submit "Crear consulta", class: "btn btn-info btn-sm", style: "background-color: #c2d7f9; color: black; border: 0px;" %> 
                     </li>
                 </ul>                
-
             <% end %>
 
             <script>
-             var divs = ["Div1", "Div2", "Div3"];
+             var divs = ["Div1", "Div2", "Div3", "Div4", "Div5"];
                 var visibleDivId = null;
                 function divVisibility(divId) {
                   if(visibleDivId === divId) {
@@ -137,6 +187,7 @@
                 }
               });
             </script>
+
         </section>
     </div>
 </div>
