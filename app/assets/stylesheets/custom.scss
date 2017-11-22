@@ -1045,13 +1045,14 @@ input {
   }
   .title-petition {
     padding: 15px 10px;
-    font-size: 18px;
+    font-size: 20px;
   }
   .content {
-    padding: 0px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
   }
   .votos_seguidores {
-    padding: 0px 10px 10px 10px;
+    border-top: 1px solid #dddfe2;
+    padding: 10px 10px 10px 10px;
     font-size: 12px;
     line-height: 18px;
     color: $gray-light;
@@ -1091,7 +1092,7 @@ input {
       display: block;
       position: absolute;
       right: 30px;
-      
+      padding: 0px;
     }
   }
 
@@ -1439,12 +1440,28 @@ input {
   
   .title_show {
     font-size: 34px;
-    font-family: Georgia, sans-serif, serif;
+    /*font-family: Georgia, sans-serif, serif;*/
     font-weight: 150;
     line-height: 38px;
     letter-spacing: normal;
-    
     text-align: center;
+  }
+  .votos {
+    padding-left: 50px;
+  }
+  .votos_seguidores {
+    padding-left: 50px;
+  }
+  .fondo-comments {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .fondo_create_comment {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .social_elements {
+    border-top: 1px solid #e6e9ec;
   }
 
   @media (max-width: 992px) {
@@ -1459,17 +1476,29 @@ input {
       margin-bottom: 15px;
     }
     .title_show {
-      padding: 10px 5px;
+      padding: 30px 5px;
       font-size: 25px;
     }
     .comentario {
       padding-left: 0px;
     }
     .social_elements {
-      
+
     }
     .header-post {
       text-align: center;
+    }
+    .votos {
+      padding-left: 0px;
+    }
+    .votos_seguidores {
+      padding-left: 0px;
+    }
+    .fondo-comments {
+      margin: 0px;
+    }
+    .fondo_create_comment {
+      margin: 0px;
     }
   }
   @media (min-width: 992px) {
@@ -1481,13 +1510,12 @@ input {
       margin-bottom: 15px;
     }
     .title_show {
-      padding: 10px 60px;
+      padding: 30px 60px;
     }
     .comentario  {
       padding-left: 90px;
     }
     .social_elements  {
-      
     }
     .header-post {
       text-align: center;
@@ -1502,6 +1530,10 @@ input {
 /* ----------------------------------MICROPOSTS#SHOW------------*/
 
 .comentario {
+  li.form_reply {
+    margin: 0px;
+    margin-top: 5px;
+  }
   span {
     margin-top: 8px;
     display: inline-flex;
@@ -1510,6 +1542,7 @@ input {
   span.contenido {
     padding-left: 35px;
     margin: 0px;
+    line-height: 14px;
   }
   textarea {
     margin: 0px;
@@ -1518,14 +1551,13 @@ input {
     margin: 0px;
   }
   .reply {
+    margin: 0px;
     font-size: 13px;
     list-style: none;
     display: block;
-    padding-left: 20px;
-    border-left: 1px solid #d9d9d9;
-    padding-left: 20px;
   }
   .reply1 {
+    list-style: none;
     font-size: 13px;
     list-style: none;
     display: block;
@@ -1766,6 +1798,7 @@ overflow: hidden;
   padding-left: 0px;
   }
   .title-petition {
+
   display: block;
   padding-bottom: 10px;
   padding-top: 10px;

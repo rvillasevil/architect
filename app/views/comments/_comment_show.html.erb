@@ -2,26 +2,26 @@
 	
 		<%# render 'comments/comment' %>
 
-			<div id="consulta-<%= @micropost.id %>" class="fondo-comments" %>
-				<% @micropost.comments.order("created_at desc").first(30).each do |comment| %>
-		      <div class="comentario" style="font-size: 12px;">
-		        <% if @micropost.comments.any? %>
-		          <% if comment.reply.blank? %>
-		            <ul class="comment" style="display: inline-flex;">
-		              <li class="imagen">
-		                <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
-		              </li>
-		              <li class="texto">
-		                <div style="padding-top: 5px; word-wrap: break-word;">
-		                  <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
-		                </div>
-		              </li>
-							    <li style="width: 85%;">
-					          <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
-					          	<% @comment = comment %>
-											<%= render 'comments/comment_form', f: f %>
-					          <% end %>
-					        </li>
+      <div id="consulta-<%= @micropost.id %>" class="fondo-comments" %>
+        <% @micropost.comments.order("created_at desc").first(30).each do |comment| %>
+          <div class="comentario" style="font-size: 13px;">
+            <% if @micropost.comments.any? %>
+              <% if comment.reply.blank? %>
+                <ul class="comment" style="display: inline-flex;">
+                  <li class="imagen">
+                    <%= image_tag (comment.user.foto.url), class: "img-circle", size: 30 if comment.user.foto? %>
+                  </li>
+                  <li class="texto">
+                    <div style="padding-top: 5px; word-wrap: break-word;">
+                      <b><%= link_to comment.user.name, comment.user %></b>&nbsp;<%= comment.contenido %><span class="timestamp" style="font-size: 11px;">&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %> ago.</span>  
+                    </div>
+                  </li>
+                  <li class="form_reply">
+                    <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
+                      <% @comment = comment %>
+                      <%= render 'comments/comment_form', f: f %>
+                    <% end %>
+                  </li>
 		            </ul>
 		            <div class="reply1">
 			            <% if (@reply1 = Comment.where(reply: comment)).any? %>

@@ -16,7 +16,7 @@
 				<ul style="list-style: none; padding-left: 0px;">
 					<li style="width: 100%; margin-bottom: 10px;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6;">
-							<span style="font-size: 15px;"><b>Representantes en <%= current_user.ciudad %></b></span>
+							<span style="font-size: 18px;"><b>Candidatos en <%= current_user.ciudad %></b></span>
 						</li>
 							<% if @candidatos_pueblo.any? %>
 								<% @candidatos_pueblo.first(10).each do |x| %>
@@ -74,7 +74,7 @@
 
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<span style="font-size: 15px;"><b>Representantes en <%= current_user.autonomia %></b></span>
+							<span style="font-size: 18px;"><b>Candidatos en <%= current_user.autonomia %></b></span>
 						</li>
 								<% @candidatos_autonomia.take(10).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:autonomia => current_user.autonomia) %>
@@ -129,7 +129,7 @@
 					
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<span style="font-size: 15px;"><b>Representantes en el Mundo</b></span>
+							<span style="font-size: 18px;"><b>Candidates en el Mundo</b></span>
 						</li>
 								<% @candidatos_mundo.take(10).each do |x| %>
 									<% @user = User.where(:id => x.id) %>

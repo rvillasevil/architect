@@ -25,7 +25,7 @@
 									<% end %>
 								</div>
 								
-								<div class="title-petition" >
+								<div class="title-petition">
 									<!--  Titulo -->
 										<b><%= link_to micropost.title, micropost_path(id: micropost.id), style: "color: black;" %></b>
 								</div>
@@ -37,6 +37,7 @@
 								</div>
 
 								<div class="votos_seguidores">
+									<div style="font-size: 16px"><b>Lo que opinan tus amigos</b></div>
 									<% @seguidores = current_user.following.count %>
 									<% @votos_post_seguidores = Vote.where(micropost_id: micropost).where(user_id: current_user.following) %>
 									<% @votos_post_seguidores.each do |votos_seguidores| %>
@@ -166,8 +167,8 @@
 								      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 38 if micropost.user.foto? %>
 								  	</li>
 								    <li>	
-								      <ul class="block">
-								        <li style="width: 70%;">
+								      <ul class="block" style="width: 100%; display: inline-flex;">
+								        <li style="width: 65%;">
 								          <b><%= link_to micropost.user.name, micropost.user %></b>
 
 									    	<% if micropost.hashtag1? %>

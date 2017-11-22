@@ -31,7 +31,11 @@
       <div class="aside_content">
         <ul class="inline" style="margin-bottom: 0px;">
           <li class="titulo">
-            <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary" %>
+            <% if @grupo_seguidores.where(user_id: current_user).any? %>              
+              <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary" %>
+            <% else %>
+              Es necesario pertencer al cículo para realizar consultas en él, por favor, síguelo.
+            <% end %>
           </li>
         </ul>
       </div>      
