@@ -165,79 +165,79 @@
   
 <!-- votos -->
 <!-- votos positivos -->
-  <ul class="social_elements">
+  <ul class="social_elements" style="border-top: 1px solid #e6e9ec;">
     <div id="vote<%= micropost.id %>">
-      <%# @votosPositivos = micropost.votes.where(:like => 1).count %>
-      <%# @votosNegativos = micropost.votes.where(:dislike => 1).count %>
-<% if logged_in? %>
-    <% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id) %>
-    <li style="display: inline-flex;">
-      <% if @voto_usuario.empty? %>
-        <%= form_for([micropost, Vote.new], remote: true) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :like, :value => 1 %> 
-          <%= f.hidden_field :dislike, :value => 0 %> 
-            <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
+      <% if logged_in? %>
+        <% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id) %>
+        <li style="display: inline-flex; margin: 0px; padding-top: 10px;">
+          <% if @voto_usuario.empty? %>
+            <%= form_for([micropost, Vote.new], remote: true) do |f| %>
+              <%= f.hidden_field :user_id, :value => current_user.id %>
+              <%= f.hidden_field :like, :value => 1 %> 
+              <%= f.hidden_field :dislike, :value => 0 %> 
+                <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>&nbsp;&nbsp;&nbsp;Vote
+                <% end %>
             <% end %>
-        <% end %>
-      <% else %>
-        <% @micropost = micropost %>
-        <% @voto_usuario.each do |voto_usuario| %>
-          <%= form_tag(update_like_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>  
-            <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
-            <% end %>
-          <% end %>
-        <% end %>
-      <% end %>
-<% else %>
-    <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>  Up
-        <% end %>
-<% end %>
-
-<!-- votos negativos -->
-<% if logged_in? %>
-
-      <% if @voto_usuario.empty? %>
-        <%= form_for([micropost, Vote.new], remote: true) do |f| %>
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-          <%= f.hidden_field :like, :value => 0 %> 
-          <%= f.hidden_field :dislike, :value => 1 %> 
-          <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %>
-            <i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>  Down 
-          <% end %>
-        <% end %>
-      <% else %>
-        <% @voto_usuario.each do |voto_usuario| %>
-          <%= form_tag(update_dislike_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
-              <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Up
+          <% else %>
+            <% @micropost = micropost %>
+            <% @voto_usuario.each do |voto_usuario| %>
+              <%= form_tag(update_like_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>  
+                <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>&nbsp;&nbsp;&nbsp;Vote
+                <% end %>
               <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      <% end %> 
+      <% else %>
+        <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %><i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true" style="color: #595959;"></i>  <%= @votosPositivos = micropost.votes.where(:like => 1).count %></span>&nbsp;&nbsp;&nbsp;Vote
+            <% end %>
+      <% end %>
 
-<% else %>
-        <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959;") do %><i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i><%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  Down    
-        <% end %>
-<% end %>
-  </div>
+      <!-- votos negativos -->
+      <% if logged_in? %>
+
+        <% if @voto_usuario.empty? %>
+          <%= form_for([micropost, Vote.new], remote: true) do |f| %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+            <%= f.hidden_field :like, :value => 0 %> 
+            <%= f.hidden_field :dislike, :value => 1 %> 
+            <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %>
+              &nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %>            <% end %>
+          <% end %>
+        <% else %>
+          <% @voto_usuario.each do |voto_usuario| %>
+            <%= form_tag(update_dislike_micropost_vote_path(micropost_id: micropost, id: voto_usuario), method: :put, remote: true) do |f| %>
+                <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %>&nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>  
+                <% end %>
+            <% end %>
+          <% end %>
+        <% end %> 
+
+      <% else %>
+          <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %>&nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>      
+          <% end %>
+      <% end %>
+    </div>
 
   <!-- hashtags -->
-  <li style="padding-top: 10px; text-align: right;">
+  <li style="padding-top: 10px; text-align: center; margin: 0px; width: 100%; color: #595959;">
     <% if micropost.hashtag1? %>
-      <a class="hashtag"><b><i class="fa fa-tags fa-lg" aria-hidden="true"></i></b>&nbsp;<%= link_to micropost.hashtag1,hashtag_micropost_path(micropost), {style: "color: #595959;"} %></a>
+      <span class="hashtag"><b><i class="fa fa-hashtag fa-lg" aria-hidden="true"></i></b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #595959;"} %></span>
     <% end %>
   </li>
 
   <!-- comentarios -->
-  <li style="padding-top: 10px; text-align: left;">
-    <span class="numbercomments"><b><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i></b>&nbsp;<%= micropost.comments.count %> comentarios</span>
+  <li style="padding-top: 10px; text-align: center; margin: 0px; width: 35%;">
+    <button type="button" class="btn btn-link btn-sm" style="padding: 0px;" data-toggle="collapse" data-target="#comentarios<%= micropost.id %>">
+      <span class="numbercomments">
+        <b><i class="fa fa-comment-o fa-lg" style="padding: 0px;" aria-hidden="true"></i>&nbsp;<%= micropost.comments.count %></b> Commenta
+      </span>
+    </button>
   </li>
 </ul>
 
 <!-- Create and comments -->
 <!-- -------------------------------------------------------------------------- -->
 
-    <button type="button" class="btn btn-link btn-sm" data-toggle="collapse" data-target="#comentarios<%= micropost.id %>"><i class="fa fa-reply" aria-hidden="true"></i></button>
     <div id="comentarios<%= micropost.id %>" class="collapse">
       <% if logged_in? %>
         <!-- create comment -->
@@ -245,7 +245,6 @@
           <ul class="post_comment">
             <li>
               <%= image_tag (current_user.foto.url), class: "img-circle", size: 30 if current_user.foto? %>
-              
             </li>
             <li style="width: 85%;">
               <%= form_for([micropost, Comment.new], remote: true) do |f| %>
@@ -266,7 +265,6 @@
           <li style="background-color: #c2d7f9; padding: 5px; border-radius: 10px; font-size: 13px;"><b><%= link_to "Plase login to comment or vote", '/login' %></b></li> &nbsp;&nbsp;or&nbsp;&nbsp;
           <li style="background-color: #c2d7f9; padding: 5px; border-radius: 10px; font-size: 13px;"><b><%= link_to "Singup", '/signup' %></b></li>
         </ul>
-
       <% end %>
     
       <!-- comentarios --> 
@@ -289,12 +287,15 @@
           </div>
         <% end %>
       </div>
-
+      <div class="show_more">
+        <%= link_to "Mostar todos", micropost_path(id: micropost), style: "color: grey;" %>
+      </div>
     </div>
+
+
+
 <!-- -------------------------------------------------------------------------- -->
 
-  <div class="show_more">
-    <%= link_to "Mostar todo", micropost_path(id: micropost), style: "color: grey;" %>
-  </div>
+
 
 </li>
