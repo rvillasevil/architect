@@ -4,13 +4,13 @@
             <div class="new_inicio">
               <% provide(:title, 'Sign up') %>
               
-              <div class="titulo">
-                <h3>Para comenzar, vamos a crear su cuenta.</h3>
-                <h5 style="margin-top: 25px;">Resgistrarse en assemblyn es fácil y gratis; además tú eliges el momento de ser representante de algún círculo administrativo.</h5>  
+              <div class="titulo" style="">
+                <h1 style="font-size: 30px; font-weight: 700; text-align: left;">Para comenzar, vamos a crear su cuenta.</h1>
+                <h5 style="margin-top: 25px; text-align: left;">Resgistrarse en assemblyn es fácil y gratis; además tú eliges el momento de ser representante de algún círculo administrativo.</h5>  
               </div>
                 <ul class="titulo">
                   <li class="element">
-                    <ul>
+                    <ul style="padding-top: 20px;">
                         <li>
                             <i class="fa fa-id-badge fa-2x" aria-hidden="true"></i>
                         </li>
@@ -21,7 +21,7 @@
                     </ul>   
                   </li>
                   <li class="element">
-                    <ul>
+                    <ul style="padding-top: 20px;">
                         <li>
                             <i class="fa fa-envelope-open-o fa-2x" aria-hidden="true"></i>
                         </li>
@@ -32,7 +32,7 @@
                     </ul>               
                   </li>
                   <li class="element">
-                    <ul>
+                    <ul style="padding-top: 20px;">
                         <li>
                             <i class="fa fa-users fa-2x" aria-hidden="true"></i>
                         </li>
@@ -47,32 +47,32 @@
                     <%= form_for(@user) do |f| %>
                     <li>
                         <%= render 'shared/error_messages', object: f.object %>
-                        <%= f.label :name, "Tu nombre", style: "color: grey; font-weight: lighter;" %>
+                        <%= f.label :name, "Tu nombre", style: "color: grey; " %>
                         <%= f.text_field :name, class: 'form-control', :placeholder => "Tu nombre y apellidos para tu usuario" %>
                     </li>
                     <li>
-                        <%= f.label :description, style: "color: grey; font-weight: lighter;" %>
+                        <%= f.label :description, style: "color: grey; " %>
                         <%= f.text_field :description, class: 'form-control', placeholder: "Descríbete para completar tu perfil político" %>
                     </li>
                     <li>
-                        <%= f.label :email, style: "color: grey; font-weight: lighter;" %>
+                        <%= f.label :email, style: "color: grey; " %>
                         <%= f.email_field :email, class: 'form-control', placeholder: "Te mandaremos el correo de activación a la cuenta de correo electrónico" %>
                     </li>
                     <li>
-                        <%= f.label :foto, "Tu foto", style: "color: grey; font-weight: lighter;" %>
-                        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png", style: "color: white;" %>
+                        <%= f.label :foto, "Tu foto", style: "color: grey; " %>
+                        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png", style: "color: grey;" %>
                     </li>
                     <li>
-                        <%= f.label :password, style: "color: grey; font-weight: lighter;" %>
+                        <%= f.label :password, style: "color: grey; " %>
                         <%= f.password_field :password, class: 'form-control' %>
                     </li>
                     <li>
-                        <%= f.label :password_confirmation, "Confirmation", style: "color: grey; font-weight: lighter;" %>
+                        <%= f.label :password_confirmation, "Confirmation", style: "color: grey; " %>
                         <%= f.password_field :password_confirmation, class: 'form-control' %>
                         <%= f.hidden_field :plaza, :value => false %>
                         <%= f.hidden_field :activated, :value => true %>
                     </li>
-                    <li> 
+                    <li style="padding-top: 20px;"> 
                         <%= f.submit "Crea mi cuenta", class: "btn btn-primary" %>
                     </li>
                     <% end %>

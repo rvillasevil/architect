@@ -29,25 +29,37 @@
                 <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
                   <div>
                     <% if post_popular.picture? %>
-                      <%= image_tag (post_popular.picture.url), class: "img", size: 180, style: "position: absolute, bottom: 0px; overflow: hidden;" %>
-                      <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
+                      <div class="img" style="max-height: 100px;">
+                        <%= image_tag (post_popular.picture.url), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>
+                      </div>  
+                        <%= truncate(post_popular.content,length: 150, omission: '... (read)') %>
+                      
                     <% else %>
                       <% if post_popular.link? %>
                         <div class= "title-link">
+                          <div class="img">
+                            <% if post_popular.photo_link != nil %>
+                              <div style="max-height: 100px;">
+                                <%= image_tag (post_popular.photo_link), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>                                
+                              </div>
+
+                            <% end %>                             
+                          </div>
+                         
                           <% if post_popular.title_link != nil %>
                             <%= truncate(post_popular.title_link, length: 150) %>
                           <% end %>
                         </div>
-                        <div class="enlace_texto">
+                        <div class="enlace_texto" style="padding-left: 10px;">
                           <%= link_to truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30), post_popular.link %>
                         </div>
                       <% else %>
-                        <%= truncate(post_popular.content,length: 100, omission: '... (read)') %>
+                        <%= truncate(post_popular.content, length: 200, omission: '... (read)') %>
                       <% end %>
                     <% end %>
                   </div>
                 <% end %>
-                <span style="color: grey; font-size: 12px;">
+                <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px;">
                   <i class="fa fa-commenting-o" aria-hidden="true"></i>
                   <%= post_popular.comments.count %> comments | 
                   <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 

@@ -25,9 +25,9 @@
 									<% end %>
 								</div>
 								
-								<div class="title-petition">
+								<div class="title-petition" >
 									<!--  Titulo -->
-										<b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
+										<b><%= link_to micropost.title, micropost_path(id: micropost.id), style: "color: black;" %></b>
 								</div>
 
 								<div class="content">

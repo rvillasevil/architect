@@ -403,7 +403,7 @@ aside {
   display: inline-flex;
   max-width: 100%;
   height: 100%;
-  max-height: 220px;
+  max-height: 250px;
   overflow-y: auto;
   overflow-x: auto;
   /*transform: rotate(-90deg);*/
@@ -413,23 +413,24 @@ aside {
     list-style: none;
     padding: 5px;
     margin: 5px;
-    min-width: 200px;
+    min-width: 250px;
     /*transform: rotate(90deg);*/
     /*transform-origin: right top;*/
     div {
       font-size: 13px;
-      font-family: Georgia, sans-serif, serif;
+      /*font-family: Georgia, sans-serif, serif;*/
     }
   }
   .img {
-    max-height: 100px;
+    overflow: hidden;
+    width: 100%;
   }
   .title-link {
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 10px;
     font-weight: bold;
-    font-family: Georgia, sans-serif, serif;
+    /*font-family: Georgia, sans-serif, serif;*/
     }
 }
 
@@ -895,7 +896,6 @@ input {
   .picture_content {
     max-height: 200px;
     overflow: hidden;
-
   }
 }
 
@@ -1044,9 +1044,8 @@ input {
     padding-left: 0px;
   }
   .title-petition {
-    padding: 10px 10px;
-    font-size: 20px;
-    text-align: center;
+    padding: 15px 10px;
+    font-size: 18px;
   }
   .content {
     padding: 0px 10px 10px 10px;

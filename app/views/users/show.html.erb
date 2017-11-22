@@ -106,14 +106,17 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Temas que interesan al usuario
+            <h3 style="font-size: 16px; margin: 0px;"><b>Temas que interesan al usuario</b></h3>
           </li>
           <li class="lista_block">
             <ul class="inline">
               <li>
                 <% @microposts.take(3).each do |post| %>
-                  <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>
-                  <b><%= link_to post.hashtag1, {:controller => "microposts", action: "hashtag", :id => post.id}  %></b>  
+                  <% if post.hashtag1.empty? %>
+                  <% else %>
+                    <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>
+                    <b><%= link_to post.hashtag1, {:controller => "microposts", action: "hashtag", :id => post.id}  %></b>
+                  <% end %>  
                 <% end %>
               </li>
             </ul>
@@ -124,7 +127,7 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Consultas ciudadanas creadas
+            <h3 style="font-size: 16px; margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Consultas ciudadanas creadas</b></h3>
           </li>
           <% @peticiones.first(5).each do |petition| %>
           <li class="lista_block">
@@ -154,7 +157,7 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Iniciativas apoyadas por <%= @user.name %>
+            <h3 style="font-size: 16px; margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas apoyadas por <%= @user.name %></b></h3>
           </li>
           <% @votos = Vote.where(:user_id => @user.id).where(like: 1) %>
           <% @votos.first(10).each do |voto| %>
@@ -180,7 +183,7 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Iniciativas rechazadas por <%= @user.name %>
+            <h3 style="font-size: 16px; margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas rechazadas por <%= @user.name %></b></h3>
           </li>
           <% @votos = Vote.where(:user_id => @user.id).where(dislike: 1) %>
           <% @votos.first(10).each do |voto| %>
@@ -207,8 +210,9 @@
         <ul class="principal" >
           <li class="titulo">
             <ul style="padding: 0px; display: inline-flex;">
-              <li style="width: 80%; border: 0px;">
-                Círculos en los que participa <%= @user.name %>
+              <li style="width: 80%; border: 0px; display: inline-flex;">
+                <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
+            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Círculos en los que participa <%= @user.name %></b></h3>
               </li>
               <li style="position: absolute; right: 30px; border: 0px;">
                 <span style=""><%= link_to "Ver todos", user_plazas_path(user_id: @user) %></span>
@@ -243,8 +247,8 @@
 
     <div class="col-sm-6" style="margin-top: 15px;">
       <% if @microposts.any? %>
-        <h5 style="padding-left: 10px;">Posts (<%= @microposts.count %>)</h5>
-        <ol class="microposts">
+        <h3 style="font-size: 16px; margin: 0px;"><b>Posts(<%= @microposts.count %>)</b></h3>
+        <ol class="microposts" style="padding-top: 10px;">
           <%= render @microposts %>
         </ol>
         <%= will_paginate @microposts %>

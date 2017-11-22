@@ -4,9 +4,9 @@
       <% @usuario = params[:id] %>
       <% if @usuario != nil %>
         <ul style="padding: 0px; display: inline-flex;">
-          <li style="border: 0px;">
+          <li style="border: 0px; display: inline-flex;">
             <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-            &nbsp;<h3 style="font-size: 18px; margin: 0px; color: #337ab7;"><b>Acciones</b></h3>
+            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Acciones</b></h3>
           </li>
           <li style="position: absolute; right: 30px; border: 0px;">
             <%= link_to "Ver todos", user_plazas_path(user_id: params[:id], accion: true) %>
@@ -16,7 +16,7 @@
         <ul style="padding: 0px; display: inline-flex;">
           <li style="border: 0px; display: inline-flex;">
             <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-            &nbsp;<h3 style="font-size: 18px; margin: 0px;"><b>Acciones</b></h3>
+            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Acciones</b></h3>
           </li>
           <li style="position: absolute; right: 30px; border: 0px;">
             <%= link_to "Ver todos", user_plazas_path(user_id: current_user, accion: true) %>
