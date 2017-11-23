@@ -202,10 +202,6 @@
     <!-- hashtags -->
     <li style="padding-top: 10px; text-align: right;">
       <% if @micropost.hashtag1? %>
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle-o fa-stack-2x"></i>
-        <i class="fa fa-user fa-stack-1x"></i>
-      </span>
         <a class="hashtag"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= link_to @micropost.hashtag1,hashtag_micropost_path(@micropost), {style: "color: #777777"} %></a>
       <% end %>
     </li>

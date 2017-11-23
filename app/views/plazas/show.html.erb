@@ -1,19 +1,19 @@
 <div class="container">
   <% provide(:title, @plaza.name) %>
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-sm-2">
       <div class="plaza_stats">
         <div>
           <div class="background_img"></div>
           <ul class="plaza_name_img">
             <li>
-              <ul style="list-style: none; padding-left: 0px; display: inline-flex;">
+              <ul>
                 <li>
                   <div class="plaza_img">
                     <%= image_tag @plaza.foto.url, class: "img-circle", size: 100  if @plaza.foto? %> 
                   </div>
                 </li>
-                <li style="display: inline-flex; padding-top: 35px;">
+                <li class="texto">
                   <ul style="list-style: none; padding: 0px;">
                     <li>
                       <div class="plaza_name">
@@ -29,7 +29,7 @@
                 </li>                  
               </ul>
             </li>
-            <li>
+            <li style="padding-top: 20px;">
               <%= render 'groups/seguir_form' if logged_in? %>
             </li>
           </ul>

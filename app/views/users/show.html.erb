@@ -7,13 +7,13 @@
           <div class="background_img"></div>
           <ul class="plaza_name_img">
             <li>
-              <ul style="list-style: none; padding-left: 0px; display: inline-flex;">
+              <ul>
                 <li>
                   <div class="plaza_img">
-                    <%= image_tag @user.foto.url, class: "img-circle", size: 75  if @user.foto? %> 
+                    <%= image_tag @user.foto.url, class: "img-circle", size: 100  if @user.foto? %> 
                   </div>
                 </li>
-                <li style="display: inline-flex; padding-top: 35px;">
+                <li class="texto">
                   <ul style="list-style: none; padding: 0px;">
                     <li>
                       <div class="plaza_name">
@@ -29,7 +29,7 @@
                 </li>                  
               </ul>
             </li>
-            <li style="padding-top: 10px;">
+            <li style="padding-top: 20px;">
               <%= render 'follow_form' if logged_in? %>
             </li>
           </ul>
