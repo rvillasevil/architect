@@ -7,20 +7,28 @@
           <div class="background_img"></div>
           <ul class="plaza_name_img">
             <li>
-              <div class="plaza_img">
-                  <%= image_tag @plaza.foto.url, class: "img-circle", size: 75  if @plaza.foto? %> 
-              </div>
+              <ul style="list-style: none; padding-left: 0px; display: inline-flex;">
+                <li>
+                  <div class="plaza_img">
+                    <%= image_tag @plaza.foto.url, class: "img-circle", size: 100  if @plaza.foto? %> 
+                  </div>
+                </li>
+                <li style="display: inline-flex; padding-top: 35px;">
+                  <ul style="list-style: none; padding: 0px;">
+                    <li>
+                      <div class="plaza_name">
+                        <%= @plaza.name %>
+                      </div>
+                    </li>
+                    <% if @plaza.description? %>
+                    <li class="description">
+                      <%= @plaza.description %>
+                    </li>
+                    <% end %>                
+                  </ul>
+                </li>                  
+              </ul>
             </li>
-            <li>
-              <div class="plaza_name">
-                <%= @plaza.name %>
-              </div>
-            </li>
-            <% if @plaza.description? %>
-            <li class="description">
-              <%= @plaza.description %>
-            </li>
-            <% end %>
             <li>
               <%= render 'groups/seguir_form' if logged_in? %>
             </li>

@@ -503,28 +503,28 @@ aside {
   }
 
   .plaza_name_img {
-    text-align: center;
     list-style: none;
     padding-left: 0px;
     margin-top: -45px;
     margin-bottom: 0px;
     ul {
-      text-align: center;
+      
     }
   }
 
   .plaza_img {
     position: relative;
-    padding-top: 30px;
+    padding-top: 15px;
     display: block;
     margin: auto;
+    padding-left: 10px;
   }
   .plaza_name {
     padding: 10px 10px;
-    font-size: 18px;
+    font-size: 22px;
     /*font-family: Georgia, sans-serif, serif;*/
     font-weight: 150;
-    line-height: 18px;
+    line-height: 25px;
     letter-spacing: normal;
   }
   .plaza_stats {
@@ -533,7 +533,7 @@ aside {
     margin-bottom: 12px;
   }
   .description {
-    padding: 20px 5px;
+    padding: 10px 5px;
     font-size: 13px;
     color: #7e7e81;
   }
