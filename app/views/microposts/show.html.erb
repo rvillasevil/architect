@@ -23,13 +23,15 @@
           <% end %>
 
           <!--  Título -->
-          <% if @micropost.title? %>
+          <% if @micropost.title %>
             <div class="title_show">
               <b><%= @micropost.title %></b>
+            </div>
           <% else %>
-            <div class="title_show">
+            <div class="title_show" style="padding: 10px 0px;">
+            </div>
           <% end %>
-        </div>
+
 
         <div class="votos_seguidores">
           <% @followings = current_user.following.count %>

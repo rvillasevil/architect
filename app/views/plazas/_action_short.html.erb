@@ -6,7 +6,7 @@
         <ul style="padding: 0px; display: inline-flex;">
           <li style="border: 0px; display: inline-flex;">
             <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Acciones</b></h3>
+            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Iniciativas</b></h3>
           </li>
           <li style="position: absolute; right: 30px; border: 0px;">
             <%= link_to "Ver todos", user_plazas_path(user_id: params[:id], accion: true) %>
@@ -16,7 +16,7 @@
         <ul style="padding: 0px; display: inline-flex;">
           <li style="border: 0px; display: inline-flex;">
             <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>
-            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Acciones</b></h3>
+            &nbsp;<h3 style="font-size: 16px; margin: 0px;"><b>Iniciativas</b></h3>
           </li>
           <li style="position: absolute; right: 30px; border: 0px;">
             <%= link_to "Ver todos", user_plazas_path(user_id: current_user, accion: true) %>
@@ -26,9 +26,9 @@
     </li>
     <% if @grupos_acciones != nil %>
       <% @grupos_acciones.each do |grupos_acciones| %>
-         <% @plazas_acciones = Plaza.where(id: grupos_acciones.plaza_id) %>
-         <% @actions = @plazas_acciones.where(action: true) %>
-         <% @causas = @plazas_acciones.where(causa: true) %>
+        <% @plazas_acciones = Plaza.where(id: grupos_acciones.plaza_id) %>
+        <% @actions = @plazas_acciones.where(action: true) %>
+        <% @causas = @plazas_acciones.where(causa: true) %>
 
           <% @actions.take(5).each do |action| if @actions.any? %>
             <li class="lista_block">

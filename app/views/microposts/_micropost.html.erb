@@ -221,7 +221,7 @@
   <!-- hashtags -->
   <li style="padding-top: 10px; text-align: center; margin: 0px; width: 100%; color: #595959;">
     <% if micropost.hashtag1? %>
-      <span class="hashtag"><b><i class="fa fa-hashtag fa-lg" aria-hidden="true"></i></b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #595959;"} %></span>
+      <span class="hashtag"><b><i class="fa fa-hashtag fa-lg" aria-hidden="true"></i></b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost.hashtag1), {style: "color: #595959;"} %></span>
     <% end %>
   </li>
 

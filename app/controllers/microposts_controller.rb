@@ -35,8 +35,8 @@ class MicropostsController < ApplicationController
   end
 
   def hashtag
-    @micropost = Micropost.find(params[:id])
-    @microposts = Micropost.where(:hashtag1 => @micropost.hashtag1).paginate(page: params[:page])
+    @micropost  = current_user.microposts.build(:hashtag1 => params[:id])
+    @microposts = Micropost.where(:hashtag1 => params[:id]).paginate(page: params[:page])
   end
 
   def petition_form

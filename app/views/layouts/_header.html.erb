@@ -1,46 +1,47 @@
-<header class="navbar navbar-fixed-top navbar-inverse" style="background-color: #0084B4; border-bottom: 0px; height: 50px; min-height: 50px;">
+<header class="navbar" style="margin-bottom: 0px;">
   <div class="container" style="padding: 0px;">
       <div class="icons_list">
         <% if logged_in? %>
-          <ul class="icons" style="width: 100%;">
-            <li class="dropdown">
+          <ul class="icons">
+            <li class="dropdown" style="width: 30%;">
               <%= link_to root_path do %>
-                <div>
-                  <i class="fa fa-university fa-2x" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span></span>
+                <div class="logo">
+                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><span style="font-size: 18px;"><b> polittizen</b></span>
                 </div>
+                
               <% end %>               
             </li>
             <li class="dropdown">
               <%= link_to user_plazas_path(current_user) do %>
                 <div>
-                   <i class="fa fa-circle-o-notch fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Círculos</span>       
+                   <span><i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: white"></i> Círculos</span>       
                 </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to '/lista' do %>              
                 <div>
-                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Candidatos</span>                
+                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i> <span>Candidatos</span>                
                 </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to users_path do %>
                 <div>
-                  <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Usuarios</span>                
+                  <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i> <span>Usuarios</span>                
                 </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to '/petitions' do %>
                 <div>
-                  <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>&nbsp;&nbsp;<span>Consultas</span> 
+                  <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i> <span>Consultas</span> 
                 </div>
               <% end %>
             </li>
             <li class="dropdown" >
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-lg" aria-hidden="true" style="text-align: center; color: white;"></i>&nbsp;<b class="caret" style="display: inline-flex; color: white;"></b>&nbsp;
-              <span>Account</span>
+              <span>You</span>
               </a>
               <ul class="dropdown-menu" style="left: auto; right: 0px;">
                 <li><%= link_to "Profile", current_user %></li>
@@ -55,17 +56,22 @@
               </ul>
             </li>
         <% else %>
-            <ul>
-              <li class="icons" style="text-align: center;">
+            <ul style="padding: 0px;">
+              <li class="icons" style="width: 50%; padding-top: 11px; padding-bottom: 12px;">
                 <%= link_to root_path do %>
-                  <i class="fa fa-home fa-lg" style="color: white"></i><p style="color: white">loobIN</p>
+                  <i class="fa fa-university fa-lg" style="color: white;"></i>&nbsp;&nbsp;<span style="color: white; font-size: 18px; font-weight: lighter;">polittizen</span>
                 <% end %>
               </li>
-              <li class="icons" style="text-align: center;">
+              <li class="icons" style="align-items: center; padding-top: 15px; padding-bottom: 12px;">
                 <%= link_to login_path do %>
-                  <i class="fa fa-sign-in fa-lg" style="margin-top: 10px; color: white"></i><p style="color: white">Login</p>
+                    <span style="color: white">Login</span>
                 <% end %>
               </li>
+              <li class="icons" style="align-items: center; padding-top: 15px; padding-bottom: 12px;">
+                <%= link_to signup_path do %>
+                    <span style="color: white;">Signup</span>
+                <% end %>
+              </li>           
             </ul> 
           </ul>
         <% end %>
