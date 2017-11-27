@@ -1,4 +1,4 @@
-<header class="navbar" style="margin-bottom: 0px;">
+<header class="navbar navbar-fixed-top" style="margin-bottom: 0px;">
   <div class="container" style="padding: 0px;">
       <div class="icons_list">
         <% if logged_in? %>
@@ -56,23 +56,24 @@
               </ul>
             </li>
         <% else %>
-            <ul style="padding: 0px;">
-              <li class="icons" style="width: 50%; padding-top: 11px; padding-bottom: 12px;">
-                <%= link_to root_path do %>
-                  <i class="fa fa-university fa-lg" style="color: white;"></i>&nbsp;&nbsp;<span style="color: white; font-size: 18px; font-weight: lighter;">polittizen</span>
+            <ul class="icons" style="padding-right: 30px; padding-left: 30px;">
+              <li class="dropdown-home" style="width: 60%; padding-top: 12px; text-align: left;">
+                <%= link_to root_path do %>                
+                  <i class="fa fa-university fa-lg" style="color: white;"></i>&nbsp;&nbsp;
+                  <span style="color: white; font-size: 18px; font-weight: lighter;">polittizen</span>
                 <% end %>
               </li>
-              <li class="icons" style="align-items: center; padding-top: 15px; padding-bottom: 12px;">
+              <li class="dropdown-home" style="width: 20%;">
                 <%= link_to login_path do %>
                     <span style="color: white">Login</span>
                 <% end %>
               </li>
-              <li class="icons" style="align-items: center; padding-top: 15px; padding-bottom: 12px;">
+              <li class="dropdown-home" style="width: 20%;">
                 <%= link_to signup_path do %>
-                    <span style="color: white;">Signup</span>
+                    <span style="color: white">Signup</span>
                 <% end %>
-              </li>           
-            </ul> 
+              </li>
+            </ul>
           </ul>
         <% end %>
       </div>

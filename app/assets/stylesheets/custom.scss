@@ -11,7 +11,7 @@
 @import "font-awesome";
 
 body {
-  /*padding-top: 50px;*/
+  padding-top: 50px;
   /*background-color: #eaeeee;*/
   background-color: #e6ecf0;
   word-wrap: break-word;
@@ -182,8 +182,23 @@ header {
         }
       }
     }
+    li.dropdown-home {
+      align-items: center;
+      text-decoration: none;
+      padding-top: 10px;
+      width: 25%;
+      margin: 0px;
+      height: 50px;
+      font-size: 13px;
+      padding-top: 15px;
+      .logo {
+        margin-top: -5px;
+      }      
+      a {
+        text-decoration: none;
+      }
+    }    
   }
-  
 }
 @media (max-width: 576px) {
   header li {
@@ -193,7 +208,7 @@ header {
     }  
 }
 @media (min-width: 576px) {
-header li {
+  header li {
     margin-right: 40px;
     width: 100%;
     text-align: center;
@@ -203,13 +218,10 @@ header li {
 header p {
   margin: 0px;
   font-size: 0.9em;
-  }
+}
 header ul {
   margin-bottom: 5px;
   margin-left: 10px;
-}
-header i {
-
 }
 header li:hover {
   border-bottom: 3px solid white;
@@ -268,7 +280,7 @@ footer ul li {
   background-color: white;
   font-family: 'Open Sans';
   h1 {
-    font-size: 36px;
+    font-size: 44px;
     text-align: left;
     font-weight: normal;
     margin-bottom: 10px;
@@ -300,7 +312,17 @@ footer ul li {
     padding-left: 0px;
     font-weight: normal;
     line-height: 25px;
-  }     
+  }
+  .ideal {
+    background-image: url('city-ideal.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 30vh;
+    width: 100%;
+    display: flex;    
+  } 
+
   @media (max-width: 992px) {
     .container-fluid {
       padding: 30px;
@@ -345,7 +367,6 @@ footer ul li {
     }
     li{
       list-style: none;
-      padding: 0px 0px;
     }
   }
   ul.form {
@@ -356,13 +377,14 @@ footer ul li {
     }
   }
   li.element {
+    margin: 5px;
     list-style: none;
     width: 35%;
-    padding: 0px 5px;
+    padding: 10px;
     @media (max-width: 768px) {
       width: 100%;
       border-bottom: 1px solid $gray-lighter;
-      padding-top: 15px;
+      padding: 15px;
     }
   }
 }
@@ -2024,7 +2046,7 @@ overflow: hidden;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   color: white;
@@ -2040,7 +2062,7 @@ overflow: hidden;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   color: white;
@@ -2057,7 +2079,7 @@ overflow: hidden;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   color: white;
@@ -2074,7 +2096,7 @@ overflow: hidden;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 30vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   color: white;

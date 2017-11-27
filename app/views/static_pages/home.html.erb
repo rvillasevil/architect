@@ -106,18 +106,18 @@
 <% else %>
   <div class="home_page">
     <div class="container-fluid" style="background-color: white;">
-      <h1 style="font-weight: lighter;">El mejor partido de la historia</h1>
-      <h1 style="line-height: 22px;">Nuestras decisiones nos pertecen.</h1>
+      <h1 style="font-weight: lighter;">El mejor partido político de la historia</h1>
+      <h1 style="line-height: 22px;">Las decisiones nos pertecen.</h1>
       <div class="wrapper" style="margin-top: 60px;">
         <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
-        <%= link_to "Login", login_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "Login", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4;" %>
       </div>        
     </div>
 
     <div class="backgroundimg">
-      <div class="container-fluid" style="margin: 0px; width: 100%;">
-        <h1 style="padding-left: 40px;">Welcome to polittizen</h1>
-        <h1 style="padding-left: 40px;">Best party ever</h1>
+      <div class="container-fluid" style="margin: 0px;">
+        <h1 style="padding-left:  40px; background-color: #0084B4; width: 30%; min-width: 200px;">Welcome to polittizen</h1>
+        <h1 style="padding-left: 40px;background-color: #0084B4;">Best party ever</h1>
         <ul style="display: inline-flex; width: 100%; padding: 0px; list-style: none;">
           <li style="width: 33%; ">
             <h3>Candidates</h3>
@@ -138,143 +138,172 @@
     </div>
 
     <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="new_inicio">
-                <% provide(:title, 'Sign up') %>
-                
-                <div class="titulo">
-                  <h3>Para comenzar, tenemos que crear su cuenta.</h3>
-                  <h5 style="margin-top: 25px;">Resgistrarse en assemblyn es fácil y gratis; además tú eliges el momento de ser representante de algún círculo administrativo.</h5>  
-                </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="new_inicio">
+            <% provide(:title, 'Sign up') %>
 
-                <ul class="titulo">
-                    <li class="element">
-                      <ul>
-                          <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
-                              <i class="fa fa-university fa-3x" aria-hidden="true"></i>
-                          </li>
-                          <li style="margin-bottom: 30px;">
-                              <h3>¿Que és polittizen?</h3>
-                              <h5>XXX nace con la vocación de darte una identidad lo más fiel posible desde un punto de vista político con la que defender tus ideas.</h5>
-                          </li>
-                      </ul>   
-                    </li>
-                    <li class="element">
-                      <ul>
-                          <li>
-                              <i class="fa fa-cogs fa-2x" aria-hidden="true"></i>
+            <ul class="titulo">
+              <li class="element" style="width: 100%;">
+                <ul>
+                  <li style="margin-bottom: 50px;">
+                    <h1 style="margin-bottom: 60px;">Nuestros principios:</h1>
+                    <h1 style="font-weight: lighter;">1. Uber-like de políticos</h1> 
+                    <h3>¿Te gustaría tener la posibilidad de formar parte del gobierno de tu ciudad?</h3>
+                    <h5>polittizen nace con el objetivo de que cualquier persona tenga la posibilidad de ser un cargo público electo, olvídate de partidos políticos y de sus estructuras.</h5>
+                  </li>
+                  <li style="margin-bottom: 50px;">
+                    <h1 style="font-weight: lighter;">2. Decisiones hechas por todos</h1> 
+                    <h3>¿Cansado de deciciones incomprensibles que nos afectan a todos y problemas de tu día a día que no se tienen en cuenta?</h3>
+                    <h5>.</h5>
+                  </li>                  
+                </ul>   
+              </li>
+            </ul>
 
-                          </li>
-                          <li>
-                              <b>Plataforma</b>
-                              <p><h5>Pensamos que de la interacción de todos los perfiles políticos surge una red de networking que empodera a las personas y acerca a la política actual al futuro.</h5></p>
-                          </li>
-                      </ul>               
+            <ul class="titulo">
+                <li class="element">
+                  <ul>
+                    <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
+                        <i class="fa fa-university fa-3x" aria-hidden="true"></i>
                     </li>
-                    <li class="element">
-                      <ul>
-                          <li>
-                              <i class="fa fa-users fa-2x" aria-hidden="true"></i>
-                          </li>
-                          <li>
-                              <b>Representantes</b>
-                              <p><h5>Assemblyn tiene como una de sus fuciones principales dar a cualquiera la posibilidad de representar a sus ciudadanos en la toma de decisiones.</h5></p>
-                          </li>
-                      </ul>               
+                    <li style="margin-bottom: 30px;">
+                        <h3>¿Que és polittizen?</h3>
+                        <h5>XXX nace con la vocación de darte una identidad lo más fiel posible desde un punto de vista político con la que defender tus ideas.</h5>
                     </li>
-                    <li class="element">
-                      <ul>
-                          <li>
-                              <i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: blue;"></i>
-                              <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
-                          </li>
-                          <li>
-                              <b>Ideología</b>
-                              <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuroñ.</h5></p>
-                          </li>
-                      </ul>               
+                  </ul>   
+                </li>
+                <li class="element">
+                  <ul>
+                    <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
+                        <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
                     </li>
-                    <li class="element">
-                      <ul>
-                          <li>
-                              <i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: blue;"></i>
-                              <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
-                          </li>
-                          <li>
-                              <b>Partidos políticos</b>
-                              <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuroñ.</h5></p>
-                          </li>
-                      </ul>               
+                    <li>
+                        <h3>Plataforma</h3>
+                        <h5>Pensamos que de la interacción de todos los perfiles políticos surge una red de networking que empodera a las personas y acerca a la política actual al futuro.</h5>
                     </li>
-                </ul>
-                <ul class="titulo">
-                  <li class="element">
-                    <ul>
-                        <li>
-                            <i class="fa fa-circle-o fa-2x" aria-hidden="true"></i>
+                  </ul>               
+                </li>
+                <li class="element">
+                  <ul>
+                    <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
+                        <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                        <h3>Representantes</h3>
+                        <h5>Assemblyn tiene como una de sus fuciones principales dar a cualquiera la posibilidad de representar a sus ciudadanos en la toma de decisiones.</h5>
+                    </li>
+                  </ul>               
+                </li>
+            </ul>
 
-                        </li>
-                        <li>
-                            <b>Círculos</b>
-                            <p><h5>Los círculos son agrupaciones de personas que comparten algún interés común. Los puede haber administrativos, que nos representan a todos según donde vivamos y de los cuales se obtienen los representantes. Los círculos están dedicados a la colaboración de sus integrantes, presentando problemas y debatiendo  consultas.</h5></p>
-                        </li>
-                    </ul>   
+            <div class="ideal"></div>
+            
+            <ul class="titulo">
+              <li class="element" style="width: 100%;">
+                <ul>
+                  <li style="margin-bottom: 30px;">
+                      <h1>Nuestra visión:</h1>
+                      <h1 style="font-weight: lighter;"> Una política con la que todos nos sintamos identificados y que esté preparada para los retos del futuro.</h1> 
+                      <h3>¿Que és polittizen?</h3>
+                      <h5>XXX nace con la vocación de darte una identidad lo más fiel posible desde un punto de vista político con la que defender tus ideas.</h5>
                   </li>
-                  <li class="element">
-                    <ul>
-                        <li>
-                            <i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                          <b>Consultas</b>
-                          <p><h5>Uno de los elementos principales para el funcionamiento de la plataforma, son objetos empleados para que expresar opinión y debatir. Si son populares y se votan más de 2/3 partes de los integrantes y resulta favorable se combierten en resoluciones que representan a cada círculo.</h5></p>
-                        </li>
-                    </ul>               
+                </ul>   
+              </li>
+            </ul>
+
+            <ul class="titulo">
+              <li class="element">
+                <ul>
+                    <li>
+                        <i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: blue;"></i>
+                        <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                        <b>Ideología</b>
+                        <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuroñ.</h5></p>
+                    </li>
+                </ul>               
+              </li>
+              <li class="element">
+                <ul>
+                    <li>
+                        <i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: blue;"></i>
+                        <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                        <b>Partidos políticos</b>
+                        <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuroñ.</h5></p>
+                    </li>
+                </ul>               
+              </li>                  
+            </ul>
+            <ul class="titulo">
+              <li class="element">
+                <ul>
+                  <li>
+                      <i class="fa fa-circle-o fa-2x" aria-hidden="true"></i>
                   </li>
-                  
-                  <li class="element">
-                    <ul>
-                      <li>
-                          <i class="fa fa-bolt fa-2x" aria-hidden="true"></i>
-                      </li>
-                      <li>
-                        <b>Acciones</b>
-                        <p>
-                          <h5>
-                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                            <i class="fa fa-bolt" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <h5></p>Las acciones son iniciativas orientadas a ejecutarse por los usuarios, desde afrontar un problema común, acciones por el medio ambiente, para con los animales...<p><h5>
-                          </h5>
-                        </p>
-                      </li>
-                    </ul>               
+                  <li>
+                      <b>Círculos</b>
+                      <p><h5>Los círculos son agrupaciones de personas que comparten algún interés común. Los puede haber administrativos, que nos representan a todos según donde vivamos y de los cuales se obtienen los representantes. Los círculos están dedicados a la colaboración de sus integrantes, presentando problemas y debatiendo  consultas.</h5></p>
                   </li>
-                  <li class="element">
-                    <ul>
-                      <li>
-                          <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-                      </li>
-                      <li>
-                        <b>Causas</b>
-                        <p>
-                          <h5>
-                            <i class="fa fa-file-text-o" aria-hidden="true"></i>
-                            <i class="fa fa-circle-o" aria-hidden="true"></i>
-                            <i class="fa fa-bolt" aria-hidden="true"></i>
-                            <i class="fa fa-heart-o" aria-hidden="true"></i>
-                            <h5></p>Las causas defienden unos ideas con las sentirte identificad. Cada persona se representada por múltiples causas o ideas que en su conjunto, junto con las acciones y los cículos conforman una identidad compleja pero individualizada que seguramente no encajaría en ningún partido político actual.<p><h5>
-                          </h5>
-                        </p>
-                      </li>
-                    </ul>               
-                  </li>    
-                </ul>
-              </div>
-            </div>
+                </ul>   
+              </li>
+              <li class="element">
+                <ul>
+                  <li>
+                      <i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <b>Consultas</b>
+                    <p><h5>Uno de los elementos principales para el funcionamiento de la plataforma, son objetos empleados para que expresar opinión y debatir. Si son populares y se votan más de 2/3 partes de los integrantes y resulta favorable se combierten en resoluciones que representan a cada círculo.</h5></p>
+                  </li>
+                </ul>               
+              </li>
+              
+              <li class="element">
+                <ul>
+                  <li>
+                      <i class="fa fa-bolt fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <b>Acciones</b>
+                    <p>
+                      <h5>
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <h5></p>Las acciones son iniciativas orientadas a ejecutarse por los usuarios, desde afrontar un problema común, acciones por el medio ambiente, para con los animales...<p><h5>
+                      </h5>
+                    </p>
+                  </li>
+                </ul>               
+              </li>
+              <li class="element">
+                <ul>
+                  <li>
+                      <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                    <b>Causas</b>
+                    <p>
+                      <h5>
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        <i class="fa fa-circle-o" aria-hidden="true"></i>
+                        <i class="fa fa-bolt" aria-hidden="true"></i>
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <h5></p>Las causas defienden unos ideas con las sentirte identificad. Cada persona se representada por múltiples causas o ideas que en su conjunto, junto con las acciones y los cículos conforman una identidad compleja pero individualizada que seguramente no encajaría en ningún partido político actual.<p><h5>
+                      </h5>
+                    </p>
+                  </li>
+                </ul>               
+              </li>    
+            </ul>
           </div>
+        </div>
+      </div>
       <div class="center jumbotron">
         <h4>Party its a place where choose the future representatives of all places, from your small town to yout conuntry.</h4>
         <h4>Its a place where you can express yourself about all around you and make changes about it.</h4>
