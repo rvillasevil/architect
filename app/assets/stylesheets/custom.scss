@@ -176,6 +176,7 @@ header {
           margin-top: -3px;
         } 
         span {
+          font-family: 'Helvetica';
           display: block;
           font-weight: normal;
           font-size: 12px;
@@ -277,6 +278,7 @@ footer ul li {
 /* home */
 
 .home_page {
+  list-style: none;
   background-color: white;
   font-family: 'Open Sans';
   h1 {
@@ -317,27 +319,79 @@ footer ul li {
     background-image: url('city-ideal.jpg');
     background-size: cover;
     background-position: center center;
-    background-repeat: no-repeat;
-    height: 30vh;
+    height: 30vw;
+    width: 100%;  
+  }
+  .imagen_principal {
+    background-image: url('collage-personas-grande.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 60vw;
     width: 100%;
-    display: flex;    
-  } 
+    .container-fluid {
+    padding: 10px;
+    }      
+  }
 
   @media (max-width: 992px) {
     .container-fluid {
-      padding: 30px;
-      font-size: 28px;
+      padding: 20px;
+    }
+    .btn {
+      font-size: 16px;
+    }
+    .wrapper {
+      margin-top: 30px;
+    }
+    .imagen_principal {
+      font-size: 16px;
+      .container-fluid {
+        left: 180px;
+      }
     }
   }
   @media (min-width: 992px) {
+    h1 {
+      font-size: 36px;
+    }
     .container-fluid {
       padding: 50px 150px;
     }
+    .btn {
+      font-size: 20px;
+    }
+    .wrapper {
+      margin-top: 60px;
+    }
+    .imagen_principal {
+      height: 40vw;
+      font-size: 36px;
+      .container-fluid {
+        left: 100px;
+      }      
+    }   
   }  
   @media (min-width: 1400px) {
-    .container-fluid {
-      padding: 50px 400px;
+    h1 {
+      font-size: 44px;
     }
+    .container-fluid {
+      padding: 70px 250px;
+      font-size: 28px;
+    }
+    .btn {
+      font-size: 25px;
+    }
+    .wrapper {
+      margin-top: 80px;
+    }
+    .imagen_principal {
+      height: 30vw;
+      font-size: 36px;
+      .container-fluid {
+        left: 200px;
+      }      
+    }   
   }  
 }
 
@@ -464,6 +518,7 @@ aside {
 }
 
 .scroll_masvotados {
+
   background-color: white;
   text-decoration-color: black;
   padding: 0px;
@@ -478,6 +533,7 @@ aside {
   /*transform-origin: right top;*/
   /*transform:rotate(-90deg) translateY(-100px);*/
   li {
+    box-shadow: 5px 5px 2px #bcbcbc;
     list-style: none;
     padding: 5px;
     margin: 5px;
@@ -1340,7 +1396,7 @@ input {
   padding-right: 10px;
   max-height: 400px;
   overflow: hidden;
-  height: expression(this.scrollHeight > 401? "400px" : "auto" );
+  height: expression(this.scrollHeight > 400? "400px" : "auto" );
   margin-left: -20px;
   margin-right: -20px;
   }

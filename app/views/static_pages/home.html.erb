@@ -105,35 +105,19 @@
 
 <% else %>
   <div class="home_page">
+
     <div class="container-fluid" style="background-color: white;">
       <h1 style="font-weight: lighter;">El mejor partido político de la historia</h1>
       <h1 style="line-height: 22px;">Las decisiones nos pertecen.</h1>
-      <div class="wrapper" style="margin-top: 60px;">
+      <div class="wrapper">
         <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
         <%= link_to "Login", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4;" %>
-      </div>        
+      </div>      
     </div>
 
-    <div class="backgroundimg">
-      <div class="container-fluid" style="margin: 0px;">
-        <h1 style="padding-left:  40px; background-color: #0084B4; width: 30%; min-width: 200px;">Welcome to polittizen</h1>
-        <h1 style="padding-left: 40px;background-color: #0084B4;">Best party ever</h1>
-        <ul style="display: inline-flex; width: 100%; padding: 0px; list-style: none;">
-          <li style="width: 33%; ">
-            <h3>Candidates</h3>
-          </li>
-          <li style="width: 33%;">
-            <h3>Platform</h3>
-          </li>
-          <li style="width: 33%;">
-            <h3>Petitions</h3>
-          </li>
-        </ul>
-        
-        <div class="container" >
-          <h1 class="h1"></h1>
-
-        </div>
+    <div class="imagen_principal">
+      <div class="container-fluid" style="margin: 0px; width: 50%; max-width: 1000px; min-width: 200px; background-color: #0084B4; position: relative; top: 120px; ">
+        <span style="background-color: #0084B4; color: white; font-weight: lighter;">Una nueva relación con la política, y los políticos.</span>
       </div>   
     </div>
 
@@ -142,71 +126,88 @@
         <div class="col-md-10 col-md-offset-1">
           <div class="new_inicio">
             <% provide(:title, 'Sign up') %>
-
             <ul class="titulo">
               <li class="element" style="width: 100%;">
                 <ul>
-                  <li style="margin-bottom: 50px;">
-                    <h1 style="margin-bottom: 60px;">Nuestros principios:</h1>
-                    <h1 style="font-weight: lighter;">1. Uber-like de políticos</h1> 
-                    <h3>¿Te gustaría tener la posibilidad de formar parte del gobierno de tu ciudad?</h3>
-                    <h5>polittizen nace con el objetivo de que cualquier persona tenga la posibilidad de ser un cargo público electo, olvídate de partidos políticos y de sus estructuras.</h5>
+                  <li>
+                    <h1 style="margin-bottom: 60px;"><i class="fa fa-university fa-3x" aria-hidden="true" style="font-size: 30px;"></i>&nbsp;&nbsp;Nuestros principios:</h1>
                   </li>
                   <li style="margin-bottom: 50px;">
-                    <h1 style="font-weight: lighter;">2. Decisiones hechas por todos</h1> 
-                    <h3>¿Cansado de deciciones incomprensibles que nos afectan a todos y problemas de tu día a día que no se tienen en cuenta?</h3>
-                    <h5>.</h5>
-                  </li>                  
+                    <h1 style="font-weight: lighter;">1. Uber-like para la política.</h1> 
+                    <h3>¿Te gustaría tener la posibilidad de formar parte del gobierno de tu ciudad?</h3>
+                    <h5>polittizen nace con el objetivo de que cualquier persona tenga la posibilidad de ser un cargo público electo, olvídate de partidos políticos y de sus estructuras.</h5>
+                    <h5>Si cualquiera pudiera acceder a ser un cargo electo en su ciudad, ¿para qué servirían los actuales partidos?</h5>
+                  </li>
+                  <li style="margin-bottom: 50px;">
+                    <h1 style="font-weight: lighter;">2. Tecnología y futuro.</h1> 
+                    <h3>La estructura de los partidos políticos no ha cambiado nada en >100 años. ¿Que está pasando en otros sectores, como el automovil, la banca o el taxi?</h3>
+                    <h5>Hemos diseñado herramientas para que la suma de los millones de perfiles políticos de los ciudadanos nos conformen una representación real de la sociedad y de su forma de pensar, a la cual los políticos deben de escuchar. Sistema que sea eficiente y legítimo. Recopilación y análisis de datos para la toma de decisiones del futuro.</h5>
+                  </li>
                 </ul>   
               </li>
             </ul>
 
+            <div style="text-align: center;">
+              <%= link_to "Echa un vistazo a lo que está pasando!", popular_path, class: "btn btn-lg btn-primary", style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
+            </div>
+
             <ul class="titulo">
                 <li class="element">
                   <ul>
+                    <li>
+                      <h1 style="margin-bottom: 30px;">Nuestra propuesta está basada en tres pilares:</h1>
+                      <h3 style="font-weight: lighter; margin-bottom: 40px;">Plataforma | Candidatos | Consultas</h3>
+                    </li>                    
                     <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
-                        <i class="fa fa-university fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li style="margin-bottom: 30px;">
-                        <h3>¿Que és polittizen?</h3>
-                        <h5>XXX nace con la vocación de darte una identidad lo más fiel posible desde un punto de vista político con la que defender tus ideas.</h5>
-                    </li>
-                  </ul>   
-                </li>
-                <li class="element">
-                  <ul>
-                    <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
-                        <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                        
                     </li>
                     <li>
-                        <h3>Plataforma</h3>
-                        <h5>Pensamos que de la interacción de todos los perfiles políticos surge una red de networking que empodera a las personas y acerca a la política actual al futuro.</h5>
+                        <h3 style="color: #0084B4; font-weight: lighter;"><i class="fa fa-cogs fa-3x" aria-hidden="true" style="font-size: 22px;"></i>&nbsp;&nbsp;Plataforma</h3>
+                        <h5>Herramienta tecnológica que te permite por un lado crear una representación fiel de tus ideas y por otro lado compartirlo todo con todos tus amigos.</h5>
+                        <h5>De la interacción de todos los perfiles políticos surge una red política que nos permita recrear una imagen real de la sociedad, sobre la que basar la toma de decisiones del futuro (comunmente llamado política).</h5>
                     </li>
                   </ul>               
                 </li>
                 <li class="element">
                   <ul>
-                    <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
-                        <i class="fa fa-users fa-3x" aria-hidden="true"></i>
-                    </li>
                     <li>
-                        <h3>Representantes</h3>
-                        <h5>Assemblyn tiene como una de sus fuciones principales dar a cualquiera la posibilidad de representar a sus ciudadanos en la toma de decisiones.</h5>
+                        <h3 style="color: #0084B4;; font-weight: lighter;"><i class="fa fa-users fa-3x" aria-hidden="true" style="font-size: 22px;"></i>&nbsp;&nbsp;Candidatos y asesores</h3>
+                        <h5>Si queremos cambiar la política debemos conseguir que cualquier persona que quiera participar en la política activa de su ciudad pueda hacerlo.</h5>
+                        <h5>Pensamos que en la política del futuro serán los ciudadanos los que decidan quienes son sus candidatos, por eso la elección dentro de polittizen es entre todos, por todos y para todos, en iguales condiciones; tus ganas de participar y tus ideas te representan.</h5>
+                        <h5>Son igual de necesarios usuarios que decidan participar de forma activa dentro de la política en forma de profesionales, asesorando e informando sobre cuentiones en las que son los mayores expertos.</h5>
+                        <h5 style="background-color: #fc7676; padding: 10px;">¿Te imaginas que sólo te dieran a alegir entre 3 ó 4 candidatos que no conces para que decida por ti los próximos 4 años sin tener en cuenta tu opinión ni una sola vez? Absurdo verdad.</h5>
                     </li>
                   </ul>               
                 </li>
+                <li class="element">
+                  <ul>
+                    <li>
+                      <h3 style="color: #0084B4; font-weight: lighter;"><i class="fa fa-envelope-o fa-3x" aria-hidden="true" style="font-size: 22px;"></i>&nbsp;&nbsp;Consultas y apoyos</h3>
+                      <h5>¿Quién mejor que nosotros mismos para decidir sobre nuestros propios problemas?</h5>
+                      <h5>Los problemas y debates deben surgir de los propios ciudadanos los que filtren los problemas verdaderamente importantes, a mayor afectación de personas mayor importancia.</h5>
+                      <h5>Estas consultas, se debates y se expresa la opinión de cada uno dando lugar a resoluciones, donde se recogen las diferentes opiniones y una votación final para que sea el político responsable quien se haga responsable de la puesta en marcha de las iniciativas propuestas.</h5>
+                    </li>
+                  </ul>               
+                </li>                
             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <div class="ideal"></div>
-            
+    <div class="ideal"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="new_inicio">            
             <ul class="titulo">
               <li class="element" style="width: 100%;">
                 <ul>
                   <li style="margin-bottom: 30px;">
                       <h1>Nuestra visión:</h1>
                       <h1 style="font-weight: lighter;"> Una política con la que todos nos sintamos identificados y que esté preparada para los retos del futuro.</h1> 
-                      <h3>¿Que és polittizen?</h3>
-                      <h5>XXX nace con la vocación de darte una identidad lo más fiel posible desde un punto de vista político con la que defender tus ideas.</h5>
+                      <h5>En Politizen recopilamos la información que se genera todos los días dentro de la plataforma para detectar problemas, necesidades o tendencias dentro de la sociedad mediante el análisis de datos, generando información útil para los diferenctes gobiernos e instituciones que mejoren la vida de todos.</h5>
                   </li>
                 </ul>   
               </li>
@@ -221,20 +222,23 @@
                     </li>
                     <li>
                         <b>Ideología</b>
-                        <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuroñ.</h5></p>
+                        <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de lo que es una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuro.</h5></p>
+                        <p><h5>Desde Polittizen nos hemos planteado cómo debe ser la sociedad del futuro y en todos los escenarios, las tecnología al servicio de la política es el principal actor. La suma de millones de perfiles políticos crea una representación fiel se la sociedad, con sus problemas y sus soluciones; Ideales de derechas, izquierdas, conservadores, republicanos o demócratas pertenecen a una sociedad antigua que ya no es la nuestra.</h5></p>
                     </li>
                 </ul>               
               </li>
               <li class="element">
                 <ul>
-                    <li>
-                        <i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: blue;"></i>
-                        <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
-                    </li>
-                    <li>
-                        <b>Partidos políticos</b>
-                        <p><h5>En XXX no tenemos ideología, tenemos ideas, y creemos que pensar en izquierdas o derechas, conservadores o demócratas es una visión muy simple de una persona. Quizá en el pasado los partidos suplieran esa necesidad pero en el momento actual no representan la complejidad de una sociedad ni están preparados para liderar la sociedad del futuroñ.</h5></p>
-                    </li>
+                  <li>
+                      <i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: blue;"></i>
+                      <i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+                  </li>
+                  <li>
+                      <b>Partidos políticos</b>
+                      <p><h5>Adaptar a los partidos y los politicos a la era de las nuevas tecnológías, información, big data y análisis de datos para la toma de decisiones y la evalución de problemas.</h5></p>
+                      <p><h5>Imagínate que nuestros gobernantes no tuvieran partido político. Todo el tiempo que utilizan en batallas con otros partidos políticos, el tiempo que destinan a batallas internas dentro de su propio partido, el que dedican a buscar inversores para su próxima campaña, todos los conflictos de intereses que se mueven dentro de un partido con sus inversores y las decisiones que se toman y que nos afectan a todos justo por todo lo anterior es una de las mayores ineficiencias de nuestra sociedad.</h5></p>
+                      <p><h5>Queremos recuperar todo el tiempo que se pierde, queremos evitar batallas inútiles, queremos evitar intereses ocultos y devolver la eficiencia a nuestro sistema político para que esté preparado para los retos del futuro. Una eficiencia basada en el uso de herramientas de interconexión de personas, recogida y en el análisis de esos datos al servicio de todos.</h5></p>
+                  </li>
                 </ul>               
               </li>                  
             </ul>
