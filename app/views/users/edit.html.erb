@@ -1,83 +1,68 @@
-<div class="container">
+<div class="container" style="background-color: white;">
   <% provide(:title, "Edit user") %>
-  <h1>Update your profile</h1>
+    <div class="edit_user">
+      <h1 style="font-family: 'Open Sans'; text-align: left;">Update your profile</h1>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3" style="padding: 30px 15px;">
+          <%= form_for(@user)  do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
 
-  
+            <%= f.label :name, style: "color: #0084B4;" %>
+            <%= f.text_field :name, class: 'form-control' %>
 
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <%= form_for(@user)  do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label :description, style: "color: #0084B4;" %>
+            <%= f.text_area :description, class: 'form-control', style: "height: 100px; ", maxlength: 300 %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>.
+            <%= f.label :email, style: "color: #0084B4;" %>
+            <%= f.email_field :email, class: 'form-control' %>
 
-        <%= f.label :description %>
-        <%= f.text_field :description, class: 'form-control' %>
+            <%= f.label :pais, style: "color: #0084B4;" %>
+            <%= f.select(:pais, Pai.all.collect {|p| [ p.paisnombre ]} ) %>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
+            <%= f.label "Selecciona tu círculo profesional para debatir sobre los temas importantes", style: "color: #0084B4;" %>
+            <%= f.text_field :profesion, class: 'form-control' %>
 
-        <%= f.label :pais %>
-        <%= f.select(:pais, Pai.all.collect {|p| [ p.paisnombre ]} ) %>
+            <%= f.label "", "Your picture", style: "color: #0084B4;" %>
+            <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
 
-<%
-=begin%>
+            <%= f.label "Add your linkedIN profile, just copy your link.", style: "color: #0084B4;" %>
+            <%= f.text_field :linkedin, class: 'form-control' %>
 
-        <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
-        <% if current_user.autonomia? %>
-            <%= f.label "Selecciona tu círculo autonómico para poder ser candidato y estar actualizado" %>
-            <%= f.select :autonomia, [
-                'Andalucía',
-                'Aragón',
-                'Principado de Asturias',
-                'Islas Baleares',
-                'Canarias',
-                'Cantabria',
-                'Castilla-La Mancha',
-                'Castilla y León',
-                'Cataluña',
-                'Comunidad Valenciana',
-                'Extremadura',
-                'Galicia',
-                'La Rioja',
-                'Comunidad de Madrid',
-                'Región de Murcia',
-                'Comunidad Foral de Navarra',
-                'País Vasco'
-                ] %>
-            <% if current_user.provincia? %>
-                <% @provincia = Provincia.where(provincia: current_user.provincia).first %>
-                <% @municipios = Municipio.where(id_provincia: @provincia.id_provincia) %>
-                <%= f.select(:provincia, Provincia.all.collect {|p| [ p.provincia ]} ) %>
-                <% if  current_user.ciudad? %>
-                    <%= f.select(:ciudad, @municipios.collect {|p| [ p.nombre ]} ) %>
-                <% else %>
-                <% end %>
-            <% end %>
-        <% else %>
-        <% end %>
-<%
-=end%>
+            <div>
+                <ul style="list-style: none; padding: 0px;">
+                    <li>
+                        <%= f.label "Tús lobbys administrativos", style: "color: #0084B4;" %>
+                    </li>
+                    <li>
+                        Círculo municipal:
+                        <b><%= current_user.ciudad %></b>                   
+                    </li>
+                    <li>
+                        Círculo provincial:
+                       <b><%= current_user.provincia %></b>
+                    </li>
+                    <li>
+                        Círculo autonómico:
+                        <b><%= current_user.autonomia %></b>
+                    </li>
+                    <li style="padding-top: 20px;">
+                        <%= link_to "Cambia tus círculos administrativos", edit_administrative_user_path( current_user), class: "btn btn-primary", style: "background-color: white; color: #0084B4; border: 1px line #0084B4;" %>
+                    </li>
+                </ul>        
+            </div>
 
-        <%= f.label "Selecciona tu círculo profesional para debatir sobre los temas importantes" %>
-        <%= f.text_field :profesion, class: 'form-control' %>
 
-        <%= f.label "", "Your picture" %>
-        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
+            <%= f.label :password, style: "color: #0084B4;" %>
+            <%= f.password_field :password, class: 'form-control' %>
 
-        <%= f.label "Add your linkedIN profile, just copy your link." %>
-        <%= f.text_field :linkedin, class: 'form-control' %>
+            <%= f.label :password_confirmation, "Confirmation", style: "color: #0084B4;" %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
+            <%= f.submit "Save changes", class: "btn btn-primary" %>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-        <%= f.submit "Save changes", class: "btn btn-primary" %>
-
-      <% end %>
+          <% end %>
+        </div>
+      </div>        
     </div>
-  </div>
+
 </div>

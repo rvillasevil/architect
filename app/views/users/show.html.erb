@@ -125,7 +125,7 @@
                   <% if post.hashtag1.empty? %>
                   <% else %>
                     <i class="fa fa-hashtag fa-lg" aria-hidden="true"></i>
-                    <b><%= link_to post.hashtag1, {:controller => "microposts", action: "hashtag", :id => post.id}  %></b>
+                    <b><%= link_to post.hashtag1, hashtag_micropost_path(post.hashtag1)  %></b>
                   <% end %>  
                 <% end %>
               </li>
@@ -137,15 +137,15 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            <h3 style="font-size: 16px; margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Consultas ciudadanas creadas</b></h3>
+            <h3 style="font-size: 16px; margin: 0px; font-weight: lighter;"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Consultas ciudadanas creadas</h3>
           </li>
           <% @peticiones.first(5).each do |petition| %>
           <li class="lista_block">
-            <ul class="inline">
+            <ul class="inline" style="width: 100%;">
               <li class="inline">
                 <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
               </li>
-              <li class="inline">
+              <li class="inline" style="width: 100%;">
                 <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
               </li>
               <li class="right" style="padding-top: 10px;">

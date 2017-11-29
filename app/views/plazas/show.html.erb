@@ -218,11 +218,11 @@
                 <% @usuario.each do |usuario| %>
                   <% if usuario != current_user %>
                   <li class="lista_block">
-                    <ul class="inline">
+                    <ul class="inline" style="width: 80%;">
                       <li class="inline">
                         <%= image_tag usuario.foto.url, class: "img-circle", size: 55 if usuario.foto? %>
                       </li>
-                      <li class="inline">
+                      <li class="inline" style="width: 100%;">
                         <span class="nombres"><%= link_to usuario.name, usuario %></b></span>
                       </li>
                       <li class="right">

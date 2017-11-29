@@ -11,15 +11,15 @@
       </aside> 
   		<div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; margin-top: 10px;">
   			<div class="instrucciones">
-  				Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
+  				<!-- Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos. --> 
   			</div>
 				<ul style="list-style: none; padding-left: 0px;">
 					<li style="width: 100%; margin-bottom: 10px;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6;">
-							<span style="font-size: 18px;"><b>Candidatos en <%= current_user.ciudad %></b></span>
+							<h3 style="margin: 0px;"><b>Candidatos en <%= current_user.ciudad %></b></h3>
 						</li>
 							<% if @candidatos_pueblo.any? %>
-								<% @candidatos_pueblo.first(10).each do |x| %>
+								<% @candidatos_pueblo.first(20).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:ciudad => current_user.ciudad) %>
 								    <%  @user.each do |candidate| %>
 									    <ul class="candidate_list" style="padding-left: 20px;">
@@ -74,9 +74,9 @@
 
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<span style="font-size: 18px;"><b>Candidatos en <%= current_user.autonomia %></b></span>
+							<h3 style="margin: 0px;"><b>Candidatos en <%= current_user.autonomia %></b></h3>
 						</li>
-								<% @candidatos_autonomia.take(10).each do |x| %>
+								<% @candidatos_autonomia.take(20).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:autonomia => current_user.autonomia) %>
 								    <%  @user.each do |candidate| %>
 									    <ul class="candidate_list" style="padding-left: 20px;">
@@ -129,9 +129,9 @@
 					
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<span style="font-size: 18px;"><b>Candidates en el Mundo</b></span>
+							<h3 style="margin: 0px;">Candidates en el Mundo</h3>
 						</li>
-								<% @candidatos_mundo.take(10).each do |x| %>
+								<% @candidatos_mundo.take(20).each do |x| %>
 									<% @user = User.where(:id => x.id) %>
 								    <%  @user.each do |candidate| %>
 									    <ul class="candidate_list" style="padding-left: 20px;">

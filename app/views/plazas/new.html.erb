@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" style="background-color: white;">
   <% provide(:title, 'New Plaza') %>
-  <h1 style="font-size: 30px; margin-bottom: 15px;">Crear</h1>
+  
   <% @causa = params[:causa] %>
   <% @action = params[:accion] %>
   <% @nombre = params[:name] %>
@@ -13,7 +13,9 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    
+    <div class="col-md-6 col-md-offset-3" style="padding: 30px 10px;">
+      <h1 style="font-size: 30px; margin-bottom: 15px;">Crear</h1>
       <div class="new_inicio">
         <div class="titulo" style="text-align: center;">
           <h3 style="margin-top: 0px;">De acuerdo, vamos a crearlo.</h3>
@@ -26,33 +28,33 @@
             <li class="element" style="padding: 10px 5px;">
               <ul>
                   <li>
-                      <i class="fa fa-circle-o fa-2x" aria-hidden="true"></i>
+                      <i class="fa fa-circle-o fa-2x" aria-hidden="true" style="color: #0084B4;"></i>
                   </li>
                   <li>
-                      <b>Círculos</b>
-                      <p><h5>Compartimos un tema en común</h5></p>
+                      <h3 style="text-align: center; color: #0084B4; margin-top: 10px;">Círculos</h3>
+                      <p><h5 style="text-align: center;">Compartimos un tema en común</h5></p>
                   </li>
               </ul>   
             </li>
             <li class="element" style="padding: 10px 5px;">
               <ul>
                   <li>
-                      <i class="fa fa-bolt fa-2x" aria-hidden="true"></i>
+                      <i class="fa fa-bolt fa-2x" aria-hidden="true" style="color: #0084B4;"></i>
                   </li>
                   <li>
-                      <b>Acciones</b>
-                      <p><h5>Haz un llamamiento a participar en acciones comunes.</h5></p>
+                      <h3 style="text-align: center; color: #0084B4; margin-top: 10px;">Acciones</h3>
+                      <p><h5 style="text-align: center;">Haz un llamamiento a participar en acciones comunes.</h5></p>
                   </li>
               </ul>               
             </li>
             <li class="element" style="padding: 10px 5px;">
               <ul>
                   <li>
-                      <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+                      <i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color: #0084B4;"></i>
                   </li>
                   <li>
-                      <b>Ideales</b>
-                      <p><h5>Habla con personas afines a una forma de pensar</h5></p>
+                      <h3 style="text-align: center; color: #0084B4; margin-top: 10px;">Ideales</h3>
+                      <p><h5 style="text-align: center;">Habla con personas afines a una forma de pensar</h5></p>
                   </li>
               </ul>               
             </li>
@@ -65,7 +67,7 @@
         <% if @causa != "true" %>
           <% if @action != "true" %>
             <% if @nombre != nil %>
-              <p>Círculo <b><%= p @nombre %></b></p>
+              <p>Círculo <b><i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: #0084B4;"></i>&nbsp;<span style="color: #0084B4;"><%= p @nombre  %></span></b></p>
               <%= f.hidden_field :name, value: [@nombre] %>
               <%= f.hidden_field :administrative, value: true %>
             <% else %>

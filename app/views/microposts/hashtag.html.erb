@@ -8,8 +8,12 @@
           <%= render 'shared/stats' %>
         </section>
       </aside>
+
+
 	    <div class="col-sm-6">
-				<h1 style="text-align: left; font-size: 30px;"><%= params[:id] %></h1>
+        <div style="padding-left: 10px;">
+          <h1 style="font-family: 'Open Sans'; text-align: left; color: #0084B4; margin-top: 10px;"><%= params[:id] %></h1>  
+        </div>        
 				<section class="micropost_form">
 					<%= render 'shared/micropost_form' %>	
 				</section>
