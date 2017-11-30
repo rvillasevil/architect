@@ -2,129 +2,91 @@
   <% provide(:title, @plaza.name) %>
   <div class="row">
     <div class="col-sm-2">
-      <div class="plaza_stats">
-        <div>
-          <div class="background_img"></div>
-          <ul class="plaza_name_img">
-            <li>
-              <ul>
-                <li>
-                  <div class="plaza_img">
-                    <%= image_tag @plaza.foto.url, class: "img-circle", size: 100  if @plaza.foto? %> 
-                  </div>
-                </li>
-                <li class="texto">
-                  <ul style="list-style: none; padding: 0px;">
-                    <li>
-                      <div class="plaza_name">
-                        <%= @plaza.name %>
-                      </div>
-                    </li>
-                    <% if @plaza.description? %>
-                    <li class="description">
-                      <%= @plaza.description %>
-                    </li>
-                    <% end %>                
-                  </ul>
-                </li>                  
-              </ul>
+      <div class="affix" style="width: 14%; max-width: 190px;">
+        <div class="plaza_stats">
+          <div>
+            <div class="background_img"></div>
+            <ul class="plaza_name_img">
+              <li>
+                <ul>
+                  <li>
+                    <div class="plaza_img">
+                      <%= image_tag @plaza.foto.url, class: "img-circle", size: 100  if @plaza.foto? %> 
+                    </div>
+                  </li>
+                  <li class="texto">
+                    <ul style="list-style: none; padding: 0px;">
+                      <li>
+                        <div class="plaza_name">
+                          <%= @plaza.name %>
+                        </div>
+                      </li>
+                      <% if @plaza.description? %>
+                      <li class="description">
+                        <%= @plaza.description %>
+                      </li>
+                      <% end %>                
+                    </ul>
+                  </li>                  
+                </ul>
+              </li>
+              <li style="padding-top: 20px;">
+                <%= render 'groups/seguir_form' if logged_in? %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="aside_content">
+          <ul class="inline" style="margin-bottom: 0px;">
+            <li class="titulo">
+              <% if @grupo_seguidores.where(user_id: current_user).any? %>              
+                <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary" %>
+              <% else %>
+                Es necesario pertencer al cículo para realizar consultas en él, por favor, síguelo.
+              <% end %>
             </li>
-            <li style="padding-top: 20px;">
-              <%= render 'groups/seguir_form' if logged_in? %>
+          </ul>
+        </div>      
+        <div class="aside_content">
+          <ul class="principal">
+            <li class="titulo">
+              Comunidad
+            </li>
+            <li style="width: 100%;">
+              <ul style="display: inline-flex; padding: 5px; width: 100%; ">
+                <li style="width: 25%; border: none;">
+                  <i class="fa fa-users" aria-hidden="true"></i>&nbsp;<%= link_to @grupo_seguidores.count, users_path(plaza_id: params[:id]) %>
+                </li>
+                <li style="width: 25%; border: none;">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;<%= @peticiones.count %>
+                </li>
+                <li style="width: 25%; border: none;">
+                  <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                  <% if @microposts.any? %>
+                     <%= @microposts.count %>
+                  <% else %>
+                     0
+                  <% end %>
+                </li>
+                <li style="width: 25%; border: none;">
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>&nbsp;<%= @votos.count %>                
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
       </div>
-
-      <div class="aside_content">
-        <ul class="inline" style="margin-bottom: 0px;">
-          <li class="titulo">
-            <% if @grupo_seguidores.where(user_id: current_user).any? %>              
-              <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary" %>
-            <% else %>
-              Es necesario pertencer al cículo para realizar consultas en él, por favor, síguelo.
-            <% end %>
-          </li>
-        </ul>
-      </div>      
-
-      <div class="aside_content">
-        <ul class="principal">
-          <li class="titulo">
-            Comunidad
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                <i class="fa fa-user-o" aria-hidden="true"></i>   Seguidores
-              </li>
-              <li class="right">
-                <%= @grupo_seguidores.count %>
-              </li>
-            </ul>
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                <i class="fa fa-envelope-open-o" aria-hidden="true"></i>   Iniciativas
-              </li>
-              <li class="right">
-                <%= @peticiones.count %>
-              </li>
-            </ul>
-          </li>
-                    
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                <i class="fa fa-envelope-open-o" aria-hidden="true"></i>   Posts
-              </li>
-              <li class="right">
-                <% if @microposts.any? %>
-                <%= @microposts.count %>
-                <% end %>
-              </li>
-            </ul>
-          </li>
-          <li class="lista_block">
-            <ul class="inline">
-              <li>
-                <i class="fa fa-hand-o-up" aria-hidden="true"></i>   Votos totales
-              </li>
-              <li class="right">
-                <%= @votos.count %>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
     </div>
 
-    <div class="col-md-6" style="margin-top: 15px; padding: 0px;">
-
-      
-      <div style="margin-top: 10px;">
-       <%= render 'plazas/plaza_post_form'if logged_in? %>
-      </div>
-      <% if @microposts.any? %>
-        <ol class="microposts">
-          <%= render @microposts %>
-        </ol>
-        <%= will_paginate @microposts %>
-      <% else %>
-        El círculo <%= @plaza.name %> no tiene publicaciones. Sé el primero en publicar o mira los siguientes posts realizados en círculos relacionados.  
-      <% end %>
-    </div>
     <div class="col-md-4" style="margin-top: 12px;">
 
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Posicion del usuario dentro del círculo
+            <h3 style="font-size: 16px; margin: 0px; font-weight: lighter;">Posicion del usuario dentro del círculo</h3>
           </li>
           <li class="inline">
-            0
+            &nbsp;* Falta por introducir la posición dentro del círculo
           </li>
         </ul>
       </div>
@@ -133,45 +95,59 @@
         <ul class="principal">
           <li class="titulo">
             Resoluciones (más de 2/3 seguidores)
-            <%= @votos_seguidores.count if @votos_seguidores != nil %>
+            <% @votos_seguidores.count if @votos_seguidores != nil %>
           </li>
           <% @peticiones.each do |petition| %>
-
-          <% @votos = Vote.where(:micropost_id => petition) %>
-          <% @votos_realizados = @votos.count %>
-          <% if @grupo_seguidores.count == 0 %>
-            <% @votos_completado = 0 %>
-          <% else %>
-            <% @votos_completado = (@votos_seguidores.count*100/(@grupo_seguidores.count)) %>
-          <% end %>
-          <% @votos_positivos = @votos.where(:like => true).count %>
-          <% @porcentaje = (@votos_positivos*100/(@votos_realizados)) %>
-
-          <% @valor_limite = 67 %>
             <li class="lista_block">
-              <ul class="inline">
+              <ul class="inline" style="width: 70%;">
                 <li class="inline">
                   <%= image_tag petition.picture.url, size: 55 if petition.picture? %>
                 </li>
-                <li class="inline" style="width: 60%;">
+                <li class="inline" style="width: 100%;">
                   <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
                 </li>
                 <li class="right" style="align-items: center;">
-                    <i class="fa fa-percent" aria-hidden="true"></i>
-                  <%= @votos_completado %>
-                  <% if @votos_completado >= @valor_limite %>
-                    <% if @porcentaje >= 1/2*100 %>
-                      <button type="button" class="btn btn-success">Aprobada</button>
+                  <i class="fa fa-percent" aria-hidden="true"></i>
+                  <%# porcentaje = porcetaje de votos emitidos por seguidores de la plaza, votos_seguidores / seguidores %>
+                  <% @votos_seguidores = Vote.where(micropost_id: petition) %>
+                  <% if @votos_seguidores.any? %>
+                    <% @votos_seguidores.count %>
+                    <% @votos_seguidores_positivos = @votos_seguidores.where(like: 1) %>
+                    <% @votos_seguidores_positivos_porcentaje = @votos_seguidores_positivos.count * 100 / (@votos_seguidores.count) %>
+                    <% if @votos_seguidores.any? %>
+                      <%= @porcentaje = (@votos_seguidores.count*100 / (@grupo_seguidores.count)) %>
                     <% else %>
-                      <button type="button" class="btn btn-danger">Denegada</button>
+                      <%= @porcentaje = 0 %>
+                    <% end %>
+
+                    <% @valor_limite = 67 %>
+                    <% @votos = Vote.where(:micropost_id => petition) %>
+                    <% @votos = @votos.count %>
+                    <% @grupo_seguidores.count %> 
+                    <% @votos_seguidores.count %> 
+                    <% @votos_seguidores_positivos.count %> 
+                    <% @votos_seguidores_positivos_porcentaje %>
+                    <% @porcentaje %>
+                    <% (1*100/(2)) %> 
+                 
+                    <% if @porcentaje >= @valor_limite %>
+                      <% if @votos_seguidores_positivos_porcentaje > 1/(2)*100 %>
+                        <button type="button" class="btn btn-success" style="margin: 0px;">Aprobada</button>
+                      <% else %>
+                        <button type="button" class="btn btn-danger" style="margin: 0px;">Denegada</button>
+                      <% end %>
+                    <% else %>
+                      &nbsp;<button type="button" class="btn btn-danger" style="background-color: white; border: 1px solid red; color: red; margin: 0px;">In progress</button>
                     <% end %>
                   <% else %>
-                    &nbsp;<button type="button" class="btn btn-danger" style="background-color: white; border: 1px solid red; color: red;">In progress</button>
+                    0 votos
                   <% end %>
+
                 </li>
               </ul>
-            <% end %>
-          </li>
+            </li>
+          <% end %>
+
         </ul>
       </div>
 
@@ -183,23 +159,34 @@
           <% if @peticiones.any? %>
           <% @peticiones.each do |petition| %>
           <li class="lista_block">
-            <ul class="inline">
+            <ul class="inline" style="width: 80%;">
               <li class="inline">
                 <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
               </li>
-              <li class="inline">
+              <li class="inline" style="width: 100%;">
                 <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
               </li>
               <li class="right" style="padding-top: 10px;">
                 <% @votos = Vote.where(:micropost_id => petition) %>
                 <% @votos_realizados = @votos.count %>
+                <% if @votos_realizados != 0 %>
                 <% @votos_positivos = @votos.where(:like => true).count %>
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <%= @votos_positivos*100/(@votos_realizados) %> %
+                <% else %>
+                  0 votos
+                <% end %>
               </li>
             </ul>
             <% end %>
           <% else %>
-              Será necesario especificar que se puede crear una iniciativa pero debe de ser seguidor del circulo
+          <div style="padding: 5px;">
+            <% if @grupo_seguidores.where(user_id: current_user).any? %>              
+              <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary btn-sm" %>
+            <% else %>
+              Aún no hay consultas, pero es necesario pertencer al cículo para poder crearlas, por favor, únete.
+            <% end %>
+          </div>
+
           <% end %>
           </li>
         </ul>
@@ -245,5 +232,21 @@
         </ul>
       </div>
     </div>
+    <div class="col-md-6" style="margin-top: 15px; padding: 0px;">
+
+      
+      <div style="margin-top: 10px;">
+       <%= render 'plazas/plaza_post_form'if logged_in? %>
+      </div>
+      <% if @microposts.any? %>
+        <ol class="microposts">
+          <%= render @microposts %>
+        </ol>
+        <%= will_paginate @microposts %>
+      <% else %>
+        El círculo <%= @plaza.name %> no tiene publicaciones. Sé el primero en publicar o mira los siguientes posts realizados en círculos relacionados.  
+      <% end %>
+    </div>
+
   </div>
 </div>

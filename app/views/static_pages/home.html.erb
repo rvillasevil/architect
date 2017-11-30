@@ -3,15 +3,17 @@
   <div class="container">
     <div class="row">
       <aside class="col-sm-2">
-        <section class="user_info">
-          <%= render 'shared/user_info' %>
-          <%= render 'shared/plazas_info' %>          
-        </section>
-        <div class="stats">
-          <%# render 'shared/stats' %>
+        <div class="affix" style="width: 14%; max-width: 190px;">
+          <section class="user_info">
+            <%= render 'shared/user_info' %>
+            <%# render 'shared/plazas_info' %>          
+          </section>
+          <div class="stats">
+            <%# render 'shared/stats' %>
+          </div>
         </div>
       </aside>
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <%= render 'static_pages/sigue_plaza' %> 
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
@@ -88,17 +90,13 @@
         <% end %>
       </div>
       <div class="col-sm-4">
-        <%= render 'microposts/petition_short' %>
+        <div class="affix" style="width: 25%;">
+          <%= render 'microposts/petition_short' %>
 
-        <%= render 'plazas/action_short' %>
+          <%= render 'plazas/action_short' %>
 
-        <%= render 'plazas/causa_short' %>
-        <h5><b>Iniciativas que tienes pendientes</b></h5>
-        <h5><b>Filtrar por tus intereses</wb></h5>
-
-        <h5><b>Nuestros candidatos</b></h5>
-        <%= render 'shared/lista' %>
-        <%= link_to "New petition!", '/petition', class: "btn btn-lg btn-link" %>
+          <%= render 'plazas/causa_short' %>          
+        </div>
       </div>
     </div>
   </div>
@@ -108,7 +106,7 @@
 
     <div class="container-fluid" style="background-color: white;">
       <h1 style="font-weight: lighter;">El mejor partido político de la historia</h1>
-      <h1 style="line-height: 22px;">Red colaborativa para la política.</h1>
+      <h1 style="line-height: 22px;">How about if the government were us?</h1>
       <div class="wrapper">
         <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
         <%= link_to "Login", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4;" %>

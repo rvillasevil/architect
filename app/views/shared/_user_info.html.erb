@@ -3,7 +3,8 @@
 <% @peticiones_all = Micropost.where(:petition => true) %>
 <% @plazas_grupos = Group.where(:user_id => current_user.id) %>
 
-	<section class="plaza_stats">
+<div class="affix" style="width: 14%; max-width: 190px;">
+	<section class="plaza_stats" style="margin-top: 0px;">
     <div>
       <div class="background_img"></div>
       <ul class="plaza_name_img">
@@ -26,24 +27,26 @@
     </div>
   </section>
 
-  <div class="aside_content">
+  <div class="aside_content" style="text-align: center;">
     <ul class="inline" style="margin-bottom: 0px;">
-      <li class="titulo">
-        <%= link_to "Nueva consulta", '/petition', class: "btn btn-primary" %>
+      <li class="titulo" >
+        <%= link_to "Nueva consulta", '/petition', class: "btn btn-primary btn-sm", style: "padding: 5px; background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
       </li>
     </ul>
   </div>
 
-  <div class="aside_content">
-    <ul class="inline" style="margin-bottom: 0px;">
-      <li class="titulo">
-        Perfil de linkedIN
-      </li>
-      <li class="lista_block" style="position: absolute; right: 20px; padding-top: 5px; padding-right: 0px;">
-        <%= link_to image_tag("linkedinlogo.png", size: 25), "#{current_user.linkedin}" if current_user.linkedin? %> 
-      </li>
-    </ul>
-  </div>
+  <% if current_user.linkedin? %>
+    <div class="aside_content">
+      <ul class="inline" style="margin-bottom: 0px;">
+        <li class="titulo">
+          Perfil de linkedIN
+        </li>
+        <li class="lista_block" style="position: absolute; right: 20px; padding-top: 5px; padding-right: 0px;">
+          <%= link_to image_tag("linkedinlogo.png", size: 25), "#{current_user.linkedin}" if current_user.linkedin? %> 
+        </li>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="aside_content">
     <ul class="principal">
@@ -53,11 +56,11 @@
       <li class="lista_block" style="color: grey;">
         <ul class="inline" style="width: 100%; text-align: center;">
           <li style="width: 75%;">
-            <i class="fa fa-users fa-lg" aria-hidden="true"></i>
+            <i class="fa fa-users" aria-hidden="true"></i>
             <%= link_to current_user.followers.count, followers_user_path(current_user) %> Seguidores 
           </li>
           <li style="width: 75%;">
-            <i class="fa fa-user-o fa-lg" aria-hidden="true"></i>
+            <i class="fa fa-user-o" aria-hidden="true"></i>
             <%= link_to current_user.following.count, following_user_path(current_user) %> Seguidos
           </li>          
         </ul>
@@ -79,6 +82,7 @@
       </li>
     </ul>
   </div>
+</div>
 <%
 =begin%>
   <div class="aside_content">

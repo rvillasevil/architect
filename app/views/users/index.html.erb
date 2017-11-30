@@ -2,147 +2,222 @@
 	<% provide(:title, 'All users') %>
 	<div class="row">
 	  <aside class="col-sm-2">
-	    <section class="user_info">
-	      <%= render 'shared/user_info' %>
-	    </section>
-	    <section class="stats">
-	      <%# render 'shared/stats' %>
-	    </section>
+	  	<div class="sidebar-nav-fixed affix" style="width: 12%; min-width: 100px;">
+		    <section class="user_info">
+		      <%= render 'shared/user_info' %>
+		    </section>
+		    <section class="stats">
+		      <%# render 'shared/stats' %>
+		    </section>
+		  </div>
 	  </aside>
 	  <div class="col-sm-7">
-	  	<div class="instrucciones" style="margin-top: 15px;">
-          Tus candidatos de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.
-      </div>
-        <ul class="plazas">
-          <li class="search">
-          	<ul class="search_form" style="width: 100%;">
-							<%= form_tag(users_path, method: :get) do %>
-							<li class="boton_search">
-								<%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px;" %>
-							</li>
-							<li style="display: inline-flex; width: 70%;">
-								<%= text_field_tag :tern, params[:tern], placeholder: ' Enter search term...', style: "margin: 0px;" %>
-							</li>
-							<% end %>
-						</ul>
-					</li>
-					<li class="titulo">
-            <ul>
-              <li>
-                <span style="font-size: 14px;"><b><%= link_to "Todos los usuarios", users_path %></b></span>
-              </li>
-            </ul>
-          </li>
-          <li style="padding: 0px; background-color: #e6ecf0;">
-          	<div class="elementos">
-	          	<% @users.first(20).each do |user| %>
-	          		<% if user != current_user %>
-		          		<ul class="master">
-		          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
-		          				<ul class="foto_texto">
-				          			<li class="foto">
-													<%= image_tag user.foto.url, class: "img-rounded", size: 55 if user.foto? %>
-												</li>
-												<li class="texto" style="width: 80%;">
-													<ul>
-														<li>
-															<b><%= link_to user.name, user %></b>
-														</li>
-															<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
-														</li>
-														<li style="font-size: 12px; padding-top: 10px;">
-															<%= user.ciudad %> |
-															<%= user.autonomia %>
-														</li>
-													</ul>
-												</li>	          					
-		          				</ul>
-		          			</li>
-		          			<li>
-		          				<ul style="display: inline-flex; padding-left: 0px; width: 100%;">
-												<li class="boton">
-													<% if current_user != user %>
-														<% if current_user.following?(user) %>
-															<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
-														<% else %>
-															<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
-															</button>
+      <ul class="plazas" style="margin-top: 0px;">
+        <li class="search">
+        	<ul class="search_form" style="width: 100%;">
+						<%= form_tag(users_path, method: :get) do %>
+						<li class="boton_search">
+							<%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px;" %>
+						</li>
+						<li style="display: inline-flex; width: 70%;">
+							<%= text_field_tag :tern, params[:tern], placeholder: ' Enter search term...', style: "margin: 0px;" %>
+						</li>
+						<% end %>
+					</ul>
+				</li>
+				<li class="titulo">
+          <ul>
+            <li>
+              <h3 style="margin: 0px;"><b><%= link_to "Todos los usuarios", users_path %></b></h3>
+            </li>
+          </ul>
+        </li>
+        <li style="padding: 0px; background-color: #e6ecf0;">
+
+        <% if params[:plaza_id] != nil %>
+        	<% @plaza_id = params[:plaza_id] %>
+          <% @plaza_users = Group.where(plaza_id: @plaza_id) %>
+          <% @plaza_users.each do |plaza_users| %>
+          	<% @users = User.where(id: plaza_users.user_id) %>
+		          <div class="elementos">
+		          	<% @users.first(20).each do |user| %>
+		          		<%# if user != current_user %>
+			          		<ul class="master">
+			          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
+			          				<ul class="foto_texto">
+					          			<li class="foto">
+														<%= image_tag user.foto.url, class: "img-rounded", size: 55 if user.foto? %>
+													</li>
+													<li class="texto" style="width: 80%;">
+														<ul>
+															<li>
+																<b><%= link_to user.name, user %></b>
+															</li>
+																<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
+															</li>
+															<li style="font-size: 12px; padding-top: 10px;">
+																<%= user.ciudad %> |
+																<%= user.autonomia %>
+															</li>
+														</ul>
+													</li>	          					
+			          				</ul>
+			          			</li>
+			          			<li>
+			          				<ul style="display: inline-flex; padding-left: 0px; width: 100%;">
+													<li class="boton">
+														<% if current_user != user %>
+															<% if current_user.following?(user) %>
+																<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
+															<% else %>
+																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+																</button>
+															<% end %>
 														<% end %>
+													</li>	
+													<li style="float: right;">
+														<ul style="padding: 0px; display: inline-flex; text-align: right;">
+															<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+																<b><%= user.followers.count %></b>
+																&nbsp;<i class="fa fa-users" aria-hidden="true"></i>
+															</li>
+															<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+																<% @post_plaza = Micropost.where(:user_id => user.id) %>
+																<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
+																<%= @votos = Vote.where(:micropost_id => @post_plaza).where(like: 1).count %>&nbsp;
+																<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+															</li>
+															<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+																<%= @votos = Vote.where(:micropost_id => @post_plaza).where(dislike: 1).count %>&nbsp;
+																<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+															</li>
+															<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+																<%= @post_plaza_petition.count %>&nbsp;
+																<i class="fa fa-file-text-o" aria-hidden="true"></i>
+															</li>														
+														</ul>
+													</li>
+			          				</ul>
+			          			</li>
+										</ul>
+									<%# end %>
+								<% end %>         		
+	          	</div>
+          <% end %>
+        <% else %>
+          <div class="elementos">
+          	<% @users.first(20).each do |user| %>
+          		<% if user != current_user %>
+	          		<ul class="master">
+	          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
+	          				<ul class="foto_texto">
+			          			<li class="foto">
+												<%= image_tag user.foto.url, class: "img-rounded", size: 55 if user.foto? %>
+											</li>
+											<li class="texto" style="width: 80%;">
+												<ul>
+													<li>
+														<b><%= link_to user.name, user %></b>
+													</li>
+														<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
+													</li>
+													<li style="font-size: 12px; padding-top: 10px;">
+														<%= user.ciudad %> |
+														<%= user.autonomia %>
+													</li>
+												</ul>
+											</li>	          					
+	          				</ul>
+	          			</li>
+	          			<li>
+	          				<ul style="display: inline-flex; padding-left: 0px; width: 100%;">
+											<li class="boton">
+												<% if current_user != user %>
+													<% if current_user.following?(user) %>
+														<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;"><span style="font-size: 13px; ">Siguiendo</span></button>
+													<% else %>
+														<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+														</button>
 													<% end %>
-												</li>	
-												<li style="float: right;">
-													<ul style="padding: 0px; display: inline-flex; text-align: right;">
-														<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
-															<b><%= user.followers.count %></b>
-															&nbsp;<i class="fa fa-users" aria-hidden="true"></i>
-														</li>
-														<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
-															<% @post_plaza = Micropost.where(:user_id => user.id) %>
-															<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
-															<%= @votos = Vote.where(:micropost_id => @post_plaza).where(like: 1).count %>&nbsp;
-															<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-														</li>
-														<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
-															<%= @votos = Vote.where(:micropost_id => @post_plaza).where(dislike: 1).count %>&nbsp;
-															<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-														</li>
-														<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
-															<%= @post_plaza_petition.count %>&nbsp;
-															<i class="fa fa-file-text-o" aria-hidden="true"></i>
-														</li>														
-													</ul>
-												</li>
-		          				</ul>
-		          			</li>
-									</ul>
-								<% end %>
-							<% end %>         		
-          	</div>
-          </li>
-				</ul>
-			</div>
+												<% end %>
+											</li>	
+											<li style="float: right;">
+												<ul style="padding: 0px; display: inline-flex; text-align: right;">
+													<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+														<b><%= user.followers.count %></b>
+														&nbsp;<i class="fa fa-users" aria-hidden="true"></i>
+													</li>
+													<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+														<% @post_plaza = Micropost.where(:user_id => user.id) %>
+														<% @post_plaza_petition = @post_plaza.where(:petition => true) %>
+														<%= @votos = Vote.where(:micropost_id => @post_plaza).where(like: 1).count %>&nbsp;
+														<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+													</li>
+													<li style="font-size: 13px;  color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+														<%= @votos = Vote.where(:micropost_id => @post_plaza).where(dislike: 1).count %>&nbsp;
+														<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+													</li>
+													<li style="font-size: 13px; color: #8c8c8c; display: inline-flex; margin-top: 5px;">
+														<%= @post_plaza_petition.count %>&nbsp;
+														<i class="fa fa-file-text-o" aria-hidden="true"></i>
+													</li>														
+												</ul>
+											</li>
+	          				</ul>
+	          			</li>
+								</ul>
+							<% end %>
+						<% end %>         		
+        	</div>      
+        <% end %>
+
+        </li>
+			</ul>
+		</div>
 
 			<%# ya no es necesario paginarlo porque ya pasa por el if y no está paginado %>
 			
-  <div class="col-sm-3" style="margin-top: 15px;">
-  	<div class="usuarios_sugeridos">
-  		<div style="border-bottom: 1px solid #e6e9ec; padding: 10px;">
-	      <b><%= current_user.name %> hecha un vistazo a las siguientes personas:</b>
-	    </div>
-    	<% @tus_grupos = Group.where(user_id: current_user) %>
-  		<% @tus_grupos.first(5).each do |tus_grupos| %>
-    		<% @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id) %>
-    			<% @users_grupos.first(3).each do |users_grupos| %>
-      			<% @users_plazas = User.where(id: users_grupos.user_id) %>
-      			<% @plazas_users = Plaza.where(id: users_grupos.plaza_id) %>
-      			<% @plazas_users.first(3).each do |plazas_users| %>
-      			<% @users_plazas.first(3).each do |users_plazas| %>
-      				<% unless current_user.following?(users_plazas) %>
-	      				<% if users_plazas != current_user %>
-		      				<% if plazas_users.name != current_user.autonomia %>
-			  						<li>
-			  							<ul style="display: inline-flex; align-items: center; padding: 5px;">
-						  					<li style="display: block; padding: 5px;">
-					  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> 
+  <div class="col-sm-3">
+  	<div class="affix" style="width: 20%;">
+
+		  	<div class="usuarios_sugeridos">
+		  		<div style="border-bottom: 1px solid #e6e9ec; padding: 10px;">
+			      <b><%= current_user.name %> hecha un vistazo a las siguientes personas:</b>
+			    </div>
+		    	<% @tus_grupos = Group.where(user_id: current_user) %>
+		  		<% @tus_grupos.first(5).each do |tus_grupos| %>
+		    		<% @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id) %>
+		    			<% @users_grupos.first(3).each do |users_grupos| %>
+		      			<% @users_plazas = User.where(id: users_grupos.user_id) %>
+		      			<% @plazas_users = Plaza.where(id: users_grupos.plaza_id) %>
+		      			<% @plazas_users.first(3).each do |plazas_users| %>
+		      			<% @users_plazas.first(3).each do |users_plazas| %>
+		      				<% unless current_user.following?(users_plazas) %>
+			      				<% if users_plazas != current_user %>
+				      				<% if plazas_users.name != current_user.autonomia %>
+					  						<li>
+					  							<ul style="display: inline-flex; align-items: center; padding: 5px;">
+								  					<li style="display: block; padding: 5px;">
+							  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> 
+							  						</li>
+							  						<li style="padding-left: 5px;">
+								  						<%= link_to users_plazas.name, users_plazas %> 
+								  						 en <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
+							    						<%# image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
+							    					</li>
+					  							</ul>
 					  						</li>
-					  						<li style="padding-left: 5px;">
-						  						<%= link_to users_plazas.name, users_plazas %> 
-						  						 en <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
-					    						<%# image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
-					    					</li>
-			  							</ul>
-			  						</li>
-			  					<% end %>
-		  					<% end %>
-      				<% end %>
-      			<% end %>
-      			<% end %>
-    		<% end %>
-  		<% end %>  		
-  	</div>
+					  					<% end %>
+				  					<% end %>
+		      				<% end %>
+		      			<% end %>
+		      			<% end %>
+		    		<% end %>
+		  		<% end %>  		
+		  	</div>
 
+		  	</div>  	
   	</div>
-
 	</div>
 </div>
 

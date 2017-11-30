@@ -18,7 +18,7 @@
 				</div>
 			<% end %>
 	</div>
-	<div style="margin-top: 5px;">
+	<div>
 		<% @provincia = Plaza.where(:name => current_user.provincia) %>
 			<% if @provincia.any? %>	
 				<% @provincia.each do |provincia| %>
@@ -37,7 +37,7 @@
 				</div>
 			<% end %>
 	</div>
-	<div style="margin-top: 5px;">
+	<div>
 		<% @autonomia = Plaza.where(:name => current_user.autonomia) %>
 			<% if @autonomia.any? %>	
 				<% @autonomia.each do |autonomia| %>

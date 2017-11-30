@@ -96,10 +96,80 @@
             </li>         
         <% end %>
 
+<!-- Círculos administrativos del usuario -->
 
+        <% if @action != "true" %>
+          <% if @causa != "true" %>
+            <li>
+              <h3>Círculos administrativos</h3>
+            </li>
+          <% end %>
+        <% end %>
+        <% @plazas_administrativas = Plaza.where(name: @usuario.autonomia).or(Plaza.where(name: @usuario.ciudad)).or(Plaza.where(name: @usuario.provincia)) %>
+        <% if @plazas_administrativas.any? %>
+          <% @plazas_administrativas.each do |plaza| %>
+              <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
+                <ul style="display: inline-flex; padding-left: 15px;">
+                  <li style="padding: 0px;">
+                    <li style="padding: 10px 0px; display: inline-flex;">
+                      <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
+                    </li>                    
+                    <ul class="texto_plaza" style="padding-left: 10px; padding-top: 5px;">
+                      <li style="display: inline-flex;">
+                        <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
+                      </li>
+                      <li style="display: inline-flex;">
+                        <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
+                      </li>
+                      <li style="font-size: 13px; color: #7e7e81;">
+                        <%= plaza.description %>
+                      </li>
+                      <li style="font-size: 13px; padding-top: 10px;">
+                        <li style="font-size: 13px; display: inline-flex; margin-top: 5px;">
+                          <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
+                          <b><%= Group.where(:plaza_id => plaza.id).count %></b>&nbsp;Seguidores &nbsp;|
+                        &nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;
+                        <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> Peticiones &nbsp;
+                        <% @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true) %>
+                        <% if @peticiones.any? %>
+                          <% @peticiones_votadas = Vote.where(micropost_id: @peticiones).where(user_id: current_user).count %>
+                          <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px;">
+                              <b><% @petiticiones_pendientes = (@peticiones.count - @peticiones_votadas) %> <%= @petiticiones_pendientes %></b>                       
+                          </div>&nbsp;pendientes                         
+                        <% end %>
+
+
+                        | &nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                         &nbsp;<%= @votos = Vote.where(:micropost_id => @peticiones).count %> votos totales
+                        
+
+
+                        <% if current_user.admin?  %>
+                        | <%= link_to "delete", plaza, method: :delete,
+                                        data: { confirm: "You sure?" } %>
+                          <% end %>
+                      </li>
+                      <li style="font-size: 11px; padding-top: 5px;"> 
+                        <% if plaza.user_id == current_user.id %>
+                          Admin
+                        <% else %>
+                          <% @admin = User.where(:id => plaza.user_id).first %>
+                          Admin: <%= link_to @admin.name, @admin %>
+                        <% end %>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+          <% end %>
+        <% else %>
+          No está creado el círculo de tu ciudad, créalo!
+        <% end %>       
 
 
 <!-- Plazas que no son acciones -->
+
+
         <% if @action != "true" %>
           <% if @causa != "true" %>
             <% @plazas = @plazas.where(causa: nil).where(action: nil) %>
@@ -109,8 +179,9 @@
         <% else %>
           <% @plazas = @plazas.where(action: true) %>
         <% end %>
-
+        
         <% @plazas.each do |plaza| %>
+
             <li style="padding-left: 0px; border-bottom: 1px solid #eeeeee;"> 
               <ul style="display: inline-flex; padding-left: 15px;">
                 <li style="padding: 10px 0px;">
@@ -128,7 +199,7 @@
                 </li>
                 <li style="padding: 0px;">
                   <ul class="texto_plaza" style="padding-left: 10px; padding-top: 5px;">
-                    <li>
+                    <li style="display: inline-flex;">
                       <% if @action != "true" %>
                         <% if @causa != "true" %>
                         <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(causa: nil).where(action: nil) %>
@@ -138,6 +209,8 @@
                       <% else %>
                         <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(action: true) %>
                       <% end %>
+                    </li>
+                    <li style="display: inline-flex;">
                       <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
                     </li>
                     <li style="font-size: 13px; color: #7e7e81;">
@@ -147,11 +220,22 @@
                       <li style="font-size: 13px; display: inline-flex; margin-top: 5px;">
                         <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
                         <b><%= Group.where(:plaza_id => plaza.id).count %></b>&nbsp;Seguidores &nbsp;|
-                      <% @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %>
-                      <% @votos = Vote.where(:micropost_id => @peticiones).where(:user_id => current_user.id).count %>
-                      <% @votos_totales = Vote.where(:micropost_id => @peticiones).count %>
-                      &nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>
-                      &nbsp;<%= @votos_pendientes = @votos_totales - @votos %> peticiones pendientes.
+                      &nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;
+                      <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> Peticiones &nbsp;
+                      <% @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true) %>
+                      <% if @peticiones.any? %>
+                        <% @peticiones_votadas = Vote.where(micropost_id: @peticiones).where(user_id: current_user).count %>
+                        <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px;">
+                            <b><% @petiticiones_pendientes = (@peticiones.count - @peticiones_votadas) %> <%= @petiticiones_pendientes %></b>                       
+                        </div>&nbsp;pendientes                         
+                      <% end %>
+
+
+                      | &nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                       &nbsp;<%= @votos = Vote.where(:micropost_id => @peticiones).count %> votos totales
+                      
+
+
                       <% if current_user.admin?  %>
                       | <%= link_to "delete", plaza, method: :delete,
                                       data: { confirm: "You sure?" } %>
