@@ -42,7 +42,7 @@
                     <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i>
                   </div>
                   <div class="icon_web">
-                    <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i><span class="icon"> Usuarios</span>                     
+                    <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i><span class="icon"> Polittizens</span>                     
                   </div>                  
                 </div>
               <% end %>
@@ -64,21 +64,37 @@
                   <div class="icon_mobile" style="display: inline-flex;">
                     <i class="fa fa-user fa-lg" aria-hidden="true" style="color: white; margin-top: 5px;"></i>
                     &nbsp;<span class="icon" style="margin-top: 3px;"> You</span>
-
                   </div>
-
-
               </a>
 
-              <ul class="dropdown-menu" style="left: auto; right: 0px;">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li>
-                    <%= link_to "Círculos", edit_administrative_user_path( current_user), class: "btn btn-primary" %>
+              <ul class="dropdown-menu" style="left: auto; right: 0px; font-family: 'Helvetica'; font-size: 14px; text-align: left;">
+                <li style="text-align: left; margin-top: 10px;">
+                  <%= link_to current_user do %>
+                  <%= image_tag current_user.foto.url, class: "img-rounded", size: 20 if current_user.foto? %> Perfil
+                  <% end %>
+                </li>
+                <li style="text-align: left; margin-top: 10px;">
+                  <%= link_to edit_user_path(current_user) do %>
+                  <i class="fa fa-cogs" aria-hidden="true" style="color: black;"></i> Configuración
+                  <% end %>
+                </li>
+                <li style="text-align: left; margin-top: 10px;">
+                  <%= link_to user_plazas_path(current_user) do %>
+                  <i class="fa fa-circle-o" aria-hidden="true" style="color: black;"></i> Tus Círculos
+                  <% end %>                    
+                </li>                
+                <li style="text-align: left; margin-top: 10px;">
+                  <%= link_to edit_administrative_user_path( current_user) do %>
+                  <button type="button" class="btn btn-primary btn-sm" style="width: 100%; background-color: white; color: #0084B4; border: 1px solid #0084B4;">
+                    <i class="fa fa-circle-o" aria-hidden="true" style="color: #0084B4;"></i> Círculos Administrativos
+                  </button>
+                  <% end %>                    
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <%= link_to "Log out", logout_path, method: "delete" %>
+                    <%= link_to logout_path, method: "delete" do %>
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> <b>Salir</b>
+                    <% end %>
                 </li>
               </ul>
             </li>

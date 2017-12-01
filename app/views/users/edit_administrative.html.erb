@@ -2,7 +2,7 @@
     <% provide(:title, "Tus círculos") %>
     <div class="edit_user">
         <h1 style="font-family: 'Open Sans'; text-align: left;">Update your profile</h1>
-        <h3>Los círculos donde podrás ser candidato del mejor partido del mundo</h3>
+        <h1 style="font-size: 18px;">Los círculos donde podrás ser candidato del mejor partido del mundo</h1>
         <div class="row">
             <div id="formulario" class="col-md-6 col-md-offset-3" style="padding: 30px 10px;">
                 <%= form_tag(update_administrative_user_path(current_user), remote: true, method: :put) do |f| %>
