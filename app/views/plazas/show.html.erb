@@ -2,7 +2,7 @@
   <% provide(:title, @plaza.name) %>
   <div class="row">
     <div class="col-sm-2">
-      <div class="affix" style="width: 14%; max-width: 190px;">
+      <!-- <div class="affix" style="width: 14%; max-width: 190px;"> -->
         <div class="plaza_stats">
           <div>
             <div class="background_img"></div>
@@ -40,7 +40,7 @@
           <ul class="inline" style="margin-bottom: 0px;">
             <li class="titulo">
               <% if @grupo_seguidores.where(user_id: current_user).any? %>              
-                <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary" %>
+                <%= link_to "Nueva consulta", petition_path(plaza: params[:id]), class: "btn btn-primary btn-sm" %>
               <% else %>
                 Es necesario pertencer al cículo para realizar consultas en él, por favor, síguelo.
               <% end %>
@@ -48,11 +48,11 @@
           </ul>
         </div>      
         <div class="aside_content">
-          <ul class="principal">
+          <ul class="principal" style="align-items: center;">
             <li class="titulo">
               Comunidad
             </li>
-            <li style="width: 100%;">
+            <li style="width: 100%; text-align: center;">
               <ul style="display: inline-flex; padding: 5px; width: 100%; ">
                 <li style="width: 25%; border: none;">
                   <i class="fa fa-users" aria-hidden="true"></i>&nbsp;<%= link_to @grupo_seguidores.count, users_path(plaza_id: params[:id]) %>
@@ -75,15 +75,15 @@
             </li>
           </ul>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
 
-    <div class="col-md-4" style="margin-top: 12px;">
+    <div class="col-sm-4">
 
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            <h3 style="font-size: 16px; margin: 0px; font-weight: lighter;">Posicion del usuario dentro del círculo</h3>
+            <h3 style="font-size: 16px; margin: 0px; font-weight: 700;">Posicion del usuario dentro del círculo</h3>
           </li>
           <li class="inline">
             &nbsp;* Falta por introducir la posición dentro del círculo
@@ -94,7 +94,7 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Resoluciones (más de 2/3 seguidores)
+            <h3 style="font-size: 16px; margin: 0px; font-weight: 700;"><i class="fa fa-file-text-o" aria-hidden="true"></i> Resoluciones (más de 2/3 seguidores)</h3>
             <% @votos_seguidores.count if @votos_seguidores != nil %>
           </li>
           <% @peticiones.each do |petition| %>
@@ -154,7 +154,7 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Iniciativas/Propuestas/Votaciones
+            <h3 style="font-size: 16px; margin: 0px; font-weight: 700;"><i class="fa fa-file-text-o" aria-hidden="true"></i> Iniciativas/Propuestas/Votaciones</h3>
           </li>
           <% if @peticiones.any? %>
           <% @peticiones.each do |petition| %>
@@ -195,7 +195,7 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            Otros usuarios
+            <h3 style="font-size: 16px; margin: 0px; font-weight: 700;"><i class="fa fa-users" aria-hidden="true"></i> Otros usuarios</h3>
           </li> 
             <%# if @grupo_seguidores != 0 %> 
             <% @grupo_seguidores.count %>
@@ -207,10 +207,10 @@
                   <li class="lista_block">
                     <ul class="inline" style="width: 80%;">
                       <li class="inline">
-                        <%= image_tag usuario.foto.url, class: "img-circle", size: 55 if usuario.foto? %>
+                        <%= image_tag usuario.foto.url, class: "img-rounded", size: 55 if usuario.foto? %>
                       </li>
                       <li class="inline" style="width: 100%;">
-                        <span class="nombres"><%= link_to usuario.name, usuario %></b></span>
+                        <span class="nombres"><b><%= link_to usuario.name, usuario %></b></span>
                       </li>
                       <li class="right">
                         <% if current_user.following?(usuario) %>
@@ -232,12 +232,13 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-6" style="margin-top: 15px; padding: 0px;">
+    <div class="col-sm-6">
 
-      
-      <div style="margin-top: 10px;">
+      <h3 style="font-size: 16px; margin: 0px;"><b>Posts (<%= @microposts.count %>)</b></h3>
+      <div>
        <%= render 'plazas/plaza_post_form'if logged_in? %>
       </div>
+
       <% if @microposts.any? %>
         <ol class="microposts">
           <%= render @microposts %>

@@ -3,46 +3,73 @@
       <div class="icons_list">
         <% if logged_in? %>
           <ul class="icons">
-            <li class="dropdown" style="width: 30%;">
+            <li class="dropdown" style="width: 70%;">
               <%= link_to root_path do %>
-                <div class="logo">
-                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white;"></i><span style="font-size: 16px; font-weight: lighter; font-family: 'Open Sans';"> polittizen</span>
+                <div class="logo" style="display: inline-flex;">
+                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white;"></i>&nbsp;&nbsp;<h3 style="font-size: 16px; font-weight: lighter; font-family: 'Open Sans'; margin: 0px; color: white;"> polittizen</h3>
                 </div>
-                
               <% end %>               
             </li>
             <li class="dropdown">
               <%= link_to user_plazas_path(current_user) do %>
                 <div>
-                   <span><i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: white"></i> Círculos</span>       
+                  <div class="icon_mobile">
+                    <i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: white"></i>
+                  </div>
+                  <div class="icon_web">
+                    <i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: white"></i>
+                    <span class="logo"> Círculos</span>
+                  </div>
                 </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to '/lista' do %>              
                 <div>
-                  <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i> <span>Candidatos</span>                
+                  <div class="icon_mobile">
+                    <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i>
+                  </div>
+                  <div class="icon_web">
+                    <i class="fa fa-university fa-lg" aria-hidden="true" style="color: white"></i><span class="icon"> Candidatos</span>                      
+                  </div>                 
                 </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to users_path do %>
                 <div>
-                  <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i> <span>Usuarios</span>                
+                  <div class="icon_mobile">
+                    <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i>
+                  </div>
+                  <div class="icon_web">
+                    <i class="fa fa-users fa-lg" aria-hidden="true" style="color: white"></i><span class="icon"> Usuarios</span>                     
+                  </div>                  
                 </div>
               <% end %>
             </li>
             <li class="dropdown">
               <%= link_to '/petitions' do %>
                 <div>
-                  <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i> <span>Consultas</span> 
+                  <div class="icon_mobile">
+                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>
+                  </div>
+                  <div class="icon_web">
+                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i><span class="icon"> Consultas</span>                     
+                  </div>                  
                 </div>
               <% end %>
             </li>
-            <li class="dropdown" >
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-lg" aria-hidden="true" style="text-align: center; color: white;"></i>&nbsp;<b class="caret" style="display: inline-flex; color: white;"></b>&nbsp;
-              <span>You</span>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret" style="display: inline-flex; color: white;"></b>&nbsp;
+                  <div class="icon_mobile" style="display: inline-flex;">
+                    <i class="fa fa-user fa-lg" aria-hidden="true" style="color: white; margin-top: 5px;"></i>
+                    &nbsp;<span class="icon" style="margin-top: 3px;"> You</span>
+
+                  </div>
+
+
               </a>
+
               <ul class="dropdown-menu" style="left: auto; right: 0px;">
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>

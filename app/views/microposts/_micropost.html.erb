@@ -1,7 +1,9 @@
 <li id="micropost-<%= micropost.id %>">
   <div>
     <% if micropost.title? %>
-        <span style="width: 25%; background-color: #c2d7f9; padding: 5px; font-size: 12px; border-radius: 15px;"><i class="fa fa-file-text-o" aria-hidden="true"></i><b> Consulta ciudadana</b></span>
+        <div style="width: auto; background-color: #c2d7f9; padding: 5px; font-size: 12px; border-radius: 15px; display: inline-flex; margin-top: -15px;">
+          <i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;<b>Consulta ciudadana</b>
+        </div>
         <h4>
           <b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
         </h4>
@@ -165,11 +167,11 @@
   
 <!-- votos -->
 <!-- votos positivos -->
-  <ul class="social_elements" style="border-top: 1px solid #e6e9ec;">
-    <div id="vote<%= micropost.id %>">
+  <ul class="social_elements" style="border-top: 1px solid #e6e9ec; width: 100%;">
+    <div id="vote<%= micropost.id %>" style="width: 30%; align-items: center;" >
       <% if logged_in? %>
         <% @voto_usuario = Vote.where(user_id: current_user.id, micropost_id: micropost.id) %>
-        <li style="display: inline-flex; margin: 0px; padding-top: 10px;">
+        <li style="display: inline-flex; margin: 0px; padding-top: 10px; width: 30%;">
           <% if @voto_usuario.empty? %>
             <%= form_for([micropost, Vote.new], remote: true) do |f| %>
               <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -216,10 +218,12 @@
           <%= button_tag(class: "btn btn-link btn-sm", style: "color: #595959; padding: 0px;") do %>&nbsp;&nbsp;&nbsp;<i class="fa fa-thumbs-o-down fa-lg" aria-hidden="true" style="color: #595959;"></i> <%= @votosNegativos = micropost.votes.where(:dislike => 1).count %></span>      
           <% end %>
       <% end %>
-    </div>
+    </li>
+  </div>
+  
 
   <!-- hashtags -->
-  <li style="padding-top: 10px; text-align: center; margin: 0px; width: 100%; color: #595959;">
+  <li style="padding-top: 10px; text-align: center; margin: 0px; width: 35%; color: #595959;">
     <% if micropost.hashtag1? %>
       <span class="hashtag"><b><i class="fa fa-hashtag fa-lg" aria-hidden="true"></i></b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost.hashtag1), {style: "color: #595959;"} %></span>
     <% end %>
