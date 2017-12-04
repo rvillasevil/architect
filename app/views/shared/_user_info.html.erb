@@ -35,37 +35,24 @@
     </ul>
   </div>
 
-  <% if current_user.linkedin? %>
-    <div class="aside_content">
-      <ul class="inline" style="margin-bottom: 0px;">
-        <li class="titulo">
-          Perfil de linkedIN
-        </li>
-        <li class="lista_block" style="position: absolute; right: 20px; padding-top: 5px; padding-right: 0px;">
-          <%= link_to image_tag("linkedinlogo.png", size: 25), "#{current_user.linkedin}" if current_user.linkedin? %> 
-        </li>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="aside_content">
     <ul class="principal">
       <li class="titulo">
         Comunidad
       </li>
-      <li class="lista_block" style="color: grey;">
-        <ul class="inline" style="width: 100%; text-align: center;">
+      <li class="lista_block" style="color: #7e7e81;">
+        <ul class="inline" style="width: 100%; text-align: center; ">
           <li style="width: 75%;">
             <i class="fa fa-users" aria-hidden="true"></i>
-            <%= link_to current_user.followers.count, followers_user_path(current_user) %> Seguidores 
+            &nbsp;<%= link_to current_user.followers.count, users_path(seguidores_id: current_user.id) %><span style="display: block; font-size: 13px;">Seguidores</span> 
           </li>
           <li style="width: 75%;">
             <i class="fa fa-user-o" aria-hidden="true"></i>
-            <%= link_to current_user.following.count, following_user_path(current_user) %> Seguidos
+            &nbsp;<%= link_to current_user.following.count, users_path(seguidos_id: current_user.id) %><span style="display: block; font-size: 13px;">Seguidos</span>
           </li>          
         </ul>
       </li>
-      <li class="lista_block" style="color: grey;">
+      <li class="lista_block" style="color: #7e7e81;">
         <ul class="inline" style="width: 100%; text-align: center;">
           <li style="width: 32%;">
             <i class="fa fa-envelope-open-o fa-lg" aria-hidden="true"></i> <%= @posts.where(:petition => true).count %>

@@ -75,14 +75,24 @@
                 </li>
                 <li style="text-align: left; margin-top: 10px;">
                   <%= link_to edit_user_path(current_user) do %>
-                  <i class="fa fa-cogs" aria-hidden="true" style="color: black;"></i> Configuración
+                  <i class="fa fa-cogs" aria-hidden="true" style="color: #0084B4;"></i> Configuración
                   <% end %>
                 </li>
                 <li style="text-align: left; margin-top: 10px;">
                   <%= link_to user_plazas_path(current_user) do %>
-                  <i class="fa fa-circle-o" aria-hidden="true" style="color: black;"></i> Tus Círculos
+                  <i class="fa fa-circle-o" aria-hidden="true" style="color: #0084B4;"></i> Tus Círculos
                   <% end %>                    
-                </li>                
+                </li>
+                <li style="text-align: left; margin-top: 10px;">
+                  <%= link_to user_plazas_path(user_id: current_user, accion: true) do %>
+                  <i class="fa fa-bolt" aria-hidden="true" style="color: #0084B4;"></i> Tus Acciones
+                  <% end %>                    
+                </li>
+                <li style="text-align: left; margin-top: 10px;">
+                  <%= link_to user_plazas_path(user_id: current_user, causa: true) do %>
+                  <i class="fa fa-heart-o" aria-hidden="true" style="color: #0084B4;"></i> Tus Causas
+                  <% end %>                    
+                </li>                                              
                 <li style="text-align: left; margin-top: 10px;">
                   <%= link_to edit_administrative_user_path( current_user) do %>
                   <button type="button" class="btn btn-primary btn-sm" style="width: 100%; background-color: white; color: #0084B4; border: 1px solid #0084B4;">

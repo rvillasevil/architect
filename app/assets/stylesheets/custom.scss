@@ -34,18 +34,18 @@ body {
   }
   .col-sm-2 {
     padding: 0px;
-    .affix {
-
-    }
+    margin-top: -5px;
   }
   .col-sm-3 {
     padding: 0px;
   }  
   .col-sm-4 {
     padding: 0px;
+    margin-top: 10px;
   }
   .col-sm-7 {
-    padding: 10px;
+    padding: 0px;
+    margin-top: -5px;
   }
   .col-sm-8 {
     padding: 5px;
@@ -889,7 +889,6 @@ input {
 
 .plazas {
   padding-left: 0px;
-  margin-top: 10px;
   ul {
     display: inline-block;
     list-style: none;
@@ -1003,6 +1002,14 @@ input {
 @media (min-width: 992px) {
   .elementos {
     columns: 2;
+  }
+}
+
+.index_plazas {
+  @media (max-width: 768px) {
+    span.texto_oculto {
+      display: none;
+    }
   }
 }
 

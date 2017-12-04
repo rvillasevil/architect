@@ -104,7 +104,7 @@
                   <%= image_tag petition.picture.url, size: 55 if petition.picture? %>
                 </li>
                 <li class="inline" style="width: 100%;">
-                  <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
+                  <span class="nombres" style="width: 100%;"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
                 </li>
                 <li class="right" style="align-items: center;">
                   <i class="fa fa-percent" aria-hidden="true"></i>
@@ -164,7 +164,7 @@
                 <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
               </li>
               <li class="inline" style="width: 100%;">
-                <span class="nombres"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
+                <span class="nombres"  style="width: 100%;"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
               </li>
               <li class="right" style="padding-top: 10px;">
                 <% @votos = Vote.where(:micropost_id => petition) %>
@@ -210,7 +210,7 @@
                         <%= image_tag usuario.foto.url, class: "img-rounded", size: 55 if usuario.foto? %>
                       </li>
                       <li class="inline" style="width: 100%;">
-                        <span class="nombres"><b><%= link_to usuario.name, usuario %></b></span>
+                        <span class="nombres"  style="width: 100%;"><b><%= link_to usuario.name, usuario %></b></span>
                       </li>
                       <li class="right">
                         <% if current_user.following?(usuario) %>
