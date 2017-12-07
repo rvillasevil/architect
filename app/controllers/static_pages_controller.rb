@@ -112,6 +112,8 @@ require 'will_paginate/array'
       ORDER BY    count(votes.micropost_id) 
       DESC
       ')
+    
+
     if logged_in?
       @micropost = current_user.microposts.build
     end

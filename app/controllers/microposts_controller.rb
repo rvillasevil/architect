@@ -3,6 +3,7 @@ class MicropostsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
   require 'open-uri'
+  require 'will_paginate/array'  
 
 
   def create
@@ -51,6 +52,7 @@ class MicropostsController < ApplicationController
 
   def petition_index
     @petitions = current_user.feed_petition
+    @petitions_public = current_user.petitions_public
     @candidates = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)
@@ -88,6 +90,11 @@ class MicropostsController < ApplicationController
       DESC
       ')
   end
+
+  def petition_index_public
+    @petitions = current_user.feed_petition
+    @petitions_public = current_user.petitions_public
+  end    
 
   private
 

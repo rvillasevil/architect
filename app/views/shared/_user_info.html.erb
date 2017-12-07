@@ -27,6 +27,8 @@
     </div>
   </section>
 
+<%
+=begin%>
   <div class="aside_content" style="text-align: center;">
     <ul class="inline" style="margin-bottom: 0px;">
       <li class="titulo" >
@@ -34,35 +36,37 @@
       </li>
     </ul>
   </div>
+<%
+=end%>
 
   <div class="aside_content">
     <ul class="principal">
-      <li class="titulo">
+      <li class="titulo" style="padding-bottom: 3px;">
         Comunidad
       </li>
       <li class="lista_block" style="color: #7e7e81;">
         <ul class="inline" style="width: 100%; text-align: center; ">
           <li style="width: 75%;">
             <i class="fa fa-users" aria-hidden="true"></i>
-            &nbsp;<%= link_to current_user.followers.count, users_path(seguidores_id: current_user.id) %><span style="display: block; font-size: 13px;">Seguidores</span> 
+            &nbsp;<%= link_to current_user.followers.count, users_path(seguidores_id: current_user.id) %><span style="display: block; font-size: 12px;">Seguidores</span> 
           </li>
           <li style="width: 75%;">
             <i class="fa fa-user-o" aria-hidden="true"></i>
-            &nbsp;<%= link_to current_user.following.count, users_path(seguidos_id: current_user.id) %><span style="display: block; font-size: 13px;">Seguidos</span>
+            &nbsp;<%= link_to current_user.following.count, users_path(seguidos_id: current_user.id) %><span style="display: block; font-size: 12px;">Seguidos</span>
           </li>          
         </ul>
       </li>
       <li class="lista_block" style="color: #7e7e81;">
         <ul class="inline" style="width: 100%; text-align: center;">
           <li style="width: 32%;">
-            <i class="fa fa-envelope-open-o fa-lg" aria-hidden="true"></i> <%= @posts.where(:petition => true).count %>
+            <i class="fa fa-envelope-open-o" aria-hidden="true"></i> <%= @posts.where(:petition => true).count %>
           </li>
           <li style="width: 32%;">
-            <i class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
             <%= Vote.where(:micropost_id => @microposts).count %>
           </li>
           <li style="width: 32%;">
-            <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
+            <i class="fa fa-circle-o" aria-hidden="true"></i>
             <%= @plazas_grupos.count %>            
           </li> 
         </ul>

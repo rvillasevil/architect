@@ -1,44 +1,119 @@
 <% provide(:title, 'Popular') %>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12" style="text-align: center; width: 100%; padding: 0px;">
-        <h1 style="font-size: 35px;">Lo más votado en</h1>
-      </div>
-      
-      <aside class="col-sm-4">
-          <%# render 'shared/user_info' %>
-          <%= render 'microposts/petition_short' %>
-        <section class="stats">
-          <%# render 'shared/stats' %>
-        </section>
+      <aside class="col-sm-2">
+        <div class="affix" style="width: 14%; max-width: 190px;">
+          <section class="user_info">
+            <%= render 'shared/user_info' %>
+            <%# render 'shared/plazas_info' %>          
+          </section>
+          <div class="stats">
+            <%# render 'shared/stats' %>
+          </div>
+        </div>
       </aside>
+      <div class="col-md-6">
+        <%= render 'static_pages/sigue_plaza' %> 
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
 
-      <div class="col-sm-8">
-      <% if logged_in? %>
-        <%= render 'static_pages/sigue_plaza' %>
-      <% end %>
-        <div class="home_popular" style="margin-top: 15px;">
+        <div style="background-color: white; padding-left: 10px; padding: 5px; border-bottom: 1px solid #e6e9ec;">
+          <span style="font-size: 14px;">lo más popular en <b>polittizen</b></span>
+          <span style="float: right;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="scroll_masvotados">
+          <% @posts_masvotados.first(6).each do |posts_popular| %>
+            <% @posts_popular = Micropost.where(id: posts_popular) %>
+            <% @posts_popular.first(6).each do |post_popular| %>
+              <li>
+                <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
+                  <div>
+                    <% if post_popular.picture? %>
+                      <div class="img" style="max-height: 100px;">
+                        <%= image_tag (post_popular.picture.url), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>
+                      </div>  
+                        <%= truncate(post_popular.content,length: 150, omission: '... (read)') %>
+                      
+                    <% else %>
+                      <% if post_popular.link? %>
+                        <div class= "title-link">
+                          <div class="img">
+                            <% if post_popular.photo_link != nil %>
+                              <div style="max-height: 100px;">
+                                <%= image_tag (post_popular.photo_link), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>                                
+                              </div>
+
+                            <% end %>                             
+                          </div>
+                         
+                          <% if post_popular.title_link != nil %>
+                            <%= truncate(post_popular.title_link, length: 150) %>
+                          <% end %>
+                        </div>
+                        <div class="enlace_texto" style="padding-left: 10px;">
+                          <%= link_to truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30), post_popular.link %>
+                        </div>
+                      <% else %>
+                        <%= truncate(post_popular.content, length: 200, omission: '... (read)') %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+                <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px;">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  <%= post_popular.comments.count %> comments | 
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 
+                </span>
+              </li>
+            <% end %>
+        <% end %>  
+        </div>
+        <div class="home_popular">
           <ul>
+            <li class="home"> 
+              <%= link_to "HOT", 'popular_last_day' %>
+            </li>            
             <li class="popular">
-              <%= link_to "HOME", root_url, style: "color: grey;" %>  
+              <%= link_to "HOME", root_url, style: "color: grey;" %>
             </li>
-            <li class="home">
-              <%= link_to "POPULAR", '/popular'  %>
+            <li class="popular">
+              <%= link_to "POPULAR", '/popular', style: "color: grey;" %>
             </li>
           </ul>
         </div>
         <ul class="microposts">
-          <%# render @microposts %>
-          <% @posts_masvotados.take(15).each do |posts_masvotados| %>
-          <% seven_days_ago = Time.now - 7.days %>
-          <% thirty_days_ago = Time.now - 30.days %>
-            <% @microposts = Micropost.where(id: posts_masvotados).where(created_at: 7.days.ago..Time.current).paginate(page: params[:page]) %>
-            <%= render @microposts %>
+
+        <% if @posts_masvotados.any? %>
+          <% @posts_masvotados = @posts_masvotados.each do |posts_masvotados| %>
+            <% @microposts = Micropost.where(id: posts_masvotados).where(created_at: 3.days.ago..Time.current).paginate(page: params[:page], per_page: 10) %>
+            <% @microposts.each do |micropost| %>
+              <%= render micropost %>
+            <% end %>
+
           <% end %>
-          <div class="instrucciones">
-            Para tener más post, sigue a más personas, participa en más círculos o colabora con más acciones o causas.
-          </div>
+
+          <% will_paginate @microposts %>
+          <%# if @microposts = @microposts.where(created_at: 7.days.ago..Time.current) %>
+            <%# render @microposts %>
+          <%# end %>
+          
         </ul>
+        <% else %>
+          <div class="instrucciones">
+            Aún no dispones de posts dentro de tu red política, echa un vistazo a los más populares, o empieza a seguir a otros usuarios, colabora con círculos de tu interés o donde vives y participa en acciones o apoya causas que quieras defender 
+          </div>
+           <%= link_to "Lo más votado", '/popular' %>
+        <% end %>
       </div>
+      <div class="col-sm-4">
+        <div class="affix" style="width: 25%;">
+          <%= render 'microposts/petition_short' %>
+
+          <%= render 'plazas/action_short' %>
+
+          <%= render 'plazas/causa_short' %>          
+        </div>
+      </div>
+    </div>
   </div>
-</div>

@@ -1,4 +1,4 @@
-<% provide(:title, 'loobIN') %>
+<% provide(:title, 'polittizen') %>
 <% if logged_in? %>
   <div class="container">
     <div class="row">
@@ -72,12 +72,16 @@
         </div>
         <div class="home_popular">
           <ul>
+            <li class="popular"> 
+              <%= link_to "HOT", 'popular_last_day', style: "color: grey;" %>
+            </li>            
             <li class="home">
               <%= link_to "HOME", root_url %>
             </li>
             <li class="popular">
               <%= link_to "POPULAR", '/popular', style: "color: grey;" %>
             </li>
+
           </ul>
         </div>
         <% if @feed_items.any? %>

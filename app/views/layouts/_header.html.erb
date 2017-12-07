@@ -18,7 +18,7 @@
                   </div>
                   <div class="icon_web">
                     <i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: white"></i>
-                    <span class="logo"> Círculos</span>
+                    <span class="logo"> Lobbies</span>
                   </div>
                 </div>
               <% end %>
@@ -50,11 +50,37 @@
             <li class="dropdown">
               <%= link_to '/petitions' do %>
                 <div>
+                  <% @votos_petitions = Vote.where(micropost_id: current_user.petitions_all).where(user_id: current_user).count %>
+                  <% @pendientes = current_user.petitions_all.count - @votos_petitions %>
+
                   <div class="icon_mobile">
                     <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>
+                    <% if @pendientes > 0 %>
+                      <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px; color: white; margin-left: -7px;">
+                            <b><%= @pendientes %></b>
+                      </div>
+                    <% else %>
+                      <div style="background: green; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px; color: white; margin-left: -7px;">
+                            <b><%= @pendientes %></b>
+                      </div>
+                    <% end %>                    
+                    
                   </div>
+                  
                   <div class="icon_web">
-                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i><span class="icon"> Consultas</span>                     
+                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>
+                    <% if @pendientes > 0 %>
+                      <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px; color: white; margin-left: -7px;">
+                            <b><%= @pendientes %></b>
+                      </div>
+                    <% else %>
+                      <div style="background: green; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px; color: white; margin-left: -7px;">
+                            <b><%= @pendientes %></b>
+                      </div>
+                    <% end %>
+                    <span class="icon"> Consultas</span>
+                    
+                                     
                   </div>                  
                 </div>
               <% end %>

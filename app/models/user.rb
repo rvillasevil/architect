@@ -121,10 +121,34 @@ class User < ApplicationRecord
     # Select the post where user_id
     Micropost.where("user_id IN (#{following_ids})       
                      OR user_id = :user_id
-                     OR plaza_id = null
                      OR plaza_id IN (#{plaza_ids})
                      OR id IN (#{post_from_votes})", user_id: id)
     
+  end
+
+  def petitions_public
+    Micropost.where("plaza_id is null
+                    AND petition = true ")
+  end
+
+  def petitions_all
+    # Returns a feed form following users
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id"
+    followers_ids = "SELECT follower_id FROM relationships
+                     WHERE  followed_id = :user_id"
+    #Plazas seguidas por el usuario
+    plaza_ids = "SELECT plaza_id FROM groups
+                WHERE  user_id = :user_id"
+    #Select micropost votados por tus usuarios
+    post_from_votes = "SELECT micropost_id FROM votes
+                      WHERE :user_id IN (#{followers_ids})"
+    # Select the post where user_id
+    Micropost.where(petition: true).where("user_id IN (#{following_ids})       
+                     OR user_id = :user_id
+                     OR plaza_id IN (#{plaza_ids})
+                     OR plaza_id is null
+                     OR id IN (#{post_from_votes})", user_id: id)    
   end
   
   # Follows a user.
