@@ -29,7 +29,7 @@
                 <ul style="padding: 0px; width: 100%; align-items: center;">
                   <li style="display: inline-flex; width: 80%; ">
                     <span><h3 style="font-size: 18px; margin: 0px;">
-                      <b>Círculos de 
+                      <b>Lobbies de 
                       <% @usuario = User.find(params[:user_id]) %>
                       <%= @usuario.name %>&nbsp;&nbsp;</b></h3>
                     </span>                     
@@ -112,11 +112,8 @@
         <% if @action != "true" %>
           <% if @causa != "true" %>
             <li style="border-bottom: 1px solid #eeeeee;">
-              <h5 style="margin: 0px; font-weight: 700;">Círculos administrativos</h5>
-              Los círculos administrativos corresponden con el lugar donde vives.
-            </li>
-            <li>
-              
+              <h5 style="margin: 0px; font-weight: 700;">Lobbies administrativos</h5>
+              Los lobbies administrativos corresponden con el lugar donde vives.
             </li>
             <% @plazas_administrativas = Plaza.where(name: @usuario.autonomia).or(Plaza.where(name: @usuario.ciudad)).or(Plaza.where(name: @usuario.provincia)) %>
             <% if @plazas_administrativas.any? %>
@@ -142,25 +139,25 @@
                               <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
                               <b><%= Group.where(:plaza_id => plaza.id).count %></b>&nbsp;<span class="texto_oculto">Seguidores</span> &nbsp;|
                             &nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;
-                            <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> <span class="texto_oculto">Peticiones</span> &nbsp;
+                            <b><%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %></b>&nbsp;<span class="texto_oculto">Consultas</span> &nbsp;
                             <% @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true) %>
                             <% if @peticiones.any? %>
                               <% @peticiones_votadas = Vote.where(micropost_id: @peticiones).where(user_id: current_user).count %>
                               <% @petiticiones_pendientes = (@peticiones.count - @peticiones_votadas) %>
                               <% if @petiticiones_pendientes > 0 %>
                                 <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px;">
-                                  <b><%= @petiticiones_pendientes %></b>
-                                </div>
+                                  <b><%= @petiticiones_pendientes %></b> 
+                                </div> pendientes
                               <% else %>
                                 <div style="background: green; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em; color: white; display: inline-block; font-weight: bold; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px;">
-                                  <b><%= @petiticiones_pendientes %></b>
-                                </div>                      
+                                  <b><%= @petiticiones_pendientes %></b> 
+                                </div> &nbsp;pendientes                      
                               <% end %>                        
                             <% end %>
 
 
                             &nbsp;| &nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                             &nbsp;<%= @votos = Vote.where(:micropost_id => @peticiones).count %> <span class="texto_oculto">votos totales</span>
+                             &nbsp;<b><%= @votos = Vote.where(:micropost_id => @peticiones).count %></b>&nbsp;<span class="texto_oculto">votos totales</span>
                             
 
 
@@ -202,7 +199,7 @@
 
 
             <li style="border-bottom: 1px solid #eeeeee;">
-              <h5 style="margin: 0px; font-weight: 700;">Resto de círculos</h5>
+              <h5 style="margin: 0px; font-weight: 700;">Resto de Lobbies</h5>
             </li>            
           <% else %>
             <% @plazas = @plazas.where(causa: true) %>
@@ -251,7 +248,7 @@
                       <i class="fa fa-users" aria-hidden="true"></i>&nbsp;
                       <b><%= Group.where(:plaza_id => plaza.id).count %></b>&nbsp;<span class="texto_oculto">Seguidores</span> &nbsp;|
                     &nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;
-                    <%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %> <span class="texto_oculto">Peticiones</span> &nbsp;
+                    <b><%= @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true).count %></b>&nbsp;<span class="texto_oculto">Consultas</span> &nbsp;
                     <% @peticiones = Micropost.where(:plaza_id => plaza.id).where(:petition => true) %>
                     <% if @peticiones.any? %>
                       <% @peticiones_votadas = Vote.where(micropost_id: @peticiones).where(user_id: current_user).count %>
@@ -270,7 +267,7 @@
 
 
                     | &nbsp;<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                     &nbsp;<%= @votos = Vote.where(:micropost_id => @peticiones).count %> <span class="texto_oculto">votos totales</span>
+                     &nbsp;<b><%= @votos = Vote.where(:micropost_id => @peticiones).count %></b>&nbsp;<span class="texto_oculto">votos totales</span>
                     
 
 

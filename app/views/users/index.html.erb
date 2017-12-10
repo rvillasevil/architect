@@ -13,7 +13,7 @@
 	  </aside>
 	  <div class="col-sm-7">
       <ul class="plazas" style="margin-top: 0px;">
-        <li class="search">
+        <li class="search" style="background-color: #f5f5f5;">
         	<ul class="search_form" style="width: 100%;">
 						<%= form_tag(users_path, method: :get) do %>
 						<li class="boton_search">
@@ -60,7 +60,7 @@
 	        	<% end %>
           </ul>
         </li>
-        <li style="padding: 5px; background-color: #e6ecf0; margin-top: 15px;">
+        <li style="padding: 5px; background-color: #f5f5f5; margin-top: 15px;">
 
         <% if params[:plaza_id] != nil %>
 
@@ -80,10 +80,18 @@
 													<li class="texto" style="width: 80%;">
 														<ul>
 															<li>
-																<b><%= link_to user.name, user %></b>
+																<b><%= link_to user.name, user, style: "color: #4d4d4d;" %></b>
 															</li>
-																<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
-															</li>
+															<% if user.description %>
+																<li>
+																	<div style="font-size: 13px; color: #7e7e81; padding-top: 15px;"><%= user.description %></div>
+																</li>
+															<% end %>
+															<% if user.pai %>
+																<li>
+																	<div style="font-size: 13px; color: #7e7e81; padding-top: 15px;"><%= user.description %></div>
+																</li>
+															<% end %>															
 															<li style="font-size: 12px; padding-top: 10px;">
 																<%= user.ciudad %> |
 																<%= user.autonomia %>
@@ -154,10 +162,13 @@
 													<li class="texto" style="width: 80%;">
 														<ul>
 															<li>
-																<b><%= link_to user.name, user %></b>
+																<b><%= link_to user.name, user, style: "color: #4d4d4d;" %></b>
 															</li>
-																<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
-															</li>
+															<% if user.description %>
+																<li>
+																	<div style="font-size: 13px; color: #7e7e81; padding-top: 15px;"><%= user.description %></div>
+																</li>
+															<% end %>
 															<li style="font-size: 12px; padding-top: 10px;">
 																<%= user.ciudad %> |
 																<%= user.autonomia %>
@@ -227,10 +238,13 @@
 														<li class="texto" style="width: 80%;">
 															<ul>
 																<li>
-																	<b><%= link_to user.name, user %></b>
+																	<b><%= link_to user.name, user, style: "color: #4d4d4d;" %></b>
 																</li>
-																	<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
-																</li>
+																<% if user.description %>
+																	<li>
+																		<div style="font-size: 13px; color: #7e7e81; padding-top: 15px;"><%= user.description %></div>
+																	</li>
+																<% end %>
 																<li style="font-size: 12px; padding-top: 10px;">
 																	<%= user.ciudad %> |
 																	<%= user.autonomia %>
@@ -295,10 +309,13 @@
 													<li class="texto" style="width: 80%;">
 														<ul>
 															<li>
-																<b><%= link_to user.name, user %></b>
+																<b><%= link_to user.name, user, style: "color: #4d4d4d;" %></b>
 															</li>
-																<span style="font-size: 13px; color: #7e7e81;"><%= user.description %></span>
-															</li>
+															<% if user.description %>
+																<li>
+																	<div style="font-size: 13px; color: #7e7e81; padding-top: 15px;"><%= user.description %></div>
+																</li>
+															<% end %>
 															<li style="font-size: 12px; padding-top: 10px;">
 																<%= user.ciudad %> |
 																<%= user.autonomia %>
@@ -360,8 +377,7 @@
 			
   <div class="col-sm-3">
   	<div class="affix" style="width: 20%;">
-
-		  	<div class="usuarios_sugeridos">
+		  	<div class="usuarios_sugeridos" style="border: 1px solid #e6e9ec;">
 		  		<div style="border-bottom: 1px solid #e6e9ec; padding: 10px;">
 			      <b><%= current_user.name %> hecha un vistazo a las siguientes personas:</b>
 			    </div>

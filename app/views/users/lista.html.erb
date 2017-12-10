@@ -9,14 +9,14 @@
           <%# render 'shared/stats' %>
         </section>
       </aside> 
-  		<div class="col-sm-7" style="padding-right: 5px; padding-left: 5px; margin-top: 10px;">
-  			<div class="instrucciones">
-  				<!-- Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos. --> 
-  			</div>
+  		<div class="col-sm-7" style="padding-right: 5px; padding-left: 5px;">
+  			<!--<div class="instrucciones">
+  				 Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.  
+  			</div>-->
 				<ul style="list-style: none; padding-left: 0px;">
-					<li style="width: 100%; margin-bottom: 10px;">
+					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6;">
-							<h3 style="margin: 0px;"><b>Candidatos en <%= current_user.ciudad %></b></h3>
+							<h3 style="margin: 0px;"><b>Candidatos en <%= current_user.ciudad %></b></h3><div style="text-align: right;">Saber más acerca de los candidatos</div>
 						</li>
 							<% if @candidatos_pueblo.any? %>
 								<% @candidatos_pueblo.first(20).each do |x| %>
@@ -175,10 +175,47 @@
 			</div>
 
 			<aside>
-	      <div class="col-sm-3">
-	        <h4>Nuestros candidatos</h4>
-	        <h4>Círculos recomendados para tí.</h4>
-	      </div>
+			  <div class="col-sm-3">
+			  	<div class="affix" style="width: 20%;">
+					  	<div class="usuarios_sugeridos">
+					  		<div style="border-bottom: 1px solid #e6e9ec; padding: 10px;">
+						      <b><%= current_user.name %> hecha un vistazo a las siguientes personas:</b>
+						    </div>
+					    	<% @tus_grupos = Group.where(user_id: current_user) %>
+					  		<% @tus_grupos.first(5).each do |tus_grupos| %>
+					    		<% @users_grupos = Group.where(plaza_id: tus_grupos.plaza_id) %>
+					    			<% @users_grupos.first(3).each do |users_grupos| %>
+					      			<% @users_plazas = User.where(id: users_grupos.user_id) %>
+					      			<% @plazas_users = Plaza.where(id: users_grupos.plaza_id) %>
+					      			<% @plazas_users.first(3).each do |plazas_users| %>
+					      			<% @users_plazas.first(3).each do |users_plazas| %>
+					      				<% unless current_user.following?(users_plazas) %>
+						      				<% if users_plazas != current_user %>
+							      				<% if plazas_users.name != current_user.autonomia %>
+								  						<li>
+								  							<ul style="display: inline-flex; align-items: center; padding: 5px;">
+											  					<li style="display: block; padding: 5px;">
+										  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> 
+										  						</li>
+										  						<li style="padding-left: 5px;">
+											  						<%= link_to users_plazas.name, users_plazas %> 
+											  						 en <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
+										    						<%# image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
+										    					</li>
+								  							</ul>
+								  						</li>
+								  					<% end %>
+							  					<% end %>
+					      				<% end %>
+					      			<% end %>
+					      			<% end %>
+					    		<% end %>
+					  		<% end %>  		
+					  	</div>
+
+					  	</div>  	
+			  	</div>
+				</div>
 	    </aside>
 		</div>
 	</div>

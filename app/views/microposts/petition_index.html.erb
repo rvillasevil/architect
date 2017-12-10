@@ -9,18 +9,18 @@
 
 	  <div class="col-sm-6">
 
-
-
 		  <% if @petitions.where(petition: true).any? %>
+		  <div style="border: 1px solid #dddfe2; margin-bottom: 15px;">
 				<li style="background-color: white; padding: 10px; list-style: none;">
 					<h3 style="margin: 0px; margin-bottom: 10px;  width: 70%;"><b>Tus consultas pendientes</b></h3>
 					<%= link_to "Nueva consulta", '/petition', class: "btn btn-primary btn-sm", style: "float: right; margin-top: -25px; padding: 5px; background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
 					<i class="fa fa-info" aria-hidden="true"></i>&nbsp;
 		  		Consultas que están a la espera de ser votadas por tu comunidad o por todo el mundo
 				</li>
-				<li style="background-color: white; padding: 10px; list-style: none; margin-bottom: 15px;">
+				<li style="background-color: white; padding: 10px; list-style: none;">
 					<%= link_to "Consultas ciudadanos públicas", '/petitions_public' %>
-				</li>
+				</li>		  	
+		  </div>
 		  
 		   	<% @petitions_public.each do |micropost| %>
 		   		<% if Vote.where(micropost_id: micropost).where(user_id: current_user).any? %>
@@ -38,7 +38,7 @@
 									
 									<div class="title-petition">
 										<!--  Titulo -->
-											<h3><b><%= link_to micropost.title, micropost_path(id: micropost.id), style: "color: black;" %></b></h3>
+											<h3 style="margin-top: 0px;"><b><%= link_to micropost.title, micropost_path(id: micropost.id), style: "color: black;" %></b></h3>
 									</div>
 
 									<div class="content">
@@ -48,7 +48,7 @@
 									</div>
 
 									<div class="votos_seguidores">
-										<div style="font-size: 16px"><b>Lo que opinan tus amigos</b></div>
+										<div style="font-size: 14px"><b>Lo que opinan tus amigos</b></div>
 										<% @seguidores = current_user.following.count %>
 										<% @votos_post_seguidores = Vote.where(micropost_id: micropost).where(user_id: current_user.following) %>
 										<% @votos_post_seguidores.each do |votos_seguidores| %>
@@ -116,45 +116,60 @@
 		   	<% end %>
 
 
-				<li style="background-color: white; padding: 10px; list-style: none; margin-bottom: 15px;">
-					<h3 style="margin: 0px; margin-bottom: 10px;"><b>Tus consultas ya votadas</b></h3>
-					<%= link_to "Nueva consulta", '/petition', class: "btn btn-primary btn-sm", style: "float: right; margin-top: -25px; padding: 5px; background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
-					<i class="fa fa-info fa-lg" aria-hidden="true"></i>&nbsp;
-		  		Consultas para los ciudadanos dentro de tus lobbies o creadas por tus amigos.
-				</li>
-				<li style="background-color: white; padding: 10px; list-style: none; margin-bottom: 15px;">
-					<%= link_to "Consultas ciudadanos públicas", '/petitions_public' %>
-				</li>
+				<div style="border: 1px solid #dddfe2; margin-bottom: 15px;">
+					<li style="background-color: white; padding: 10px; list-style: none;">
+						<h3 style="margin: 0px; margin-bottom: 10px;"><b>Tus consultas ya votadas</b></h3>
+						<%= link_to "Nueva consulta", '/petition', class: "btn btn-primary btn-sm", style: "float: right; margin-top: -25px; padding: 5px; background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
+						<i class="fa fa-info fa-lg" aria-hidden="true"></i>&nbsp;
+			  		Index con las consultas ya votadas y su situación.
+					</li>
+					<li style="background-color: white; padding: 10px; list-style: none;">
+						<%= link_to "Consultas ciudadanos públicas", '/petitions_public' %>
+					</li>
+				</div>
 
 		   	<% @petitions.each do |micropost| %>
 		   		<% if Vote.where(micropost_id: micropost).where(user_id: current_user).any? %>
 			   		<% if micropost.petition == true %>
 							<div class="petition_index">
-								<div class="principal">
-									<div>
-										<!--  Imagen -->
-										<% if micropost.picture? %>
-									    <div class="picture_content_petition_index"> <%= image_tag (micropost.picture.url), class: "img_petition_index" %> 
-									    </div>
-										<% end %>
-									</div>
+								<ul class="principal" style="padding-left: 0px;">
+									<li>
+										<ul style="padding-left: 0px; list-style: none; display: inline-flex; overflow: hidden;">
+											<% if micropost.picture? %>
+												<li style="min-width: 40%; width: 40%;">
+													<!--  Imagen -->
+											    <div class="picture_content_petition_index"> <%= image_tag (micropost.picture.url), class: "img_petition_index" %> 
+											    </div>
+												</li>
+											<% end %>	
+											<li>
+												<ul style="padding-left: 0px; display: block; list-style: none;">
+													<li class="title-petition">
+														<!--  Titulo -->
+														<h3 style="margin-top: 0px;"><b><%= link_to micropost.title, micropost_path(id: micropost.id), style: "color: black;" %></b></h3>
+													</li>
+													<li class="content">
+														<!--  Contenido texto -->
+														<%= truncate(micropost.content, :length => 150) %>
+														<%= link_to ".more", controller: "microposts", action: "show", id: micropost.id %>
+													</li>														
+												</ul>
+											</li>
 									
-									<div class="title-petition">
-										<!--  Titulo -->
-											<h3><b><%= link_to micropost.title, micropost_path(id: micropost.id), style: "color: black;" %></b></h3>
-									</div>
+										</ul>
+									</li>
 
-									<div class="content">
-										<!--  Contenido texto -->
-											<%= truncate(micropost.content, :length => 150) %>
-											<%= link_to ".more", controller: "microposts", action: "show", id: micropost.id %>
-									</div>
+
+									
+									
+
+									
 
 									<div class="votos_seguidores">
-										<div style="font-size: 16px"><b>Lo que opinan tus amigos</b></div>
+										<div style="font-size: 14px"><b>Lo que opinan tus amigos</b></div>
 										<% @seguidores = current_user.following.count %>
 										<% @votos_post_seguidores = Vote.where(micropost_id: micropost).where(user_id: current_user.following) %>
-										<% @votos_post_seguidores.each do |votos_seguidores| %>
+										<% @votos_post_seguidores.first(10).each do |votos_seguidores| %>
 											<% @seguido_voto = User.where(id: votos_seguidores.user_id) %>
 											<% @seguido_voto.each do |seguido| %>
 												<b><%= link_to seguido.name, seguido, {style: "color: #7e7e81;"} %></b>&nbsp;
@@ -178,14 +193,14 @@
 									</div>
 
 									<div class="usuario">
-										<ul class="usuario">
-											<li class="block">
-									      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 38 if micropost.user.foto? %>
+										<ul class="usuario" style="width: 100%; font-size: 12px;">
+											<li class="block" style="width: 5%;">
+									      <%= image_tag (micropost.user.foto.url), class: "img-circle", size: 28 if micropost.user.foto? %>
 									  	</li>
-									    <li>	
-									      <ul class="block">
-									        <li style="width: 100%;">
-									          <b><%= link_to micropost.user.name, micropost.user %></b>
+									    <li style="width: 80%;">	
+									      <ul style="padding-left: 5px;">
+									        <li style="width: 100%; padding-left: 5px;">
+									          <b><%= link_to micropost.user.name, micropost.user, style: "color: #4d4d4d;" %></b>
 
 										    	<% if micropost.hashtag1? %>
 														 sobre &nbsp; <span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #777777;"} %></b>
@@ -194,25 +209,23 @@
 														<% if micropost.plaza_id? %>
 															<% @plaza =  Plaza.where(:id => micropost.plaza_id) %>
 															<% @plaza.each do |plaza| %>
-															<li style="width: 100%;">
 																en&nbsp;&nbsp;<i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<b><%= link_to plaza.name, user_plaza_path(id: plaza, user_id: current_user), {style: "color: #777777;"} %>.</b>
-															</li>
 															<% end %>
 														<% end %>
 													</li>
+													
 										    </ul>
 										  </li>
-										</ul>
-										<ul class="" style="width: 100%; margin-top: 20px; padding-top: 10px; border-top: 1px solid #e6e9ec; padding-left: 10px;">
-											<li style="width: 50%;">
-												<%= micropost.votes.count %>&nbsp; <span class="fa fa-thumbs-o-up" aria-hidden="true"></span>&nbsp;&nbsp;votantes&nbsp;&nbsp;|&nbsp;&nbsp;<%= micropost.comments.count %>&nbsp;<span class="numbercomments"><span class="fa fa-comment-o" aria-hidden="true"></span>&nbsp;&nbsp;comentarios</span>
-										  </li>
-										  <li style="width: 30%;">
-												
+										  <li style="display: inline-flex; width: 15%; border-left: 1px solid #dddfe2; padding: 5px; line-height: 8px;">
+												<ul style="padding-left: 0px;">
+													<li style="text-align: center;">
+														<i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: green; font-size: 14px;"></i>&nbsp;<%= micropost.votes.where(like: 1).count %><div style="display: block;">defensores</div>
+												  </li>															
+												</ul>
 											</li>
-										</ul>									
+										</ul>								
 									</div>
-								</div>
+								</ul>
 							</div>
 						<% end %>
 		   		<% else %>

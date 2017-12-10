@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(content: params[:micropost][:content], title: params[:micropost][:title], petition: params[:micropost][:petition], hashtag1: params[:micropost][:hashtag1], hashtag2: params[:micropost][:hashtag2], link: params[:micropost][:link], video: params[:micropost][:video], picture: params[:micropost][:picture], plaza_id: params[:micropost][:plaza_id], title_link: title, photo_link: photo)
     if @micropost.save
       flash[:success] = "Micropost created!"
-      redirect_to root_url
+      redirect_back(fallback_location: root_url)
     else
       flash[:danger] = "Ha ocurrido un error. El contenido no puede estar vacío. En una consulta, el título y una imagen son necesarias."
       @feed_items = []

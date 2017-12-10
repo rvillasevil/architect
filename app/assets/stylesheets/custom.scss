@@ -13,7 +13,8 @@
 body {
   padding-top: 55px;
   /*background-color: #eaeeee;*/
-  background-color: #e6ecf0;
+  background-color: #f5f5f5;
+  /* Previous background color: #e6ecf0; */
   word-wrap: break-word;
   /* font-family: 'Montserrat', regular; */
   /* font-family: "PT Serif", regular; */
@@ -1289,7 +1290,7 @@ input {
     padding: 10px 10px 10px 10px;
   }
   .votos_seguidores {
-    border-top: 1px solid #dddfe2;
+    border-top: 1px solid #e6e9ec;
     padding: 10px 10px 10px 10px;
     font-size: 12px;
     line-height: 18px;
@@ -1312,7 +1313,7 @@ input {
   .usuario {
     font-size: 13px;
     color: $gray-light;
-    padding: 10px 10px;
+    padding: 0px 10px;
     list-style: none;
     ul {
       list-style: none;
@@ -1342,7 +1343,7 @@ input {
 .microposts {
   list-style: none;
   padding-left: 0px;
-  background-color: #eaeeee;
+  background-color: #f5f5f5;
   word-wrap: break-word;
   li {
     padding-top: 10px;
@@ -1970,7 +1971,7 @@ overflow: hidden;
 }
 
 .micropost_form {
-  border: 1px solid #d9d9d9;
+  border: 1px solid #dddfe2;
   background-color: white;
   /*box-shadow: 0px 5px 5px #cbcbcd;*/
   margin-bottom: 10px;

@@ -19,56 +19,58 @@
           <%= render 'shared/micropost_form' %>
         </section>
 
-        <div style="background-color: white; padding-left: 10px; padding: 5px; border-bottom: 1px solid #e6e9ec;">
-          <span style="font-size: 14px;">lo más popular en <b>polittizen</b></span>
-          <span style="float: right;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
-        </div>
-        <div class="scroll_masvotados">
-          <% @posts_masvotados.first(6).each do |posts_popular| %>
-            <% @posts_popular = Micropost.where(id: posts_popular) %>
-            <% @posts_popular.first(6).each do |post_popular| %>
-              <li>
-                <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
-                  <div>
-                    <% if post_popular.picture? %>
-                      <div class="img" style="max-height: 100px;">
-                        <%= image_tag (post_popular.picture.url), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>
-                      </div>  
-                        <%= truncate(post_popular.content,length: 150, omission: '... (read)') %>
-                      
-                    <% else %>
-                      <% if post_popular.link? %>
-                        <div class= "title-link">
-                          <div class="img">
-                            <% if post_popular.photo_link != nil %>
-                              <div style="max-height: 100px;">
-                                <%= image_tag (post_popular.photo_link), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>                                
-                              </div>
-
-                            <% end %>                             
-                          </div>
-                         
-                          <% if post_popular.title_link != nil %>
-                            <%= truncate(post_popular.title_link, length: 150) %>
-                          <% end %>
-                        </div>
-                        <div class="enlace_texto" style="padding-left: 10px;">
-                          <%= link_to truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30), post_popular.link %>
-                        </div>
+        <div style="border: 1px solid #dddfe2;">
+          <div style="background-color: white; padding-left: 10px; padding: 5px; border-bottom: 1px solid #e6e9ec;">
+            <span style="font-size: 14px;">lo más popular en <b>polittizen</b></span>
+            <span style="float: right;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+          </div>
+          <div class="scroll_masvotados">
+            <% @posts_masvotados.first(6).each do |posts_popular| %>
+              <% @posts_popular = Micropost.where(id: posts_popular) %>
+              <% @posts_popular.first(6).each do |post_popular| %>
+                <li>
+                  <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
+                    <div>
+                      <% if post_popular.picture? %>
+                        <div class="img" style="max-height: 100px;">
+                          <%= image_tag (post_popular.picture.url), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>
+                        </div>  
+                          <%= truncate(post_popular.content,length: 150, omission: '... (read)') %>
+                        
                       <% else %>
-                        <%= truncate(post_popular.content, length: 200, omission: '... (read)') %>
+                        <% if post_popular.link? %>
+                          <div class= "title-link">
+                            <div class="img">
+                              <% if post_popular.photo_link != nil %>
+                                <div style="max-height: 100px;">
+                                  <%= image_tag (post_popular.photo_link), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>                                
+                                </div>
+
+                              <% end %>                             
+                            </div>
+                           
+                            <% if post_popular.title_link != nil %>
+                              <%= truncate(post_popular.title_link, length: 150) %>
+                            <% end %>
+                          </div>
+                          <div class="enlace_texto" style="padding-left: 10px;">
+                            <%= link_to truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30), post_popular.link %>
+                          </div>
+                        <% else %>
+                          <%= truncate(post_popular.content, length: 200, omission: '... (read)') %>
+                        <% end %>
                       <% end %>
-                    <% end %>
-                  </div>
-                <% end %>
-                <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px;">
-                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                  <%= post_popular.comments.count %> comments | 
-                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 
-                </span>
-              </li>
-            <% end %>
-        <% end %>  
+                    </div>
+                  <% end %>
+                  <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px;">
+                    <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                    <%= post_popular.comments.count %> comments | 
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 
+                  </span>
+                </li>
+              <% end %>
+            <% end %>  
+          </div>
         </div>
         <div class="home_popular">
           <ul>
