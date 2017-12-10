@@ -1,12 +1,12 @@
 <li id="micropost-<%= micropost.id %>">
   <div>
     <% if micropost.title != nil %>
-        <div style="width: auto; background-color: #c2d7f9; padding: 5px; font-size: 12px; border-radius: 15px; display: inline-flex; margin-top: -15px;">
-          <i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;<b>Consulta ciudadana</b>
+        <div style="width: auto; background-color: #c2d7f9; padding: 5px; font-size: 12px; border-radius: 15px; display: inline-flex; margin-top: -15px; float: right;">
+          <i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;<b>Consulta</b>
         </div>
-        <h4>
-          <b><%= link_to micropost.title, controller: "microposts", action: "show", id: micropost.id %></b>
-        </h4>
+        <h3>
+          <b><%= link_to micropost.title, micropost_path(id: micropost), style: "color: #444;" %></b>
+        </h3>
     <% end %>
     <!-- botones de causa, consulta y acción en el encabezado -->
 <%
@@ -68,7 +68,7 @@
         <ul style="display: inline-block; list-style: none; padding-left: 5px;">
           <li style="padding-top: 5px;">
             <% if micropost.plaza_id? %>
-              <b><%= link_to micropost.user.name, micropost.user, style: "font-size: 13px;" %></b>
+              <b><%= link_to micropost.user.name, micropost.user, style: "font-size: 13px; color: #444;" %></b>
               <% @plaza =  Plaza.find_by(:id => micropost.plaza_id) %>
               <span class="plaza-seguida"> ha publicado en &nbsp;
               <% if @plaza != nil %>
@@ -87,7 +87,7 @@
 <% end %>
               <% end %>
             <% else %>
-              <b><%= link_to micropost.user.name, micropost.user %></b>
+              <b><%= link_to micropost.user.name, micropost.user, style: "color: #444;" %></b>
             <% end %>
           </li>
           <li style="display: inline-flex;">
@@ -225,7 +225,7 @@
   <!-- hashtags -->
   <li style="padding-top: 10px; text-align: center; margin: 0px; width: 35%; color: #595959;">
     <% if micropost.hashtag1? %>
-      <span class="hashtag"><b><i class="fa fa-hashtag fa-lg" aria-hidden="true"></i></b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost.hashtag1), {style: "color: #595959;"} %></span>
+      <span class="hashtag"><b><i class="fa fa-user fa-lg" aria-hidden="true" style="padding-top: 5px;"></i><i class="fa fa-user-o" aria-hidden="true" style="padding-top: 5px; margin-left: -4px;"></i>&nbsp;</b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost.hashtag1), {style: "color: #595959;"} %></span>
     <% end %>
   </li>
 

@@ -23,7 +23,7 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
-      flash[:danger] = "El contenido no puede estar vacío"
+      flash[:danger] = "Ha ocurrido un error. El contenido no puede estar vacío. En una consulta, el título y una imagen son necesarias."
       @feed_items = []
       redirect_to :back
     end

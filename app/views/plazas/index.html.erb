@@ -131,7 +131,7 @@
                           <li style="display: inline-flex;">
                             <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
                           </li>
-                          <li style="display: inline-flex;">
+                          <li style="display: inline-flex; font-size: 14px;">
                             <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
                           </li>
                           <li style="font-size: 13px; color: #7e7e81;">
@@ -240,7 +240,7 @@
                       <i class="fa fa-bolt fa-lg" aria-hidden="true"></i>&nbsp;<% @plazas = @plazas.where(action: true) %>
                     <% end %>
                   </li>
-                  <li style="display: inline-flex;">
+                  <li style="display: inline-flex; font-size: 14px;">
                     <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
                   </li>
                   <li style="font-size: 13px; color: #7e7e81;">

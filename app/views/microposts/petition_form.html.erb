@@ -17,9 +17,9 @@
         <section class="micropost_form">
             <div style="padding: 25px 10px;">
                 <% if @plaza != nil %>
-                    <h2 style="font-weight: normal;">Consulta ciudadana en <%= @nombre_plaza.name %></h2>
+                    <h1 style="font-weight: 700; margin: 0px;">Consulta ciudadana en <%= @nombre_plaza.name %></h1>
                 <% else %>
-                    <h2>Consulta ciudadana.</h2>
+                    <h1 style="font-weight: 700; margin: 0px;">Consulta ciudadana.</h1>
                 <% end %>
             </div>
  
@@ -32,22 +32,26 @@
                     <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px; border-bottom: 1px solid #f2f2f2; padding: 0px;">
                         <ul style="padding: 0px; display: inline-flex; list-style: none; width: 100%;">
                             <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div4');">
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i></i><span> Título</span>
+                                <i class="fa fa-font" aria-hidden="true"></i>&nbsp;<span>Título</span>
                             </li>
                             <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div5');">
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i></i><span> Contenido</span>
-                            </li> 
+                                <i class="fa fa-align-left" aria-hidden="true"></i>&nbsp;<span>Contenido</span>
+                            </li>
+                            <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div3');">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;<span>Imagen</span>
+                            </li>                              
                             <li style="width: 30%; text-align: center; margin: 10px; background-color: #f2f4ff; padding: 10px; border: 1px solid #dbd9db; border-radius: 10px;" onclick="divVisibility('Div6');">
-                                <i class="fa fa-arrow-down" aria-hidden="true"></i></i><span> Adjuntar</span>
-                            </li>                                                               
+                                <i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;<span>Adjuntar</span>
+                            </li>
+
                         </ul>
 
                         <div id="Div4">
                             <li style="padding: 10px; padding-bottom: 5px;s">
-                                <h3 style="font-size: 25px; font-weight: normal; margin-bottom: 0px;">Empezemos por el título</h3>
+                                <h3 style="margin-bottom: 0px;">Empezemos por el título</h3>
                             </li>
                             <li style="padding: 10px; padding-top: 0px;">
-                                <p>Describe en una sola frase sobré que quieres saber la opinión de la gente</p>
+                                <span>Describe en una sola frase sobré que quieres saber la opinión de la gente</span>
                             </li>
                             <li>
                                 <span style="padding: 10px; width: 85%;">
@@ -58,11 +62,11 @@
                             <li>
                                 <div style="padding: 10px; background-color: #f2f4ff !important; margin: 20px; border: 1px solid #dbd9db; border-radius: 10px;">
                                     <p>
-                                        <b>Que sea corto y conciso</b>
+                                        <span><b>Que sea corto y conciso</b></span>
                                     </p>
                                     <p>
-                                        Ejemplo: "Abrir centro comunitario en el barrio de Salamanca"
-                                        Esto no: "Debido al gran número de personas que se ven obligadas a vivir en la calle..."
+                                        <span>Ejemplo: "Abrir centro comunitario en el barrio de Salamanca"
+                                        Esto no: "Debido al gran número de personas que se ven obligadas a vivir en la calle..."</span>
                                     </p>
                                     <p>
                                         <b>Céntrate en la solución</b>
@@ -83,11 +87,12 @@
                         </div>
                         <div id="Div5" style="display: none;">
                             <li style="padding: 10px; padding-bottom: 5px;">
-                                <h3 style="font-size: 25px; font-weight: normal; margin-bottom: 0px;">Describe lo máximo posible tu idea.</h3>
+                                <h3 style="margin-bottom: 0px;">Describe lo máximo posible tu idea.</h3>
                             </li>
                             <li style="padding: 10px; padding-top: 0px;">
-                                <p>Recibirás mayor número de apoyos si describres lo más objetivamente el problema.</p>
-                            </li>
+                                <span>Recibirás mayor número de apoyos si describres lo más objetivamente el problema.</span>
+                            </li>                            
+
                             <li>
                                 <span style="padding: 10px; width: 85%;">
                                     <%= f.text_area :content, placeholder: "Expon tu consulta...", style: "border: 1px solid #dbd9db; width: 95%; height: 150px;" %>
@@ -122,15 +127,66 @@
                                 </div>
                             </li>                                                               
                         </div>
+
+                        <div id="Div3" style="display: none;">
+                            <li style="padding: 10px; padding-bottom: 5px;">
+                                <h3 style="margin-bottom: 0px;">Asocia una imagen a tu consulta</h3>
+                            </li>
+                            <li style="padding: 10px; padding-top: 0px;">
+                                <span>Una imagen vale más que mil palabras, utilízala para dar una imagen que la represente.</span>
+                            </li>                            
+
+                            <li style="padding: 0px; width: 100%; margin-left: 10px;">
+                                <div id="test">
+                                    <div class="wrapper" style="margin-top: 5px; padding-bottom: 10px; height: 30px;">
+                                        <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
+                                        <!-- , :required => true -->
+                                    </div>
+                                    <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="padding: 10px; background-color: #f6f4f6 !important; margin: 20px; border: 1px solid #dbd9db; border-radius: 10px;">
+                                    <p>
+                                        <b>Describe las personas afectadas y el problema qu enfrentan</b>
+                                    </p>
+                                    <p>
+                                        Los lectores son más propensos a tomar acción cuando comprenden quien está realmente afectado.
+                                    </p>
+                                    <p>
+                                        <b>Describe la solución</b>
+                                    </p>
+                                    <p>
+                                        Explica qué tiene que pasar y quién puede marcar la diferencia. Deja claro qué pasa si ganas o pierdes.
+                                    </p>
+                                    <p>
+                                        <b>Hazlo personal</b>
+                                    </p>
+                                    <p>
+                                        Es más probable que los lectores firmen y apoyen tu petición si dejas claro por qué te importa.
+                                    </p>
+                                    <p>
+                                        <b>Adjunta toda la información que necesites</b>
+                                    </p>
+                                    <p>
+                                        lorem i
+                                    </p>
+                                </div>
+                            </li>                                                               
+                        </div>
+
                         <li style="padding: 10px;">
-                            <h3 style="font-size: 25px; font-weight: normal;">Link & Video & Photo</h3>
+                            <li style="padding: 10px; padding-bottom: 5px;">
+                                <h3 style="margin-bottom: 0px;">Adjunta un Link o un Video</h3>
+                            </li>
+                            <li style="padding: 10px; padding-top: 0px;">
+                                <span>Adjunta el artículo del periodico, entrada del blog... pega directamente la dirección de la barra de direcciones, o si quieres mandar un video, es muy sencillo, copia simplemente el código del video que aparece en youtube y pégalo.</span>
+                            </li>                                                       
                         </li>                            
                         <span class="emoticons">
-
-                            <ul class="" style="display: inline-flex; list-style: none; text-align: center; width: 100%; padding-left: 0px; padding-top: 5px; margin-bottom: 5px;">
-                                <li style="width: 32%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div1');"><i class="fa fa-newspaper-o fa-lg" aria-hidden="true"></i><span> Link</span></li>  
-                                <li style="width: 32%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div2');"><i class="fa fa-video-camera fa-lg" aria hidden="true"></i><span> Video</span></li>  
-                                <li style="width: 32%; background-color: #f2f4ff; padding: 10px;" onclick="divVisibility('Div3');"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i><span> Imagen</span></li>
+                            <ul class="" style="display: inline-flex; list-style: none; text-align: center; width: 60%; padding-left: 0px; padding-top: 5px; margin-bottom: 5px;">
+                                <li style="width: 100%; border-right: 1px solid #d9d9d9;" onclick="divVisibility('Div1');"><i class="fa fa-newspaper-o fa-lg" aria-hidden="true" style="color: #0084B4;"></i><span> Add a Link</span></li>
+                                <li style="width: 100%; border-right: 1px solid #d9d9d9;" onclick="divVisibility('Div2');"><i class="fa fa-youtube fa-lg" aria-hidden="true" style="color: red;"></i><span> Video</span></li>  
                             </ul>
                         </span>                
 
@@ -161,29 +217,13 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-
-                        <div id="Div3" style="display: none; "> 
-                            <div class="share-content">
-                                <div class="iconos-share">
-                                    <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 15px;">
-                                        <li style="padding: 0px; width: 100%; margin-left: 10px;">
-                                            <div id="test">
-                                                <div class="wrapper" style="margin-top: 5px; padding-bottom: 10px; height: 30px;">
-                                                    <%= f.file_field(:picture, accept: 'image/jpeg,image/gif,image/png',  class: 'file_input') %>
-                                                </div>
-                                                <button class= "btn btn-default btn-sm"><span class="fa fa-picture-o fa-lg" aria-hidden="true"></span> Image </button>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>                                                      
+                        </div> 
+                                                                             
                     </ul>
                 </div>
                 <ul style="display: inline-flex; list-style-type: none; width: 100%; margin-bottom: 3px; padding-left: 0px;">
                     <li style="padding-top: 8px; width: 60%; margin-left: 5px; margin-right: 15px; display: inline-flex;">
-                        <i class="fa fa-hashtag" aria-hidden="true" style="padding-top: 5px;"></i>&nbsp;
+                        <i class="fa fa-comments-o" aria-hidden="true" style="padding-top: 5px;"></i>&nbsp;
                         <%= f.text_field :hashtag1, placeholder: " Hashtag...", style: "margin-bottom: 5px;" %>
                     </li>
                     <li style="width: 30%; padding-top: 5px; font-size: 11px;" >

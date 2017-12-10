@@ -5,9 +5,12 @@ class Micropost < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true
+  validates :picture, presence: true, if: "petition == true"
+  validates :title, presence: true, if: "petition == true"
   validate  :picture_size
   has_many :comments
   has_many :votes
+
 
   private
 
