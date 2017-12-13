@@ -3,7 +3,7 @@
         <div class="edit_user">
             <div class="col-md-8 col-md-offset-2">
                 <div class="new_inicio" >
-                <h1 style="font-family: 'Open Sans'; text-align: left; padding-left: 0px;">Vamos a crear tu cuenta</h1>                   
+                <h1 style=" text-align: left; padding-left: 0px; ">Vamos a crear tu cuenta</h1>                   
                   <% provide(:title, 'Sign up') %>
                   <h3 style="margin-top: 25px; text-align: left; font-weight: normal;">Resgistrarse en assemblyn es fácil y gratis; además tú eliges el momento de ser representante de algún círculo administrativo.</h3>
                     <ul class="titulo" >
@@ -45,27 +45,27 @@
                         <%= form_for(@user) do |f| %>
                         <li>
                             <%= render 'shared/error_messages', object: f.object %>
-                            <%= f.label :name, "Tu nombre", style: "color: #0084B4;" %>
+                            <%= f.label :name, "Tu nombre", style: "" %>
                             <%= f.text_field :name, class: 'form-control', :placeholder => "Tu nombre y apellidos para tu usuario" %>
                         </li>
                         <li>
-                            <%= f.label :description, style: "color: #0084B4;" %>
+                            <%= f.label :description, style: "" %>
                             <%= f.text_field :description, class: 'form-control', placeholder: "Descríbete para completar tu perfil político" %>
                         </li>
                         <li>
-                            <%= f.label :email, style: "color: #0084B4;" %>
+                            <%= f.label :email, style: "" %>
                             <%= f.email_field :email, class: 'form-control', placeholder: "Te mandaremos el correo de activación a la cuenta de correo electrónico" %>
                         </li>
                         <li>
-                            <%= f.label :foto, "Tu foto", style: "color: #0084B4;" %>
+                            <%= f.label :foto, "Tu foto", style: "" %>
                             <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png", style: "color: grey;" %>
                         </li>
                         <li>
-                            <%= f.label :password, style: "color: #0084B4;" %>
+                            <%= f.label :password, style: "" %>
                             <%= f.password_field :password, class: 'form-control' %>
                         </li>
                         <li>
-                            <%= f.label :password_confirmation, "Confirmation", style: "color: #0084B4;" %>
+                            <%= f.label :password_confirmation, "Confirmation", style: "" %>
                             <%= f.password_field :password_confirmation, class: 'form-control' %>
                             <%= f.hidden_field :plaza, :value => false %>
                             <%= f.hidden_field :activated, :value => true %>

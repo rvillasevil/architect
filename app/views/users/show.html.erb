@@ -164,7 +164,14 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            <h5 style="margin: 0px; font-weight: 700;"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Consultas ciudadanas creadas</h5>
+            <ul style="padding: 0px; display: inline-flex; width: 100%;">
+              <li style="border: none; width: 100%;">
+                <h5 style="margin: 0px; font-weight: 700;"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Consultas ciudadanas creadas</h5>                
+              </li>
+              <li style="border: none; margin-top: 5px; text-align: right; width: 25%;">
+                <%= link_to "Ver todas", petitions_public_path(user: params[:id]) %>
+              </li>
+            </ul>
           </li>
           <% @peticiones.first(5).each do |petition| %>
           <li class="lista_block">
@@ -194,7 +201,14 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            <h5 style="margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas apoyadas por <%= @user.name %></b></h5>
+            <ul style="padding: 0px; display: inline-flex; width: 100%;">
+              <li style="border: none; width: 100%;">
+                <h5 style="margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas apoyadas por <%= @user.name %></b></h5>               
+              </li>
+              <li style="border: none; margin-top: 5px; text-align: right; width: 25%;">
+                <%= link_to "Ver todas", petitions_public_path(user: params[:id], participation: true) %>
+              </li>
+            </ul>            
           </li>
           <% @votos = Vote.where(:user_id => @user.id).where(like: 1) %>
           <% @votos.first(10).each do |voto| %>
@@ -220,7 +234,15 @@
       <div class="aside_content">
         <ul class="principal">
           <li class="titulo">
-            <h5 style="margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas rechazadas por <%= @user.name %></b></h5>
+            <ul style="padding: 0px; display: inline-flex; width: 100%;">
+              <li style="border: none; width: 100%;">
+                <h5 style="margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas rechazadas por <%= @user.name %></b></h5>               
+              </li>
+              <li style="border: none; margin-top: 5px; text-align: right; width: 25%;">
+                <%= link_to "Ver todas", petitions_public_path(user: params[:id], participation: true) %>
+              </li>
+            </ul>             
+
           </li>
           <% @votos = Vote.where(:user_id => @user.id).where(dislike: 1) %>
           <% @votos.first(10).each do |voto| %>

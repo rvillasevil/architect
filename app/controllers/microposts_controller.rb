@@ -53,6 +53,7 @@ class MicropostsController < ApplicationController
   def petition_index
     @petitions = current_user.feed_petition
     @petitions_public = current_user.petitions_public
+    @petitions_all = current_user.petitions_all
     @candidates = User.find_by_sql(
       'SELECT     users.id,
       COUNT       (relationships.followed_id)
@@ -92,8 +93,9 @@ class MicropostsController < ApplicationController
   end
 
   def petition_index_public
-    @petitions = current_user.feed_petition
-    @petitions_public = current_user.petitions_public
+    @petitions_all = Micropost.where(petition: true).paginate(page: params[:page], per_page: 10)
+    @petitions = current_user.feed_petition.paginate(page: params[:page], per_page: 10)
+    @petitions_public = current_user.petitions_public.paginate(page: params[:page], per_page: 10)
   end    
 
   private

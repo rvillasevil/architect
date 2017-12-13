@@ -22,14 +22,8 @@
     <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     <%= yield %>
-    <div class="container" style="background-color: white;">
-      <div class="row" style="border-top: 1px solid blue;">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-6">
-          <%= render 'layouts/footer' %>
-          <%= debug(params) if Rails.env.development? %>
-        </div>
-      </div>
-    </div>
+    
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

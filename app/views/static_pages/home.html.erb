@@ -1,4 +1,4 @@
-<% provide(:title, 'polittizen') %>
+<% provide(:title) %>
 <% if logged_in? %>
   <div class="container">
     <div class="row">
@@ -99,9 +99,9 @@
         <div class="affix" style="width: 25%;">
           <%= render 'microposts/petition_short' %>
 
-          <%= render 'plazas/action_short' %>
+          <%# render 'plazas/action_short' %>
 
-          <%= render 'plazas/causa_short' %>          
+          <%# render 'plazas/causa_short' %>          
         </div>
       </div>
     </div>
@@ -137,13 +137,14 @@
                 <ul>
                   <li>
                     <h1 style="margin-bottom: 20px;"><i class="fa fa-university fa-3x" aria-hidden="true" style="font-size: 30px;"></i>&nbsp;&nbsp;¿Qué es Polittizen?</h1>
-                    <h5 style="margin-bottom: 40px;">Polittizen es la mezcla entre Politics y Citizens.</h5>
+                    <h5 style="margin-bottom: 40px;">Polittizen es la suma de Politics + Citizens.</h5>
                   </li>
                   <li style="margin-bottom: 50px; border-bottom: 1px solid #eeeeee;">
                     <h1 style="font-weight: lighter;">1. Uber-like para la política.</h1> 
+                    <h3>La estructura de los partidos políticos no ha cambiado nada en >100 años. ¿Que está pasando en otros sectores, como el automovil, la banca o el taxi? ¿Funcionan los partidos actuales?</h3>
                     <h3>¿Te gustaría tener la posibilidad de formar parte del gobierno de tu ciudad?</h3>
-                    <h5>polittizen nace con el objetivo de que cualquier persona tenga la posibilidad de ser un cargo público electo, olvídate de partidos políticos y de sus estructuras.</h5>
-                    <h5>Si cualquiera pudiera acceder a ser un cargo electo en su ciudad, ¿para qué servirían los actuales partidos?</h5>
+                    <h5>polittizen es una plataforma tecnológica, una red política que viene a sustituir a los partidos políticos convencionales. Una política colaborativa.</h5>
+                    <h5>Alejado de ideologías, es una herramnienta que permita reflejar todas las opiniones de cualquiera y permite una selección de candidatos entre todos los usuarios para la política activa.</h5>
                   </li>
                   <li style="margin-bottom: 50px; border-bottom: 1px solid #eeeeee;">
                     <h1 style="font-weight: lighter;">2. Red <strike>social</strike> política.</h1>
