@@ -129,7 +129,7 @@
                             <i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>
                           </li>
                           <li style="display: inline-flex; font-size: 14px;">
-                            <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
+                            <h3 style="margin: 0px;"><b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b></h3>
                           </li>
                           <li style="font-size: 13px; color: #7e7e81;">
                             <%= plaza.description %>
@@ -238,7 +238,7 @@
                     <% end %>
                   </li>
                   <li style="display: inline-flex; font-size: 14px;">
-                    <b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b>
+                    <h3 style="margin: 0px;"><b><%= link_to plaza.name, user_plaza_path(id: plaza.id) %></b></h3>
                   </li>
                   <li style="font-size: 13px; color: #7e7e81;">
                     <%= plaza.description %>

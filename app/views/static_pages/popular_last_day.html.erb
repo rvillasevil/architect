@@ -1,4 +1,4 @@
-<% provide(:title, 'Popular') %>
+<% provide(:title, 'now') %>
   <div class="container">
     <div class="row">
       <aside class="col-sm-2">
@@ -19,13 +19,13 @@
         </section>
 
         <div style="background-color: white; padding-left: 10px; padding: 5px; border-bottom: 1px solid #e6e9ec;">
-          <span style="font-size: 14px;">lo más popular en <b>polittizen</b></span>
-          <span style="float: right;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+          <span style="font-size: 14px;"><h3 style="margin: 5px; width: 70%;">lo más hot en <b>polittizen</b></h3>
+            <span style="float: right; margin-top: -20px;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span></span>
         </div>
         <div class="scroll_masvotados">
-          <% @posts_masvotados.first(6).each do |posts_popular| %>
+          <% @posts_masvotados.last(100).each do |posts_popular| %>
             <% @posts_popular = Micropost.where(id: posts_popular) %>
-            <% @posts_popular.first(6).each do |post_popular| %>
+            <% @posts_popular.last(100).each do |post_popular| %>
               <li>
                 <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
                   <div>
@@ -72,13 +72,13 @@
         <div class="home_popular">
           <ul>
             <li class="home"> 
-              <%= link_to "HOT", 'popular_last_day' %>
+              <h3 style="margin: 0px;"><%= link_to "now", 'popular_last_day' %></h3>
             </li>            
             <li class="popular">
-              <%= link_to "HOME", root_url, style: "color: grey;" %>
+              <h3 style="margin: 0px; font-size: 16px;"><%= link_to "home", root_url, style: "color: grey;" %></h3>
             </li>
             <li class="popular">
-              <%= link_to "POPULAR", '/popular', style: "color: grey;" %>
+              <h3 style="margin: 0px; font-size: 16px;"><%= link_to "popular", '/popular', style: "color: grey;" %></h3>
             </li>
           </ul>
         </div>
@@ -87,9 +87,13 @@
         <% if @posts_masvotados.any? %>
           <% @posts_masvotados = @posts_masvotados.each do |posts_masvotados| %>
             <% @microposts = Micropost.where(id: posts_masvotados).where(created_at: 3.days.ago..Time.current).paginate(page: params[:page], per_page: 10) %>
-            <% @microposts.each do |micropost| %>
-              <%= render micropost %>
-            <% end %>
+            <% if @microposts.any? %>
+              <% @microposts.each do |micropost| %>
+                <%= render micropost %>
+              <% end %>  
+            <% else %>
+              
+          <% end %>
 
           <% end %>
 
@@ -108,11 +112,7 @@
       </div>
       <div class="col-sm-4">
         <div class="affix" style="width: 25%;">
-          <%= render 'microposts/petition_short' %>
-
-          <%= render 'plazas/action_short' %>
-
-          <%= render 'plazas/causa_short' %>          
+          <%= render 'microposts/petition_short' %>        
         </div>
       </div>
     </div>

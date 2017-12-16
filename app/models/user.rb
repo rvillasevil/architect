@@ -119,15 +119,14 @@ class User < ApplicationRecord
     post_from_votes = "SELECT micropost_id FROM votes
                       WHERE :user_id IN (#{followers_ids})"
     # Select the post where user_id
-    Micropost.where("user_id IN (#{following_ids})       
+    Micropost.where(petition: true).where("user_id IN (#{following_ids})       
                      OR user_id = :user_id
                      OR plaza_id IN (#{plaza_ids})", user_id: id)
     
   end
 
   def petitions_public
-    Micropost.where("plaza_id is null
-                    AND petition = true ")
+    Micropost.where(petition: true).where("plaza_id is null")
   end
 
   def petitions

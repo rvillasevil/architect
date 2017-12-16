@@ -152,7 +152,7 @@
                 <% @microposts.first(100).take(10).each do |post| %>
                   <% if post.hashtag1.empty? %>
                   <% else %>
-                    <b><i class="fa fa-hashtag" aria-hidden="true"></i><%= link_to post.hashtag1, hashtag_micropost_path(post.hashtag1), style: "font-size: 14px; font-weight: bold;"  %></b>&nbsp;
+                    <h5 style="margin: 0px; display: inline-flex;"><b><i class="fa fa-hashtag" aria-hidden="true"></i><%= link_to post.hashtag1, hashtag_micropost_path(post.hashtag1), style: "font-size: 14px; font-weight: bold; color: #9542f4"  %></b></h5>&nbsp;
                   <% end %>  
                 <% end %>
               </li>
@@ -180,7 +180,7 @@
                 <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
               </li>
               <li class="inline" style="width: 100%;">
-                <span class="nombres"><%= link_to petition.title, micropost_path(id: petition), style: "" %></b></span>
+                <span class="nombres"><h5 style="margin: 0px; line-height: 20px;"><b><%= link_to petition.title, micropost_path(id: petition), style: "color: #1DA1F2;" %></b></span>
               </li>
               <li class="right" style="padding-top: 10px;">
                 <% @votos = Vote.where(:micropost_id => petition) %>
@@ -220,7 +220,7 @@
                     <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
                   </li>
                   <li class="inline">
-                    <span class="nombres" style="width: 100%;"><%= link_to petition.title, micropost_path(id: petition), style: "" %></b></span>
+                    <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; line-height: 20px;"><b><%= link_to petition.title, micropost_path(id: petition), style: "color:#1DA1F2;" %></b></h5></span>
                   </li>
                   <li class="right" style="padding-top: 10px;">
                   </li>
@@ -254,7 +254,7 @@
                     <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
                   </li>
                   <li class="inline" style="width: 100%;">
-                    <span class="nombres" style="width: 100%;"><%= link_to petition.title, micropost_path(id: petition), style: "" %></b></span>
+                    <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; line-height: 20px;"><b><%= link_to petition.title, micropost_path(id: petition), style: "color:#1DA1F2;" %></b></h5></span>
                   </li>
                   <li class="right" style="padding-top: 10px;">
                   </li>
@@ -287,7 +287,7 @@
                       <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
                     </li>
                     <li class="inline">
-                      <span class="nombres" style="width: 100%;"><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id), style: "" %></b></span>
+                      <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; line-height: 20px;"><b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id), style: "color:#f4ac41" %></b></span>
                     </li>
                   </ul>
                 </li>

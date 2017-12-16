@@ -50,8 +50,8 @@
             <li class="dropdown">
               <%= link_to '/petitions' do %>
                 <div>
-                  <% @votos_petitions = Vote.where(micropost_id: current_user.petitions_all).where(user_id: current_user).count %>
-                  <% @pendientes = current_user.petitions_all.count - @votos_petitions %>
+                  <% @votos_petitions = Vote.where(micropost_id: current_user.feed_petition).where(user_id: current_user).count %>
+                  <% @pendientes = current_user.feed_petition.count - @votos_petitions %>
 
                   <div class="icon_mobile">
                     <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>

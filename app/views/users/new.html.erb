@@ -3,10 +3,10 @@
         <div class="edit_user">
             <div class="col-md-8 col-md-offset-2">
                 <div class="new_inicio" >
-                <h1 style=" text-align: left; padding-left: 0px; ">Vamos a crear tu cuenta</h1>                   
+                <h1 style=" text-align: left; padding-left: 0px; font-weight: bolder;">Vamos a crear tu cuenta</h1>                   
                   <% provide(:title, 'Sign up') %>
                   <h3 style="margin-top: 25px; text-align: left; font-weight: normal;">Resgistrarse en assemblyn es fácil y gratis; además tú eliges el momento de ser representante de algún círculo administrativo.</h3>
-                    <ul class="titulo" >
+                    <ul class="titulo">
                       <li class="element" style="align-items: center;">
                         <ul style="padding-top: 20px;">
                             <li>
@@ -43,36 +43,38 @@
                     </ul>
                     <ul class="form" style="padding: 30px 0px;">
                         <%= form_for(@user) do |f| %>
-                        <li>
-                            <%= render 'shared/error_messages', object: f.object %>
-                            <%= f.label :name, "Tu nombre", style: "" %>
-                            <%= f.text_field :name, class: 'form-control', :placeholder => "Tu nombre y apellidos para tu usuario" %>
-                        </li>
-                        <li>
-                            <%= f.label :description, style: "" %>
-                            <%= f.text_field :description, class: 'form-control', placeholder: "Descríbete para completar tu perfil político" %>
-                        </li>
-                        <li>
-                            <%= f.label :email, style: "" %>
-                            <%= f.email_field :email, class: 'form-control', placeholder: "Te mandaremos el correo de activación a la cuenta de correo electrónico" %>
-                        </li>
-                        <li>
-                            <%= f.label :foto, "Tu foto", style: "" %>
-                            <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png", style: "color: grey;" %>
-                        </li>
-                        <li>
-                            <%= f.label :password, style: "" %>
-                            <%= f.password_field :password, class: 'form-control' %>
-                        </li>
-                        <li>
-                            <%= f.label :password_confirmation, "Confirmation", style: "" %>
-                            <%= f.password_field :password_confirmation, class: 'form-control' %>
-                            <%= f.hidden_field :plaza, :value => false %>
-                            <%= f.hidden_field :activated, :value => true %>
-                        </li>
-                        <li style="padding-top: 20px;"> 
-                            <%= f.submit "Crea mi cuenta", class: "btn btn-primary" %>
-                        </li>
+                        <h5>
+                            <li>
+                                <%= render 'shared/error_messages', object: f.object %>
+                                <%= f.label :name, "Tu nombre", style: "" %>
+                                <span style="font-weight: bolder;"><%= f.text_field :name, class: 'form-control', :placeholder => "Tu nombre y apellidos para tu usuario" %></span>
+                            </li>
+                            <li>
+                                <%= f.label :description, style: "" %>
+                                <span style="font-weight: bolder;"><%= f.text_area :description, style: "height: 100px;", class: 'form-control', placeholder: "Descríbete para completar de una forma política, te reto!" %></span>
+                            </li>
+                            <li>
+                                <%= f.label :email, style: "" %>
+                                <span style="font-weight: bolder;"><%= f.email_field :email, class: 'form-control', placeholder: "Te mandaremos el correo de activación a la cuenta de correo electrónico" %></span>
+                            </li>
+                            <li>
+                                <%= f.label :foto, "Tu foto", style: "" %>
+                                <span style="font-weight: bolder;"><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png", style: "color: grey;" %></span>
+                            </li>
+                            <li>
+                                <%= f.label :password, style: "" %>
+                                <span style="font-weight: bolder;"><%= f.password_field :password, class: 'form-control' %></span>
+                            </li>
+                            <li>
+                                <%= f.label :password_confirmation, "Confirmation", style: "" %>
+                                <%= f.password_field :password_confirmation, class: 'form-control' %>
+                                <%= f.hidden_field :plaza, :value => false %>
+                                <%= f.hidden_field :activated, :value => true %>
+                            </li>
+                            <li style="padding-top: 20px;"> 
+                                <%= f.submit "Crea mi cuenta", class: "btn btn-primary", style: " background-color: white; color: grey; border: 1px solid grey; font-weight: bolder;" %>
+                            </li>
+                        </h5>
                         <% end %>
                     </ul>
                 </div>

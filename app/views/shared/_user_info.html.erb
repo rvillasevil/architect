@@ -3,7 +3,7 @@
 <% @peticiones_all = Micropost.where(:petition => true) %>
 <% @plazas_grupos = Group.where(:user_id => current_user.id) %>
 
-<div class="affix" style="width: 14%; max-width: 190px;">
+<!--<div class="affix" style="width: 14%; max-width: 190px;">-->
 	<section class="plaza_stats" style="margin-top: 0px; border: 1px solid #dddfe2; border-bottom: none;">
     <div>
       <div class="background_img"></div>
@@ -39,7 +39,7 @@
 <%
 =end%>
 
-  <div class="aside_content">
+  <div class="aside_content" style="">
     <ul class="principal">
       <li class="titulo" style="padding-bottom: 3px;">
         Comunidad
@@ -73,7 +73,10 @@
       </li>
     </ul>
   </div>
-</div>
+<!--</div>-->
+
+
+
 <%
 =begin%>
   <div class="aside_content">

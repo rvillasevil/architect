@@ -1,7 +1,7 @@
 <div>
 	<% if logged_in? %>
 	 <div class="usuarios_sugeridos" style="border: 1px solid #dddfe2; padding: 10px;">
-	  <b><%= current_user.name %> hecha un vistazo a los siguientes lobbies:</b>
+	  <h3 style="margin: 0px;"><b><%= current_user.name %> hecha un vistazo a los siguientes lobbies:</b></h3>
 	 </div>
 	<% @usuarios = User.all %>
 	<% if current_user.following(@usuario) %>
@@ -29,7 +29,7 @@
               			<% else %>		
                 			<i class="fa fa-circle-o" aria-hidden="true"></i>
               			<% end %>
-										&nbsp;<b><%= link_to plaza_seguida.name, user_plaza_path(id: plaza_seguida, user_id: current_user) %></b>	
+										&nbsp;<b><h3 style="margin: 0px; padding: 5px;  font-size: 15px;"><%= link_to plaza_seguida.name, user_plaza_path(id: plaza_seguida, user_id: current_user), style: "color: #1DA1F2;" %></b></h3>	
 									</li>
 								</ul>
 							</li>

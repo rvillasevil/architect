@@ -87,7 +87,7 @@
               <h5 style="margin: 0px; font-weight: 700;">Posicion del usuario dentro del círculo</h5>
             </li>
             <li class="inline">
-              &nbsp;* Falta por introducir la posición dentro del círculo
+              &nbsp;* No disponible. Es necesario ser afiliado para ser candidato
             </li>
           </ul>
         </div>
@@ -117,7 +117,7 @@
                   <%= image_tag petition.picture.url, size: 55 if petition.picture? %>
                 </li>
                 <li class="inline" style="width: 100%;">
-                  <span class="nombres" style="width: 100%;"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
+                  <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; font-weight: 700; line-height: 20px;"><%= link_to petition.title, micropost_path(id: petition), style: "color: #1DA1F2;" %></h5></span>
                 </li>
                 <li class="right" style="align-items: center;">
                   <%# porcentaje = porcetaje de votos emitidos por seguidores de la plaza, votos_seguidores / seguidores %>
@@ -176,7 +176,7 @@
                 <%= image_tag petition.picture.url, size: 50 if petition.picture? %>
               </li>
               <li class="inline" style="width: 100%;">
-                <span class="nombres"  style="width: 100%;"><%= link_to petition.title, micropost_path(id: petition) %></b></span>
+                  <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; font-weight: 700; line-height: 20px;"><%= link_to petition.title, micropost_path(id: petition), style: "color: #1DA1F2;" %></h5></span>
               </li>
               <li class="right" style="padding-top: 10px;">
                 <% @votos = Vote.where(:micropost_id => petition) %>
@@ -222,7 +222,7 @@
                         <%= image_tag usuario.foto.url, class: "img-rounded", size: 55 if usuario.foto? %>
                       </li>
                       <li class="inline" style="width: 100%;">
-                        <span class="nombres"  style="width: 100%;"><b><%= link_to usuario.name, usuario %></b></span>
+                        <span class="nombres"  style="width: 100%;"><b><h5 style="margin: 0px; font-weight: 700;"><%= link_to usuario.name, usuario, style: "color: black;" %></b></span>
                       </li>
                       <li class="right">
                         <% if current_user.following?(usuario) %>
