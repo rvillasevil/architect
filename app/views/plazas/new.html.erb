@@ -14,10 +14,10 @@
 
   <div class="row">
     
-    <div class="col-md-6 col-md-offset-3" style="padding: 30px 10px;">
-      <h1 style="font-size: 30px; margin-bottom: 15px;">Crear</h1>
+    <div class="col-md-6 col-md-offset-3" style="padding: 30px 20px;">
+      <h1 style="font-size: 30px; margin-bottom: 15px; font-weight: bolder;">Crear</h1>
       <div class="new_inicio">
-        <div class="titulo" style="text-align: center;">
+        <div class="titulo" style="text-align: left;">
           <h3 style="margin-top: 0px;">De acuerdo, vamos a crearlo.</h3>
           <h5 style="margin-top: 25px;">Se convertirá en una forma de relacionarse entre personas.</h5>
           <h5>
@@ -63,37 +63,40 @@
 
       <%= form_for(@plaza) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-
-        <% if @causa != "true" %>
-          <% if @action != "true" %>
-            <% if @nombre != nil %>
-              <p>Círculo <b><i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: #0084B4;"></i>&nbsp;<span style="color: #0084B4;"><%= p @nombre  %></span></b></p>
-              <%= f.hidden_field :name, value: [@nombre] %>
-              <%= f.hidden_field :administrative, value: true %>
+        <h5>
+          <% if @causa != "true" %>
+            <% if @action != "true" %>
+              <% if @nombre != nil %>
+                <h3 style="margin: 0px;"><p>Lobby <b><i class="fa fa-circle-o fa-lg" aria-hidden="true" style="color: #0084B4;"></i>&nbsp;<span style="color: #0084B4;"><%= p @nombre  %></span></b></p>
+                <%= f.hidden_field :name, value: [@nombre] %>
+                <%= f.hidden_field :administrative, value: true %>
+              <% else %>
+                <%= f.label :name %> or , <%= link_to "crea tu círculo administrativo", edit_administrative_user_path( current_user) %>
+                <%= f.text_field :name, class: 'form-control' %>
+              <% end %>
             <% else %>
-              <%= f.label :name %> or , <%= link_to "crea tu círculo administrativo", edit_administrative_user_path( current_user) %>
+              <%= f.label "Nombre para tu acción" %>
               <%= f.text_field :name, class: 'form-control' %>
+              <%= f.hidden_field :action, :value => true %>
             <% end %>
           <% else %>
-            <%= f.label "Nombre para tu acción" %>
+            <%= f.label "Título para tu causa" %>
             <%= f.text_field :name, class: 'form-control' %>
-            <%= f.hidden_field :action, :value => true %>
+            <%= f.hidden_field :causa, :value => true %>
           <% end %>
-        <% else %>
-          <%= f.label "Título para tu causa" %>
-          <%= f.text_field :name, class: 'form-control' %>
-          <%= f.hidden_field :causa, :value => true %>
-        <% end %>
-
-        <%= f.label :description %>
-        <%= f.text_field :description, class: 'form-control' %>
+            </h5>
 
 
-        <%= f.label :foto, "Una imagen que lo describa" %>
-        <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
+          <%= f.label :description %>
+          <%= f.text_field :description, class: 'form-control' %>
 
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.submit "Crear", class: "btn btn-primary" %>
+
+          <%= f.label :foto, "Una imagen que lo describa" %>
+          <%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png' %>
+
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.submit "Crear", class: "btn btn-primary" %>
+        </h5>
       <% end %>
     </div>
   </div>

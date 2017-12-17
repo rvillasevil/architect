@@ -48,9 +48,9 @@
           <%= render 'shared/micropost_form' %>
         </section>
 
-        <div style="border: 1px solid #dddfe2;">
+        <div style="border: 3px solid #c9ffc6; border-radius: 10px; padding: 5px; background-color: white;">
           <div style="background-color: white; padding-left: 10px; padding: 5px;">
-            <span style="font-size: 14px;"><h3 style="margin: 5px; width: 70%;">lo más popular en <b>polittizen</b></h3>
+            <span style="font-size: 14px;"><h3 style="margin: 5px; width: 70%;">lo más popular</h3>
             <span style="float: right; margin-top: -20px;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span></span>
           </div>
           <div class="scroll_masvotados">
@@ -102,17 +102,15 @@
           </div>
         </div>
 
-        <% @array_of_hot_posts = Micropost.where(id: @array_of_hot_posts) %>
+        <% @array_of_hot_posts = Micropost.where(petition: true).where(id: @array_of_hot_posts) %>
 
-<%
-=begin%>
         <!-- los debates más calientes -->
-        <div style="border: 1px solid #dddfe2;">
-          <div style="background-color: white; padding-left: 10px; padding: 5px; border-bottom: 1px solid #e6e9ec;">
-            <span style="font-size: 14px;">los debates más hot en <b>polittizen</b></span>
-            <span style="float: right;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="hot_debate_movil" style="border: 3px solid #e2c6ff; border-radius: 10px; padding: 5px; background-color: white; margin-top: 15px;">
+          <div style="background-color: white; padding-left: 10px; padding: 5px;">
+            <span style="font-size: 14px;"><h3 style="margin: 5px; width: 70%;">los debates más hot</h3>
+            <span style="float: right; margin-top: -20px;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span></span>
           </div>        
-          <%= @array_off_hashtags %>     
+          <% @array_off_hashtags %>     
           <div class="scroll_masvotados">
             <% @array_of_hot_posts.first(10).each do |post_popular| %>
                 <li>
@@ -149,7 +147,7 @@
                       <% end %>
                     </div>
                   <% end %>
-                  <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px;">
+                  <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px; font-weight:  normal;">
                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
                     <%= post_popular.comments.count %> comments | 
                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 
@@ -158,8 +156,7 @@
             <% end %>
           </div>
         </div>
-<%
-=end%>        
+        
 
         <div class="home_popular">
           <ul>
@@ -187,7 +184,7 @@
       </div>
 
       <div class="col-sm-4">
-        <div style="background-color: white; padding: 10px; border: 1px solid #f7f8f9;">
+        <div class="hot_debate_web" style="background-color: white; padding: 10px; border: 1px solid #f7f8f9;">
           <h3 style="margin-top: 10px;">Los consultas más debatidas ahora mismo</h3>
           <ul style="padding: 0px; list-style: none;">
             <% @array_of_hot_posts.first(5).each do |micropost| %>
@@ -219,11 +216,11 @@
       
         <div style="margin-top: 15px;">
         <!--<div class="affix" style="width: 25%;">-->
-          <%= render 'microposts/petition_short' %>
+          <%# render 'microposts/petition_short' %>
 
-          <div class="hot_topics" style="background-color: white; padding: 10px; border: 1px solid #f7f8f9;">
+          <div class="hot_topics" style="background-color: white; border: 1px solid #f7f8f9;">
             <h3 style="margin-top: 10px;">Hot topics now</h3>
-            <ul style="padding: 0px; list-style: none;">
+            <ul style="list-style: none;">
               <% @array_off_hashtags.first(10).each do |hashtag| %>
                 <% unless hashtag == "" %>
                   <li style="border-bottom: 1px solid #e6e9ec; padding: 5px 0px;">
@@ -236,7 +233,7 @@
                           </h5>
                         </li>
                         <li>
-                          <span style="font-size: 12px; color: grey; font-weight: lighter;"><%= Micropost.where(hashtag1: hashtag).count %> posts lately</span>                    
+                          <span style="font-size: 12px; color: grey;"><%= Micropost.where(hashtag1: hashtag).count %> posts lately</span>                    
                         </li>                    
                       </ul>
                     </ul>

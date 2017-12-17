@@ -14,9 +14,10 @@
   				 Representantes de cada círculo administrativo. Los candidatos son aquellos que tienen una mayor compromiso dentro del círculo, expresada en número de seguidores pero también en forma de propuestas y votos.  
   			</div>-->
 				<ul style="list-style: none; padding-left: 0px;">
+
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6;">
-							<h3 style="margin: 0px;"><b>Candidatos en <%= current_user.ciudad %></b></h3><div style="text-align: right;">Saber más acerca de los candidatos</div>
+							<h3 style="margin: 5px;"><b>Candidatos en <%= current_user.ciudad %></b></h3><div style="text-align: right;">Saber más acerca de los candidatos</div>
 						</li>
 							<% if @candidatos_pueblo.any? %>
 								<% @candidatos_pueblo.first(20).each do |x| %>
@@ -27,10 +28,10 @@
 									    	<li style="padding-top: 10px;">
 									    		<%= image_tag candidate.foto.url, class: "img-circle", size: 55 if candidate.foto? %>
 									    	</li>
-									    	<li style="width: 100%;">
+									    	<li style="width: 60%;">
 									    		<ul class="texto">
-									    			<li style="width: 90%;">
-										    		<b><%= link_to candidate.name, candidate %></b>
+									    			<li style="">
+										    			<h3 style="margin: 0px; font-size: 16px;"><b><%= link_to candidate.name, candidate %></b></h3>
 										    		</li>
 										    		<li style="font-size: 13px;">
 										    			<b><%= candidate.followers.count %> seguidores.</b>
@@ -50,7 +51,7 @@
 											    	<% else %>
 											    		
 											    		<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 0px 0px; font-size: 13px;">
-																El círculo no está creado aún <%= link_to "Créalo", new_user_plaza_path(current_user)  %>
+																El círculo no está creado aún <%= link_to "Créalo", new_user_plaza_path(current_user, name: current_user.ciudad)  %>
 															</div> 
 											    	<% end %>
 										    	</ul>
@@ -74,7 +75,7 @@
 
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<h3 style="margin: 0px;"><b>Candidatos en <%= current_user.autonomia %></b></h3>
+							<h3 style="margin: 5px;"><b>Candidatos en <%= current_user.autonomia %></b></h3>
 						</li>
 								<% @candidatos_autonomia.take(20).each do |x| %>
 									<% @user = User.where(:id => x.id).where(:autonomia => current_user.autonomia) %>
@@ -83,10 +84,10 @@
 									    	<li style="padding-top: 10px;">
 									    		<%= image_tag candidate.foto.url, class: "img-circle", size: 55 if candidate.foto? %>
 									    	</li>
-									    	<li style="width: 100%;">
+									    	<li style="width: 60%;">
 									    		<ul class="texto">
 									    			<li  style="width: 90%;">
-										    		<b><%= link_to candidate.name, candidate %></b>
+										    			<h3 style="margin: 0px; font-size: 16px;"><b><b><%= link_to candidate.name, candidate %></b></h3>
 										    		</li>
 										    		<li style="font-size: 13px;">
 										    			<b><%= candidate.followers.count %> seguidores.</b>
@@ -106,7 +107,7 @@
 											    	<% else %>
 											    		 
 											    		<div class="sigue_plaza" style="background-color: #ffffcc; border-radius: 5px; padding: 0px 0px; font-size: 13px;">
-																El círculo no está creado aún <%= link_to "Créalo", new_user_plaza_path(current_user)  %>
+																El círculo no está creado aún <%= link_to "Créalo", new_user_plaza_path(current_user, name: current_user.provincia)  %>
 															</div> 
 											    	<% end %>
 										    	</ul>
@@ -129,7 +130,7 @@
 					
 					<li style="width: 100%;">
 						<li style="background-color: white; padding: 10px; border-bottom: 1px solid #e6e6e6; margin-top: 20px;">
-							<h3 style="margin: 0px;">Candidates en el Mundo</h3>
+							<h3 style="margin: 5px;">Candidatos en España</h3>
 						</li>
 								<% @candidatos_mundo.take(20).each do |x| %>
 									<% @user = User.where(:id => x.id) %>
@@ -138,10 +139,10 @@
 									    	<li style="padding-top: 10px;">
 									    		<%= image_tag candidate.foto.url, class: "img-circle", size: 55 if candidate.foto? %>
 									    	</li>
-									    	<li style="width: 100%;">
+									    	<li style="width: 60%;">
 									    		<ul class="texto">
 									    			<li style="width: 90%;">
-										    		<b><%= link_to candidate.name, candidate %></b>
+										    			<h3 style="margin: 0px; font-size: 16px;"><b><b><%= link_to candidate.name, candidate %></b></h3>
 										    		</li>
 										    		<li style="font-size: 13px;">
 										    			<b><%= candidate.followers.count %> seguidores.</b>
@@ -171,15 +172,16 @@
 								    <% end %>
 								<% end %>
 					</li>
+
 				</ul>
 			</div>
 
 			<aside>
 			  <div class="col-sm-3">
-			  	<div class="affix" style="width: 20%;">
+			  	<!--<div class="affix" style="width: 20%;">-->
 					  	<div class="usuarios_sugeridos">
 					  		<div style="border-bottom: 1px solid #e6e9ec; padding: 10px;">
-						      <b><%= current_user.name %> hecha un vistazo a las siguientes personas:</b>
+						      <h5 style="margin: 0px; line-height: 18px;"><b><%= current_user.name %> quizá conozcas a las siguientes personas:</b></h5>
 						    </div>
 					    	<% @tus_grupos = Group.where(user_id: current_user) %>
 					  		<% @tus_grupos.first(5).each do |tus_grupos| %>
@@ -193,13 +195,13 @@
 						      				<% if users_plazas != current_user %>
 							      				<% if plazas_users.name != current_user.autonomia %>
 								  						<li>
-								  							<ul style="display: inline-flex; align-items: center; padding: 5px;">
+								  							<ul class="texto" style="display: inline-flex; align-items: center;">
 											  					<li style="display: block; padding: 5px;">
 										  							<%= image_tag (users_plazas.foto.url), class: "img-circle", size: 45 if users_plazas.foto? if users_plazas != current_user %> 
 										  						</li>
 										  						<li style="padding-left: 5px;">
-											  						<%= link_to users_plazas.name, users_plazas %> 
-											  						 en <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %>
+											  						<h5 style="margin: 0px; font-weight: normal; display: inline-flex; font-weight: bold; line-height: 18px;"> <%= link_to users_plazas.name, users_plazas %></h5> 
+											  						 en <i class="fa fa-circle-o" aria-hidden="true"></i>&nbsp;<h5 style="margin: 0px; font-weight: normal; display: inline-flex; font-weight: bold;"><%= link_to plazas_users.name, user_plaza_path(user_id: current_user, id: plazas_users) %></h5>
 										    						<%# image_tag (plazas_users.foto.url), class: "img-circle", size: 45 if plazas_users.foto? if users_plazas != current_user %>
 										    					</li>
 								  							</ul>
@@ -214,7 +216,7 @@
 					  	</div>
 
 					  	</div>  	
-			  	</div>
+			  	<!--</div>-->
 				</div>
 	    </aside>
 		</div>
