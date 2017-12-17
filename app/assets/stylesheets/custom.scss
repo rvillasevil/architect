@@ -383,6 +383,7 @@ footer ul li {
     background-size: cover;
     background-position: center center;
     height: 30vw;
+    min-height: 200px;
     width: 100%;  
   }
   .imagen_principal {
@@ -394,6 +395,15 @@ footer ul li {
     .container-fluid {
     padding: 10px;
     }      
+  }
+
+  .que_es {
+    background-color: #1DA1F2;
+    color: white;
+    padding: 150px 200px;
+    @media (max-width: 992px) {
+      padding: 20px;
+    }
   }
 
   @media (max-width: 992px) {
@@ -409,7 +419,7 @@ footer ul li {
     .imagen_principal {
       font-size: 16px;
       .container-fluid {
-        left: 180px;
+        left: 120px;
       }
     }
   }
