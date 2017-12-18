@@ -176,9 +176,62 @@
           <%= render 'shared/feed' %>
         <% else %>
           <div class="instrucciones">
-            Aún no dispones de posts dentro de tu red política, echa un vistazo a los más populares, o empieza a seguir a otros usuarios, colabora con círculos de tu interés o donde vives y participa en acciones o apoya causas que quieras defender 
+            <h5>Aún no dispones de posts dentro de tu red política, echa un vistazo a los más populares, empieza a seguir a otros usuarios, echa un vistazo a los lobbies que más te interesen o consulta los candidatos que hay en tu localidad. </br>
+          
+          <b><%= link_to "Lo más votado", '/popular' %> o mira los debates más activos:</h5></b>
           </div>
-           <%= link_to "Lo más votado", '/popular' %>
+
+          <div class="hot_debate_movil" style="border: 3px solid #e2c6ff; border-radius: 10px; padding: 5px; background-color: white; margin-top: 15px; display: block;">
+          <div style="background-color: white; padding-left: 10px; padding: 5px;">
+            <span style="font-size: 14px;"><h3 style="margin: 5px; width: 70%;">los debates más hot</h3>
+            <span style="float: right; margin-top: -20px;">Scroll right &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span></span>
+          </div>        
+          <% @array_off_hashtags %>     
+          <div class="scroll_masvotados">
+            <% @array_of_hot_posts.first(10).each do |post_popular| %>
+                <li>
+                  <%= link_to micropost_path(id: post_popular), style: "color: black;" do %>
+                    <div>
+                      <% if post_popular.picture? %>
+                        <div class="img" style="max-height: 100px;">
+                          <%= image_tag (post_popular.picture.url), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>
+                        </div>  
+                          <%= truncate(post_popular.content,length: 150, omission: '... (read)') %>
+                        
+                      <% else %>
+                        <% if post_popular.link? %>
+                          <div class= "title-link">
+                            <div class="img">
+                              <% if post_popular.photo_link != nil %>
+                                <div style="max-height: 100px;">
+                                  <%= image_tag (post_popular.photo_link), class: "img", size: 200, style: "position: absolute, bottom: 0px; width: 100%; margin-top: -50px;" %>                                
+                                </div>
+
+                              <% end %>                             
+                            </div>
+                           
+                            <% if post_popular.title_link != nil %>
+                              <%= truncate(post_popular.title_link, length: 150) %>
+                            <% end %>
+                          </div>
+                          <div class="enlace_texto" style="padding-left: 10px;">
+                            <%= link_to truncate(post_popular.link.scan( /([^>]*)./).first.last, :length => 30), post_popular.link %>
+                          </div>
+                        <% else %>
+                          <%= truncate(post_popular.content, length: 200, omission: '... (read)') %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                  <span style="color: grey; font-size: 12px; float: bottom; padding-left: 10px; font-weight:  normal;">
+                    <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                    <%= post_popular.comments.count %> comments | 
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><i class="fa fa-thumbs-o-down" aria-hidden="true"></i>&nbsp;<%= post_popular.votes.count %> points 
+                  </span>
+                </li>
+            <% end %>
+          </div>
+        </div>
         <% end %>
 
       </div>
@@ -296,13 +349,13 @@
                     ¿Que está pasando en otros sectores, como el automovil, la banca o el taxi? </br></h3>
                     <h5 style="padding-bottom: 10px;">polittizen es una plataforma tecnológica, una red política que viene a complementar la política convencional. Una política colaborativa. Todos podemos ser candidatos, entre todos elegimos y entre todos creamos nuestras políticas.</h5>
                   </li>
-                  <li style="margin-bottom: 50px; border: 5px solid #1DA1F2; border-radius: 20px; padding: 10px;">
+                  <li style="margin-bottom: 50px; border: 5px solid #f4ac41; border-radius: 20px; padding: 10px;">
                     <h1 style="font-weight: lighter;">2. Red <strike>social</strike> política.</h1>
                     <h3>Un lugar donde crear tu identidad política.</h3>
                     <h3>polittizen es una red de comunicación entre personas formada por todas las identidades políticas.</h3>
                     <h5 style="padding-bottom: 10px;">Millones de personas de todos los paises del mundo no se sienten identificadas por sus políticos/politicas, y muchos de ellos estarían dispuestos a cambiar eso.</h5>
                   </li>
-                  <li style="margin-bottom: 50px; border: 5px solid #1DA1F2; border-radius: 20px; padding: 10px;">
+                  <li style="margin-bottom: 50px; border: 5px solid #e2c6ff; border-radius: 20px; padding: 10px;">
                     <h1 style="font-weight: lighter;">3. Tecnología y futuro.</h1> 
                     <h3>El futuro va a suponer importantes cambios en nuestra sociedad, y necesitamos a los mejores para que se hagan cargo.</h3><h5>La toma de decisiones que nos afecta a todos cada vez será más compleja y necesitamos de herramientas tecnológicas que nos permitan alcanzar el desarrollo social y economico y una mayor igualdad.</h5>
                     <h5 style="padding-bottom: 10px;">Apostamos por un cambio en la concepción de partido político y su sustitución por herramientas basadas en tecnologías que aporten eficiencia, legitimidad y una mayor libertad.</h5>

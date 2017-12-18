@@ -221,7 +221,8 @@
 										        <li style="width: 100%; padding-left: 5px; padding-right: 5px;">
 										          <b><%= link_to micropost.user.name, micropost.user, style: "color: #4d4d4d;" %></b>
 												    	<% if micropost.hashtag1? %>
-																 sobre &nbsp; <span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #777777;"} %></b>
+																 sobre &nbsp;<i class="fa fa-comments-o" style="font-size: 16px; color: #9542f4;"></i>
+                            		<b><%= link_to micropost.hashtag1, hashtag_micropost_path(id: micropost.hashtag1), style: "color: #9542f4;" %></b>
 															 <% end %>
 
 																<% if micropost.plaza_id? %>
@@ -410,7 +411,8 @@
 										        <li style="width: 100%; padding-left: 5px; padding-right: 5px;">
 										          <b><%= link_to micropost.user.name, micropost.user, style: "color: #4d4d4d;" %></b>
 												    	<% if micropost.hashtag1? %>
-																 sobre &nbsp; <span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #777777;"} %></b>
+																 sobre &nbsp; <i class="fa fa-comments-o" style="font-size: 16px; color: #9542f4;"></i>
+                            		<b><%= link_to micropost.hashtag1, hashtag_micropost_path(id: micropost.hashtag1), style: "color: #9542f4;" %></b>
 															 <% end %>
 
 																<% if micropost.plaza_id? %>
@@ -716,7 +718,8 @@
 										        <li style="width: 100%; padding-left: 5px; padding-right: 5px;">
 										          <b><%= link_to micropost.user.name, micropost.user, style: "color: #4d4d4d;" %></b>
 												    	<% if micropost.hashtag1? %>
-																 sobre &nbsp; <span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to micropost.hashtag1, hashtag_micropost_path(micropost), {style: "color: #777777;"} %></b>
+																 sobre &nbsp; <i class="fa fa-comments-o" style="font-size: 16px; color: #9542f4;"></i>
+                            		<b><%= link_to micropost.hashtag1, hashtag_micropost_path(id: micropost.hashtag1), style: "color: #9542f4;" %></b>
 															 <% end %>
 
 																<% if micropost.plaza_id? %>

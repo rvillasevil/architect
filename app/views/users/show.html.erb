@@ -17,7 +17,7 @@
                     <ul style="list-style: none; padding: 0px;">
                       <li>
                         <div class="plaza_name">
-                          <%= @user.name %>
+                          <h3 style="margin: 0px; font-weight: bolder; font-size: 22px;"><%= @user.name %></h3>
                         </div>
                       </li>
                       <% if @user.description? %>
@@ -139,7 +139,18 @@
             </li>
           </ul>
         </div>
-      <% end %>      
+      <% end %>
+
+        <div class="aside_content">
+          <ul class="inline" style="margin-bottom: 0px;">
+            <li class="titulo">
+              <h5 style="margin: 0px; font-weight: 700;">Video presentación candidato</h5>             
+            </li>
+            <li class="lista_block" style="position: absolute; right: 20px; padding-top: 5px; padding-right: 0px;">
+               * En desarrollo
+            </li>
+          </ul>
+        </div>          
 
       <div class="aside_content">
         <ul class="principal">
@@ -152,7 +163,7 @@
                 <% @microposts.first(100).take(10).each do |post| %>
                   <% if post.hashtag1.empty? %>
                   <% else %>
-                    <h5 style="margin: 0px; display: inline-flex;"><b><i class="fa fa-hashtag" aria-hidden="true"></i><%= link_to post.hashtag1, hashtag_micropost_path(post.hashtag1), style: "font-size: 14px; font-weight: bold; color: #9542f4"  %></b></h5>&nbsp;
+                    <h5 style="margin: 0px; display: inline-flex;"><b><i class="fa fa-comments-o" style="font-size: 16px; color: #9542f4;"></i> <%= link_to post.hashtag1, hashtag_micropost_path(post.hashtag1), style: "font-size: 13px; font-weight: bold; color: #9542f4"  %></b></h5>&nbsp;|&nbsp;
                   <% end %>  
                 <% end %>
               </li>
@@ -206,7 +217,7 @@
                 <h5 style="margin: 0px;"><b><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;Iniciativas apoyadas por <%= @user.name %></b></h5>               
               </li>
               <li style="border: none; margin-top: 5px; text-align: right; width: 25%;">
-                <%= link_to "Ver todas", petitions_public_path(user: params[:id], participation: true) %>
+                <%= link_to "Ver todas", petitions_public_path(user: params[:id], participation: :like) %>
               </li>
             </ul>            
           </li>
@@ -272,7 +283,7 @@
               <li style="width: 80%; border: 0px; display: inline-flex;">
             <h5 style="margin: 0px;"><i class="fa fa-circle-o fa-lg" aria-hidden="true"></i>&nbsp;<b>Lobbies en los que participa <%= @user.name %></b></h5>
               </li>
-              <li style="position: absolute; right: 30px; border: 0px;">
+              <li style="position: absolute; right: 25px; border: 0px;">
                 <span style=""><%= link_to "Ver todos", user_plazas_path(user_id: @user) %></span>
               </li>
             </ul>
@@ -287,7 +298,7 @@
                       <%= image_tag plaza.foto.url, class: "img-circle", size: 55 if plaza.foto? %>
                     </li>
                     <li class="inline">
-                      <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; line-height: 20px;"><b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id), style: "color:#f4ac41" %></b></span>
+                      <span class="nombres" style="width: 100%;"><h5 style="margin: 0px; line-height: 20px;"><b><%= link_to plaza.name, user_plaza_path(id: plaza.id, user_id: current_user.id), style: "color:#444" %></b></span>
                     </li>
                   </ul>
                 </li>

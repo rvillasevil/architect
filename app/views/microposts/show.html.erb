@@ -52,7 +52,8 @@
                           <b><%= link_to @micropost.user.name, @micropost.user %></b>
                         <% end %>                          
                         <% if @micropost.hashtag1? %><span style="font-size: 13px; line-height: 17px; margin: 0px;">
-                          &nbsp;&nbsp;|&nbsp;&nbsp;<span class="fa fa-tags" aria-hidden="true"></span>&nbsp;<b><%= link_to @micropost.hashtag1, hashtag_micropost_path(@micropost), {style: "color: #777777;"} %></b></span>
+                          &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-comments-o" style="color: #9542f4;"></i>
+                                <b><%= link_to @micropost.hashtag1, hashtag_micropost_path(id: @micropost.hashtag1), style: "color: #9542f4;" %></b>
                         <% end %>
                           </span>
                         
@@ -71,7 +72,7 @@
           <!--  Título -->
           <% if @micropost.title %>
             <div class="title_show">
-              <h1 style="margin: 0px; font-size: 40px;"><b><%= @micropost.title %></b></h1>
+              <h1 style="margin: 0px; font-size: 30px;"><b><%= @micropost.title %></b></h1>
             </div>
           <% else %>
           <% end %>          
@@ -240,7 +241,9 @@
 
             <!-- comentarios -->
             <li style="padding-top: 10px; text-align: right;">
-              <span class="numbercomments"><i class="fa fa-comment-o fa-lg" aria-hidden="true"></i>          <%= @micropost.comments.count %> comentarios</span>
+              <span class="numbercomments" style="font-size: 13px;">
+                <span style="color:#1DA1F2; font-size: 14px;"><i class="fa fa-comment-o" style="padding: 0px; color: #1DA1F2;" aria-hidden="true" style=""></i>&nbsp;<b><%= @micropost.comments.count %></b></span>
+              </span>
             </li>
 
           </ul>
@@ -287,17 +290,17 @@
                 <% @voto_comentario = @votos_comentario.find_by(user_id: comment.user_id) %>
                 <% if @voto_comentario != nil %>
                   <% if @voto_comentario.like == 1 %>
-                    <ul class="comentario" style="margin-top: 10px; padding: 5px; background-color: #f7f9ef; border-radius: 15px;">
-                      <li class="imagen" style="background-color: #f7f9ef;">
+                    <ul class="comentario" style="margin-top: 10px; padding: 5px;  border-radius: 15px; border: 3px solid #acf9c1; margin-bottom: 5px;">
+                      <li class="imagen" style="">
                         <%= image_tag (comment.user.foto.url), class: "img-circle", size: 40 if comment.user.foto? %>&nbsp;<span><%= link_to comment.user.name, comment.user %></span>
                       </li>                    
-                      <li style="padding: 0px; background-color: #f7f9ef;">
-                        <ul class="texto_comentario" style="background-color: #f7f9ef;">
-                          <li style="padding: 0px; background-color: #f7f9ef;">
+                      <li style="padding: 0px;">
+                        <ul class="texto_comentario" style="">
+                          <li style="padding: 0px;">
                             <%= simple_format(comment.contenido) %>
                           </li>
                           <% if logged_in? %>
-                          <li class="form_reply" style="margin: 0px; margin-bottom: 10px; background-color: #f7f9ef;">
+                          <li class="form_reply" style="margin: 0px; margin-bottom: 10px;">
                             <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
                               <% @comment = comment %>
                               <span style="color: #337ab7; font-size: 12px;">Reply</span><span class="timestamp" style="font-size: 11px; margin: 0px; margin-top: 10px;">&nbsp;&nbsp;|&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %></span><%= render 'comments/comment_form', f: f %>
@@ -311,17 +314,17 @@
                     </ul>
                   <% else %>
                     <% if @voto_comentario.dislike == 1 %>
-                      <ul class="comentario" style="margin-top: 10px; padding: 5px; background-color: #f9efef; border-radius: 15px;">
-                        <li class="imagen" style="background-color: #f9efef;">
+                      <ul class="comentario" style="margin-top: 10px; padding: 5px; /*background-color: #f9efef;*/ border-radius: 15px; border: 3px solid #f7cdcd; margin-bottom: 5px;">
+                        <li class="imagen" style="">
                           <%= image_tag (comment.user.foto.url), class: "img-circle", size: 40 if comment.user.foto? %>&nbsp;<span><%= link_to comment.user.name, comment.user %></span>
                         </li>                    
-                        <li style="padding: 0px; background-color: #f9efef;">
-                          <ul class="texto_comentario" style="background-color: #f9efef;">
-                            <li style="padding: 0px; background-color: #f9efef;">
+                        <li style="padding: 0px;">
+                          <ul class="texto_comentario" style="">
+                            <li style="padding: 0px;">
                               <%= simple_format(comment.contenido) %>
                             </li>
                             <% if logged_in? %>
-                            <li class="form_reply" style="margin: 0px; margin-bottom: 10px; background-color: #f9efef;">
+                            <li class="form_reply" style="margin: 0px; margin-bottom: 10px;">
                               <%= form_for([@micropost, Comment.new], remote: true) do |f| %>
                                 <% @comment = comment %>
                                 <span style="color: #337ab7; font-size: 12px;">Reply</span><span class="timestamp" style="font-size: 11px; margin: 0px; margin-top: 10px;">&nbsp;&nbsp;|&nbsp;&nbsp;<%= time_ago_in_words(comment.created_at) %></span><%= render 'comments/comment_form', f: f %>
@@ -339,7 +342,7 @@
                 
                   <% end %>
                 <% else %>
-                  <ul class="comentario" style="margin-top: 10px; padding: 5px; background-color: #f0edff; border-radius: 15px;">
+                  <ul class="comentario" style="margin-top: 10px; padding: 5px; background-color: #f0edff; border-radius: 15px; border: 3px solid #deebfc;">
                     <li class="imagen" style="background-color: #f0edff;">
                       <%= image_tag (comment.user.foto.url), class: "img-circle", size: 40 if comment.user.foto? %>&nbsp;<span><%= link_to comment.user.name, comment.user %></span>
                     </li>                    

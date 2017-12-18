@@ -582,6 +582,15 @@ footer ul li {
       font-size: 32px;
     }
   }
+  h5 {
+    margin: 5px;
+  }
+  input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    margin-bottom: 15px;
+    width: 100%;
+    @include box_sizing;
+  }  
 }
 
 /* sidebar */
@@ -806,7 +815,7 @@ aside {
 
 .plaza_stats {
   background-color: white;
-  border: 1px solid #dddfe2; 
+  border: 1px solid #f7f8f9; 
 
   .background_img {
     background-image: url('fondo_ciudad_user.jpg');
@@ -848,9 +857,11 @@ aside {
     padding: 10px 10px;
     font-size: 22px;
     /*font-family: Georgia, sans-serif, serif;*/
-    font-weight: 150;
     line-height: 25px;
     letter-spacing: normal;
+    h3 {
+      font-weight: 18px;
+    }
   }
   .plaza_stats {
     display: block;
@@ -866,6 +877,9 @@ aside {
     .plaza_stats {
       margin-top: 0px;
       margin-bottom: 12px;
+      h3 {
+        font-weight: 18px;
+      }
     }
     li.texto {
       text-align: left;
@@ -939,8 +953,8 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
+  width: 100%;
   @include box_sizing;
 }
 
