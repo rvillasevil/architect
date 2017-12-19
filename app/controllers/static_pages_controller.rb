@@ -90,10 +90,11 @@ require 'will_paginate/array'
 
       @array_of_hot_posts = [@a_number, @b_number, @c_number, @d_number, @e_number, @f_number, @g_number, @h_number, @i_number, @j_number,]
 
+      
       @lasts_hashtags = Micropost.last(100)
-      @hot_hashtags = @lasts_hashtags.map(&:hashtag1)
+      @last_posts = Micropost.order('created_at DESC').take(100)
+      @hot_hashtags = @last_posts.map(&:hashtag1)
 
-      @hot_hashtags_array = @hot_hashtags.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
       @hot_hashtags_numero = @hot_hashtags.group_by(&:to_s).values.max_by(&:size).try(:first)
 
       @hashtag1_array = @hot_hashtags - [@hot_hashtags_numero]
@@ -126,7 +127,7 @@ require 'will_paginate/array'
       @hashtag10_array = @hashtag9_array - [@hashtag9]
       @hashtag10 = @hashtag10_array.group_by(&:to_s).values.max_by(&:size).try(:first) 
 
-      @array_off_hashtags = [@hashtag1, @hashtag2, @hashtag3, @hashtag4, @hashtag5, @hashtag6, @hashtag7, @hashtag8, @hashtag9, @hashtag10]     
+      @array_off_hashtags = [@hot_hashtags_numero, @hashtag1, @hashtag2, @hashtag3, @hashtag4, @hashtag5, @hashtag6, @hashtag7, @hashtag8, @hashtag9, @hashtag10]     
 
     end
   end

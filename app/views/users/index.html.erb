@@ -71,7 +71,7 @@
 		          <div class="elementos">
 		          	<% @users.first(20).each do |user| %>
 		          		<%# if user != current_user %>
-			          		<ul class="master">
+			          		<ul class="master" style="">
 			          			<li style="border-bottom: 1px solid #dddfe2; width: auto; ">
 			          				<ul class="foto_texto">
 					          			<li class="foto">
@@ -88,8 +88,10 @@
 																</li>
 															<% end %>														
 															<li style="font-size: 12px; padding-top: 10px;">
-																<%= user.ciudad %> |
+																<% if user.candidate == true %>
+																Candidato en <%= user.ciudad %> |
 																<%= user.autonomia %>
+																<% end %>
 															</li>
 														</ul>
 													</li>	          					
@@ -102,7 +104,7 @@
 															<% if current_user.following?(user) %>
 																<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white; border-radius: 20px;"><span style="font-size: 13px; ">Siguiendo</span></button>
 															<% else %>
-																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Apoyar", user, {style: "color: white"} %></span>
 																</button>
 															<% end %>
 														<% end %>
@@ -165,8 +167,10 @@
 																</li>
 															<% end %>
 															<li style="font-size: 12px; padding-top: 10px;">
-																<%= user.ciudad %> |
+																<% if user.candidate == true %>
+																Candidato en <%= user.ciudad %> |
 																<%= user.autonomia %>
+																<% end %>
 															</li>
 														</ul>
 													</li>	          					
@@ -179,7 +183,7 @@
 															<% if current_user.following?(user) %>
 																<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white; border-radius: 20px;"><span style="font-size: 13px; ">Siguiendo</span></button>
 															<% else %>
-																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+																<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Apoyar", user, {style: "color: white"} %></span>
 																</button>
 															<% end %>
 														<% end %>
@@ -241,8 +245,10 @@
 																	</li>
 																<% end %>
 																<li style="font-size: 12px; padding-top: 10px;">
-																	<%= user.ciudad %> |
+																<% if user.candidate == true %>
+																	Candidato en <%= user.ciudad %> |
 																	<%= user.autonomia %>
+																<% end %>
 																</li>
 															</ul>
 														</li>	          					
@@ -255,7 +261,7 @@
 																<% if current_user.following?(user) %>
 																	<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white;  border-radius: 20px;"><span style="font-size: 13px; ">Siguiendo</span></button>
 																<% else %>
-																	<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+																	<button type="button" class="btn btn-primary btn-sm"><span style="font-size: 13px;"><%= link_to "Apoyar", user, {style: "color: white"} %></span>
 																	</button>
 																<% end %>
 															<% end %>
@@ -312,8 +318,10 @@
 																</li>
 															<% end %>
 															<li style="font-size: 12px; padding-top: 10px;">
-																<%= user.ciudad %> |
-																<%= user.autonomia %>
+																<% if user.candidate == true %>
+																	<h5 style="font-weight: bolder; color: #1DA1F2; margin: 0px;"> Candidato </h5> en <%= user.ciudad %> |
+																	<%= user.autonomia %>
+																<% end %>
 															</li>
 														</ul>
 													</li>	          					
@@ -326,7 +334,7 @@
 															<% if current_user.following?(user) %>
 																<button type="button" class="btn btn-default,  btn-sm", style= "border: 1px solid #0084B4; background-color: white; border-radius: 20px;"><span style="font-size: 13px; ">Siguiendo</span></button>
 															<% else %>
-																<button type="button" class="btn btn-primary btn-sm" style="border-radius: 20px;"><span style="font-size: 13px;"><%= link_to "Seguir", user, {style: "color: white"} %></span>
+																<button type="button" class="btn btn-primary btn-sm" style="border-radius: 20px;"><span style="font-size: 13px;"><%= link_to "Apoyar", user, {style: "color: white"} %></span>
 																</button>
 															<% end %>
 														<% end %>

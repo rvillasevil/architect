@@ -21,7 +21,7 @@
           <h3 style="margin-top: 0px;">De acuerdo, vamos a crearlo.</h3>
           <h5 style="margin-top: 25px;">Se convertirá en una forma de relacionarse entre personas.</h5>
           <h5>
-            Puedes crear un círculo para incluir a personas con algo en común, hacer un llamamiento en favor de una acción común como el medio ambiente o expresar un ideal.
+            Puedes crear un lobby para incluir a personas con algo en común o hacer un llamamiento en favor de una acción común como el medio ambiente.
           </h5>  
         </div>
           <ul class="titulo">
@@ -31,8 +31,8 @@
                       <i class="fa fa-circle-o fa-2x" aria-hidden="true" style="color: #0084B4;"></i>
                   </li>
                   <li>
-                      <h3 style="text-align: center; color: #0084B4; margin-top: 10px;">Círculos</h3>
-                      <p><h5 style="text-align: center;">Compartimos un tema en común</h5></p>
+                      <h3 style="text-align: center; color: #0084B4; margin-top: 10px;">Lobbies</h3>
+                      <p><h5 style="text-align: center;">Compartimos un tema en común.</h5></p>
                   </li>
               </ul>   
             </li>
@@ -71,7 +71,7 @@
                 <%= f.hidden_field :name, value: [@nombre] %>
                 <%= f.hidden_field :administrative, value: true %>
               <% else %>
-                <%= f.label :name %> or , <%= link_to "crea tu círculo administrativo", edit_administrative_user_path( current_user) %>
+                <%= f.label :name %> or , <b><%= link_to "crea tu Lobby administrativo", edit_administrative_user_path( current_user) %></b>
                 <%= f.text_field :name, class: 'form-control' %>
               <% end %>
             <% else %>

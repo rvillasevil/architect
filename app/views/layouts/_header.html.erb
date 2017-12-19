@@ -96,23 +96,23 @@
               <ul class="dropdown-menu" style="left: auto; right: 0px; font-family: 'Helvetica'; font-size: 14px; text-align: left;">
                 <li style="text-align: left; margin-top: 10px;">
                   <%= link_to current_user do %>
-                  <%= image_tag current_user.foto.url, class: "img-rounded", size: 20 if current_user.foto? %> Perfil
+                  <%= image_tag current_user.foto.url, class: "img-rounded", size: 20 if current_user.foto? %> <b>Perfil</b>
                   <% end %>
                 </li>
                 <li style="text-align: left; margin-top: 10px;">
                   <%= link_to edit_user_path(current_user) do %>
-                  <i class="fa fa-cogs" aria-hidden="true" style="color: #0084B4;"></i> Configuración
+                  <i class="fa fa-cogs" aria-hidden="true" style="color: #1DA1F2;"></i> <b>Configuración</b>x
                   <% end %>
                 </li>
                 <li style="text-align: left; margin-top: 10px;">
                   <%= link_to user_plazas_path(current_user) do %>
-                  <i class="fa fa-circle-o" aria-hidden="true" style="color: #0084B4;"></i> Tus Lobbies
+                  <i class="fa fa-circle-o" aria-hidden="true" style="color: #1DA1F2;"></i> <b>Tus Lobbies</b>
                   <% end %>                    
                 </li>                                            
                 <li style="text-align: left; margin-top: 10px;">
-                  <%= link_to edit_administrative_user_path( current_user) do %>
-                  <button type="button" class="btn btn-primary btn-sm" style="width: 100%; background-color: white; color: #0084B4; border: 1px solid #0084B4;">
-                    <i class="fa fa-circle-o" aria-hidden="true" style="color: #0084B4;"></i> Lobbies Administrativos
+                  <%= link_to edit_administrative_user_path( current_user), style: "color: #f4ac41;" do %>
+                  <button type="button" class="btn btn-primary btn-sm" style="width: 100%; background-color: white; color: #0084B4; border: 3px solid #f4ac41; border-radius: 15px;">
+                    <i class="fa fa-circle-o" aria-hidden="true" style="color: #f4ac41;"></i> Lobbies Administrativos
                   </button>
                   <% end %>                    
                 </li>

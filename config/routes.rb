@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get     '/howtouse',   to: 'static_pages#howtouse'
   get     '/vision',    to: 'static_pages#vision'
   get     '/objetivos',    to: 'static_pages#objetivos'  
+  get     '/candidate',    to: 'static_pages#candidate'   
   get     '/popular_last_day', to: 'static_pages#popular_last_day'
   get     '/signup',    to: 'users#new'
   get     '/login',     to: 'sessions#new'

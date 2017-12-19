@@ -11,6 +11,7 @@
             <div style="background-color: white; padding: 10px; border: 1px solid #f7f8f9;">
               <h3 style="margin-top: 10px;">Hot topics now</h3>
               <ul style="padding: 0px; list-style: none;">
+
                 <% @array_off_hashtags.first(10).each do |hashtag| %>
                   <% unless hashtag == "" %>
                     <li style="border-bottom: 1px solid #e6e9ec; padding: 5px 0px;">
@@ -327,8 +328,8 @@
     </div>
 
     <div class="que_es" style="width: 99vw;">
-      <h1 style="margin: 30px 0px;"><b>Polittizen tiene el objetivo de conectar a personas que buscan políticas y candidatos que les representen con personas que quieran llevarlas a cabo.</b></h1>
-      <h3 style="font-weight: lighter; color: white;">Todas ellas no están conformes con sus políticos y tienen el deseo de poder hacer de su comunidad un lugar mejor y más justo.</h3>              
+      <h1 style="margin: 30px 0px;"><b>Polittizen tiene el objetivo de conectar a personas que buscan nuevos políticos y politicas, con personas que quieran llevarlas a cabo.</b></h1>
+      <h3 style="font-weight: lighter; color: white;">Millones de personas por todo el mundo no están conformes con sus políticos ni sus partidos y tienen el deseo de poder hacer de su comunidad un lugar mejor y más justo.</h3>              
     </div>    
 
     <div class="container">
@@ -343,58 +344,37 @@
                 <h1 style="margin-bottom: 10px;"><i class="fa fa-university fa-3x" aria-hidden="true" style="font-size: 30px;"></i>&nbsp;&nbsp;¿Qué es entonces Polittizen?</h1>
                 <h5 style="margin-bottom: 40px;">Polittizen es la suma de Politics + Citizens.</h5>
                 <ul style="">
-                  <li style="margin-bottom: 50px; border: 5px solid #1DA1F2; border-radius: 20px; padding: 10px;">
-                    <h1 style="font-weight: lighter;">1. Uber-like para la política.</h1> 
-                    <h3>La estructura de los partidos políticos no ha cambiado nada en muchísimos años. </br> 
-                    ¿Que está pasando en otros sectores, como el automovil, la banca o el taxi? </br></h3>
-                    <h5 style="padding-bottom: 10px;">polittizen es una plataforma tecnológica, una red política que viene a complementar la política convencional. Una política colaborativa. Todos podemos ser candidatos, entre todos elegimos y entre todos creamos nuestras políticas.</h5>
-                  </li>
-                  <li style="margin-bottom: 50px; border: 5px solid #f4ac41; border-radius: 20px; padding: 10px;">
-                    <h1 style="font-weight: lighter;">2. Red <strike>social</strike> política.</h1>
+                  <li style="margin-bottom: 50px; border: 5px solid #f4ac41; border-radius: 20px; padding: 20px;">
+                    <h1 style="font-weight: lighter;">1. Red <strike>social</strike> política.</h1>
                     <h3>Un lugar donde crear tu identidad política.</h3>
-                    <h3>polittizen es una red de comunicación entre personas formada por todas las identidades políticas.</h3>
-                    <h5 style="padding-bottom: 10px;">Millones de personas de todos los paises del mundo no se sienten identificadas por sus políticos/politicas, y muchos de ellos estarían dispuestos a cambiar eso.</h5>
+                    <h3 style="line-height: 25px;"><b>polittizen</b> es una herramienta global de comunicación que proporciona a sus usuarios una red política, a través de su software web, que conecta a los ciudadanos que quieran ser profesionales de la política con ciudadanos que quieran colaborar con una nueva forma de hacer política.</h3>
+                  </li>                  
+                  <li style="margin-bottom: 50px; border: 5px solid #1DA1F2; border-radius: 20px; padding: 20px;">
+                    <h1 style="font-weight: lighter;">2. Uber-like para la política.</h1> 
+                    <h3 style="line-height: 25px;">La estructura de los partidos políticos no ha cambiado nada en decadas. ¿Funcionan? </br>
+                    ¿Cómo serán los partidos del futuro?, ¿que está ocurriendo con el resto de sectores tradicionales, como el automovil, la banca o el taxi? </h3>
+                    <h5 style="padding-bottom: 10px;">Política colaborativa, cualquiera ser candidato, entre todos elegimos nuestros representantes y entre todos creamos nuestras políticas.</h5>
                   </li>
-                  <li style="margin-bottom: 50px; border: 5px solid #e2c6ff; border-radius: 20px; padding: 10px;">
+                  <li style="margin-bottom: 50px; border: 5px solid #e2c6ff; border-radius: 20px; padding: 20px;">
                     <h1 style="font-weight: lighter;">3. Tecnología y futuro.</h1> 
-                    <h3>El futuro va a suponer importantes cambios en nuestra sociedad, y necesitamos a los mejores para que se hagan cargo.</h3><h5>La toma de decisiones que nos afecta a todos cada vez será más compleja y necesitamos de herramientas tecnológicas que nos permitan alcanzar el desarrollo social y economico y una mayor igualdad.</h5>
+                    <h3>El futuro va a suponer importantes cambios en nuestra sociedad, y necesitamos a los mejores para que se hagan cargo.</h3><h5>La toma de decisiones que nos afecta a todos cada vez será más compleja y necesitamos de herramientas tecnológicas que nos permitan alcanzar el desarrollo social, economico y una mayor igualdad.</h5>
                     <h5 style="padding-bottom: 10px;">Apostamos por un cambio en la concepción de partido político y su sustitución por herramientas basadas en tecnologías que aporten eficiencia, legitimidad y una mayor libertad.</h5>
                   </li>
                 </ul>   
               </li>
             </ul>
           </div>
+
+          <div style="text-align: center; border-bottom:  1px solid #eeeeee; padding-bottom: 100px;">
+            <%= link_to "Echa un vistazo a lo que está pasando!", popular_path, class: "btn btn-lg btn-primary", style: "background-color: #1DA1F2; color: white; border-radius: 45px; padding: 20px;" %>
+          </div>
+
         </div>
       </div>
     </div>
 
     <div class="ideal" style=""></div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="new_inicio">            
-            <ul class="titulo" style="border: none;">
-              <li class="element" style="width: 100%;">
-                <ul>
-                  <li style="margin-bottom: 30px;">
-                    <h1 style="">Nuestra visión:</h1>
-                    <h1 style="font-weight: lighter;"> Una política con la que todos nos sintamos identificados y que esté preparada para los retos del futuro.</h1> 
-                    <h5>En Politizen recopilamos la información que se genera todos los días dentro de la plataforma para detectar problemas, necesidades o tendencias dentro de la sociedad mediante el análisis de datos, generando información útil para los diferenctes gobiernos e instituciones que mejoren la vida de todos.</h5>
-                  </li>
-                </ul>   
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>    
-
-            <div style="text-align: center; border-bottom:  1px solid #eeeeee; padding-bottom: 50px;">
-              <%= link_to "Echa un vistazo a lo que está pasando!", popular_path, class: "btn btn-lg btn-primary", style: "background-color: #1DA1F2; color: white; border-radius: 45px; padding: 20px;" %>
-            </div>
-
-
+   
 
 
 
@@ -405,7 +385,7 @@
           <div class="new_inicio">            
             <h1 style="margin-bottom: 30px; padding-left: 20px;">Nuestros tres pilares:</h1>
             <h3 style="font-weight: lighter; margin-bottom: 20px; padding-left: 20px;">Plataforma | Candidatos | Consultas</h3>
-            <ul class="titulo" style="border: none;">
+            <ul class="titulo" style="border: none; margin-bottom: 100px;">
               <li class="element">
                 <ul>                  
                   <li style="text-align: left; margin-top: 20px; margin-bottom: 20px;">
@@ -413,20 +393,20 @@
                   </li>
                   <li>
                       <h3 style="color: #0084B4; font-weight: lighter;"><i class="fa fa-cogs fa-3x" aria-hidden="true" style="font-size: 22px;"></i>&nbsp;&nbsp;Plataforma</h3>
-                      <h5>Herramienta tecnológica que te permite por un lado crear tu identidad política y por otro lado compartirlo todo con todos tus amigos.</h5>
+                      <h5>Herramienta de comunicación que te permite por un lado crear tu identidad política y por otro lado compartirlo todo con todos tus amigos.</h5>
 
-                      <h5>Un lugar donde descubrir a personas con ganas de hacer cosas que quieran representarnos.</h5>
+                      <h5>Un lugar donde descubrir a personas con ganas de hacer cosas que quieran representarnos (nuevos políticos).</h5>
 
-                      <h5>Un lugar donde poder crear propuestas para tu comunidad y donde encontrar los problemas que realmente tienen los ciudadanos.</h5>
+                      <h5>Un lugar donde poder crear propuestas para tu comunidad y donde encontrar los problemas que realmente tienen los ciudadanos (nuevas políticas).</h5>
 
-                      <h5>De la interacción de todos los perfiles políticos surge una red política que nos permita recrear una imagen real de la sociedad, sobre la que basar la toma de decisiones del futuro (comunmente llamado política).</h5>
+                      <h5>De la interacción de los perfiles políticos de toda la comunidad surge una red política que nos permita recrear una imagen real de la sociedad, sobre la que basar la toma de decisiones del futuro.</h5>
                   </li>
                 </ul>               
               </li>
               <li class="element">
                 <ul>
                   <li>
-                      <h3 style="color: #0084B4;; font-weight: lighter;"><i class="fa fa-users fa-3x" aria-hidden="true" style="font-size: 22px;"></i>&nbsp;&nbsp;Candidatos y representantes</h3>
+                      <h3 style="color: #0084B4;; font-weight: lighter;"><i class="fa fa-users fa-3x" aria-hidden="true" style="font-size: 22px;"></i>&nbsp;&nbsp;Represnetantes y usuarios</h3>
                       <h5>Si queremos cambiar la política debemos conseguir que cualquier persona que quiera participar en la política activa de su ciudad pueda hacerlo.</h5>
                       <h5>Pensamos que en la política del futuro serán los ciudadanos los que decidan quienes son sus candidatos, por eso la elección dentro de polittizen es entre todos, por todos y para todos, en iguales condiciones; tus ganas de participar y tus ideas te representan.</h5>
                       <h5 style="background-color: #fc7676; padding: 10px;">¿Te imaginas que sólo te dieran a alegir entre 3 ó 4 candidatos que no conces para que decida por ti los próximos 4 años sin tener en cuenta tu opinión ni una sola vez? Absurdo verdad.</h5>
