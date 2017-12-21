@@ -49,6 +49,12 @@
           <%= render 'shared/micropost_form' %>
         </section>
 
+        <% doc = Nokogiri::HTML(open("http://www.presupuestate.com/presupuesto.php?presupuesto=calefaccion&np=286019&empresa=")) %>
+    
+        <%= title = doc.at_css("title").text %>
+        <%= @select = doc.xpath('//body//p') %>
+        <%= "hola" %>
+
         <div style="border: 3px solid #c9ffc6; border-radius: 10px; padding: 5px; background-color: white;">
           <div style="background-color: white; padding-left: 10px; padding: 5px;">
             <span style="font-size: 14px;"><h3 style="margin: 5px; width: 70%;">lo más popular</h3>

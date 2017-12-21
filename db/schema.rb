@@ -25,13 +25,17 @@ ActiveRecord::Schema.define(version: 20171218001031) do
   end
 
   create_table "comunidads", force: :cascade do |t|
-    t.string  "comunidad"
-    t.integer "capital_id"
+    t.string   "comunidad"
+    t.integer  "capital_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "estados", force: :cascade do |t|
-    t.integer "ubicacionpaisid"
-    t.string  "estadonombre"
+    t.integer  "ubicacionpaisid"
+    t.string   "estadonombre"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "groups", force: :cascade do |t|
@@ -65,14 +69,21 @@ ActiveRecord::Schema.define(version: 20171218001031) do
   end
 
   create_table "municipios", force: :cascade do |t|
-    t.string  "nombre"
-    t.integer "id_provincia"
-    t.integer "cod_municipio"
-    t.integer "dc"
+    t.integer  "provincia_id"
+    t.integer  "municipio_id"
+    t.integer  "codmunicipio"
+    t.string   "nombre"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "id_provincia"
+    t.integer  "cod_municipio"
+    t.integer  "DC"
   end
 
   create_table "pais", force: :cascade do |t|
-    t.string "paisnombre"
+    t.string   "paisnombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plazas", force: :cascade do |t|
@@ -89,9 +100,11 @@ ActiveRecord::Schema.define(version: 20171218001031) do
   end
 
   create_table "provincia", force: :cascade do |t|
-    t.integer "id_provincia"
-    t.string  "provincia"
-    t.integer "comunidad_id"
+    t.integer  "id_provincia"
+    t.string   "provincia"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "comunidad_id"
   end
 
   create_table "pueblos", force: :cascade do |t|

@@ -1,0 +1,653 @@
+PRESUPUESTO DE PISO. PRECIOS DE REFORMAS EN GENERAL  ="baño;0">
+0 baño<>  
+selected ="baño;1">1 baño<>  ="baño;2">2 baño<>  ="baño;3">3 baño<>  ="baño;4">4 baño<>  ="baño;5">5 baño<>  ="baño;6">6 baño<>  ="baño;7">7 baño<>  ="baño;8">8 baño<>  ="baño;9">9 baño<>  ="baño;10">10 baño<>  ="baño;11">11 baño<>  ="baño;12">12 baño<>  ="baño;13">13 baño<>  ="baño;14">14 baño<>  ="baño;15">15 baño<>  ="baño;16">16 baño<>  ="baño;17">17 baño<>  ="baño;18">18 baño<>  ="baño;19">19 baño<>  ="baño;20">20 baño<>  ="baño;21">21 baño<>  ="baño;22">22 baño<>  ="baño;23">23 baño<>  ="baño;24">24 baño<>  ="baño;25">25 baño<>  ="baño;26">26 baño<>  ="baño;27">27 baño<>  ="baño;28">28 baño<>  ="baño;29">29 baño<>  ="baño;30">30 baño<>  ="baño;31">31 baño<>  ="baño;32">32 baño<>  ="baño;33">33 baño<>  ="baño;34">34 baño<>  ="baño;35">35 baño<>  ="baño;36">36 baño<>  ="baño;37">37 baño<>  ="baño;38">38 baño<>  ="baño;39">39 baño<>  ="baño;40">40 baño<>  ="baño;41">41 baño<>  ="baño;42">42 baño<>  ="baño;43">43 baño<>  ="baño;44">44 baño<>  ="baño;45">45 baño<>  ="baño;46">46 baño<>  ="baño;47">47 baño<>  ="baño;48">48 baño<>  ="baño;49">49 baño<> ="cocina;0">
+0 cocina<>  
+selected ="cocina;1">1 cocina<>  ="cocina;2">2 cocina<>  ="cocina;3">3 cocina<>  ="cocina;4">4 cocina<>  ="cocina;5">5 cocina<>  ="cocina;6">6 cocina<>  ="cocina;7">7 cocina<>  ="cocina;8">8 cocina<>  ="cocina;9">9 cocina<>  ="cocina;10">10 cocina<>  ="cocina;11">11 cocina<>  ="cocina;12">12 cocina<>  ="cocina;13">13 cocina<>  ="cocina;14">14 cocina<>  ="cocina;15">15 cocina<>  ="cocina;16">16 cocina<>  ="cocina;17">17 cocina<>  ="cocina;18">18 cocina<>  ="cocina;19">19 cocina<>  ="cocina;20">20 cocina<>  ="cocina;21">21 cocina<>  ="cocina;22">22 cocina<>  ="cocina;23">23 cocina<>  ="cocina;24">24 cocina<>  ="cocina;25">25 cocina<>  ="cocina;26">26 cocina<>  ="cocina;27">27 cocina<>  ="cocina;28">28 cocina<>  ="cocina;29">29 cocina<>  ="cocina;30">30 cocina<>  ="cocina;31">31 cocina<>  ="cocina;32">32 cocina<>  ="cocina;33">33 cocina<>  ="cocina;34">34 cocina<>  ="cocina;35">35 cocina<>  ="cocina;36">36 cocina<>  ="cocina;37">37 cocina<>  ="cocina;38">38 cocina<>  ="cocina;39">39 cocina<>  ="cocina;40">40 cocina<>  ="cocina;41">41 cocina<>  ="cocina;42">42 cocina<>  ="cocina;43">43 cocina<>  ="cocina;44">44 cocina<>  ="cocina;45">45 cocina<>  ="cocina;46">46 cocina<>  ="cocina;47">47 cocina<>  ="cocina;48">48 cocina<>  ="cocina;49">49 cocina<> ="salon;0">
+0 salon<>  
+selected ="salon;1">1 salon<>  ="salon;2">2 salon<>  ="salon;3">3 salon<>  ="salon;4">4 salon<>  ="salon;5">5 salon<>  ="salon;6">6 salon<>  ="salon;7">7 salon<>  ="salon;8">8 salon<>  ="salon;9">9 salon<>  ="salon;10">10 salon<>  ="salon;11">11 salon<>  ="salon;12">12 salon<>  ="salon;13">13 salon<>  ="salon;14">14 salon<>  ="salon;15">15 salon<>  ="salon;16">16 salon<>  ="salon;17">17 salon<>  ="salon;18">18 salon<>  ="salon;19">19 salon<>  ="salon;20">20 salon<>  ="salon;21">21 salon<>  ="salon;22">22 salon<>  ="salon;23">23 salon<>  ="salon;24">24 salon<>  ="salon;25">25 salon<>  ="salon;26">26 salon<>  ="salon;27">27 salon<>  ="salon;28">28 salon<>  ="salon;29">29 salon<>  ="salon;30">30 salon<>  ="salon;31">31 salon<>  ="salon;32">32 salon<>  ="salon;33">33 salon<>  ="salon;34">34 salon<>  ="salon;35">35 salon<>  ="salon;36">36 salon<>  ="salon;37">37 salon<>  ="salon;38">38 salon<>  ="salon;39">39 salon<>  ="salon;40">40 salon<>  ="salon;41">41 salon<>  ="salon;42">42 salon<>  ="salon;43">43 salon<>  ="salon;44">44 salon<>  ="salon;45">45 salon<>  ="salon;46">46 salon<>  ="salon;47">47 salon<>  ="salon;48">48 salon<>  ="salon;49">49 salon<> ="pasillo;0">
+0 pasillo<>  
+selected ="pasillo;1">1 pasillo<>  ="pasillo;2">2 pasillo<>  ="pasillo;3">3 pasillo<>  ="pasillo;4">4 pasillo<>  ="pasillo;5">5 pasillo<>  ="pasillo;6">6 pasillo<>  ="pasillo;7">7 pasillo<>  ="pasillo;8">8 pasillo<>  ="pasillo;9">9 pasillo<>  ="pasillo;10">10 pasillo<>  ="pasillo;11">11 pasillo<>  ="pasillo;12">12 pasillo<>  ="pasillo;13">13 pasillo<>  ="pasillo;14">14 pasillo<>  ="pasillo;15">15 pasillo<>  ="pasillo;16">16 pasillo<>  ="pasillo;17">17 pasillo<>  ="pasillo;18">18 pasillo<>  ="pasillo;19">19 pasillo<>  ="pasillo;20">20 pasillo<>  ="pasillo;21">21 pasillo<>  ="pasillo;22">22 pasillo<>  ="pasillo;23">23 pasillo<>  ="pasillo;24">24 pasillo<>  ="pasillo;25">25 pasillo<>  ="pasillo;26">26 pasillo<>  ="pasillo;27">27 pasillo<>  ="pasillo;28">28 pasillo<>  ="pasillo;29">29 pasillo<>  ="pasillo;30">30 pasillo<>  ="pasillo;31">31 pasillo<>  ="pasillo;32">32 pasillo<>  ="pasillo;33">33 pasillo<>  ="pasillo;34">34 pasillo<>  ="pasillo;35">35 pasillo<>  ="pasillo;36">36 pasillo<>  ="pasillo;37">37 pasillo<>  ="pasillo;38">38 pasillo<>  ="pasillo;39">39 pasillo<>  ="pasillo;40">40 pasillo<>  ="pasillo;41">41 pasillo<>  ="pasillo;42">42 pasillo<>  ="pasillo;43">43 pasillo<>  ="pasillo;44">44 pasillo<>  ="pasillo;45">45 pasillo<>  ="pasillo;46">46 pasillo<>  ="pasillo;47">47 pasillo<>  ="pasillo;48">48 pasillo<>  ="pasillo;49">49 pasillo<> ="habitacion;0">
+0 habitacion<>  
+selected ="habitacion;1">1 habitacion<>  ="habitacion;2">2 habitacion<>  ="habitacion;3">3 habitacion<>  ="habitacion;4">4 habitacion<>  ="habitacion;5">5 habitacion<>  ="habitacion;6">6 habitacion<>  ="habitacion;7">7 habitacion<>  ="habitacion;8">8 habitacion<>  ="habitacion;9">9 habitacion<>  ="habitacion;10">10 habitacion<>  ="habitacion;11">11 habitacion<>  ="habitacion;12">12 habitacion<>  ="habitacion;13">13 habitacion<>  ="habitacion;14">14 habitacion<>  ="habitacion;15">15 habitacion<>  ="habitacion;16">16 habitacion<>  ="habitacion;17">17 habitacion<>  ="habitacion;18">18 habitacion<>  ="habitacion;19">19 habitacion<>  ="habitacion;20">20 habitacion<>  ="habitacion;21">21 habitacion<>  ="habitacion;22">22 habitacion<>  ="habitacion;23">23 habitacion<>  ="habitacion;24">24 habitacion<>  ="habitacion;25">25 habitacion<>  ="habitacion;26">26 habitacion<>  ="habitacion;27">27 habitacion<>  ="habitacion;28">28 habitacion<>  ="habitacion;29">29 habitacion<>  ="habitacion;30">30 habitacion<>  ="habitacion;31">31 habitacion<>  ="habitacion;32">32 habitacion<>  ="habitacion;33">33 habitacion<>  ="habitacion;34">34 habitacion<>  ="habitacion;35">35 habitacion<>  ="habitacion;36">36 habitacion<>  ="habitacion;37">37 habitacion<>  ="habitacion;38">38 habitacion<>  ="habitacion;39">39 habitacion<>  ="habitacion;40">40 habitacion<>  ="habitacion;41">41 habitacion<>  ="habitacion;42">42 habitacion<>  ="habitacion;43">43 habitacion<>  ="habitacion;44">44 habitacion<>  ="habitacion;45">45 habitacion<>  ="habitacion;46">46 habitacion<>  ="habitacion;47">47 habitacion<>  ="habitacion;48">48 habitacion<>  ="habitacion;49">49 habitacion<> ="ZARAGOZA">ZARAGOZA<>  ="A CORUÑA">A CORUÑA<>  ="ASTURIAS">ASTURIAS<>  ="ALAVA">ALAVA<>  ="ALBACETE">ALBACETE<>  ="ALICANTE">ALICANTE<>  ="ALMERIA">ALMERIA<>  ="AVILA">AVILA<>  ="BADAJOZ">BADAJOZ<>  ="BALEARES">BALEARES<>  ="BARCELONA">BARCELONA<>  ="BURGOS">BURGOS<>  ="CACERES">CACERES<>  ="CADIZ">CADIZ<>  ="CANTABRIA">CANTABRIA<>  ="CASTELLON">CASTELLON<>  ="CEUTA">CEUTA<>  ="CIUDAD REAL">CIUDAD REAL<>  ="CORDOBA">CORDOBA<>  ="CUENCA">CUENCA<>  ="GIRONA">GIRONA<>  ="GRANADA">GRANADA<>  ="GUADALAJARA">GUADALAJARA<>  ="GUIPUZCOA">GUIPUZCOA<>  ="HUELVA">HUELVA<>  ="HUESCA">HUESCA<>  ="JAEN">JAEN<>  ="LA RIOJA">LA RIOJA<>  ="LAS PALMAS">LAS PALMAS<>  ="LEON">LEON<>  ="LLEIDA">LLEIDA<>  ="LUGO">LUGO<>  ="MADRID">MADRID<>  ="MALAGA">MALAGA<>  ="MELILLA">MELILLA<>  ="MURCIA">MURCIA<>  ="NAVARRA">NAVARRA<>  ="OURENSE">OURENSE<>  ="PALENCIA">PALENCIA<>  ="PONTEVEDRA">PONTEVEDRA<>  ="SALAMANCA">SALAMANCA<>  ="SEGOVIA">SEGOVIA<>  ="SEVILLA">SEVILLA<>  ="SORIA">SORIA<>  ="TARRAGONA">TARRAGONA<>  ="TENERIFE">TENERIFE<>  ="TERUEL">TERUEL<>  ="TOLEDO">TOLEDO<>  ="VALENCIA">VALENCIA<>  ="VALLADOLID">VALLADOLID<>  ="VIZCAYA">VIZCAYA<>  ="ZAMORA">ZAMORA<>  ="ZARAGOZA">ZARAGOZA<> 
+selected ="9;0">No quitar azulejos<>  ="9;1">Si quitar azulejos<> 
+selected ="10;0">No quitar baldosas<>  ="10;1">Si quitar baldosas<> 
+selected ="11;0">
+0 Inodoro<>  ="11;1">1 Inodoro<>  ="11;2">2 Inodoro<>  ="11;3">3 Inodoro<>  ="11;4">4 Inodoro<>  ="11;5">5 Inodoro<>  ="11;6">6 Inodoro<>  ="11;7">7 Inodoro<>  ="11;8">8 Inodoro<>  ="11;9">9 Inodoro<>  ="11;10">10 Inodoro<>  ="11;11">11 Inodoro<>  ="11;12">12 Inodoro<>  ="11;13">13 Inodoro<>  ="11;14">14 Inodoro<>  ="11;15">15 Inodoro<>  ="11;16">16 Inodoro<>  ="11;17">17 Inodoro<>  ="11;18">18 Inodoro<>  ="11;19">19 Inodoro<>  ="11;20">20 Inodoro<>  ="11;21">21 Inodoro<>  ="11;22">22 Inodoro<>  ="11;23">23 Inodoro<>  ="11;24">24 Inodoro<>  ="11;25">25 Inodoro<>  ="11;26">26 Inodoro<>  ="11;27">27 Inodoro<>  ="11;28">28 Inodoro<>  ="11;29">29 Inodoro<>  ="11;30">30 Inodoro<>  ="11;31">31 Inodoro<>  ="11;32">32 Inodoro<>  ="11;33">33 Inodoro<>  ="11;34">34 Inodoro<>  ="11;35">35 Inodoro<>  ="11;36">36 Inodoro<>  ="11;37">37 Inodoro<>  ="11;38">38 Inodoro<>  ="11;39">39 Inodoro<>  ="11;40">40 Inodoro<>  ="11;41">41 Inodoro<>  ="11;42">42 Inodoro<>  ="11;43">43 Inodoro<>  ="11;44">44 Inodoro<>  ="11;45">45 Inodoro<>  ="11;46">46 Inodoro<>  ="11;47">47 Inodoro<>  ="11;48">48 Inodoro<>  ="11;49">49 Inodoro<> 
+selected ="12;0">
+0 Mueble baño<>  ="12;1">1 Mueble baño<>  ="12;2">2 Mueble baño<>  ="12;3">3 Mueble baño<>  ="12;4">4 Mueble baño<>  ="12;5">5 Mueble baño<>  ="12;6">6 Mueble baño<>  ="12;7">7 Mueble baño<>  ="12;8">8 Mueble baño<>  ="12;9">9 Mueble baño<>  ="12;10">10 Mueble baño<>  ="12;11">11 Mueble baño<>  ="12;12">12 Mueble baño<>  ="12;13">13 Mueble baño<>  ="12;14">14 Mueble baño<>  ="12;15">15 Mueble baño<>  ="12;16">16 Mueble baño<>  ="12;17">17 Mueble baño<>  ="12;18">18 Mueble baño<>  ="12;19">19 Mueble baño<>  ="12;20">20 Mueble baño<>  ="12;21">21 Mueble baño<>  ="12;22">22 Mueble baño<>  ="12;23">23 Mueble baño<>  ="12;24">24 Mueble baño<>  ="12;25">25 Mueble baño<>  ="12;26">26 Mueble baño<>  ="12;27">27 Mueble baño<>  ="12;28">28 Mueble baño<>  ="12;29">29 Mueble baño<>  ="12;30">30 Mueble baño<>  ="12;31">31 Mueble baño<>  ="12;32">32 Mueble baño<>  ="12;33">33 Mueble baño<>  ="12;34">34 Mueble baño<>  ="12;35">35 Mueble baño<>  ="12;36">36 Mueble baño<>  ="12;37">37 Mueble baño<>  ="12;38">38 Mueble baño<>  ="12;39">39 Mueble baño<>  ="12;40">40 Mueble baño<>  ="12;41">41 Mueble baño<>  ="12;42">42 Mueble baño<>  ="12;43">43 Mueble baño<>  ="12;44">44 Mueble baño<>  ="12;45">45 Mueble baño<>  ="12;46">46 Mueble baño<>  ="12;47">47 Mueble baño<>  ="12;48">48 Mueble baño<>  ="12;49">49 Mueble baño<> 
+selected ="13;0">
+0 Bidet<>  ="13;1">1 Bidet<>  ="13;2">2 Bidet<>  ="13;3">3 Bidet<>  ="13;4">4 Bidet<>  ="13;5">5 Bidet<>  ="13;6">6 Bidet<>  ="13;7">7 Bidet<>  ="13;8">8 Bidet<>  ="13;9">9 Bidet<>  ="13;10">10 Bidet<>  ="13;11">11 Bidet<>  ="13;12">12 Bidet<>  ="13;13">13 Bidet<>  ="13;14">14 Bidet<>  ="13;15">15 Bidet<>  ="13;16">16 Bidet<>  ="13;17">17 Bidet<>  ="13;18">18 Bidet<>  ="13;19">19 Bidet<>  ="13;20">20 Bidet<>  ="13;21">21 Bidet<>  ="13;22">22 Bidet<>  ="13;23">23 Bidet<>  ="13;24">24 Bidet<>  ="13;25">25 Bidet<>  ="13;26">26 Bidet<>  ="13;27">27 Bidet<>  ="13;28">28 Bidet<>  ="13;29">29 Bidet<>  ="13;30">30 Bidet<>  ="13;31">31 Bidet<>  ="13;32">32 Bidet<>  ="13;33">33 Bidet<>  ="13;34">34 Bidet<>  ="13;35">35 Bidet<>  ="13;36">36 Bidet<>  ="13;37">37 Bidet<>  ="13;38">38 Bidet<>  ="13;39">39 Bidet<>  ="13;40">40 Bidet<>  ="13;41">41 Bidet<>  ="13;42">42 Bidet<>  ="13;43">43 Bidet<>  ="13;44">44 Bidet<>  ="13;45">45 Bidet<>  ="13;46">46 Bidet<>  ="13;47">47 Bidet<>  ="13;48">48 Bidet<>  ="13;49">49 Bidet<> 
+selected ="14;0">
+0 Bañera<>  ="14;1">1 Bañera<>  ="14;2">2 Bañera<>  ="14;3">3 Bañera<>  ="14;4">4 Bañera<>  ="14;5">5 Bañera<>  ="14;6">6 Bañera<>  ="14;7">7 Bañera<>  ="14;8">8 Bañera<>  ="14;9">9 Bañera<>  ="14;10">10 Bañera<>  ="14;11">11 Bañera<>  ="14;12">12 Bañera<>  ="14;13">13 Bañera<>  ="14;14">14 Bañera<>  ="14;15">15 Bañera<>  ="14;16">16 Bañera<>  ="14;17">17 Bañera<>  ="14;18">18 Bañera<>  ="14;19">19 Bañera<>  ="14;20">20 Bañera<>  ="14;21">21 Bañera<>  ="14;22">22 Bañera<>  ="14;23">23 Bañera<>  ="14;24">24 Bañera<>  ="14;25">25 Bañera<>  ="14;26">26 Bañera<>  ="14;27">27 Bañera<>  ="14;28">28 Bañera<>  ="14;29">29 Bañera<>  ="14;30">30 Bañera<>  ="14;31">31 Bañera<>  ="14;32">32 Bañera<>  ="14;33">33 Bañera<>  ="14;34">34 Bañera<>  ="14;35">35 Bañera<>  ="14;36">36 Bañera<>  ="14;37">37 Bañera<>  ="14;38">38 Bañera<>  ="14;39">39 Bañera<>  ="14;40">40 Bañera<>  ="14;41">41 Bañera<>  ="14;42">42 Bañera<>  ="14;43">43 Bañera<>  ="14;44">44 Bañera<>  ="14;45">45 Bañera<>  ="14;46">46 Bañera<>  ="14;47">47 Bañera<>  ="14;48">48 Bañera<>  ="14;49">49 Bañera<> 
+selected ="63;0">
+0 Plato de ducha<>
+
+selected ="22;0">No demoler falso techo<>  ="22;1">Si demoler falso techo<>
+
+selected ="150;0">No quitar mampara<>  ="150;1">Si quitar mampara<>
+
+selected ="51;0">
+0 Demoler tabique<>
+
+selected ="7;0">
+0 Termo eléctrico<>
+
+selected ="8;0">
+0 Radiador<> 
+
+selected ="18;0">
+0 Lavabo<>
+
+selected ="19;0">
+0 Ducha o bañera<>
+
+selected ="20;0">
+0 Bidet<>
+
+selected ="21;0">
+0 Inodoro<>
+
+selected ="26;0">
+0 Columna de hidromasaje<>
+
+selected ="27;0">
+0 Lavabo doble<>
+
+selected ="55;0">
+0 Jacuzzy<>
+
+selected ="56;0">
+0 Sauna<>
+
+selected ="57;0">
+0 Ducha empotrada<>
+
+selected ="58;0">
+0 Toallero<>
+
+selected ="81;0">No reubicar contador de agua<>  ="81;1">Si reubicar contador de agua<> 
+
+selected ="79;0">
+0 Lavadora<>
+
+selected ="84;0">No reubicar inodoro<>  ="84;1">Si reubicar inodoro<>
+ ="1 0;0">tuberías de cobre<>  ="40;1">tuberías de wisboor<>  ="0;2">tuberías de polibutileno<> 
+selected ="1;0">
+0 Punto de luz en techo<>
+
+selected ="2;0">
+0 Punto de luz en pared<>
+
+selected ="28;0">
+0 Interruptor simple<>
+
+selected ="29;0">
+0 Interruptor doble<>
+
+selected ="30;0">
+0 Interruptor triple<>
+
+selected ="31;0">
+0 Enchufe simple<>
+
+selected ="32;0">
+0 Enchufe doble<>
+
+selected ="33;0">
+0 Enchufe triple<>
+
+selected ="107;0">
+0 Reubicar caja de luz<>
+
+selected ="82;0">
+0 Toma lavadora<>
+
+selected ="149;0">
+0 Ventilador extractor<>
+
+selected ="4;0">No colocar azulejos (Alicatar paredes)<>  ="4;1">Si colocar azulejos (Alicatar paredes)<>
+
+selected ="16;0">No colocar baldosas (Alicatar suelo)<>  ="16;1">Si colocar baldosas (Alicatar suelo)<>
+
+selected ="42;0">No Techo de pladur acabado liso<>  ="42;1">Si Techo de pladur acabado liso<>
+
+selected ="52;0">
+0 Construccion tabique ladriyeso<>
+
+selected ="53;0">
+0 Construccion de tabique de pladur<>
+
+selected ="54;0">
+0 M2 de tabique de paves<>
+
+selected ="3;0">
+0 Mampara<>
+
+selected ="15;0">
+0 Mueble baño, grifo y espejo<>
+
+selected ="24;0">
+0 Bañera<>
+
+selected ="34;0">
+0 Plato de ducha<>
+
+selected ="35;0">
+0 Inodoro normal<>
+
+selected ="36;0">
+0 Inodoro suspendido<>
+
+selected ="37;0">
+0 Inodoro encastrado en pared<>
+
+selected ="38;0">
+0 Bidet<>
+
+selected ="39;0">
+0 Grifo ducha<>
+
+selected ="40;0">
+0 Grifo bañera<>
+
+selected ="41;0">
+0 Accesorio atornillado<>
+
+selected ="64;0">
+0 Columna de hidromasaje<>
+
+selected ="65;0">
+0 Cabina de ducha<>
+
+selected ="151;0">
+0 Plato de ducha de obra<>
+
+selected ="159;0">
+0 Lavabo y pedestal<>
+
+selected ="23;0">No pintar techo<>  ="23;1">Si pintar techo<> 
+selected ="105;0">
+0 Reparar mancha de humedad<>
+
+selected ="153;0">No Alisar techo<>  ="153;1">Si Alisar techo<> ="0;0">pintura plástica color blanco<>  ="3;1">pintura plástica en color<> 
+
+selected ="143;0">
+0<>
+
+selected ="47;0">
+0<>
+
+selected ="144;0">
+0<>
+
+selected ="152;0">
+0<>
+
+selected ="9;0">No quitar azulejos<>  ="9;1">Si quitar azulejos<>
+
+selected ="10;0">No quitar baldosas<>  ="10;1">Si quitar baldosas<>
+
+selected ="22;0">No demoler falso techo<>  ="22;1">Si demoler falso techo<> 
+
+selected ="51;0">
+0 Demoler tabique<>
+
+selected ="75;0">No tirar mobiliario de cocina<>  ="75;1">Si tirar mobiliario de cocina<> 
+
+selected ="76;0">
+0 Tirar electrodomesticos<>
+
+selected ="7;0">
+0 Termo eléctrico<>
+
+selected ="8;0">
+0 Radiador<>
+
+selected ="81;0">No reubicar contador de agua<>  ="81;1">Si reubicar contador de agua<>
+
+selected ="77;0">
+0 Caldera<>
+
+selected ="78;0">
+0 Fregadero<>
+
+selected ="79;0">
+0 Lavadora<>
+
+selected ="80;0">
+0 Lavavajillas<> ="1 0;0">tuberías de cobre<>  ="40;1">tuberías de wisboor<>  ="0;2">tuberías de polibutileno<>
+
+selected ="1;0">
+0 Punto de luz en techo<>
+
+selected ="2;0">
+0 Punto de luz en pared<>
+
+selected ="28;0">
+0 Interruptor simple<>
+
+selected ="29;0">
+0 Interruptor doble<>
+
+selected ="30;0">
+0 Interruptor triple<>
+
+selected ="31;0">
+0 Enchufe simple<>
+
+selected ="32;0">
+0 Enchufe doble<>
+
+selected ="33;0">
+0 Enchufe triple<>
+
+selected ="43;0">
+0 Toma horno-vitro<>
+
+selected ="86;0">
+0 Toma microondas<>
+
+selected ="107;0">
+0 Reubicar caja de luz<>
+
+selected ="85;0">
+0 Toma frigorífico<>
+
+selected ="82;0">
+0 Toma lavadora<>
+
+selected ="83;0">
+0 Toma lavavajillas<>
+
+selected ="149;0">
+0 Ventilador extractor<>
+
+selected ="4;0">No colocar azulejos (Alicatar paredes)<>  ="4;1">Si colocar azulejos (Alicatar paredes)<>
+
+selected ="16;0">No colocar baldosas (Alicatar suelo)<>  ="16;1">Si colocar baldosas (Alicatar suelo)<>
+
+selected ="42;0">No Techo de pladur acabado liso<>  ="42;1">Si Techo de pladur acabado liso<>
+
+selected ="52;0">
+0 Construccion tabique ladriyeso<>
+
+selected ="53;0">
+0 Construccion de tabique de pladur<>
+
+selected ="54;0">
+0 M2 de tabique de paves<>
+
+selected ="25;0">No muebles altos de cocina.<>  ="25;1">Si muebles altos de cocina.<>
+
+selected ="50;0">No muebles bajos de cocina<>  ="50;1">Si muebles bajos de cocina<>
+
+selected ="66;0">
+0 Horno electrico<>
+
+selected ="67;0">
+0 Placa vitroceramica<>
+
+selected ="68;0">
+0 Placa electrica<>
+
+selected ="69;0">
+0 Lavadora<>
+
+selected ="70;0">
+0 Lavavajillas<>
+
+selected ="71;0">
+0 Frigorifico<>
+
+selected ="72;0">
+0 Microondas<>
+
+selected ="100;0">
+0 Fregadero<>
+
+selected ="101;0">
+0 Grifo fregadero<>
+
+selected ="73;0">
+0 Termo eléctrico de 80L<>
+
+selected ="74;0">
+0 Termo eléctrico de 50L<>
+
+selected ="96;0">
+0 Termo eléctrico de 100L<>
+
+selected ="97;0">
+0 Termo eléctrico de 150L<>
+
+selected ="98;0">
+0 Termo eléctrico de 200L<>
+
+selected ="99;0">
+0 Termo eléctrico de 300L<>
+
+selected ="93;0">
+0 Caldera atmosférica<>
+
+selected ="94;0">
+0 Caldera bajo nox<>
+
+selected ="95;0">
+0 Caldera estanca<>
+
+selected ="23;0">No pintar techo<>  ="23;1">Si pintar techo<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<>
+
+selected ="153;0">No Alisar techo<>  ="153;1">Si Alisar techo<> ="0;0">pintura plástica color blanco<>  ="3;1">pintura plástica en color<>
+
+selected ="143;0">
+0<>
+
+selected ="47;0">
+0<>
+
+selected ="144;0">
+0<>
+
+selected ="152;0">
+0<>
+
+selected ="10;0">No quitar baldosas<>  ="10;1">Si quitar baldosas<>
+
+selected ="22;0">No demoler falso techo<>  ="22;1">Si demoler falso techo<> 
+
+selected ="102;0">
+0 Tirar muebles<>
+
+selected ="51;0">
+0 Demoler tabique<>
+
+selected ="103;0">No quitar friso de madera ó similar<>  ="103;1">Si quitar friso de madera ó similar<>
+
+selected ="16;0">No colocar baldosas (Alicatar suelo)<>  ="16;1">Si colocar baldosas (Alicatar suelo)<>
+
+selected ="42;0">No Techo de pladur acabado liso<>  ="42;1">Si Techo de pladur acabado liso<>
+
+selected ="52;0">
+0 Construccion tabique ladriyeso<>
+
+selected ="53;0">
+0 Construccion de tabique de pladur<>
+
+selected ="54;0">
+0 M2 de tabique de paves<> ="0;0">baldosas de ceramica o gres normal<>  ="2;1">baldosas de gres porcelanico<>  ="18;2">baldosas de gres rectificado<> 
+
+selected ="1;0">
+0 Punto de luz en techo<>
+
+selected ="2;0">
+0 Punto de luz en pared<>
+
+selected ="28;0">
+0 Interruptor simple<>
+
+selected ="29;0">
+0 Interruptor doble<>
+
+selected ="30;0">
+0 Interruptor triple<>
+
+selected ="31;0">
+0 Enchufe simple<>
+
+selected ="32;0">
+0 Enchufe doble<>
+
+selected ="33;0">
+0 Enchufe triple<>
+
+selected ="107;0">
+0 Reubicar caja de luz<>
+
+selected ="82;0">
+0 Toma lavadora<>
+
+selected ="83;0">
+0 Toma lavavajillas<>
+
+selected ="135;0">
+0 Toma telefono<>
+
+selected ="149;0">
+0 Ventilador extractor<>
+
+selected ="48;0">No colocacion friso altura 1 metro<>  ="48;1">Si colocacion friso altura 1 metro<>
+
+selected ="49;0">No instalar suelo de pergo<>  ="49;1">Si instalar suelo de pergo<>
+
+selected ="23;0">No pintar techo<>  ="23;1">Si pintar techo<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<> 
+selected ="153;0">No Alisar techo<>  ="153;1">Si Alisar techo<> ="0;0">pintura plástica color blanco<>  ="3;1">pintura plástica en color<> 
+
+selected ="104;
+0">No quitar papel<>  ="104;1">Si quitar papel<>
+
+selected ="45;
+0">No pintar paredes<>  ="45;1">Si pintar paredes<>
+
+selected ="46;
+0">No alisar paredes<>  ="46;1">Si alisar paredes<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<> 
+
+selected ="106;
+0">No empapelar<>  ="106;1">Si empapelar<> ="0;0">pintura plástica color blanco<>  ="2;1">pintura plástica en color<> 
+
+selected ="143;0">
+0<>
+
+selected ="47;0">
+0<>
+
+selected ="144;0">
+0<>
+
+selected ="152;0">
+0<>
+
+selected ="10;0">No quitar baldosas<>  ="10;1">Si quitar baldosas<> 
+
+selected ="22;0">No demoler falso techo<>  ="22;1">Si demoler falso techo<> 
+
+selected ="102;0">
+0 Tirar muebles<>
+
+selected ="51;0">
+0 Demoler tabique<>
+
+selected ="103;0">No quitar friso de madera ó similar<>  ="103;1">Si quitar friso de madera ó similar<>
+
+selected ="16;0">No colocar baldosas (Alicatar suelo)<>  ="16;1">Si colocar baldosas (Alicatar suelo)<>
+
+selected ="42;0">No Techo de pladur acabado liso<>  ="42;1">Si Techo de pladur acabado liso<>
+
+selected ="52;0">
+0 Construccion tabique ladriyeso<>
+
+selected ="53;0">
+0 Construccion de tabique de pladur<>
+
+selected ="54;0">
+0 M2 de tabique de paves<> ="0;0">baldosas de ceramica o gres normal<>  ="2;1">baldosas de gres porcelanico<>  ="18;2">baldosas de gres rectificado<>
+
+selected ="1;0">
+0 Punto de luz en techo<>
+
+selected ="2;0">
+0 Punto de luz en pared<>
+
+selected ="28;0">
+0 Interruptor simple<>
+
+selected ="29;0">
+0 Interruptor doble<>
+
+selected ="30;0">
+0 Interruptor triple<>
+
+selected ="31;0">
+0 Enchufe simple<>
+
+selected ="32;0">
+0 Enchufe doble<>
+
+selected ="33;0">
+0 Enchufe triple<>
+
+selected ="107;0">
+0 Reubicar caja de luz<>
+
+selected ="82;0">
+0 Toma lavadora<>
+
+selected ="83;0">
+0 Toma lavavajillas<>
+
+selected ="135;0">
+0 Toma telefono<>
+
+selected ="149;0">
+0 Ventilador extractor<>
+
+selected ="48;0">No colocacion friso altura 1 metro<>  ="48;1">Si colocacion friso altura 1 metro<>
+
+selected ="49;0">No instalar suelo de pergo<>  ="49;1">Si instalar suelo de pergo<>
+
+selected ="23;0">No pintar techo<>  ="23;1">Si pintar techo<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<>
+
+selected ="153;0">No Alisar techo<>  ="153;1">Si Alisar techo<> ="0;0">pintura plástica color blanco<>  ="3;1">pintura plástica en color<>
+
+selected ="104;0">No quitar papel<>  ="104;1">Si quitar papel<>
+
+selected ="45;0">No pintar paredes<>  ="45;1">Si pintar paredes<> 
+
+selected ="46;0">No alisar paredes<>  ="46;1">Si alisar paredes<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<>
+
+selected ="106;0">No empapelar<>  ="106;1">Si empapelar<> ="0;0">pintura plástica color blanco<>  ="2;1">pintura plástica en color<>
+
+selected ="143;0">
+0<>
+
+selected ="47;0">
+0<>
+
+selected ="144;0">
+0<>
+
+selected ="152;0">
+0<>
+
+selected ="10;0">No quitar baldosas<>  ="10;1">Si quitar baldosas<>
+
+selected ="22;0">No demoler falso techo<>  ="22;1">Si demoler falso techo<>
+
+selected ="102;0">
+0 Tirar muebles<>
+
+selected ="51;0">
+0 Demoler tabique<>
+
+selected ="103;0">No quitar friso de madera ó similar<>  ="103;1">Si quitar friso de madera ó similar<>
+
+selected ="16;0">No colocar baldosas (Alicatar suelo)<>  ="16;1">Si colocar baldosas (Alicatar suelo)<>
+
+selected ="42;0">No Techo de pladur acabado liso<>  ="42;1">Si Techo de pladur acabado liso<>
+
+selected ="52;0">
+0 Construccion tabique ladriyeso<>
+
+selected ="53;0">
+0 Construccion de tabique de pladur<>
+
+selected ="54;0">
+0 M2 de tabique de paves<> ="0;0">baldosas de ceramica o gres normal<>  ="2;1">baldosas de gres porcelanico<>  ="18;2">baldosas de gres rectificado<> 
+
+selected ="1;0">
+0 Punto de luz en techo<>
+
+selected ="2;0">
+0 Punto de luz en pared<>
+
+selected ="28;0">
+0 Interruptor simple<>
+
+selected ="29;0">
+0 Interruptor doble<>
+
+selected ="30;0">
+0 Interruptor triple<>
+
+selected ="31;0">
+0 Enchufe simple<>
+
+selected ="32;0">
+0 Enchufe doble<>
+
+selected ="33;0">
+0 Enchufe triple<>
+
+selected ="107;0">
+0 Reubicar caja de luz<>
+
+selected ="82;0">
+0 Toma lavadora<>
+
+selected ="83;0">
+0 Toma lavavajillas<>
+
+selected ="135;0">
+0 Toma telefono<>
+
+selected ="149;0">
+0 Ventilador extractor<>
+
+selected ="48;0">No colocacion friso altura 1 metro<>  ="48;1">Si colocacion friso altura 1 metro<>
+
+selected ="49;0">No instalar suelo de pergo<>  ="49;1">Si instalar suelo de pergo<>
+
+selected ="23;0">No pintar techo<>  ="23;1">Si pintar techo<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<>
+
+selected ="153;0">No Alisar techo<>  ="153;1">Si Alisar techo<> ="0;0">pintura plástica color blanco<>  ="3;1">pintura plástica en color<>
+
+selected ="104;0">No quitar papel<>  ="104;1">Si quitar papel<>
+
+selected ="45;0">No pintar paredes<>  ="45;1">Si pintar paredes<>
+
+selected ="46;0">No alisar paredes<>  ="46;1">Si alisar paredes<>
+
+selected ="105;0">
+0 Reparar mancha de humedad<>
+
+selected ="106;0">No empapelar<>  ="106;1">Si empapelar<> ="0;0">pintura plástica color blanco<>  ="2;1">pintura plástica en color<> 
+
+selected ="143;0">
+0<>
+
+selected ="47;0">
+0<>
+
+selected ="144;0">
+0<>
+
+selected ="152;0">
+0<>
+
