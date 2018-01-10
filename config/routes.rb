@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+ 
+  resources :confirmacions
+  resources :presupuestos
+  resources :budgets
+  resources :empresas
+  resources :habitacions
+  resources :cocinas
+  resources :banos 
+
+  resources :reforms do
+    resources :habitacions
+    resources :cocinas
+    resources :banos 
+    member do
+      get :resumen
+    end
+  end 
+
+  resources :presupuestos do
+    member do
+      get :presupuesto_reform
+    end
+  end
+
   root   'static_pages#home'
 
   get     '/lista',     to: "users#lista"
@@ -30,6 +54,12 @@ Rails.application.routes.draw do
   get     '/popular',           to: 'static_pages#popular'
   get     '/index_municipios',  to: 'municipios#index'
   get     '/ir_a_tu_plaza',     to: 'plazas#show'
+
+  get     '/reforms', to: 'reforms#index'
+  get     '/banos', to: 'bano#index'
+  get     '/cocinas', to: 'cocinas#index'
+  get     '/habitacions', to: 'habitacions#index'
+
 
   resources :users do
     member do

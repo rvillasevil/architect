@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subid: 1
+  um: MyString
+  task: MyString
+  description: MyString
+  material: MyString
+
+two:
+  subid: 1
+  um: MyString
+  task: MyString
+  description: MyString
+  material: MyString

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Confirmacions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Reform</th>
+      <th>Usuario</th>
+      <th>Empresa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @confirmacions.each do |confirmacion| %>
+      <tr>
+        <td><%= confirmacion.user_id %></td>
+        <td><%= confirmacion.reform_id %></td>
+        <td><%= confirmacion.usuario %></td>
+        <td><%= confirmacion.empresa %></td>
+        <td><%= link_to 'Show', confirmacion %></td>
+        <td><%= link_to 'Edit', edit_confirmacion_path(confirmacion) %></td>
+        <td><%= link_to 'Destroy', confirmacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Confirmacion', new_confirmacion_path %>

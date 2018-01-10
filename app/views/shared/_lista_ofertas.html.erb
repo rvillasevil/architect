@@ -1,0 +1,1155 @@
+<div class="campos" style="margin-top: 100px;">
+
+  <div class="iconos_inicio">
+    <% if logged_in? %>
+      <% if  current_user.empresa == true %>
+        <h3 style="font-weight: bold; margin-top: 50px;">Descubre lo que constructor puede hacer por tu empresa</h3>
+        <ul class="ofertas">
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Pásate a premium</h5></span>
+            <h5 style="font-size: 15px; font-weight: normal;">Completa toda la base de datos para poder acceder a un mayor número de clientes.</h5>
+          </li>
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Publica ofertas</h5></span>
+            <h5 style="font-size: 15px; font-weight: normal;">Promociona tu negocio con ofertas atractivas, materiales... nosotros nos encargamos de que todo el mundo las pueda ver.</h5>
+          </li>
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>¿Cómo está tu empresa frente a la competencia?</h5></span>
+            <h5 style="font-size: 15px; font-weight: normal;">Obtén informes detallados de tu posicionamiento en el mercado, si estás fuera de precio, o tus productos no tienen la demanda suficiente, nosotros te aportamos toda la información que necesitas.</h5>
+          </li>                 
+        </ul>
+      <% else %>
+        <h3 style="font-weight: bold; margin-top: 50px;">Descubre Constructor</h3>
+        <ul class="ofertas">
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
+          </li>
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Diseño</h5></span>
+          </li>
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Materiales</h5></span>
+          </li>                 
+        </ul>  
+      <% end %>
+    <% else %>
+      <h3 style="font-weight: bold; margin-top: 50px;">Descubre Constructor</h3>
+        <ul class="ofertas">
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
+          </li>
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Diseño</h5></span>
+          </li>
+          <li>
+            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Materiales</h5></span>
+          </li>                 
+        </ul> 
+    <% end %>
+  </div>         
+
+  <% if logged_in? %>
+    <% if  current_user.empresa != true %>
+      <h3 style="font-weight: bold; margin-top: 50px;">Ofertas para tu salón</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta" style=" ">
+              <ul class="elemento" id="quitar_azulejo" style="">
+                  <% @task = Task.find_by(task: 'demo_quitar_azulejo') %>
+                <li>
+                  <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="lista_oferta" style="">
+              <ul class="elemento" style="">
+                  <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>
+                <li>
+                  <%= image_tag(('quitar_baldosa.jpg'), class: "img-responsive") %>
+                </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>        
+          </li>
+
+          <li class="lista_oferta" style="">
+              <ul class="elemento" style="">
+                  <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>
+                <li class="">
+                  <%= image_tag(('falso_techo.jpg') , class: "img-responsive")%>
+                </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>        
+          </li>
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
+                  <li>
+                      <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+
+      <h3 style="font-weight: bold; margin-top: 50px;">Descubre materiales increibles</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_inodoro') %>
+                  <li>
+                      <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_bidet') %>
+                  <li>
+                      <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_plato_ducha') %>
+                  <li>
+                      <%= image_tag(('plato_ducha.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mampara') %>
+                  <li>
+                      <%= image_tag(('mampara_paves.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mueble_bano') %>
+                  <li>
+                      <%= image_tag(('mueble_bano_2.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_banera') %>
+                  <li>
+                      <%= image_tag(('banera_grifos_2.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+
+      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos cocina</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mobi_cocina') %>
+                  <li>
+                      <%= image_tag(('retirar_mobiliario_cocina.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>
+                  <li>
+                      <%= image_tag(('retirar_electrodomesticos.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+
+      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos salón</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_friso_madera') %>
+                  <li>
+                      <%= image_tag(('retirar_friso_madera.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mueble') %>
+                  <li>
+                      <%= image_tag(('retirar_muebles.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    <% end %>
+  <% else %>
+    <h3 style="font-weight: bold; margin-top: 50px;">Ofertas para tu salón</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta" style=" ">
+              <ul class="elemento" id="quitar_azulejo" style="">
+                  <% @task = Task.find_by(task: 'demo_quitar_azulejo') %>
+                <li>
+                  <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="lista_oferta" style="">
+              <ul class="elemento" style="">
+                  <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>
+                <li>
+                  <%= image_tag(('quitar_baldosa.jpg'), class: "img-responsive") %>
+                </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>        
+          </li>
+
+          <li class="lista_oferta" style="">
+              <ul class="elemento" style="">
+                  <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>
+                <li class="">
+                  <%= image_tag(('falso_techo.jpg') , class: "img-responsive")%>
+                </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>        
+          </li>
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
+                  <li>
+                      <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+
+      <h3 style="font-weight: bold; margin-top: 50px;">Descubre materiales increibles</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_inodoro') %>
+                  <li>
+                      <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_bidet') %>
+                  <li>
+                      <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_plato_ducha') %>
+                  <li>
+                      <%= image_tag(('plato_ducha.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mampara') %>
+                  <li>
+                      <%= image_tag(('mampara_paves.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mueble_bano') %>
+                  <li>
+                      <%= image_tag(('mueble_bano_2.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_banera') %>
+                  <li>
+                      <%= image_tag(('banera_grifos_2.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+
+      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos cocina</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mobi_cocina') %>
+                  <li>
+                      <%= image_tag(('retirar_mobiliario_cocina.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>
+                  <li>
+                      <%= image_tag(('retirar_electrodomesticos.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+
+      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos salón</h3>
+      <ul class="lista_principal" style="">
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_friso_madera') %>
+                  <li>
+                      <%= image_tag(('retirar_friso_madera.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+
+
+          <li class="lista_oferta">
+              <ul class="elemento">
+                  <% @task = Task.find_by(task: 'demo_quitar_mueble') %>
+                  <li>
+                      <%= image_tag(('retirar_muebles.jpg'), class: "img-responsive") %>
+                  </li>
+                <li class="nombre">
+                  <div class="nombre">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      <%= @task.nombre if @task.nombre != nil %>
+                  </div>
+                </li>
+                <li>
+                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                </li>
+                <li>
+                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                </li>
+                  <li class="iconos">
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                      
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                      <% if @task.mat_aportar != nil %>
+                      <div style="float: right;">
+                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                      </div>
+                      <% end %>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  <% end %>
+
+</div>

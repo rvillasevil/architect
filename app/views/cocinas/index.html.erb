@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cocinas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Demo quitar azulejo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cocinas.each do |cocina| %>
+      <tr>
+        <td><%= cocina.nombre %></td>
+        <td><%= cocina.demo_quitar_azulejo %></td>
+        <td><%= link_to 'Show', reform_cocina_path(id: cocina.id) %></td>
+        <td><%= link_to 'Edit', edit_reform_cocina_path(cocina, reform_id: cocina.reform_id) %></td>
+        <td><%= link_to 'Destroy', reform_cocina_path(cocina, reform_id: cocina.reform_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cocina', new_reform_cocina_path(reform_id: params[:reform_id]) %>
+
+<%= link_to 'Return to reform', reform_path(id: params[:reform_id]) %>

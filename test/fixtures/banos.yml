@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  demo_quitar_azulejo: 9.99
+
+two:
+  nombre: MyString
+  demo_quitar_azulejo: 9.99

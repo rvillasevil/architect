@@ -1,0 +1,632 @@
+
+<div class="field">
+	<%= f.label :demo_quitar_baldosa %>
+	<%= f.text_field :demo_quitar_baldosa %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_inodoro %>
+	<%= f.text_field :demo_quitar_inodoro %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_bidet %>
+	<%= f.text_field :demo_quitar_bidet %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_plato_ducha %>
+	<%= f.text_field :demo_quitar_plato_ducha %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_mampara %>
+	<%= f.text_field :demo_quitar_mampara %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_mueble_bano %>
+	<%= f.text_field :demo_quitar_mueble_bano %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_banera %>
+	<%= f.text_field :demo_quitar_banera %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_falso_techo %>
+	<%= f.text_field :demo_quitar_falso_techo %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_tabique %>
+	<%= f.text_field :demo_quitar_tabique %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_mobi_cocina %>
+	<%= f.text_field :demo_quitar_mobi_cocina %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_retir_electrodomesticos %>
+	<%= f.text_field :demo_retir_electrodomesticos %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_mueble %>
+	<%= f.text_field :demo_quitar_mueble %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_friso_madera %>
+	<%= f.text_field :demo_friso_madera %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_termo_electrico %>
+	<%= f.text_field :tub_termo_electrico %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_radiador %>
+	<%= f.text_field :tub_radiador %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_lavabo %>
+	<%= f.text_field :tub_lavabo %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_ducha_banera %>
+	<%= f.text_field :tub_ducha_banera %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_bidet %>
+	<%= f.text_field :tub_bidet %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_inodoro %>
+	<%= f.text_field :tub_inodoro %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_colum_hidromasaje %>
+	<%= f.text_field :tub_colum_hidromasaje %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_lavabo_doble %>
+	<%= f.text_field :tub_lavabo_doble %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_jacuzzy %>
+	<%= f.text_field :tub_jacuzzy %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_sauna %>
+	<%= f.text_field :tub_sauna %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_ducha_empotrada %>
+	<%= f.text_field :tub_ducha_empotrada %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_toallero %>
+	<%= f.text_field :tub_toallero %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_reubicar_contador %>
+	<%= f.text_field :tub_reubicar_contador %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_lavadora %>
+	<%= f.text_field :tub_lavadora %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_reubicar_inodoro %>
+	<%= f.text_field :tub_reubicar_inodoro %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_tipo %>
+	<%= f.text_field :tub_tipo %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_caldera %>
+	<%= f.text_field :tub_caldera %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_fregadero %>
+	<%= f.text_field :tub_fregadero %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_lavavajillas %>
+	<%= f.text_field :tub_lavavajillas %>
+</div>
+
+<div class="field">
+	<%= f.label :tub_secadora %>
+	<%= f.text_field :tub_secadora %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_pto_luz_techo %>
+	<%= f.text_field :elec_pto_luz_techo %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_pto_luz_pared %>
+	<%= f.text_field :elec_pto_luz_pared %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_interr_simple %>
+	<%= f.text_field :elec_interr_simple %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_interr_doble %>
+	<%= f.text_field :elec_interr_doble %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_interr_triple %>
+	<%= f.text_field :elec_interr_triple %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_enchu_simple %>
+	<%= f.text_field :elec_enchu_simple %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_enchu_doble %>
+	<%= f.text_field :elec_enchu_doble %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_enchu_triple %>
+	<%= f.text_field :elec_enchu_triple %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_reubicar_caja_luz %>
+	<%= f.text_field :elec_reubicar_caja_luz %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_toma_lavadora %>
+	<%= f.text_field :elec_toma_lavadora %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_toma_ventilador_extractor %>
+	<%= f.text_field :elec_toma_ventilador_extractor %>
+</div>
+
+elec_toma_horno_vitroceramica, 
+<div class="field">
+	<%= f.label :elec_toma_microondas %>
+	<%= f.text_field :elec_toma_microondas %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_toma_frigorifico %>
+	<%= f.text_field :elec_toma_frigorifico %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_toma_lavavajillas %>
+	<%= f.text_field :elec_toma_lavavajillas %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_toma_secadora %>
+	<%= f.text_field :elec_toma_secadora %>
+</div>
+
+<div class="field">
+	<%= f.label :elec_toma_telefono %>
+	<%= f.text_field :elec_toma_telefono %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_azulejos %>
+	<%= f.text_field :demo_quitar_azulejos %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_quitar_baldosas %>
+	<%= f.text_field :demo_quitar_baldosas %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_falso_techo %>
+	<%= f.text_field :demo_falso_techo %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_tabiqu %>
+	<%= f.text_field :demo_tabiqu %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_inodoro %>
+	<%= f.text_field :demo_inodoro %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_bidet %>
+	<%= f.text_field :demo_bidet %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_plato_ducha %>
+	<%= f.text_field :demo_plato_ducha %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_mampara %>
+	<%= f.text_field :demo_mampara %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_mueble_bano %>
+	<%= f.text_field :demo_mueble_bano %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_banera %>
+	<%= f.text_field :demo_banera %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_mobiliario_cocina %>
+	<%= f.text_field :demo_mobiliario_cocina %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_electrodomesticos %>
+	<%= f.text_field :demo_electrodomesticos %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_frisos_madera %>
+	<%= f.text_field :demo_frisos_madera %>
+</div>
+
+<div class="field">
+	<%= f.label :demo_muebles %>
+	<%= f.text_field :demo_muebles %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_azulejo %>
+	<%= f.text_field :alb_azulejo %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_tipo_azulejo %>
+	<%= f.text_field :alb_tipo_azulejo %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_baldosa %>
+	<%= f.text_field :alb_baldosa %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_tipo_baldosa %>
+	<%= f.text_field :alb_tipo_baldosa %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_techo_pladur %>
+	<%= f.text_field :alb_techo_pladur %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_tabique_ladriyeso %>
+	<%= f.text_field :alb_tabique_ladriyeso %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_tabique_pladur %>
+	<%= f.text_field :alb_tabique_pladur %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_tabique_fabrica %>
+	<%= f.text_field :alb_tabique_fabrica %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_tabique_paves %>
+	<%= f.text_field :alb_tabique_paves %>
+</div>
+
+<div class="field">
+	<%= f.label :alb_nivelacion_pared %>
+	<%= f.text_field :alb_nivelacion_pared %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_mampara %>
+	<%= f.text_field :mont_sani_mampara %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_mueble_bano %>
+	<%= f.text_field :mont_sani_mueble_bano %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_banera %>
+	<%= f.text_field :mont_sani_banera %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_plato_ducha %>
+	<%= f.text_field :mont_sani_plato_ducha %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_bidet %>
+	<%= f.text_field :mont_sani_bidet %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_inodoro_normal %>
+	<%= f.text_field :mont_sani_inodoro_normal %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_inodoro_suspendido %>
+	<%= f.text_field :mont_sani_inodoro_suspendido %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_inodoro_encastrado %>
+	<%= f.text_field :mont_sani_inodoro_encastrado %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_grifo_ducha %>
+	<%= f.text_field :mont_sani_grifo_ducha %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_grifo_banera %>
+	<%= f.text_field :mont_sani_grifo_banera %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_acceso_atornillado %>
+	<%= f.text_field :mont_sani_acceso_atornillado %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_colum_hidromasaje %>
+	<%= f.text_field :mont_sani_colum_hidromasaje %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_cabina_ducha %>
+	<%= f.text_field :mont_sani_cabina_ducha %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_plato_ducha_obra %>
+	<%= f.text_field :mont_sani_plato_ducha_obra %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_sani_lavabo_pedesta %>
+	<%= f.text_field :mont_sani_lavabo_pedesta %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_mueble_alto_cocina %>
+	<%= f.text_field :mont_electro_mueble_alto_cocina %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_mueble_bajo_cocina %>
+	<%= f.text_field :mont_electro_mueble_bajo_cocina %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_horno_electrico %>
+	<%= f.text_field :mont_electro_horno_electrico %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_placa_vitro %>
+	<%= f.text_field :mont_electro_placa_vitro %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_placa_electrica %>
+	<%= f.text_field :mont_electro_placa_electrica %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_lavadora %>
+	<%= f.text_field :mont_electro_lavadora %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_frigorifico %>
+	<%= f.text_field :mont_electro_frigorifico %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_lavavajillas %>
+	<%= f.text_field :mont_electro_lavavajillas %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_microondas %>
+	<%= f.text_field :mont_electro_microondas %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_electro_secadora %>
+	<%= f.text_field :mont_electro_secadora %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_fregadero %>
+	<%= f.text_field :mont_fregadero %>
+</div>
+
+<div class="field">
+	<%= f.label :mont_grifo_fregadero %>
+	<%= f.text_field :mont_grifo_fregadero %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_termo_elect_a %>
+	<%= f.text_field :colo_pmarcha_termo_elect_a %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_termo_elect_b %>
+	<%= f.text_field :colo_pmarcha_termo_elect_b %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_termo_elect_c %>
+	<%= f.text_field :colo_pmarcha_termo_elect_c %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_termo_elect_d %>
+	<%= f.text_field :colo_pmarcha_termo_elect_d %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_termo_elect_e %>
+	<%= f.text_field :colo_pmarcha_termo_elect_e %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_termo_elect_f %>
+	<%= f.text_field :colo_pmarcha_termo_elect_f %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_calde_atmos %>
+	<%= f.text_field :colo_pmarcha_calde_atmos %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_calde_bajo_nox %>
+	<%= f.text_field :colo_pmarcha_calde_bajo_nox %>
+</div>
+
+<div class="field">
+	<%= f.label :colo_pmarcha_calde_estanca %>
+	<%= f.text_field :colo_pmarcha_calde_estanca %>
+</div>
+
+<div class="field">
+	<%= f.label :techo_pintar %>
+	<%= f.text_field :techo_pintar %>
+</div>
+
+<div class="field">
+	<%= f.label :techo_tipo_pintura %>
+	<%= f.text_field :techo_tipo_pintura %>
+</div>
+
+<div class="field">
+	<%= f.label :techo_alisar %>
+	<%= f.text_field :techo_alisar %>
+</div>
+
+<div class="field">
+	<%= f.label :techo_reparar_humedad %>
+	<%= f.text_field :techo_reparar_humedad %>
+</div>
+
+<div class="field">
+	<%= f.label :pared_empapelar %>
+	<%= f.text_field :pared_empapelar %>
+</div>
+
+<div class="field">
+	<%= f.label :pared_quitar_papel %>
+	<%= f.text_field :pared_quitar_papel %>
+</div>
+
+<div class="field">
+	<%= f.label :pared_alisar %>
+	<%= f.text_field :pared_alisar %>
+</div>
+
+<div class="field">
+	<%= f.label :pared_pintar %>
+	<%= f.text_field :pared_pintar %>
+</div>
+
+<div class="field">
+	<%= f.label :pared_reparar_humedad %>
+	<%= f.text_field :pared_reparar_humedad %>
+</div>
+
+<div class="field">
+	<%= f.label :carpin_friso %>
+	<%= f.text_field :carpin_friso %>
+</div>
+
+<div class="field">
+	<%= f.label :puerta_colocar %>
+	<%= f.text_field :puerta_colocar %>
+</div>
+
+<div class="field">
+	<%= f.label :puerta_tipo %>
+	<%= f.text_field :puerta_tipo %>
+</div>
+
+<div class="field">
+	<%= f.label :puerta_cambio_precerco %>
+	<%= f.text_field :puerta_cambio_precerco %>
+</div>
+
+<div class="field">
+	<%= f.label :ventana_colocar %>
+	<%= f.text_field :ventana_colocar %>
+</div>
+
+<div class="field">
+	<%= f.label :ventana_tipo %>
+	<%= f.text_field :ventana_tipo %>
+</div>
+
+<div class="field">
+	<%= f.label :ventana_contraventa %>
+	<%= f.text_field :ventana_contraventa %>
+</div>
+
+
+
+
+
+

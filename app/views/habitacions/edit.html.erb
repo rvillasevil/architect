@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="constructor">
+				<h1>Editar Habitacion</h1>
+
+				<% if Confirmacion.find_by(reform_id: params[:reform_id]) == nil %>
+					<%= render 'form', habitacion: @habitacion %>
+				<% else %>
+				<div style="margin-top: 50px; margin-bottom: 50px; background-color: #ffe6e6; border: 1px solid #ffcccc; border-radius: 10px;">
+					<h3 style="margin: 0px; padding: 15px;">Ya se han pedido presupuestos para esta reforma. En breve recibirán los presupuestos.</h3>
+				</div>
+					
+					<h5 style="margin-bottom: 50px;">O también puedes realiza otro proyecto. <b><%= link_to "Nuevo proyecto", new_reform_path %></b></h5>
+				<% end %>
+
+				<%= link_to 'Show', reform_habitacion_path(id: @habitacion.id) %> |
+				<%= link_to 'Back', reform_habitacions_path %>
+			</div>
+		</div>
+	</div>
+</div>

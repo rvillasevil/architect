@@ -1,0 +1,58 @@
+<!-- Formulario del micropost -->
+<div style="width: 40%; border-right: 1px solid #d9d9d9;" onclick="divVisibility('Div1');"><span><h5><i class="fa fa-newspaper-o fa-lg" aria-hidden="true" style="color: #0084B4;"></i> Añade una valoración</h5></span></div>
+
+<div id="Div1" style="display: none;">
+    <%= form_for(@micropost, html: { multipart: true }) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+            <div class="share-content">
+                <ul style="list-style-type: none; -webkit-padding-start: 5px; margin: 0px; border: none;">
+                    <li style="display: inline-flex; padding: 0px; border: none;">
+                        <%= image_tag (current_user.foto.url), class: "img-circle", size: 25 if current_user.foto? %>
+                    </li>
+                    <li style="display: inline-flex; width: 90%; margin: 0px; padding: 0px; border: none;">
+                        <%= f.text_area :content, placeholder: " Share something with the community...", style: "border: none;" %>
+                    </li>
+                    <ul style="display: inline-flex; width: 100%; align-items: center;">
+                        <li style="width: 80%; padding-right: 50px; border: none;">
+                            <h5 style="margin: 0px;"><%= f.select :valoracion,  [
+                            'Muy mala',
+                            'Mala',
+                            'Aceptable',
+                            'Recomendable',
+                            'Muy recomendable'], style: "border: 1px solid red;" %></h5>
+                        </li>
+                            <%= f.hidden_field :user_id, value: current_user.id %>
+                            <%= f.hidden_field :user_valorado, value: @user.id %>
+                        <li style="width: 20%; padding-left: 20px; border: none;">
+                            <%= f.submit "Crear", class: "btn btn-info btn-sm", style: "background-color: #c2d7f9; color: black; border: 0px; margin-bottom: 5px;" %>
+                        </li>                    
+                    </ul>
+                </ul>
+            </div>
+    <% end %>
+</div>
+
+<script>
+ var divs = ["Div1", "Div2", "Div3"];
+    var visibleDivId = null;
+    function divVisibility(divId) {
+      if(visibleDivId === divId) {
+        visibleDivId = null;
+      } else {
+        visibleDivId = divId;
+      }
+      hideNonVisibleDivs();
+    }
+    function hideNonVisibleDivs() {
+      var i, divId, div;
+      for(i = 0; i < divs.length; i++) {
+        divId = divs[i];
+        div = document.getElementById(divId);
+        if(visibleDivId === divId) {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      }
+    }
+</script>

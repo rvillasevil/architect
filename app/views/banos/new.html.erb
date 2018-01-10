@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1">
+		</div>
+
+		<div class="col-sm-10">
+			<div class="constructor">
+				<h5><%= @reform.nombre if @reform != nil %></h5>
+				<h1 style="font-weight: bolder;">Nuevo Baño / Aseo</h1>
+
+				<%= render 'form', bano: @bano %>
+
+				<%# link_to 'Back', reform_path(id: params[:reform_id]) %>				
+			</div>
+		</div>
+	</div>
+</div>

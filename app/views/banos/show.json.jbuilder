@@ -1,0 +1,1 @@
+json.extract! @bano, :id, :nombre, :demo_quitar_azulejo, :created_at, :updated_at

@@ -1,137 +1,232 @@
- Prefix Verb   URI Pattern                                                  Controller#Action
-                         root GET    /                                                            static_pages#home
-                        lista GET    /lista(.:format)                                             users#lista
-                         help GET    /help(.:format)                                              static_pages#help
-                        about GET    /about(.:format)                                             static_pages#about
-                      contact GET    /contact(.:format)                                           static_pages#contact
-                      popular GET    /popular(.:format)                                           static_pages#popular
-                       signup GET    /signup(.:format)                                            users#new
-                        login GET    /login(.:format)                                             sessions#new
-                              POST   /login(.:format)                                             sessions#create
-                       logout DELETE /logout(.:format)                                            sessions#destroy
-                              GET    /lista(.:format)                                             users#lista
-                      circles GET    /circles(.:format)                                           users#following
-                    new_plaza GET    /new_plaza(.:format)                                         users#new_plaza
-                       plazas GET    /plazas(.:format)                                            users#following_plaza
-                     petition GET    /petition(.:format)                                          microposts#petition_form
-                    micropost GET    /micropost(.:format)                                         microposts#show
-                    petitions GET    /petitions(.:format)                                         microposts#petition_index
-                              POST   /plazas(.:format)                                            plazas#create
-                    allplazas GET    /allplazas(.:format)                                         plazas#all_index
-                dejardeseguir DELETE /dejardeseguir(.:format)                                     groups#destroy
-                       seguir POST   /seguir(.:format)                                            groups#create
-                              GET    /popular(.:format)                                           static_pages#popular
-             index_municipios GET    /index_municipios(.:format)                                  municipios#index
-                ir_a_tu_plaza GET    /ir_a_tu_plaza(.:format)                                     plazas#show
-               following_user GET    /users/:id/following(.:format)                               users#following
-               followers_user GET    /users/:id/followers(.:format)                               users#followers
-     edit_administrative_user GET    /users/:id/edit_administrative(.:format)                     users#edit_administrative
-   update_administrative_user PUT    /users/:id/update_administrative(.:format)                   users#update_administrative
-              user_user_users GET    /users/:user_id/users/:user_id/users(.:format)               users#index
-                              POST   /users/:user_id/users/:user_id/users(.:format)               users#create
-           new_user_user_user GET    /users/:user_id/users/:user_id/users/new(.:format)           users#new
-          edit_user_user_user GET    /users/:user_id/users/:user_id/users/:id/edit(.:format)      users#edit
-               user_user_user GET    /users/:user_id/users/:user_id/users/:id(.:format)           users#show
-                              PATCH  /users/:user_id/users/:user_id/users/:id(.:format)           users#update
-                              PUT    /users/:user_id/users/:user_id/users/:id(.:format)           users#update
-                              DELETE /users/:user_id/users/:user_id/users/:id(.:format)           users#destroy
-                   user_users GET    /users/:user_id/users(.:format)                              users#index
-                              POST   /users/:user_id/users(.:format)                              users#create
-                new_user_user GET    /users/:user_id/users/new(.:format)                          users#new
-               edit_user_user GET    /users/:user_id/users/:id/edit(.:format)                     users#edit
-                    user_user GET    /users/:user_id/users/:id(.:format)                          users#show
-                              PATCH  /users/:user_id/users/:id(.:format)                          users#update
-                              PUT    /users/:user_id/users/:id(.:format)                          users#update
-                              DELETE /users/:user_id/users/:id(.:format)                          users#destroy
-                        users GET    /users(.:format)                                             users#index
-                              POST   /users(.:format)                                             users#create
-                     new_user GET    /users/new(.:format)                                         users#new
-                    edit_user GET    /users/:id/edit(.:format)                                    users#edit
-                         user GET    /users/:id(.:format)                                         users#show
-                              PATCH  /users/:id(.:format)                                         users#update
-                              PUT    /users/:id(.:format)                                         users#update
-                              DELETE /users/:id(.:format)                                         users#destroy
-      edit_account_activation GET    /account_activations/:id/edit(.:format)                      account_activations#edit
-              password_resets POST   /password_resets(.:format)                                   password_resets#create
-           new_password_reset GET    /password_resets/new(.:format)                               password_resets#new
-          edit_password_reset GET    /password_resets/:id/edit(.:format)                          password_resets#edit
-               password_reset PATCH  /password_resets/:id(.:format)                               password_resets#update
-                              PUT    /password_resets/:id(.:format)                               password_resets#update
-            hashtag_micropost GET    /microposts/:id/hashtag(.:format)                            microposts#hashtag
-                   microposts GET    /microposts(.:format)                                        microposts#index
-                              POST   /microposts(.:format)                                        microposts#create
-                new_micropost GET    /microposts/new(.:format)                                    microposts#new
-               edit_micropost GET    /microposts/:id/edit(.:format)                               microposts#edit
-                              GET    /microposts/:id(.:format)                                    microposts#show
-                              PATCH  /microposts/:id(.:format)                                    microposts#update
-                              PUT    /microposts/:id(.:format)                                    microposts#update
-                              DELETE /microposts/:id(.:format)                                    microposts#destroy
-           micropost_comments GET    /microposts/:micropost_id/comments(.:format)                 comments#index
-                              POST   /microposts/:micropost_id/comments(.:format)                 comments#create
-        new_micropost_comment GET    /microposts/:micropost_id/comments/new(.:format)             comments#new
-       edit_micropost_comment GET    /microposts/:micropost_id/comments/:id/edit(.:format)        comments#edit
-            micropost_comment GET    /microposts/:micropost_id/comments/:id(.:format)             comments#show
-                              PATCH  /microposts/:micropost_id/comments/:id(.:format)             comments#update
-                              PUT    /microposts/:micropost_id/comments/:id(.:format)             comments#update
-                              DELETE /microposts/:micropost_id/comments/:id(.:format)             comments#destroy
-   update_like_micropost_vote PUT    /microposts/:micropost_id/votes/:id/update_like(.:format)    votes#update_like
-update_dislike_micropost_vote PUT    /microposts/:micropost_id/votes/:id/update_dislike(.:format) votes#update_dislike
-              micropost_votes GET    /microposts/:micropost_id/votes(.:format)                    votes#index
-                              POST   /microposts/:micropost_id/votes(.:format)                    votes#create
-           new_micropost_vote GET    /microposts/:micropost_id/votes/new(.:format)                votes#new
-          edit_micropost_vote GET    /microposts/:micropost_id/votes/:id/edit(.:format)           votes#edit
-               micropost_vote GET    /microposts/:micropost_id/votes/:id(.:format)                votes#show
-                              PATCH  /microposts/:micropost_id/votes/:id(.:format)                votes#update
-                              PUT    /microposts/:micropost_id/votes/:id(.:format)                votes#update
-                              DELETE /microposts/:micropost_id/votes/:id(.:format)                votes#destroy
-                              GET    /microposts(.:format)                                        microposts#index
-                              POST   /microposts(.:format)                                        microposts#create
-                              GET    /microposts/new(.:format)                                    microposts#new
-                              GET    /microposts/:id/edit(.:format)                               microposts#edit
-                              GET    /microposts/:id(.:format)                                    microposts#show
-                              PATCH  /microposts/:id(.:format)                                    microposts#update
-                              PUT    /microposts/:id(.:format)                                    microposts#update
-                              DELETE /microposts/:id(.:format)                                    microposts#destroy
-                user_comments GET    /users/:user_id/comments(.:format)                           comments#index
-                              POST   /users/:user_id/comments(.:format)                           comments#create
-             new_user_comment GET    /users/:user_id/comments/new(.:format)                       comments#new
-            edit_user_comment GET    /users/:user_id/comments/:id/edit(.:format)                  comments#edit
-                 user_comment GET    /users/:user_id/comments/:id(.:format)                       comments#show
-                              PATCH  /users/:user_id/comments/:id(.:format)                       comments#update
-                              PUT    /users/:user_id/comments/:id(.:format)                       comments#update
-                              DELETE /users/:user_id/comments/:id(.:format)                       comments#destroy
-                  user_plazas GET    /users/:user_id/plazas(.:format)                             plazas#index
-                              POST   /users/:user_id/plazas(.:format)                             plazas#create
-               new_user_plaza GET    /users/:user_id/plazas/new(.:format)                         plazas#new
-              edit_user_plaza GET    /users/:user_id/plazas/:id/edit(.:format)                    plazas#edit
-                   user_plaza GET    /users/:user_id/plazas/:id(.:format)                         plazas#show
-                              PATCH  /users/:user_id/plazas/:id(.:format)                         plazas#update
-                              PUT    /users/:user_id/plazas/:id(.:format)                         plazas#update
-                              DELETE /users/:user_id/plazas/:id(.:format)                         plazas#destroy
-                  user_groups GET    /users/:user_id/groups(.:format)                             groups#index
-                              POST   /users/:user_id/groups(.:format)                             groups#create
-               new_user_group GET    /users/:user_id/groups/new(.:format)                         groups#new
-              edit_user_group GET    /users/:user_id/groups/:id/edit(.:format)                    groups#edit
-                   user_group GET    /users/:user_id/groups/:id(.:format)                         groups#show
-                              PATCH  /users/:user_id/groups/:id(.:format)                         groups#update
-                              PUT    /users/:user_id/groups/:id(.:format)                         groups#update
-                              DELETE /users/:user_id/groups/:id(.:format)                         groups#destroy
-                              GET    /users(.:format)                                             users#index
-                              POST   /users(.:format)                                             users#create
-                              GET    /users/new(.:format)                                         users#new
-                              GET    /users/:id/edit(.:format)                                    users#edit
-                              GET    /users/:id(.:format)                                         users#show
-                              PATCH  /users/:id(.:format)                                         users#update
-                              PUT    /users/:id(.:format)                                         users#update
-                              DELETE /users/:id(.:format)                                         users#destroy
-                              GET    /plazas(.:format)                                            plazas#index
-                              POST   /plazas(.:format)                                            plazas#create
-                              GET    /plazas/new(.:format)                                        plazas#new
-                   edit_plaza GET    /plazas/:id/edit(.:format)                                   plazas#edit
-                        plaza GET    /plazas/:id(.:format)                                        plazas#show
-                              PATCH  /plazas/:id(.:format)                                        plazas#update
-                              PUT    /plazas/:id(.:format)                                        plazas#update
-                              DELETE /plazas/:id(.:format)                                        plazas#destroy
-                   municipios GET    /municipios(.:format)                                        municipios#index
-                relationships POST   /relationships(.:format)                                     relationships#create
-                 relationship DELETE /relationships/:id(.:format)                                 relationships#destroy
+ Prefix Verb   URI Pattern                                                                Controller#Action
+                               presupuestos GET    /presupuestos(.:format)                                                    presupuestos#index
+                                            POST   /presupuestos(.:format)                                                    presupuestos#create
+                            new_presupuesto GET    /presupuestos/new(.:format)                                                presupuestos#new
+                           edit_presupuesto GET    /presupuestos/:id/edit(.:format)                                           presupuestos#edit
+                                presupuesto GET    /presupuestos/:id(.:format)                                                presupuestos#show
+                                            PATCH  /presupuestos/:id(.:format)                                                presupuestos#update
+                                            PUT    /presupuestos/:id(.:format)                                                presupuestos#update
+                                            DELETE /presupuestos/:id(.:format)                                                presupuestos#destroy
+                                    budgets GET    /budgets(.:format)                                                         budgets#index
+                                            POST   /budgets(.:format)                                                         budgets#create
+                                 new_budget GET    /budgets/new(.:format)                                                     budgets#new
+                                edit_budget GET    /budgets/:id/edit(.:format)                                                budgets#edit
+                                     budget GET    /budgets/:id(.:format)                                                     budgets#show
+                                            PATCH  /budgets/:id(.:format)                                                     budgets#update
+                                            PUT    /budgets/:id(.:format)                                                     budgets#update
+                                            DELETE /budgets/:id(.:format)                                                     budgets#destroy
+                                   empresas GET    /empresas(.:format)                                                        empresas#index
+                                            POST   /empresas(.:format)                                                        empresas#create
+                                new_empresa GET    /empresas/new(.:format)                                                    empresas#new
+                               edit_empresa GET    /empresas/:id/edit(.:format)                                               empresas#edit
+                                    empresa GET    /empresas/:id(.:format)                                                    empresas#show
+                                            PATCH  /empresas/:id(.:format)                                                    empresas#update
+                                            PUT    /empresas/:id(.:format)                                                    empresas#update
+                                            DELETE /empresas/:id(.:format)                                                    empresas#destroy
+                                habitacions GET    /habitacions(.:format)                                                     habitacions#index
+                                            POST   /habitacions(.:format)                                                     habitacions#create
+                             new_habitacion GET    /habitacions/new(.:format)                                                 habitacions#new
+                            edit_habitacion GET    /habitacions/:id/edit(.:format)                                            habitacions#edit
+                                 habitacion GET    /habitacions/:id(.:format)                                                 habitacions#show
+                                            PATCH  /habitacions/:id(.:format)                                                 habitacions#update
+                                            PUT    /habitacions/:id(.:format)                                                 habitacions#update
+                                            DELETE /habitacions/:id(.:format)                                                 habitacions#destroy
+                                    cocinas GET    /cocinas(.:format)                                                         cocinas#index
+                                            POST   /cocinas(.:format)                                                         cocinas#create
+                                 new_cocina GET    /cocinas/new(.:format)                                                     cocinas#new
+                                edit_cocina GET    /cocinas/:id/edit(.:format)                                                cocinas#edit
+                                     cocina GET    /cocinas/:id(.:format)                                                     cocinas#show
+                                            PATCH  /cocinas/:id(.:format)                                                     cocinas#update
+                                            PUT    /cocinas/:id(.:format)                                                     cocinas#update
+                                            DELETE /cocinas/:id(.:format)                                                     cocinas#destroy
+                                      banos GET    /banos(.:format)                                                           banos#index
+                                            POST   /banos(.:format)                                                           banos#create
+                                   new_bano GET    /banos/new(.:format)                                                       banos#new
+                                  edit_bano GET    /banos/:id/edit(.:format)                                                  banos#edit
+                                       bano GET    /banos/:id(.:format)                                                       banos#show
+                                            PATCH  /banos/:id(.:format)                                                       banos#update
+                                            PUT    /banos/:id(.:format)                                                       banos#update
+                                            DELETE /banos/:id(.:format)                                                       banos#destroy
+                         reform_habitacions GET    /reforms/:reform_id/habitacions(.:format)                                  habitacions#index
+                                            POST   /reforms/:reform_id/habitacions(.:format)                                  habitacions#create
+                      new_reform_habitacion GET    /reforms/:reform_id/habitacions/new(.:format)                              habitacions#new
+                     edit_reform_habitacion GET    /reforms/:reform_id/habitacions/:id/edit(.:format)                         habitacions#edit
+                          reform_habitacion GET    /reforms/:reform_id/habitacions/:id(.:format)                              habitacions#show
+                                            PATCH  /reforms/:reform_id/habitacions/:id(.:format)                              habitacions#update
+                                            PUT    /reforms/:reform_id/habitacions/:id(.:format)                              habitacions#update
+                                            DELETE /reforms/:reform_id/habitacions/:id(.:format)                              habitacions#destroy
+                             reform_cocinas GET    /reforms/:reform_id/cocinas(.:format)                                      cocinas#index
+                                            POST   /reforms/:reform_id/cocinas(.:format)                                      cocinas#create
+                          new_reform_cocina GET    /reforms/:reform_id/cocinas/new(.:format)                                  cocinas#new
+                         edit_reform_cocina GET    /reforms/:reform_id/cocinas/:id/edit(.:format)                             cocinas#edit
+                              reform_cocina GET    /reforms/:reform_id/cocinas/:id(.:format)                                  cocinas#show
+                                            PATCH  /reforms/:reform_id/cocinas/:id(.:format)                                  cocinas#update
+                                            PUT    /reforms/:reform_id/cocinas/:id(.:format)                                  cocinas#update
+                                            DELETE /reforms/:reform_id/cocinas/:id(.:format)                                  cocinas#destroy
+                               reform_banos GET    /reforms/:reform_id/banos(.:format)                                        banos#index
+                                            POST   /reforms/:reform_id/banos(.:format)                                        banos#create
+                            new_reform_bano GET    /reforms/:reform_id/banos/new(.:format)                                    banos#new
+                           edit_reform_bano GET    /reforms/:reform_id/banos/:id/edit(.:format)                               banos#edit
+                                reform_bano GET    /reforms/:reform_id/banos/:id(.:format)                                    banos#show
+                                            PATCH  /reforms/:reform_id/banos/:id(.:format)                                    banos#update
+                                            PUT    /reforms/:reform_id/banos/:id(.:format)                                    banos#update
+                                            DELETE /reforms/:reform_id/banos/:id(.:format)                                    banos#destroy
+                             resumen_reform GET    /reforms/:id/resumen(.:format)                                             reforms#resumen
+                                    reforms GET    /reforms(.:format)                                                         reforms#index
+                                            POST   /reforms(.:format)                                                         reforms#create
+                                 new_reform GET    /reforms/new(.:format)                                                     reforms#new
+                                edit_reform GET    /reforms/:id/edit(.:format)                                                reforms#edit
+                                     reform GET    /reforms/:id(.:format)                                                     reforms#show
+                                            PATCH  /reforms/:id(.:format)                                                     reforms#update
+                                            PUT    /reforms/:id(.:format)                                                     reforms#update
+                                            DELETE /reforms/:id(.:format)                                                     reforms#destroy
+                                       root GET    /                                                                          static_pages#home
+                                      lista GET    /lista(.:format)                                                           users#lista
+                                       help GET    /help(.:format)                                                            static_pages#help
+                                      about GET    /about(.:format)                                                           static_pages#about
+                                    contact GET    /contact(.:format)                                                         static_pages#contact
+                                    popular GET    /popular(.:format)                                                         static_pages#popular
+                                   howtouse GET    /howtouse(.:format)                                                        static_pages#howtouse
+                                     vision GET    /vision(.:format)                                                          static_pages#vision
+                                  objetivos GET    /objetivos(.:format)                                                       static_pages#objetivos
+                                  candidate GET    /candidate(.:format)                                                       static_pages#candidate
+                           popular_last_day GET    /popular_last_day(.:format)                                                static_pages#popular_last_day
+                                     signup GET    /signup(.:format)                                                          users#new
+                                      login GET    /login(.:format)                                                           sessions#new
+                                            POST   /login(.:format)                                                           sessions#create
+                                     logout DELETE /logout(.:format)                                                          sessions#destroy
+                                            GET    /lista(.:format)                                                           users#lista
+                                    circles GET    /circles(.:format)                                                         users#following
+                                  new_plaza GET    /new_plaza(.:format)                                                       users#new_plaza
+                                     plazas GET    /plazas(.:format)                                                          users#following_plaza
+                                   petition GET    /petition(.:format)                                                        microposts#petition_form
+                                  micropost GET    /micropost(.:format)                                                       microposts#show
+                                  petitions GET    /petitions(.:format)                                                       microposts#petition_index
+                           petitions_public GET    /petitions_public(.:format)                                                microposts#petition_index_public
+                                            POST   /plazas(.:format)                                                          plazas#create
+                                  allplazas GET    /allplazas(.:format)                                                       plazas#all_index
+                              dejardeseguir DELETE /dejardeseguir(.:format)                                                   groups#destroy
+                                     seguir POST   /seguir(.:format)                                                          groups#create
+                                            GET    /popular(.:format)                                                         static_pages#popular
+                           index_municipios GET    /index_municipios(.:format)                                                municipios#index
+                              ir_a_tu_plaza GET    /ir_a_tu_plaza(.:format)                                                   plazas#show
+                                            GET    /reforms(.:format)                                                         reforms#index
+                                            GET    /banos(.:format)                                                           bano#index
+                                            GET    /cocinas(.:format)                                                         cocinas#index
+                                            GET    /habitacions(.:format)                                                     habitacions#index
+                             following_user GET    /users/:id/following(.:format)                                             users#following
+                             followers_user GET    /users/:id/followers(.:format)                                             users#followers
+                   edit_administrative_user GET    /users/:id/edit_administrative(.:format)                                   users#edit_administrative
+                 update_administrative_user PUT    /users/:id/update_administrative(.:format)                                 users#update_administrative
+          update_administrative_ciudad_user PUT    /users/:id/update_administrative_ciudad(.:format)                          users#update_administrative_ciudad
+         update_circles_administrative_user PUT    /users/:id/update_circles_administrative(.:format)                         users#update_circles_administrative
+                            user_user_users GET    /users/:user_id/users/:user_id/users(.:format)                             users#index
+                                            POST   /users/:user_id/users/:user_id/users(.:format)                             users#create
+                         new_user_user_user GET    /users/:user_id/users/:user_id/users/new(.:format)                         users#new
+                        edit_user_user_user GET    /users/:user_id/users/:user_id/users/:id/edit(.:format)                    users#edit
+                             user_user_user GET    /users/:user_id/users/:user_id/users/:id(.:format)                         users#show
+                                            PATCH  /users/:user_id/users/:user_id/users/:id(.:format)                         users#update
+                                            PUT    /users/:user_id/users/:user_id/users/:id(.:format)                         users#update
+                                            DELETE /users/:user_id/users/:user_id/users/:id(.:format)                         users#destroy
+                                 user_users GET    /users/:user_id/users(.:format)                                            users#index
+                                            POST   /users/:user_id/users(.:format)                                            users#create
+                              new_user_user GET    /users/:user_id/users/new(.:format)                                        users#new
+                             edit_user_user GET    /users/:user_id/users/:id/edit(.:format)                                   users#edit
+                                  user_user GET    /users/:user_id/users/:id(.:format)                                        users#show
+                                            PATCH  /users/:user_id/users/:id(.:format)                                        users#update
+                                            PUT    /users/:user_id/users/:id(.:format)                                        users#update
+                                            DELETE /users/:user_id/users/:id(.:format)                                        users#destroy
+                                      users GET    /users(.:format)                                                           users#index
+                                            POST   /users(.:format)                                                           users#create
+                                   new_user GET    /users/new(.:format)                                                       users#new
+                                  edit_user GET    /users/:id/edit(.:format)                                                  users#edit
+                                       user GET    /users/:id(.:format)                                                       users#show
+                                            PATCH  /users/:id(.:format)                                                       users#update
+                                            PUT    /users/:id(.:format)                                                       users#update
+                                            DELETE /users/:id(.:format)                                                       users#destroy
+                    edit_account_activation GET    /account_activations/:id/edit(.:format)                                    account_activations#edit
+                            password_resets POST   /password_resets(.:format)                                                 password_resets#create
+                         new_password_reset GET    /password_resets/new(.:format)                                             password_resets#new
+                        edit_password_reset GET    /password_resets/:id/edit(.:format)                                        password_resets#edit
+                             password_reset PATCH  /password_resets/:id(.:format)                                             password_resets#update
+                                            PUT    /password_resets/:id(.:format)                                             password_resets#update
+                          hashtag_micropost GET    /microposts/:id/hashtag(.:format)                                          microposts#hashtag
+                                 microposts GET    /microposts(.:format)                                                      microposts#index
+                                            POST   /microposts(.:format)                                                      microposts#create
+                              new_micropost GET    /microposts/new(.:format)                                                  microposts#new
+                             edit_micropost GET    /microposts/:id/edit(.:format)                                             microposts#edit
+                                            GET    /microposts/:id(.:format)                                                  microposts#show
+                                            PATCH  /microposts/:id(.:format)                                                  microposts#update
+                                            PUT    /microposts/:id(.:format)                                                  microposts#update
+                                            DELETE /microposts/:id(.:format)                                                  microposts#destroy
+                          micropost_comment PUT    /microposts/:micropost_id/comments/:id(.:format)                           comments#create
+                         micropost_comments GET    /microposts/:micropost_id/comments(.:format)                               comments#index
+                                            POST   /microposts/:micropost_id/comments(.:format)                               comments#create
+                      new_micropost_comment GET    /microposts/:micropost_id/comments/new(.:format)                           comments#new
+                     edit_micropost_comment GET    /microposts/:micropost_id/comments/:id/edit(.:format)                      comments#edit
+                                            GET    /microposts/:micropost_id/comments/:id(.:format)                           comments#show
+                                            PATCH  /microposts/:micropost_id/comments/:id(.:format)                           comments#update
+                                            PUT    /microposts/:micropost_id/comments/:id(.:format)                           comments#update
+                                            DELETE /microposts/:micropost_id/comments/:id(.:format)                           comments#destroy
+                 update_like_micropost_vote PUT    /microposts/:micropost_id/votes/:id/update_like(.:format)                  votes#update_like
+              update_dislike_micropost_vote PUT    /microposts/:micropost_id/votes/:id/update_dislike(.:format)               votes#update_dislike
+update_circles_adminstrative_micropost_vote PUT    /microposts/:micropost_id/votes/:id/update_circles_adminstrative(.:format) votes#update_circles_adminstrative
+                            micropost_votes GET    /microposts/:micropost_id/votes(.:format)                                  votes#index
+                                            POST   /microposts/:micropost_id/votes(.:format)                                  votes#create
+                         new_micropost_vote GET    /microposts/:micropost_id/votes/new(.:format)                              votes#new
+                        edit_micropost_vote GET    /microposts/:micropost_id/votes/:id/edit(.:format)                         votes#edit
+                             micropost_vote GET    /microposts/:micropost_id/votes/:id(.:format)                              votes#show
+                                            PATCH  /microposts/:micropost_id/votes/:id(.:format)                              votes#update
+                                            PUT    /microposts/:micropost_id/votes/:id(.:format)                              votes#update
+                                            DELETE /microposts/:micropost_id/votes/:id(.:format)                              votes#destroy
+                                            GET    /microposts(.:format)                                                      microposts#index
+                                            POST   /microposts(.:format)                                                      microposts#create
+                                            GET    /microposts/new(.:format)                                                  microposts#new
+                                            GET    /microposts/:id/edit(.:format)                                             microposts#edit
+                                            GET    /microposts/:id(.:format)                                                  microposts#show
+                                            PATCH  /microposts/:id(.:format)                                                  microposts#update
+                                            PUT    /microposts/:id(.:format)                                                  microposts#update
+                                            DELETE /microposts/:id(.:format)                                                  microposts#destroy
+                              user_comments GET    /users/:user_id/comments(.:format)                                         comments#index
+                                            POST   /users/:user_id/comments(.:format)                                         comments#create
+                           new_user_comment GET    /users/:user_id/comments/new(.:format)                                     comments#new
+                          edit_user_comment GET    /users/:user_id/comments/:id/edit(.:format)                                comments#edit
+                               user_comment GET    /users/:user_id/comments/:id(.:format)                                     comments#show
+                                            PATCH  /users/:user_id/comments/:id(.:format)                                     comments#update
+                                            PUT    /users/:user_id/comments/:id(.:format)                                     comments#update
+                                            DELETE /users/:user_id/comments/:id(.:format)                                     comments#destroy
+                                user_plazas GET    /users/:user_id/plazas(.:format)                                           plazas#index
+                                            POST   /users/:user_id/plazas(.:format)                                           plazas#create
+                             new_user_plaza GET    /users/:user_id/plazas/new(.:format)                                       plazas#new
+                            edit_user_plaza GET    /users/:user_id/plazas/:id/edit(.:format)                                  plazas#edit
+                                 user_plaza GET    /users/:user_id/plazas/:id(.:format)                                       plazas#show
+                                            PATCH  /users/:user_id/plazas/:id(.:format)                                       plazas#update
+                                            PUT    /users/:user_id/plazas/:id(.:format)                                       plazas#update
+                                            DELETE /users/:user_id/plazas/:id(.:format)                                       plazas#destroy
+                                user_groups GET    /users/:user_id/groups(.:format)                                           groups#index
+                                            POST   /users/:user_id/groups(.:format)                                           groups#create
+                             new_user_group GET    /users/:user_id/groups/new(.:format)                                       groups#new
+                            edit_user_group GET    /users/:user_id/groups/:id/edit(.:format)                                  groups#edit
+                                 user_group GET    /users/:user_id/groups/:id(.:format)                                       groups#show
+                                            PATCH  /users/:user_id/groups/:id(.:format)                                       groups#update
+                                            PUT    /users/:user_id/groups/:id(.:format)                                       groups#update
+                                            DELETE /users/:user_id/groups/:id(.:format)                                       groups#destroy
+                                            GET    /users(.:format)                                                           users#index
+                                            POST   /users(.:format)                                                           users#create
+                                            GET    /users/new(.:format)                                                       users#new
+                                            GET    /users/:id/edit(.:format)                                                  users#edit
+                                            GET    /users/:id(.:format)                                                       users#show
+                                            PATCH  /users/:id(.:format)                                                       users#update
+                                            PUT    /users/:id(.:format)                                                       users#update
+                                            DELETE /users/:id(.:format)                                                       users#destroy
+                                            GET    /plazas(.:format)                                                          plazas#index
+                                            POST   /plazas(.:format)                                                          plazas#create
+                                            GET    /plazas/new(.:format)                                                      plazas#new
+                                 edit_plaza GET    /plazas/:id/edit(.:format)                                                 plazas#edit
+                                      plaza GET    /plazas/:id(.:format)                                                      plazas#show
+                                            PATCH  /plazas/:id(.:format)                                                      plazas#update
+                                            PUT    /plazas/:id(.:format)                                                      plazas#update
+                                            DELETE /plazas/:id(.:format)                                                      plazas#destroy
+                                 municipios GET    /municipios(.:format)                                                      municipios#index
+                              relationships POST   /relationships(.:format)                                                   relationships#create
+                               relationship DELETE /relationships/:id(.:format)                                               relationships#destroy

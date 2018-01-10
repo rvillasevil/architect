@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="constructor">
+				<%= link_to 'Show', reform_cocina_path(id: @cocina.id) %> |
+				<%= link_to 'Back', reform_cocinas_path %>
+
+				<h1>Editing Cocina</h1>
+
+				<%= render 'form', cocina: @cocina %>
+			</div>
+		</div>
+	</div>
+</div>

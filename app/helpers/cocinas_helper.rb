@@ -1,0 +1,2 @@
+module CocinasHelper
+end

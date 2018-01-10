@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="constructor">
+        <h1>Proyectos iniciados
+          <%= link_to new_reform_path do %>
+            <span style="font-size: 14px; font-weight: normal;">  or</span>&nbsp;<button type="button" class="btn btn-sm btn-primary" style=" background-color: white; border: 1px solid #BB28EB;"><h5 style="margin: 0px; color: #BB28EB;">Nuevo Proyecto</h5></button>
+          <% end %>
+        </h1>
+
+        <h5 style="font-size: 16px;">
+          <% @reforms.order(created_at: :desc).each do |reform| %>
+            <li style="display: block; margin-bottom: 40px; padding-top: 20px;">
+              <ul style="margin: 0px; list-style: none; padding: 0px;">
+                <li style="font-size: 16px; font-weight: bold;">
+                  <% @user = User.find_by(id: reform.user_id) %>
+                  <%= image_tag @user.foto.url, class: "img-circle", size: 100  if @user.foto? %>
+                  <h3 style="font-size: 26px; color: #444;"><%= reform.nombre %></h3>
+
+                  <h5 style="margin: 0px; margin-top: 20px; display: inline-flex;">Estado:</h5>
+                  <% if Confirmacion.find_by(reform_id: reform.id, user_id: current_user.id) != nil %>
+                    <h5 style="color: red; margin: 0px;"><b>Solicitados Presupuestos</b></h5>
+
+                    <% if Budget.where(reform_id: reform.id) %>
+                      <li>
+                        <h5 style="margin: 0px;">Coste estimado reforma = <b><%= @budgets = Budget.where(reform_id: reform.id).sum('cost') %> €</b></h5>
+                      </li>
+                    <% end %>
+
+                  <% else %>
+                    <h5 style="color: green; margin: 0px;"><b>En desarrollo.</b> Pide presupuestos cuando lo tengas todo terminado.</h5>
+                    <% if Budget.where(reform_id: reform.id) %>
+                      <li>
+                        <h5 style="margin: 0px;">Por ahora son = <b><%= @budgets = Budget.where(reform_id: reform.id).sum('cost') %> €</b></h5>
+                      </li>
+                    <% end %>
+
+                  <% end %>
+                  <% if Confirmacion.where(reform_id: reform.id, empresa: true).any? %>
+                    <% @confirmacion = Confirmacion.where(reform_id: reform.id, empresa: true) %>
+                    <% @confirmacion.map do |confirmacion| %>
+                      <% @empresa = User.find(confirmacion.user_id) %>
+                      <h5 style="color: green;">Enhorabuena, ya has recibido presupuestos.</h5>
+                      <%= link_to presupuesto_reform_presupuesto_path(id: reform.id, empresa: @empresa.name) do %>
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #444;">
+                          <h5 style="margin: 0px;"><b><%= @empresa.name %></b></h5>
+                          <h5 style="margin: 0px;"><%= confirmacion.cost if confirmacion.cost? %> €</h5>
+                        </button>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                </li>
+
+
+
+                <li style="padding-top: 15px;">
+                  <%= link_to reform do %>
+                    <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; font-size: 14px;" >Ver proyecto</button>
+                  <% end %>
+
+                  <%= link_to  edit_reform_path(reform) do %>
+                    <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; font-size: 14px;" >Modificar</button>
+                  <% end %>
+
+                  <%= link_to resumen_reform_path(reform) do %>
+                    <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; font-size: 14px;">Presupuesto</button>
+                  <% end %>
+                  
+                  <% if Confirmacion.find_by(reform_id: reform.id, user_id: current_user.id) == nil %>
+                    <%= link_to reform, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                      <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #d9534f; color: #d9534f; font-size: 14px;">Destruir</button>
+                    <% end %>
+                  <% end %>                      
+                </li>
+              </ul>
+            </li>
+          <% end %>
+        </h5>
+
+      </div>
+    </div>
+  </div>
+</div>

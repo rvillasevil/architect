@@ -1,0 +1,450 @@
+INSERT INTO tasks (id, task, nombre, descripcion)
+VALUES 
+
+(1, 
+'demo_quitar_azulejo', 
+'Quitar azulejos', 
+'Demolición y desescombro de azulejos, incluyendo el transporte hasta vertedero autorizado.'),
+
+(2, 
+'demo_quitar_baldosa', 
+'Quitar baldosas', 
+'Demolición y desescombro de baldosas, incluyendo el transporte hasta vertedero autorizado.'),
+
+(3, 
+'demo_quitar_falso_techo', 
+'Demoler falso techo', 
+'Demolición y desescombro de falso techo, incluyendo el transporte hasta vertedero autorizado.'),
+
+(4, 'demo_quitar_tabique',
+'Demoler tabique',
+'Demolición y desescombro de tabique, incluyendo el transporte hasta vertedero autorizado.'),
+
+
+(5, 'demo_quitar_inodoro', 
+'Retirar Inodoro', 
+'Demolición y desescombro de inodoro, incluyendo el transporte hasta vertedero autorizado.'),
+
+(6, 
+'demo_quitar_bidet', 
+'Retirar Bidet', 
+'Demolición y desescombro de mueble de bidet, incluyendo el transporte hasta vertedero autorizado.'),
+
+(7, 'demo_quitar_plato_ducha',
+ 'Retirar Plato de ducha', 
+ 'Demolición y desescombro de mueble de plato de ducha, incluyendo el transporte hasta vertedero autorizado.'),
+
+(8, 'demo_quitar_mampara', 
+'Retirar mampara', 
+'Demolición y desescombro de mampara debaño, incluyendo el transporte hasta vertedero autorizado.'),
+
+(9, 'demo_quitar_mueble_bano', 
+'Retirar Mueble baño', 
+'Demolición y desescombro de mueble de baño, incluyendo el transporte hasta vertedero autorizado.'),
+
+(10, 'demo_quitar_banera', 
+'Retirar Bañera', 
+'Demolición y desescombro de mueble de bañera, incluyendo el transporte hasta vertedero autorizado.'),
+
+
+(11, 'demo_quitar_mobi_cocina', 
+'Retirar mobiliario de cocina', 
+'Demolición y desescombro de mobiliario de cocina.'),
+
+(12, 'demo_retir_electrodomesticos', 
+'Retirar electrodomesticos', 
+'Demolición y desescombro de electrodomesticos, incluyendo el transporte hasta vertedero autorizado.'),
+
+(13, 'demo_friso_madera', 
+'Retirar friso de madera ó similar', 
+'Demolición y desescombro de friso de madera ó similar, incluyendo transporte hasta vertedero autorizado.'),
+
+(14, 'demo_quitar_mueble', 
+'Tirar muebles', 
+'Demolición y desescombro de mueble, incluyendo el transporte hasta vertedero autorizado.'),
+
+(15, 'tub_termo_electrico', 
+'Instalación tubería para Termo eléctrico', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para termo eléctrico. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(16, 'tub_radiador', 
+'Radiador, Instalación de tuberías para radiador', 
+'Se incluye la apertura y cierre de regatas. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(17, 'tub_lavabo', 
+'Lavabo, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Lavabo. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(18, 'tub_ducha_banera', 
+'Ducha o bañera, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Ducha o bañera. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(19, 'tub_bidet', 
+'Bidet, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Bidet. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(20, 'tub_inodoro', 
+'Inodoro, Instalación de tuberías para', 
+'Instalación de agua fría sanitaria para inodoro. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(21, 'tub_colum_hidromasaje', 
+'Columna de hidromasaje, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Columna de hidromasaje. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(22, 'tub_lavabo_doble', 
+'Lavabo doble, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Lavabo doble. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(23, 'tub_jacuzzy', 
+'Jacuzzy, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Jacuzzy. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(24, 'tub_sauna', 
+'Sauna, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Sauna. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(25, 'tub_ducha_empotrada', 
+'Ducha empotrada, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Ducha empotrada. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(26, 'tub_toallero', 
+'Toallero, Instalación de tuberías para', 
+'Instalación de tuberías para toallero. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(27, 'tub_reubicar_contador', 
+'Reubicar contador de agua, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para reubicar contador de agua. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(28, 'tub_lavadora', 
+'Lavadora, Instalación de tuberías para', 
+'Para lavadora, instalación de tuberías para agua fría sanitaria y en pvc para desagüe. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(29, 'tub_reubicar_inodoro', 
+'Reubicar inodoro, Instalación de tuberías para', 
+'Dentro del baño, reubicar la posición del inodoro. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(30, 'tub_tipo', ),
+
+(31, 'tub_caldera', 
+'Caldera, Instalación de tuberías para', 
+'Instalación de tuberías de cobre para caldera. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(32, 'tub_fregadero', 
+'Fregadero, Instalación de tuberías para', 
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para termo eléctrico, reubicar contador de agua y fregadero.'),
+
+(33, 'tub_lavavajillas', 
+'Lavavajillas, Instalación de tuberías para', 
+'Para lavavajillas, instalación de tuberías de cobre para agua fría sanitaria y en pvc para desagüe. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.'),
+
+(34, 'tub_secadora', ),
+
+(35, 'elec_pto_luz_techo', 
+'Punto de luz en techo, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Punto de luz en techo. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(36, 'elec_pto_luz_pared', 
+'Punto de luz en pared, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Punto de luz en pared. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(37, 'elec_interr_simple', 
+'Interruptor simple, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Interruptor simple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(38, 'elec_interr_doble', 
+'Interruptor doble, Instalación eléctrica de',  
+'Realización de instalación eléctrica desde caja ubicada en baño para Interruptor doble. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(39, 'elec_interr_triple', 
+'Interruptor triple, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Interruptor triple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(40, 'elec_enchu_simple', 
+'Enchufe simple, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Enchufe simple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(41, 'elec_enchu_doble', 
+'Enchufe doble, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Enchufe doble. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(42, 'elec_enchu_triple', 
+'Enchufe triple, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Enchufe triple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(43, 'elec_reubicar_caja_luz', 
+'Reubicar caja de luz, Instalación eléctrica de', 
+'Dentro de la estancia reubicar la posición de 1 caja de luz. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(44, 'elec_toma_lavadora', 
+'Toma lavadora, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Toma lavadora según normativa vigente. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(45, 'elec_toma_ventilador_extractor', 
+'Ventilador extractor, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde caja ubicada en baño para Ventilador extractor. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(46, 'elec_toma_horno_vitroceramica', 
+'Toma horno-vitro, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde cajas ubicadas en cocina para hornovitro según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(47, 'elec_toma_microondas', 
+'Toma microondas, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde cajas ubicadas en cocina para toma microondas. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(48, 'elec_toma_frigorifico', 
+'Toma frigorífico, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde cajas ubicadas en cocina para toma frigorífico. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(49, 'elec_toma_lavavajillas', 
+'Toma lavavajillas, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde cajas ubicadas en cocina para toma lavavajillas según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(50, 'elec_toma_secadora', 
+'Toma secadora, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde cajas ubicadas en cocina para toma secadora según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.'),
+
+(51, 'elec_toma_telefono', 
+'Toma telefono, Instalación eléctrica de', 
+'Realización de instalación eléctrica desde cajas ubicadas en la habitación para Toma de telefono. Según normativa vigente. Se incluye la colocación de mecanismos.'),
+
+
+
+(52, 'alb_azulejo', 
+'Colocar azulejos (Alicatar paredes)', 
+'Alicatado de paredes ,mediante la colocación de azulejos, con mortero cola sobre soporte cementoso con la técnica de capa fina y la aplicación de lechada en las juntas de los azulejos.'),
+
+(53, 'alb_tipo_azulejo', ),
+
+(54, 'alb_baldosa', 
+'Colocar baldosas (Alicatar suelo)', 
+'Alicatado de suelo mediante ,la colocación de baldosas con mortero cola sobre soporte cementoso con la técnica de capa fina y la aplicación de lechada en las juntas de las baldosas.'),
+
+(55, 'alb_tipo_baldosa',),
+
+(56, 'alb_techo_pladur', 
+'Construccion Techo de pladur acabado liso', 
+'Construcción de 1 falso techo de pladur en acabado liso mediante placas de pladur soportadas por estructura metalica.'),
+
+(57, 'alb_tabique_ladriyeso', 
+'Construccion tabique ladriyeso.', 
+'Levantado y construcción de un tabique de ladriyeso.'),
+
+(58, 'alb_tabique_pladur', 
+'Construccion de tabique de pladur', 
+'Levantado y construcción de un tabique de pladur.'),
+
+(59, 'alb_tabique_fabrica', 
+'Construccion de tabique de fábrica', 
+'Levantado y construcción de un tabique de pladur.'),
+
+(60, 'alb_tabique_paves', 
+'M2 de tabique de paves', 
+'Levantado y construcción de tabique de paves.'),
+
+(61, 'alb_nivelacion_pared', 
+'Nivelado pared', 
+'Nivelado verticalidad pared para alicatado por medio de relleno adecuado. Totalmente terminado.'),
+
+(62, 'mont_sani_mampara', 
+'Mampara, Montaje y colocación.', 
+'Montaje y colocación de mampara.'),
+
+(63, 'mont_sani_mueble_bano', 
+'Mueble baño, grifo y espejo, Montaje y colocación.', 
+'Montaje y colocación de Mueble baño, grifo y espejo.'),
+
+(64, 'mont_sani_banera', 
+'Bañera, Montaje y colocación.', 
+'Montaje y colocación de Bañera.'),
+
+(65, 'mont_sani_plato_ducha', 
+'Plato de ducha, Montaje y colocación.', 
+'Montaje y colocación de Plato de ducha.'),
+
+(66, 'mont_sani_bidet', 
+'Bidet, Montaje y colocación.', 
+'Montaje y colocación de Bidet.'),
+
+(67, 'mont_sani_inodoro_normal', 
+'Inodoro normal, Montaje y colocación.', 
+'Montaje y colocación de Inodoro normal.'),
+
+(68, 'mont_sani_inodoro_suspendido', 
+'Inodoro suspendido, Montaje y colocación.', 
+'Montaje y colocación de Inodoro suspendido.'),
+
+(69, 'mont_sani_inodoro_encastrado', 
+'Inodoro encastrado en pared, Montaje y colocación.', 
+'Montaje y colocación de Inodoro encastrado en pared.'),
+
+(70, 'mont_sani_grifo_ducha', 
+'Grifo ducha, Montaje y colocación.', 
+'Montaje y colocación de Grifo ducha.'),
+
+(71, 'mont_sani_grifo_banera', 
+'Grifo bañera, Montaje y colocación.', 
+'Montaje y colocación de Grifo bañera.'),
+
+(72, 'mont_sani_acceso_atornillado', 
+'Accesorio atornillado, Montaje y colocación.', 
+'Montaje y colocación de Accesorio atornillado.'),
+
+(73, 'mont_sani_colum_hidromasaje', 
+'Columna de hidromasaje, Montaje y colocación.', 
+'Montaje y colocación de Columna de hidromasaje.'),
+
+(74, 'mont_sani_cabina_ducha', 
+'Cabina de ducha, Montaje y colocación.', 
+'Montaje y colocación de Cabina de ducha.'),
+
+(75, 'mont_sani_plato_ducha_obra', 
+'Construcción Plato de ducha de obra', 
+'Construcción de 1 Plato de ducha de obra incluyendo la válvula de evacuación, la rejilla, la manta asislante y la solera.'),
+
+(76, 'mont_sani_lavabo_pedestal', 
+'Lavabo y pedestal, Montaje y colocación.', 
+'Montaje y colocación de Lavabo y pedestal.'),
+
+(77, 'mont_electro_mueble_alto_cocina', 
+'Muebles altos de cocina, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de muebles altos de cocina.'),
+
+(78, 'mont_electro_mueble_bajo_cocina', 
+'Muebles bajos de cocina, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de muebles muebles bajos de cocina.'),
+
+(79, 'mont_electro_horno_electrico', 
+'Horno electrico, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de horno electrico.'),
+
+(80, 'mont_electro_placa_vitro',
+'Placa vitroceramica, Montaje, colocación, nivelado y sujección.', 
+'Horno electrico, Montaje, colocación, nivelado y sujección de Placa vitroceramica.' ),
+
+(81, 'mont_electro_placa_electrica', 
+'Placa electrica, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de Placa electrica.'),
+
+(82, 'mont_electro_lavadora', 
+'Lavadora, Montaje, colocación, nivelado y sujección.',
+'Montaje, colocación, nivelado y sujección de Lavadora.'),
+
+(83, 'mont_electro_frigorifico', 
+'Frigorifico, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de Frigorifico.'),
+
+(84, 'mont_electro_lavavajillas', 
+'Lavavajillas, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de Lavavajillas.'),
+
+(85, 'mont_electro_microondas', 
+'Microondas, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de Microondas.'),
+
+(86, 'mont_electro_secadora', 
+'Secadora, Montaje, colocación, nivelado y sujección.', 
+'Montaje, colocación, nivelado y sujección de Secadora.'),
+
+(87, 'mont_fregadero', 
+'Fregadero, Montaje y sujección.', 
+'Montaje y sujección de fregadero y grifo de fregadero.'),
+
+(88, 'mont_grifo_fregadero', 
+'Grifo fregadero, Montaje y sujección.', 
+'Montaje y sujección de fregadero y grifo de fregadero.'),
+
+(89, 'colo_pmarcha_termo_elect_a', 
+'Termo eléctrico de 50L, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 50L. Se incluye la retirada del termo antiguo.'),
+
+(90, 'colo_pmarcha_termo_elect_b', 
+'Termo eléctrico de 80L, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 80L. Se incluye la retirada del termo antiguo.'),
+
+(91, 'colo_pmarcha_termo_elect_c', 
+'Termo eléctrico de 100L, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 100L. Se incluye la retirada del termo antiguo.'),
+
+(92, 'colo_pmarcha_termo_elect_d', 
+'Termo eléctrico de 150L, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 150L. Se incluye la retirada del termo antiguo.'),
+
+(93, 'colo_pmarcha_termo_elect_e', 
+'Termo eléctrico de 200L, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 200L. Se incluye la retirada del termo antiguo.'),
+
+(94, 'colo_pmarcha_termo_elect_f', 
+'Termo eléctrico de 300L, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 300L. Se incluye la retirada del termo antiguo.'),
+
+(95, 'colo_pmarcha_calde_atmos', 
+'Caldera atmosférica, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de caldera atmosférica. Se incluye la retirada de la antigua caldera.'),
+
+(96, 'colo_pmarcha_calde_bajo_nox', 
+'Caldera bajo nox, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de caldera bajo nox. Se incluye la retirada de la antigua caldera.'),
+
+(97, 'colo_pmarcha_calde_estanca', 
+'Caldera estanca, Colocación y puesta en marcha.', 
+'Colocación y puesta en marcha por servicio técnico autorizado de caldera estanca. Se incluye la retirada de la antigua caldera.'),
+
+(98, 'techo_pintar', 
+'Pintar techo', 
+'En techo aplicación de 2 manos de pintura plástica en color tapando mobiliario con plásticos, cinta y papel. Se incluye la reparación de desperfectos en techo.'),
+
+(99, 'techo_tipo_pintura', 
+'Pintura techo' ),
+
+(100, 'techo_alisar', 
+'Alisar techo', 'Alisar techo aplicando dos manos de pasta cubregotele, una mano de acabado fino y lijado final.'),
+
+(101, 'techo_reparar_humedad', 
+'Reparar mancha de humedad', 
+'Reparar 1 mancha de humedad mediante la aplicación de esmalte antihumedad, esmalte mate ó clorocaucho según proceda.'),
+
+(102, 'pared_empapelar', 
+'Empapelar', 
+'Empapelar paredes con papel decorativo.'),
+
+(103, 'pared_quitar_papel', 
+'Quitar papel', 
+'Quitar papel de las paredes por medios mecánicos o manuales según sea necesario.'),
+
+(104, 'pared_alisar', 
+'Alisar paredes', 
+'Alisar paredes aplicando dos manos de pasta cubregotele, una mano de acabado fino y lijado final.'),
+
+(105, 'pared_pintar', 
+'Pintar paredes', 
+'En paredes aplicación de 2 manos de pintura plástica en color tapando suelo y mobiliario con plásticos, cinta y papel. Se incluye la reparación de desperfectos en paredes.'),
+
+(106, 'pared_reparar_humedad', 
+'Reparar humedad',  
+'Reparar 1 mancha de humedad mediante la aplicación de esmalte antihumedad, esmalte mate ó clorocaucho según proceda.'),
+
+(107, 'carpin_friso', 
+'Colocacion friso altura 1 metro', 
+'Colocación de friso natural o sintético hasta una altura de 1 metro mediante rasteles dejando cámara de aire.'),
+
+(108, 'puerta_colocar', 
+'Colocar Puerta', 
+'Colocación y reglaje de 1 puerta de paso incluyendo, si fuese necesario, la retirada y desescombro de la puerta vieja hasta vertedero autorizado.'),
+
+(109, 'puerta_tipo', 
+'Tipo de puerta'),
+
+(110, 'puerta_cambio_precerco', 
+'Cambiar precerco a puerta', 
+'Colocación de 1 precerco de madera para puerta de paso incluyendo, si fuese necesario, la retirada y desescombro del precerco actual hasta vertedero autorizado. En el precio se incluye el precerco de madera.'),
+
+(111, 'ventana_colocar', 
+'Colocar Ventana', 
+'Colocación de 1 ventana de aluminio, pvc o madera incluyendo, si fuese necesario la retirada de la ventana vieja y su transporte hasta vertedero autorizado.'),
+
+(112, 'ventana_tipo', 
+'Tipo de ventana' ),
+
+(113, 'ventana_contraventana', 
+'Contraventanas a colocar', 
+'Colocación de 1 contraventana de aluminio, pvc o madera incluyendo, si fuese necesario, la retirada de la contraventana vieja y su transporte hasta vertedero autorizado.');

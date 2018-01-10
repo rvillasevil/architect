@@ -1,0 +1,58 @@
+<%= form_for(budget) do |f| %>
+  <% if budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+
+      <ul>
+      <% budget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%
+=begin %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reform_id %>
+    <%= f.number_field :reform_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+<%
+=end%>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :habitacion_id, value: @habitacion.id %>
+  <%= f.hidden_field :reform_id, value: @habitacion.reform_id %>
+  <%= f.hidden_field :cost, value: @cost %>
+
+  <div class="actions">
+    <% if current_user.empresa == true %>
+      <% if (@budget = Budget.find_by(habitacion_id: @presupuesto.habitacion_id, user_id: current_user.id)) != nil %>
+        <h5><%= f.submit "Validar y actualizar presupuesto", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px;" %></h5>
+      <% else %>
+        <h5><%= f.submit "Validar y crear presupuesto", style: "background-color: white; padding: 10px; border-color: green; color: green; border-radius: 10px;" %></h5>
+      <% end %>
+    <% else %> 
+      <% if (@budget = Budget.find_by(habitacion_id: params[:id], user_id: current_user.id)) != nil %>
+        <% if @habitacion.updated_at.to_i > @budget.updated_at.to_i %>
+          <h5><%= f.submit "Has modificado tu habitacion, añade la modificación!", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px;" %></h5>
+        <% end %>
+      <% else %>
+        <h5><%= f.submit "Los datos son correctos, añadir!", style: "background-color: white; padding: 10px; border-color: green; color: green; border-radius: 10px;" %></h5>
+      <% end %>
+    <% end %>
+    
+  </div>
+<% end %>

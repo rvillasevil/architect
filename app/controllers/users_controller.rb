@@ -192,7 +192,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :ciudad, :autonomia, :profesion, :foto, :created_by, :plaza, :linkedin, :description, :provincia, :pais, :tern, :candidate)
+                                   :password_confirmation, :ciudad, :ciudad_secundaria, :profesion, :foto, :created_by, :plaza, :linkedin, :description, :ciudad_terciaria, :pais, :tern, :candidate, :direccion, :empresa, :experiencia, :facebook, :twitter, :pinterest, :servicio1, :servicio2, :servicio3, :servicio4, :servicio5, :servicio6, :servicio7, :servicio8, :servicio9, :servicio10, :servicio11, :servicio12, :servicio13, :servicio14, :servicio15, :servicio16, :servicio17, :servicio18, :servicio19, :servicio20, :servicio21, :servicio22, :servicio23, :servicio24 )
     end
 
     def plaza_params

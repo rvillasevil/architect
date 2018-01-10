@@ -1,0 +1,685 @@
+
+
+<div class="field">
+# <%= f.text_field :demo_quitar_azulejo %>
+@ <div class="nombre"> Quitar azulejos, </div>
+€ <div class="description">Demolición y desescombro de azulejos, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+
+<div class="field">
+# <%= f.text_field :demo_quitar_baldosa %>
+@ <div class="nombre"> Quitar baldosas, </div>
+€ <div class="description">Demolición y desescombro de baldosas, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_falso_techo %>
+@ <div class="nombre"> Demoler falso techo, </div>
+€ <div class="description">Demolición y desescombro de falso techo, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_tabique %>
+@ <div class="nombre"> Demoler tabique </div>
+€ <div class="description">Demolición y desescombro de tabique, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+
+<div class="field">
+# <%= f.text_field :demo_quitar_inodoro %>
+@ <div class="nombre"> Retirar Inodoro, </div>
+€ <div class="description">Demolición y desescombro de inodoro, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+
+<div class="field">
+# <%= f.text_field :demo_quitar_bidet %>
+@ <div class="nombre"> Retirar Bidet, </div>
+€ <div class="description">Demolición y desescombro de mueble de bidet, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_plato_ducha %>
+@ <div class="nombre"> Retirar Plato de ducha, </div>
+€ <div class="description">Demolición y desescombro de mueble de plato de ducha, incluyendo el transporte hastavertedero autorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_mampara %>
+@ <div class="nombre"> Retirar mampara, </div>
+€ <div class="description">Demolición y desescombro de mampara debaño, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_mueble_bano %>
+@ <div class="nombre"> Retirar Mueble baño, </div>
+€ <div class="description">Demolición y desescombro de mueble de baño, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_banera %>
+@ <div class="nombre"> Retirar Bañera, </div>
+€ <div class="description">Demolición y desescombro de mueble de bañera, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+
+<div class="field">
+# <%= f.text_field :demo_quitar_mobi_cocina %>
+@ <div class="nombre"> Retirar mobiliario de cocina, </div>
+€ <div class="description">Demolición y desescombro de mobiliario de cocina. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_retir_electrodomesticos %>
+@ <div class="nombre"> Retirar electrodomesticos, </div>
+€ <div class="description">Demolición y desescombro de electrodomesticos, incluyendo el transporte hasta vertederoautorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_friso_madera %>
+@ <div class="nombre"> Retirar friso de madera ó similar, </div>
+€ <div class="description">Demolición y desescombro de friso de madera ó similar, incluyendo transporte hastavertedero autorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :demo_quitar_mueble %>
+@ <div class="nombre"> Tirar muebles, </div>
+€ <div class="description">Demolición y desescombro de mueble, incluyendo el transporte hasta vertedero autorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_termo_electrico %>
+@ <div class="nombre"> Instalación tubería para Termo eléctrico, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara termo eléctrico. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_radiador %>
+@ <div class="nombre"> Radiador, Instalación de tuberías para radiador, </div>
+€ <div class="description">Se incluye la apertura y cierre de regatas. Todas las instalaciones de fontanería serealizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_lavabo %>
+@ <div class="nombre"> Lavabo, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Lavabo. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_ducha_banera %>
+@ <div class="nombre"> Ducha o bañera, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Ducha o bañera. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_bidet %>
+@ <div class="nombre"> Bidet, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Bidet. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_inodoro %>
+@ <div class="nombre"> Inodoro, Instalación de tuberías para, </div>
+€ <div class="description">Instalación de agua fría sanitaria para inodoro. Todas las instalaciones de fontanería serealizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_colum_hidromasaje %>
+@ <div class="nombre"> Columna de hidromasaje, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Columna de hidromasaje. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_lavabo_doble %>
+@ <div class="nombre"> Lavabo doble, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Lavabo doble. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_jacuzzy %>
+@ <div class="nombre"> Jacuzzy, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Jacuzzy. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_sauna %>
+@ <div class="nombre"> Sauna, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Sauna. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_ducha_empotrada %>
+@ <div class="nombre"> Ducha empotrada, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara Ducha empotrada. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_toallero %>
+@ <div class="nombre"> Toallero, Instalación de tuberías para, </div>
+€ <div class="description">Instalación de tuberías para toallero. Todas las instalaciones de fontanería serealizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_reubicar_contador %>
+@ <div class="nombre"> Reubicar contador de agua, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara reubicar contador de agua. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_lavadora %>
+@ <div class="nombre"> Lavadora, Instalación de tuberías para, </div>
+€ <div class="description">Para lavadora, instalación de tuberías para agua fría sanitaria y en pvc para desagüe.Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_reubicar_inodoro %>
+@ <div class="nombre"> Reubicar inodoro, Instalación de tuberías para, </div>
+€ <div class="description">Dentro del baño, reubicar la posición del inodoro. Todas las instalaciones de fontaneríase realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_tipo %>
+@ <div class="nombre"> </div>
+€ <div class="description"></div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_caldera %>
+@ <div class="nombre"> Caldera, Instalación de tuberías para, </div>
+€ <div class="description">Instalación de tuberías de cobre para caldera. Todas las instalaciones de fontanería serealizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_fregadero %>
+@ <div class="nombre"> Fregadero, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvcpara termo eléctrico, reubicar contador de agua y fregadero. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_lavavajillas %>
+@ <div class="nombre"> Lavavajillas, Instalación de tuberías para, </div>
+€ <div class="description">Para lavavajillas, instalación de tuberías de cobre para agua fría sanitaria y en pvcpara desagüe. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :tub_secadora %>
+@ <div class="nombre"> Secadora, Instalación de tuberías para, </div>
+€ <div class="description">Instalar tuberías de desagües en pvcpara Secadora. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente. </div>
+</div>
+
+
+<div class="field">
+# <%= f.text_field :elec_pto_luz_techo %>
+@ <div class="nombre"> Punto de luz en techo, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Punto de luz entecho. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_pto_luz_pared %>
+@ <div class="nombre"> Punto de luz en pared, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Punto de luz enpared. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_interr_simple %>
+@ <div class="nombre"> Interruptor simple, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Interruptor simple.Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_interr_doble %>
+@ <div class="nombre"> Interruptor doble, Instalación eléctrica de,  </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Interruptor doble.Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_interr_triple %>
+@ <div class="nombre"> Interruptor triple, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Interruptor triple.Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_enchu_simple %>
+@ <div class="nombre"> Enchufe simple, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Enchufe simple. Sifuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_enchu_doble %>
+@ <div class="nombre"> Enchufe doble, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Enchufe doble. Sifuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_enchu_triple %>
+@ <div class="nombre"> Enchufe triple, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Enchufe triple. Sifuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_reubicar_caja_luz %>
+@ <div class="nombre"> Reubicar caja de luz, Instalación eléctrica de, </div>
+€ <div class="description">Dentro de la estancia reubicar la posición de 1 caja de luz. Si fuese necesario seincluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_lavadora %>
+@ <div class="nombre"> Toma lavadora, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Toma lavadora segúnnormativa vigente. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_ventilador_extractor %>
+@ <div class="nombre"> Ventilador extractor, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde caja ubicada en baño para Ventiladorextractor. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_horno_vitroceramica %>
+@ <div class="nombre"> Toma horno-vitro, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde cajas ubicadas en cocina para hornovitro segúnnormativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_microondas %>
+@ <div class="nombre"> Toma microondas, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde cajas ubicadas en cocina para toma microondas.Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_frigorifico %>
+@ <div class="nombre"> Toma frigorífico, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde cajas ubicadas en cocina para tomafrigorífico. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_lavavajillas %>
+@ <div class="nombre"> Toma lavavajillas, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde cajas ubicadas en cocina para tomalavavajillas según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_secadora %>
+@ <div class="nombre"> Toma secadora, Instalación eléctrica de, </div>
+€ <div class="description">Realización de instalación eléctrica desde cajas ubicadas en cocina para toma secadorasegún normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :elec_toma_telefono %>
+@ <div class="nombre"> Toma telefono, Instalación eléctrica de </div>
+€ <div class="description">Realización de instalación eléctrica desde cajas ubicadas en la habitación para Toma detelefono. Según normativa vigente. Se incluye la colocación de mecanismos. </div>
+</div>
+
+
+<div class="field">
+# <%= f.text_field :alb_azulejo %>
+@ <div class="nombre"> Colocar azulejos catar paredes </div>
+€ <div class="description">Alicatado de paredes ,mediante la colocación de azulejos, con mortero cola sobre soportecementoso con la técnica de capa fina y la aplicación de lechada en las juntas de los azulejos. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_tipo_azulejo %>
+@ <div class="nombre">  </div>
+€ <div class="description">
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_baldosa %>
+@ <div class="nombre"> Colocar baldosas catar suelo </div>
+€ <div class="description">Alicatado de suelo mediante ,la colocación de baldosas con mortero cola sobre soportecementoso con la técnica de capa fina y la aplicación de lechada en las juntas de las baldosas. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_tipo_baldosa %>
+@ <div class="nombre">  </div>
+€ <div class="description">
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_techo_pladur %>
+@ <div class="nombre"> Construccion Techo de pladur acabado liso, </div>
+€ <div class="description">Construcción de 1 falso techo de pladur en acabado liso mediante placas de pladursoportadas por estructura metalica. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_tabique_ladriyeso %>
+@ <div class="nombre"> Construccion tabique ladriyeso. </div>
+€ <div class="description">Levantado y construcción de un tabique de ladriyeso. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_tabique_pladur %>
+@ <div class="nombre"> Construccion de tabique de pladur </div>
+€ <div class="description">Levantado y construcción de un tabique de pladur. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_tabique_fabrica %>
+@ <div class="nombre"> Construccion de tabique de fábrica, </div>
+€ <div class="description">Levantado y construcción de un tabique de pladur. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_tabique_paves %>
+@ <div class="nombre"> M2 de tabique de paves, </div>
+€ <div class="description">Levantado y construcción de tabique de paves. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :alb_nivelacion_pared %>
+@ <div class="nombre"> Nivelado pared, </div>
+€ <div class="description">Nivelado verticalidad pared para alicatado por medio de relleno adecuado. Totalmenteterminado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_mampara %>
+@ <div class="nombre"> Mampara, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de mampara. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_mueble_bano %>
+@ <div class="nombre"> Mueble baño, grifo y espejo, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Mueble baño, grifo y espejo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_banera %>
+@ <div class="nombre"> Bañera, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Bañera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_plato_ducha %>
+@ <div class="nombre"> Plato de ducha, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Plato de ducha. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_bidet %>
+@ <div class="nombre"> Bidet, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Bidet. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_inodoro_normal %>
+@ <div class="nombre"> Inodoro normal, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Inodoro normal. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_inodoro_suspendido %>
+@ <div class="nombre"> Inodoro suspendido, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Inodoro suspendido. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_inodoro_encastrado %>
+@ <div class="nombre"> Inodoro encastrado en pared, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Inodoro encastrado en pared. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_grifo_ducha %>
+@ <div class="nombre"> Grifo ducha, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Grifo ducha. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_grifo_banera %>
+@ <div class="nombre"> Grifo bañera, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Grifo bañera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_acceso_atornillado %>
+@ <div class="nombre"> Accesorio atornillado, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Accesorio atornillado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_colum_hidromasaje %>
+@ <div class="nombre"> Columna de hidromasaje, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Columna de hidromasaje. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_cabina_ducha %>
+@ <div class="nombre"> Cabina de ducha, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Cabina de ducha. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_plato_ducha_obra %>
+@ <div class="nombre"> Construcción Plato de ducha de obra, </div>
+€ <div class="description">Construcción de 1 Plato de ducha de obra incluyendo la válvula de evacuación, la rejilla,la manta asislante y la solera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_sani_lavabo_pedestal %>
+@ <div class="nombre"> Lavabo y pedestal, Montaje y colocación., </div>
+€ <div class="description">Montaje y colocación de Lavabo y pedestal. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_mueble_alto_cocina %>
+@ <div class="nombre"> Muebles altos de cocina, Montaje, colocación, nivelado y  </div>€ <div class="description">sujección.,
+Montaje, colocación, nivelado y sujección de muebles altos de cocina. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_mueble_bajo_cocina %>
+@ <div class="nombre"> Muebles bajos de cocina, Montaje, colocación, nivelado y  </div>€ <div class="description">sujección.,
+Montaje, colocación, nivelado y sujección de muebles muebles bajos de cocina. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_horno_electrico %>
+@ <div class="nombre"> Horno electrico, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de horno electrico. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_placa_vitro %>
+@ <div class="nombre"> Placa vitroceramica, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Horno electrico, Montaje, colocación, nivelado y sujección de Placa vitroceramica.  </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_placa_electrica %>
+@ <div class="nombre"> Placa electrica, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de Placa electrica. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_lavadora %>
+@ <div class="nombre"> Lavadora, Montaje, colocación, nivelado y sujección. </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de Lavadora. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_frigorifico %>
+@ <div class="nombre"> Frigorifico, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de Frigorifico. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_lavavajillas %>
+@ <div class="nombre"> Lavavajillas, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de Lavavajillas. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_microondas %>
+@ <div class="nombre"> Microondas, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de Microondas. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_electro_secadora %>
+@ <div class="nombre"> Secadora, Montaje, colocación, nivelado y sujección., </div>
+€ <div class="description">Montaje, colocación, nivelado y sujección de Secadora. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_fregadero %>
+@ <div class="nombre"> Fregadero, Montaje y sujección., </div>
+€ <div class="description">Montaje y sujección de fregadero y grifo de fregadero. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :mont_grifo_fregadero %>
+@ <div class="nombre"> Grifo fregadero, Montaje y sujección., </div>
+€ <div class="description">Montaje y sujección de fregadero y grifo de fregadero. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_termo_elect_a %>
+@ <div class="nombre"> Termo eléctrico de 50L, Colocación y puesta en marcha., </div>
+Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de € <div class="description">50L.Se incluye la retirada del termo antiguo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_termo_elect_b %>
+@ <div class="nombre"> Termo eléctrico de 80L, Colocación y puesta en marcha., </div>
+Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de € <div class="description">80L.Se incluye la retirada del termo antiguo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_termo_elect_c %>
+@ <div class="nombre"> Termo eléctrico de 100L, Colocación y puesta en marcha., </div>
+Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de € <div class="description">100L.Se incluye la retirada del termo antiguo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_termo_elect_d %>
+@ <div class="nombre"> Termo eléctrico de 150L, Colocación y puesta en marcha., </div>
+Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de € <div class="description">150L.Se incluye la retirada del termo antiguo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_termo_elect_e %>
+@ <div class="nombre"> Termo eléctrico de 200L, Colocación y puesta en marcha., </div>
+Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de € <div class="description">200L.Se incluye la retirada del termo antiguo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_termo_elect_f %>
+@ <div class="nombre"> Termo eléctrico de 300L, Colocación y puesta en marcha., </div>
+Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de € <div class="description">300L.Se incluye la retirada del termo antiguo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_calde_atmos %>
+@ <div class="nombre"> Caldera atmosférica, Colocación y puesta en marcha., </div>
+€ <div class="description">Colocación y puesta en marcha por servicio técnico autorizado de caldera atmosférica. Seincluye la retirada de la antigua caldera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_calde_bajo_nox %>
+@ <div class="nombre"> Caldera bajo nox, Colocación y puesta en marcha., </div>
+€ <div class="description">Colocación y puesta en marcha por servicio técnico autorizado de caldera bajo nox. Seincluye la retirada de la antigua caldera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :colo_pmarcha_calde_estanca %>
+@ <div class="nombre"> Caldera estanca, Colocación y puesta en marcha., </div>
+€ <div class="description">Colocación y puesta en marcha por servicio técnico autorizado de caldera estanca. Seincluye la retirada de la antigua caldera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :techo_pintar %>
+@ <div class="nombre"> Pintar techo, </div>
+€ <div class="description">En techo aplicación de 2 manos de pintura plástica en color tapando mobiliario conplásticos, cinta y papel. Se incluye la reparación de desperfectos en techo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :techo_tipo_pintura %>
+@ <div class="nombre"> Pintura techo  </div> 
+€ <div class="description"></div>
+</div>
+
+<div class="field">
+# <%= f.text_field :techo_alisar %>
+@ <div class="nombre"> Alisar techo, Alisar techo aplicando dos manos de pasta  </div>
+€ <div class="description">cubregotele, una mano de acabadofino y lijado final. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :techo_reparar_humedad %>
+@ <div class="nombre"> Reparar mancha de humedad, </div>
+€ <div class="description">Reparar 1 mancha de humedad mediante la aplicación de esmalte antihumedad, esmalte mate óclorocaucho según proceda. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :pared_empapelar %>
+@ <div class="nombre"> Empapelar, </div>
+€ <div class="description">Empapelar paredes con papel decorativo. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :pared_quitar_papel %>
+@ <div class="nombre"> Quitar papel, </div>
+€ <div class="description">Quitar papel de las paredes por medios mecánicos o manuales según sea necesario. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :pared_alisar %>
+@ <div class="nombre"> Alisar paredes, </div>
+€ <div class="description">Alisar paredes aplicando dos manos de pasta cubregotele, una mano de acabado fino ylijado final. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :pared_pintar %>
+@ <div class="nombre"> Pintar paredes, </div>
+€ <div class="description">En paredes aplicación de 2 manos de pintura plástica en color tapando suelo y mobiliariocon plásticos, cinta y papel. Se incluye la reparación de desperfectos en paredes. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :pared_reparar_humedad %>
+@ <div class="nombre"> Reparar humedad,  </div>
+€ <div class="description">Reparar 1 mancha de humedad mediante la aplicación de esmalte antihumedad, esmalte mate óclorocaucho según proceda. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :carpin_friso %>
+@ <div class="nombre"> Colocacion friso altura 1 metro, </div>
+€ <div class="description">Colocación de friso natural o sintético hasta una altura de 1 metro mediante rastelesdejando cámara de aire. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :puerta_colocar %>
+@ <div class="nombre"> Colocar Puerta, </div>
+€ <div class="description">Colocación y reglaje de 1 puerta de paso incluyendo, si fuese necesario, la retirada ydesescombro de la puerta vieja hasta vertedero autorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :puerta_tipo %>
+@ <div class="nombre"> Tipo de puerta </div> 
+€ <div class="description"></div>
+</div>
+
+<div class="field">
+# <%= f.text_field :puerta_cambio_precerco %>
+@ <div class="nombre"> Cambiar precerco a puerta, </div>
+€ <div class="description">Colocación de 1 precerco de madera para puerta de paso incluyendo, si fuese necesario, laretirada y desescombro del precerco actual hasta vertedero autorizado. En el precio se incluye el precerco de madera. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :ventana_colocar %>
+@ <div class="nombre"> Colocar Ventana, </div>
+€ <div class="description">Colocación de 1 ventana de aluminio, pvc o madera incluyendo, si fuese necesario laretirada de la ventana vieja y su transporte hasta vertedero autorizado. </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :ventana_tipo %>
+@ <div class="nombre"> Tipo de ventana </div> 
+€ <div class="description"> </div>
+</div>
+
+<div class="field">
+# <%= f.text_field :ventana_contraventana %>
+@ <div class="nombre"> Contraventanas a colocar, </div>
+€ <div class="description">Colocación de 1 contraventana de aluminio, pvc o madera incluyendo, si fuese necesario,la retirada de la contraventana vieja y su transporte hasta vertedero autorizado. </div>
+</div>

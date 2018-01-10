@@ -1,0 +1,31 @@
+<%= form_for(reform) do |f| %>
+  <% if reform.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reform.errors.count, "error") %> prohibited this reform from being saved:</h2>
+
+      <ul>
+      <% reform.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h5>
+    <div class="field">
+      <%= f.label "Nombre para tu proyecto" %>
+      <span style="font-weight: bolder;"><%= f.text_field :nombre, placeholder: "Ej: La cocina grande de casa de mis padres", style:"padding: 10px; border-radius: 15px;" %></span>
+    </div>
+
+    <div class="field">
+      <%= f.label "Donde va a realizarse el proyecto" %>
+      <span style="font-weight: bolder;"><%= f.text_field :localidad, placeholder: "Ej: Calle Toledo, Madrid", style:"padding: 10px; border-radius: 15px;" %></span>
+    </div>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="actions">
+      <span style="font-weight: bolder;"><%= f.submit "Ok", class: "btn bt-sm btn-info", style: "background-color: white; color: #46b8da; font-weight: bolder; border-radius: 15px;" %></span>
+    </div>
+  </h5>
+<% end %>
