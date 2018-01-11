@@ -22,7 +22,7 @@ gem 'octicons_helper'
 gem 'font-awesome-sass'
 
 
-gem 'pg'
+gem 'pg', '~> 0.20'
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
