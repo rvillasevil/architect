@@ -40,9 +40,8 @@
                             </li>
                             <li>
                                 <b>Tu provincia</b>
-                                <%= f.select(:ciudad, Municipio.all.collect {|p| [ p.nombre ]}, ) %>
 
-                                <%# f.select :ciudad, [
+                                <%= f.select :ciudad, [
                                     'Albacete',
                                     'Alicante',
                                     'Almería',

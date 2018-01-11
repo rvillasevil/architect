@@ -120,6 +120,13 @@
             </ul>        
         </div>
 
+        <% if @importe = Budget.find_by(habitacion_id: @habitacion.id, user_id: current_user.id) %>
+        <div>
+          <h1 style="font-size: 28px;">Tu reforma: <%= @importe.cost %> €</h1>
+        </div>
+        <% end %>
+
+
         <div class="campos">
 
             <% if  @habitacion.demo_quitar_azulejo != nil or @habitacion.demo_quitar_baldosa != nil or @habitacion.demo_quitar_falso_techo != nil or @habitacion.demo_quitar_tabique != nil %>
@@ -6312,7 +6319,7 @@
 
               <h1><% @cost = @importe_total.compact.inject(0){|sum,x| sum + x } %>  </h1>
 
-        <% @importe = Budget.find_by(habitacion_id: @habitacion.id) %>
+        <% @importe = Budget.find_by(habitacion_id: @habitacion.id, user_id: current_user.id) %>
         <% if @importe != nil %> 
           <h1>Coste estimado: <%= @cost %> €</h1>
         <% else %>

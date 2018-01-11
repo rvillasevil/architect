@@ -21,8 +21,14 @@
                   </li>
 
                   <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= link_to empresa_path(id: current_user.id) do %>
-                      <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus Datos</b></h5></span>
+                    <% if Empresa.find_by(user_id: current_user.id) != nil %>
+                      <%= link_to empresa_path(id: current_user.id) do %>
+                        <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus Datos</b></h5></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to new_empresa_path do %>
+                        <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Crea tu base de datos para acceder a todas las ofertas</b></h5></span>
+                      <% end %>                    
                     <% end %>
                   </li>
                   <li style="align-items: center; text-align: center; padding: 10px;">
