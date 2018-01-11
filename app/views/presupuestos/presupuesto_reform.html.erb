@@ -4073,17 +4073,34 @@
         <% end %>
 <%
 =end%>
-        <% if Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) == nil %>
-          <div>
-            <h5>Enviar presupuesto:</h5>
-            <h3><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
-          </div>
+        <% if current_user.empresa == true %>
+          <% if Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) == nil %>
+            <div>
+              <h5>Enviar presupuesto</h5>
+              <h3><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
+            </div>
+          <% else %>
+            <% @confirmacion = Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) %>
+            <div>
+              <h5>Actualizar y volver a enviar presupuesto</h5>
+              <h3 style="margin: 0px;"><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
+            </div>
+          <% end %>
         <% else %>
-          <% @confirmacion = Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) %>
-          <div>
-            <h5>Actualizar y volver a enviar presupuesto:</h5>
-            <h3 style="margin: 0px;"><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
-          </div>
+          <% if Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) == nil %>
+            <div>
+              <h5>Pedir presupuestos</h5>
+              <h3><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
+            </div>
+          <% else %>
+            <% if params[:empresa] != nil %>
+            <% else %>
+              <% @confirmacion = Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) %>
+              <div>
+                <h3>Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
+              </div>
+            <% end %>
+          <% end %>          
         <% end %>
 
       </div>

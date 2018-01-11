@@ -154,9 +154,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_azulejo = (@habitacion.demo_quitar_azulejo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_azulejo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_azulejo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_azulejo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -205,9 +207,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_baldosa = (@habitacion.demo_quitar_baldosa * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_baldosa_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_baldosa_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_baldosa_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -256,9 +260,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_falso_techo = (@habitacion.demo_quitar_falso_techo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_falso_techo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_falso_techo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_falso_techo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -307,9 +313,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_tabique = (@habitacion.demo_quitar_tabique * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_tabique_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_tabique_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_tabique_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -366,9 +374,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_inodoro = (@habitacion.demo_quitar_inodoro * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_inodoro_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_inodoro_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_inodoro_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -417,9 +427,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_bidet = (@habitacion.demo_quitar_bidet * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_bidet_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_bidet_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_bidet_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -468,9 +480,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_plato_ducha = (@habitacion.demo_quitar_plato_ducha * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_plato_ducha_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_plato_ducha_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_plato_ducha_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -519,9 +533,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_mampara = (@habitacion.demo_quitar_mampara * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_mampara_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_mampara_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_mampara_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -570,9 +586,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_mueble_bano = (@habitacion.demo_quitar_mueble_bano * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_mueble_bano_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_mueble_bano_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_mueble_bano_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -621,9 +639,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_banera = (@habitacion.demo_quitar_banera * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_banera_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_banera_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_banera_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -678,9 +698,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_mobi_bano = (@habitacion.demo_quitar_mobi_bano * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_mobi_bano_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_mobi_bano_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_mobi_bano_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -729,9 +751,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_retir_electrodomesticos = (@habitacion.demo_retir_electrodomesticos * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_retir_electrodomesticos_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_retir_electrodomesticos_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_retir_electrodomesticos_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -786,9 +810,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_friso_madera = (@habitacion.demo_friso_madera * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_friso_madera_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_friso_madera_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_friso_madera_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -837,9 +863,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_demo_quitar_mueble = (@habitacion.demo_quitar_mueble * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.demo_quitar_mueble_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.demo_quitar_mueble_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_mueble_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -894,9 +922,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_termo_electrico = (@habitacion.tub_termo_electrico * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_termo_electrico_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_termo_electrico_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_termo_electrico_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -945,9 +975,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_radiador = (@habitacion.tub_radiador * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_radiador_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_radiador_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_radiador_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1002,9 +1034,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_lavabo = (@habitacion.tub_lavabo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_lavabo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_lavabo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_lavabo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1053,9 +1087,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_ducha_banera = (@habitacion.tub_ducha_banera * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_ducha_banera_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_ducha_banera_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_ducha_banera_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1104,9 +1140,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_bidet = (@habitacion.tub_bidet * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_bidet_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_bidet_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_bidet_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1155,9 +1193,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_inodoro = (@habitacion.tub_inodoro * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_inodoro_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_inodoro_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_inodoro_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1206,9 +1246,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_colum_hidromasaje = (@habitacion.tub_colum_hidromasaje * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_colum_hidromasaje_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_colum_hidromasaje_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_colum_hidromasaje_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1257,9 +1299,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_lavabo_doble = (@habitacion.tub_lavabo_doble * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_lavabo_doble_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_lavabo_doble_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_lavabo_doble_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1308,9 +1352,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_jacuzzy = (@habitacion.tub_jacuzzy * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_jacuzzy_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_jacuzzy_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_jacuzzy_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1360,9 +1406,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_sauna = (@habitacion.tub_sauna * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_sauna_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_sauna_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_sauna_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1411,9 +1459,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_ducha_empotrada = (@habitacion.tub_ducha_empotrada * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_ducha_empotrada_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_ducha_empotrada_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_ducha_empotrada_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1462,9 +1512,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_toallero = (@habitacion.tub_toallero * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_toallero_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_toallero_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_toallero_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1513,9 +1565,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_reubicar_contador = (@habitacion.tub_reubicar_contador * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_reubicar_contador_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_reubicar_contador_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_reubicar_contador_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1564,9 +1618,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_lavadora = (@habitacion.tub_lavadora * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_lavadora_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_lavadora_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_lavadora_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1615,9 +1671,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_reubicar_inodoro = (@habitacion.tub_reubicar_inodoro * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_reubicar_inodoro_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_reubicar_inodoro_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_reubicar_inodoro_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1666,9 +1724,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_tipo = (@habitacion.tub_tipo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_tipo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_tipo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_tipo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1717,9 +1777,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_caldera = (@habitacion.tub_caldera * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_caldera_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_caldera_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_caldera_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1774,9 +1836,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_fregadero = (@habitacion.tub_fregadero * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_fregadero_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_fregadero_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_fregadero_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1826,9 +1890,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_lavavajillas = (@habitacion.tub_lavavajillas * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_lavavajillas_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_lavavajillas_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_lavavajillas_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1878,9 +1944,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_tub_secadora = (@habitacion.tub_secadora * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.tub_secadora_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.tub_secadora_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.tub_secadora_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -1951,9 +2019,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_pto_luz_techo = (@habitacion.elec_pto_luz_techo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_pto_luz_techo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_pto_luz_techo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_pto_luz_techo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2002,9 +2072,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_pto_luz_pared = (@habitacion.elec_pto_luz_pared * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_pto_luz_pared_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_pto_luz_pared_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_pto_luz_pared_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2053,9 +2125,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_interr_simple = (@habitacion.elec_interr_simple * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_interr_simple_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_interr_simple_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_interr_simple_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2104,9 +2178,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_interr_doble = (@habitacion.elec_interr_doble * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_interr_doble_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_interr_doble_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_interr_doble_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2155,9 +2231,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_interr_triple = (@habitacion.elec_interr_triple * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_interr_triple_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_interr_triple_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_interr_triple_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2206,9 +2284,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_enchu_simple = (@habitacion.elec_enchu_simple * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_enchu_simple_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_enchu_simple_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_enchu_simple_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2257,9 +2337,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_enchu_doble = (@habitacion.elec_enchu_doble * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_enchu_doble_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_enchu_doble_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_enchu_doble_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2308,9 +2390,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_enchu_triple = (@habitacion.elec_enchu_triple * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_enchu_triple_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_enchu_triple_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_enchu_triple_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2359,9 +2443,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_reubicar_caja_luz = (@habitacion.elec_reubicar_caja_luz * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_reubicar_caja_luz_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_reubicar_caja_luz_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_reubicar_caja_luz_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2410,9 +2496,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_lavadora = (@habitacion.elec_toma_lavadora * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_lavadora_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_lavadora_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_lavadora_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2461,9 +2549,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_ventilador_extractor = (@habitacion.elec_toma_ventilador_extractor * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_ventilador_extractor_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_ventilador_extractor_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_ventilador_extractor_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2512,9 +2602,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_horno_vitroceramica = (@habitacion.elec_toma_horno_vitroceramica * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_horno_vitroceramica_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_horno_vitroceramica_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_horno_vitroceramica_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2563,9 +2655,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_microondas = (@habitacion.elec_toma_microondas * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_microondas_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_microondas_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_microondas_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2614,9 +2708,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_frigorifico = (@habitacion.elec_toma_frigorifico * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_frigorifico_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_frigorifico_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_frigorifico_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2665,9 +2761,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_lavavajillas = (@habitacion.elec_toma_lavavajillas * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_lavavajillas_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_lavavajillas_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_lavavajillas_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2716,9 +2814,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_secadora = (@habitacion.elec_toma_secadora * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_secadora_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_secadora_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_secadora_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2767,9 +2867,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_elec_toma_telefono = (@habitacion.elec_toma_telefono * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.elec_toma_telefono_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.elec_toma_telefono_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.elec_toma_telefono_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2833,9 +2935,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_azulejo = (@habitacion.alb_azulejo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_azulejo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_azulejo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_azulejo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2884,9 +2988,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_tipo_azulejo = (@habitacion.alb_tipo_azulejo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_tipo_azulejo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_tipo_azulejo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_tipo_azulejo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2935,9 +3041,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_baldosa = (@habitacion.alb_baldosa * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_baldosa_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_baldosa_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_baldosa_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -2987,9 +3095,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_tipo_baldosa = (@habitacion.alb_tipo_baldosa * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_tipo_baldosa_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_tipo_baldosa_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_tipo_baldosa_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3038,9 +3148,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_techo_pladur = (@habitacion.alb_techo_pladur * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_techo_pladur_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_techo_pladur_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_techo_pladur_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3089,9 +3201,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_tabique_ladriyeso = (@habitacion.alb_tabique_ladriyeso * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_tabique_ladriyeso_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_tabique_ladriyeso_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_tabique_ladriyeso_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3140,9 +3254,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_tabique_pladur = (@habitacion.alb_tabique_pladur * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_tabique_pladur_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_tabique_pladur_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_tabique_pladur_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3191,9 +3307,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_tabique_fabrica = (@habitacion.alb_tabique_fabrica * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_tabique_fabrica_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_tabique_fabrica_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_tabique_fabrica_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3242,9 +3360,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_tabique_paves = (@habitacion.alb_tabique_paves * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_tabique_paves_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_tabique_paves_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_tabique_paves_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3294,9 +3414,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_alb_nivelacion_pared = (@habitacion.alb_nivelacion_pared * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.alb_nivelacion_pared_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.alb_nivelacion_pared_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.alb_nivelacion_pared_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3364,9 +3486,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_mampara = (@habitacion.mont_sani_mampara * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_mampara_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_mampara_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_mampara_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3416,9 +3540,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_mueble_bano = (@habitacion.mont_sani_mueble_bano * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_mueble_bano_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_mueble_bano_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_mueble_bano_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3467,9 +3593,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_banera = (@habitacion.mont_sani_banera * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_banera_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_banera_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_banera_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3519,9 +3647,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_plato_ducha = (@habitacion.mont_sani_plato_ducha * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_plato_ducha_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_plato_ducha_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_plato_ducha_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3571,9 +3701,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_bidet = (@habitacion.mont_sani_bidet * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_bidet_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_bidet_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_bidet_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3623,9 +3755,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_inodoro_normal = (@habitacion.mont_sani_inodoro_normal * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_inodoro_normal_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_inodoro_normal_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_inodoro_normal_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3675,9 +3809,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_inodoro_suspendido = (@habitacion.mont_sani_inodoro_suspendido * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_inodoro_suspendido_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_inodoro_suspendido_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_inodoro_suspendido_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3727,9 +3863,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_inodoro_encastrado = (@habitacion.mont_sani_inodoro_encastrado * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_inodoro_encastrado_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_inodoro_encastrado_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_inodoro_encastrado_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3779,9 +3917,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_grifo_ducha = (@habitacion.mont_sani_grifo_ducha * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_grifo_ducha_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_grifo_ducha_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_grifo_ducha_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3831,9 +3971,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_grifo_banera = (@habitacion.mont_sani_grifo_banera * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_grifo_banera_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_grifo_banera_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_grifo_banera_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3883,9 +4025,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_acceso_atornillado = (@habitacion.mont_sani_acceso_atornillado * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_acceso_atornillado_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_acceso_atornillado_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_acceso_atornillado_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3935,9 +4079,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_colum_hidromasaje = (@habitacion.mont_sani_colum_hidromasaje * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_colum_hidromasaje_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_colum_hidromasaje_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_colum_hidromasaje_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -3987,9 +4133,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_cabina_ducha = (@habitacion.mont_sani_cabina_ducha * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_cabina_ducha_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_cabina_ducha_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_cabina_ducha_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4039,9 +4187,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_plato_ducha_obra = (@habitacion.mont_sani_plato_ducha_obra * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_plato_ducha_obra_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_plato_ducha_obra_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_plato_ducha_obra_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4091,9 +4241,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_sani_lavabo_pedestal = (@habitacion.mont_sani_lavabo_pedestal * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_sani_lavabo_pedestal_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_sani_lavabo_pedestal_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_sani_lavabo_pedestal_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4159,9 +4311,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_mueble_alto_cocina = (@habitacion.mont_electro_mueble_alto_cocina * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_mueble_alto_cocina_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_mueble_alto_cocina_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_mueble_alto_cocina_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4211,9 +4365,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_mueble_bajo_cocina = (@habitacion.mont_electro_mueble_bajo_cocina * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_mueble_bajo_cocina_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_mueble_bajo_cocina_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_mueble_bajo_cocina_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4262,9 +4418,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_horno_electrico = (@habitacion.mont_electro_horno_electrico * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_horno_electrico_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_horno_electrico_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_horno_electrico_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4313,9 +4471,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_placa_vitro = (@habitacion.mont_electro_placa_vitro * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_placa_vitro_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_placa_vitro_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_placa_vitro_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4365,9 +4525,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_placa_electrica = (@habitacion.mont_electro_placa_electrica * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_placa_electrica_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_placa_electrica_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_placa_electrica_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4417,9 +4579,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_lavadora = (@habitacion.mont_electro_lavadora * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_lavadora_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_lavadora_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_lavadora_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4469,9 +4633,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_frigorifico = (@habitacion.mont_electro_frigorifico * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_frigorifico_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_frigorifico_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_frigorifico_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4521,9 +4687,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_lavavajillas = (@habitacion.mont_electro_lavavajillas * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_lavavajillas_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_lavavajillas_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_lavavajillas_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4573,9 +4741,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_microondas = (@habitacion.mont_electro_microondas * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_microondas_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_microondas_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_microondas_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4625,9 +4795,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_electro_secadora = (@habitacion.mont_electro_secadora * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_electro_secadora_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_electro_secadora_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_electro_secadora_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4677,9 +4849,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_fregadero = (@habitacion.mont_fregadero * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_fregadero_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_fregadero_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_fregadero_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4729,9 +4903,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_mont_grifo_fregadero = (@habitacion.mont_grifo_fregadero * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.mont_grifo_fregadero_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.mont_grifo_fregadero_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.mont_grifo_fregadero_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4791,9 +4967,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_termo_elect_a = (@habitacion.colo_pmarcha_termo_elect_a * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_termo_elect_a_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_termo_elect_a_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_termo_elect_a_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4843,9 +5021,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_termo_elect_b = (@habitacion.colo_pmarcha_termo_elect_b * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_termo_elect_b_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_termo_elect_b_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_termo_elect_b_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4895,9 +5075,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_termo_elect_c = (@habitacion.colo_pmarcha_termo_elect_c * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_termo_elect_c_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_termo_elect_c_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_termo_elect_c_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4947,9 +5129,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_termo_elect_d = (@habitacion.colo_pmarcha_termo_elect_d * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_termo_elect_d_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_termo_elect_d_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_termo_elect_d_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -4999,9 +5183,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_termo_elect_e = (@habitacion.colo_pmarcha_termo_elect_e * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_termo_elect_e_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_termo_elect_e_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_termo_elect_e_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5051,9 +5237,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_termo_elect_f = (@habitacion.colo_pmarcha_termo_elect_f * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_termo_elect_f_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_termo_elect_f_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_termo_elect_f_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5108,9 +5296,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_calde_atmos = (@habitacion.colo_pmarcha_calde_atmos * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_calde_atmos_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_calde_atmos_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_calde_atmos_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5160,9 +5350,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_calde_bajo_nox = (@habitacion.colo_pmarcha_calde_bajo_nox * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_calde_bajo_nox_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_calde_bajo_nox_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_calde_bajo_nox_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5212,9 +5404,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_colo_pmarcha_calde_estanca = (@habitacion.colo_pmarcha_calde_estanca * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.colo_pmarcha_calde_estanca_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.colo_pmarcha_calde_estanca_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.colo_pmarcha_calde_estanca_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5270,9 +5464,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_techo_pintar = (@habitacion.techo_pintar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.techo_pintar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.techo_pintar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.techo_pintar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5322,9 +5518,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_techo_tipo_pintura = (@habitacion.techo_tipo_pintura * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.techo_tipo_pintura_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.techo_tipo_pintura_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.techo_tipo_pintura_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5374,9 +5572,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_techo_alisar = (@habitacion.techo_alisar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.techo_alisar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.techo_alisar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.techo_alisar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5426,9 +5626,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_techo_reparar_humedad = (@habitacion.techo_reparar_humedad * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.techo_reparar_humedad_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.techo_reparar_humedad_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.techo_reparar_humedad_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5478,9 +5680,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_pared_empapelar = (@habitacion.pared_empapelar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.pared_empapelar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.pared_empapelar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.pared_empapelar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5530,9 +5734,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_pared_quitar_papel = (@habitacion.pared_quitar_papel * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.pared_quitar_papel_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.pared_quitar_papel_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.pared_quitar_papel_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5582,9 +5788,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_pared_alisar = (@habitacion.pared_alisar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.pared_alisar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.pared_alisar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.pared_alisar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5634,9 +5842,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_pared_pintar = (@habitacion.pared_pintar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.pared_pintar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.pared_pintar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.pared_pintar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5686,9 +5896,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_pared_reparar_humedad = (@habitacion.pared_reparar_humedad * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.pared_reparar_humedad_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.pared_reparar_humedad_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.pared_reparar_humedad_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5738,9 +5950,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_carpin_friso = (@habitacion.carpin_friso * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.carpin_friso_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.carpin_friso_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.carpin_friso_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5796,9 +6010,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_puerta_colocar = (@habitacion.puerta_colocar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.puerta_colocar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.puerta_colocar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.puerta_colocar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5848,9 +6064,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_puerta_tipo = (@habitacion.puerta_tipo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.puerta_tipo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.puerta_tipo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.puerta_tipo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5900,9 +6118,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_puerta_cambio_precerco = (@habitacion.puerta_cambio_precerco * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.puerta_cambio_precerco_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.puerta_cambio_precerco_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.puerta_cambio_precerco_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -5952,9 +6172,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_ventana_colocar = (@habitacion.ventana_colocar * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.ventana_colocar_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.ventana_colocar_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.ventana_colocar_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -6004,9 +6226,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_ventana_tipo = (@habitacion.ventana_tipo * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.ventana_tipo_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.ventana_tipo_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.ventana_tipo_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
@@ -6056,9 +6280,11 @@
                               <h5>Importe:  &nbsp;<b><%= @importe_ventana_contraventana = (@habitacion.ventana_contraventana * @task.importe) %> €</b></h5>
                             <% end %>
                           </li>
+                          <% if @habitacion.ventana_contraventana_comment != nil %>
                           <li class="comentarios">
-                            <h5 style="color: #666; font-weight: bolder;">Tu comentario: <h5><%= @habitacion.ventana_contraventana_comment %></h5></h5>
+                            <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.ventana_contraventana_comment %></h5></h5>
                           </li>
+                          <% end %>
                             <li class="iconos">
                                 <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 

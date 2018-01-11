@@ -4,18 +4,26 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos
   # GET /presupuestos.json
   def index
+    if current_user.empresa == true
     @presupuestos = Presupuesto.all
     @ofertas = Confirmacion.where(usuario: true)
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /presupuestos/1
   # GET /presupuestos/1.json
   def show
-    @habitacion = Habitacion.find_by(id: @presupuesto.habitacion_id)
-    if (@budget = Budget.find_by(habitacion_id: @presupuesto.habitacion_id, user_id: current_user.id)) != nil
-      @budget = Budget.find_by(habitacion_id: @presupuesto.habitacion_id, user_id: current_user.id)
+    if current_user.empresa == true
+      @habitacion = Habitacion.find_by(id: @presupuesto.habitacion_id)
+      if (@budget = Budget.find_by(habitacion_id: @presupuesto.habitacion_id, user_id: current_user.id)) != nil
+        @budget = Budget.find_by(habitacion_id: @presupuesto.habitacion_id, user_id: current_user.id)
+      else
+        @budget = Budget.new
+      end
     else
-      @budget = Budget.new
+      redirect_to root_path
     end     
   end
 

@@ -6654,9 +6654,9 @@
 
     <div class="actions">
       <% if Presupuesto.find_by(id: presupuesto.id) != nil %>
-      <h5 style="margin: 0px;">Actualizar presupuesto de <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
+      <h5 style="margin: 0px;">Actualizar tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
       <% else %>
-        <h5 style="margin: 0px;">Crear presupuesto para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
+        <h5 style="margin: 0px;">Introducir tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
       <% end %>
     </div>
   <% end %>

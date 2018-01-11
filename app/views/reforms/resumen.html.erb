@@ -3758,7 +3758,7 @@
         </div>
 
         <div style="margin-top: 50px;">
-          <h1>Coste de la reforma = <%= @budgets = Budget.where(reform_id: params[:id]).sum('cost') %> €</h1>
+          <h1>Coste de la reforma = <%= @budgets = Budget.where(reform_id: params[:id], user_id: current_user.id).sum('cost') %> €</h1>
         </div>
 
         <% @habitaciones = Habitacion.where(reform_id: @reform.id) %>
@@ -3777,12 +3777,15 @@
               <h3><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
             </div>            
           <% end %>
-
+        <% else %>
+          <h3 style="font-weight: 900; color: red;">Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
         <% end %>
 
         <div style="margin-top: 60px;">
           <h3>¿Quieres que le echemos un vistazo a su proyecto y comprobar en la base de datos si podemos bajar el precio o mejorarla en algún sentido?</h3>
-        </div>        
+        </div> 
+
+        <h5><%= link_to "Back", reforms_path %></h5>
 
       </div>	
 
