@@ -31,7 +31,7 @@ class BudgetsController < ApplicationController
         format.html { redirect_to presupuestos_path, notice: 'Budget was successfully created.' }
         format.json { render :show, status: :created, location: @budget }
         else
-        format.html { redirect_back(fallback_location: root_path, notice: 'Budget was successfully created.') }
+        format.html { redirect_back(fallback_location: root_path, notice: 'El presupuesto no ha podido crearse, intentalo de nuevo.') }
         format.json { render :show, status: :created, location: @budget }          
         end
       else

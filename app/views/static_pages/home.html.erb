@@ -17,27 +17,27 @@
                 <ul style="list-style: none; width: 100%; padding: 0px; margin: 0px; padding-top: 20px;" class="">
 
                   <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Crear anuncio</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>
+                    <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Crear anuncio</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>
                   </li>
 
                   <li style="align-items: center; text-align: center; padding: 10px;">
                     <% if Empresa.find_by(user_id: current_user.id) != nil %>
                       <%= link_to empresa_path(id: current_user.id) do %>
-                        <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus Datos</b></h5></span>
+                        <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus Datos</b></h5></span>
                       <% end %>
                     <% else %>
                       <%= link_to new_empresa_path do %>
-                        <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Crea tu base de datos para acceder a todas las ofertas</b></h5></span>
+                        <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Crea tu base de datos para acceder a todas las ofertas</b></h5></span>
                       <% end %>                    
                     <% end %>
                   </li>
                   <li style="align-items: center; text-align: center; padding: 10px;">
                     <%= link_to presupuestos_path do %>
-                        <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus clientes</b></h5></span>
+                        <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus clientes</b></h5></span>
                     <% end %> 
                   </li>
                   <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Estadísticas y mercado</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>                    
+                    <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Estadísticas y mercado</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>                    
                   </li>                                         
                 </ul>
 
@@ -51,17 +51,17 @@
                 <ul style="list-style: none; display: inline-flex; width: 100%; padding: 0px; margin: 0px; padding-top: 20px;" class="">
 
                   <li style="width: 30%; align-items: center; text-align: center; padding: 10px;">
-                    <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Nueva vivienda</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>
+                    <%= image_tag('nueva_vivienda.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Nueva vivienda</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>
                   </li>
 
                   <li style="width: 30%; align-items: center; text-align: center; padding: 10px;">
                     <%= link_to new_reform_path do %>
-                      <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Nueva Reforma</b></h5></span>
+                      <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Nueva Reforma</b></h5></span>
                     <% end %>
                   </li>
                   <li style="width: 30%; align-items: center; text-align: center; padding: 10px;">
                     <%= link_to reforms_path do %>
-                        <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus proyectos</b></h5></span>
+                        <%= image_tag('nuevo_proyecto.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus proyectos</b></h5></span>
                     <% end %> 
                   </li>                         
                 </ul>

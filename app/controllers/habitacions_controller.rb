@@ -38,7 +38,7 @@ class HabitacionsController < ApplicationController
         format.html { redirect_to reform_habitacion_path(id: @habitacion, reform_id: @habitacion.reform_id), notice: 'Habitacion was successfully created.' }
         format.json { render :show, status: :created, location: @habitacion }
       else
-        format.html { render :new }
+        format.html { redirect_back(fallback_location: reform_path(id: @habitacion.reform_id), notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
         format.json { render json: @habitacion.errors, status: :unprocessable_entity }
       end
     end

@@ -3,10 +3,10 @@
   <div class="iconos_inicio">
     <% if logged_in? %>
       <% if  current_user.empresa == true %>
-        <h3 style="font-weight: bold; margin-top: 50px;">Descubre lo que constructor puede hacer por tu empresa</h3>
+        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre lo que constructor puede hacer por tu empresa</h3>
         <ul class="ofertas">
           <li>
-            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Pásate a premium</h5></span>
+            <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Pásate a premium</h5></span>
             <h5 style="font-size: 15px; font-weight: normal;">Completa toda la base de datos para poder acceder a un mayor número de clientes.</h5>
           </li>
           <li>
@@ -19,21 +19,21 @@
           </li>                 
         </ul>
       <% else %>
-        <h3 style="font-weight: bold; margin-top: 50px;">Descubre Constructor</h3>
+        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre Constructor</h3>
         <ul class="ofertas">
           <li>
-            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
+            <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
           </li>
           <li>
             <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Diseño</h5></span>
           </li>
           <li>
-            <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Materiales</h5></span>
+            <%= image_tag('nuevos_materiales.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Materiales</h5></span>
           </li>                 
         </ul>  
       <% end %>
     <% else %>
-      <h3 style="font-weight: bold; margin-top: 50px;">Descubre Constructor</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre Constructor</h3>
         <ul class="ofertas">
           <li>
             <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
@@ -50,7 +50,7 @@
 
   <% if logged_in? %>
     <% if  current_user.empresa != true %>
-      <h3 style="font-weight: bold; margin-top: 50px;">Ofertas para tu salón</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Ofertas para tu salón</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta" style=" ">
               <ul class="elemento" id="quitar_azulejo" style="">
@@ -59,16 +59,20 @@
                   <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
                 </li>
                 <li class="nombre">
-                  <div class="nombre">
+                  <div class="nombre" style="">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      <%= @task.nombre if @task.nombre != nil %>
+                      <span>Pon azulejos en tu salón</span>
                   </div>
                 </li>
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -105,8 +109,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -143,8 +151,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -170,19 +182,23 @@
               <ul class="elemento">
                   <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
                   <li>
-                      <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                      <%= image_tag(('papel_pared.jpg'), class: "img-responsive") %>
                   </li>
                 <li class="nombre">
                   <div class="nombre">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      <%= @task.nombre if @task.nombre != nil %>
+                      Poner papel en tu salón
                   </div>
                 </li>
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -205,7 +221,7 @@
           </li>
       </ul>
 
-      <h3 style="font-weight: bold; margin-top: 50px;">Descubre materiales increibles</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre materiales increibles</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta">
               <ul class="elemento">
@@ -216,14 +232,18 @@
                 <li class="nombre">
                   <div class="nombre">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      <%= @task.nombre if @task.nombre != nil %>
+                      Inodoro Roca de Porcelana
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description"><h5>Inodoro de porcelana blanca, último modelo con las últmas tecnologías modernas.</h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b>99 €</b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -260,8 +280,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -299,8 +323,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -338,8 +366,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -377,8 +409,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -416,8 +452,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -440,7 +480,7 @@
           </li>
       </ul>
 
-      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos cocina</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Retirar elementos cocina</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta">
               <ul class="elemento">
@@ -457,8 +497,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -496,8 +540,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -520,7 +568,7 @@
           </li>
       </ul>
 
-      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos salón</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Retirar elementos salón</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta">
               <ul class="elemento">
@@ -537,8 +585,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -576,8 +628,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -601,7 +657,7 @@
       </ul>
     <% end %>
   <% else %>
-    <h3 style="font-weight: bold; margin-top: 50px;">Ofertas para tu salón</h3>
+    <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Ofertas para tu salón</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta" style=" ">
               <ul class="elemento" id="quitar_azulejo" style="">
@@ -618,8 +674,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -656,8 +716,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -694,8 +758,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -732,8 +800,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -756,7 +828,7 @@
           </li>
       </ul>
 
-      <h3 style="font-weight: bold; margin-top: 50px;">Descubre materiales increibles</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre materiales increibles</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta">
               <ul class="elemento">
@@ -773,8 +845,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -811,8 +887,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -850,8 +930,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -889,8 +973,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -928,8 +1016,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -967,8 +1059,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -991,7 +1087,7 @@
           </li>
       </ul>
 
-      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos cocina</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Retirar elementos cocina</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta">
               <ul class="elemento">
@@ -1008,8 +1104,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1047,8 +1147,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1071,7 +1175,7 @@
           </li>
       </ul>
 
-      <h3 style="font-weight: bold; margin-top: 50px;">Retirar elementos salón</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Retirar elementos salón</h3>
       <ul class="lista_principal" style="">
           <li class="lista_oferta">
               <ul class="elemento">
@@ -1088,8 +1192,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1127,8 +1235,12 @@
                 <li>
                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li>
-                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                <li class="empresa">
+                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
+                </li>                
+                <li class="precio_oferta">
+                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>

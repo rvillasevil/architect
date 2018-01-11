@@ -4,7 +4,8 @@
     <div class="constructor_show_user">
       <div class="col-sm-2">
         <div class="imagen_usuario">
-          <%= image_tag @user.foto.url, class: "img", size: 300  if @user.foto? %> 
+          <%= image_tag @user.foto.url, class: "img", size: 300  if @user.foto? %>
+          <%= render 'follow_form' if logged_in? %>
         </div>
       </div>
 
@@ -139,7 +140,7 @@
       </div>
 
       <div class="col-sm-4">
-        <div class="">
+        <div class="imagen_usuario_web">
           <%= image_tag @user.foto.url, class: "img", size: 300  if @user.foto? %> 
           <%= render 'follow_form' if logged_in? %>
         </div>

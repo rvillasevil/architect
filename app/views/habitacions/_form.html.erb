@@ -1,8 +1,8 @@
-<%= form_for(habitacion) do |f| %>
+<%= form_for(habitacion, onsubmit: "return false")  do |f| %>
   <% if habitacion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(habitacion.errors.count, "error") %> prohibited this habitacion from being saved:</h2>
-
+ 
       <ul>
       <% habitacion.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -5212,7 +5212,8 @@
   <%= f.hidden_field :user_id, value: current_user %>
 
   <div class="actions">
-    <%= f.submit "Ya he revisado todas las partidas, Enviar", class: "btn bt-sm btn-info", style: "background-color: white; color: #46b8da; padding: 10px; font-weight: bolder; border-radius: 10px;" %>
+    <%# f.submit "Ya he revisado todas las partidas, Enviar", class: "btn bt-sm btn-info", style: "background-color: white; color: #46b8da; padding: 10px; font-weight: bolder; border-radius: 10px;" %>
+    <input type="button" value="Send" onclick="form.submit();" />
   </div>
   
 <% end %>
