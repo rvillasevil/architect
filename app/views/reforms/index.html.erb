@@ -34,6 +34,14 @@
                       <li>
                         <h5 style="margin: 0px;">Por ahora son = <b><%= @budgets = Budget.where(reform_id: reform.id).sum('cost') %> €</b></h5>
                       </li>
+                      <div>
+                        <% @habitacion = Habitacion.where(reform_id: reform) %>
+                        <% @budgets = @habitacion.collect do |habitacion| %>
+                          <% @habitacion = habitacion %>
+                          <% render 'reforms/budget', habitacion: @habitacion %>
+                          <%= @budget %>
+                        <% end %>
+                      </div>                      
                     <% end %>
 
                   <% end %>

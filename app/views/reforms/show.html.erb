@@ -16,13 +16,13 @@
   				</div>
 
           <div>
-            <h3 style="font-weight: normal;">
+            <h5 style="font-weight: normal;">
               <%= link_to edit_reform_path(@reform) do %>
-                <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #d9534f; color: #d9534f; padding: 10px; margin: 5px; margin-left: 0px;">
-                  <h3 style="font-weight: normal; margin: 5px; color: #d9534f;">Editar datos proyecto</h3></button>   
+                <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #d9534f; color: #d9534f; padding: 5px; margin: 5px; margin-left: 0px;">
+                  <h5 style="font-weight: normal; margin: 0px; color: #d9534f;">Editar datos proyecto</h5></button>   
               <% end %>
               <u><%= link_to 'Volver a tus proyectos', reforms_path %></u>
-            </h3>
+            </h5>
           </div>          
 
           <% if Confirmacion.find_by(reform_id: @reform.id) == nil %>
@@ -40,7 +40,7 @@
               <% end %>
 <%
 =end%>             
-                <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
+                <%= link_to new_reform_habitacion_path(reform_id: @reform, cocina: true) do %>
                   <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nueva Cocina</h3></button>
                 <% end %>                
 
@@ -70,7 +70,10 @@
               </h3>
             </div>
           <% end %>         
+        </div>
 
+<%
+=begin%>        
   				<div>
   				  <h3 style="display: inline-flex; font-weight: normal;">
   				  	User:
@@ -85,14 +88,7 @@
   					  <b>&nbsp;&nbsp;&nbsp;<%= @reform.localidad %></b>
   				  </h3>				
   				</div>				
-  			</div>
 
-
-        <h3>Tus habitaciones:</h3>
-        <div style="display: inline-flex;">
-
-<%
-=begin%>
           <% if @banos.any? %>
             <% @banos.each do |bano| %>
               &nbsp;&nbsp;<button type="button" class="btn btn-sm btn-default" style="">
@@ -110,15 +106,28 @@
   					<% end %>
   				<% end %>
 <%
-=end%>          
+=end%>    
+
+
+        <div class="show_habitaciones" style="padding-top: 50px;">
+
+          <% @habitacion = Habitacion.where(reform_id: @reform.id) %>
+          <% @habitacion.collect do |habitacion| %>
+            <% @habitacion = habitacion %>
+            <% habitacion.nombre %>
+            <% render 'reforms/budget', habitacion: @habitacion %>
+          <% end %>
+          <h1 style="font-size: 26px;">Tu reforma = <%= @budget %> €</h1>
+
 
   				<% if @habitaciones.any? %>
   					<% @habitaciones.collect do |habitacion| %>
             
               &nbsp;&nbsp;<button type="button" class="btn btn-sm btn-default" style="">
-                <h3 style="margin: 10px; font-weight: normal;">
-                  <%= link_to habitacion.nombre, reform_habitacion_path(reform_id: @reform, id: habitacion) %>
-                </h3>  
+                <h3 style="margin: 10px; font-weight: 700;">
+                  <%= link_to habitacion.nombre, reform_habitacion_path(reform_id: @reform, id: habitacion), style: "color: #555;" %>
+                </h3>
+  
                 <% @budget = Budget.find_by(habitacion_id: habitacion.id, user_id: current_user.id) %>
                 <% if @budget != nil %>
                   <% if habitacion.updated_at.to_i > @budget.updated_at.to_i %>
@@ -154,6 +163,13 @@
         
         <div style="margin-top: 125px;">
           <h3 style="font-weight: normal;">¿Has terminado el proyecto?</h3>
+
+          <%= link_to resumen_reform_path(@reform) do %>
+            <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid grey; color: #d9534f; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="font-weight: bolder; margin: 5px; color: #444; font-size: 18px;">Resumen y presupuesto</h3></button>
+          <% end %>
+
+<%
+=begin%>          
           <% if @habitaciones.any? %>
             <% if @array.include? 1 %>
               <% if @array.include? 2 %>
@@ -175,6 +191,8 @@
           <% else %>
             <h3>Please añade alguna habitación al proyecto para pedir presupuestos</h3>
           <% end %>
+<%
+=end%>          
         </div> 
          
       	<%= render 'shared/lista_ofertas' %>

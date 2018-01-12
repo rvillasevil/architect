@@ -4,7 +4,7 @@
 			
 		</div>
 
-		<div class="col-sm-10">
+		<div class="col-sm-10" style="padding: 0px;">
       <div class="constructor">
 		    <p id="notice"><%= notice %></p>
 
@@ -35,135 +35,136 @@
 
   				<% if @habitaciones.any? %>
   					<% @habitaciones.each do |habitacion| %>
-              <h3 style="font-size: 25px; font-weight: bolder; padding-top: 20px;"><%= habitacion.nombre %></h3>
+              <h3 style="font-size: 25px; font-weight: 900; padding-top: 20px; color: #008489 !important;"><%= habitacion.nombre %></h3>
                 <div class="resumen" style="display: block;">
-                  <% if  habitacion.demo_quitar_azulejo != nil or habitacion.demo_quitar_baldosa != nil or habitacion.demo_quitar_falso_techo != nil or habitacion.demo_quitar_tabique != nil %>
-                    <div id="Div0" style="display: block;">
-                      <div class="titulo">
-                        <h3 style="">Demoliciones</h3>
-                      </div>
-                      <ul class="lista_principal" style="">
 
-                        <% if  habitacion.demo_quitar_azulejo != nil %>
-                        <li class="lista_elemento" style=" ">
-                          <ul class="elemento" id="quitar_azulejo" style="">
-                              <% @task = Task.find_by(task: 'demo_quitar_azulejo') %>
-                            
-                            <li>
-                              <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
-                            </li>
-                            <li>
-                              <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
-                            </li>
-                            <li class="field">
-                              <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_azulejo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
-                            </li>
-                            <li>
-                              <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
-                            </li>
-                            <li class="importe">
-                              <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_azulejo = (@task.importe * habitacion.demo_quitar_azulejo) %> €</h3>
-                            </li>
-                          </ul>
-                        </li>
-                        <% end %>
+                    <% if  habitacion.demo_quitar_azulejo != nil or habitacion.demo_quitar_baldosa != nil or habitacion.demo_quitar_falso_techo != nil or habitacion.demo_quitar_tabique != nil %>
+                      <div id="Div0" style="display: block;">
+                        <div class="titulo">
+                          <h3 style="">Demoliciones</h3>
+                        </div>
+                        <ul class="lista_principal" style="">
 
-                        <% if  habitacion.demo_quitar_baldosa != nil %>
-                        <li style="">
-                            <ul class="elemento" style="">
-                                <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>
+                          <% if  habitacion.demo_quitar_azulejo != nil %>
+                          <li class="lista_elemento" style=" ">
+                            <ul class="elemento" id="quitar_azulejo" style="">
+                                <% @task = Task.find_by(task: 'demo_quitar_azulejo') %>
                               
                               <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                               </li>
                               <li>
                                 <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                               </li>
                               <li class="field">
-                                <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_baldosa %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                                <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_azulejo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                               </li>
                               <li>
                                 <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                               </li>
                               <li class="importe">
-                                <% if @task.importe != nil %>
-                                <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_baldosa = (@task.importe * habitacion.demo_quitar_baldosa ) %> €</h3>
-                                <% end %>
+                                <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_azulejo = (@task.importe * habitacion.demo_quitar_azulejo) %> €</h3>
                               </li>
-                              <% if @task.mat_aportar != nil %>
-                                <li class="mat_aportar">
-                                    Materiales necesarios: <%= @task.mat_aportar %>
-                                </li>
-                              <% end %>
-                            </ul>        
-                        </li>
-                        <% end %>
-
-                        <% if  habitacion.demo_quitar_falso_techo != nil %>
-                        <li style="">
-                            <ul class="elemento" style="">
-                                <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>
-                              
-                              <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
-                              </li>
-                              <li>
-                                <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
-                              </li>
-                              <li class="field">
-                                <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_falso_techo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
-                              </li>
-                              <li>
-                                <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
-                              </li>
-                              <li class="importe">
-                                <% if @task.importe != nil %>
-                                <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_falso_techo = (@task.importe * habitacion.demo_quitar_falso_techo ) %> €</h3>
-                                <% end %>
-                              </li>
-                              <% if @task.mat_aportar != nil %>
-                                <li class="mat_aportar">
-                                    Materiales necesarios: <%= @task.mat_aportar %>
-                                </li>
-                              <% end %>
-                            </ul>        
-                        </li>
-                        <% end %> 
-
-                        <% if  habitacion.demo_quitar_tabique != nil %>
-                        <li>
-                            <ul class="elemento">
-                                <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
-                              
-                              <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
-                              </li>
-                              <li>
-                                <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
-                              </li>
-                              <li class="field">
-                                <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_tabique %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
-                              </li>
-                              <li>
-                                <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
-                              </li>
-                              <li class="importe">
-                                <% if @task.importe != nil %>
-                                <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_tabique = (@task.importe * habitacion.demo_quitar_tabique ) %> €</h3>
-                                <% end %>
-                              </li>
-                              <% if @task.mat_aportar != nil %>
-                                <li class="mat_aportar">
-                                    Materiales necesarios: <%= @task.mat_aportar %>
-                                </li>
-                              <% end %>
                             </ul>
-                        </li>
-                        <% end %>
+                          </li>
+                          <% end %>
 
-                      </ul>
-                    </div>
-                  <% end %>
+                          <% if  habitacion.demo_quitar_baldosa != nil %>
+                          <li style="">
+                              <ul class="elemento" style="">
+                                  <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>
+                                
+                                <li>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
+                                </li>
+                                <li>
+                                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                                </li>
+                                <li class="field">
+                                  <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_baldosa %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                                </li>
+                                <li>
+                                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                                </li>
+                                <li class="importe">
+                                  <% if @task.importe != nil %>
+                                  <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_baldosa = (@task.importe * habitacion.demo_quitar_baldosa ) %> €</h3>
+                                  <% end %>
+                                </li>
+                                <% if @task.mat_aportar != nil %>
+                                  <li class="mat_aportar">
+                                      Materiales necesarios: <%= @task.mat_aportar %>
+                                  </li>
+                                <% end %>
+                              </ul>        
+                          </li>
+                          <% end %>
+
+                          <% if  habitacion.demo_quitar_falso_techo != nil %>
+                          <li style="">
+                              <ul class="elemento" style="">
+                                  <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>
+                                
+                                <li>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
+                                </li>
+                                <li>
+                                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                                </li>
+                                <li class="field">
+                                  <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_falso_techo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                                </li>
+                                <li>
+                                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                                </li>
+                                <li class="importe">
+                                  <% if @task.importe != nil %>
+                                  <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_falso_techo = (@task.importe * habitacion.demo_quitar_falso_techo ) %> €</h3>
+                                  <% end %>
+                                </li>
+                                <% if @task.mat_aportar != nil %>
+                                  <li class="mat_aportar">
+                                      Materiales necesarios: <%= @task.mat_aportar %>
+                                  </li>
+                                <% end %>
+                              </ul>        
+                          </li>
+                          <% end %> 
+
+                          <% if  habitacion.demo_quitar_tabique != nil %>
+                          <li>
+                              <ul class="elemento">
+                                  <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
+                                
+                                <li>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
+                                </li>
+                                <li>
+                                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                                </li>
+                                <li class="field">
+                                  <h5 style="font-weight: bolder;"><%= habitacion.demo_quitar_tabique %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                                </li>
+                                <li>
+                                  <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                                </li>
+                                <li class="importe">
+                                  <% if @task.importe != nil %>
+                                  <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_tabique = (@task.importe * habitacion.demo_quitar_tabique ) %> €</h3>
+                                  <% end %>
+                                </li>
+                                <% if @task.mat_aportar != nil %>
+                                  <li class="mat_aportar">
+                                      Materiales necesarios: <%= @task.mat_aportar %>
+                                  </li>
+                                <% end %>
+                              </ul>
+                          </li>
+                          <% end %>
+
+                        </ul>
+                      </div>
+                    <% end %>
 
 
                     <% if  habitacion.demo_quitar_inodoro != nil or habitacion.demo_quitar_bidet != nil or habitacion.demo_quitar_plato_ducha != nil or habitacion.demo_quitar_mampara != nil or habitacion.demo_quitar_mueble_bano != nil or habitacion.demo_quitar_banera != nil  %>
@@ -178,7 +179,7 @@
                               <% @task = Task.find_by(task: 'demo_quitar_inodoro') %>
                             
                             <li>
-                              <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                              <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                             </li>
                             <li>
                               <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -209,7 +210,7 @@
                                 <% @task = Task.find_by(task: 'demo_quitar_bidet') %>
                               
                               <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                               </li>
                               <li>
                                 <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -240,7 +241,7 @@
                                 <% @task = Task.find_by(task: 'demo_quitar_plato_ducha') %>
                               
                               <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                               </li>
                               <li>
                                 <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -271,7 +272,7 @@
                                 <% @task = Task.find_by(task: 'demo_quitar_mampara') %>
                               
                               <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                               </li>
                               <li>
                                 <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -302,7 +303,7 @@
                                 <% @task = Task.find_by(task: 'demo_quitar_mueble_bano') %>
                               
                               <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                               </li>
                               <li>
                                 <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -333,7 +334,7 @@
                                 <% @task = Task.find_by(task: 'demo_quitar_banera') %>
                               
                               <li>
-                                <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                               </li>
                               <li>
                                 <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -373,7 +374,7 @@
                                   <% @task = Task.find_by(task: 'demo_quitar_mobi_cocina') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -385,7 +386,7 @@
                                   <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                                 </l class="importe"i>
                                 <li>
-                                  <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_mobi_cocina = (@task.importe * habitacion.demo_quitar_azulejo) %> €</h3>
+                                  <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_mobi_cocina = (@task.importe * habitacion.demo_quitar_mobi_cocina) %> €</h3>
                                 </li>
                               </ul>
                           </li>
@@ -397,7 +398,7 @@
                                   <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -422,7 +423,7 @@
                           </li>
                           <% end %>
                       </ul>
-                     <% end %>
+                    <% end %>
 
                     <% if  habitacion.demo_friso_madera != nil or habitacion.demo_quitar_mueble != nil %>
                       <div class="titulo">
@@ -436,7 +437,7 @@
                                   <% @task = Task.find_by(task: 'demo_friso_madera') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -467,7 +468,7 @@
                                   <% @task = Task.find_by(task: 'demo_quitar_mueble') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -506,7 +507,7 @@
                                   <% @task = Task.find_by(task: 'tub_termo_electrico') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -537,7 +538,7 @@
                                   <% @task = Task.find_by(task: 'tub_radiador') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -576,7 +577,7 @@
                                   <% @task = Task.find_by(task: 'tub_lavabo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -607,7 +608,7 @@
                                   <% @task = Task.find_by(task: 'tub_ducha_banera') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -638,7 +639,7 @@
                                   <% @task = Task.find_by(task: 'tub_bidet') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -669,7 +670,7 @@
                                   <% @task = Task.find_by(task: 'tub_inodoro') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -700,7 +701,7 @@
                                   <% @task = Task.find_by(task: 'tub_colum_hidromasaje') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -731,7 +732,7 @@
                                   <% @task = Task.find_by(task: 'tub_lavabo_doble') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -762,7 +763,7 @@
                                   <% @task = Task.find_by(task: 'tub_jacuzzy') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -793,7 +794,7 @@
                                   <% @task = Task.find_by(task: 'tub_sauna') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -824,7 +825,7 @@
                                   <% @task = Task.find_by(task: 'tub_ducha_empotrada') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -855,7 +856,7 @@
                                   <% @task = Task.find_by(task: 'tub_toallero') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -886,7 +887,7 @@
                                   <% @task = Task.find_by(task: 'tub_reubicar_contador') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -917,7 +918,7 @@
                                   <% @task = Task.find_by(task: 'tub_lavadora') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -948,7 +949,7 @@
                                   <% @task = Task.find_by(task: 'tub_reubicar_inodoro') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -979,7 +980,7 @@
                                   <% @task = Task.find_by(task: 'tub_tipo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1010,7 +1011,7 @@
                                   <% @task = Task.find_by(task: 'tub_caldera') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1049,7 +1050,7 @@
                                   <% @task = Task.find_by(task: 'tub_fregadero') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1081,7 +1082,7 @@
                                   <% @task = Task.find_by(task: 'tub_lavavajillas') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1113,7 +1114,7 @@
                                   <% @task = Task.find_by(task: 'tub_secadora') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1168,7 +1169,7 @@
                                   <% @task = Task.find_by(task: 'elec_pto_luz_techo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1199,7 +1200,7 @@
                                   <% @task = Task.find_by(task: 'elec_pto_luz_pared') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1230,7 +1231,7 @@
                                   <% @task = Task.find_by(task: 'elec_interr_simple') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1261,7 +1262,7 @@
                                   <% @task = Task.find_by(task: 'elec_interr_doble') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1292,7 +1293,7 @@
                                   <% @task = Task.find_by(task: 'elec_interr_triple') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1323,7 +1324,7 @@
                                   <% @task = Task.find_by(task: 'elec_enchu_simple') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1354,7 +1355,7 @@
                                   <% @task = Task.find_by(task: 'elec_enchu_doble') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1385,7 +1386,7 @@
                                   <% @task = Task.find_by(task: 'elec_enchu_triple') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1416,7 +1417,7 @@
                                   <% @task = Task.find_by(task: 'elec_reubicar_caja_luz') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1447,7 +1448,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_lavadora') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1478,7 +1479,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_ventilador_extractor') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1509,7 +1510,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_horno_vitroceramica') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1540,7 +1541,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_microondas') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1571,7 +1572,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_frigorifico') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1602,7 +1603,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_lavavajillas') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1633,7 +1634,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_secadora') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1664,7 +1665,7 @@
                                   <% @task = Task.find_by(task: 'elec_toma_telefono') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1712,7 +1713,7 @@
                                   <% @task = Task.find_by(task: 'alb_azulejo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1743,7 +1744,7 @@
                                   <% @task = Task.find_by(task: 'alb_tipo_azulejo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1774,7 +1775,7 @@
                                   <% @task = Task.find_by(task: 'alb_baldosa') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1806,7 +1807,7 @@
                                   <% @task = Task.find_by(task: 'alb_tipo_baldosa') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1837,7 +1838,7 @@
                                   <% @task = Task.find_by(task: 'alb_techo_pladur') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1868,7 +1869,7 @@
                                   <% @task = Task.find_by(task: 'alb_tabique_ladriyeso') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1899,7 +1900,7 @@
                                   <% @task = Task.find_by(task: 'alb_tabique_pladur') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1930,7 +1931,7 @@
                                   <% @task = Task.find_by(task: 'alb_tabique_fabrica') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1961,7 +1962,7 @@
                                   <% @task = Task.find_by(task: 'alb_tabique_paves') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -1993,7 +1994,7 @@
                                   <% @task = Task.find_by(task: 'alb_nivelacion_pared') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2045,7 +2046,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_mampara') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2077,7 +2078,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_mueble_bano') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2108,7 +2109,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_banera') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2140,7 +2141,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_plato_ducha') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2172,7 +2173,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_bidet') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2204,7 +2205,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_inodoro_normal') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2236,7 +2237,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_inodoro_suspendido') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2268,7 +2269,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_inodoro_encastrado') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2300,7 +2301,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_grifo_ducha') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2332,7 +2333,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_grifo_banera') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2364,7 +2365,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_acceso_atornillado') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2396,7 +2397,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_colum_hidromasaje') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2428,7 +2429,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_cabina_ducha') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2460,7 +2461,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_plato_ducha_obra') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2492,7 +2493,7 @@
                                   <% @task = Task.find_by(task: 'mont_sani_lavabo_pedestal') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2542,7 +2543,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_mueble_alto_cocina') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2574,7 +2575,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_mueble_bajo_cocina') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2605,7 +2606,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_horno_electrico') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2636,7 +2637,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_placa_vitro') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2668,7 +2669,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_placa_electrica') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2700,7 +2701,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_lavadora') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2732,7 +2733,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_frigorifico') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2764,7 +2765,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_lavavajillas') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2796,7 +2797,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_microondas') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2828,7 +2829,7 @@
                                   <% @task = Task.find_by(task: 'mont_electro_secadora') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2860,7 +2861,7 @@
                                   <% @task = Task.find_by(task: 'mont_fregadero') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2892,7 +2893,7 @@
                                   <% @task = Task.find_by(task: 'mont_grifo_fregadero') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2920,11 +2921,11 @@
                     <% end %>
 
                     <% if  habitacion.colo_pmarcha_termo_elect_a != nil or
-                    habitacion.colo_pmarcha_termo_elect_b != nil or
-                    habitacion.colo_pmarcha_termo_elect_c != nil or
-                    habitacion.colo_pmarcha_termo_elect_d != nil or
-                    habitacion.colo_pmarcha_termo_elect_e != nil or
-                    habitacion.colo_pmarcha_termo_elect_f != nil %>
+                      habitacion.colo_pmarcha_termo_elect_b != nil or
+                      habitacion.colo_pmarcha_termo_elect_c != nil or
+                      habitacion.colo_pmarcha_termo_elect_d != nil or
+                      habitacion.colo_pmarcha_termo_elect_e != nil or
+                      habitacion.colo_pmarcha_termo_elect_f != nil %>
                       <div class="titulo">
                         <h3 style="">Instalación Termos eléctricos</h3>
                       </div>
@@ -2936,7 +2937,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_a') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -2968,7 +2969,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_b') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3000,7 +3001,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_c') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3032,7 +3033,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_d') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3064,7 +3065,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_e') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3096,7 +3097,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_f') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3135,7 +3136,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_calde_atmos') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3167,7 +3168,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_calde_bajo_nox') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3199,7 +3200,7 @@
                                   <% @task = Task.find_by(task: 'colo_pmarcha_calde_estanca') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3239,7 +3240,7 @@
                                   <% @task = Task.find_by(task: 'techo_pintar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3271,7 +3272,7 @@
                                   <% @task = Task.find_by(task: 'techo_tipo_pintura') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3303,7 +3304,7 @@
                                   <% @task = Task.find_by(task: 'techo_alisar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3335,7 +3336,7 @@
                                   <% @task = Task.find_by(task: 'techo_reparar_humedad') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3367,7 +3368,7 @@
                                   <% @task = Task.find_by(task: 'pared_empapelar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3399,7 +3400,7 @@
                                   <% @task = Task.find_by(task: 'pared_quitar_papel') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3431,7 +3432,7 @@
                                   <% @task = Task.find_by(task: 'pared_alisar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3463,7 +3464,7 @@
                                   <% @task = Task.find_by(task: 'pared_pintar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3495,7 +3496,7 @@
                                   <% @task = Task.find_by(task: 'pared_reparar_humedad') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3527,7 +3528,7 @@
                                   <% @task = Task.find_by(task: 'carpin_friso') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3567,7 +3568,7 @@
                                   <% @task = Task.find_by(task: 'puerta_colocar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3599,7 +3600,7 @@
                                   <% @task = Task.find_by(task: 'puerta_tipo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3631,7 +3632,7 @@
                                   <% @task = Task.find_by(task: 'puerta_cambio_precerco') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3663,7 +3664,7 @@
                                   <% @task = Task.find_by(task: 'ventana_colocar') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3695,7 +3696,7 @@
                                   <% @task = Task.find_by(task: 'ventana_tipo') %>
                                 
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3726,7 +3727,7 @@
                               <ul class="elemento">
                                   <% @task = Task.find_by(task: 'ventana_contraventana') %>
                                 <li>
-                                  <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
+                                  <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
                                 <li>
                                   <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
@@ -3752,14 +3753,23 @@
                           <% end %>
                       </ul>
                     <% end %>
-              </div>            
+                </div>
+
+                <div style="display: inline-flex; align-items: center;">
+                  <% @habitacion = habitacion %>
+                  <h3 style="display: inline-flex; color: #555;">Acumulado = &nbsp;<%= render 'reforms/budget', habitacion: @habitacion %></h3>
+                </div>
+
   				    <% end %>
             <% end %>
         </div>
 
+<%
+=begin%>
         <div style="margin-top: 50px;">
           <h1>Coste de la reforma = <%= @budgets = Budget.where(reform_id: params[:id], user_id: current_user.id).sum('cost') %> €</h1>
         </div>
+     
 
         <% @habitaciones = Habitacion.where(reform_id: @reform.id) %>
         <% @sumatorio = Budget.where(reform_id: @reform.id) %>
@@ -3778,12 +3788,29 @@
             </div>            
           <% end %>
         <% else %>
-          <h3 style="font-weight: 900; color: red;">Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
+          <h3 style="font-weight: 700; color: red;">Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
         <% end %>
 
         <div style="margin-top: 60px;">
           <h3>¿Quieres que le echemos un vistazo a su proyecto y comprobar en la base de datos si podemos bajar el precio o mejorarla en algún sentido?</h3>
-        </div> 
+        </div>
+<%
+=end%>         
+
+        <div>
+          <% @habitacion = Habitacion.where(reform_id: @reform) %>
+          <% @budgets = @habitacion.collect do |habitacion| %>
+            <% @habitacion = habitacion %>
+            <% render 'reforms/budget', habitacion: @habitacion %>
+            <% @budget %>
+          <% end %>
+        </div>
+
+        <% if @habitacion != nil %>
+          <h1>Coste de la reforma = <%= @budget %> €</h1>
+        <% else %>
+          <h3>Aún no se ha creado ninguna estancia</h3>
+        <% end %>
 
         <h5><%= link_to "Back", reforms_path %></h5>
 

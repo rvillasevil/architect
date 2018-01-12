@@ -695,6 +695,11 @@ aside {
   textarea {
     color: $gray-lighter;
   }
+  .show_habitaciones {
+    button {
+      margin: 5px;
+    }
+  }
 }
 
 .campos {
@@ -748,7 +753,6 @@ aside {
         margin: 0px;
       }
       li.nombre {
-
         padding-top: 10px;
         font-weight: bold;
         font-size: 20px;
@@ -756,6 +760,10 @@ aside {
         height: 70px;
         .nombre {
           display: inline-flex;
+          width: 100%;
+          .nombre_task {
+            padding-left: 5px;
+          }
         }
       }
       li.precio {
@@ -775,6 +783,11 @@ aside {
         h5 {
           font-size: 18px;
           color: #444;
+        }
+      }
+      li.comentario {
+        textarea {
+          border: 1px solid #eee;
         }
       }
       li.empresa {
@@ -842,6 +855,13 @@ aside {
     border-radius: 5px;
     overflow: hidden;
   }
+  .oferta_imagen_grande {
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%; 
+    border-radius: 5px;
+    overflow: hidden;
+  }  
   ul.ofertas {
     list-style: none;
     padding: 0px;
@@ -870,18 +890,11 @@ aside {
   }
   .iconos_inicio {
     ul {
+      padding-top: 0px;
       display: inline-flex;
-      li {
-        width: 25%;
-      }
-    }
-    @media (max-width: 768px) {
-      ul {
+      @media (max-width: 768px) {
         display: block;
-        li {
-          width: 100%;
-        }
-      }
+      }     
     }
   }
   li.tu_precio {
@@ -925,7 +938,7 @@ aside {
     font-size: 15px;
   }
   .popover-content {
-    font-size: 13px;
+    font-size: 14px;
   }
   .iconos {
     .fa {
@@ -938,16 +951,28 @@ aside {
   }
 }
 
+.titulos {
+  btn {
+    @media(max-width: 768px) {
+      display: inline-flex;
+    }
+  }
+}
+
 .resumen {
   border: 1px solid #ccc;
   border-radius: 15px;
   .titulo {
-    border-bottom: 2px solid grey;
+    border-bottom: 1px solid grey;
     padding-left: 15px;
     h3 {
-      font-weight: 900;
+      font-weight: 700;
       font-size: 20px;
+      color: #444;
     }
+  }
+  h3 {
+    font-weight: 700;
   }
   ul.lista_principal {
     display: inline-block;
@@ -959,6 +984,7 @@ aside {
       border-bottom: 1px solid #eee;
       h5 {
         margin: 5px;
+        color: #444;
       }
     }
     .description {
@@ -975,6 +1001,9 @@ aside {
       padding-bottom: 10px;
       font-weight: 500;
       font-size: 18px;
+      h3 {
+        color: #444;
+      }
     }
     ul.elemento {
       border-bottom: 1px solid #dbdbdb;
