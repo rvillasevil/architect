@@ -11,12 +11,13 @@
 
         <h5 style="font-size: 16px;">
           <% @reforms.order(created_at: :desc).each do |reform| %>
-            <li style="display: block; margin-bottom: 40px; padding-top: 20px;">
+            <div class="proyecto" style="display: block; margin-bottom: 40px; padding-top: 20px;">
+              <% @user = User.find_by(id: reform.user_id) %>
+              <%= image_tag @user.foto.url, class: "img-circle", size: 100  if @user.foto? %>              
               <ul style="margin: 0px; list-style: none; padding: 0px;">
-                <li style="font-size: 16px; font-weight: bold;">
-                  <% @user = User.find_by(id: reform.user_id) %>
-                  <%= image_tag @user.foto.url, class: "img-circle", size: 100  if @user.foto? %>
-                  <h3 style="font-size: 26px; color: #444;"><%= reform.nombre %></h3>
+                <li class="" style="font-size: 16px; font-weight: bold;">
+
+                  <h3 style="font-size: 26px; color: #444; border-bottom: 1px solid #ccc; margin: 0px; padding-bottom: 15px; padding-top: 10px;"><%= reform.nombre %></h3>
 
                   <h5 style="margin: 0px; margin-top: 20px; display: inline-flex;">Estado:</h5>
                   <% if Confirmacion.find_by(reform_id: reform.id, user_id: current_user.id) != nil %>
@@ -30,19 +31,17 @@
 
                   <% else %>
                     <h5 style="color: green; margin: 0px;"><b>En desarrollo.</b> Pide presupuestos cuando lo tengas todo terminado.</h5>
-                    <% if Budget.where(reform_id: reform.id) %>
+
                       <li>
-                        <h5 style="margin: 0px;">Por ahora son = <b><%= @budgets = Budget.where(reform_id: reform.id).sum('cost') %> €</b></h5>
-                      </li>
-                      <div>
-                        <% @habitacion = Habitacion.where(reform_id: reform) %>
-                        <% @budgets = @habitacion.collect do |habitacion| %>
+                        <% @habitacion = Habitacion.where(reform_id: reform.id) %>
+                        <% @habitacion.collect do |habitacion| %>
                           <% @habitacion = habitacion %>
+                          <% habitacion.nombre %>
                           <% render 'reforms/budget', habitacion: @habitacion %>
-                          <%= @budget %>
                         <% end %>
-                      </div>                      
-                    <% end %>
+                        
+                        <h5 style="margin: 0px;">Por ahora son: <b><%= @budget %> €</b></h5>
+                      </li>
 
                   <% end %>
                   <% if Confirmacion.where(reform_id: reform.id, empresa: true).any? %>
@@ -82,7 +81,7 @@
                   <% end %>                      
                 </li>
               </ul>
-            </li>
+            </div>
           <% end %>
         </h5>
 

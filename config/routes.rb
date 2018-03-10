@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  resources :partidas
   resources :confirmacions
   resources :presupuestos
   resources :budgets
@@ -11,7 +12,8 @@ Rails.application.routes.draw do
   resources :reforms do
     resources :habitacions
     resources :cocinas
-    resources :banos 
+    resources :banos
+    resources :partidas
     member do
       get :resumen
     end

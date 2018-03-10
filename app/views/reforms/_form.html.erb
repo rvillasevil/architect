@@ -19,7 +19,64 @@
 
     <div class="field">
       <%= f.label "Donde va a realizarse el proyecto" %>
-      <span style="font-weight: bolder;"><%= f.text_field :localidad, placeholder: "Ej: Calle Toledo, Madrid", style:"padding: 10px; border-radius: 15px;" %></span>
+      <span style="font-weight: bolder;"><%# f.text_field :localidad, placeholder: "Ej: Calle Toledo, Madrid", style:"padding: 10px; border-radius: 15px;" %></span>
+
+    <div class="select_provincia" style="border: 1px solid #bbb; border-radius: 15px; padding: 10px;">
+      <%= f.select :localidad, [
+          'Albacete',
+          'Alicante',
+          'Almería',
+          'Álava',
+          'Asturias',
+          'Ávila',
+          'Badajoz',
+          'Illes Balears',
+          'Barcelona',
+          'Bizkaia',
+          'Burgos',
+          'Cáceres',
+          'Cádiz',
+          'Cantabria',
+          'Castellón',
+          'Ciudad Real',
+          'Córdoba',
+          'A Coruña',
+          'Cuenca',
+          'Gipuzkoa',
+          'Girona',
+          'Granada',
+          'Guadalajara',
+          'Huelva',
+          'Huesca',
+          'Jaén',
+          'León',
+          'Lleida',
+          'Lugo',
+          'Madrid',
+          'Málaga',
+          'Murcia',
+          'Navarra',
+          'Ourense',
+          'Palencia',
+          'Las Palmas',
+          'Pontevedra',
+          'La Rioja',
+          'Salamanca',
+          'Santa Cruz de Tenerife',
+          'Segovia',
+          'Sevilla',
+          'Soria',
+          'Tarragona',
+          'Teruel',
+          'Toledo',
+          'Valencia',
+          'Valladolid',
+          'Zamora',
+          'Zaragoza',
+          'Ceuta',
+          'Melilla'] %>
+    </div>
+
     </div>
 
     <%= f.hidden_field :user_id, value: current_user.id %>

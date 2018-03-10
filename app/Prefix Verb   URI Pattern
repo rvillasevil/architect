@@ -1,4 +1,20 @@
- Prefix Verb   URI Pattern                                                                Controller#Action
+Prefix Verb   URI Pattern                                                                Controller#Action
+                                   partidas GET    /partidas(.:format)                                                        partidas#index
+                                            POST   /partidas(.:format)                                                        partidas#create
+                                new_partida GET    /partidas/new(.:format)                                                    partidas#new
+                               edit_partida GET    /partidas/:id/edit(.:format)                                               partidas#edit
+                                    partida GET    /partidas/:id(.:format)                                                    partidas#show
+                                            PATCH  /partidas/:id(.:format)                                                    partidas#update
+                                            PUT    /partidas/:id(.:format)                                                    partidas#update
+                                            DELETE /partidas/:id(.:format)                                                    partidas#destroy
+                              confirmacions GET    /confirmacions(.:format)                                                   confirmacions#index
+                                            POST   /confirmacions(.:format)                                                   confirmacions#create
+                           new_confirmacion GET    /confirmacions/new(.:format)                                               confirmacions#new
+                          edit_confirmacion GET    /confirmacions/:id/edit(.:format)                                          confirmacions#edit
+                               confirmacion GET    /confirmacions/:id(.:format)                                               confirmacions#show
+                                            PATCH  /confirmacions/:id(.:format)                                               confirmacions#update
+                                            PUT    /confirmacions/:id(.:format)                                               confirmacions#update
+                                            DELETE /confirmacions/:id(.:format)                                               confirmacions#destroy
                                presupuestos GET    /presupuestos(.:format)                                                    presupuestos#index
                                             POST   /presupuestos(.:format)                                                    presupuestos#create
                             new_presupuesto GET    /presupuestos/new(.:format)                                                presupuestos#new
@@ -71,6 +87,14 @@
                                             PATCH  /reforms/:reform_id/banos/:id(.:format)                                    banos#update
                                             PUT    /reforms/:reform_id/banos/:id(.:format)                                    banos#update
                                             DELETE /reforms/:reform_id/banos/:id(.:format)                                    banos#destroy
+                            reform_partidas GET    /reforms/:reform_id/partidas(.:format)                                     partidas#index
+                                            POST   /reforms/:reform_id/partidas(.:format)                                     partidas#create
+                         new_reform_partida GET    /reforms/:reform_id/partidas/new(.:format)                                 partidas#new
+                        edit_reform_partida GET    /reforms/:reform_id/partidas/:id/edit(.:format)                            partidas#edit
+                             reform_partida GET    /reforms/:reform_id/partidas/:id(.:format)                                 partidas#show
+                                            PATCH  /reforms/:reform_id/partidas/:id(.:format)                                 partidas#update
+                                            PUT    /reforms/:reform_id/partidas/:id(.:format)                                 partidas#update
+                                            DELETE /reforms/:reform_id/partidas/:id(.:format)                                 partidas#destroy
                              resumen_reform GET    /reforms/:id/resumen(.:format)                                             reforms#resumen
                                     reforms GET    /reforms(.:format)                                                         reforms#index
                                             POST   /reforms(.:format)                                                         reforms#create
@@ -80,6 +104,15 @@
                                             PATCH  /reforms/:id(.:format)                                                     reforms#update
                                             PUT    /reforms/:id(.:format)                                                     reforms#update
                                             DELETE /reforms/:id(.:format)                                                     reforms#destroy
+             presupuesto_reform_presupuesto GET    /presupuestos/:id/presupuesto_reform(.:format)                             presupuestos#presupuesto_reform
+                                            GET    /presupuestos(.:format)                                                    presupuestos#index
+                                            POST   /presupuestos(.:format)                                                    presupuestos#create
+                                            GET    /presupuestos/new(.:format)                                                presupuestos#new
+                                            GET    /presupuestos/:id/edit(.:format)                                           presupuestos#edit
+                                            GET    /presupuestos/:id(.:format)                                                presupuestos#show
+                                            PATCH  /presupuestos/:id(.:format)                                                presupuestos#update
+                                            PUT    /presupuestos/:id(.:format)                                                presupuestos#update
+                                            DELETE /presupuestos/:id(.:format)                                                presupuestos#destroy
                                        root GET    /                                                                          static_pages#home
                                       lista GET    /lista(.:format)                                                           users#lista
                                        help GET    /help(.:format)                                                            static_pages#help

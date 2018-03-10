@@ -24,9 +24,9 @@
   
   <div class="actions">
     <% if current_user.empresa == true %>
-      <h5><%= f.submit "Presentar presupuesto al cliente", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px;", data: { confirm: '¿Estás seguro?' } %></h5>
+      <h3><%= f.submit "Presentar presupuesto al cliente", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px; font-weight: 900;", data: { confirm: '¿Estás seguro?' } %></h3>
     <% else %>
-      <h5><%= f.submit "Pedir presupuestos", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px;", data: { confirm: '¿Estás seguro? Cuando pidas los presupuestos ya no puedes modificar los datos del proyecto, ¿Continuamos?' } %></h5>
+      <h3><%= f.submit "Pedir presupuestos", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px; font-weight: 900;", data: { confirm: '¿Estás seguro? Cuando pidas los presupuestos ya no puedes modificar los datos del proyecto, ¿Continuamos?' } %></h3>
     <% end %>
   </div>
 <% end %>

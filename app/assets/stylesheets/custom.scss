@@ -98,7 +98,7 @@ body {
 /* typography */
 
 h1 {
-  color: #666 !important;
+  color: #444 !important;
   font-family: 'Open Sans';
   font-size: 44px;
   font-weight: 700;
@@ -726,7 +726,7 @@ aside {
     li {
       width: 30%;
       display: inline-block;
-      border: 1px solid $gray-lighter;
+      /*border: 1px solid $gray-lighter;*/
       margin: 5px;
       margin-bottom: 20px;
       @media (max-width: 768px) {
@@ -757,7 +757,7 @@ aside {
         font-weight: bold;
         font-size: 20px;
         font-family: 'Open Sans';
-        height: 70px;
+        height: 60px;
         .nombre {
           display: inline-flex;
           width: 100%;
@@ -775,7 +775,7 @@ aside {
         border: none;
       }
       h5.precio {
-        font-weight: 300;
+        font-weight: 400;
         color: grey;
       }
       li.precio_oferta {
@@ -808,12 +808,15 @@ aside {
         }
       }
       .description {
-        height: 150px;
+        height: 100px;
         line-height: 16px;
         font-size: 14px;
         overflow: hidden;
         @media (max-width: 768px) {
           height: auto;
+        }
+        h5 {
+          line-height: 16px;
         }
       }
       li.tu_precio {
@@ -831,6 +834,7 @@ aside {
       }      
     }
     img {
+      height: 100%;
       max-height: 180px;
       width: 100%;
       overflow: hidden;
@@ -882,6 +886,13 @@ aside {
       font-weight: bold;
       font-size: 18px;
       color: #555;
+    }
+    @media (max-width: 768px) {
+      display: inline-flex;
+      li {
+        width: 100%;
+        margin-bottom: 20px;
+      }
     }
   }
   .nombre_task {
@@ -1058,6 +1069,31 @@ aside {
   margin-top: 50px;
 }
 
+.nueva_partida {
+  h3 {
+    font-size: 20px;
+    color: #444;
+    font-weight: 400;
+  }
+  input {
+    padding: 10px;
+    color: #444;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  textarea {
+    padding: 10px;
+    color: #444;
+    border-radius: 10px;
+    border: 1px solid #ccc;    
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+  }
+}
+
 
   img-rounded {
   border-radius: 12px;
@@ -1104,6 +1140,11 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+select {
+  border: none;
+  margin: 0px;
 }
 
 #error_explanation {
@@ -1929,6 +1970,11 @@ input {
     margin-top: -15px;
     padding-left: 0px;
     padding-bottom: 0px;
+  }
+  .img-responsive {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
 

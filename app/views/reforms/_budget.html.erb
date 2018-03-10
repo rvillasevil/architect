@@ -417,12 +417,15 @@
 
 
 <% @task = Task.find_by(task: 'alb_tipo_azulejo') %>
-<% if @task.importe != nil %>
 <% if habitacion.alb_tipo_azulejo != nil %>
-<% @importe_alb_tipo_azulejo = habitacion.alb_tipo_azulejo * @task.importe %>
-<% end %>
-<% end %>
+<% @azulejo = Azulejo.find(habitacion.alb_tipo_azulejo) %>
 
+<% @unidades = habitacion.alb_azulejo %>
+<% @task.importe = @azulejo.precio %>
+<% if @task.importe != nil && @unidades != nil %>
+<% @importe_alb_tipo_azulejo = (@azulejo.precio * @unidades) %>
+<% end %>
+<% end %>
 
 <% @task = Task.find_by(task: 'alb_baldosa') %>
 <% if @task.importe != nil %>
@@ -433,12 +436,15 @@
 
 
 <% @task = Task.find_by(task: 'alb_tipo_baldosa') %>
-<% if @task.importe != nil %>
 <% if habitacion.alb_tipo_baldosa != nil %>
-<% @importe_alb_tipo_baldosa = habitacion.alb_tipo_baldosa * @task.importe %>
-<% end %>
-<% end %>
+<% @pavimento = Pavimento.find(habitacion.alb_tipo_baldosa) %>
 
+<% @unidades = habitacion.alb_baldosa %>
+<% @task.importe = @pavimento.precio %>
+<% if @task.importe != nil && @unidades != nil %>
+<% @importe_alb_tipo_baldosa = (@pavimento.precio * @unidades) %>
+<% end %>
+<% end %>
 
 <% @task = Task.find_by(task: 'alb_techo_pladur') %>
 <% if @task.importe != nil %>
@@ -863,14 +869,15 @@
 <% end %>
 <% end %>
 
-
-<% @task = Task.find_by(task: 'puerta_tipo') %>
-<% if @task.importe != nil %>
 <% if habitacion.puerta_tipo != nil %>
-<% @importe_puerta_tipo = habitacion.puerta_tipo * @task.importe %>
-<% end %>
-<% end %>
+<% @puerta = Puerta.find(habitacion.puerta_tipo) %>
 
+<% @unidades = habitacion.puerta_colocar %>
+<% @task.importe = @puerta.precio %>
+<% if @task.importe != nil && @unidades != nil %>
+<% @importe_puerta_tipo = (@puerta.precio * @unidades) %>
+<% end %>
+<% end %>
 
 <% @task = Task.find_by(task: 'puerta_cambio_precerco') %>
 <% if @task.importe != nil %>
@@ -887,14 +894,15 @@
 <% end %>
 <% end %>
 
-
-<% @task = Task.find_by(task: 'ventana_tipo') %>
-<% if @task.importe != nil %>
 <% if habitacion.ventana_tipo != nil %>
-<% @importe_ventana_tipo = habitacion.ventana_tipo * @task.importe %>
-<% end %>
-<% end %>
+<% @ventana = Ventana.find(habitacion.ventana_tipo) %>
 
+<% @unidades = habitacion.ventana_colocar %>
+<% @task.importe = @ventana.precio %>
+<% if @task.importe != nil && @unidades != nil %>
+<% @importe_ventana_tipo = (@ventana.precio * @unidades) %>
+<% end %>
+<% end %>
 
 <% @task = Task.find_by(task: 'ventana_contraventana') %>
 <% if @task.importe != nil %>

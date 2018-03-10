@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  description: MyString
+  medicion: 9.99
+  comentario: MyString
+  foto: MyString
+  categoria: MyString
+  reform_id: 1
+  habitacion_id: 1
+
+two:
+  titulo: MyString
+  description: MyString
+  medicion: 9.99
+  comentario: MyString
+  foto: MyString
+  categoria: MyString
+  reform_id: 1
+  habitacion_id: 1

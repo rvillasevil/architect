@@ -1,0 +1,13 @@
+('PAVIMENTO PORCELANICO ESMALTADO ANTIDESLIZANTE exterior, 33x33cm, Aspecto terracota, 6.95 €/m2', 'PAVIMENTO PORCELANICO ESMALTADO ANTIDESLIZANTE', 'exterior', '33x33cm', 'Aspecto terracota', 'C3', '4/5 PEI', '7/10', 6.95, 'm2'),
+
+('PAVIMENTO PORCELANICO ESMALTADO interior, 60x60cm, Aspecto cemento, 12.95 €/m2', 'PAVIMENTO PORCELANICO ESMALTADO', 'interior', '60x60cm', 'Aspecto cemento',  'C1', '4/5 PEI', '6/10 Mohs', 12.95, 'm2'),
+
+('PAVIMENTO PORCELANICO ESMALTADO interior, 60x60cm, Aspecto piedra, 24.95 €/m2', 'PAVIMENTO PORCELANICO ESMALTADO', 'interior', '60x60cm', 'Aspecto piedra',  'C3', '4/5 PEI', '6/10 Mohs', 24.95, 'm2'),
+
+('PAVIMENTO PORCELANICO MASA COLOREADA interior, 49x49cm, Aspecto cemento, 13.95 €/m2', 'PAVIMENTO PORCELANICO MASA COLOREADA', 'interior', '49x49cm', A'specto cemento',  'C2', '4/5 PEI', 'Mohs 5/10', 13.95, 'm2'),
+
+('PAVIMENTO PORCELANICO MASA COLOREADA exterior, 18.5x75cm, Aspecto madera, 16.95 €/m2',' PAVIMENTO PORCELANICO MASA COLOREADA', 'exterior', '18.5x75cm', 'Aspecto madera', 'No resbaladicidad', '5/5 PEI', 'Mohs 5/10', 16.95, 'm2'),
+
+('PAVIMENTO GRES CERAMICO interior, 33x33cm, Aspecto terracota, 3.95 €/m2', 'PAVIMENTO GRES CERAMICO', 'interior', '33x33cm', 'Aspecto terracota', 'No resbaladicidad', '2/5 PEI', '3/10 Mohs', 3.95, 'm2'),
+
+('PAVIMENTO GRES CERAMICO interior 23x66cm Aspecto madera 9.95 €/m2', 'PAVIMENTO GRES CERAMICO', 'interior', '23x66cm', 'Aspecto madera', 'C1', '4/5 PEI', '6/10 Mohs', 9.95, 'm2');

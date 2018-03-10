@@ -61,14 +61,14 @@
                 <li class="nombre">
                   <div class="nombre" style="">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      <span>Pon azulejos en tu salón</span>
+                      <span>Revestimientos inteiores 3form</span>
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description"><h5>Permite destacar los espacios mediante la traslucidez de los diversos elementos encapsulados que lo caracterizan, teniendo como resultado un producto de alto impacto visual, especialmente en oficinas. Su particularidad es crear instalaciones bien iluminadas que a su vez, otorgan la privacidad necesaria para los distintos espacios. En estos casos se incorporan diseños orgánicos generando ambientes cálidos, luminosos con una propuesta única e innovadora.</h5> </div>
                 </li>
                 <li class="empresa">
-                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5>Hunter Douglas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>
                 <li class="precio_oferta">
@@ -98,23 +98,23 @@
               <ul class="elemento" style="">
                   <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>
                 <li>
-                  <%= image_tag(('quitar_baldosa.jpg'), class: "img-responsive") %>
+                  <%= image_tag(('wc-gino bd.jpg'), class: "img-responsive") %>
                 </li>
                 <li class="nombre">
                   <div class="nombre">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      <%= @task.nombre if @task.nombre != nil %>
+                      PACK WC "Ginos"
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description"><h5>Incluye tanque, inodoro y tapa con cierre amortiguado. Salida dual.</h5> </div>
                 </li>
                 <li class="empresa">
-                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5>Brico Depot Getafe</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
                 <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                  <h5 style="">Oferta: <b>129 €/ud</b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -140,23 +140,23 @@
               <ul class="elemento" style="">
                   <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>
                 <li class="">
-                  <%= image_tag(('falso_techo.jpg') , class: "img-responsive")%>
+                  <%= image_tag(('lama vinilo roble.jpg') , class: "img-responsive")%>
                 </li>
                 <li class="nombre">
                   <div class="nombre">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      <%= @task.nombre if @task.nombre != nil %>
+                      LAMA DE VINILO CLICK ROBLE NATURAL
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description"><h5>Lama 122 x 18 cm. Espesor 4,3 mm y capa de uso 0,33 mm. Color roble natural. Vendido en paquetes de 1,76 m2.</h5> </div>
                 </li>
                 <li class="empresa">
-                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5>Brico Depot</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
                 <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                  <h5 style="">Oferta: <b>20.95 €/m²</b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -182,23 +182,24 @@
               <ul class="elemento">
                   <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
                   <li>
-                      <%= image_tag(('papel_pared.jpg'), class: "img-responsive") %>
+                      <%= image_tag(('oslo-pq-mobimarket.jpg'), class: "img-responsive") %>
                   </li>
                 <li class="nombre">
                   <div class="nombre">
-                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      Poner papel en tu salón
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="Esta tendencia de decoración se inspira en la estética de la década de los 50 y 60 recuperando lo mejor de esos años, pero con una mirada actual y contemporánea. El aparador de 2 puertas y 3 cajones OSLO en color blanco mate con detalles en color roble patinado es un buen ejemplo de ello.Retoma las líneas cuadradas para dar forma a la estructura y eleva el conjunto con unas patas redondeadas de haya maciza." style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      Aparador Vintage
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description"><h5>
+                  Esta tendencia de decoración se inspira en la estética de la década de los 50 y 60 recuperando lo mejor de esos años, pero con una mirada actual y contemporánea. El aparador de 2 puertas y 3 cajones OSLO en color blanco mate con detalles en color roble patinado es un buen ejemplo de ello.Retoma las líneas cuadradas para dar forma a la estructura y eleva el conjunto con unas patas redondeadas de haya maciza. </h5> </div>
                 </li>
                 <li class="empresa">
-                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5>Mobimarket</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
                 <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                  <h5 style="">Oferta: <b>159 €/ud</b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -227,23 +228,23 @@
               <ul class="elemento">
                   <% @task = Task.find_by(task: 'demo_quitar_inodoro') %>
                   <li>
-                      <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                      <%= image_tag(('cubierta_teja.jpg'), class: "img-responsive") %>
                   </li>
                 <li class="nombre">
                   <div class="nombre">
-                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" <%= @task.nombre if @task.nombre != nil %>" data-content="<%= @task.desc_tecnica %>" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                      Inodoro Roca de Porcelana
+                      <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title=" Cubierta de Teja" data-content="Panel autoportante compuesto por dos chapas metálicas conformadas y un núcleo aislante de espuma de poliuretano. Se utilizan en cubiertas con una pendiente mínima del 10%." style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
+                      Panel de Teja
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Inodoro de porcelana blanca, último modelo con las últmas tecnologías modernas.</h5> </div>
+                  <div class="description"><h5>Panel autoportante aislante de teja AE/MD 40mm L4900mm</h5> </div>
                 </li>
                 <li class="empresa">
-                  <h5>Empresa Roberto construcciones y reformas</h5>
+                  <h5>BigMat</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
                 <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>99 €</b></h5>
+                  <h5 style="">Oferta: <b>235 €</b></h5>
                 </li>
                   <li class="iconos">
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>

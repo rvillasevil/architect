@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110170149) do
+ActiveRecord::Schema.define(version: 20180304195349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "azulejos", force: :cascade do |t|
+    t.string   "description"
+    t.string   "name"
+    t.string   "medidas"
+    t.decimal  "precio"
+    t.string   "unidad"
+    t.string   "aspecto"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "banos", force: :cascade do |t|
     t.string   "nombre"
@@ -144,6 +155,7 @@ ActiveRecord::Schema.define(version: 20180110170149) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.integer  "habitacion_id"
+    t.integer  "partida_id"
   end
 
   create_table "cocinas", force: :cascade do |t|
@@ -719,6 +731,33 @@ ActiveRecord::Schema.define(version: 20180110170149) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "partidas", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "description"
+    t.decimal  "medicion",      precision: 7, scale: 2
+    t.string   "comentario"
+    t.string   "foto"
+    t.string   "categoria"
+    t.integer  "reform_id"
+    t.integer  "habitacion_id"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "user_id"
+  end
+
+  create_table "pavimentos", force: :cascade do |t|
+    t.string  "description"
+    t.string  "name"
+    t.string  "int_ext"
+    t.string  "medidas"
+    t.string  "acabado"
+    t.string  "resbaladicidad"
+    t.string  "trafico"
+    t.string  "rayadura"
+    t.decimal "precio"
+    t.string  "unidad"
+  end
+
   create_table "plazas", force: :cascade do |t|
     t.string   "name"
     t.string   "ciudad"
@@ -991,6 +1030,9 @@ ActiveRecord::Schema.define(version: 20180110170149) do
     t.string   "ventana_contraventana_comment"
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false
+    t.integer  "partida_id"
+    t.decimal  "partida_importe",                         precision: 7, scale: 2
+    t.string   "partida_comentario"
   end
 
   create_table "provincia", force: :cascade do |t|
@@ -1008,6 +1050,14 @@ ActiveRecord::Schema.define(version: 20180110170149) do
     t.string   "nombre"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "puerta", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.string  "material"
+    t.string  "medidas"
+    t.decimal "precio"
   end
 
   create_table "reforms", force: :cascade do |t|
@@ -1103,6 +1153,14 @@ ActiveRecord::Schema.define(version: 20180110170149) do
     t.string   "servicio23"
     t.string   "servicio24"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+  end
+
+  create_table "ventanas", force: :cascade do |t|
+    t.string  "name"
+    t.string  "description"
+    t.string  "material"
+    t.string  "medidas"
+    t.decimal "precio"
   end
 
   create_table "votes", force: :cascade do |t|

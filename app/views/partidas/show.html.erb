@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="constructor_show_user">
+      <div class="col-sm-2">
+        <div class="imagen_usuario">
+          <% if @partida.foto? %>
+            <%= image_tag( @partida.foto.url, size: 300, class: "img") %>
+          <% else %>
+            <%= image_tag('partida_default.jpg', size: 300, class: "img-responsive") %>  
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="constructor">
+
+          <p id="notice"><%= notice %></p>
+
+          <ul class="lista_principal" style="list-style: none; padding-left: 0px;">
+            <li class="lista_elemento" style=" border: none;">
+              <ul class="elemento" id="" style="list-style: none; padding-left: 0px;">
+                <li class="">
+                    <h3></h3>
+                    <h3 style="font-weight: 400; color: #666;">Título</h3>
+                    <h5 style="font-weight: 400; color: #666;"><%= @partida.titulo if @partida.titulo? %></h5>
+                </li>
+                <li>
+                  <div class="description">
+                    <h3>Descripción</h3>
+                    <h5 style="font-weight: 400; color: #666;"><%= @partida.description if @partida.description? %></h5> 
+                  </div>
+                </li>
+                <li class="field">
+                  <h3>Tus medidas:</h3>
+                  <h5 style="font-weight: 400;"><%= @partida.medicion %> <span style="margin-left: 40px;">(Um)</span> </h5>
+                </li>
+                <% if @partida.comentario != nil %>
+                <li class="comentarios">
+                  <h3>Comentarios:</h3>
+                  <h5 style="color: #666;"><%= @partida.comentario %></h5>
+                </li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>        
+
+          <h5 style="margin: 0px;"><%= link_to 'Back', reform_path(id: params[:reform_id]) %></h5>
+          
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="imagen_usuario_web">
+          <% if @partida.foto? %>
+            <%= image_tag @partida.foto.url, class: "img", size: 300 %>
+          <% else %>
+            <%= image_tag('partida_default.jpg', size: 300, class: "img-responsive") %>  
+          <% end %>
+        </div>
+      </div>           
+
+    </div>
+  </div>
+</div>

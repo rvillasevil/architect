@@ -33,8 +33,13 @@
 =end%>
 
   <%= f.hidden_field :user_id, value: current_user.id %>
+  <% if @habitacion != nil %>
   <%= f.hidden_field :habitacion_id, value: @habitacion.id %>
   <%= f.hidden_field :reform_id, value: @habitacion.reform_id %>
+  <% else %>
+  <%= f.hidden_field :partida_id, value: @partida.id %>
+  <%= f.hidden_field :reform_id, value: @partida.reform_id %>
+  <% end %>
   <%= f.hidden_field :cost, value: @cost %>
 
   <div class="actions">
@@ -42,7 +47,7 @@
       <% if (@budget = Budget.find_by(habitacion_id: @presupuesto.habitacion_id, user_id: current_user.id)) != nil %>
         <h5><%= f.submit "Validar y actualizar presupuesto", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px;" %></h5>
       <% else %>
-        <h5><%= f.submit "Validar presupuesto", style: "background-color: white; padding: 10px; border-color: green; color: green; border-radius: 10px;" %></h5>
+        <h5 style="font-weight: 900;"><%= f.submit "¿Es correcto este presupuesto? Validar presupuesto", style: "background-color: white; padding: 10px; border-color: green; color: green; border-radius: 10px;" %></h5>
       <% end %>
     <% else %> 
       <% if (@budget = Budget.find_by(habitacion_id: params[:id], user_id: current_user.id)) != nil %>

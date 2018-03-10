@@ -16,30 +16,35 @@
                 <div style="margin: 15px; color: #444;"><b><%= @reforma.nombre %></b> en <%= @reforma.localidad %></div>
 
                   <% @habitacions = Habitacion.where(reform_id: @reforma.id) %>
-                  <% @array = @habitacions.select do |habitacion| %>
+                  <% @partidas = Partida.where(reform_id: @reforma.id) %>
 
-                    <% if Presupuesto.find_by(reform_id: habitacion.reform_id, habitacion_id: habitacion.id, user_id: current_user.id) != nil %>
-                      <% @budget = Budget.find_by(reform_id: habitacion.reform_id, habitacion_id: habitacion.id, user_id: current_user.id) %>
-                      <% @presupuesto = Presupuesto.find_by(habitacion_id: habitacion.id, reform_id: habitacion.reform_id, user_id: current_user.id) %>
+                  <!-- Comprobación de habitaciones -->
+                  <% @array_habitaciones = @habitacions.collect do |habitacion| %>
+                    <% if (@presupuesto = Presupuesto.find_by(reform_id: @reforma.id, habitacion_id: habitacion.id, user_id: current_user.id)) != nil %>
+
+                      <% @budget = Budget.find_by(reform_id: @reforma.id, habitacion_id: habitacion.id, user_id: current_user.id) %>
                       
 
-                      <% if @budget != nil %>
-                        <% if @presupuesto.updated_at.to_i > @budget.updated_at.to_i %>
-                          <% @actualizar_partidas = 1 %>
+                      <% if @presupuesto != nil %>
+                        <% if @budget != nil %>
+                          <% if @presupuesto.updated_at.to_i > @budget.updated_at.to_i %>
+                            <% @actualizar_habitacion = 1 %>
+                          <% else %>
+                            <% @actualizar_habitacion = 0 %>
+                          <% end %>
                         <% else %>
-                          <% @actualizar_partidas = 0 %>
+                          <% @actualizar_habitacion = 2 %>
                         <% end %>
+                      <% else %>
+                        <% @actualizar_habitacion = 3 %>
                       <% end %>
-
                     <% end %>
-
                   <% end %>
 
-                  <% @array = @habitacions.collect do |habitacion| %>
-                    <% if Presupuesto.find_by(reform_id: habitacion.reform_id, habitacion_id: habitacion.id, user_id: current_user.id) != nil %>
-                      <% @budget = Budget.find_by(reform_id: habitacion.reform_id, habitacion_id: habitacion.id, user_id: current_user.id) %>
-                      <% @presupuesto = Presupuesto.find_by(habitacion_id: habitacion.id, reform_id: habitacion.reform_id, user_id: current_user.id) %>
-                      
+                  <!-- Comprobación de partidas -->
+                  <% @array_partidas = @partidas.collect do |partida| %>
+                    <% if (@presupuesto = Presupuesto.find_by(reform_id: partida.reform_id, partida_id: partida.id, user_id: current_user.id)) != nil %>
+                      <% @budget = Budget.find_by(reform_id: partida.reform_id, partida_id: partida.id, user_id: current_user.id) %>                      
 
                       <% if @presupuesto != nil %>
                         <% if @budget != nil %>
@@ -55,18 +60,16 @@
                         <% @actualizar_partidas = 3 %>
                       <% end %>
                     <% end %>
-                  <% end %>
-
-                  <% @array %>
+                  <% end %>                  
 
                 <div style="border: 1px solid #ddd; padding: 15px; border-radius: 10px;">
 
                 <% if Confirmacion.find_by(reform_id: @reforma.id, user_id: current_user.id) == nil %>
-                <!-- comprobación partidas -->
                 
-                  <% if @array.include? 1 %>
-                    <% if @array.include? 2 %>
-                      <% if @array.include? 3 %>
+                <!-- Mostrar botón de resumen y presupuesto -->
+                  <% if @array_habitaciones.include? 1 %>
+                    <% if @array_habitaciones.include? 2 %>
+                      <% if @array_habitaciones.include? 3 %>
                         <h5 style="color: red;">* Falta alguna partida por actualizar.</h5>
                         <h5 style="color: red;">* Falta alguna partida por validar.</h5>
                         <h5 style="color: red;">* Falta alguna partida por crear.</h5>
@@ -75,7 +78,7 @@
                         <h5 style="color: red;">* Falta alguna partida por validar.</h5>
                       <% end %>
                     <% else %>
-                      <% if @array.include? 3 %>
+                      <% if @array_habitaciones.include? 3 %>
                         <h5 style="color: red;">* Falta alguna partida por crear.</h5>
                         <h5 style="color: red;">* Falta alguna partida por actualizar.</h5>
                       <% else %>
@@ -83,22 +86,55 @@
                       <% end %>
                     <% end %>
                   <% else %>
-                    <% if @array.include? 2 %>
-                      <% if @array.include? 3 %>
+                    <% if @array_habitaciones.include? 2 %>
+                      <% if @array_habitaciones.include? 3 %>
                         <h5 style="color: red;">* Falta alguna partida por validar.</h5>
                         <h5 style="color: red;">* Falta alguna partida por crear.</h5>
                       <% else %>
                         <h5 style="color: red;">* Falta alguna partida por validar.</h5>
                       <% end %>
                     <% else %>
-                      <% if @array.include? 3 %>
+                      <% if @array_habitaciones.include? 3 %>
                         <h5 style="color: red;">* Falta alguna partida por crear.</h5>
                       <% else %>
-                        <% if Presupuesto.find_by(reform_id: @reforma.id, user_id: current_user.id) != nil %>
-                            <button type="button" class="btn btn-primary" style="background-color: white; color: #444; font-weight: bold; font-size: 16px; border: 1px solid #999; border-radius: 15px;">Resumen y presentar presupuesto</button>
-                            <% @budget = Budget.find_by(reform_id: @reforma.id) %>
-                            <h5 style="">Coste estimado del cliente: <b><%= @budget.cost %> €.</b></h5>
-                        <% end %>
+                        <% if @array_partidas.include? 1 %>
+                          <% if @array_partidas.include? 2 %>
+                            <% if @array_partidas.include? 3 %>
+                              <h5 style="color: red;">* Falta alguna partida por actualizar.</h5>
+                              <h5 style="color: red;">* Falta alguna partida por validar.</h5>
+                              <h5 style="color: red;">* Falta alguna partida por crear.</h5>
+                            <% else %>
+                              <h5 style="color: red;">* Falta alguna partida por actualizar.</h5>
+                              <h5 style="color: red;">* Falta alguna partida por validar.</h5>
+                            <% end %>
+                          <% else %>
+                            <% if @array_partidas.include? 3 %>
+                              <h5 style="color: red;">* Falta alguna partida por crear.</h5>
+                              <h5 style="color: red;">* Falta alguna partida por actualizar.</h5>
+                            <% else %>
+                              <h5 style="color: red;">* Falta alguna partida por actualizar.</h5>
+                            <% end %>
+                          <% end %>
+                        <% else %>
+                          <% if @array_partidas.include? 2 %>
+                            <% if @array_partidas.include? 3 %>
+                              <h5 style="color: red;">* Falta alguna partida por validar.</h5>
+                              <h5 style="color: red;">* Falta alguna partida por crear.</h5>
+                            <% else %>
+                              <h5 style="color: red;">* Falta alguna partida por validar.</h5>
+                            <% end %>
+                          <% else %>
+                            <% if @array_partidas.include? 3 %>
+                              <h5 style="color: red;">* Falta alguna partida por crear.</h5>
+                            <% else %>
+                              <% if Presupuesto.find_by(reform_id: @reforma.id, user_id: current_user.id) != nil %>
+                                  <button type="button" class="btn btn-primary" style="background-color: white; color: #444; font-weight: bold; font-size: 16px; border: 1px solid #999; border-radius: 15px;">Resumen y presentar presupuesto</button>
+                                  <% @budget = Budget.find_by(reform_id: @reforma.id) %>
+                                  <h5 style="">Coste estimado del cliente: <b><%= @budget.cost %> €.</b></h5>
+                              <% end %>
+                            <% end %>
+                          <% end %>
+                        <% end %> 
                       <% end %>
                     <% end %>
                   <% end %>
@@ -107,19 +143,19 @@
                   <button type="button" class="btn btn-primary" style="background-color: white; color: #444; font-weight: bold; font-size: 16px; border: 1px solid green; border-radius: 15px;">
                     <h5 style="margin: 0px; font-weight: bold; color: green;">Ya has presentado tu presupuesto. Ver</h5>
                   </button>
-                <% end %>
+                <% end %>              
 
  
                   <h5>Habitaciones a reformar:</h5>
                   <% @habitacions = Habitacion.where(reform_id: @reforma.id) %>
                   <% @habitacions.each do |habitacion| %>
 
-                    <% if Presupuesto.find_by(reform_id: habitacion.reform_id, habitacion_id: habitacion.id) != nil %>
+                    <% if Presupuesto.find_by(reform_id: habitacion.reform_id, habitacion_id: habitacion.id, user_id: current_user.id) != nil %>
                       <% @budget = Budget.find_by(reform_id: @reforma.id, habitacion_id: habitacion.id, user_id: current_user.id) %>
 
-                      <% @presupuesto = Presupuesto.find_by(habitacion_id: habitacion.id, reform_id: habitacion.reform_id) %>
+                      <% @presupuesto = Presupuesto.find_by(habitacion_id: habitacion.id, reform_id: habitacion.reform_id, user_id: current_user.id) %>
 
-                      <%= link_to presupuesto_path(@presupuesto, habitacion: habitacion.id) ,style: "color: #1DA1F2;" do %>
+                      <%= link_to presupuesto_path(@presupuesto, habitacion: habitacion.id), style: "color: #1DA1F2;" do %>
                         <button type="button" class="btn btn-sm btn-default" style="padding: 10px; margin-top: 10px; border: 1px solid #1DA1F2; border-radius: 10px;">
                           <h3 style="margin: 0px; font-weight: bold; font-size: 14px; color: #1DA1F2;"><%= habitacion.nombre %></h3>
                           <% if @budget != nil %>
@@ -144,7 +180,44 @@
                         </button>                        
                       <% end %>
                     <% end %>
-                  <% end %>                    
+
+                  <% end %>
+
+
+                  <h5>Partidas personalizadas:</h5>
+                  <% @partidas = Partida.where(reform_id: @reforma.id) %>
+                  <% @partidas.each do |partida| %>
+
+                    <% if (@presupuesto = Presupuesto.find_by(reform_id: partida.reform_id, partida_id: partida.id, user_id: current_user.id)) != nil %>
+                      <% @budget = Budget.find_by(reform_id: @reforma.id, partida_id: partida.id, user_id: current_user.id) %>
+
+                      <%= link_to presupuesto_path(@presupuesto, partida: partida.id) ,style: "color: #1DA1F2;" do %>
+                        <button type="button" class="btn btn-sm btn-default" style="padding: 10px; margin-top: 10px; border: 1px solid #1DA1F2; border-radius: 10px;">
+                          <h3 style="margin: 0px; font-weight: bold; font-size: 14px; color: #1DA1F2;"><%= partida.titulo %></h3>
+                          <% if @budget != nil %>
+                            <h5>Tu presupuesto: <b><%= @budget.cost %> €</b></h5>
+                            <% if @presupuesto.updated_at.to_i > @budget.updated_at.to_i %>
+                            <h5 style="font-size: 13px; color: red; margin: 0px;">* Es necesario actualizar</h5>
+                            <% end %>
+                          <% else %>
+                            <h5 style="font-size: 13px; color: red;">* Es necesario validar</h5>
+                          <% end %>                          
+                        </button>
+                      <% end %>
+
+                    <% else %>
+                      <%= link_to new_presupuesto_path(partida: partida) do %>
+                        <button type="button" class="btn btn-sm btn-default" style="padding: 10px; margin-top: 10px; border: 1px solid #1DA1F2; border-radius: 10px;">
+                          <h3 style="margin: 0px; font-weight: bold; font-size: 14px; color: #1DA1F2;"><%= partida.titulo %></h3>
+                          <h5 style="font-size: 14px;">Aún no has presupuestado</h5>
+                          <%= link_to new_presupuesto_path(@presupuesto, partida: partida.id, tus_datos: true) ,style: "color: #1DA1F2;" do %>
+                            <h5>Rellenar con tus datos</h5>
+                          <% end %>                         
+                        </button>                        
+                      <% end %>
+                    <% end %>
+
+                  <% end %>                                     
                 </div>
               
               <% end %>

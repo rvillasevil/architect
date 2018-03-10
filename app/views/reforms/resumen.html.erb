@@ -35,7 +35,7 @@
 
   				<% if @habitaciones.any? %>
   					<% @habitaciones.each do |habitacion| %>
-              <h3 style="font-size: 25px; font-weight: 900; padding-top: 20px; color: #008489 !important;"><%= habitacion.nombre %></h3>
+              <h3 style="font-size: 22px; font-weight: 900; padding-top: 20px; color: #008489 !important;"><%= habitacion.nombre %></h3>
                 <div class="resumen" style="display: block;">
 
                     <% if  habitacion.demo_quitar_azulejo != nil or habitacion.demo_quitar_baldosa != nil or habitacion.demo_quitar_falso_techo != nil or habitacion.demo_quitar_tabique != nil %>
@@ -3761,6 +3761,49 @@
                 </div>
 
   				    <% end %>
+
+              <div>
+                <% @habitacion = Habitacion.where(reform_id: @reform) %>
+                <% @budgets = @habitacion.collect do |habitacion| %>
+                  <% @habitacion = habitacion %>
+                  <% render 'reforms/budget', habitacion: @habitacion %>
+                  <% @budget %>
+                <% end %>
+              </div>
+              
+
+              <h3 style="font-size: 22px; font-weight: 900; padding-top: 40px; color: #008489 !important;">Partidas adicionales personificadas</h3>              
+              <div class="resumen" style="display: block;">
+                <% if (@partidas = Partida.where(reform_id: @reform)) != nil %>
+                  <% @partidas.map do |partida| %>
+                    <ul class="lista_principal" style="width: 100%; margin: 5px;">                  
+                      <li>
+                          <ul class="elemento" style="list-style: none; width: 100%;">
+                            <li>
+                              <h5 style="font-weight: 700; font-size: 16px; color: #444;"><%= partida.titulo %></h5>
+                            </li>
+                            <li>
+                              <div class="description"><h5><%= partida.description if partida.description != nil %></h5> </div>
+                            </li>
+                            <li class="importe">
+                              <h5 style=" font-weight: 700;">Medidas:&nbsp;<%= partida.medicion %> </h5>
+                            </li>
+                            <li class="field">
+                              <h5 style=""><%= partida.comentario %></h5>
+                            </li>                        
+                          </ul>
+                      </li>
+                    </ul>                 
+                  <% end %>
+                <% end %>
+              </div>
+
+              <% if @habitacion != nil %>
+                <h1>Coste de la reforma = <%= @budget %> €</h1>
+              <% else %>
+                <h3>Aún no se ha creado ninguna estancia</h3>
+              <% end %>              
+
             <% end %>
         </div>
 
@@ -3797,20 +3840,19 @@
 <%
 =end%>         
 
-        <div>
-          <% @habitacion = Habitacion.where(reform_id: @reform) %>
-          <% @budgets = @habitacion.collect do |habitacion| %>
-            <% @habitacion = habitacion %>
-            <% render 'reforms/budget', habitacion: @habitacion %>
-            <% @budget %>
-          <% end %>
+
+        <% if Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) == nil %>
+          <div>
+            <h3 style="font-weight: 900;"><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
+          </div>            
+        <% else %>
+          <h3 style="font-weight: 700; color: red;">Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
+        <% end %>
+
+        <div style="margin-top: 60px;">
+          <h3>¿Quieres que le echemos un vistazo a su proyecto y comprobar en la base de datos si podemos bajar el precio o mejorarla en algún sentido?</h3>
         </div>
 
-        <% if @habitacion != nil %>
-          <h1>Coste de la reforma = <%= @budget %> €</h1>
-        <% else %>
-          <h3>Aún no se ha creado ninguna estancia</h3>
-        <% end %>
 
         <h5><%= link_to "Back", reforms_path %></h5>
 

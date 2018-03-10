@@ -27,10 +27,12 @@
           </div>
 
           <% if params[:empresa] != nil %>
+          <% @empresa = User.find_by(name: params[:empresa]) %>
+
           <div>
             <h3 style="display: inline-flex; font-weight: normal;">
               Empresa:
-              <% @empresa = User.find_by(name: params[:empresa]) %>
+              
               <b>&nbsp;&nbsp;&nbsp;<u><%= link_to @empresa.name, user_path(@empresa), style: "color: #444;" %></u></b></h3>
               <!--<b>&nbsp;&nbsp;&nbsp;<%= params[:empresa] %></b>-->
               <% if current_user.empresa == true %>
@@ -39,7 +41,7 @@
                 </div>
               <% else %>
                 <div style="">
-                  <h3>Coste para tu proyecto = <b><%= @budgets = Budget.where(reform_id: params[:id], user_id: @empresa.id).sum('cost') %> €</b></h3>
+                  <h3>Presupuesto para tu proyecto = <b><%= @budgets = Budget.where(reform_id: params[:id], user_id: @empresa.id).sum('cost') %> €</b></h3>
                 </div>
               <% end %>              
                            
@@ -47,12 +49,14 @@
           <% end %>                          
         </div>
 
+
         <div class="resumen" style="display: block; border: none; padding: 0px;">
 
           <% if @presupuestos.any? %>
             <% @presupuestos.each do |presupuesto| %>
+            <% if presupuesto.habitacion_id != nil %>
               <% @habitacion_presupuesto = Habitacion.find_by(id: presupuesto.habitacion_id) %>
-              <h3 style="font-size: 25px; font-weight: bolder; padding-top: 20px;"><%= @habitacion_presupuesto.nombre %></h3>
+              <h3 style="font-size: 25px; font-weight: bolder; padding-top: 20px; color: #008489 !important;"><%= @habitacion_presupuesto.nombre %></h3>
                 <div class="resumen" style="display: block;">
                   <% if  presupuesto.demo_quitar_azulejo != nil or presupuesto.demo_quitar_baldosa != nil or presupuesto.demo_quitar_falso_techo != nil or presupuesto.demo_quitar_tabique != nil %>
                     <div id="Div0" style="display: block;">
@@ -4031,10 +4035,39 @@
                           <% end %>
                       </ul>
                     <% end %>
-              </div>            
-              <% end %>
+              </div>
+            <% else %>
+              <div class="titulo">
+                <h3 style="">Partida personalizada</h3>
+              </div>
+                <ul class="lista_principal" style="">
+                  <li class="lista_elemento" style=" ">
+                    <ul class="elemento" id="quitar_azulejo" style="">
+                        <% @partida = Partida.find_by(id: presupuesto.partida_id) %>
+                      <li>
+                        <h5 style="font-weight: 900; font-size: 16px;"><%= @partida.titulo %></h5>
+                      </li>
+                      <li>
+                        <div class="description"><h5><%= @partida.description if @partida.description != nil %></h5> </div>
+                      </li>
+                      <li>
+                        <%= @partida.comentario %>
+                      </li>
+                      <li class="importe" style="padding-top: 20px; padding-bottom: 20px;">
+                        <h5 style="">Tu oferta = <b><%= presupuesto.partida_importe %> <span style="margin-left: 60px;">(€)</span> </b></h5>
+                      </li>
+                      <% if presupuesto.demo_quitar_azulejo_comment != nil %>
+                      <li class="comments_presupuesto">                          
+                        <%= presupuesto.partida_comentario %>
+                      </li>
+                      <% end %>
+                    </ul>
+                  </li>
+                </ul>
             <% end %>
+          <% end %>
         </div>
+        <% end %>
 
         <% if current_user.empresa == true %>
           <div style="margin-top: 50px;">

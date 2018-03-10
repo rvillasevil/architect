@@ -1,10 +1,9 @@
-
 <div class="container">
   <div class="row">
     <div class="col-md-1"></div>
    
     <div class="col-md-10">
-      <p id="notice"><%= notice %></p>
+      <p id="notice"><%# notice %></p>
       <div class="constructor">
         <p>
           <h1 style="color: #484848 !important;">
@@ -154,7 +153,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_azulejo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -207,7 +206,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_baldosa %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -260,7 +259,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_falso_techo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -313,7 +312,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_tabique %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -374,7 +373,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_inodoro %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -427,7 +426,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_bidet %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -480,7 +479,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_plato_ducha %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -533,7 +532,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_mampara %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -586,7 +585,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_mueble_bano %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -639,7 +638,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_banera %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -698,7 +697,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_mobi_cocina %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -751,7 +750,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_retir_electrodomesticos %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -810,7 +809,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_friso_madera %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -863,7 +862,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.demo_quitar_mueble %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -922,7 +921,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_termo_electrico %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -975,7 +974,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_radiador %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1034,7 +1033,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_lavabo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1087,7 +1086,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_ducha_banera %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1140,7 +1139,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_bidet %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1193,7 +1192,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_inodoro %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1246,7 +1245,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_colum_hidromasaje %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1299,7 +1298,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_lavabo_doble %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1352,7 +1351,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_jacuzzy %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1406,7 +1405,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_sauna %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1459,7 +1458,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_ducha_empotrada %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1512,7 +1511,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_toallero %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1565,7 +1564,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_reubicar_contador %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1618,7 +1617,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_lavadora %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1671,7 +1670,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_reubicar_inodoro %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1724,7 +1723,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_tipo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1777,7 +1776,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_caldera %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1836,7 +1835,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_fregadero %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1890,7 +1889,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_lavavajillas %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -1944,7 +1943,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.tub_secadora %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2019,7 +2018,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_pto_luz_techo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2072,7 +2071,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_pto_luz_pared %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2125,7 +2124,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_interr_simple %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2178,7 +2177,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_interr_doble %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2231,7 +2230,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_interr_triple %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2284,7 +2283,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_enchu_simple %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2337,7 +2336,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_enchu_doble %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2390,7 +2389,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_enchu_triple %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2443,7 +2442,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_reubicar_caja_luz %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2496,7 +2495,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_lavadora %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2549,7 +2548,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_ventilador_extractor %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2602,7 +2601,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_horno_vitroceramica %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2655,7 +2654,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_microondas %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2708,7 +2707,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_frigorifico %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2761,7 +2760,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_lavavajillas %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2814,7 +2813,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_secadora %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2867,7 +2866,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.elec_toma_telefono %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2920,7 +2919,7 @@
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'alb_azulejo') %>
                             <li>
-                                <%= image_tag(('alicatar_paredes.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('azulejo_pared.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -2935,7 +2934,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_azulejo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -2972,6 +2971,7 @@
                     <li>
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'alb_tipo_azulejo') %>
+                            <% @azulejo = Azulejo.find(@habitacion.alb_tipo_azulejo) %>
                             <li>
                                 <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
                             </li>
@@ -2982,17 +2982,26 @@
                             </div>
                           </li>
                           <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                            <div class="description"><h5><%= @azulejo.description if @azulejo.description != nil %></h5> </div>
                           </li>
                           <li class="field">
-                            <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_tipo_azulejo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5 style="">Unidades:  &nbsp;</h5>
+                            <% if @habitacion.alb_azulejo? %>
+                            <h5 style="font-weight: bolder;"><%= @habitacion.alb_azulejo %> 
+                            <% else %>
+                            <h5 style="font-weight: bolder;"> 0 
+                              <span style="margin-left: 40px;"></span> 
+                            <% end %>
+                            </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @azulejo.precio if @azulejo.precio != nil %> €/<%= @azulejo.unidad %></h5>
                           </li>
                           <li class="importe_partida">
-                            <% if @task.importe != nil %>
-                              <h5>Importe:  &nbsp;<b><%= @importe_alb_tipo_azulejo = (@habitacion.alb_tipo_azulejo * @task.importe) %> €</b></h5>
+                            <% @unidades = @habitacion.alb_azulejo %>
+                            <% @task.importe = @azulejo.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <h5>Importe:  &nbsp;<b><%= @importe_alb_tipo_azulejo = (@azulejo.precio * @unidades) %> €</b></h5>
                             <% end %>
                           </li>
                           <% if @habitacion.alb_tipo_azulejo_comment != nil %>
@@ -3018,7 +3027,7 @@
                                 <% end %>
                             </li>
                         </ul>
-                    </li> 
+                    </li>
                     <% end %>
 
                     <% if  @habitacion.alb_baldosa != nil %>
@@ -3026,7 +3035,7 @@
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'alb_baldosa') %>
                             <li>
-                                <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('colocar_baldosa.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -3041,7 +3050,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_baldosa %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3079,8 +3088,9 @@
                     <li>
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'alb_tipo_baldosa') %>
+                            <% @pavimento = Pavimento.find(@habitacion.alb_tipo_baldosa) %>
                             <li>
-                                <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('colocar_baldosa4.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -3089,17 +3099,26 @@
                             </div>
                           </li>
                           <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                            <div class="description"><h5><%= @pavimento.description if @pavimento.description != nil %></h5> </div>
                           </li>
                           <li class="field">
-                            <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_tipo_baldosa %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5 style="">Unidades:  &nbsp;</h5>
+                            <% if @habitacion.alb_baldosa? %>
+                            <h5 style="font-weight: bolder;"><%= @habitacion.alb_baldosa %> 
+                            <% else %>
+                            <h5 style="font-weight: bolder;"> 0 
+                              <span style="margin-left: 40px;"></span> 
+                            <% end %>
+                            </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @pavimento.precio if @pavimento.precio != nil %> €/<%= @pavimento.unidad %></h5>
                           </li>
                           <li class="importe_partida">
-                            <% if @task.importe != nil %>
-                              <h5>Importe:  &nbsp;<b><%= @importe_alb_tipo_baldosa = (@habitacion.alb_tipo_baldosa * @task.importe) %> €</b></h5>
+                            <% @unidades = @habitacion.alb_baldosa %>
+                            <% @task.importe = @pavimento.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <h5>Importe:  &nbsp;<b><%= @importe_alb_tipo_baldosa = (@pavimento.precio * @unidades) %> €</b></h5>
                             <% end %>
                           </li>
                           <% if @habitacion.alb_tipo_baldosa_comment != nil %>
@@ -3148,7 +3167,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_techo_pladur %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3201,7 +3220,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_tabique_ladriyeso %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3254,7 +3273,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_tabique_pladur %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3307,7 +3326,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_tabique_fabrica %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3360,7 +3379,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_tabique_paves %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3414,7 +3433,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.alb_nivelacion_pared %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3486,7 +3505,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_mampara %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3540,7 +3559,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_mueble_bano %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3593,7 +3612,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_banera %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3647,7 +3666,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_plato_ducha %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3701,7 +3720,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_bidet %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3755,7 +3774,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_inodoro_normal %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3809,7 +3828,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_inodoro_suspendido %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3863,7 +3882,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_inodoro_encastrado %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3917,7 +3936,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_grifo_ducha %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -3971,7 +3990,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_grifo_banera %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4025,7 +4044,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_acceso_atornillado %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4079,7 +4098,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_colum_hidromasaje %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4133,7 +4152,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_cabina_ducha %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4187,7 +4206,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_plato_ducha_obra %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4241,7 +4260,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_sani_lavabo_pedestal %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4311,7 +4330,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_mueble_alto_cocina %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4365,7 +4384,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_mueble_bajo_cocina %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4418,7 +4437,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_horno_electrico %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4471,7 +4490,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_placa_vitro %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4525,7 +4544,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_placa_electrica %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4579,7 +4598,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_lavadora %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4633,7 +4652,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_frigorifico %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4687,7 +4706,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_lavavajillas %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4741,7 +4760,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_microondas %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4795,7 +4814,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_electro_secadora %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4849,7 +4868,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_fregadero %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4903,7 +4922,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.mont_grifo_fregadero %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -4967,7 +4986,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_termo_elect_a %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5021,7 +5040,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_termo_elect_b %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5075,7 +5094,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_termo_elect_c %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5129,7 +5148,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_termo_elect_d %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5183,7 +5202,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_termo_elect_e %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5237,7 +5256,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_termo_elect_f %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5296,7 +5315,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_calde_atmos %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5350,7 +5369,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_calde_bajo_nox %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5404,7 +5423,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.colo_pmarcha_calde_estanca %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5464,7 +5483,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.techo_pintar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5518,7 +5537,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.techo_tipo_pintura %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5572,7 +5591,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.techo_alisar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5626,7 +5645,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.techo_reparar_humedad %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5680,7 +5699,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.pared_empapelar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5734,7 +5753,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.pared_quitar_papel %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5788,7 +5807,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.pared_alisar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5842,7 +5861,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.pared_pintar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5896,7 +5915,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.pared_reparar_humedad %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5950,7 +5969,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.carpin_friso %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -5995,7 +6014,7 @@
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'puerta_colocar') %>
                             <li>
-                                <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('colocar_puerta.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -6010,7 +6029,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.puerta_colocar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -6048,8 +6067,9 @@
                     <li>
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'puerta_tipo') %>
+                            <% @puerta = Puerta.find(@habitacion.puerta_tipo) %>
                             <li>
-                                <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('puerta.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -6058,17 +6078,26 @@
                             </div>
                           </li>
                           <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                            <div class="description"><h5><%= @puerta.name if @puerta.name != nil %></h5> </div>
                           </li>
                           <li class="field">
-                            <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.puerta_tipo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5 style="">Unidades:  &nbsp;</h5>
+                            <% if @habitacion.puerta_colocar? %>
+                            <h5 style="font-weight: bolder;"><%= @habitacion.puerta_colocar %> 
+                            <% else %>
+                            <h5 style="font-weight: bolder;"> 0 
+                              <span style="margin-left: 40px;"></span> 
+                            <% end %>
+                            </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @puerta.precio if @puerta.precio != nil %> €/ud</h5>
                           </li>
                           <li class="importe_partida">
-                            <% if @task.importe != nil %>
-                              <h5>Importe:  &nbsp;<b><%= @importe_puerta_tipo = (@habitacion.puerta_tipo * @task.importe) %> €</b></h5>
+                            <% @unidades = @habitacion.puerta_colocar %>
+                            <% @task.importe = @puerta.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <h5>Importe:  &nbsp;<b><%= @importe_puerta_tipo = (@puerta.precio * @unidades) %> €</b></h5>
                             <% end %>
                           </li>
                           <% if @habitacion.puerta_tipo_comment != nil %>
@@ -6118,7 +6147,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.puerta_cambio_precerco %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -6157,7 +6186,7 @@
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'ventana_colocar') %>
                             <li>
-                                <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('colocar_ventana.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -6172,7 +6201,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.ventana_colocar %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>
@@ -6210,8 +6239,9 @@
                     <li>
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'ventana_tipo') %>
+                            <% @ventana = Ventana.find(@habitacion.ventana_tipo) %>
                             <li>
-                                <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                                <%= image_tag(('ventana.jpg'), class: "img-responsive") %>
                             </li>
                           <li class="nombre">
                             <div class="nombre">
@@ -6220,17 +6250,26 @@
                             </div>
                           </li>
                           <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                            <div class="description"><h5><%= @ventana.name if @ventana.name != nil %></h5> </div>
                           </li>
                           <li class="field">
-                            <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.ventana_tipo %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5 style="">Unidades:  &nbsp;</h5>
+                            <% if @habitacion.ventana_colocar? %>
+                            <h5 style="font-weight: bolder;"><%= @habitacion.ventana_colocar %> 
+                            <% else %>
+                            <h5 style="font-weight: bolder;"> 0 
+                              <span style="margin-left: 40px;"></span> 
+                            <% end %>
+                            </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @ventana.precio if @ventana.precio != nil %> €/ud</h5>
                           </li>
                           <li class="importe_partida">
-                            <% if @task.importe != nil %>
-                              <h5>Importe:  &nbsp;<b><%= @importe_ventana_tipo = (@habitacion.ventana_tipo * @task.importe) %> €</b></h5>
+                            <% @unidades = @habitacion.ventana_colocar %>
+                            <% @task.importe = @ventana.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <h5>Importe:  &nbsp;<b><%= @importe_ventana_tipo = (@ventana.precio * @unidades) %> €</b></h5>
                             <% end %>
                           </li>
                           <% if @habitacion.ventana_tipo_comment != nil %>
@@ -6280,7 +6319,7 @@
                             <h5 style="">Tus medidas:  &nbsp;</h5><h5 style="font-weight: bolder;"><%= @habitacion.ventana_contraventana %> <span style="margin-left: 40px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                           </li>
                           <li class="precio_medio">
-                            <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
+                            <h5 style="color: #555;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                           </li>
                           <li class="importe_partida">
                             <% if @task.importe != nil %>

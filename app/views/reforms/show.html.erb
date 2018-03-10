@@ -6,7 +6,7 @@
 
 		<div class="col-sm-10">
       <div class="constructor">
-		    <p id="notice"><%= notice %></p>
+		    <p id="notice"><%# notice %></p>
 
   			<div class="encabezado_proyecto">
   				<div>
@@ -23,11 +23,69 @@
               <% end %>
               <u><%= link_to 'Volver a tus proyectos', reforms_path %></u>
             </h5>
-          </div>          
+          </div> 
+
+          
+          <h3 style="font-weight: bolder; color: #666; margin-top: 50px;">Tu proyecto:</h3>
+          <div class="show_habitaciones" style="">
+            <% if @habitaciones.any? %>
+              <h5 style="font-weight: bolder; font-size: 16px; color: #666;">Tus estancias:</h5>
+              
+                <% @habitaciones.collect do |habitacion| %>
+                
+                  <button type="button" class="btn btn-sm btn-default" style="">
+                    <h3 style="margin: 10px; font-weight: 700;">
+                      <%= link_to habitacion.nombre, reform_habitacion_path(reform_id: @reform, id: habitacion), style: "color: #555;" %>
+                    </h3>
+
+<%
+=begin %>                    
+                    <% @budget = Budget.find_by(habitacion_id: habitacion.id, user_id: current_user.id) %>
+                    <% if @budget != nil %>
+                      <% if habitacion.updated_at.to_i > @budget.updated_at.to_i %>
+                        <h5 style="margin: 0px;"><b>* <%= @budget.cost %> € </b><span style="font-size: 13px;">(valida modificación)</span></h5>
+                      <% else %>
+                        <h5 style="margin: 0px;"><b><%= @budget.cost %> €</b></h5>
+                      <% end %>
+                    <% else %>
+                      <h5 style="margin: 0px; font-size: 13px;">(Validar y añadir habitación)</h5>
+                    <% end %>              
+<%
+=end%>     
+
+
+                  </button>
+                <% end %>
+
+              <h5 style="padding-top: 30px; font-weight: bolder; font-size: 16px; color: #666;">Partidas personalizadas:</h5>
+              <div style="max-width: 200px;">
+                <% @partidas = Partida.where(reform_id: @reform.id) %>
+                <% if @partidas != nil %>
+                  <% @partidas.map do |partida| %>
+                    <%= link_to reform_partida_path(reform_id: @reform.id, id: partida) do %>
+                      <button type="button" class="btn btn-sm btn-default" style="">
+                        <h3 style="margin: 10px; font-weight: 700; color: #444;"><%= partida.titulo %></h3>
+                      </button>
+                    <% end %>
+                  <% end %>
+                <% end %>            
+              </div>
+
+              <% @habitacion = Habitacion.where(reform_id: @reform.id) %>
+              <% @habitacion.collect do |habitacion| %>
+                <% @habitacion = habitacion %>
+                <% habitacion.nombre %>
+                <% render 'reforms/budget', habitacion: @habitacion %>
+              <% end %>
+            <% else %>
+              <h5 style="font-weight: 500; font-size: 16px; color: #666;">Aún no has creado niguna reforma de ninguna estancia.</h5>
+            <% end %>
+          </div>                   
 
           <% if Confirmacion.find_by(reform_id: @reform.id) == nil %>
-            <div>
-              <h3 style="font-weight: normal;">
+          <h3 style="font-weight: bolder; color: #666;">Crea las estancias a reformar en tu proyecto</h3>
+            <div class="botones_habitaciones">
+              <h3 style="font-weight: normal; margin: 0px;">
 
 <%
 =begin%>              
@@ -41,33 +99,41 @@
 <%
 =end%>             
                 <%= link_to new_reform_habitacion_path(reform_id: @reform, cocina: true) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nueva Cocina</h3></button>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nueva Cocina</h3></button>
+                <% end %>                
+
+                <%= link_to new_reform_habitacion_path(reform_id: @reform, bano: true) do %>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nuevo Baño o Aseo</h3></button>
+                <% end %>
+
+                <%= link_to new_reform_habitacion_path(reform_id: @reform, habitacion: true) do %>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nuevo Salón</h3></button>
+                <% end %>
+
+                <%= link_to new_reform_habitacion_path(reform_id: @reform, habitacion: true) do %>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nueva Habitación</h3></button>
+                <% end %>
+
+                <%= link_to new_reform_habitacion_path(reform_id: @reform, habitacion: true) do %>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nuevo pasillo</h3></button>
+                <% end %>
+
+                <%= link_to new_reform_habitacion_path(reform_id: @reform, habitacion: true) do %>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nuevo despacho</h3></button>
                 <% end %>                
 
                 <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nuevo Baño o Aseo</h3></button>
-                <% end %>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nueva estancia (con todas las opciones)</h3></button>
+                <% end %> 
 
-                <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nuevo Salón</h3></button>
-                <% end %>
-
-                <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nueva Habitación</h3></button>
-                <% end %>
-
-                <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nuevo pasillo</h3></button>
-                <% end %>
-
-                <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nuevo despacho</h3></button>
-                <% end %>                
-
-                <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="font-weight: normal; margin: 0px; color: #1DA1F2;">Nueva estancia (con todas las opciones)</h3></button>
-                <% end %>                             
-              </h3>
+                
+                <div style="display: block; padding-top: 20px;">
+                <h3>¿No encuentras los que buscas? Crea tu partida personalizada</h3>  
+                  <%= link_to new_partida_path(reform_id: @reform) do %>
+                     <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #41a34b; color: #41a34b; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="; margin: 0px; color: #41a34b;">Nueva partida personalizada</h3></button>
+                  <% end %>
+                </div>        
+                </h3>
             </div>
           <% end %>         
         </div>
@@ -108,41 +174,9 @@
 <%
 =end%>    
 
-
-        <div class="show_habitaciones" style="padding-top: 50px;">
-
-          <% @habitacion = Habitacion.where(reform_id: @reform.id) %>
-          <% @habitacion.collect do |habitacion| %>
-            <% @habitacion = habitacion %>
-            <% habitacion.nombre %>
-            <% render 'reforms/budget', habitacion: @habitacion %>
-          <% end %>
-          <h1 style="font-size: 26px;">Tu reforma = <%= @budget %> €</h1>
-
-
-  				<% if @habitaciones.any? %>
-  					<% @habitaciones.collect do |habitacion| %>
-            
-              &nbsp;&nbsp;<button type="button" class="btn btn-sm btn-default" style="">
-                <h3 style="margin: 10px; font-weight: 700;">
-                  <%= link_to habitacion.nombre, reform_habitacion_path(reform_id: @reform, id: habitacion), style: "color: #555;" %>
-                </h3>
-  
-                <% @budget = Budget.find_by(habitacion_id: habitacion.id, user_id: current_user.id) %>
-                <% if @budget != nil %>
-                  <% if habitacion.updated_at.to_i > @budget.updated_at.to_i %>
-                    <h5 style="margin: 0px;"><b>* <%= @budget.cost %> € </b><span style="font-size: 13px;">(valida modificación)</span></h5>
-                  <% else %>
-                    <h5 style="margin: 0px;"><b><%= @budget.cost %> €</b></h5>
-                  <% end %>
-                <% else %>
-                  <h5 style="margin: 0px; font-size: 13px;">(Validar y añadir habitación)</h5>
-                <% end %>              
-              </button>              
-
-  					<% end %>
-  				<% end %>
-        </div>
+<!----------- ----------------------------------------------------------->
+<!-- es necesario retomar estos números, que aparezca tanto en las partidas como en el resumen total 
+        <h1 style="font-size: 26px;">Precio estimado según nuestra BD = <%= @budget %> €</h1>-->
 
         <% @array = @habitaciones.collect do |habitacion| %>
           <% @budget = Budget.find_by(habitacion_id: habitacion.id, user_id: current_user.id) %>

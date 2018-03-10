@@ -18,7 +18,7 @@
                   <% @pendientes = current_user.feed_petition.count - @votos_petitions %>
 
                   <div class="icon_mobile">
-                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>
+                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: #666"></i>
                     <% if @pendientes > 0 %>
                       <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em;  display: inline-block; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px; margin-left: -7px;">
                             <b><%= @pendientes %></b>
@@ -32,7 +32,7 @@
                   </div>
                   
                   <div class="icon_web">
-                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: white"></i>
+                    <i class="fa fa-envelope-open fa-lg" aria-hidden="true" style="color: #666"></i>
                     <% if @pendientes > 0 %>
                       <div style="background: red; border-radius: 0.8em; -moz-border-radius: 0.8em; -webkit-border-radius: 0.8em;  display: inline-block; line-height: 1.6em; text-align: center; width: 1.6em; font-size: 12px;  margin-left: -7px;">
                             <b><%= @pendientes %></b>
@@ -102,12 +102,12 @@
               </li>
               <li class="dropdown-home" style="width: 20%;">
                 <%= link_to login_path do %>
-                    <span style="color: white">Login</span>
+                    <span style="color: #666">Login</span>
                 <% end %>
               </li>
               <li class="dropdown-home" style="width: 20%;">
                 <%= link_to signup_path do %>
-                    <span style="color: white">Signup</span>
+                    <span style="color: #666">Signup</span>
                 <% end %>
               </li>
             </ul>

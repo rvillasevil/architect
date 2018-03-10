@@ -1,22 +1,100 @@
 <% if params[:habitacion] != nil %>
   <% @habitacion = Habitacion.find(params[:habitacion]) %>
+<% else %>
+  <% @partida = Partida.find(params[:partida]) %>
 <% end %>
-  <%= form_for(presupuesto) do |f| %>
-    <% if presupuesto.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(presupuesto.errors.count, "error") %> prohibited this presupuesto from being saved:</h2>
 
-        <ul>
-        <% presupuesto.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+<%= form_for(presupuesto) do |f| %>
+  <% if presupuesto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(presupuesto.errors.count, "error") %> prohibited this presupuesto from being saved:</h2>
+
+      <ul>
+      <% presupuesto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if params[:partida] != nil %>
+    <%= f.hidden_field :reform_id, value: @partida.reform_id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :partida_id, value: @partida.id %>
+
+    <% @empresa = Empresa.find_by(user_id: current_user.id) %>
+
+      <div class="constructor">
+        <div class="titulos">
+          <h1><%= @partida.titulo %></h1>
+
+            <h3 style="font-weight: normal;">Partidas:</h3>
+            <ul class="botones">
+              <li style="" onclick="divVisibility('Div0');">
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Partida personalizada</button>
+              </li>
+            </ul>
+
+            <div class="nueva_partida">
+              <div class="field">
+                <h3 style="font-weight: 600">Título</h3>
+                <h5 style="font-weight: 400"><%= @partida.titulo %></h5>
+              </div>
+
+              <div class="field">
+                <h3>Descripción</h3>
+                <h5><%= @partida.description %></h5>
+              </div>
+
+              <div class="field">
+                <h3>Foto añadida por el usuario</h3>
+                <h5>
+                  <% if @partida.foto? %>
+                    <%= image_tag( @partida.foto.url, size: 200, class: "img") %>
+                  <% else %>
+                  <% end %>        
+                </h5>
+              </div>    
+
+              <div class="field">
+                <h3>Medición</h3>
+                <h5 style="font-weight: 700;"><%= @partida.medicion %> <span style="margin-left: 60px;">(Um)</span> </h5>
+              </div>
+
+              <div class="field">
+                <h3>Comentario</h3>
+                <h5><%= @partida.comentario %></h5>
+              </div>      
+
+              <div class="field">
+                <h3>Introducir importe total para la partida:</h3>
+                <h5 style="font-size: 15px; font-weight: 700;"><%= f.text_field :partida_importe, style: "width: 40%; font-size: 15px; padding: 10px; border: 1px solid #bbb; border-radius: 5px; color: #444;", type: "number", step: "0.01", required: true, placeholder: 'ej 12.56' %></h5>
+              </div>
+
+              <div class="field">
+                <h3>Introducir tu comentario para el cliente</h3>
+                <h5 style="color: grey; font-weight: 500;"><%= f.text_area :partida_comentario, style: "font-size: 15px; padding: 10px; border: 1px solid #bbb; border-radius: 5px; height: 100px;", required: true, placeholder: 'Añade un comentario para ayudar al cliente a entender tu propuesta' %></h5>
+              </div>      
+            </div>
+
+            <div class="actions">
+              <% if Presupuesto.find_by(id: presupuesto.id) != nil %>
+              <h5 style="margin: 0px;">Actualizar tu precio para <%= f.submit @partida.titulo, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
+              <% else %>
+                <h5 style="margin: 0px;">Introducir tu precio para <%= @partida.titulo %> <%= f.submit 'Crear tu precio', style:"background-color: white; padding: 10px; border: 1px solid green; border-radius: 15px; font-weight: 900; color: green;" %></h5>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+
+  <% end %>
+
+  <% if params[:habitacion] != nil %>
 
     <%= f.hidden_field :reform_id, value: @habitacion.reform_id %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :habitacion_id, value: @habitacion.id %>
+    <%= f.hidden_field :habitacion_id, value: @habitacion.id %> 
 
       <% @empresa = Empresa.find_by(user_id: current_user.id) %>
     
@@ -3131,12 +3209,13 @@
                                 <%= @task.nombre if @task.nombre != nil %>
                             </div>
                           </li>
-                          <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                          <% @azulejo = Azulejo.find(@habitacion.alb_tipo_azulejo) %>
+                          <li class="field">
+                            <h5>Azulejo: &nbsp;&nbsp;</h5>
+                            <h5 style="font-weight: bolder;"><%= @azulejo.name %> <span style="margin-left: 20px; font-weight: bold;"></span> </h5>
                           </li>
                           <li class="field">
-                            <h5>Medición: &nbsp;&nbsp;</h5>
-                            <h5 style="font-weight: bolder;"><%= @habitacion.alb_tipo_azulejo %> <span style="margin-left: 20px; font-weight: bold;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5> Medición: <%= @habitacion.alb_azulejo %></h5>
                           </li>
                           <li class="tu_precio">
                             <h5 style="font-weight: normal;">Tu oferta: &nbsp;&nbsp;</h5>
@@ -3244,12 +3323,13 @@
                                 <%= @task.nombre if @task.nombre != nil %>
                             </div>
                           </li>
-                          <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                          <% @pavimento = Pavimento.find(@habitacion.alb_tipo_baldosa) %>
+                          <li class="field">
+                            <h5>Pavimento: &nbsp;&nbsp;</h5>
+                            <h5 style="font-weight: bolder;"><%= @baldosa.name %> <span style="margin-left: 20px; font-weight: bold;"></span> </h5>
                           </li>
                           <li class="field">
-                            <h5>Medición: &nbsp;&nbsp;</h5>
-                            <h5 style="font-weight: bolder;"><%= @habitacion.alb_tipo_baldosa %> <span style="margin-left: 20px; font-weight: bold;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5> Medición: <%= @habitacion.alb_baldosa %></h5>
                           </li>
                           <li class="tu_precio">
                             <h5 style="font-weight: normal;">Tu oferta: &nbsp;&nbsp;</h5>
@@ -6376,13 +6456,15 @@
                                 <%= @task.nombre if @task.nombre != nil %>
                             </div>
                           </li>
-                          <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                          <% @puerta = Puerta.find(@habitacion.puerta_tipo) %>
+                          <li class="field">
+                            <h5>Puerta: &nbsp;&nbsp;</h5>
+                            <h5 style="font-weight: bolder;"><%= @puerta.name %> <span style="margin-left: 20px; font-weight: bold;"></span> </h5>
                           </li>
                           <li class="field">
-                            <h5>Medición: &nbsp;&nbsp;</h5>
-                            <h5 style="font-weight: bolder;"><%= @habitacion.puerta_tipo %> <span style="margin-left: 20px; font-weight: bold;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5> Medición: <%= @habitacion.puerta_colocar %></h5>
                           </li>
+
                           <li class="tu_precio">
                             <h5 style="font-weight: normal;">Tu oferta: &nbsp;&nbsp;</h5>
                             <% if params[:tus_datos] %>
@@ -6547,12 +6629,13 @@
                                 <%= @task.nombre if @task.nombre != nil %>
                             </div>
                           </li>
-                          <li>
-                            <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                          <% @ventana = Ventana.find(@habitacion.ventana_tipo) %>
+                          <li class="field">
+                            <h5>Ventana: &nbsp;&nbsp;</h5>
+                            <h5 style="font-weight: bolder;"><%= @ventana.name %> <span style="margin-left: 20px; font-weight: bold;"></span> </h5>
                           </li>
                           <li class="field">
-                            <h5>Medición: &nbsp;&nbsp;</h5>
-                            <h5 style="font-weight: bolder;"><%= @habitacion.ventana_tipo %> <span style="margin-left: 20px; font-weight: bold;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                            <h5> Medición: <%= @habitacion.ventana_colocar %></h5>
                           </li>
                           <li class="tu_precio">
                             <h5 style="font-weight: normal;">Tu oferta: &nbsp;&nbsp;</h5>
@@ -6659,7 +6742,9 @@
         <h5 style="margin: 0px;">Introducir tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
       <% end %>
     </div>
+
   <% end %>
+<% end %>
 
 
 

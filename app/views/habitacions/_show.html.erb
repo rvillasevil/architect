@@ -1,0 +1,1135 @@
+
+
+
+<% if  habitacion.demo_quitar_azulejo != nil or habitacion.demo_quitar_baldosa != nil or habitacion.demo_quitar_falso_techo != nil or habitacion.demo_quitar_tabique != nil %>            
+
+        <% if  habitacion.demo_quitar_azulejo != nil %>
+                <% @task = Task.find_by(task: 'demo_quitar_azulejo') %>                          
+                                            
+                <% if @task.importe != nil %>
+                  <% @importe_demo_quitar_azulejo = (habitacion.demo_quitar_azulejo * @task.importe) %>
+                <% end %>                                                                 
+        <% end %>
+
+        <% if  habitacion.demo_quitar_baldosa != nil %>        
+            
+                <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>                          
+                                            
+                <% if @task.importe != nil %>
+                  <% @importe_demo_quitar_baldosa = (habitacion.demo_quitar_baldosa * @task.importe) %>
+                <% end %>                                                                         
+        <% end %>
+
+        <% if  habitacion.demo_quitar_falso_techo != nil %>        
+            
+                <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>                          
+                                            
+                <% if @task.importe != nil %>
+                  <% @importe_demo_quitar_falso_techo = (habitacion.demo_quitar_falso_techo * @task.importe) %>
+                <% end %>                                                                         
+        <% end %> 
+
+        <% if  habitacion.demo_quitar_tabique != nil %>                                            
+                <% @task = Task.find_by(task: 'demo_quitar_tabique') %>                            
+                                            
+                <% if @task.importe != nil %>
+                  <% @importe_demo_quitar_tabique = (habitacion.demo_quitar_tabique * @task.importe) %>
+                <% end %>                                                                 
+        <% end %>
+
+<% end %>
+
+
+              <% if  habitacion.demo_quitar_inodoro != nil or habitacion.demo_quitar_bidet != nil or habitacion.demo_quitar_plato_ducha != nil or habitacion.demo_quitar_mampara != nil or habitacion.demo_quitar_mueble_bano != nil or habitacion.demo_quitar_banera != nil  %>                              
+
+                    <% if  habitacion.demo_quitar_inodoro != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_inodoro') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_inodoro = (habitacion.demo_quitar_inodoro * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.demo_quitar_bidet != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_bidet') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_bidet = (habitacion.demo_quitar_bidet * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.demo_quitar_plato_ducha != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_plato_ducha') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_plato_ducha = (habitacion.demo_quitar_plato_ducha * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.demo_quitar_mampara != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_mampara') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_mampara = (habitacion.demo_quitar_mampara * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.demo_quitar_mueble_bano != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_mueble_bano') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_mueble_bano = (habitacion.demo_quitar_mueble_bano * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.demo_quitar_banera != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_banera') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_banera = (habitacion.demo_quitar_banera * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.demo_quitar_mobi_cocina != nil or habitacion.demo_retir_electrodomesticos != nil %>                               
+
+                    <% if  habitacion.demo_quitar_mobi_cocina != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_mobi_cocina') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_mobi_cocina = (habitacion.demo_quitar_mobi_cocina * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.demo_retir_electrodomesticos != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_retir_electrodomesticos = (habitacion.demo_retir_electrodomesticos * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+               <% end %>
+
+              <% if  habitacion.demo_friso_madera != nil or habitacion.demo_quitar_mueble != nil %>                              
+
+                    <% if  habitacion.demo_friso_madera != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_friso_madera') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_friso_madera = (habitacion.demo_friso_madera * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.demo_quitar_mueble != nil %>                                            
+                            <% @task = Task.find_by(task: 'demo_quitar_mueble') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_demo_quitar_mueble = (habitacion.demo_quitar_mueble * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.tub_termo_electrico != nil or habitacion.tub_radiador != nil %>
+                              
+
+                    <% if  habitacion.tub_termo_electrico != nil %>                                                 
+                            <% @task = Task.find_by(task: 'tub_termo_electrico') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_termo_electrico = (habitacion.tub_termo_electrico * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_radiador != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_radiador') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_radiador = (habitacion.tub_radiador * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.tub_lavabo != nil or habitacion.tub_ducha_banera != nil or habitacion.tub_bidet != nil or habitacion.tub_inodoro != nil or habitacion.tub_colum_hidromasaje != nil or habitacion.tub_lavabo_doble != nil or habitacion.tub_jacuzzy != nil or habitacion.tub_sauna != nil or habitacion.tub_ducha_empotrada != nil or habitacion.tub_toallero != nil or habitacion.tub_reubicar_contador != nil or habitacion.tub_lavadora != nil or habitacion.tub_caldera != nil %>
+                                  
+                    
+                    <% if  habitacion.tub_lavabo != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_lavabo') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_lavabo = (habitacion.tub_lavabo * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.tub_ducha_banera != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_ducha_banera') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_ducha_banera = (habitacion.tub_ducha_banera * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_bidet != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_bidet') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_bidet = (habitacion.tub_bidet * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_inodoro != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_inodoro') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_inodoro = (habitacion.tub_inodoro * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.tub_colum_hidromasaje != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_colum_hidromasaje') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_colum_hidromasaje = (habitacion.tub_colum_hidromasaje * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_lavabo_doble != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_lavabo_doble') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_lavabo_doble = (habitacion.tub_lavabo_doble * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_jacuzzy != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_jacuzzy') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_jacuzzy = (habitacion.tub_jacuzzy * @task.importe) %>
+                            <% end %>                                                                       
+                    <% end %>  
+
+                    <% if  habitacion.tub_sauna != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_sauna') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_sauna = (habitacion.tub_sauna * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_ducha_empotrada != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_ducha_empotrada') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_ducha_empotrada = (habitacion.tub_ducha_empotrada * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.tub_toallero != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_toallero') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_toallero = (habitacion.tub_toallero * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.tub_reubicar_contador != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_reubicar_contador') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_reubicar_contador = (habitacion.tub_reubicar_contador * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.tub_lavadora != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_lavadora') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_lavadora = (habitacion.tub_lavadora * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.tub_reubicar_inodoro != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_reubicar_inodoro') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_reubicar_inodoro = (habitacion.tub_reubicar_inodoro * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.tub_tipo != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_tipo') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_tipo = (habitacion.tub_tipo * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.tub_caldera != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_caldera') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_caldera = (habitacion.tub_caldera * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>          
+
+              <% if  habitacion.tub_fregadero != nil or habitacion.tub_lavavajillas != nil or habitacion.tub_secadora != nil %>
+                
+
+                    <% if  habitacion.tub_fregadero != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_fregadero') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_fregadero = (habitacion.tub_fregadero * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.tub_lavavajillas != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_lavavajillas') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_lavavajillas = (habitacion.tub_lavavajillas * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.tub_secadora != nil %>                                            
+                            <% @task = Task.find_by(task: 'tub_secadora') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_tub_secadora = (habitacion.tub_secadora * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.elec_pto_luz_techo != nil or
+                habitacion.elec_pto_luz_pared != nil or
+                habitacion.elec_interr_simple != nil  or
+                habitacion.elec_interr_doble != nil or
+                habitacion.elec_interr_triple != nil or
+                habitacion.elec_enchu_simple != nil or
+                habitacion.elec_enchu_doble != nil or
+                habitacion.elec_enchu_triple != nil or
+                habitacion.elec_reubicar_caja_luz != nil or
+                habitacion.elec_toma_lavadora != nil or
+                habitacion.elec_toma_ventilador_extractor != nil or
+                habitacion.elec_toma_horno_vitroceramica != nil or
+                habitacion.elec_toma_microondas != nil or
+                habitacion.elec_toma_frigorifico != nil or
+                habitacion.elec_toma_lavavajillas != nil or
+                habitacion.elec_toma_secadora != nil or
+                habitacion.elec_toma_telefono != nil %>
+                                  
+
+                    <% if  habitacion.elec_pto_luz_techo != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_pto_luz_techo') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_pto_luz_techo = (habitacion.elec_pto_luz_techo * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.elec_pto_luz_pared != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_pto_luz_pared') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_pto_luz_pared = (habitacion.elec_pto_luz_pared * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_interr_simple != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_interr_simple') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_interr_simple = (habitacion.elec_interr_simple * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_interr_doble != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_interr_doble') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_interr_doble = (habitacion.elec_interr_doble * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_interr_triple != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_interr_triple') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_interr_triple = (habitacion.elec_interr_triple * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_enchu_simple != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_enchu_simple') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_enchu_simple = (habitacion.elec_enchu_simple * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_enchu_doble != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_enchu_doble') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_enchu_doble = (habitacion.elec_enchu_doble * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_enchu_triple != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_enchu_triple') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_enchu_triple = (habitacion.elec_enchu_triple * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_reubicar_caja_luz != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_reubicar_caja_luz') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_reubicar_caja_luz = (habitacion.elec_reubicar_caja_luz * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.elec_toma_lavadora != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_lavadora') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_lavadora = (habitacion.elec_toma_lavadora * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_toma_ventilador_extractor != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_ventilador_extractor') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_ventilador_extractor = (habitacion.elec_toma_ventilador_extractor * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_toma_horno_vitroceramica != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_horno_vitroceramica') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_horno_vitroceramica = (habitacion.elec_toma_horno_vitroceramica * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.elec_toma_microondas != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_microondas') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_microondas = (habitacion.elec_toma_microondas * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.elec_toma_frigorifico != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_frigorifico') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_frigorifico = (habitacion.elec_toma_frigorifico * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.elec_toma_lavavajillas != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_lavavajillas') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_lavavajillas = (habitacion.elec_toma_lavavajillas * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_toma_secadora != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_secadora') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_secadora = (habitacion.elec_toma_secadora * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.elec_toma_telefono != nil %>                                            
+                            <% @task = Task.find_by(task: 'elec_toma_telefono') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_elec_toma_telefono = (habitacion.elec_toma_telefono * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.alb_azulejo != nil or
+              habitacion.alb_tipo_azulejo != nil or
+              habitacion.alb_baldosa != nil or
+              habitacion.alb_tipo_baldosa != nil or
+              habitacion.alb_techo_pladur != nil or
+              habitacion.alb_tabique_ladriyeso != nil or
+              habitacion.alb_tabique_pladur != nil or
+              habitacion.alb_tabique_fabrica != nil or
+              habitacion.alb_tabique_paves != nil or
+              habitacion.alb_nivelacion_pared != nil %>
+                                  
+
+                    <% if  habitacion.alb_azulejo != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_azulejo') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_azulejo = (habitacion.alb_azulejo * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.alb_tipo_azulejo != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_tipo_azulejo') %>
+                            <% @azulejo = Azulejo.find(habitacion.alb_tipo_azulejo) %>                            
+                                                                              
+                          
+                            
+                            <% if habitacion.alb_azulejo? %>
+                            <% habitacion.alb_azulejo %> 
+                            <% else %>
+                             
+                            <% end %>
+                                                      
+                          
+                                                                              
+                            <% @unidades = habitacion.alb_azulejo %>
+                            <% @task.importe = @azulejo.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <% @importe_alb_tipo_azulejo = (@azulejo.precio * @unidades) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+                    <% if  habitacion.alb_baldosa != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_baldosa') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_baldosa = (habitacion.alb_baldosa * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.alb_tipo_baldosa != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_tipo_baldosa') %>
+                            <% @pavimento = Pavimento.find(habitacion.alb_tipo_baldosa) %>                            
+                                                                              
+                          
+                            
+                            <% if habitacion.alb_baldosa? %>
+                            <% habitacion.alb_baldosa %> 
+                            <% else %>
+                             
+                            <% end %>
+                                                      
+                          
+                                                                              
+                            <% @unidades = habitacion.alb_baldosa %>
+                            <% @task.importe = @pavimento.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <% @importe_alb_tipo_baldosa = (@pavimento.precio * @unidades) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.alb_techo_pladur != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_techo_pladur') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_techo_pladur = (habitacion.alb_techo_pladur * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.alb_tabique_ladriyeso != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_tabique_ladriyeso') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_tabique_ladriyeso = (habitacion.alb_tabique_ladriyeso * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.alb_tabique_pladur != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_tabique_pladur') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_tabique_pladur = (habitacion.alb_tabique_pladur * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.alb_tabique_fabrica != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_tabique_fabrica') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_tabique_fabrica = (habitacion.alb_tabique_fabrica * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.alb_tabique_paves != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_tabique_paves') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_tabique_paves = (habitacion.alb_tabique_paves * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.alb_nivelacion_pared != nil %>                                            
+                            <% @task = Task.find_by(task: 'alb_nivelacion_pared') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_alb_nivelacion_pared = (habitacion.alb_nivelacion_pared * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.mont_sani_mampara != nil or habitacion.mont_sani_mueble_bano != nil or
+              habitacion.mont_sani_banera != nil or
+              habitacion.mont_sani_plato_ducha != nil or
+              habitacion.mont_sani_bidet != nil or
+              habitacion.mont_sani_inodoro_normal != nil or
+              habitacion.mont_sani_inodoro_suspendido != nil or
+              habitacion.mont_sani_inodoro_encastrado != nil or
+              habitacion.mont_sani_grifo_ducha != nil or
+              habitacion.mont_sani_grifo_banera != nil or
+              habitacion.mont_sani_acceso_atornillado != nil or
+              habitacion.mont_sani_colum_hidromasaje != nil or
+              habitacion.mont_sani_cabina_ducha != nil or
+              habitacion.mont_sani_plato_ducha_obra != nil or
+              habitacion.mont_sani_lavabo_pedestal != nil %>
+                
+
+                    <% if  habitacion.mont_sani_mampara != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_mampara') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_mampara = (habitacion.mont_sani_mampara * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_mueble_bano != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_mueble_bano') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_mueble_bano = (habitacion.mont_sani_mueble_bano * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>  
+
+                    <% if  habitacion.mont_sani_banera != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_banera') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_banera = (habitacion.mont_sani_banera * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_plato_ducha != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_plato_ducha') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_plato_ducha = (habitacion.mont_sani_plato_ducha * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_bidet != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_bidet') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_bidet = (habitacion.mont_sani_bidet * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_inodoro_normal != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_inodoro_normal') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_inodoro_normal = (habitacion.mont_sani_inodoro_normal * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_inodoro_suspendido != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_inodoro_suspendido') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_inodoro_suspendido = (habitacion.mont_sani_inodoro_suspendido * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_inodoro_encastrado != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_inodoro_encastrado') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_inodoro_encastrado = (habitacion.mont_sani_inodoro_encastrado * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_grifo_ducha != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_grifo_ducha') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_grifo_ducha = (habitacion.mont_sani_grifo_ducha * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_grifo_banera != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_grifo_banera') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_grifo_banera = (habitacion.mont_sani_grifo_banera * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_acceso_atornillado != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_acceso_atornillado') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_acceso_atornillado = (habitacion.mont_sani_acceso_atornillado * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                     <% if  habitacion.mont_sani_colum_hidromasaje != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_colum_hidromasaje') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_colum_hidromasaje = (habitacion.mont_sani_colum_hidromasaje * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_cabina_ducha != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_cabina_ducha') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_cabina_ducha = (habitacion.mont_sani_cabina_ducha * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_plato_ducha_obra != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_plato_ducha_obra') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_plato_ducha_obra = (habitacion.mont_sani_plato_ducha_obra * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_sani_lavabo_pedestal != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_sani_lavabo_pedestal') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_sani_lavabo_pedestal = (habitacion.mont_sani_lavabo_pedestal * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.mont_electro_mueble_alto_cocina != nil or
+              habitacion.mont_electro_mueble_bajo_cocina != nil or
+              habitacion.mont_electro_horno_electrico != nil or
+              habitacion.mont_electro_placa_vitro != nil or
+              habitacion.mont_electro_placa_electrica != nil or
+              habitacion.mont_electro_lavadora != nil or
+              habitacion.mont_electro_frigorifico != nil or
+              habitacion.mont_electro_lavavajillas != nil or
+              habitacion.mont_electro_microondas != nil  or
+              habitacion.mont_electro_secadora != nil or
+              habitacion.mont_fregadero != nil or
+              habitacion.mont_grifo_fregadero != nil %>
+                
+
+                    <% if  habitacion.mont_electro_mueble_alto_cocina != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_mueble_alto_cocina') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_mueble_alto_cocina = (habitacion.mont_electro_mueble_alto_cocina * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_electro_mueble_bajo_cocina != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_mueble_bajo_cocina') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_mueble_bajo_cocina = (habitacion.mont_electro_mueble_bajo_cocina * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.mont_electro_horno_electrico != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_horno_electrico') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_horno_electrico = (habitacion.mont_electro_horno_electrico * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+                    <% if  habitacion.mont_electro_placa_vitro != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_placa_vitro') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_placa_vitro = (habitacion.mont_electro_placa_vitro * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                     <% if habitacion.mont_electro_placa_electrica != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_placa_electrica') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_placa_electrica = (habitacion.mont_electro_placa_electrica * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %> 
+
+
+                    <% if  habitacion.mont_electro_lavadora != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_lavadora') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_lavadora = (habitacion.mont_electro_lavadora * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_electro_frigorifico != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_frigorifico') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_frigorifico = (habitacion.mont_electro_frigorifico * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_electro_lavavajillas != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_lavavajillas') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_lavavajillas = (habitacion.mont_electro_lavavajillas * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                     <% if  habitacion.mont_electro_microondas != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_microondas') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_microondas = (habitacion.mont_electro_microondas * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_electro_secadora != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_electro_secadora') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_electro_secadora = (habitacion.mont_electro_secadora * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_fregadero != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_fregadero') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_fregadero = (habitacion.mont_fregadero * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.mont_grifo_fregadero != nil %>                                            
+                            <% @task = Task.find_by(task: 'mont_grifo_fregadero') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_mont_grifo_fregadero = (habitacion.mont_grifo_fregadero * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.colo_pmarcha_termo_elect_a != nil or
+              habitacion.colo_pmarcha_termo_elect_b != nil or
+              habitacion.colo_pmarcha_termo_elect_c != nil or
+              habitacion.colo_pmarcha_termo_elect_d != nil or
+              habitacion.colo_pmarcha_termo_elect_e != nil or
+              habitacion.colo_pmarcha_termo_elect_f != nil %>
+                
+                    
+                    <% if  habitacion.colo_pmarcha_termo_elect_a != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_a') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_termo_elect_a = (habitacion.colo_pmarcha_termo_elect_a * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                     <% if  habitacion.colo_pmarcha_termo_elect_b != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_b') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_termo_elect_b = (habitacion.colo_pmarcha_termo_elect_b * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.colo_pmarcha_termo_elect_c != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_c') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_termo_elect_c = (habitacion.colo_pmarcha_termo_elect_c * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.colo_pmarcha_termo_elect_d != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_d') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_termo_elect_d = (habitacion.colo_pmarcha_termo_elect_d * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.colo_pmarcha_termo_elect_e != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_e') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_termo_elect_e = (habitacion.colo_pmarcha_termo_elect_e * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.colo_pmarcha_termo_elect_f != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_f') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_termo_elect_f = (habitacion.colo_pmarcha_termo_elect_f * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.colo_pmarcha_calde_atmos != nil or habitacion.colo_pmarcha_calde_bajo_nox != nil or habitacion.colo_pmarcha_calde_estanca != nil %>
+                
+                    
+                    <% if  habitacion.colo_pmarcha_calde_atmos != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_calde_atmos') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_calde_atmos = (habitacion.colo_pmarcha_calde_atmos * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                     <% if  habitacion.colo_pmarcha_calde_bajo_nox != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_calde_bajo_nox') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_calde_bajo_nox = (habitacion.colo_pmarcha_calde_bajo_nox * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                     <% if  habitacion.colo_pmarcha_calde_estanca != nil %>                                            
+                            <% @task = Task.find_by(task: 'colo_pmarcha_calde_estanca') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_colo_pmarcha_calde_estanca = (habitacion.colo_pmarcha_calde_estanca * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+          
+              <% end %>
+
+              <% if  habitacion.techo_pintar != nil or habitacion.techo_tipo_pintura != nil or habitacion.techo_alisar != nil or habitacion.techo_reparar_humedad != nil or habitacion.pared_empapelar != nil or habitacion.pared_quitar_papel != nil or habitacion.pared_alisar != nil or habitacion.pared_pintar != nil or habitacion.pared_reparar_humedad != nil or habitacion.carpin_friso != nil %>                              
+                    
+
+                    <% if  habitacion.techo_pintar != nil %>                                            
+                            <% @task = Task.find_by(task: 'techo_pintar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_techo_pintar = (habitacion.techo_pintar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.techo_tipo_pintura != nil %>                                            
+                            <% @task = Task.find_by(task: 'techo_tipo_pintura') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_techo_tipo_pintura = (habitacion.techo_tipo_pintura * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.techo_alisar != nil %>                                            
+                            <% @task = Task.find_by(task: 'techo_alisar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_techo_alisar = (habitacion.techo_alisar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.techo_reparar_humedad != nil %>                                            
+                            <% @task = Task.find_by(task: 'techo_reparar_humedad') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_techo_reparar_humedad = (habitacion.techo_reparar_humedad * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.pared_empapelar != nil %>                                            
+                            <% @task = Task.find_by(task: 'pared_empapelar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_pared_empapelar = (habitacion.pared_empapelar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.pared_quitar_papel != nil %>                                            
+                            <% @task = Task.find_by(task: 'pared_quitar_papel') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_pared_quitar_papel = (habitacion.pared_quitar_papel * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.pared_alisar != nil %>                                            
+                            <% @task = Task.find_by(task: 'pared_alisar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_pared_alisar = (habitacion.pared_alisar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.pared_pintar != nil %>                                            
+                            <% @task = Task.find_by(task: 'pared_pintar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_pared_pintar = (habitacion.pared_pintar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.pared_reparar_humedad != nil %>                                            
+                            <% @task = Task.find_by(task: 'pared_reparar_humedad') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_pared_reparar_humedad = (habitacion.pared_reparar_humedad * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.carpin_friso != nil %>                                            
+                            <% @task = Task.find_by(task: 'carpin_friso') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_carpin_friso = (habitacion.carpin_friso * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+              <% end %>
+
+              <% if  habitacion.puerta_colocar != nil or habitacion.puerta_tipo != nil or habitacion.puerta_cambio_precerco != nil or habitacion.ventana_colocar != nil or habitacion.ventana_tipo != nil or habitacion.ventana_contraventana != nil %>                              
+                    
+
+                    <% if  habitacion.puerta_colocar != nil %>                                            
+                            <% @task = Task.find_by(task: 'puerta_colocar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_puerta_colocar = (habitacion.puerta_colocar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+      
+                    <% if  habitacion.puerta_tipo != nil %>                                            
+                            <% @task = Task.find_by(task: 'puerta_tipo') %>
+                            <% @puerta = Puerta.find(habitacion.puerta_tipo) %>                            
+                                                                              
+                          
+                            
+                            <% if habitacion.puerta_colocar? %>
+                            <% habitacion.puerta_colocar %> 
+                            <% else %>
+                              
+                            <% end %>
+                                                      
+                                                                                
+                            <% @unidades = habitacion.puerta_colocar %>
+                            <% @task.importe = @puerta.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <% @importe_puerta_tipo = (@puerta.precio * @unidades) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.puerta_cambio_precerco != nil %>                                            
+                            <% @task = Task.find_by(task: 'puerta_cambio_precerco') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_puerta_cambio_precerco = (habitacion.puerta_cambio_precerco * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.ventana_colocar != nil %>                                            
+                            <% @task = Task.find_by(task: 'ventana_colocar') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_ventana_colocar = (habitacion.ventana_colocar * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.ventana_tipo != nil %>                                            
+                            <% @task = Task.find_by(task: 'ventana_tipo') %>
+                            <% @ventana = Ventana.find(habitacion.ventana_tipo) %>                            
+                                                                              
+                          
+                            
+                            <% if habitacion.ventana_colocar? %>
+                            <% habitacion.ventana_colocar %> 
+                            <% else %>
+                            
+                            <% end %>
+                                                      
+                                                                                
+                            <% @unidades = habitacion.ventana_colocar %>
+                            <% @task.importe = @ventana.precio %>
+                            <% if @task.importe != nil && @unidades != nil %>
+                              <% @importe_ventana_tipo = (@ventana.precio * @unidades) %>
+                            <% end %>                                                                 
+                    <% end %>
+
+
+                    <% if  habitacion.ventana_contraventana != nil %>                                            
+                            <% @task = Task.find_by(task: 'ventana_contraventana') %>                            
+                                                        
+                            <% if @task.importe != nil %>
+                              <% @importe_ventana_contraventana = (habitacion.ventana_contraventana * @task.importe) %>
+                            <% end %>                                                                 
+                    <% end %>
+              <% end %>
+
+              <% @importe_total = @importe_demo_quitar_azulejo, @importe_demo_quitar_baldosa, @importe_demo_quitar_falso_techo, @importe_demo_quitar_tabique, @importe_demo_quitar_inodoro, @importe_demo_quitar_bidet, @importe_demo_quitar_plato_ducha, @importe_demo_quitar_mampara, @importe_demo_quitar_mueble_bano, @importe_demo_quitar_banera, @importe_demo_quitar_mobi_cocina, @importe_demo_retir_electrodomesticos, @importe_demo_friso_madera, @importe_demo_quitar_mueble, @importe_tub_termo_electrico, @importe_tub_radiador, @importe_tub_lavabo, @importe_tub_ducha_banera, @importe_tub_bidet, @importe_tub_inodoro, @importe_tub_colum_hidromasaje, @importe_tub_lavabo_doble, @importe_tub_jacuzzy, @importe_tub_sauna, @importe_tub_ducha_empotrada, @importe_tub_toallero, @importe_tub_reubicar_contador, @importe_tub_lavadora, @importe_tub_reubicar_inodoro, @importe_tub_tipo, @importe_tub_caldera, @importe_tub_fregadero, @importe_tub_lavavajillas, @importe_tub_secadora, @importe_elec_pto_luz_techo, @importe_elec_pto_luz_pared, @importe_elec_interr_simple, @importe_elec_interr_doble, @importe_elec_interr_triple, @importe_elec_enchu_simple, @importe_elec_enchu_doble, @importe_elec_enchu_triple, @importe_elec_reubicar_caja_luz, @importe_elec_toma_lavadora, @importe_elec_toma_ventilador_extractor, @importe_elec_toma_horno_vitroceramica, @importe_elec_toma_microondas, @importe_elec_toma_frigorifico, @importe_elec_toma_lavavajillas, @importe_elec_toma_secadora, @importe_elec_toma_telefono, @importe_alb_azulejo, @importe_alb_tipo_azulejo, @importe_alb_baldosa, @importe_alb_tipo_baldosa, @importe_alb_techo_pladur, @importe_alb_tabique_ladriyeso, @importe_alb_tabique_pladur, @importe_alb_tabique_fabrica, @importe_alb_tabique_paves, @importe_alb_nivelacion_pared, @importe_mont_sani_mampara, @importe_mont_sani_mueble_bano, @importe_mont_sani_banera, @importe_mont_sani_plato_ducha, @importe_mont_sani_bidet, @importe_mont_sani_inodoro_normal, @importe_mont_sani_inodoro_suspendido, @importe_mont_sani_inodoro_encastrado, @importe_mont_sani_grifo_ducha, @importe_mont_sani_grifo_banera, @importe_mont_sani_acceso_atornillado, @importe_mont_sani_colum_hidromasaje, @importe_mont_sani_cabina_ducha, @importe_mont_sani_plato_ducha_obra, @importe_mont_sani_lavabo_pedestal, @importe_mont_electro_mueble_alto_cocina, @importe_mont_electro_mueble_bajo_cocina, @importe_mont_electro_horno_electrico, @importe_mont_electro_placa_vitro, @importe_mont_electro_placa_electrica, @importe_mont_electro_lavadora, @importe_mont_electro_frigorifico, @importe_mont_electro_lavavajillas, @importe_mont_electro_microondas, @importe_mont_electro_secadora, @importe_mont_fregadero, @importe_mont_grifo_fregadero, @importe_colo_pmarcha_termo_elect_a, @importe_colo_pmarcha_termo_elect_b, @importe_colo_pmarcha_termo_elect_c, @importe_colo_pmarcha_termo_elect_d, @importe_colo_pmarcha_termo_elect_e, @importe_colo_pmarcha_termo_elect_f, @importe_colo_pmarcha_calde_atmos, @importe_colo_pmarcha_calde_bajo_nox, @importe_colo_pmarcha_calde_estanca, @importe_techo_pintar, @importe_techo_tipo_pintura, @importe_techo_alisar, @importe_techo_reparar_humedad, @importe_pared_empapelar, @importe_pared_quitar_papel, @importe_pared_alisar, @importe_pared_pintar, @importe_pared_reparar_humedad, @importe_carpin_friso, @importe_puerta_colocar, @importe_puerta_tipo, @importe_puerta_cambio_precerco, @importe_ventana_colocar, @importe_ventana_tipo, @importe_ventana_contraventana %>
+
+              <h3 style="font-weight: 900">Importe = <%= @importe_total.compact.inject(0){|sum,x| sum + x } %>  €</h3>
+
+

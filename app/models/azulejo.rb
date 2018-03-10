@@ -1,0 +1,2 @@
+class Azulejo < ApplicationRecord
+end

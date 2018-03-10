@@ -11,73 +11,159 @@
     </div>
   <% end %>
 
+  <%# f.select(:ventana_tipo, Ventana.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+
+
     <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3>
 
-    <h3> <%= f.text_field :nombre, value: 'cocina', placeholder: "Nueva habitación de Rober", style: "width: 40%; border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>    
+    <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", style: "width: 40%; border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>    
 
     <div class="titulos">
         <ul class="botones">
+
+          <% if params[:bano] == "true" %>
             <li style="" onclick="divVisibility('Div0');">
                 <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
-            </li>            
+            </li>
             <li style="" onclick="divVisibility('Div1');">
                 
                 <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos baño</button>
-
-
-            </li>  
-            <li style="" onclick="divVisibility('Div2');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos cocina</button>
-            </li>
-            <li style="" onclick="divVisibility('Div3');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos salón</button>
-            </li>
-            <li onclick="divVisibility('Div4');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías</button>
             </li>
             <li onclick="divVisibility('Div5');">
                 
                 <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías baño</button>
             </li>
-            <li onclick="divVisibility('Div6');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías cocina</button>
-            </li>
             <li onclick="divVisibility('Div7');">
                 
                 <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
             </li>
-            <li onclick="divVisibility('Div8');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
-            </li>
             <li onclick="divVisibility('Div9');">
                 
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañlería baño</button>
+                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería baño</button>
             </li>
-            <li onclick="divVisibility('Div10');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería Cocina</button>
-            </li>
-            <li onclick="divVisibility('Div11');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
-            </li>
-            <li onclick="divVisibility('Div12');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Caldera</button>
-            </li>
-            <li onclick="divVisibility('Div13');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Pintores</button>
-            </li>
-            <li onclick="divVisibility('Div14');">
-                
-                <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
-            </li>
+          <% else %>
+            <% if params[:cocina] == "true" %>
+              <li style="" onclick="divVisibility('Div0');">
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+              </li>
+              <li style="" onclick="divVisibility('Div2');">
+                  
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos cocina</button>
+              </li>
+              <li onclick="divVisibility('Div6');">
+                  
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías cocina</button>
+              </li>
+              <li onclick="divVisibility('Div7');">
+                  
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+              </li>
+              <li onclick="divVisibility('Div10');">
+                  
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería Cocina</button>
+              </li>
+              <li onclick="divVisibility('Div11');">
+                  
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
+              </li>
+              <li onclick="divVisibility('Div14');">
+                  
+                  <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
+              </li>
+            <% else %>
+              <% if params[:habitacion] == "true" %>
+                <li style="" onclick="divVisibility('Div0');">
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+                </li>
+                <li style="" onclick="divVisibility('Div3');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos salón</button>
+                </li>
+                <li onclick="divVisibility('Div4');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías</button>
+                </li>
+                <li onclick="divVisibility('Div7');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+                </li>
+                <li onclick="divVisibility('Div8');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
+                </li>
+                <li onclick="divVisibility('Div13');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Pintores</button>
+                </li>
+                <li onclick="divVisibility('Div14');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
+                </li>
+              <% else %>
+                <li style="" onclick="divVisibility('Div0');">
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+                </li>
+                <li style="" onclick="divVisibility('Div1');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos baño</button>
+                </li>
+                <li style="" onclick="divVisibility('Div2');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos cocina</button>
+                </li>
+                <li style="" onclick="divVisibility('Div3');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos salón</button>
+                </li>
+                <li onclick="divVisibility('Div4');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías</button>
+                </li>
+                <li onclick="divVisibility('Div5');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías baño</button>
+                </li>
+                <li onclick="divVisibility('Div6');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías cocina</button>
+                </li>
+                <li onclick="divVisibility('Div7');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+                </li>
+                <li onclick="divVisibility('Div8');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
+                </li>
+                <li onclick="divVisibility('Div9');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería baño</button>
+                </li>
+                <li onclick="divVisibility('Div10');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería Cocina</button>
+                </li>
+                <li onclick="divVisibility('Div11');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
+                </li>
+                <li onclick="divVisibility('Div12');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Caldera</button>
+                </li>
+                <li onclick="divVisibility('Div13');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Pintores</button>
+                </li>
+                <li onclick="divVisibility('Div14');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
+                </li>                       
+              <% end %>                     
+            <% end %>                     
+          <% end %>
+
+
                                                                                                                                  
         </ul>        
     </div>
@@ -223,7 +309,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('derribo_tabique.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -558,7 +644,7 @@
                         <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :demo_quitar_mobi_cocina, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;"><%= f.text_field :demo_quitar_mobi_cocina, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "5", type: "number", step: "1" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                       </li>
                       <li id="demo_quitar_mobi_cocina" class="comentario">
                         <h5><%= f.text_area :demo_quitar_mobi_cocina_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
@@ -603,7 +689,7 @@
                         <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :demo_retir_electrodomesticos, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;"><%= f.text_field :demo_retir_electrodomesticos, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "3", type: "number", step: "1" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                       </li>
                       <li id="demo_retir_electrodomesticos" class="comentario">
                         <h5><%= f.text_area :demo_retir_electrodomesticos_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
@@ -735,7 +821,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_termo_electrico') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -872,7 +958,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_ducha_banera') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('fontaneria_bano.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -916,7 +1002,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_bidet') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('fontaneria_bano.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -960,7 +1046,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_inodoro') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('fontaneria_bano.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1004,7 +1090,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_colum_hidromasaje') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('columna_hidromasaje.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1048,7 +1134,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavabo_doble') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('tub_lavabo_doble.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1092,7 +1178,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_jacuzzy') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('jacuzzi.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1137,7 +1223,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_sauna') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('sauna.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1181,7 +1267,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_ducha_empotrada') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('ducha_empotrada.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1226,7 +1312,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_toallero') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('tub_radiador.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1270,7 +1356,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_reubicar_contador') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('contador_agua.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1315,7 +1401,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavadora') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavadora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1359,7 +1445,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_reubicar_inodoro') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('wc.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1404,7 +1490,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_tipo') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('tipo_tuberias.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1544,7 +1630,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavavajillas') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavavajillas.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1589,7 +1675,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_secadora') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('secadora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1639,7 +1725,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_pto_luz_techo') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('luz_techo.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1683,7 +1769,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_pto_luz_pared') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('luz_pared.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1728,7 +1814,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_interr_simple') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('interruptor_simple.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1772,7 +1858,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_interr_doble') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('interruptor_doble.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1817,7 +1903,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_interr_triple') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('interruptor_triple.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1862,7 +1948,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_enchu_simple') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('enchufe_simple.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1907,7 +1993,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_enchu_doble') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('enchufe_doble.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1952,7 +2038,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_enchu_triple') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('enchufe_triple.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1997,7 +2083,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_reubicar_caja_luz') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('caja_registro.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2041,7 +2127,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_lavadora') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavadora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2086,7 +2172,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_ventilador_extractor') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('campana_extractora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2131,7 +2217,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_horno_vitroceramica') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('horno_vitroceramica.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2175,7 +2261,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_microondas') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('microondas.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2219,7 +2305,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_frigorifico') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('frigorifico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2263,7 +2349,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_lavavajillas') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavavajillas.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2308,7 +2394,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_secadora') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('secadora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2353,7 +2439,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_telefono') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('telefono_fijo.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2403,7 +2489,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_azulejo') %>
                         <li>
-                            <%= image_tag(('alicatar_paredes.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('azulejo_pared.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2456,16 +2542,31 @@
                         </div>
                       </li>
                       <li>
-                        <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                        <div class="description">
+                          <h5 style="font-weight: 600;">
+                          <% if @habitacion.alb_tipo_azulejo? %>
+                            <% @azulejo = Azulejo.find(@habitacion.alb_tipo_azulejo) %>
+                            <%= @azulejo.description %>
+                          <% end %>
+                          </h5>
+                        </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :alb_tipo_azulejo, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;">
+                          <% if @habitacion.alb_tipo_azulejo != nil %>
+                            <%= f.collection_select :alb_tipo_azulejo, Azulejo.order(:name), :id, :description %><span style="margin-left: -60px;"></span> 
+                          <% else %>
+                            <%= f.collection_select :alb_tipo_azulejo, Azulejo.order(:name), :id, :description, include_blank: "Selecciona tu azulejo" %>
+                          <% end %>
+                        </h5
                       </li>
                       <li id="alb_tipo_azulejo" class="comentario">
                         <h5><%= f.text_area :alb_tipo_azulejo_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
                       </li>
                       <li class="precio_medio">
-                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD2 = <b><% if @azulejo != nil %>
+                            <%= @azulejo.precio %>
+                          <% end %> €/m2</b></h5>
                       </li>
                         <li class="iconos">
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -2491,7 +2592,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_baldosa') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('colocar_baldosa.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2536,7 +2637,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tipo_baldosa') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('colocar_baldosa4.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2545,16 +2646,31 @@
                         </div>
                       </li>
                       <li>
-                        <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                        <div class="description">
+                          <h5 style="font-weight: 600;">
+                          <% if @habitacion.alb_tipo_baldosa? %>
+                            <% @pavimento = Pavimento.find(@habitacion.alb_tipo_baldosa) %>
+                            <%= @pavimento.description %>
+                          <% end %>
+                          </h5>
+                        </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :alb_tipo_baldosa, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;">
+                          <% if @habitacion.alb_tipo_baldosa != nil %>
+                            <%= f.collection_select :alb_tipo_baldosa, Pavimento.order(:name), :id, :description %><span style="margin-left: -60px;"></span> 
+                          <% else %>
+                            <%= f.collection_select :alb_tipo_baldosa, Pavimento.order(:name), :id, :description, include_blank: "Selecciona tu baldosa" %>
+                          <% end %>
+                        </h5
                       </li>
                       <li id="alb_tipo_baldosa" class="comentario">
                         <h5><%= f.text_area :alb_tipo_baldosa_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
                       </li>
                       <li class="precio_medio">
-                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD2 = <b><% if @pavimento != nil %>
+                            <%= @pavimento.precio %>
+                          <% end %> €/m2</b></h5>
                       </li>
                         <li class="iconos">
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -2580,7 +2696,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_techo_pladur') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('falso_techo.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2624,7 +2740,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_ladriyeso') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('tabique_fabrica_yeso.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2668,7 +2784,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_pladur') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('pared_pladur.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2712,7 +2828,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_fabrica') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('tabique_fabrica.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2756,7 +2872,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_paves') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('tabique_paves.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2801,7 +2917,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_nivelacion_pared') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('nivelar_pared.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2844,14 +2960,14 @@
         </div>
 
         <div id="Div9" style="display: none;">
-            <h3 style="font-weight: bold;">Albañlería baño</h3>
+            <h3 style="font-weight: bold;">Albañilería baño</h3>
             <ul class="lista_principal" style="">
 
                 <li>
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_mampara') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('mampara_bano.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2896,7 +3012,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_mueble_bano') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('mueble_bano2.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2941,7 +3057,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_banera') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('banera.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2986,7 +3102,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_plato_ducha') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('plato_ducha.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3031,7 +3147,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_bidet') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3076,7 +3192,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_inodoro_normal') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('wc.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3121,7 +3237,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_inodoro_suspendido') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('inodoro_suspendido.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3166,7 +3282,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_inodoro_encastrado') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('inodoro_encastrado.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3211,7 +3327,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_grifo_ducha') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('grifo_ducha.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3256,7 +3372,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_grifo_banera') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('grifo_banera.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3301,7 +3417,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_acceso_atornillado') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('acc_atornillado.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3346,7 +3462,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_colum_hidromasaje') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('columna_hidromasaje.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3391,7 +3507,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_cabina_ducha') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('cabina_ducha.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3436,7 +3552,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_plato_ducha_obra') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('plato_ducha_obra.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3481,7 +3597,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_lavabo_pedestal') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavabo_pedestal.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3576,7 +3692,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_mueble_bajo_cocina') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('muebles_cocina.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3620,7 +3736,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_horno_electrico') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('muebles_cocina.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3664,7 +3780,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_placa_vitro') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('vitroceramica.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3709,7 +3825,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_placa_electrica') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('placa_electrica.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3753,7 +3869,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_lavadora') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavadora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3798,7 +3914,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_frigorifico') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('frigorifico.jpg'), class: "img-responsive") %>
                         </li>
                           <li class="nombre">
                         <div class="nombre">
@@ -3843,7 +3959,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_lavavajillas') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('lavavajillas.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3888,7 +4004,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_microondas') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('microondas.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3933,7 +4049,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_secadora') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('secadora.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3978,7 +4094,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_fregadero') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('fregadero.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4023,7 +4139,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_grifo_fregadero') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('mont_grifo_fregadero.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4072,7 +4188,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_a') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4117,7 +4233,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_b') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4162,7 +4278,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_c') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4207,7 +4323,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_d') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                          <li class="nombre">
                         <div class="nombre">
@@ -4252,7 +4368,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_e') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4297,7 +4413,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_f') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4575,7 +4691,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'techo_alisar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('pared_alisar.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4620,7 +4736,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'techo_reparar_humedad') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('reparar_humedad_techo.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4665,7 +4781,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_empapelar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('papel_pared2.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4710,7 +4826,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_quitar_papel') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('papel_pared2.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4755,7 +4871,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_alisar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('pared_alisar.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4845,7 +4961,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_reparar_humedad') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('reparar_humedad_techo.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4939,7 +5055,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'puerta_colocar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('colocar_puerta.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4951,7 +5067,7 @@
                         <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :puerta_colocar, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;"><%= f.text_field :puerta_colocar, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "3", type: "number", step: "1" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                       </li>
                       <li id="puerta_colocar" class="comentario">
                         <h5><%= f.text_area :puerta_colocar_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
@@ -4984,7 +5100,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'puerta_tipo') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('puerta.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4993,16 +5109,32 @@
                         </div>
                       </li>
                       <li>
-                        <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+
+                        <div class="description">
+                          <h5 style="font-weight: 600;">
+                          <% if @habitacion.puerta_tipo? %>
+                            <% @puerta = Puerta.find(@habitacion.puerta_tipo) %>
+                            <%= @puerta.name %>
+                          <% end %>
+                          </h5>
+                        </div>
                       </li>
-                      <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :puerta_tipo, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                      <li class="field" style="padding-right: 10px;">
+                        <h5 style="font-weight: bolder;">
+                          <% if @habitacion.puerta_tipo != nil %>
+                            <%= f.collection_select :puerta_tipo, Puerta.order(:name), :id, :name %><span style="margin-left: -60px;"></span> 
+                          <% else %>
+                            <%= f.collection_select :puerta_tipo, Puerta.order(:name), :id, :name, include_blank: "Selecciona tu puerta" %>
+                          <% end %>
+                        </h5>
                       </li>
                       <li id="puerta_tipo" class="comentario">
                         <h5><%= f.text_area :puerta_tipo_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
                       </li>
                       <li class="precio_medio">
-                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD2 = <b><% if @puerta != nil %>
+                        <%= @puerta.precio %>
+                        <% end %> €/ud</b></h5>
                       </li>
                         <li class="iconos">
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -5041,7 +5173,7 @@
                         <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :puerta_cambio_precerco, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;"><%= f.text_field :puerta_cambio_precerco, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "4", type: "number", step: "1" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                       </li>
                       <li id="puerta_cambio_precerco" class="comentario">
                         <h5><%= f.text_area :puerta_cambio_precerco_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
@@ -5074,7 +5206,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'ventana_colocar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('colocar_ventana.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5086,7 +5218,7 @@
                         <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :ventana_colocar, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;"><%= f.text_field :ventana_colocar, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "3", type: "number", step: "1" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                       </li>
                       <li id="ventana_colocar" class="comentario">
                         <h5><%= f.text_area :ventana_colocar_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
@@ -5119,7 +5251,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'ventana_tipo') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('ventana_abierta.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5128,16 +5260,32 @@
                         </div>
                       </li>
                       <li>
-                        <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                        <div class="description" style="max-height: 55px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
-                      <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :ventana_tipo, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                      <li class="field" style="padding-right: 10px;">
+                        <h5 style="font-weight: bolder;">
+                          <% if @habitacion.ventana_tipo? %>
+                            <% @ventana = Ventana.find(@habitacion.ventana_tipo) %>
+                            <%= @ventana.name %>
+                          <% end %>
+                        </h5>
+                        <h5 style="font-weight: bolder;">
+                          <% if @habitacion.puerta_tipo != nil %>
+                            <%= f.collection_select :ventana_tipo, Puerta.order(:name), :id, :name %><span style="margin-left: -60px;"></span> 
+                          <% else %>
+                            <%= f.collection_select :ventana_tipo, Puerta.order(:name), :id, :name, include_blank: "Selecciona tu puerta" %>
+                          <% end %>                          
+                        </h5>
                       </li>
                       <li id="ventana_tipo" class="comentario">
-                        <h5><%= f.text_area :ventana_tipo_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
+                        <h5><%= f.text_area :ventana_tipo_comment, style: "padding: 10px; color: #444; font-weight: 600;", placeholder: "Añade algún comentario..." %></h5>
                       </li>
                       <li class="precio_medio">
-                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                        <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b>
+                          <% if @ventana != nil %>
+                          <%= @ventana.precio %> €/ud
+                          <% end %>
+                        </b></h5>
                       </li>
                         <li class="iconos">
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -5164,7 +5312,7 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'ventana_contraventana') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                            <%= image_tag(('ventana.jpg'), class: "img-responsive") %>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5176,7 +5324,7 @@
                         <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
                       </li>
                       <li class="field">
-                        <h5 style="font-weight: bolder;"><%= f.text_field :ventana_contraventana, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
+                        <h5 style="font-weight: bolder;"><%= f.text_field :ventana_contraventana, style: "width: 80%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "5", type: "number", step: "1" %> <span style="margin-left: -60px;">(<%= @task.um if @task.um != nil %>)</span> </h5>
                       </li>
                       <li id="ventana_contraventana" class="comentario">
                         <h5><%= f.text_area :ventana_contraventana_comment, style: "padding: 10px; color: #444;", placeholder: "Añade algún comentario..." %></h5>
@@ -5213,7 +5361,7 @@
 
   <div class="actions">
     <%# f.submit "Ya he revisado todas las partidas, Enviar", class: "btn bt-sm btn-info", style: "background-color: white; color: #46b8da; padding: 10px; font-weight: bolder; border-radius: 10px;" %>
-    <h5><input type="button" value="Send" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: bolder; border-radius: 15px;" /></h5>
+    <h5 style=""><input type="button" value="Send" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px;"></h5>
   </div>
   
 <% end %>
