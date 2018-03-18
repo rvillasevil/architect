@@ -218,23 +218,23 @@
                             <h5 style="color: #666; font-weight: bolder;"><h5><%= @habitacion.demo_quitar_baldosa_comment %></h5></h5>
                           </li>
                           <% end %>
-                            <li class="iconos">
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                          <li class="iconos">
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
-                                
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= @task.mat_incluido if @task.mat_incluido != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= @task.fases if @task.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= @task.cond_terminacion if @task.cond_terminacion != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <% if @task.mat_aportar != nil %>
-                                <div style="float: right;">
-                                    <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
-                                </div>
-                                <% end %>
-                            </li>
+                              <% if @task.mat_aportar != nil %>
+                              <div style="float: right;">
+                                  <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= @task.mat_aportar if @task.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                              </div>
+                              <% end %>
+                          </li>
                         </ul>        
                     </li>
                     <% end %>
@@ -5517,7 +5517,7 @@
                     <% end %>
 
 
-                    <% if  @habitacion.techo_tipo_pintura != nil %>
+                    <% if @habitacion.techo_tipo_pintura != nil %>
                     <li>
                         <ul class="elemento">
                             <% @task = Task.find_by(task: 'techo_tipo_pintura') %>
@@ -6356,7 +6356,7 @@
 
               <% @importe_total = @importe_demo_quitar_azulejo, @importe_demo_quitar_baldosa, @importe_demo_quitar_falso_techo, @importe_demo_quitar_tabique, @importe_demo_quitar_inodoro, @importe_demo_quitar_bidet, @importe_demo_quitar_plato_ducha, @importe_demo_quitar_mampara, @importe_demo_quitar_mueble_bano, @importe_demo_quitar_banera, @importe_demo_quitar_mobi_cocina, @importe_demo_retir_electrodomesticos, @importe_demo_friso_madera, @importe_demo_quitar_mueble, @importe_tub_termo_electrico, @importe_tub_radiador, @importe_tub_lavabo, @importe_tub_ducha_banera, @importe_tub_bidet, @importe_tub_inodoro, @importe_tub_colum_hidromasaje, @importe_tub_lavabo_doble, @importe_tub_jacuzzy, @importe_tub_sauna, @importe_tub_ducha_empotrada, @importe_tub_toallero, @importe_tub_reubicar_contador, @importe_tub_lavadora, @importe_tub_reubicar_inodoro, @importe_tub_tipo, @importe_tub_caldera, @importe_tub_fregadero, @importe_tub_lavavajillas, @importe_tub_secadora, @importe_elec_pto_luz_techo, @importe_elec_pto_luz_pared, @importe_elec_interr_simple, @importe_elec_interr_doble, @importe_elec_interr_triple, @importe_elec_enchu_simple, @importe_elec_enchu_doble, @importe_elec_enchu_triple, @importe_elec_reubicar_caja_luz, @importe_elec_toma_lavadora, @importe_elec_toma_ventilador_extractor, @importe_elec_toma_horno_vitroceramica, @importe_elec_toma_microondas, @importe_elec_toma_frigorifico, @importe_elec_toma_lavavajillas, @importe_elec_toma_secadora, @importe_elec_toma_telefono, @importe_alb_azulejo, @importe_alb_tipo_azulejo, @importe_alb_baldosa, @importe_alb_tipo_baldosa, @importe_alb_techo_pladur, @importe_alb_tabique_ladriyeso, @importe_alb_tabique_pladur, @importe_alb_tabique_fabrica, @importe_alb_tabique_paves, @importe_alb_nivelacion_pared, @importe_mont_sani_mampara, @importe_mont_sani_mueble_bano, @importe_mont_sani_banera, @importe_mont_sani_plato_ducha, @importe_mont_sani_bidet, @importe_mont_sani_inodoro_normal, @importe_mont_sani_inodoro_suspendido, @importe_mont_sani_inodoro_encastrado, @importe_mont_sani_grifo_ducha, @importe_mont_sani_grifo_banera, @importe_mont_sani_acceso_atornillado, @importe_mont_sani_colum_hidromasaje, @importe_mont_sani_cabina_ducha, @importe_mont_sani_plato_ducha_obra, @importe_mont_sani_lavabo_pedestal, @importe_mont_electro_mueble_alto_cocina, @importe_mont_electro_mueble_bajo_cocina, @importe_mont_electro_horno_electrico, @importe_mont_electro_placa_vitro, @importe_mont_electro_placa_electrica, @importe_mont_electro_lavadora, @importe_mont_electro_frigorifico, @importe_mont_electro_lavavajillas, @importe_mont_electro_microondas, @importe_mont_electro_secadora, @importe_mont_fregadero, @importe_mont_grifo_fregadero, @importe_colo_pmarcha_termo_elect_a, @importe_colo_pmarcha_termo_elect_b, @importe_colo_pmarcha_termo_elect_c, @importe_colo_pmarcha_termo_elect_d, @importe_colo_pmarcha_termo_elect_e, @importe_colo_pmarcha_termo_elect_f, @importe_colo_pmarcha_calde_atmos, @importe_colo_pmarcha_calde_bajo_nox, @importe_colo_pmarcha_calde_estanca, @importe_techo_pintar, @importe_techo_tipo_pintura, @importe_techo_alisar, @importe_techo_reparar_humedad, @importe_pared_empapelar, @importe_pared_quitar_papel, @importe_pared_alisar, @importe_pared_pintar, @importe_pared_reparar_humedad, @importe_carpin_friso, @importe_puerta_colocar, @importe_puerta_tipo, @importe_puerta_cambio_precerco, @importe_ventana_colocar, @importe_ventana_tipo, @importe_ventana_contraventana %>
 
-              <h1>Importe = <%=  @cost = @importe_total.compact.inject(0){|sum,x| sum + x } %>  €</h1>
+              <h1>Importe estimado = <%=  @cost = @importe_total.compact.inject(0){|sum,x| sum + x } %>  €</h1>
 
               <h5><%= link_to "Volver al proyecto", reform_path(id: params[:reform_id]) %></h5>
 

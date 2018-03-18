@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
   def account_activation(user)
     @user = user
     mail to: user.email, subject: "Account activation"
-    mail to: 'rvillasevil@gmail.com', subjet: "Activacion de cuenta"
+    mail to: 'constructux@constructux.com', subjet: "Activacion de cuenta"
   end
 
   def password_reset(user)

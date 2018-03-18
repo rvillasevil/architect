@@ -88,7 +88,6 @@
         <div class="container-fluid" style="background-color: white; margin-top: 80px; margin-bottom: 150px;">
           <h1 style="font-weight: lighter;">La mejor manera de reformar o construir tu vivienda.</h1>
           <h1 style="line-height: 40px; font-weight: bolder;">Devolver el control del diseño y la obra a sus usuarios.</h1>
-          <h3 style="line-height: 22px; font-weight: lighter;"> ¿Cómo sería el mundo si lo gobernasemos nosotros?</h3>
 
           <div class="wrapper">
             <%= link_to "Sign up now!", signup_path(empresa: false), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
@@ -96,9 +95,15 @@
             <%= link_to "¿Ya eres usuario?", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4;" %>
           </div>
 
+          <div class="wrapper">
+            <h3>¿Quieres probar a crear tu primer proyecto?</h3>
+            <%= link_to "Crea tu primer proyecto", new_habitacion_path, class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #ff5050; color: #ff5050;" %>
+          </div>          
+
           <div class="wrapper" style="margin-top: 100px;">
             <h3>¿Eres una empresa del sector de la construcción y te gustaría trabajar con nosotros?</h3>
-            <%= link_to "Participa!", signup_path(empresa: true), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
+            <%# link_to "Participa!", signup_path(empresa: true), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
+            <h5>Mándanos un correo a la siguiente dirección y en breve nos pondremos en contacto.</h5>
           </div>
 
         </div>

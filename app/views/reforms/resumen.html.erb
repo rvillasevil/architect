@@ -63,7 +63,17 @@
                                 <h5 style="font-weight: 300; color: grey;">Precio medio = <%= @task.importe if @task.importe != nil %> €/<%= @task.um %></h5>
                               </li>
                               <li class="importe">
-                                <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_azulejo = (@task.importe * habitacion.demo_quitar_azulejo) %> €</h3>
+                                <% if @task.importe != nil %>
+                                <h3 style="margin: 0px;">Importe: <%= @importe_habitacion_demo_quitar_azulejo = (@task.importe * habitacion.demo_quitar_azulejo ) %> €</h3>
+                                <% end %>
+                              </li>
+                              <% if @task.mat_aportar != nil %>
+                                <li class="mat_aportar">
+                                    Materiales necesarios: <%= @task.mat_aportar %>
+                                </li>
+                              <% end %>
+                              <li class="comentario">
+                                <%=habitacion.demo_quitar_azulejo_comment if habitacion.demo_quitar_azulejo_comment != nil %>
                               </li>
                             </ul>
                           </li>
@@ -96,6 +106,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.demo_quitar_baldosa_comment if habitacion.demo_quitar_baldosa_comment != nil %>
+                                </li>
                               </ul>        
                           </li>
                           <% end %>
@@ -127,6 +140,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.demo_quitar_falso_techo_comment if habitacion.demo_quitar_falso_techo_comment != nil %>
+                                </li>
                               </ul>        
                           </li>
                           <% end %> 
@@ -158,6 +174,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.demo_quitar_tabique_comment if habitacion.demo_quitar_tabique_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -200,6 +219,9 @@
                                   Materiales necesarios: <%= @task.mat_aportar %>
                               </li>
                             <% end %>
+                            <li class="comentario">
+                              <%=habitacion.demo_quitar_inodoro_comment if habitacion.demo_quitar_inodoro_comment != nil %>
+                            </li>
                           </ul>
                         </li>
                         <% end %>  
@@ -231,6 +253,9 @@
                                     Materiales necesarios: <%= @task.mat_aportar %>
                                 </li>
                               <% end %>
+                              <li class="comentario">
+                                <%=habitacion.demo_quitar_bidet_comment if habitacion.demo_quitar_bidet_comment != nil %>
+                              </li>
                             </ul>
                         </li>
                         <% end %> 
@@ -262,6 +287,9 @@
                                     Materiales necesarios: <%= @task.mat_aportar %>
                                 </li>
                               <% end %>
+                              <li class="comentario">
+                                <%=habitacion.demo_quitar_plato_ducha_comment if habitacion.demo_quitar_plato_ducha_comment != nil %>
+                              </li>
                             </ul>
                         </li>
                         <% end %>  
@@ -293,6 +321,9 @@
                                     Materiales necesarios: <%= @task.mat_aportar %>
                                 </li>
                               <% end %>
+                              <li class="comentario">
+                                <%=habitacion.demo_quitar_mampara_comment if habitacion.demo_quitar_mampara_comment != nil %>
+                              </li>
                             </ul>
                         </li>
                         <% end %> 
@@ -324,6 +355,9 @@
                                     Materiales necesarios: <%= @task.mat_aportar %>
                                 </li>
                               <% end %>
+                              <li class="comentario">
+                                <%=habitacion.demo_quitar_mueble_bano_comment if habitacion.demo_quitar_mueble_bano_comment != nil %>
+                              </li>
                             </ul>
                         </li>
                         <% end %> 
@@ -355,6 +389,9 @@
                                     Materiales necesarios: <%= @task.mat_aportar %>
                                 </li>
                               <% end %>
+                              <li class="comentario">
+                                <%=habitacion.demo_quitar_banera_comment if habitacion.demo_quitar_banera_comment != nil %>
+                              </li>
                             </ul>
                         </li>
                         <% end %>
@@ -396,7 +433,8 @@
                           <li>
                               <ul class="elemento">
                                   <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>
-                                
+                                habitacion.demo_quitar_mobi_cocina_comment if habitacion.demo_quitar_mobi_cocina_comment != nil %>
+                              </ul>
                                 <li>
                                   <h5 style="font-weight: 700; font-size: 16px;"><%= @task.nombre %></h5>
                                 </li>
@@ -419,6 +457,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.demo_retir_electrodomesticos_comment if habitacion.demo_retir_electrodomesticos_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -458,6 +499,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.demo_friso_madera_comment if habitacion.demo_friso_madera_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -489,6 +533,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.demo_quitar_mueble_comment if habitacion.demo_quitar_mueble_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -528,6 +575,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_termo_electrico_comment if habitacion.tub_termo_electrico_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -559,6 +609,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_radiador_comment if habitacion.tub_radiador_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -598,6 +651,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_lavabo_comment if habitacion.tub_lavabo_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -629,6 +685,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_ducha_banera_comment if habitacion.tub_ducha_banera_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -660,6 +719,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_bidet_comment if habitacion.tub_bidet_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -691,6 +753,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_inodoro_comment if habitacion.tub_inodoro_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -722,6 +787,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_colum_hidromasaje_comment if habitacion.tub_colum_hidromasaje_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -753,6 +821,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_lavabo_doble_comment if habitacion.tub_lavabo_doble_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -784,6 +855,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                    </li>
                                  <% end %>
+                                 <li class="comentario">
+                                  <%= habitacion.tub_jacuzzy_comment if habitacion.tub_jacuzzy_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -815,6 +889,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_sauna_comment if habitacion.tub_sauna_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -846,6 +923,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_ducha_empotrada_comment if habitacion.tub_ducha_empotrada_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -877,6 +957,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_toallero_comment if habitacion.tub_toallero_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -908,6 +991,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_reubicar_contador_comment if habitacion.tub_reubicar_contador_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -939,6 +1025,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_lavadora_comment if habitacion.tub_lavadora_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -970,6 +1059,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_reubicar_inodoro_comment if habitacion.tub_reubicar_inodoro_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1001,6 +1093,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_tipo_comment if habitacion.tub_tipo_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -1032,6 +1127,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_caldera_comment if habitacion.tub_caldera_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1071,6 +1169,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_fregadero_comment if habitacion.tub_fregadero_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1103,6 +1204,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_lavavajillas_comment if habitacion.tub_lavavajillas_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1135,6 +1239,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.tub_secadora_comment if habitacion.tub_secadora_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1190,6 +1297,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_pto_luz_techo_comment if habitacion.elec_pto_luz_techo_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -1221,6 +1331,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_pto_luz_pared_comment if habitacion.elec_pto_luz_pared_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1252,6 +1365,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_interr_simple_comment if habitacion.elec_interr_simple_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1283,6 +1399,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_interr_doble_comment if habitacion.elec_interr_doble_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1314,6 +1433,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_interr_triple_comment if habitacion.elec_interr_triple_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1345,6 +1467,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_enchu_simple_comment if habitacion.elec_enchu_simple_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1376,6 +1501,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_enchu_doble_comment if habitacion.elec_enchu_doble_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1407,6 +1535,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_enchu_triple_comment if habitacion.elec_enchu_triple_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1438,6 +1569,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_reubicar_caja_luz_comment if habitacion.elec_reubicar_caja_luz_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -1469,6 +1603,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_lavadora_comment if habitacion.elec_toma_lavadora_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1500,6 +1637,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_ventilador_extractor_comment if habitacion.elec_toma_ventilador_extractor_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1531,6 +1671,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_horno_vitroceramica_comment if habitacion.elec_toma_horno_vitroceramica_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -1562,6 +1705,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_microondas_comment if habitacion.elec_toma_microondas_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -1593,6 +1739,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_frigorifico_comment if habitacion.elec_toma_frigorifico_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -1624,6 +1773,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_lavavajillas_comment if habitacion.elec_toma_lavavajillas_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1655,6 +1807,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_secadora_comment if habitacion.elec_toma_secadora_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1686,6 +1841,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.elec_toma_telefono_comment if habitacion.elec_toma_telefono_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1734,6 +1892,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_azulejo_comment if habitacion.alb_azulejo_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1765,6 +1926,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_tipo_azulejo_comment if habitacion.alb_tipo_azulejo_comment != nil %>
+                                </li>
                               </ul>
                           </li> 
                           <% end %>
@@ -1796,6 +1960,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_baldosa_comment if habitacion.alb_baldosa_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -1828,6 +1995,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_tipo_baldosa_comment if habitacion.alb_tipo_baldosa_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -1859,6 +2029,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_techo_pladur_comment if habitacion.alb_techo_pladur_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -1890,6 +2063,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_tabique_ladriyeso_comment if habitacion.alb_tabique_ladriyeso_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -1921,6 +2097,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_tabique_pladur_comment if habitacion.alb_tabique_pladur_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -1952,6 +2131,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_tabique_fabrica_comment if habitacion.alb_tabique_fabrica_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -1983,6 +2165,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_tabique_paves_comment if habitacion.alb_tabique_paves_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2015,6 +2200,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.alb_nivelacion_pared_comment if habitacion.alb_nivelacion_pared_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2067,6 +2255,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_mampara_comment if habitacion.mont_sani_mampara_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2099,6 +2290,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_mueble_bano_comment if habitacion.mont_sani_mueble_bano_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>  
@@ -2130,6 +2324,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_banera_comment if habitacion.mont_sani_banera_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2162,6 +2359,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_plato_ducha_comment if habitacion.mont_sani_plato_ducha_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2194,6 +2394,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_bidet_comment if habitacion.mont_sani_bidet_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2226,6 +2429,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_inodoro_normal_comment if habitacion.mont_sani_inodoro_normal_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2258,6 +2464,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_inodoro_suspendido_comment if habitacion.mont_sani_inodoro_suspendido_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2290,6 +2499,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_inodoro_encastrado_comment if habitacion.mont_sani_inodoro_encastrado_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2322,6 +2534,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_grifo_ducha_comment if habitacion.mont_sani_grifo_ducha_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2354,6 +2569,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_grifo_banera_comment if habitacion.mont_sani_grifo_banera_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2386,6 +2604,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_acceso_atornillado_comment if habitacion.mont_sani_acceso_atornillado_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2418,6 +2639,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_colum_hidromasaje_comment if habitacion.mont_sani_colum_hidromasaje_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2450,6 +2674,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_cabina_ducha_comment if habitacion.mont_sani_cabina_ducha_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2482,6 +2709,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_plato_ducha_obra_comment if habitacion.mont_sani_plato_ducha_obra_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2514,6 +2744,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_sani_lavabo_pedestal_comment if habitacion.mont_sani_lavabo_pedestal_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2564,6 +2797,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_mueble_alto_cocina_comment if habitacion.mont_electro_mueble_alto_cocina_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2596,6 +2832,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_mueble_bajo_cocina_comment if habitacion.mont_electro_mueble_bajo_cocina_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -2627,6 +2866,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_horno_electrico_comment if habitacion.mont_electro_horno_electrico_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -2658,6 +2900,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_placa_vitro_comment if habitacion.mont_electro_placa_vitro_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2690,6 +2935,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_placa_electrica_comment if habitacion.mont_electro_placa_electrica_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %> 
@@ -2722,6 +2970,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_lavadora_comment if habitacion.mont_electro_lavadora_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2754,6 +3005,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_frigorifico_comment if habitacion.mont_electro_frigorifico_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2786,6 +3040,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_lavavajillas_comment if habitacion.mont_electro_lavavajillas_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2818,6 +3075,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_microondas_comment if habitacion.mont_electro_microondas_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2850,6 +3110,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_electro_secadora_comment if habitacion.mont_electro_secadora_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2882,6 +3145,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_fregadero_comment if habitacion.mont_fregadero_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2914,6 +3180,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.mont_grifo_fregadero_comment if habitacion.mont_grifo_fregadero_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2958,6 +3227,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_termo_elect_a_comment if habitacion.colo_pmarcha_termo_elect_a_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -2990,6 +3262,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_termo_elect_b_comment if habitacion.colo_pmarcha_termo_elect_b_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3022,6 +3297,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_termo_elect_c_comment if habitacion.colo_pmarcha_termo_elect_c_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3054,6 +3332,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_termo_elect_d_comment if habitacion.colo_pmarcha_termo_elect_d_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3086,6 +3367,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_termo_elect_e_comment if habitacion.colo_pmarcha_termo_elect_e_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3118,6 +3402,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_termo_elect_f_comment if habitacion.colo_pmarcha_termo_elect_f_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3157,6 +3444,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_calde_atmos_comment if habitacion.colo_pmarcha_calde_atmos_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3189,6 +3479,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_calde_bajo_nox_comment if habitacion.colo_pmarcha_calde_bajo_nox_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3221,6 +3514,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.colo_pmarcha_calde_estanca_comment if habitacion.colo_pmarcha_calde_estanca_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3261,6 +3557,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.techo_pintar_comment if habitacion.techo_pintar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3293,6 +3592,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.techo_tipo_pintura_comment if habitacion.techo_tipo_pintura_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3325,6 +3627,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.techo_alisar_comment if habitacion.techo_alisar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3357,6 +3662,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.techo_reparar_humedad_comment if habitacion.techo_reparar_humedad_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3389,6 +3697,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.pared_empapelar_comment if habitacion.pared_empapelar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3421,6 +3732,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.pared_quitar_papel_comment if habitacion.pared_quitar_papel_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3453,6 +3767,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.pared_alisar_comment if habitacion.pared_alisar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3485,6 +3802,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.pared_pintar_comment if habitacion.pared_pintar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3517,6 +3837,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.pared_reparar_humedad_comment if habitacion.pared_reparar_humedad_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3549,6 +3872,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.carpin_friso_comment if habitacion.carpin_friso_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3589,6 +3915,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.puerta_colocar_comment if habitacion.puerta_colocar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3621,6 +3950,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.puerta_tipo_comment if habitacion.puerta_tipo_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3653,6 +3985,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.puerta_cambio_precerco_comment if habitacion.puerta_cambio_precerco_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3685,6 +4020,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.ventana_colocar_comment if habitacion.ventana_colocar_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3717,6 +4055,9 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                  <%= habitacion.ventana_tipo_comment if habitacion.ventana_tipo_comment != nil %>
+                                </li>
                               </ul>
                           </li>
                           <% end %>
@@ -3748,7 +4089,11 @@
                                       Materiales necesarios: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
+                                <li class="comentario">
+                                   <%=habitacion.ventana_contraventana_comment if habitacion.ventana_contraventana_comment != nil %>
+                                </li>
                               </ul>
+
                           </li>
                           <% end %>
                       </ul>
@@ -3799,7 +4144,7 @@
               </div>
 
               <% if @habitacion != nil %>
-                <h1>Coste de la reforma = <%= @budget %> €</h1>
+                <h1>Coste estimado de tu proyecto = <%= @budget %> €</h1>
               <% else %>
                 <h3>Aún no se ha creado ninguna estancia</h3>
               <% end %>              

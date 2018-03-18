@@ -6,13 +6,13 @@
             <li class="dropdown" style="width: 80%;">
               <%= link_to root_path do %>
                 <div class="logo" style="display: inline-flex; align-items: center;">
-                  <h3 style="font-size: 22px; font-weight: 900; font-family: 'Open Sans'; margin: 0px; color: #555; letter-spacing: -1.5px;"><i class="fa fa-university fa-lg" aria-hidden="true" style="font-size: 18px;"></i>&nbsp;&nbsp; Constructor</h3>
+                  <h3 style="font-size: 22px; font-weight: 900; font-family: 'Open Sans'; margin: 0px; color: #555; letter-spacing: -1.5px;"><i class="fa fa-building fa-lg" aria-hidden="true" style="font-size: 18px;"></i>&nbsp;&nbsp; ConstructUX</h3>
                 </div>
               <% end %>               
             </li>
 
             <li class="dropdown">
-              <%= link_to '/petitions' do %>
+              <%# link_to '/petitions' do %>
                 <div>
                   <% @votos_petitions = Vote.where(micropost_id: current_user.feed_petition).where(user_id: current_user).count %>
                   <% @pendientes = current_user.feed_petition.count - @votos_petitions %>
@@ -42,22 +42,30 @@
                             <b><%= @pendientes %></b>
                       </div>
                     <% end %>
-                    <span class="icon"> Consultas</span>
+                    <span class="icon"> Mensajes</span>
                   </div>                  
                 </div>
-              <% end %>
+              <%# end %>
             </li>
             <li class="dropdown" style="">
-              <%= link_to root_path do %>
+              <div class="icon_mobile">
+                <%= link_to reforms_path do %>
+                  <div class="glyphicon glyphicon-briefcase" style="font-size: 20px; color: #666;"></div>
+                <% end %>
+              </div>                                   
+            
+              <%= link_to reforms_path do %>
+              <div class="icon_web">
+                <div class="glyphicon glyphicon-briefcase" style="font-size: 16px; color: #666;"></div>
                 <div class="logo" style="display: inline-flex; align-items: center;">
-                  <span class="icon"> Feed principal</span>
-                </div>
+                  <span class="icon"> Tus Proyectos</span>
+              </div>
               <% end %>               
             </li>            
             <li class="dropdown"> 
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">&nbsp;
                   <div class="icon_mobile" style="display: inline-flex;">
-                    <i class="fa fa-user fa-lg" aria-hidden="true" style=" margin-top: 5px;"></i>
+                    <i class="fa fa-user fa-lg" aria-hidden="true" style=" margin-top: 5px; color: #666;"></i>
                     &nbsp;<span class="icon"> Perfil</span><b class="caret" style="display: inline-flex;  margin-top: 10px;"></b>
                   </div>
               </a>

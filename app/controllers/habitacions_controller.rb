@@ -32,15 +32,19 @@ class HabitacionsController < ApplicationController
   # POST /habitacions.json
   def create
     @habitacion = Habitacion.new(habitacion_params)
-
-    respond_to do |format|
-      if @habitacion.save
-        format.html { redirect_to reform_habitacion_path(id: @habitacion, reform_id: @habitacion.reform_id), notice: 'Habitacion was successfully created.' }
-        format.json { render :show, status: :created, location: @habitacion }
-      else
-        format.html { redirect_back(fallback_location: reform_path(id: @habitacion.reform_id), notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
-        format.json { render json: @habitacion.errors, status: :unprocessable_entity }
+    @reform = Reform.find_by(id: params[:reform_id])
+    if logged_in?
+      respond_to do |format|
+        if @habitacion.save
+          format.html { redirect_to reform_habitacion_path(id: @habitacion, reform_id: @habitacion.reform_id), notice: 'Habitacion was successfully created.' }
+          format.json { render :show, status: :created, location: @habitacion }
+        else
+          format.html { redirect_back(fallback_location: reform_path(id: @habitacion.reform_id), notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
+          format.json { render json: @habitacion.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to signup_path
     end
   end
 

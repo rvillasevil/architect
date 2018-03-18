@@ -23,7 +23,7 @@
     </div>
 
     <div class="field">
-      <h3>Añade alguna foto para la partida</h3>
+      <h3>Añade alguna foto para la partida, una foto de referencia</h3>
       <h5><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %></h5>
     </div>    
 
@@ -39,7 +39,7 @@
 
     <div class="field">
       <h3>Categoría</h3>
-      <h5><%= f.text_field :categoria %></h5>
+      <h5><%= f.text_field :categoria, placeholder: "Por ejemplo, porches, tapicerías o vidrieras." %></h5>
     </div>
 
     <% if params[:reform_id] != nil %>

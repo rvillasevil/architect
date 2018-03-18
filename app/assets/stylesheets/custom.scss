@@ -220,7 +220,7 @@ header {
       @media (max-width: 768px) {
         padding-top: 10px;
         .logo {
-          margin-top: 8px;
+          margin-top: 0px;
         }
         .icon_mobile {
           margin-top: 5px;
@@ -290,12 +290,12 @@ header ul {
   margin-left: 10px;
 }
 header li:hover {
-  border-bottom: 3px solid white;
-  background-color: #0096cc;
+  border-bottom: 3px solid #666;
+  /*background-color: #0096cc;*/
   text-decoration: none;
 }
 .active {
-  border-bottom: 5px solid white !important;
+  border-bottom: 5px solid #666 !important;
   text-decoration: none;
 }
 
@@ -1015,6 +1015,13 @@ aside {
       h3 {
         color: #444;
       }
+    }
+    li.comentario {
+      font-family: 'Open Sans';
+      font-size: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #444;
     }
     ul.elemento {
       border-bottom: 1px solid #dbdbdb;

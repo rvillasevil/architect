@@ -26,15 +26,15 @@
           </div> 
 
           
-          <h3 style="font-weight: bolder; color: #666; margin-top: 50px;">Tu proyecto:</h3>
+          <h3 style="font-weight: bolder; color: #444; margin-top: 50px;">Tu proyecto:</h3>
           <div class="show_habitaciones" style="">
             <% if @habitaciones.any? %>
-              <h5 style="font-weight: bolder; font-size: 16px; color: #666;">Tus estancias:</h5>
+              <h5 style="font-weight: bolder; font-size: 16px; color: #444;">Tus estancias:</h5>
               
                 <% @habitaciones.collect do |habitacion| %>
                 
-                  <button type="button" class="btn btn-sm btn-default" style="">
-                    <h3 style="margin: 10px; font-weight: 700;">
+                  <button type="button" class="btn btn-sm btn-default" style="border-color: #1DA1F2; border-radius: 10px;">
+                    <h3 style="margin: 5px; font-weight: 600;">
                       <%= link_to habitacion.nombre, reform_habitacion_path(reform_id: @reform, id: habitacion), style: "color: #555;" %>
                     </h3>
 
@@ -57,33 +57,34 @@
                   </button>
                 <% end %>
 
-              <h5 style="padding-top: 30px; font-weight: bolder; font-size: 16px; color: #666;">Partidas personalizadas:</h5>
-              <div style="max-width: 200px;">
-                <% @partidas = Partida.where(reform_id: @reform.id) %>
-                <% if @partidas != nil %>
-                  <% @partidas.map do |partida| %>
-                    <%= link_to reform_partida_path(reform_id: @reform.id, id: partida) do %>
-                      <button type="button" class="btn btn-sm btn-default" style="">
-                        <h3 style="margin: 10px; font-weight: 700; color: #444;"><%= partida.titulo %></h3>
-                      </button>
-                    <% end %>
-                  <% end %>
-                <% end %>            
-              </div>
-
-              <% @habitacion = Habitacion.where(reform_id: @reform.id) %>
-              <% @habitacion.collect do |habitacion| %>
-                <% @habitacion = habitacion %>
-                <% habitacion.nombre %>
-                <% render 'reforms/budget', habitacion: @habitacion %>
-              <% end %>
             <% else %>
-              <h5 style="font-weight: 500; font-size: 16px; color: #666;">Aún no has creado niguna reforma de ninguna estancia.</h5>
+              <h5 style="font-weight: 500; font-size: 16px; color: #444;">Aún no has creado la reforma de ninguna estancia.</h5>
             <% end %>
+
+            <h5 style="padding-top: 30px; font-weight: bolder; font-size: 16px; color: #444;">Partidas personalizadas:</h5>
+            <div style="max-width: 200px;">
+              <% @partidas = Partida.where(reform_id: @reform.id) %>
+              <% if @partidas != nil %>
+                <% @partidas.map do |partida| %>
+                  <%= link_to reform_partida_path(reform_id: @reform.id, id: partida) do %>
+                    <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #41a34b; color: #1DA1F2; padding: 10px; margin: 5px; border-radius: 10px;"><h3 style="; margin: 0px; color: #555; font-weight: 600;"><%= partida.titulo %></h3>
+                    </button>
+                  <% end %>
+                <% end %>
+              <% end %>            
+            </div>
+
+            <% @habitacion = Habitacion.where(reform_id: @reform.id) %>
+            <% @habitacion.collect do |habitacion| %>
+              <% @habitacion = habitacion %>
+              <% habitacion.nombre %>
+              <% render 'reforms/budget', habitacion: @habitacion %>
+            <% end %>
+
           </div>                   
 
           <% if Confirmacion.find_by(reform_id: @reform.id) == nil %>
-          <h3 style="font-weight: bolder; color: #666;">Crea las estancias a reformar en tu proyecto</h3>
+          <h3 style="font-weight: bolder; color: #444;">Crea las estancias a reformar en tu proyecto</h3>
             <div class="botones_habitaciones">
               <h3 style="font-weight: normal; margin: 0px;">
 
@@ -128,7 +129,7 @@
 
                 
                 <div style="display: block; padding-top: 20px;">
-                <h3>¿No encuentras los que buscas? Crea tu partida personalizada</h3>  
+                <h3>¿No encuentras los que buscas en tu reforma? Crea tu partida personalizada y describe lo que necesites para que las empresas puedan ofrecerte las mejores soluciones</h3>  
                   <%= link_to new_partida_path(reform_id: @reform) do %>
                      <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #41a34b; color: #41a34b; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="; margin: 0px; color: #41a34b;">Nueva partida personalizada</h3></button>
                   <% end %>
