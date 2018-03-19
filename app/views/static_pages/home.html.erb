@@ -9,6 +9,21 @@
 
           <div class="campos" style="">
 
+            <% if current_user.admin? %>
+              <% Micropost.all.each do |post| %>
+              <h5>
+                <% if post.hashtag1 == "cliente" %>
+                  <% @cliente = User.find(post.user_id) %>
+                  <% @reforma = Reform.find(post.hashtag2) %>
+                  <%= @cliente.name %>
+                  <%= post.created_at %>
+                  <%= @reforma.nombre %>
+                  <%= @reforma.id %>
+                <% end %>
+              </h5>
+              <% end %>
+            <% end %>
+
             <% if  current_user.empresa == true %>
 
               <div class="iconos_inicio">
@@ -47,7 +62,7 @@
 
               <div class="iconos_inicio">
 
-                <h3 style="font-weight: bold; margin-top: 50px;">Empieza en Constructor</h3>
+                <h3 style="font-weight: bold; margin-top: 50px;">Empieza en ConstructUX</h3>
                 <ul style="list-style: none; width: 100%; padding: 0px; margin: 0px;" class="">
 
                   <li style="align-items: center; text-align: center; padding: 10px;">

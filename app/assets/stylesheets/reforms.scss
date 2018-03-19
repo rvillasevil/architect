@@ -9,7 +9,8 @@
 .show_habitaciones {
 	border: 1px solid #bbb;
 	padding-top: 0px;
-	padding: 20px;
+	padding: 10px;
+	padding-left: 15px;
 	border-radius: 20px;
 }
 
@@ -17,6 +18,10 @@ select {
 	border: none;
 	margin: 0px;
 	font-weight: 600;
+}
+
+input {
+	width: auto;
 }
 
 .botones_habitaciones {

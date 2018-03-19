@@ -4,19 +4,18 @@
 			
 		</div>
 
-		<div class="col-sm-10">
       <div class="constructor">
 		    <p id="notice"><%# notice %></p>
 
   			<div class="encabezado_proyecto">
   				<div>
-  				  <h1>
+  				  <h1 style="margin-bottom: 0px;">
   					  <%= @reform.nombre %>
   				  </h1>				
   				</div>
 
           <div>
-            <h5 style="font-weight: normal;">
+            <h5 style="font-weight: normal; margin-top: 0px;">
               <%= link_to edit_reform_path(@reform) do %>
                 <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #d9534f; color: #d9534f; padding: 5px; margin: 5px; margin-left: 0px;">
                   <h5 style="font-weight: normal; margin: 0px; color: #d9534f;">Editar datos proyecto</h5></button>   
@@ -26,10 +25,10 @@
           </div> 
 
           
-          <h3 style="font-weight: bolder; color: #444; margin-top: 50px;">Tu proyecto:</h3>
+          <h3 style="font-weight: bolder; color: #444; margin-top: 50px;">Estancias en tu proyecto <%= @reform.nombre %>:</h3>
           <div class="show_habitaciones" style="">
             <% if @habitaciones.any? %>
-              <h5 style="font-weight: bolder; font-size: 16px; color: #444;">Tus estancias:</h5>
+              <h5 style="font-weight: 600; font-size: 16px; color: #444; margin: 0px;">Tus estancias:</h5>
               
                 <% @habitaciones.collect do |habitacion| %>
                 
@@ -61,7 +60,7 @@
               <h5 style="font-weight: 500; font-size: 16px; color: #444;">Aún no has creado la reforma de ninguna estancia.</h5>
             <% end %>
 
-            <h5 style="padding-top: 30px; font-weight: bolder; font-size: 16px; color: #444;">Partidas personalizadas:</h5>
+            <h5 style="padding-top: 30px; font-weight: 600; font-size: 16px; color: #444;">Partidas personalizadas:</h5>
             <div style="max-width: 200px;">
               <% @partidas = Partida.where(reform_id: @reform.id) %>
               <% if @partidas != nil %>
@@ -84,7 +83,7 @@
           </div>                   
 
           <% if Confirmacion.find_by(reform_id: @reform.id) == nil %>
-          <h3 style="font-weight: bolder; color: #444;">Crea las estancias a reformar en tu proyecto</h3>
+          <h3 style="font-weight: bolder; color: #444;">Crea nuevas estancias:</h3>
             <div class="botones_habitaciones">
               <h3 style="font-weight: normal; margin: 0px;">
 
@@ -124,12 +123,12 @@
                 <% end %>                
 
                 <%= link_to new_reform_habitacion_path(reform_id: @reform) do %>
-                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="; margin: 0px; color: #1DA1F2;">Nueva estancia (con todas las opciones)</h3></button>
+                  <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2; padding: 10px; margin: 5px; margin-left: 0px; display: flex;"><h3 style="; margin: 0px; color: #1DA1F2; display: flex;">Nueva estancia &nbsp;<p style="margin: 0px;"> (con todas las opciones)</p></h3></button>
                 <% end %> 
 
                 
                 <div style="display: block; padding-top: 20px;">
-                <h3>¿No encuentras los que buscas en tu reforma? Crea tu partida personalizada y describe lo que necesites para que las empresas puedan ofrecerte las mejores soluciones</h3>  
+                <h3>¿No encuentras los que buscas en tu reforma? Crea tu partida personalizada<!-- y describe lo que necesites para que las empresas puedan ofrecerte las mejores soluciones --></h3>  
                   <%= link_to new_partida_path(reform_id: @reform) do %>
                      <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #41a34b; color: #41a34b; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="; margin: 0px; color: #41a34b;">Nueva partida personalizada</h3></button>
                   <% end %>
@@ -196,12 +195,17 @@
 
 
         
-        <div style="margin-top: 125px;">
+        <div style="margin-top: 100px;">
           <h3 style="font-weight: normal;">¿Has terminado el proyecto?</h3>
 
           <%= link_to resumen_reform_path(@reform) do %>
-            <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid grey; color: #d9534f; padding: 10px; margin: 5px; margin-left: 0px;"><h3 style="font-weight: bolder; margin: 5px; color: #444; font-size: 18px;">Resumen y presupuesto</h3></button>
+            <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid grey; color: #d9534f; padding: 10px; margin: 5px; margin-left: 0px; margin-left: -10px;"><h3 style="font-weight: bolder; margin: 5px; color: #444; font-size: 18px;">Resumen y presupuesto estimado</h3></button>
           <% end %>
+
+        <div style="margin-top: 60px;">
+          <h3 style="font-weight: normal;">¿Quieres que estudiemos tu proyecto y comprobar desde nuestra base de datos si podemos optimizar el coste o mejorarla en algún sentido?</h3>
+          <%= render 'shared/micropost_form' %>
+        </div>
 
 <%
 =begin%>          

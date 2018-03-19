@@ -43,7 +43,7 @@
                         <div class="titulo">
                           <h3 style="">Demoliciones</h3>
                         </div>
-                        <ul class="lista_principal" style="">
+                        <ul class="lista_principal" style="margin: 0px;">
 
                           <% if  habitacion.demo_quitar_azulejo != nil %>
                           <li class="lista_elemento" style=" ">
@@ -4193,10 +4193,6 @@
         <% else %>
           <h3 style="font-weight: 700; color: red;">Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
         <% end %>
-
-        <div style="margin-top: 60px;">
-          <h3>¿Quieres que le echemos un vistazo a su proyecto y comprobar en la base de datos si podemos bajar el precio o mejorarla en algún sentido?</h3>
-        </div>
 
 
         <h5><%= link_to "Back", reforms_path %></h5>

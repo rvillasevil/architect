@@ -1,5 +1,6 @@
 class ConfirmacionsController < ApplicationController
   before_action :set_confirmacion, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :show, :new, :edit, :create, :new, :update, :destroy ]
 
   # GET /confirmacions
   # GET /confirmacions.json

@@ -27,8 +27,9 @@
       <h3><%= f.submit "Presentar presupuesto al cliente", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px; font-weight: 900;", data: { confirm: '¿Estás seguro?' } %></h3>
 
     <% else %>
-      <h3><%= f.submit "Pedir presupuestos, es gratis y sin compromiso", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px; font-weight: 900;", data: { confirm: '¿Estás seguro? Cuando pidas los presupuestos ya no puedes modificar los datos del proyecto, ¿Continuamos?' } %></h3>
-      <h3 style="color: #444; font-weight: 600;">Recibiras Lo antes posible las ofertas para tu proyecto de las empresas seleccionadas y valoradas, para, si quieres, ponerte en contacto con ellas para realizar el proyecto.</h3>
+
+      <h3 style=""><h5>Pide presupuestos, <b>es gratis y sin compromiso</b></h5><%= f.submit "Pide presupuestos, gratis, sin compromiso", style: "background-color: white; padding: 10px; border-color: #1DA1F2; color: #1DA1F2; border-radius: 10px; font-weight: 900; align-items: center;", data: { confirm: '¿Estás seguro? Cuando pidas los presupuestos ya no puedes modificar los datos del proyecto, ¿Continuamos?' } %></h3>
+      <h3 style="color: #444; font-weight: 600;">Recibiras lo antes posible las propuestas para tu proyecto de empresas valoradas por otros usuarios, para, si quieres, ponerte en contacto con ellas para realizar el proyecto.</h3>
     <% end %>
   </div>
 <% end %>

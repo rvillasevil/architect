@@ -3,7 +3,7 @@
   <div class="iconos_inicio">
     <% if logged_in? %>
       <% if  current_user.empresa == true %>
-        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre lo que constructor puede hacer por tu empresa</h3>
+        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre lo que ConstructUX puede hacer por tu empresa</h3>
         <ul class="ofertas">
           <li>
             <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Pásate a premium</h5></span>
@@ -19,7 +19,7 @@
           </li>                 
         </ul>
       <% else %>
-        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre Constructor</h3>
+        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre ConstructUX</h3>
         <ul class="ofertas">
           <li>
             <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
@@ -33,7 +33,7 @@
         </ul>  
       <% end %>
     <% else %>
-      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre Constructor</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre ConstructUX</h3>
         <ul class="ofertas">
           <li>
             <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>

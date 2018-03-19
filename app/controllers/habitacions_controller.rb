@@ -1,6 +1,7 @@
 class HabitacionsController < ApplicationController
   before_action :set_habitacion, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:show, :edit, :update, :destroy, :index, :new, :create, :update]
+
 
   # GET /habitacions
   # GET /habitacions.json

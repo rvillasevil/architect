@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = Micropost.new(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Realizado con éxito!"
       redirect_back(fallback_location: root_url)
     else
       flash[:danger] = "Ha ocurrido un error. El contenido no puede estar vacío. En una consulta, el título y una imagen son necesarias."
