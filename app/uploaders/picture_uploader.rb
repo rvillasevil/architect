@@ -2,6 +2,7 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_limit: [300, 300]
+  process :auto_orient
 
   if Rails.env.production?
     storage :fog
@@ -19,4 +20,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+  def auto_orient
+    manipulate! do |img|
+      img = img.auto_orient
+    end
+  end  
 end
