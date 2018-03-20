@@ -1,3 +1,13 @@
+<% content_for :head do %>
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="ConstructUX" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.constructux.com" />
+  <meta property="og:description" content="ConstructUX, donde diseñar tu reforma o construir tu vivienda." />
+  <meta property="og:image" content="partida_default.jpg"  />  
+
+<% end %> 
+
 <% provide(:title) %>
 <% if logged_in? %>
   <div class="container">
@@ -100,20 +110,34 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <div class="container-fluid" style="background-color: white; margin-top: 80px; margin-bottom: 150px;">
-          <h1 style="font-weight: lighter;">La mejor manera de reformar o construir tu vivienda.</h1>
-          <h1 style="line-height: 40px; font-weight: bolder;">Devolver el control del diseño y la obra a sus usuarios.</h1>
+        <div class="container-fluid-principal" style="background-color: white;  margin-bottom: 150px;">
+          <h1 style="font-weight: lighter;">La mejor manera de diseñar tu reforma o construir tu vivienda.</h1>
+          <h1 style="line-height: 40px; font-weight: bolder;">En constructUX queremos devolver el control del diseño y la obra a sus usuarios.</h1>
 
-          <div class="wrapper">
+          <div class="wrapper" style="padding-top: 20px;">
             <%= link_to "Sign up now!", signup_path(empresa: false), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
 
-            <%= link_to "¿Ya eres usuario?", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4;" %>
+            <%= link_to "¿Ya eres usuario?", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4; color: white;" %>
           </div>
 
-          <div class="wrapper">
-            <h3>¿Quieres probar a crear tu primer proyecto?</h3>
+          <div class="wrapper" style="padding-top: 30px;">
+            <h3 style="font-weight: 400;">¿Quieres probar con un primer proyecto?</h3>
             <%= link_to "Crea tu primer proyecto", new_habitacion_path, class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #ff5050; color: #ff5050;" %>
-          </div>          
+          </div>  
+
+          <div style="padding-top: 15px; text-align: center;">
+            <h3 style="font-weight: 400;">Por favor si te gusta compártelo con tus amigos, gracias!!</h3>
+            <!-- FACEBOOK share button -->
+            <div class="fb-share-button" 
+            data-href="https://www.constructux.com" 
+            data-layout="button_count"
+            data-size="large"
+            style= "display: inline-flex; padding-left: 0px;"></div> 
+
+            <!-- TWITTER share button -->
+            <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com" data-size="large"></a></div>
+            <script src="//platform.twitter.com/widgets.js"></script>                      
+          </div>                 
 
           <div class="wrapper" style="margin-top: 100px;">
             <h3>¿Eres una empresa del sector de la construcción y te gustaría trabajar con nosotros?</h3>

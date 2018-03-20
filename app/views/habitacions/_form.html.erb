@@ -16,26 +16,26 @@
     <h1 style="color: #444;">Nuevo Baño o Aseo</h1>
 
     <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3>
-    <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", style: "width: 40%; border: 1 px solid grey; padding: 10px; display: block;", placeholder: "Nombre para tu nueva habitación" %> </h3>
+    <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", class: "nombre", style: "border: 1 px solid grey; padding: 10px; display: block;", placeholder: "Nombre para tu nueva habitación" %> </h3>
   <% else %>
     <% if params[:cocina] == "true" %>
         <h1 style="color: #444;">Nueva Cocina</h1>
 
         <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3> 
-        <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", style: "width: 40%; border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>
+        <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", class: "nombre", style: "border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>
     <% else %>
       <% if params[:habitacion] == "true" %>
         <h1 style="color: #444;">Nueva estancia</h1>
 
         <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3>
 
-        <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", style: "width: 40%; border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>      
+        <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", class: "nombre", style: "border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>      
       <% else %>
       <h1 style="color: #444;">Nueva Estancia</h1>
 
       <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3>
 
-      <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", style: "width: 40%; border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>
+      <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", class: "nombre", style: "border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>
       <% end %>                     
     <% end %>                     
   <% end %>
@@ -243,7 +243,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -287,7 +287,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -331,7 +331,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -375,7 +375,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -425,7 +425,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -469,7 +469,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -514,7 +514,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -559,7 +559,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -604,7 +604,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -649,7 +649,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -698,7 +698,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -743,7 +743,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -792,7 +792,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -837,7 +837,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -887,7 +887,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -931,7 +931,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -980,7 +980,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1024,7 +1024,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1068,7 +1068,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1112,7 +1112,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1156,7 +1156,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1200,7 +1200,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1244,7 +1244,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1289,7 +1289,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1333,7 +1333,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1378,7 +1378,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1422,7 +1422,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1467,7 +1467,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1511,7 +1511,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1556,7 +1556,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1600,7 +1600,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1651,7 +1651,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1696,7 +1696,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1741,7 +1741,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1791,7 +1791,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1835,7 +1835,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1880,7 +1880,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1924,7 +1924,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -1969,7 +1969,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2014,7 +2014,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2059,7 +2059,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2104,7 +2104,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2149,7 +2149,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2193,7 +2193,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2238,7 +2238,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2283,7 +2283,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2327,7 +2327,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2371,7 +2371,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2415,7 +2415,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2460,7 +2460,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2505,7 +2505,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2555,7 +2555,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2614,7 +2614,7 @@
                           <% end %> €/m2</b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2658,7 +2658,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2718,7 +2718,7 @@
                           <% end %> €/m2</b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2762,7 +2762,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2806,7 +2806,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2850,7 +2850,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2894,7 +2894,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2938,7 +2938,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -2983,7 +2983,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3033,7 +3033,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3078,7 +3078,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3123,7 +3123,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3168,7 +3168,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3213,7 +3213,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3258,7 +3258,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3303,7 +3303,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3348,7 +3348,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3393,7 +3393,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3438,7 +3438,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3483,7 +3483,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3528,7 +3528,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3573,7 +3573,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3618,7 +3618,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3663,7 +3663,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3713,7 +3713,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3758,7 +3758,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3802,7 +3802,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3846,7 +3846,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3891,7 +3891,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3935,7 +3935,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -3980,7 +3980,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4025,7 +4025,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4070,7 +4070,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4115,7 +4115,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4160,7 +4160,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4205,7 +4205,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4254,7 +4254,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4299,7 +4299,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4344,7 +4344,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4389,7 +4389,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4434,7 +4434,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4479,7 +4479,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4528,7 +4528,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4573,7 +4573,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4618,7 +4618,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4667,7 +4667,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4712,7 +4712,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4757,7 +4757,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4802,7 +4802,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4847,7 +4847,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4892,7 +4892,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4937,7 +4937,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -4982,7 +4982,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5027,7 +5027,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5072,7 +5072,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5121,7 +5121,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5182,7 +5182,7 @@
                         <% end %> €/ud</b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5227,7 +5227,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5272,7 +5272,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5333,7 +5333,7 @@
                         </b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5378,7 +5378,7 @@
                         <h5 style="font-weight: 300; color: grey;">Precio medio nuestra BD = <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                       </li>
                         <li class="iconos">
-                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="fa fa-clock-o" aria-hidden="true" style="color: #d9534f;"></i></button>
+                            <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                             <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
                             
@@ -5410,7 +5410,7 @@
       <h5 style=""><input type="button" value="Enviar" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px;"></h5>
     <% else %>
       <h1 style="padding: 20px; font-size: 28px;">¿Quieres pedir un presupuesto a las mejores empresas o conocer más ofertas y promociones para tu reforma?</h1>
-      <h5>Hazte un usuario de Arquitect en dos sencillos pasos de forma gratuita para poder solicitar presupuestos y ofertas de las mejores empresas constructoras de tu zona y acceder a promociones  de mano de obra y materiales específicas para ti. </h5>
+      <h5>Hazte un usuario de ConstructUX en dos sencillos pasos de forma gratuita para poder solicitar presupuestos y ofertas de las mejores empresas constructoras de tu zona y acceder a promociones  de mano de obra y materiales específicas para ti. </h5>
       <h3 style=""><input type="button" value="Hazte usuario de ConstructUX" onclick="form.submit();" style="background-color: white; padding: 20px; color: #0084B4; font-weight: 900; border-radius: 15px; border-color: #0084B4;"></h3>
     <% end %>
 

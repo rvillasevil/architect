@@ -26,6 +26,13 @@ select {
 	}
 }
 
+input.nombre {
+	width: 40%;
+	@media(max-width: 768px) {
+		width: 100%;
+	}
+}
+
 
 
 ::placeholder { /* Most modern browsers support this now. */
