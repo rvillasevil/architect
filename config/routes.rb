@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get "/sitemap.xml" => "sitemap#index", :format => "xml", :as => :sitemap
  
   resources :partidas
   resources :confirmacions
