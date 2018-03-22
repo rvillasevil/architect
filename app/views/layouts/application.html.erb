@@ -55,23 +55,24 @@
 
     <!-- FacebookSDK
     // https://developers.facebook.com/docs/plugins/page-plugin/ -->
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk')); // Replace 'facebook-jssdk' with your page id.
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk')); // Replace 'facebook-jssdk' with your page id.
 
-    // Compatibility with Turbolinks 5
-    (function($) {
-      var fbRoot;
+      // Compatibility with Turbolinks 5
+      (function($) {
+        var fbRoot;
 
-      function saveFacebookRoot() {
-        if ($('#fb-root').length) {
-          fbRoot = $('#fb-root').detach();
-        }
+        function saveFacebookRoot() {
+          if ($('#fb-root').length) {
+            fbRoot = $('#fb-root').detach();
+          }
       };
 
       function restoreFacebookRoot() {
@@ -90,7 +91,8 @@
 
       document.addEventListener('turbolinks:request-start', saveFacebookRoot)
       document.addEventListener('turbolinks:load', restoreFacebookRoot)
-    }(jQuery));</script>
+    }(jQuery));
+  </script>
     
   </body>
 </html>
