@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" xml:lang="es">
+<head>
+  
+
+  <meta charset="utf-8">
+  <meta name="description" content="Plataforma para que diseñes tu reforma y crees tu presupuesto a tu medida, nosotros los enviamos a las empresas mejor valoradas por otros usuarios para que te ofrezcan las mejores ofertas en un solo click.">
+  <meta name="keywords" content="reformas en general, calculadora presupuestos de reformas, presupuesto reformar baño, presupuesto reformar cocina, fontanero, electricista, albañiles, diseña tu reforma y tu presupuesto">
+  <meta name="author" content="Roberto Villasevil Bargueño">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all',
                                               'data-turbolinks-track': 'reload' %>
+
+    
     <!-- <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=PT+Serif"> -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
@@ -16,15 +25,15 @@
 
     <%= content_for?(:head) ? yield(:head) : '' %> 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115472018-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115472018-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'UA-115472018-2');
-  </script>  
+      gtag('config', 'UA-115472018-2');
+    </script>  
 
     
   </head>
