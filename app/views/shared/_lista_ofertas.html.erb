@@ -22,7 +22,7 @@
         <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre ConstructUX</h3>
         <ul class="ofertas">
           <li>
-            <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
+            <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Presupuestos</h5></span>
           </li>
           <li>
             <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Diseño</h5></span>
@@ -36,7 +36,7 @@
       <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre ConstructUX</h3>
         <ul class="ofertas">
           <li>
-            <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Ofertas</h5></span>
+            <%= image_tag('nueva_vivienda.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Presupuestos</h5></span>
           </li>
           <li>
             <%= image_tag('retirar_friso_madera.jpg', size: "40", class: 'oferta_imagen' ) %> <span style=""><h5>Diseño</h5></span>
@@ -51,7 +51,7 @@
   <% if logged_in? %>
     <% if  current_user.empresa != true %>
 
-      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Ofertas destacadas</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Presupuestos destacadas</h3>
       <ul class="lista_principal" style="">
 
           <li class="lista_oferta">
@@ -67,16 +67,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa Roberto construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -109,16 +110,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa SOLIMPLA Construcciones y Reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -151,16 +153,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa Roberto construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -193,16 +196,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa SOLIMPLA Construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -236,16 +240,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa Roberto construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -281,16 +286,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Permite destacar los espacios mediante la traslucidez de los diversos elementos encapsulados que lo caracterizan, teniendo como resultado un producto de alto impacto visual, especialmente en oficinas. Su particularidad es crear instalaciones bien iluminadas que a su vez, otorgan la privacidad necesaria para los distintos espacios. En estos casos se incorporan diseños orgánicos generando ambientes cálidos, luminosos con una propuesta única e innovadora.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Permite destacar los espacios mediante la traslucidez de los diversos elementos encapsulados que lo caracterizan, teniendo como resultado un producto de alto impacto visual, especialmente en oficinas. Su particularidad es crear instalaciones bien iluminadas que a su vez, otorgan la privacidad necesaria para los distintos espacios. En estos casos se incorporan diseños orgánicos generando ambientes cálidos, luminosos con una propuesta única e innovadora.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Hunter Douglas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -323,16 +329,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Incluye tanque, inodoro y tapa con cierre amortiguado. Salida dual.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Incluye tanque, inodoro y tapa con cierre amortiguado. Salida dual.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Brico Depot Getafe</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>129 €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>129 €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -365,16 +372,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Lama 122 x 18 cm. Espesor 4,3 mm y capa de uso 0,33 mm. Color roble natural. Vendido en paquetes de 1,76 m2.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Lama 122 x 18 cm. Espesor 4,3 mm y capa de uso 0,33 mm. Color roble natural. Vendido en paquetes de 1,76 m2.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Brico Depot</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>20.95 €/m²</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>20.95 €/m²</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -407,17 +415,18 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>
+                  <div class="description" style="padding-top: 5px;"><h5>
                   Esta tendencia de decoración se inspira en la estética de la década de los 50 y 60 recuperando lo mejor de esos años, pero con una mirada actual y contemporánea. El aparador de 2 puertas y 3 cajones OSLO en color blanco mate con detalles en color roble patinado es un buen ejemplo de ello.Retoma las líneas cuadradas para dar forma a la estructura y eleva el conjunto con unas patas redondeadas de haya maciza. </h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Mobimarket</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>159 €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>159 €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -455,16 +464,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>La imitación de un producto hecho a mano, único e irrepetible en cada detalle, se une a la técnica y precisión de hoy. Nuevos avances capaces de reproducir el propio recuerdo, la nostalgia, el gusto y el estilo del pasado. Se combina con las bases Blancas, Gris, Azul y Rojo. (ud)</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>La imitación de un producto hecho a mano, único e irrepetible en cada detalle, se une a la técnica y precisión de hoy. Nuevos avances capaces de reproducir el propio recuerdo, la nostalgia, el gusto y el estilo del pasado. Se combina con las bases Blancas, Gris, Azul y Rojo. (ud)</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>paratureforma.com</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>0.76 €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>0.76 €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -500,16 +510,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Con la gama de piedras irregulares de Geser podrás crear el ambiente perfecto para cualquier situación con su excelente calidad de material.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Con la gama de piedras irregulares de Geser podrás crear el ambiente perfecto para cualquier situación con su excelente calidad de material.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>paratureforma.com</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>11.61 €/m²</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>11.61 €/m²</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -544,16 +555,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Hacen el efecto de un tragaluz, y además, son perfectos como separadores de ambientes dentro de un mismo espacio. Estos ladrillos están compuesto de dos gruesos bloques de cristal que se unen entre ellos sometiéndolos a un proceso de vaciado, en el que se elimina todo el aire del interior de las dos partes que forman el ladrillo de cristal o pavés, y de esta forma se consiguen bloques totalmente aislantes, tanto para la temperatura como para los sonidos.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Hacen el efecto de un tragaluz, y además, son perfectos como separadores de ambientes dentro de un mismo espacio. Estos ladrillos están compuesto de dos gruesos bloques de cristal que se unen entre ellos sometiéndolos a un proceso de vaciado, en el que se elimina todo el aire del interior de las dos partes que forman el ladrillo de cristal o pavés, y de esta forma se consiguen bloques totalmente aislantes, tanto para la temperatura como para los sonidos.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>paratureforma.com</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>5,84 € €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>5,84 € €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -588,16 +600,17 @@
                 </div>
               </li>
               <li>
-                <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
               </li>
-              <li class="empresa">
+              <li class="empresa" style="padding-left: 0px;">
                 <h5>planreforma.com</h5>
                 <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
               </li>                
-              <li class="precio_oferta">
-                <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+              <li class="precio_oferta" style="padding-left: 0px;">
+                <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
               </li>
                 <li class="iconos">
+                  <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                     <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                     <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -624,7 +637,7 @@
 
     <% end %>
   <% else %>
-      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Ofertas destacadas</h3>
+      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Presupuestos destacadas</h3>
       <ul class="lista_principal" style="">
 
           <li class="lista_oferta">
@@ -640,16 +653,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa Roberto construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -682,16 +696,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa SOLIMPLA Construcciones y Reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -724,16 +739,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa Roberto construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -766,16 +782,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa SOLIMPLA Construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -809,16 +826,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Empresa Roberto construcciones y reformas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -854,16 +872,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Permite destacar los espacios mediante la traslucidez de los diversos elementos encapsulados que lo caracterizan, teniendo como resultado un producto de alto impacto visual, especialmente en oficinas. Su particularidad es crear instalaciones bien iluminadas que a su vez, otorgan la privacidad necesaria para los distintos espacios. En estos casos se incorporan diseños orgánicos generando ambientes cálidos, luminosos con una propuesta única e innovadora.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Permite destacar los espacios mediante la traslucidez de los diversos elementos encapsulados que lo caracterizan, teniendo como resultado un producto de alto impacto visual, especialmente en oficinas. Su particularidad es crear instalaciones bien iluminadas que a su vez, otorgan la privacidad necesaria para los distintos espacios. En estos casos se incorporan diseños orgánicos generando ambientes cálidos, luminosos con una propuesta única e innovadora.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Hunter Douglas</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -896,16 +915,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Incluye tanque, inodoro y tapa con cierre amortiguado. Salida dual.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Incluye tanque, inodoro y tapa con cierre amortiguado. Salida dual.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Brico Depot Getafe</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>129 €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>129 €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -938,16 +958,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Lama 122 x 18 cm. Espesor 4,3 mm y capa de uso 0,33 mm. Color roble natural. Vendido en paquetes de 1,76 m2.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Lama 122 x 18 cm. Espesor 4,3 mm y capa de uso 0,33 mm. Color roble natural. Vendido en paquetes de 1,76 m2.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Brico Depot</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>20.95 €/m²</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>20.95 €/m²</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -980,17 +1001,18 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>
+                  <div class="description" style="padding-top: 5px;"><h5>
                   Esta tendencia de decoración se inspira en la estética de la década de los 50 y 60 recuperando lo mejor de esos años, pero con una mirada actual y contemporánea. El aparador de 2 puertas y 3 cajones OSLO en color blanco mate con detalles en color roble patinado es un buen ejemplo de ello.Retoma las líneas cuadradas para dar forma a la estructura y eleva el conjunto con unas patas redondeadas de haya maciza. </h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>Mobimarket</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>159 €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>159 €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1028,16 +1050,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>La imitación de un producto hecho a mano, único e irrepetible en cada detalle, se une a la técnica y precisión de hoy. Nuevos avances capaces de reproducir el propio recuerdo, la nostalgia, el gusto y el estilo del pasado. Se combina con las bases Blancas, Gris, Azul y Rojo. (ud)</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>La imitación de un producto hecho a mano, único e irrepetible en cada detalle, se une a la técnica y precisión de hoy. Nuevos avances capaces de reproducir el propio recuerdo, la nostalgia, el gusto y el estilo del pasado. Se combina con las bases Blancas, Gris, Azul y Rojo. (ud)</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>paratureforma.com</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>0.76 €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>0.76 €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1073,16 +1096,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Con la gama de piedras irregulares de Geser podrás crear el ambiente perfecto para cualquier situación con su excelente calidad de material.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Con la gama de piedras irregulares de Geser podrás crear el ambiente perfecto para cualquier situación con su excelente calidad de material.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>paratureforma.com</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>11.61 €/m²</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>11.61 €/m²</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1117,16 +1141,17 @@
                   </div>
                 </li>
                 <li>
-                  <div class="description"><h5>Hacen el efecto de un tragaluz, y además, son perfectos como separadores de ambientes dentro de un mismo espacio. Estos ladrillos están compuesto de dos gruesos bloques de cristal que se unen entre ellos sometiéndolos a un proceso de vaciado, en el que se elimina todo el aire del interior de las dos partes que forman el ladrillo de cristal o pavés, y de esta forma se consiguen bloques totalmente aislantes, tanto para la temperatura como para los sonidos.</h5> </div>
+                  <div class="description" style="padding-top: 5px;"><h5>Hacen el efecto de un tragaluz, y además, son perfectos como separadores de ambientes dentro de un mismo espacio. Estos ladrillos están compuesto de dos gruesos bloques de cristal que se unen entre ellos sometiéndolos a un proceso de vaciado, en el que se elimina todo el aire del interior de las dos partes que forman el ladrillo de cristal o pavés, y de esta forma se consiguen bloques totalmente aislantes, tanto para la temperatura como para los sonidos.</h5> </div>
                 </li>
-                <li class="empresa">
+                <li class="empresa" style="padding-left: 0px;">
                   <h5>paratureforma.com</h5>
                   <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
                 </li>                
-                <li class="precio_oferta">
-                  <h5 style="">Oferta: <b>5,84 € €/ud</b></h5>
+                <li class="precio_oferta" style="padding-left: 0px;">
+                  <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b>5,84 € €/ud</b></h5>
                 </li>
                   <li class="iconos">
+                    <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                       <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
@@ -1161,16 +1186,17 @@
                 </div>
               </li>
               <li>
-                <div class="description"><h5><%= @task.description if @task.description != nil %></h5> </div>
+                <div class="description" style="padding-top: 5px;"><h5><%= @task.description if @task.description != nil %></h5> </div>
               </li>
-              <li class="empresa">
+              <li class="empresa" style="padding-left: 0px;">
                 <h5>planreforma.com</h5>
                 <h5 class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</h5>
               </li>                
-              <li class="precio_oferta">
-                <h5 style="">Oferta: <b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
+              <li class="precio_oferta" style="padding-left: 0px;">
+                <h5 style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></h5>
               </li>
                 <li class="iconos">
+                  <h5 style="color: #d9534f; font-size: 13px; font-weight: 400;">Info para tu reforma:</h5>
                     <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= @task.rendimiento if @task.rendimiento != nil %> h/<%= @task.um %>" style="background-color: white; border: none;" ><i class="glyphicon glyphicon-time" aria-hidden="true" style="color: #d9534f; font-size: 15px;"></i></button>
 
                     <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= @task.man_obra if @task.man_obra != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>

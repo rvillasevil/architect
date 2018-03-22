@@ -1,8 +1,8 @@
-base_url = "http://#{request.host_with_port}"
+base_url = "https://#{request.host_with_port}/"
 
 # pages = ['about.html', 'contacts.html' ]
 
-pages.each do |page|
+@pages.each do |page|
   xml.url do
     xml.loc base_url+page
   end
