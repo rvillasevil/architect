@@ -119,6 +119,9 @@ h1 {
 h2 {
   font-family: 'Open Sans';
   font-size: 36px;
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
   font-weight: lighter;
   letter-spacing: -3px;
   color: black;

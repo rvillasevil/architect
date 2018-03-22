@@ -18,8 +18,13 @@ module PoliticalParty
 
 	config.action_dispatch.default_headers = {
     'X-Frame-Options' => 'ALLOWALL'
-}
+  }
   end
+
+  class Application < Rails::Application
+    config.middleware.use Rack::Deflater
+  end
+    
 end
 
 
