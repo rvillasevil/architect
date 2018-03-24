@@ -179,7 +179,7 @@
         <h1 style="font-size: 26px;">Precio estimado según nuestra BD = <%= @budget %> €</h1>-->
 
         <% @array = @habitaciones.collect do |habitacion| %>
-          <% @budget = Budget.find_by(habitacion_id: habitacion.id, user_id: current_user.id) %>
+          <% @budget = Budget.find_by(habitacion_id: habitacion.id) %> <!--, user_id: current_user.id-->
           <% if @budget != nil %>
             <% if habitacion.updated_at.to_i > @budget.updated_at.to_i %>
               <% @actualizar_partidas = 1 %>
@@ -204,7 +204,11 @@
 
         <div style="margin-top: 60px;">
           <h3 style="font-weight: normal;">¿Quieres que nuestra oficina de Arquitectura estudie tu proyecto y comprobemos cómo podemos optimizar el proyecto, ya sea con ofertas desde nuestra base de datos, o nuevos materiales o soluciones, sin ningún compromiso claro? <br>Contacta con nosotros y nos pondremos en contacto lo antes posible, gracias.</h3>
+          <% if logged_in? %>
           <%= render 'shared/micropost_form' %>
+          <% else %>
+          <span style="font-family: 'Open Sans';"> Mándanos un correo a <b>constructux@constructux.com</b> o hazte usuario y ahí te indicamos todo</span>
+          <% end %>
         </div>
 
 <%

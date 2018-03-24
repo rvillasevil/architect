@@ -1,6 +1,6 @@
 class ReformsController < ApplicationController
   before_action :set_reform, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :edit, :update, :destroy, :create, :new, :update, :resumen, :index]
+  before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :new, :update, :resumen, :index]  # :show, 
 
   # GET /reforms
   # GET /reforms.json
@@ -15,7 +15,9 @@ class ReformsController < ApplicationController
     @banos = Bano.where(reform_id: @reform)
     @cocinas = Cocina.where(reform_id: @reform)
     @habitaciones = Habitacion.where(reform_id: @reform)
+    if logged_in?
     @micropost  = current_user.microposts.build
+    end
   end
 
   # GET /reforms/new

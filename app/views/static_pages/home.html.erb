@@ -124,7 +124,7 @@
 
           <div class="wrapper" style="padding-top: 30px;">
             <h3 style="font-weight: 400;">¿Quieres probar con un primer proyecto?</h3>
-            <%= link_to "Crea tu primer proyecto", new_habitacion_path, class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #ff5050; color: #ff5050;" %>
+            <%= link_to "Crea tu primer proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #ff5050; color: #ff5050;" %>
           </div>  
 
           <div style="padding-top: 15px; text-align: center;">
@@ -141,7 +141,7 @@
             <script src="//platform.twitter.com/widgets.js"></script>                      
           </div> 
 
-            <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2>
+            <!-- <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2> -->
 
         </div>
 
@@ -154,7 +154,16 @@
           <%# link_to "Participa!", signup_path(empresa: true), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
           <h5>Mándanos un correo a la siguiente dirección y en breve nos pondremos en contacto: </h5>
           <h3 style="font-size: 26px;">constructux@constructux.com</h3>
-        </div>         
+        </div> 
+
+        <h3>Mira otras reformas creadas por otros usuarios</h3>
+
+        <% @reforms.each do |reform| %>
+          <h5 style="margin-top: 15px;">Reforma:</h5> <h3 style="margin-top: 0px; margin-bottom: 15px;"><%= link_to reform.nombre, reform_path(reform) %></h3>
+          <h5 style="margin-top: 15px;">Presupuesto:</h5>
+          <h3 style="margin-top: 0px; margin-bottom: 15px;"><%= Budget.find_by(reform_id: reform) %></h3>
+        <% end %>
+
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 class HabitacionsController < ApplicationController
   before_action :set_habitacion, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:show, :edit, :update, :destroy, :index, :create, :update]
+  before_action :logged_in_user, only: [ :edit, :update, :destroy, :index, :create, :update]  # :show,
 
 
   # GET /habitacions
@@ -12,6 +12,7 @@ class HabitacionsController < ApplicationController
   # GET /habitacions/1
   # GET /habitacions/1.json
   def show
+    @reform = Reform.find(params[:reform_id])
     if (@budget = Budget.find_by(habitacion_id: params[:id])) != nil
       @budget = Budget.find_by(habitacion_id: params[:id])
     else

@@ -2,7 +2,10 @@ class SitemapController < ApplicationController
 
   def index
 
-  	@pages = ['', 'about.html', 'contact.html', 'vision.html', 'objetivos.html']
+  	@pages = ['', 'about.html', 'contact.html', 'vision.html', 'objetivos.html', 'reforma.html']
+
+  	@habitacions = Habitacion.all
+  	@reforms = Reform.all
 
     respond_to do |format|
       format.xml
