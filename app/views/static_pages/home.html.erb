@@ -113,7 +113,7 @@
         <div class="container-fluid-principal" class="texto_titulo" style="background-color: white;  margin-bottom: 150px;">
           <!-- <h1 style="font-weight: lighter;">La mejor manera de diseñar tu reforma o construir tu vivienda.</h1> -->
           <h1 style="font-weight: lighter;">Diseña tu reforma y tu presupuesto a tu medida.</h1>
-          <h1 class="encabezado_gordo" style="font-weight: bolder;">Todas las obras son un infierno, con constructUX tú estás al mando</h1>
+          <h2 class="encabezado_gordo" style="font-weight: bolder;">Todas las obras son un infierno, con constructUX tú estás al mando</h2>
 
 
           <div class="wrapper" style="padding-top: 20px;">
@@ -161,7 +161,7 @@
 
         <% @reforms.each do |reform| %>
           <div style="display: block; font-family: 'Open Sans'; font-size: 16px; ">
-            <span style="margin-top: 25px; display: inline-flex;">Reforma:</span> <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #666; font-weight: bolder;"><%= link_to reform.nombre, "/reforma/#{reform.id}" %></span>
+            <span style="margin-top: 25px; display: inline-flex;">reforma:</span> <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #666; font-weight: bolder;"><%= link_to reform.nombre, "/reforma/#{reform.id}" %></span>
           <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #008489 !important; font-weight: 500; font-size: 15px;"><%= link_to "Ver presupuesto ", "/reforma/presupuesto/#{reform.id}", style: "color: #008489 !important;" %></span>
           </div>
         <% end %>

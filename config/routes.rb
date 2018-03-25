@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   root   'static_pages#home'
 
+  get 
+
   get     '/reforma/:id', to: "reforms#show"
   get     '/reforma/presupuesto/:id', to: "reforms#resumen"
   get     '/reforma',    to: "habitacions#new"
