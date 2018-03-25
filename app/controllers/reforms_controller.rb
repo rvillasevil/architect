@@ -1,6 +1,6 @@
 class ReformsController < ApplicationController
   before_action :set_reform, only: [ :edit, :update, :destroy]  #:show,
-  before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :new, :update, :resumen, :index]  # :show, 
+  before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :new, :update,  :index]  # :show, :resumen,
 
   # GET /reforms
   # GET /reforms.json

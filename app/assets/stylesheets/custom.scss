@@ -99,6 +99,9 @@ body {
   }
   .container-fluid-principal {
     margin-top: 80px;
+    @media(max-width: 768px) {
+      margin-top: 50px;
+    }
   }  
 }
 
@@ -115,6 +118,12 @@ h1 {
   @media (max-width: 992px) {
     font-size: 28px;
   }    
+}
+h1.encabezado_gordo {
+  line-height: 40px; 
+  @media(max-width: 768px) {
+    line-height: 26px;
+  }
 }
 h2 {
   font-family: 'Open Sans';
@@ -485,6 +494,10 @@ footer ul li {
   }  
 }
 
+.texto_titulo {
+
+}
+
 .imagen_principal {
 
 }
@@ -718,6 +731,7 @@ aside {
       }      
     }
     li.lista_oferta {
+      font-family: 'Open Sans';
       width: 23%;
       @media (max-width: 768px) {
       width: 100%;

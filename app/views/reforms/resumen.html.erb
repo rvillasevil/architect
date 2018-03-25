@@ -4185,7 +4185,7 @@
 <%
 =end%>         
 
-
+      <% if logged_in? %>
         <% if Confirmacion.find_by(reform_id: @reform.id, user_id: current_user.id) == nil %>
           <div>
             <h3 style="font-weight: 900;"><%= render 'confirmacions/form', confirmacion: @confirmacion %></h3>
@@ -4193,6 +4193,7 @@
         <% else %>
           <h3 style="font-weight: 700; color: red;">Ya has solicitado presupuestos, en breve recibirás tus ofertas.</h3>
         <% end %>
+      <% end %>
 
 
         <h5><%= link_to "Back", reforms_path %></h5>

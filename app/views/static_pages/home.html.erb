@@ -3,7 +3,7 @@
   <meta property="og:title" content="ConstructUX" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.constructux.com" />
-  <meta property="og:description" content="ConstructUX, donde diseñar tu reforma o construir tu vivienda." />
+  <meta property="og:description" content="ConstructUX, donde diseñar tu reforma y tu presupuesto a tu medida." />
   <meta property="og:image" content="partida_default.jpg"  />  
 
 <% end %> 
@@ -110,14 +110,15 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <div class="container-fluid-principal" style="background-color: white;  margin-bottom: 150px;">
+        <div class="container-fluid-principal" class="texto_titulo" style="background-color: white;  margin-bottom: 150px;">
           <!-- <h1 style="font-weight: lighter;">La mejor manera de diseñar tu reforma o construir tu vivienda.</h1> -->
-          <h1 style="font-weight: lighter;">Diseña tu reforma y tu presupuesto a tu medida, con precios de referencia por partidas podrás elegir y diseñar la reforma perfecta.</h1>
-          <h1 style="line-height: 40px; font-weight: bolder;">Hemos creado la herramienta perfecta para que tengas todo el control sobre el presupuesto del proyecto de reforma de tu baño, salón, cocina...</h1>
+          <h1 style="font-weight: lighter;">Diseña tu reforma y tu presupuesto a tu medida.</h1>
+          <h1 class="encabezado_gordo" style="font-weight: bolder;">Todas las obras son un infierno, con constructUX tú estás al mando</h1>
 
 
           <div class="wrapper" style="padding-top: 20px;">
-            <%= link_to "Sign up now!", signup_path(empresa: false), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
+            <!-- tenemos desactivado lo de empresa -->
+            <%# link_to "Sign up now!", signup_path(empresa: false), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #0084B4; color: #0084B4;" %>
 
             <%= link_to "¿Ya eres usuario?", login_path, class: "btn btn-lg btn-primary", style: "background-color: #0084B4; color: white;" %>
           </div>
@@ -159,8 +160,10 @@
         <h3 style="font-size: 18px;">Mira otras reformas creadas por otros usuarios</h3>
 
         <% @reforms.each do |reform| %>
-          <h5 style="margin-top: 25px; display: inline-flex;">Reforma:</h5> <h3 style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #666;"><%= link_to reform.nombre, "/reforma/#{reform.id}" %></h3>
-          <h3 style="margin-top: 0px; margin-bottom: 15px;"><%= Budget.find_by(reform_id: reform) %></h3>
+          <div style="display: block; font-family: 'Open Sans'; font-size: 16px; ">
+            <span style="margin-top: 25px; display: inline-flex;">Reforma:</span> <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #666; font-weight: bolder;"><%= link_to reform.nombre, "/reforma/#{reform.id}" %></span>
+          <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #008489 !important; font-weight: 500; font-size: 15px;"><%= link_to "Ver presupuesto ", "/reforma/presupuesto/#{reform.id}", style: "color: #008489 !important;" %></span>
+          </div>
         <% end %>
 
       </div>
