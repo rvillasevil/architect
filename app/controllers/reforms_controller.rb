@@ -1,5 +1,5 @@
 class ReformsController < ApplicationController
-  before_action :set_reform, only: [:show, :edit, :update, :destroy]
+  before_action :set_reform, only: [ :edit, :update, :destroy]  #:show,
   before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :new, :update, :resumen, :index]  # :show, 
 
   # GET /reforms
@@ -11,12 +11,22 @@ class ReformsController < ApplicationController
   # GET /reforms/1
   # GET /reforms/1.json
   def show
-    @reform = Reform.find_by(id: params[:id])
+    @reform = Reform.find(params[:id])
     @banos = Bano.where(reform_id: @reform)
     @cocinas = Cocina.where(reform_id: @reform)
     @habitaciones = Habitacion.where(reform_id: @reform)
     if logged_in?
     @micropost  = current_user.microposts.build
+    end
+  end
+
+  def show_reforma
+    @reform = Reform.find_by(id: params[:id])
+    @banos = Bano.where(reform_id: @reform)
+    @cocinas = Cocina.where(reform_id: @reform)
+    @habitaciones = Habitacion.where(reform_id: @reform)
+    if logged_in?
+      @micropost  = current_user.microposts.build
     end
   end
 

@@ -112,8 +112,8 @@
 
         <div class="container-fluid-principal" style="background-color: white;  margin-bottom: 150px;">
           <!-- <h1 style="font-weight: lighter;">La mejor manera de diseñar tu reforma o construir tu vivienda.</h1> -->
-          <h1 style="font-weight: lighter;">La mejor herramienta para tu reforma. Ajusta tu reforma a tu presupuesto. Descubre ofertas increíbles para tí. Recibe presupuestos sin compromiso.</h1>
-          <h2 style="line-height: 40px; font-weight: bolder;">Hemos creado la herramienta perfecta para que tengas todo el control sobre el presupuesto de tu proyecto para la reforma de tu baño, salón, cocina...</h2>
+          <h1 style="font-weight: lighter;">Diseña tu reforma y tu presupuesto a tu medida, con precios de referencia por partidas podrás elegir y diseñar la reforma perfecta.</h1>
+          <h1 style="line-height: 40px; font-weight: bolder;">Hemos creado la herramienta perfecta para que tengas todo el control sobre el presupuesto del proyecto de reforma de tu baño, salón, cocina...</h1>
 
 
           <div class="wrapper" style="padding-top: 20px;">
@@ -123,7 +123,7 @@
           </div>
 
           <div class="wrapper" style="padding-top: 30px;">
-            <h3 style="font-weight: 400;">¿Quieres probar con un primer proyecto?</h3>
+            <h3 style="font-weight: 400;">¿Quieres probar con tu primer proyecto?</h3>
             <%= link_to "Crea tu primer proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #ff5050; color: #ff5050;" %>
           </div>  
 
@@ -156,11 +156,10 @@
           <h3 style="font-size: 26px;">constructux@constructux.com</h3>
         </div> 
 
-        <h3>Mira otras reformas creadas por otros usuarios</h3>
+        <h3 style="font-size: 18px;">Mira otras reformas creadas por otros usuarios</h3>
 
         <% @reforms.each do |reform| %>
-          <h5 style="margin-top: 15px;">Reforma:</h5> <h3 style="margin-top: 0px; margin-bottom: 15px;"><%= link_to reform.nombre, reform_path(reform) %></h3>
-          <h5 style="margin-top: 15px;">Presupuesto:</h5>
+          <h5 style="margin-top: 25px; display: inline-flex;">Reforma:</h5> <h3 style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #666;"><%= link_to reform.nombre, "/reforma/#{reform.id}" %></h3>
           <h3 style="margin-top: 0px; margin-bottom: 15px;"><%= Budget.find_by(reform_id: reform) %></h3>
         <% end %>
 
