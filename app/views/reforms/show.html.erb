@@ -4,6 +4,8 @@
 			
 		</div>
 
+    <div class="col-md-10">
+
       <div class="constructor">
 		    <p id="notice"><%# notice %></p>
 
@@ -203,7 +205,7 @@
           <% end %>
 
         <div style="margin-top: 60px;">
-          <h3 style="font-weight: normal;">¿Quieres que nuestra oficina de Arquitectura estudie tu proyecto y comprobemos cómo podemos optimizar el proyecto, ya sea con ofertas desde nuestra base de datos, o nuevos materiales o soluciones, sin ningún compromiso claro? <br>Contacta con nosotros y nos pondremos en contacto lo antes posible, gracias.</h3>
+          <h3 style="font-weight: normal;">¿Quieres que nuestra oficina de Arquitectura estudie tu proyecto y comprobemos cómo podemos optimizar el proyecto, ya sea con ofertas desde nuestra base de datos, o nuevos materiales o soluciones?, sin ningún compromiso claro. <br>Contacta con nosotros y nos pondremos en contacto lo antes posible, gracias.</h3>
           <% if logged_in? %>
           <%= render 'shared/micropost_form' %>
           <% else %>
@@ -241,6 +243,8 @@
       	<%= render 'shared/lista_ofertas' %>
 
       </div>	
+
+    </div>
 
 		<div class="col-sm-4">
 			

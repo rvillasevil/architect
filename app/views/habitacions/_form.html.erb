@@ -5391,6 +5391,172 @@
 
             </ul>
         </div>
+
+        <h5 style="font-weight: normal; line-height: 13px;">Pulsa en cada capítulo de tu obra para seleccionar lo que te interesa:</h5>
+          <div class="titulos">
+              <ul class="botones">
+
+                <% if params[:bano] == "true" %>
+
+                  <li style="" onclick="divVisibility('Div0');">
+                      <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+                  </li>
+                  <li style="" onclick="divVisibility('Div1');">
+                      
+                      <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos baño</button>
+                  </li>
+                  <li onclick="divVisibility('Div5');">
+                      
+                      <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías baño</button>
+                  </li>
+                  <li onclick="divVisibility('Div7');">
+                      
+                      <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+                  </li>
+                  <li onclick="divVisibility('Div8');">
+                      
+                      <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
+                  </li>            
+                  <li onclick="divVisibility('Div9');">
+                      
+                      <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería baño</button>
+                  </li>
+                <% else %>
+                  <% if params[:cocina] == "true" %>
+
+                    <li style="" onclick="divVisibility('Div0');">
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+                    </li>
+                    <li style="" onclick="divVisibility('Div2');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos cocina</button>
+                    </li>
+                    <li onclick="divVisibility('Div6');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías cocina</button>
+                    </li>
+                    <li onclick="divVisibility('Div7');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+                    </li>
+                    <li onclick="divVisibility('Div8');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
+                    </li>              
+                    <li onclick="divVisibility('Div10');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería Cocina</button>
+                    </li>
+                    <li onclick="divVisibility('Div11');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
+                    </li>
+                    <li onclick="divVisibility('Div14');">
+                        
+                        <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
+                    </li>
+                  <% else %>
+                    <% if params[:habitacion] == "true" %>
+
+                      <li style="" onclick="divVisibility('Div0');">
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+                      </li>
+                      <li style="" onclick="divVisibility('Div3');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos salón</button>
+                      </li>
+                      <li onclick="divVisibility('Div4');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías</button>
+                      </li>
+                      <li onclick="divVisibility('Div7');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+                      </li>
+                      <li onclick="divVisibility('Div8');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
+                      </li>
+                      <li onclick="divVisibility('Div13');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Pintores</button>
+                      </li>
+                      <li onclick="divVisibility('Div14');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
+                      </li>
+                    <% else %>
+
+
+
+                      <li style="" onclick="divVisibility('Div0');">
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
+                      </li>
+                      <li style="" onclick="divVisibility('Div1');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos baño</button>
+                      </li>
+                      <li style="" onclick="divVisibility('Div2');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos cocina</button>
+                      </li>
+                      <li style="" onclick="divVisibility('Div3');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos salón</button>
+                      </li>
+                      <li onclick="divVisibility('Div4');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías</button>
+                      </li>
+                      <li onclick="divVisibility('Div5');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías baño</button>
+                      </li>
+                      <li onclick="divVisibility('Div6');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías cocina</button>
+                      </li>
+                      <li onclick="divVisibility('Div7');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
+                      </li>
+                      <li onclick="divVisibility('Div8');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
+                      </li>
+                      <li onclick="divVisibility('Div9');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería baño</button>
+                      </li>
+                      <li onclick="divVisibility('Div10');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería Cocina</button>
+                      </li>
+                      <li onclick="divVisibility('Div11');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
+                      </li>
+                      <li onclick="divVisibility('Div12');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Caldera</button>
+                      </li>
+                      <li onclick="divVisibility('Div13');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Pintores</button>
+                      </li>
+                      <li onclick="divVisibility('Div14');">
+                          
+                          <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Puertas y ventanas</button>
+                      </li>                       
+                    <% end %>                     
+                  <% end %>                     
+                <% end %>
+
+
+                                                                                                                                       
+              </ul>        
+          </div>
+
     </div>
 
   <%= f.hidden_field :reform_id, value: params[:reform_id] %>
