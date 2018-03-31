@@ -10,20 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304195349) do
+ActiveRecord::Schema.define(version: 20180330185331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "azulejos", force: :cascade do |t|
-    t.string   "description"
-    t.string   "name"
-    t.string   "medidas"
-    t.decimal  "precio"
-    t.string   "unidad"
-    t.string   "aspecto"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string  "description"
+    t.string  "name"
+    t.string  "medidas"
+    t.decimal "precio"
+    t.string  "unidad"
+    t.string  "aspecto"
   end
 
   create_table "banos", force: :cascade do |t|
@@ -689,6 +687,10 @@ ActiveRecord::Schema.define(version: 20180304195349) do
     t.string   "ventana_colocar_comment"
     t.string   "ventana_tipo_comment"
     t.string   "ventana_contraventana_comment"
+    t.string   "email_invitado"
+    t.string   "nombre_invitado"
+    t.string   "provincia_invitado"
+    t.string   "plazo_invitado"
   end
 
   create_table "microposts", force: :cascade do |t|
@@ -734,15 +736,31 @@ ActiveRecord::Schema.define(version: 20180304195349) do
   create_table "partidas", force: :cascade do |t|
     t.string   "titulo"
     t.string   "description"
-    t.decimal  "medicion",      precision: 7, scale: 2
+    t.decimal  "medicion",           precision: 7, scale: 2
     t.string   "comentario"
     t.string   "foto"
     t.string   "categoria"
     t.integer  "reform_id"
     t.integer  "habitacion_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.integer  "user_id"
+    t.string   "um"
+    t.string   "desc_tecnica"
+    t.string   "material"
+    t.string   "cond_previas"
+    t.string   "fases"
+    t.string   "cond_terminacion"
+    t.string   "man_obra"
+    t.decimal  "rendimiento",        precision: 5, scale: 2
+    t.string   "mat_incluidos"
+    t.string   "mat_aportar"
+    t.decimal  "importe",            precision: 5, scale: 2
+    t.string   "empresa"
+    t.string   "nombre_invitado"
+    t.string   "email_invitado"
+    t.string   "provincia_invitado"
+    t.string   "plazo_invitado"
   end
 
   create_table "pavimentos", force: :cascade do |t|

@@ -1,5 +1,6 @@
 class PartidasController < ApplicationController
   before_action :set_partida, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
   # GET /partidas
   # GET /partidas.json
@@ -15,7 +16,10 @@ class PartidasController < ApplicationController
   # GET /partidas/new
   def new
     @partida = Partida.new
-    @reform = Reform.find(params[:reform_id])
+    if params[:empresa] != nil or params[:invitado] != nil
+    else
+      @reform = Reform.find(params[:reform_id])
+    end
   end
 
   # GET /partidas/1/edit
@@ -24,16 +28,28 @@ class PartidasController < ApplicationController
 
   # POST /partidas
   # POST /partidas.json
+
   def create
     @partida = Partida.new(partida_params)
-    @reform = Reform.find(params[:partida][:reform_id])
 
     respond_to do |format|
       if @partida.save
-        format.html { redirect_to reform_path(@reform), notice: 'Partida was successfully created.' }
-        format.json { render :show, status: :created, location: @partida }
+        if logged_in?
+          if params[:partida][:empresa] != nil
+            format.html { redirect_to empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.' }
+            #format.html { redirect_back(fallback_location: empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.') }
+            format.json { render :show, status: :created, location: @partida }          
+          else
+            @reform = params[:partida][:reform_id]
+            format.html { redirect_to reform_path(@reform), notice: 'La partida se ha creado correctamente.' }
+            format.json { render :show, status: :created, location: @partida }
+          end
+        else
+          format.html { redirect_to root_url, notice: 'La partida se ha creado con éxito en breve nos pondremos en contacto con usted, gracias.' }
+          format.json { render :show, status: :created, location: @partida } 
+        end         
       else
-        format.html { redirect_to reform_path(@reform), notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
+        format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
         format.json { render json: @partida.errors, status: :unprocessable_entity }
       end
     end
@@ -44,8 +60,13 @@ class PartidasController < ApplicationController
   def update
     respond_to do |format|
       if @partida.update(partida_params)
-        format.html { redirect_to @partida, notice: 'Partida was successfully updated.' }
-        format.json { render :show, status: :ok, location: @partida }
+        if params[:partida][:empresa] != nil
+          format.html { redirect_to empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha actualizado correctamente.' }        
+        else
+          format.html { redirect_to reform_path(@reform), notice: 'Partida was successfully updated.' }
+          format.json { render :show, status: :ok, location: @partida }
+        end         
+
       else
         format.html { render :edit }
         format.json { render json: @partida.errors, status: :unprocessable_entity }
@@ -58,7 +79,7 @@ class PartidasController < ApplicationController
   def destroy
     @partida.destroy
     respond_to do |format|
-      format.html { redirect_to partidas_url, notice: 'Partida was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: root_url, notice: 'La partida ha sido eliminada.') }
       format.json { head :no_content }
     end
   end
@@ -71,6 +92,6 @@ class PartidasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def partida_params
-      params.require(:partida).permit(:titulo, :description, :medicion, :comentario, :foto, :categoria, :reform_id, :habitacion_id, :user_id)
+      params.require(:partida).permit(:titulo, :description, :medicion, :comentario, :foto, :categoria, :reform_id, :habitacion_id, :user_id, :um, :desc_tecnica, :material, :cond_previas, :fases, :cond_terminacion, :man_obra, :rendimiento, :mat_incluidos, :mat_aportar, :importe, :empresa, :nombre_invitado, :email_invitado, :provincia_invitado, :plazo_invitado)
     end
 end

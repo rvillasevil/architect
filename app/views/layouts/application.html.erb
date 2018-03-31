@@ -39,7 +39,10 @@
       <div class="row" style="">
         <div class="col-sm-12" style="margin-top: 10px;">    
           <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <div class="col-md-2"></div>
+          <div class="col-md-10">
+            <div class="alert alert-<%= message_type %>"><h3><%= message %></h3></div>
+          </div>
           <% end %>
           <%= yield %>              
 

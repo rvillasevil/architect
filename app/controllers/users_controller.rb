@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers, :lista, :new_plaza, :plazas, :following_plaza, :show, :update_administrative,]
+                                        :following, :followers, :lista, :new_plaza, :plazas, :following_plaza,  :update_administrative]  #:show,
   before_action :correct_user,   only: [:edit, :update, :update_administrative]
   before_action :admin_user,     only: :destroy
 
@@ -33,8 +33,10 @@ class UsersController < ApplicationController
       @microposts = Micropost.where(:plaza_id => @user.id).paginate(page: params[:page], per_page: 10)
     else 
     end
-    @comment = Comment.new( :micropost => @micropost )
-    @micropost  = current_user.microposts.build 
+    @comment = Comment.new( :micropost => @micropost)
+    if logged_in?
+      @micropost  = current_user.microposts.build 
+    end
 
   end
 

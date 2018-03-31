@@ -31,7 +31,6 @@
 
         <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", class: "nombre", style: "border: 1 px solid grey; padding: 10px;", placeholder: "Nombre para tu nueva habitación" %> </h3>      
       <% else %>
-      <h1 style="color: #444;">Nueva Estancia</h1>
 
       <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3>
 
@@ -213,8 +212,14 @@
                 <li class="lista_elemento" style=" ">
                     <ul class="elemento" id="quitar_azulejo" style="">
                         <% @task = Task.find_by(task: 'demo_quitar_azulejo') %>
-                      <li>
-                        <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                        <li>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                        
+                          <%= image_tag(('quitar_azulejo.jpg'), class: "img_prueba") %>
+                        </div>
+                      </div>
+                    </div>
                       </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -257,8 +262,14 @@
                 <li style="">
                     <ul class="elemento" style="">
                         <% @task = Task.find_by(task: 'demo_quitar_baldosa') %>
-                      <li>
-                        <%= image_tag(('quitar_baldosa.jpg'), class: "img-responsive") %>
+                        <li>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                        
+                          <%= image_tag(('quitar_baldosa.jpg'), class: "img_prueba") %>
+                        </div>
+                      </div>
+                    </div>
                       </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -301,8 +312,14 @@
                 <li style="">
                     <ul class="elemento" style="">
                         <% @task = Task.find_by(task: 'demo_quitar_falso_techo') %>
-                      <li class="">
-                        <%= image_tag(('falso_techo.jpg') , class: "img-responsive")%>
+                        <li class="">
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                        
+                          <%= image_tag(('falso_techo.jpg') , class: "img_prueba")%>
+                        </div>
+                      </div>
+                    </div>
                       </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -346,7 +363,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_tabique') %>
                         <li>
-                            <%= image_tag(('derribo_tabique.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('derribo_tabique.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -396,7 +419,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_inodoro') %>
                         <li>
-                            <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('wc_bidet.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -440,7 +469,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_bidet') %>
                         <li>
-                            <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('wc_bidet.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -485,7 +520,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_plato_ducha') %>
                         <li>
-                            <%= image_tag(('plato_ducha.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('plato_ducha.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -530,7 +571,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_mampara') %>
                         <li>
-                            <%= image_tag(('mampara_paves.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mampara_paves.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -575,7 +622,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_mueble_bano') %>
                         <li>
-                            <%= image_tag(('mueble_bano_2.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mueble_bano_2.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -620,7 +673,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_banera') %>
                         <li>
-                            <%= image_tag(('banera_grifos_2.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('banera_grifos_2.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -669,7 +728,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_mobi_cocina') %>
                         <li>
-                            <%= image_tag(('retirar_mobiliario_cocina.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('retirar_mobiliario_cocina.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -714,7 +779,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>
                         <li>
-                            <%= image_tag(('retirar_electrodomesticos.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('retirar_electrodomesticos.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -763,7 +834,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_friso_madera') %>
                         <li>
-                            <%= image_tag(('retirar_friso_madera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('retirar_friso_madera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -808,7 +885,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'demo_quitar_mueble') %>
                         <li>
-                            <%= image_tag(('retirar_muebles.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('retirar_muebles.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -858,7 +941,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_termo_electrico') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -902,7 +991,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_radiador') %>
                         <li>
-                            <%= image_tag(('tub_radiador.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tub_radiador.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -951,7 +1046,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavabo') %>
                         <li>
-                            <%= image_tag(('fontanero_llaves_desague.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('fontanero_llaves_desague.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -995,7 +1096,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_ducha_banera') %>
                         <li>
-                            <%= image_tag(('fontaneria_bano.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('fontaneria_bano.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1039,7 +1146,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_bidet') %>
                         <li>
-                            <%= image_tag(('fontaneria_bano.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('fontaneria_bano.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1083,7 +1196,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_inodoro') %>
                         <li>
-                            <%= image_tag(('fontaneria_bano.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('fontaneria_bano.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1127,7 +1246,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_colum_hidromasaje') %>
                         <li>
-                            <%= image_tag(('columna_hidromasaje.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('columna_hidromasaje.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1171,7 +1296,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavabo_doble') %>
                         <li>
-                            <%= image_tag(('tub_lavabo_doble.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tub_lavabo_doble.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1215,7 +1346,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_jacuzzy') %>
                         <li>
-                            <%= image_tag(('jacuzzi.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('jacuzzi.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1260,7 +1397,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_sauna') %>
                         <li>
-                            <%= image_tag(('sauna.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('sauna.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1304,7 +1447,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_ducha_empotrada') %>
                         <li>
-                            <%= image_tag(('ducha_empotrada.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('ducha_empotrada.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1349,7 +1498,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_toallero') %>
                         <li>
-                            <%= image_tag(('tub_radiador.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tub_radiador.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1393,7 +1548,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_reubicar_contador') %>
                         <li>
-                            <%= image_tag(('contador_agua.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('contador_agua.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1438,7 +1599,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavadora') %>
                         <li>
-                            <%= image_tag(('lavadora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavadora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1482,7 +1649,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_reubicar_inodoro') %>
                         <li>
-                            <%= image_tag(('wc.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('wc.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1527,7 +1700,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_tipo') %>
                         <li>
-                            <%= image_tag(('tipo_tuberias.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tipo_tuberias.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1571,7 +1750,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_caldera') %>
                         <li>
-                            <%= image_tag(('mantenimiento_caldera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mantenimiento_caldera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1622,7 +1807,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_fregadero') %>
                         <li>
-                            <%= image_tag(('fontanero_llaves_lavabo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('fontanero_llaves_lavabo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1667,7 +1858,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_lavavajillas') %>
                         <li>
-                            <%= image_tag(('lavavajillas.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavavajillas.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1712,7 +1909,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'tub_secadora') %>
                         <li>
-                            <%= image_tag(('secadora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('secadora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1762,7 +1965,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_pto_luz_techo') %>
                         <li>
-                            <%= image_tag(('luz_techo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('luz_techo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1806,7 +2015,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_pto_luz_pared') %>
                         <li>
-                            <%= image_tag(('luz_pared.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('luz_pared.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1851,7 +2066,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_interr_simple') %>
                         <li>
-                            <%= image_tag(('interruptor_simple.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('interruptor_simple.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1895,7 +2116,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_interr_doble') %>
                         <li>
-                            <%= image_tag(('interruptor_doble.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('interruptor_doble.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1940,7 +2167,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_interr_triple') %>
                         <li>
-                            <%= image_tag(('interruptor_triple.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('interruptor_triple.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -1985,7 +2218,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_enchu_simple') %>
                         <li>
-                            <%= image_tag(('enchufe_simple.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('enchufe_simple.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2030,7 +2269,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_enchu_doble') %>
                         <li>
-                            <%= image_tag(('enchufe_doble.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('enchufe_doble.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2075,7 +2320,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_enchu_triple') %>
                         <li>
-                            <%= image_tag(('enchufe_triple.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('enchufe_triple.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2120,7 +2371,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_reubicar_caja_luz') %>
                         <li>
-                            <%= image_tag(('caja_registro.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('caja_registro.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2164,7 +2421,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_lavadora') %>
                         <li>
-                            <%= image_tag(('lavadora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavadora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2209,7 +2472,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_ventilador_extractor') %>
                         <li>
-                            <%= image_tag(('campana_extractora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('campana_extractora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2254,7 +2523,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_horno_vitroceramica') %>
                         <li>
-                            <%= image_tag(('horno_vitroceramica.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('horno_vitroceramica.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2298,7 +2573,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_microondas') %>
                         <li>
-                            <%= image_tag(('microondas.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('microondas.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2342,7 +2623,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_frigorifico') %>
                         <li>
-                            <%= image_tag(('frigorifico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('frigorifico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2386,7 +2673,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_lavavajillas') %>
                         <li>
-                            <%= image_tag(('lavavajillas.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavavajillas.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2431,7 +2724,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_secadora') %>
                         <li>
-                            <%= image_tag(('secadora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('secadora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2476,7 +2775,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'elec_toma_telefono') %>
                         <li>
-                            <%= image_tag(('telefono_fijo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('telefono_fijo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2526,7 +2831,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_azulejo') %>
                         <li>
-                            <%= image_tag(('azulejo_pared.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('azulejo_pared.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2570,7 +2881,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tipo_azulejo') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('quitar_azulejo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2629,7 +2946,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_baldosa') %>
                         <li>
-                            <%= image_tag(('colocar_baldosa.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('colocar_baldosa.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2674,7 +2997,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tipo_baldosa') %>
                         <li>
-                            <%= image_tag(('colocar_baldosa4.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('colocar_baldosa4.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2733,7 +3062,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_techo_pladur') %>
                         <li>
-                            <%= image_tag(('falso_techo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('falso_techo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2777,7 +3112,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_ladriyeso') %>
                         <li>
-                            <%= image_tag(('tabique_fabrica_yeso.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tabique_fabrica_yeso.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2821,7 +3162,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_pladur') %>
                         <li>
-                            <%= image_tag(('pared_pladur.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('pared_pladur.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2865,7 +3212,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_fabrica') %>
                         <li>
-                            <%= image_tag(('tabique_fabrica.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tabique_fabrica.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2909,7 +3262,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_tabique_paves') %>
                         <li>
-                            <%= image_tag(('tabique_paves.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('tabique_paves.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -2954,7 +3313,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'alb_nivelacion_pared') %>
                         <li>
-                            <%= image_tag(('nivelar_pared.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('nivelar_pared.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3004,7 +3369,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_mampara') %>
                         <li>
-                            <%= image_tag(('mampara_bano.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mampara_bano.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3049,7 +3420,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_mueble_bano') %>
                         <li>
-                            <%= image_tag(('mueble_bano2.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mueble_bano2.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3094,7 +3471,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_banera') %>
                         <li>
-                            <%= image_tag(('banera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('banera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3139,7 +3522,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_plato_ducha') %>
                         <li>
-                            <%= image_tag(('plato_ducha.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('plato_ducha.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3184,7 +3573,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_bidet') %>
                         <li>
-                            <%= image_tag(('wc_bidet.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('wc_bidet.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3229,7 +3624,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_inodoro_normal') %>
                         <li>
-                            <%= image_tag(('wc.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('wc.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3274,7 +3675,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_inodoro_suspendido') %>
                         <li>
-                            <%= image_tag(('inodoro_suspendido.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('inodoro_suspendido.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3319,7 +3726,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_inodoro_encastrado') %>
                         <li>
-                            <%= image_tag(('inodoro_encastrado.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('inodoro_encastrado.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3364,7 +3777,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_grifo_ducha') %>
                         <li>
-                            <%= image_tag(('grifo_ducha.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('grifo_ducha.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3409,7 +3828,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_grifo_banera') %>
                         <li>
-                            <%= image_tag(('grifo_banera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('grifo_banera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3454,7 +3879,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_acceso_atornillado') %>
                         <li>
-                            <%= image_tag(('acc_atornillado.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('acc_atornillado.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3499,7 +3930,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_colum_hidromasaje') %>
                         <li>
-                            <%= image_tag(('columna_hidromasaje.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('columna_hidromasaje.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3544,7 +3981,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_cabina_ducha') %>
                         <li>
-                            <%= image_tag(('cabina_ducha.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('cabina_ducha.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3589,7 +4032,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_plato_ducha_obra') %>
                         <li>
-                            <%= image_tag(('plato_ducha_obra.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('plato_ducha_obra.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3634,7 +4083,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_sani_lavabo_pedestal') %>
                         <li>
-                            <%= image_tag(('lavabo_pedestal.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavabo_pedestal.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3684,7 +4139,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_mueble_alto_cocina') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('muebles_cocina.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                        </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3729,7 +4190,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_mueble_bajo_cocina') %>
                         <li>
-                            <%= image_tag(('muebles_cocina.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('muebles_cocina.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3773,7 +4240,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_horno_electrico') %>
                         <li>
-                            <%= image_tag(('muebles_cocina.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('retirar_electrodomesticos.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3817,7 +4290,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_placa_vitro') %>
                         <li>
-                            <%= image_tag(('vitroceramica.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('vitroceramica.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3862,7 +4341,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_placa_electrica') %>
                         <li>
-                            <%= image_tag(('placa_electrica.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('placa_electrica.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3906,7 +4391,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_lavadora') %>
                         <li>
-                            <%= image_tag(('lavadora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavadora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -3951,7 +4442,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_frigorifico') %>
                         <li>
-                            <%= image_tag(('frigorifico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('frigorifico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                           <li class="nombre">
                         <div class="nombre">
@@ -3996,7 +4493,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_lavavajillas') %>
                         <li>
-                            <%= image_tag(('lavavajillas.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('lavavajillas.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4041,7 +4544,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_microondas') %>
                         <li>
-                            <%= image_tag(('microondas.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('microondas.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4086,7 +4595,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_electro_secadora') %>
                         <li>
-                            <%= image_tag(('secadora.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('secadora.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4131,7 +4646,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_fregadero') %>
                         <li>
-                            <%= image_tag(('fregadero.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('fregadero.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4176,7 +4697,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'mont_grifo_fregadero') %>
                         <li>
-                            <%= image_tag(('mont_grifo_fregadero.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mont_grifo_fregadero.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4225,7 +4752,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_a') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4270,7 +4803,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_b') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4315,7 +4854,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_c') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4360,7 +4905,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_d') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                          <li class="nombre">
                         <div class="nombre">
@@ -4405,7 +4956,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_e') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4450,7 +5007,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_termo_elect_f') %>
                         <li>
-                            <%= image_tag(('termo_electrico.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('termo_electrico.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4499,7 +5062,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_calde_atmos') %>
                         <li>
-                            <%= image_tag(('mantenimiento_caldera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mantenimiento_caldera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4544,7 +5113,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_calde_bajo_nox') %>
                         <li>
-                            <%= image_tag(('mantenimiento_caldera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mantenimiento_caldera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4589,7 +5164,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'colo_pmarcha_calde_estanca') %>
                         <li>
-                            <%= image_tag(('mantenimiento_caldera.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('mantenimiento_caldera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4638,7 +5219,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'techo_pintar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('reparar_humedad_techo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4683,7 +5270,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'techo_tipo_pintura') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('reparar_humedad_techo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4728,7 +5321,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'techo_alisar') %>
                         <li>
-                            <%= image_tag(('pared_alisar.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('pared_alisar.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4773,7 +5372,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'techo_reparar_humedad') %>
                         <li>
-                            <%= image_tag(('reparar_humedad_techo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('reparar_humedad_techo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4818,7 +5423,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_empapelar') %>
                         <li>
-                            <%= image_tag(('papel_pared2.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('papel_pared2.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4863,7 +5474,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_quitar_papel') %>
                         <li>
-                            <%= image_tag(('papel_pared2.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('papel_pared2.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4908,7 +5525,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_alisar') %>
                         <li>
-                            <%= image_tag(('pared_alisar.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('pared_alisar.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4953,7 +5576,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_pintar') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('pared_alisar.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -4998,7 +5627,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'pared_reparar_humedad') %>
                         <li>
-                            <%= image_tag(('reparar_humedad_techo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('reparar_humedad_techo.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5043,7 +5678,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'carpin_friso') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('retirar_friso_madera.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5092,7 +5733,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'puerta_colocar') %>
                         <li>
-                            <%= image_tag(('colocar_puerta.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('colocar_puerta.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5137,7 +5784,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'puerta_tipo') %>
                         <li>
-                            <%= image_tag(('puerta.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('puerta.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5198,7 +5851,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'puerta_cambio_precerco') %>
                         <li>
-                            <%= image_tag(('quitar_azulejo.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('puerta.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5243,7 +5902,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'ventana_colocar') %>
                         <li>
-                            <%= image_tag(('colocar_ventana.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('colocar_ventana.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5288,7 +5953,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'ventana_tipo') %>
                         <li>
-                            <%= image_tag(('ventana_abierta.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('ventana_abierta.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5349,7 +6020,13 @@
                     <ul class="elemento">
                         <% @task = Task.find_by(task: 'ventana_contraventana') %>
                         <li>
-                            <%= image_tag(('ventana.jpg'), class: "img-responsive") %>
+                          <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
+                            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
+                              <%= image_tag(('ventana.jpg'), class: "img_prueba") %>
+                            </div>
+                          </div>
+                        </div>
                         </li>
                       <li class="nombre">
                         <div class="nombre">
@@ -5559,17 +6236,38 @@
 
     </div>
 
-  <%= f.hidden_field :reform_id, value: params[:reform_id] %>
-  <%= f.hidden_field :user_id, value: current_user %>
+    <h1 style="font-size: 28px; font-weight: 600;">¿No encuentras lo que buscas?</h1>
+    <h3><%= link_to "Crea tu proyecto personalizado", new_partida_path(invitado: true), class: "btn", style: "color: red; border: 1px solid red; padding: 10px; border-radius: 10px; font-weight: 600;" %></h3>
+
+  <% if logged_in? %>
+    <%= f.hidden_field :reform_id, value: params[:reform_id] %>
+    <%= f.hidden_field :user_id, value: current_user %>
+  <% end %>
 
   <div class="actions">
     <%# f.submit "Ya he revisado todas las partidas, Enviar", class: "btn bt-sm btn-info", style: "background-color: white; color: #46b8da; padding: 10px; font-weight: bolder; border-radius: 10px;" %>
     <% if logged_in? %>
-      <h5 style=""><input type="button" value="Enviar" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px;"></h5>
+      <h5 style=""><input type="button" class="" value="Enviar" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px;"></h5>
     <% else %>
-      <h1 style="padding: 20px; font-size: 28px;">¿Quieres pedir un presupuesto a las mejores empresas o conocer más ofertas y promociones para tu reforma?</h1>
-      <h5>Hazte un usuario de ConstructUX en dos sencillos pasos de forma gratuita para poder solicitar presupuestos y ofertas de las mejores empresas constructoras de tu zona y acceder a promociones  de mano de obra y materiales específicas para ti. </h5>
-      <h3 style=""><input type="button" value="Hazte usuario de ConstructUX" onclick="form.submit();" style="background-color: white; padding: 20px; color: #0084B4; font-weight: 900; border-radius: 15px; border-color: #0084B4;"></h3>
+
+      <h1 style="font-size: 28px; margin-bottom: 5px; font-weight: 600;">¿Quieres pedir presupuestos a las mejores empresas? <h3 style="display: inline-flex; margin-top: 5px; font-weight: 600;">Es gratis, rápido y sin compromiso. Hazte usuario de ConstructUX y podrás diseñar tantas estancias como quieras por cada proyecto.</h3></h1>
+      <ul style="display: inline-block; list-style: none; padding: 0px;">
+        <li>
+          <button style="background-color: white; padding: 10px; color: #0084B4; font-weight: 900; border-radius: 15px; border-color: #0084B4; display: block; "><h5 style="margin: 0px;"><%= link_to "Hazte usuario de ConstructUX", signup_path, style: "font-weight: 600;" %></h5></button>
+        </li>
+        <li style="padding-top: 30px;">
+          <div style="display: block;">
+            <h3 style="margin-top: 0px; font-weight: 600;">O si lo prefieres escríbenos tus datos para mandarte tus presupuestos y la información a tu correo.<span style="display: inline-flex; margin: 0px; font-size: 15px; font-weight: 500; padding-bottom: 15px; padding-top: 15px;">En breve recibirás tus presupuestos personalizados, gracias por confiar en nosotros!</span>
+            <%= f.text_field :nombre_invitado, placeholder: "Tu nombre", style: "display: block; width: 60%; padding: 10px; " %>
+            <%= f.text_field :email_invitado, placeholder: "Tu correo donde recibirás los presupuestos", style: "display: block; width: 60%; padding: 10px;" %>
+            <%= f.text_field :provincia_invitado, placeholder: "Dinos tu provincia", style: "display: block; width: 60%; padding: 10px;" %>
+            <%= f.text_field :plazo_invitado, placeholder: "¿Sabes cuando quieres realizar la reforma?", style: "display: block; width: 60%; padding: 10px;" %>
+            <h5 style="font-size: 13px; color: #666; line-height: 14px;">Estos datos son privados y nadie ajeno a ConstructUX tendrá acceso a ellos. Al mandar esta información estás aceptando las normas de uso y su política de privacidad y aceptas recibir mensajes email de vez en cuando sobre campañas en ConstructUX. Se puede dar de baja en cualquier momento.</h5>
+            <h5><input type="button" value="Pedir presupuestos" onclick="form.submit();" style="background-color: white; padding: 20px; color: #0084B4; font-weight: 900; border-radius: 15px; border-color: #0084B4; display: block;"></h3>
+          </div>          
+        </li> 
+
+      </ul>
     <% end %>
 
   </div>

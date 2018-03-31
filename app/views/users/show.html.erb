@@ -2,7 +2,7 @@
   <% provide(:title, @user.name) %>
   <div class="row">
     <div class="constructor_show_user">
-      <div class="col-sm-2">
+      <div class="col-sm-1">
         <div class="imagen_usuario">
           <%= image_tag @user.foto.url, class: "img", size: 300  if @user.foto? %>
           <%= render 'follow_form' if logged_in? %>
@@ -68,7 +68,9 @@
             </li>
             <li>
               <h3>Lo que opinan otros usuarios</h3>
-              <%= render 'shared/valoracion_form' %>
+              <% if logged_in? %>
+                <%= render 'shared/valoracion_form' %>
+              <% end %>
             </li>
             <li>
               <h3>Posts</h3>

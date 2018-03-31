@@ -5,6 +5,13 @@ require 'will_paginate/array'
 
   def home
     @reforms = Reform.all
+
+    @partidas = if params[:tern]
+      Partida.where('titulo @@ :t or description @@ :t or desc_tecnica @@ :t or material @@ :t', t: params[:tern]).where.not(empresa: nil).order('created_at DESC')
+    else
+      Partida.all.where.not(empresa: nil)
+    end    
+
     if logged_in?
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
