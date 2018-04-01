@@ -17,50 +17,50 @@
             </li>
             <li>
               <h3>Experiencia</h3>
-              <h3 style="font-weight: 400;"><%= @user.experiencia %></h3>
+              <h3 style="font-weight: 300;"><%= @user.experiencia %></h3>
             </li>
             <li>
               <h3>Redes Sociales</h3>
               <% if @user.linkedin? %>
                 <div class="">
                   <%= link_to "#{@user.linkedin}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-linkedin" aria-hidden="true"></i></span>
                   <% end %> 
                   <%= link_to "#{@user.facebook}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fa fa-facebook-official" aria-hidden="true"></i></span>
+                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
                   <% end %>
                   <%= link_to "#{@user.twitter}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-twitter" aria-hidden="true"></i></span>
                   <% end %>
                   <%= link_to "#{@user.pinterest}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fa fa-pinterest" aria-hidden="true"></i></span>
+                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-pinterest" aria-hidden="true"></i></span>
                   <% end %>                                
                 </div>
               <% end %>            
             </li>
             <li>
               <h3>Descripcion</h3>
-              <h3 style="font-weight: 400;"><%= @user.description %></h3>
+              <h3 style="font-weight: 300;"><%= @user.description %></h3>
             </li>
             <li>
               <h3>Donde estamos</h3>
-              <h3 style="font-weight: 400;"><%= @user.direccion %></h3>
+              <h3 style="font-weight: 300;"><%= @user.direccion %></h3>
             </li>
             <li>
               <h3>Qué hacemos</h3>
               <div style="columns: 2">
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio1 if @user.servicio1? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio2 if @user.servicio2? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio3 if @user.servicio3? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio1 if @user.servicio4? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio2 if @user.servicio5? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio3 if @user.servicio6? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio1 if @user.servicio7? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio2 if @user.servicio8? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio3 if @user.servicio9? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio1 if @user.servicio10? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio2 if @user.servicio11? %></h3>
-                <h3 style="font-weight: 400; margin: 0px;"><%= @user.servicio3 if @user.servicio12? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio1? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio2? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio3? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio4? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio5? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio6? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio7? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio8? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio9? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio10? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio11? %></h3>
+                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio12? %></h3>
               </div>
             </li>          
             <li>
@@ -82,7 +82,7 @@
                       <%= image_tag @user_valoracion.foto.url, class: "img-circle", size: 60  if @user.foto? %>
                       <div style="display: block; padding-left: 10px;">
                         <h3 style="display: inline-flex; margin: 0px;"><%= @user_valoracion.name %></h3>
-                        <h5 style="display: block; margin: 0px; font-weight: 400;"><%= valoracion.created_at %> ago.</h5>
+                        <h5 style="display: block; margin: 0px; font-weight: 300;"><%= valoracion.created_at %> ago.</h5>
                         <h5 style="margin: 0px;">
                           <% if valoracion.valoracion == 'Muy mala' %>
                             <i class="fa fa-star" aria-hidden="true"></i>
@@ -123,7 +123,7 @@
                       </div>
                     </li>
                     <li>
-                      <h3 style="font-weight: 400; margin: 0px;"><%= valoracion.content %></h3>
+                      <h3 style="font-weight: 300; margin: 0px;"><%= valoracion.content %></h3>
                     </li>
                   </ul>
                 <% end %>
@@ -134,7 +134,7 @@
           <ul>
             <li>
               <h1 style="font-weight: 700; color: #666 !important; letter-spacing: -2px;"><%= @user.name %></h1>
-              <h3 style="font-weight: 400; margin: 0px;">Cliente privado</h3>
+              <h3 style="font-weight: 300; margin: 0px;">Cliente privado</h3>
             </li>
           </ul>
         <% end %>

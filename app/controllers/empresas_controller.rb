@@ -11,7 +11,8 @@ class EmpresasController < ApplicationController
   # GET /empresas/1
   # GET /empresas/1.json
   def show
-    @empresa = Empresa.find(params[:id])
+    @user = User.find(params[:id])
+    @empresa = Empresa.find_by(user_id: params[:id])
   end
 
   # GET /empresas/new
