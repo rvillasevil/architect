@@ -42,7 +42,10 @@
                 <ul style="list-style: none; width: 100%; padding: 0px; margin: 0px;" class="">
 
                   <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= image_tag('contractor_partidas.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><%= link_to "Tus partidas ofertadas", empresa_path(id: current_user.id, partidas_ofertadas: true), style: "color: #444;" %></b></h5> <h5><span style="font-size: 14px; line-height: 10px;">Las partidas personalizadas creadas y diseñadas por tí, que formarán parte del marketplace general donde podrán encontrarte todos los usuarios.</span></h5></span>
+                    <% if Empresa.find_by(user_id: current_user.id) != nil %>
+                      <%= image_tag('contractor_partidas.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><%= link_to "Tus partidas ofertadas", empresa_path(id: current_user.id, partidas_ofertadas: true), style: "color: #444;" %></b></h5> <h5><span style="font-size: 14px; line-height: 10px;">Las partidas personalizadas creadas y diseñadas por tí, que formarán parte del marketplace general donde podrán encontrarte todos los usuarios.</span></h5></span>
+                    <% else %>
+                    <% end %>
                   </li>
 
                   <li style="align-items: center; text-align: center; padding: 10px;">
@@ -52,7 +55,7 @@
                       <% end %>
                     <% else %>
                       <%= link_to new_empresa_path do %>
-                        <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus datos</b></h5></span>
+                        <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus datos</b></h5><h5><span style="font-size: 14px;">Los datos que quieres compartir con nosotros. Datos generales de partidas estandar junto con tus partidas personalizadas.</br>Para tu seguridad todo lo que ves aquí solo lo puedes ver tú con tu contraseña.</span></h5></span>
                       <% end %>                    
                     <% end %>
                   </li>
