@@ -54,6 +54,7 @@ class HabitacionsController < ApplicationController
           format.html { redirect_back(fallback_location: root_url, notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
           format.json { render json: @habitacion.errors, status: :unprocessable_entity }
         end
+      end
     end
   end
 
