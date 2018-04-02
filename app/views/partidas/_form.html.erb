@@ -93,7 +93,9 @@
           <h5><%= f.text_area :comentario, placeholder: "Añade algún comentario para que se pueda valorar mejor lo que buscas." %></h5>
         </div>
 
-        <%= f.hidden_field :empresa, value: @empresa.id %>
+        <% if params[:empresa] != nil %>
+        <%= f.hidden_field :empresa, value: params[:empresa] %>
+        <% end %>
 
         <% if params[:reform_id] != nil %>
           <%= f.hidden_field :reform_id, value: params[:reform_id] %>
