@@ -13,11 +13,24 @@
 
   <% if params[:action] == "edit" %>  
     <button class="btn btn-info" style="background-color: white; border: 1px solid green; font-family: 'Open Sans'; font-weight: 600;">
+      <% if Partida.where(user_id: current_user.id).count < 20 %>
       <%= link_to "Crear una partida personalizada", new_partida_path(empresa: empresa.id), style: "color: green;" %>
+      <% else %>
+      <h5>Has llegado al límite de partidas, ¿Necesitas más? Mándanos un correo a constructux@constructux.com.</h5>
+      <% end %>
     </button>
     <!--<h5>En la suscripción basic podrás añadir hasta 5 partidas. Actualizate a premium para poder las partidas que quieras.</h5>-->
   <% end %>
-  <h5>Añade el precio por cada partida de los siguientes capítulos:</h5>
+
+  <% if params[:action] == "new" %>  
+    <button class="btn btn-info" style="background-color: white; border: 1px solid green; font-family: 'Open Sans'; font-weight: 600;">
+      <%= link_to "Crear una partida personalizada", new_partida_path(empresa: empresa.id), style: "color: green;" %>
+    </button>
+    <!--<h5>En la suscripción basic podrás añadir hasta 5 partidas. Actualizate a premium para poder las partidas que quieras.</h5>-->
+  <% end %>  
+
+  <h5 style="margin-bottom: 0px; font-weight: 600;">Añade el precio por cada partida de los siguientes capítulos:</h5>
+  <h5 style="color: #777; font-size: 14px; margin-top: 0px; line-height: 14px;">Este precio no será visible para nadie y sólo lo utilizamos para que puedas rellenar tus ofertas para tus clientes con un solo click. Además podemos ofrecerte un estudio de mercado con estos datos.</h5>
   <div class="titulos">
       <ul class="botones">
           <li style="" onclick="divVisibility('Div0');">
@@ -5620,6 +5633,8 @@
                     <% end %>        
                 </ul>
               </div>
+            <% else %>
+              <h5>Aún no has creado ninguna partida</h5>
             <% end %>    
   </div>
 

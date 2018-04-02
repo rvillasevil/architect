@@ -9,12 +9,12 @@
 
               <div style="font-weight: bolder; color: #d9d9d9;">
                 
-                <h5 style="font-weight: bolder; display: inline-flex;"><i class="fa fa-envelope-o" aria-hidden="true" style="color: #0084B4;">&nbsp;</i><%= f.label :email %></h5>
+                <h5 style="font-weight: bolder; display: inline-flex;"><i class="far fa-envelope fa-2x" aria-hidden="true" style="color: #0084B4;">&nbsp;</i><%= f.label :email %></h5>
                 <h5 style="font-weight: bolder; color: #d9d9d9;"><%= f.email_field :email, class: 'form-control', placeholder: "Tu cuenta de correo electrónico" %></h5>
               </div>
 
               <div>
-                <h5 style="font-weight: bolder; display: inline-flex;"><i class="fa fa-key" aria-hidden="true" style="color: #0084B4;"></i>&nbsp;<%= f.label :password %>
+                <h5 style="font-weight: bolder; display: inline-flex;"><i class="fas fa-key fa-2x" aria-hidden="true" style="color: #0084B4;"></i>&nbsp;<%= f.label :password %>
                 &nbsp;&nbsp;<b><%= link_to "(forgot password)", new_password_reset_path, style: "color: #0084B4;" %></b></h5>
                 <h5> <%= f.password_field :password, class: 'form-control', placeholder: "Password..." %></h5>
               </div>

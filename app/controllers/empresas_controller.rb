@@ -13,6 +13,9 @@ class EmpresasController < ApplicationController
   def show
     @user = User.find(params[:id])
     @empresa = Empresa.find_by(user_id: params[:id])
+    if @empresa.user_id != current_user.id 
+      redirect_to root_url, alert: "No estás aurotizado a ver contenido en esta página" 
+    end    
   end
 
   # GET /empresas/new

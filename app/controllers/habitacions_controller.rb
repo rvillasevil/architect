@@ -46,7 +46,14 @@ class HabitacionsController < ApplicationController
         end
       end
     else
-      redirect_to signup_path
+      respond_to do |format|
+        if @habitacion.save
+          format.html { redirect_to root_url, notice: 'Se han mandado tu proyecto. En breve recibirán gratis las ofertas en tu correo, gracias.' }
+          format.json { render :show, status: :created, location: @habitacion }
+        else
+          format.html { redirect_back(fallback_location: root_url, notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
+          format.json { render json: @habitacion.errors, status: :unprocessable_entity }
+        end
     end
   end
 

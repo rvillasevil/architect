@@ -1,0 +1,736 @@
+INSERT INTO tasks (id, subid , um , task , description , material , nombre , codigo , importe , desc_tecnica , cond_previas , fases , cond_terminacion , man_obra , rendimiento , mat_incluido , mat_aportar )
+VALUES
+(1,'','m2','demo_quitar_azulejo','Demolición y desescombro de azulejos, incluyendo el transporte hasta vertedero autorizado.','','Quitar azulejos','DRA010', 8.57,'Demolición de alicatado de azulejo, con medios manuales y carga manual sobre camión o contenedor. El precio incluye el picado del material de agarre adherido al soporte, incluyendo el transporte hasta vertedero autorizado.','','Demolición del elemento. Fragmentación de los escombros en piezas manejables. Limpieza de los restos de obra. Carga manual de escombros sobre camión o contenedor.','', 'Peón ordinario construcción.','0.52','',''),
+
+(2,'','m2','demo_quitar_baldosa','Demolición y desescombro de baldosas, incluyendo el transporte hasta vertedero autorizado.','','Quitar baldosas','DRS015','11.89','Demolición de pavimento existente en el interior del edificio, de baldosas, con medios manuales, sin deteriorar los elementos constructivos contiguos, y carga manual sobre camión o contenedor. El precio incluye el picado del material de agarre adherido al soporte, pero no incluye la demolición de la base soporte, incluyendo transporte a vertedero autorizado.','Se comprobará que el pavimento está libre de conductos de instalaciones en servicio, en la zona a retirar. Se comprobará que se han desmontado y retirado los aparatos de instalaciones y mobiliario existentes, así como cualquier otro elemento que pueda entorpecer los trabajos.','Demolición del elemento. Fragmentación de los escombros en piezas manejables. Retirada y acopio de escombros. Limpieza de los restos de obra. Carga manual de escombros sobre camión o contenedor.','Una vez concluidos los trabajos, la base soporte quedará limpia de restos del material.','Peón especializado construcción. Peón ordinario construcción.','0.39','',''),
+
+(3,'','m2','demo_quitar_falso_techo','Demolición y desescombro de falso techo, incluyendo el transporte hasta vertedero autorizado.','','Demoler falso techo','DRT020','6.53','Demolición de falso techo continuo de placas de yeso o de escayola, situado a una altura menor de 4 m, con medios manuales, sin deteriorar los elementos constructivos contiguos, y carga manual sobre camión o contenedor. El precio incluye la demolición de la estructura metálica de sujeción, de las falsas vigas y de los remates. El precio también incluye el traslado a vertedero autorizado.','Se comprobará que han sido retirados todos los elementos empotrados o adosados al falso techo.','Demolición del elemento. Fragmentación de los escombros en piezas manejables. Retirada y acopio de escombros. Limpieza de los restos de obra. Carga manual de escombros sobre camión o contenedor.','','Peón ordinario construcción.','0.40','',''),
+
+(4,'','m2','demo_quitar_tabique','Demolición y desescombro de tabique, incluyendo el transporte hasta vertedero autorizado.','','Demoler tabique','DPT020','4.52','Demolición de partición interior de fábrica revestida, formada por ladrillo hueco sencillo de 4/5 cm de espesor, de entramado autoportante de placas de yeso laminado (una placa por cara) instaladas sobre una estructura simple, de fábrica vista, con medios manuales, sin afectar a la estabilidad de los elementos constructivos contiguos, y carga manual sobre camión o contenedor.  El precio incluye el desmontaje previo de las hojas de la carpintería.','Se comprobará que los elementos a demoler no están sometidos a cargas transmitidas por elementos estructurales.','Demolición del elemento. Fragmentación de los escombros en piezas manejables. Retirada y acopio de escombros. Limpieza de los restos de obra. Carga manual de escombros sobre camión o contenedor.','','Peón ordinario construcción.','0.53','',''),
+
+(5,'','ud','demo_quitar_inodoro','Demolición y desescombro de inodoro, incluyendo el transporte hasta vertedero autorizado.','','Inodoro','DSM010','19.70','Desmontaje de aparato sanitario, con medios manuales, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar sujeto, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios y la obturación de las conducciones conectadas al elemento.','Se comprobará que la red de alimentación de agua está vacía y fuera de servicio.','Desmontaje del elemento. Obturación de las conducciones conectadas al elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','Oficial 1ª fontanero. Peón ordinario construcción.','0.60','',''),
+
+(6,'','ud','demo_quitar_bidet','Demolición y desescombro de mueble de bidet, incluyendo el transporte hasta vertedero autorizado.','','Bidet','DSM010','19.70','Desmontaje de aparato sanitario, con medios manuales, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar sujeto, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios y la obturación de las conducciones conectadas al elemento.','Se comprobará que la red de alimentación de agua está vacía y fuera de servicio.','Desmontaje del elemento. Obturación de las conducciones conectadas al elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','Oficial 1ª fontanero.
+Peón ordinario construcción.','0.55','',''),
+
+(7,'','ud','demo_quitar_plato_ducha','Demolición y desescombro de mueble de plato de ducha, incluyendo el transporte hasta vertedero autorizado.','','Plato de ducha','DSM010','19.70','Desmontaje de aparato sanitario, con medios manuales, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar sujeto, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios y la obturación de las conducciones conectadas al elemento.','Se comprobará que la red de alimentación de agua está vacía y fuera de servicio.','Desmontaje del elemento. Obturación de las conducciones conectadas al elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','Oficial 1ª fontanero. Peón ordinario construcción.','1.10','',''),
+
+(8,'','ud','demo_quitar_mampara','Demolición y desescombro de mampara de baño, incluyendo el transporte hasta vertedero autorizado.','','Quitar mampara','DSM010','19.70','Desmontaje de aparato sanitario, con medios manuales, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar sujeto, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios y la obturación de las conducciones conectadas al elemento.','Se comprobará que la red de alimentación de agua está vacía y fuera de servicio.','Desmontaje del elemento. Obturación de las conducciones conectadas al elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','Oficial 1ª fontanero. Peón ordinario construcción.','0.80','',''),
+
+(9,'','ud','demo_quitar_mueble_bano','Demolición y desescombro de mueble de baño con Lavabo, incluyendo el transporte hasta vertedero autorizado.','','Mueble baño con lavabo','DSM010','19.70','Desmontaje de aparato sanitario, con medios manuales, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar sujeto, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios y la obturación de las conducciones conectadas al elemento.','Se comprobará que la red de alimentación de agua está vacía y fuera de servicio.','Desmontaje del elemento. Obturación de las conducciones conectadas al elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','Oficial 1ª fontanero.Peón ordinario construcción.','0.65','',''),
+
+(10,'','ud','demo_quitar_banera','Demolición y desescombro de mueble de bañera, incluyendo el transporte hasta vertedero autorizado.','','Bañera','DSM010','19.70','Desmontaje de aparato sanitario, con medios manuales, sin afectar a la estabilidad de los elementos constructivos a los que pueda estar sujeto, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios y la obturación de las conducciones conectadas al elemento.','Se comprobará que la red de alimentación de agua está vacía y fuera de servicio.','Desmontaje del elemento. Obturación de las conducciones conectadas al elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','Oficial 1ª fontanero. Peón ordinario construcción.','1.80','',''),
+
+(11,'','ud','demo_quitar_mobi_cocina','Demolición y desescombro de mobiliario de cocina.','','Retirar mobiliario de cocina','DSC020','44.82','Desmontaje de conjunto de mobiliario de cocina, con medios manuales, sin afectar a la estabilidad de los elementos resistentes a los que puedan estar unidos, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios. Incluido transporte a vertedero autorizado.','Se comprobará que se ha desmontado previamente la encimera, el fregadero y los electrodomésticos que pudieran formar parte del conjunto.','Desmontaje del elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','','Oficial 1ª construcción.
+Ayudante construcción. Peón ordinario construcción.','1.00','',''),
+
+(12,'','ud','demo_retir_electrodomesticos','Demolición y desescombro de electrodomesticos, incluyendo el transporte hasta vertedero autorizado.','','Tirar electrodomesticos','DSC020','44.82','Desmontaje de conjunto de mobiliario de cocina, con medios manuales, sin afectar a la estabilidad de los elementos resistentes a los que puedan estar unidos, y carga manual sobre camión o contenedor. El precio incluye el desmontaje de los accesorios. Incluido transporte a vertedero autorizado.','','Desmontaje del elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','Las conducciones que no se retiren quedarán debidamente obturadas.','','','',''),
+
+(13,'','m2','demo_friso_madera','Demolición y desescombro de friso de madera ó similar, incluyendo transporte hasta vertedero autorizado.','','Quitar friso de madera ó similar','DRD010','2.92','Levantado de revestimiento de madera clavada sobre rastreles, adherida o atornillada en paramentos interiores, con medios manuales, sin deteriorar la superficie soporte, que quedará al descubierto y preparada para su posterior revestimiento, y carga manual sobre camión o contenedor. El precio incluye el arrancado de los rastreles.','','Levantado del elemento. Retirada y acopio del material levantado. Limpieza de los restos de obra. Carga manual del material levantado y restos de obra sobre camión o contenedor.','','Peón ordinario construcción.','0.17','',''),
+
+(14,'','ud','demo_quitar_mueble','Demolición y desescombro de mueble, incluyendo el transporte hasta vertedero autorizado.','','Tirar muebles','DRD010','2.92','Desmontaje de conjunto de mobiliario, con medios manuales, sin afectar a la estabilidad de los elementos resistentes a los que puedan estar unidos, y carga manual sobre camión o contenedor.','','Desmontaje del elemento. Retirada y acopio del material desmontado. Limpieza de los restos de obra. Carga manual del material desmontado y restos de obra sobre camión o contenedor.','','Peón ordinario construcción.','0.30','',''),
+
+(15,
+'',
+'ud',
+'tub_termo_electrico',
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para termo eléctrico. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Termo eléctrico',
+'',
+'190.00',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio. Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.,Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería. Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero. Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno. Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales. Material auxiliar para montaje y sujección a la obra de las tuberias. Válvulas necearias en cada caso.Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales. Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios. Adhesivo para tubos a determinar.Botes sifónicos en caso de necesitar. Manguitos para prolongación de bote sifónico.', 
+'Termo eléctrico y componentes restantes necesarios.'),
+
+(16,
+'',
+'ud',
+'tub_radiador',
+'Instalación de tuberías para radiador. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.Se incluye la apertura y cierre de regatas.',
+'',
+'Radiador, Instalación de tuberías para radiador',
+'',
+'185.90',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: radiador, toallero, inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar en cada caso, para la red de agua fría y caliente (ida o retorno en su caso) que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería. Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero. Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno. Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales. Material auxiliar para montaje y sujección a la obra de las tuberias. Válvulas necearias en cada caso. Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales. Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios. Adhesivo para tubos a determinar. Botes sifónicos en caso de necesitar. Manguitos para prolongación de bote sifónico.',
+'Radiador y elementos necesarios'),
+
+(17,
+'',
+'ud',
+'tub_lavabo',
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Lavabo. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Lavabo',
+'',
+'180.84',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada. Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.', 
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería. Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero. Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.', 
+'Lavabo y elementos necesarios.'),
+
+(18,
+'',
+'ud',
+'tub_ducha_banera',
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Ducha o bañera. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Ducha o bañera',
+'',
+'190.84',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio. Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería. Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero. Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Ducha, bañera y elementos necesarios.'),
+
+(19,
+'',
+'ud',
+'tub_bidet',
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Bidet. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Bidet',
+'',
+'195.84',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio. Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería. Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero. Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.', 
+'Bidet y elementos necesarios.'),
+
+(20,
+'',
+'ud',
+'tub_inodoro',
+'Instalación de agua fría sanitaria para inodoro. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Inodoro',
+'',
+'100.01',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio. Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero.
+Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Inodoro y elementos auxiliares.'),
+
+(21,
+'',
+'ud',
+'tub_colum_hidromasaje',
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Columna de hidromasaje. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Columna de hidromasaje',
+'',
+'193.00',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería. Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero. Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.', 
+'Columna de hidromasaje y elementos auxiliares.'),
+
+(22,
+'',
+'ud',
+'tub_lavabo_doble',
+'Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Lavabo doble. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Lavabo doble',
+'',
+'293.50',
+'Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.',
+'Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero.
+Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.', 
+'Lavabo doble y elementos auxiliares.'),
+
+(23,'','ud','tub_jacuzzy','Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Jacuzzy. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Jacuzzy','','686.66','Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Jacuzzy y elementos auxiliares.'),
+
+(24,'','ud','tub_sauna','Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Sauna. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Sauna','','766.66','Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero.
+Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Sauna y elementos auxiliares.'),
+
+(25,'','ud','tub_ducha_empotrada','Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para Ducha empotrada. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Ducha empotrada','','240.00','Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.
+Suministro e instalación de red interior de evacuación para cuarto de baño con dotación para la instalacion de uno de los siguientes: inodoro, lavabo simple, lavabo doble, ducha, bañera, bidé,  jacuzzy, sauna, ducha empotrada o columna hidromasaje realizada con tubo de PVC o polipropileno, para la red de desagües que conectan la evacuación de los aparatos con el bote sifónico y con la bajante, con los diámetros necesarios para cada punto de servicio, y bote sifónico de PVC, de 110 mm de diámetro, con tapa ciega de acero inoxidable. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC o polipropileno, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Ducha empotrada y elementos auxiliares.'),
+
+(26,'','ud','tub_toallero','Instalación de tuberías para toallero. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Toallero','','299.00','Suministro y montaje de instalación interior de fontanería para cuarto de baño con dotación para la instalacion de uno de los siguientes: radiador, toallero, inodoro, lavabo simple, o lavabo doble, ducha, bañera, bidé, jacuzzy, sauna, ducha empotrada o columna hidromasaje, realizada con tubo a especificar en cada caso, para la red de agua fría y caliente (ida o retorno en su caso) que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio, p/p de material auxiliar para montaje y sujeción a la obra, derivación particular, accesorios de derivaciones. Totalmente montada, conexionada y probada.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.', 
+'Toallero y elementos auxiliares.'),
+
+(27,'','ud','tub_reubicar_contador','Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para reubicar contador de agua. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Reubicar contador de agua','','395.10','Suministro y montaje de instalación interior de fontanería para cocina con dotación para alguno de los siguientes elementos: fregadero, reubicar inodoro, reubicar contador de agua, toma y llave de paso para lavavajillas, toma y llave de paso para lavadora, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.'
+,''),
+
+(28,'','ud','tub_lavadora',
+'Para lavadora, instalación de tuberías para agua fría sanitaria y en pvc para desagüe. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.',
+'',
+'Lavadora',
+'',
+'186.38',
+'Suministro y montaje de instalación interior de fontanería para cocina con dotación para alguno de los siguientes elementos: fregadero, toma y llave de paso para lavavajillas, toma y llave de paso para lavadora, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio. Suministro e instalación de red interior de evacuación para cocina con dotación para alguno de los siguientes elementos: fregadero, toma de desagüe para lavavajillas, toma de desagüe para lavadora, toma de desagüe para secadora,  realizada con tubo a especificar para la red de desagües que conectan la evacuación de los aparatos con la bajante, con los diámetros necesarios para cada punto de servicio. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.',
+'Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.',
+'Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.',
+'Oficial 1ª fontanero.
+Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Lavadora y elementos auxiliares.'),
+
+(29,'','ud','tub_reubicar_inodoro','Dentro del bañ, reubicar la posición del inodoro. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Reubicar inodoro','','343.33','Suministro y montaje de instalación interior de fontanería para cocina con dotación para alguno de los siguientes elementos: fregadero, reubicar inodoro, toma y llave de paso para lavavajillas, toma y llave de paso para lavadora, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio. Suministro e instalación de red interior de evacuación para cocina con dotación para alguno de los siguientes elementos: fregadero, reubicar inodoro, toma de desagüe para lavavajillas, toma de desagüe para lavadora, toma de desagüe para secadora,  realizada con tubo a especificar para la red de desagües que conectan la evacuación de los aparatos con la bajante, con los diámetros necesarios para cada punto de servicio. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.',
+'',
+'Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+''),
+
+(30,'','tub_tipo','','','Tipo de tubería','','','','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+''),
+
+(31,',ud','tub_caldera','Instalación de tuberías de cobre para caldera. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Caldera','','382.00','Suministro y montaje de instalación interior de fontanería para cocina con dotación para alguno de los siguientes elementos: fregadero, reubicar inodoro, instalación para caldera, toma y llave de paso para lavavajillas, toma y llave de paso para lavadora, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio. Suministro e instalación de red interior de evacuación para cocina con dotación para alguno de los siguientes elementos: fregadero, reubicar inodoro, caldera,  toma de desagüe para lavavajillas, toma de desagüe para lavadora, toma de desagüe para secadora,  realizada con tubo a especificar para la red de desagües que conectan la evacuación de los aparatos con la bajante, con los diámetros necesarios para cada punto de servicio. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.', 
+'Caldera y elementos auxiliares.'),
+
+(32,'','ud','tub_fregadero','Instalar tuberías para agua fría sanitaria, agua caliente sanitaria y desagües en pvc para termo eléctrico, reubicar contador de agua y fregadero.','','Fregadero','','297.01','Suministro y montaje de instalación interior de fontanería para cocina con dotación para alguno de los siguientes elementos: fregadero, toma y llave de paso para lavavajillas, toma y llave de paso para lavadora, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio
+Suministro e instalación de red interior de evacuación para cocina con dotación para alguno de los siguientes elementos: fregadero, toma de desagüe para lavavajillas, toma de desagüe para lavadora, toma de desagüe para secadora,  realizada con tubo a especificar para la red de desagües que conectan la evacuación de los aparatos con la bajante, con los diámetros necesarios para cada punto de servicio. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.'
+,'Fregadero y elementos auxiliares.'),
+
+33,'','ud','tub_lavavajillas','Para lavavajillas, instalación de tuberías de cobre para agua fría sanitaria y en pvc para desagüe. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Lavavajillas','','194.22','Suministro y montaje de instalación interior de fontanería para cocina con dotación para alguno de los siguientes elementos: fregadero, toma y llave de paso para lavavajillas, toma y llave de paso para lavadora, realizada con tubo a especificar, para la red de agua fría y caliente que conecta la derivación particular o una de sus ramificaciones con cada uno de los aparatos sanitarios, con los diámetros necesarios para cada punto de servicio. Suministro e instalación de red interior de evacuación para cocina con dotación para alguno de los siguientes elementos: fregadero, toma de desagüe para lavavajillas, toma de desagüe para lavadora, toma de desagüe para secadora,  realizada con tubo a especificar para la red de desagües que conectan la evacuación de los aparatos con la bajante, con los diámetros necesarios para cada punto de servicio. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.',
+'Lavavajillas y elementos auxiliares.'),
+
+(34,'','ud','tub_secadora','Para secadora, instalación de tuberías de cobre para agua fría sanitaria y en pvc para desagüe. Todas las instalaciones de fontanería se realizarán respetando la normativa vigente.','','Secadora','','','Suministro e instalación de red interior de evacuación para cocina con dotación para alguno de los siguientes elementos: fregadero, toma de desagüe para lavavajillas, toma de desagüe para lavadora, toma de desagüe para secadora,  realizada con tubo a especificar para la red de desagües que conectan la evacuación de los aparatos con la bajante, con los diámetros necesarios para cada punto de servicio. Incluso líquido limpiador, adhesivo para tubos y accesorios de PVC, material auxiliar para montaje y sujeción a la obra, accesorios y piezas especiales.','Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación.','Replanteo del recorrido de las tuberías y de la situación de las llaves. Colocación y fijación de tuberías y llaves. Realización de pruebas de servicio.
+Replanteo del recorrido de la tubería y de la situación de los elementos de sujeción. Presentación en seco de los tubos. Fijación del material auxiliar para montaje y sujeción a la obra. Colocación del bote sifónico. Montaje, conexionado y comprobación de su correcto funcionamiento. Realización de pruebas de servicio.','Las conducciones dispondrán de tapones de cierre, colocados en los puntos de salida de agua, hasta la recepción de los aparatos sanitarios y la grifería.
+Se dispondrán tapones de cierre en los puntos de desagüe, hasta la recepción de los aparatos sanitarios. Resistencia mecánica y estanqueidad.','Oficial 1ª fontanero.
+Ayudante fontanero.','','Material auxiliar para montaje y sujeción a la obra de las tuberías de polietileno.
+Tubo a especificar, con el precio incrementado el 30% en concepto de accesorios y piezas especiales.
+Material auxiliar para montaje y sujección a la obra de las tuberias.
+Válvulas necearias en cada caso.
+Para la evacuación de aguas: tubos a especificar con el precio incrementado el 10% en concepto de accesorios y piezas especiales.
+Líquido limpiador para pegado mediante adhesivo de tuvos y accesorios.
+Adhesivo para tubos a determinar.
+Botes sifónicos en caso de necesitar.
+Manguitos para prolongación de bote sifónico.,'
+'Secadora y elementos auxiliares.'),
+
+(35,'','ud','elec_pto_luz_techo','Realización de instalación eléctrica desde caja ubicada en habitación para Punto de luz en techo. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Punto de luz en techo','IEI015','50.49','Suministro e instalación de red eléctrica desde caja de derivación en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.','Punto de luz.'),
+
+(36,'','ud','elec_pto_luz_pared','Realización de instalación eléctrica desde caja ubicada en habitación para Punto de luz en pared. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Punto de luz en pared','IEI015','60.62','Suministro e instalación de red eléctrica desde caja de derivación en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista. Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.','Punto de luz.'),
+
+(37,'','ud','elec_interr_simple','Realización de instalación eléctrica desde caja ubicada en habitación para Interruptor simple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Interruptor simple','IEI015','40.22','Suministro e instalación de red eléctrica desde caja de derivación en cuarto
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista. Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(38,'','ud','elec_interr_doble','Realización de instalación eléctrica desde caja ubicada en habitación para Interruptor doble. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Interruptor doble','IEI015','57.23','Suministro e instalación de red eléctrica desde caja de derivación en cuarto
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista. Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(39,'','ud','elec_interr_triple','Realización de instalación eléctrica desde caja ubicada en habitación para Interruptor triple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Interruptor triple','IEI015','76.84','Suministro e instalación de red eléctrica desde caja de derivación en cuarto
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista. Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(40,'','ud','elec_enchu_simple','Realización de instalación eléctrica desde caja ubicada en habitación para Enchufe simple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Enchufe simple','IEI015','49.45','Suministro e instalación de red eléctrica
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista. Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(41,'','ud','elec_enchu_doble','Realización de instalación eléctrica desde caja ubicada en habitación para Enchufe doble. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Enchufe doble','IEI015','67.61','Suministro e instalación de red eléctrica Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista. Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(42,'','ud','elec_enchu_triple','Realización de instalación eléctrica desde caja ubicada en habitación para Enchufe triple. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Enchufe triple','IEI015','85.01','Suministro e instalación de red eléctrica
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(43,'','ud','elec_reubicar_caja_luz','Dentro de la estancia reubicar la posición de 1 caja de luz. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Reubicar caja de luz','IEI015','240.00','Suministro e instalación de red eléctrica para reubicar caja de luz en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(44,'','ud','elec_toma_lavadora','Realización de instalación eléctrica desde caja ubicada en habitación para Toma lavadora según normativa vigente. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Toma lavadora','IEI015','107.23','Suministro e instalación de red eléctrica desde caja de dereivación en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(45,'','ud','elec_toma_ventilador_extractor','Realización de instalación eléctrica desde caja ubicada en habitación para Ventilador extractor. Si fuese necesario se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Ventilador extractor','IEI015','27.45','Suministro e instalación de red eléctrica
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(46,'','ud','elec_toma_horno_vitroceramica','Realización de instalación eléctrica desde cajas ubicadas en cocina para hornovitro según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Toma horno-vitro','IEI015','157.23','Suministro e instalación de red eléctrica desde caja de derivación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(47,'','ud','elec_toma_microondas','Realización de instalación eléctrica desde cajas ubicadas en cocina para toma microondas. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Toma microondas','IEI015','81.39','Suministro e instalación de red eléctrica desde caja de dereivación en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(48,'','ud','elec_toma_frigorifico','Realización de instalación eléctrica desde cajas ubicadas en cocina para toma frigorífico. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Toma frigorífico','IEI015','93.33','Suministro e instalación de red eléctrica desde caja derivación en hebitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(49,'','ud','elec_toma_lavavajillas','Realización de instalación eléctrica desde cajas ubicadas en cocina para toma lavavajillas según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Toma lavavajillas','IEI015','107.23','Suministro e instalación de red eléctrica desde caja de derivación en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(50,'','ud','elec_toma_secadora','Realización de instalación eléctrica desde cajas ubicadas en cocina para toma secadora según normativa vigente. Se incluye la apertura y cierre de regatas. Se incluye la colocación de mecanismos.','','Toma secadora','IEI015','94.00','Suministro e instalación de red eléctrica completa de distribución interior  desde caja de derivación en habitación de: circuito C10, secadora, H07V-K reacción al fuego clase Eca 3G2,5 mmÂ²
+,Se comprobará que su situación y recorrido se corresponden con los de Proyecto, y que hay espacio suficiente para su instalación. Se comprobarán las separaciones mínimas de las conducciones con otras instalaciones.
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(51,'','ud','elec_toma_telefono','Realización de instalación eléctrica desde cajas ubicadas en la habitación para Toma de telefono. Según normativa vigente. Se incluye la colocación de mecanismos.','','Toma telefono','IEI015','54.09','Suministro e instalación de red eléctrica desde caja de derivación en habitación
+Las instalaciones eléctricas de baja tensión se ejecutarán por instaladores autorizados en baja tensión, autorizados para el ejercicio de la actividad.','Replanteo y trazado de conductos. Colocación de la caja para el cuadro. Montaje de los componentes. Colocación y fijación de los tubos. Colocación de cajas de derivación y de empotrar. Tendido y conexionado de cables. Colocación de mecanismos.','La instalación podrá revisarse con facilidad.','Oficial 1ª electricista.
+Ayudante electricista.','','Mecanismos incluidos en caso necesario. Incluso tubo protector (Tubo curvable, para canalización empotrada en obra de fábrica (paredes y techos)), tendido de cables en su interior,  y regletas de conexión, cajas de empotrar con tornillos de fijación y cuantos accesorios sean necesarios para su correcta instalación. Incluye material para la apertura y cierre de regatas para su conexión.',''),
+
+(52,'','m2','alb_azulejo','Alicatado de paredes ,mediante la colocación de azulejos, con mortero cola sobre soporte cementoso con la técnica de capa fina y la aplicación de lechada en las juntas de los azulejos.','','Colocar azulejos (Alicatar paredes)','RAG012','14.48','Suministro y colocación de alicatado con azulejo, recibido con adhesivo cementoso normal, C1 sin ninguna característica adicional, color gris, sistema de colocación en capa fina. Incluso p/p de preparación de la superficie soporte de placas de yeso laminado
+,Se comprobará que el soporte está limpio y plano, es compatible con el material de colocación y tiene resistencia mecánica, flexibilidad y estabilidad dimensional.','Preparación de la superficie soporte. Replanteo de niveles y disposición de baldosas. Colocación de maestras o reglas. Preparación y aplicación del adhesivo. Formación de juntas de movimiento. Colocación de las baldosas. Ejecución de esquinas y rincones. Rejuntado de baldosas. Acabado y limpieza final.','Tendrá una perfecta adherencia al soporte y buen aspecto.','Oficial 1ª alicatador.
+Ayudante alicatador.','0.36','Adhesivo cementoso normal, C1 según UNE-EN 12004, color gris.
+Cantonera de PVC en esquinas alicatadas.
+Lechada de cemento blanco BL 22,5 X.','Baldosa cerámica de azulejo'),
+
+(53,'','','alb_tipo_azulejo','','','Tipo azulejo','','','','','','','','','',''),
+
+(54,'','m2','alb_baldosa','Alicatado de suelo mediante ,la colocación de baldosas con mortero cola sobre soporte cementoso con la técnica de capa fina y la aplicación de lechada en las juntas de las baldosas.','','Colocar baldosas (Alicatar suelo)','RSU010','16.89','Suministro y ejecución de pavimento mediante el método de colocación en capa fina, de baldosas, recibidas con adhesivo cementoso de uso exclusivo para interiores, Ci sin ninguna característica adicional, color gris y rejuntadas con lechada de cemento y arena, L, 1/2 CEM II/A-P 32,5 R, para junta abierta (entre 3 y 15 mm), coloreada con la misma tonalidad de las piezas. Incluso p/p de limpieza, comprobación de la superficie soporte, replanteos, cortes, crucetas de PVC, formación de juntas perimetrales continuas, de anchura no menor de 5 mm, en los límites con paredes, pilares exentos y elevaciones de nivel y, en su caso, juntas de partición y juntas estructurales existentes en el soporte, eliminación del material sobrante del rejuntado y limpieza final del pavimento.
+,Se comprobará que ha transcurrido un tiempo suficiente desde la fabricación del soporte, en ningún caso inferior a tres semanas para bases o morteros de cemento y tres meses para forjados o soleras de hormigón. Se comprobará que el soporte está limpio y plano y sin manchas de humedad.
+Se comprobará antes de la aplicación del adhesivo que la temperatura se encuentra entre 5ºC y 30ºC, evitando en lo posible, las corrientes fuertes de aire y el sol directo.','Limpieza y comprobación de la superficie soporte. Replanteo de los niveles de acabado. Replanteo de la disposición de las piezas y juntas de movimiento. Aplicación del adhesivo. Colocación de las crucetas. Colocación de las baldosas a punta de paleta. Formación de juntas de partición, perimetrales y estructurales. Rejuntado. Eliminación y limpieza del material sobrante. Limpieza final del pavimento.','El solado tendrá planeidad, ausencia de cejas y buen aspecto.','Oficial 1ª solador.
+Ayudante solador.','0.60','Adhesivo cementoso de uso exclusivo para interiores, Ci, color gris.
+Crucetas de PVC para separación entre 3 y 15 mm.
+Cemento blanco BL-22,5 X, para pavimentación, en sacos, según UNE 80305.
+Lechada de cemento 1/2 CEM II/B-P 32,5 N.','Baldosa'),
+
+(55,'','','alb_tipo_baldosa','','','Tipo baldosa','','','','','','','','','',''),
+
+(56,'','m2','alb_techo_pladur','Construcción de 1 falso techo de pladur en acabado liso mediante placas de pladur soportadas por estructura metalica.','','Techo de pladur acabado liso','RTA010','24.11','Suministro y montaje de falso techo continuo suspendido, situado a una altura menor de 4 m, formado por una placa de yeso laminado con los bordes longitudinales afinados, atornillada a una estructura metálica de acero galvanizado de maestras primarias 60/27 mm separadas cada 1000 mm entre ejes y suspendidas del forjado o elemento soporte mediante cuelgues combinados cada 900 mm, y maestras secundarias fijadas perpendicularmente a los perfiles primarios mediante caballetes y colocadas con una modulación máxima de 500 mm entre ejes. Incluso banda acústica, fijaciones para el anclaje de los perfiles, tornillería para la fijación de las placas, pasta y cinta para el tratamiento de juntas y accesorios de montaje. El precio incluye la resolución de encuentros y puntos singulares','Se comprobará que los paramentos verticales están terminados, y que todas las instalaciones situadas debajo del forjado están debidamente dispuestas y fijadas a él.','Replanteo de los ejes de la estructura metálica. Colocación de la banda acústica de dilatación. Fijación del perfil perimetral. Señalización de los puntos de anclaje al forjado o elemento soporte. Nivelación y suspensión de los perfiles primarios y secundarios de la estructura. Corte de las placas. Fijación de las placas. Tratamiento de juntas.','El conjunto tendrá estabilidad y será indeformable. Cumplirá las exigencias de planeidad y nivelación.','Oficial 1ª montador de falsos techos.
+Ayudante montador de falsos techos.','0.35','Perfil de acero galvanizado, en U, de 30 mm.
+Fijación compuesta por taco y tornillo 5x27.
+Cuelgue para falsos techos suspendidos.
+Seguro para la fijación del cuelgue, en falsos techos suspendidos.
+Conexión superior para fijar la varilla al cuelgue, en falsos techos suspendidos.
+Varilla de cuelgue.
+Maestra 60/27 de chapa de acero galvanizado, de ancho 60 mm, según UNE-EN 14195.
+Conector para maestra 60/27.
+Caballete para maestra 60/27.
+Placa de yeso laminado A / UNE-EN 520 - 1200 / longitud / 12,5 / con los bordes longitudinales afinados.
+Tornillo autoperforante 3,5x25 mm.
+Banda autoadhesiva desolidarizante de espuma de poliuretano de celdas cerradas, de 3,2 mm de espesor y 50 mm de anchura, resistencia térmica 0,10 mÂ²K/W, conductividad térmica 0,032 W/(mK).
+Pasta para juntas, según UNE-EN 13963.
+Cinta de juntas.',''),
+
+(57,'','m2','alb_tabique_ladriyeso','Levantado y construcción de un tabique de ladriyeso.','','Construccion tabique ladriyeso.','','','','','','','','','',''),
+
+(58,'','m2','alb_tabique_pladur','Levantado y construcción de un tabique de pladur.','','Construccion de tabique de pladur','FBY010','31.68','Suministro y montaje de tabique sencillo, de 78 mm de espesor total, con nivel de calidad del acabado estándar (Q2), sobre banda acústica, formado por una estructura simple de perfiles de chapa de acero galvanizado de 48 mm de anchura, a base de montantes (elementos verticales) separados 400 mm entre sí, con disposición normal ''N'' y canales (elementos horizontales) a cada lado del cual se atornillan dos placas en total (una placa tipo normal en cada cara, de 15 mm de espesor cada placa). Incluso banda acústica
+Ayudante montador de prefabricados interiores.','0.36','Banda autoadhesiva desolidarizante de espuma de poliuretano de celdas cerradas, de 3,2 mm de espesor y 50 mm de anchura, resistencia térmica 0,10 mÂ²K/W, conductividad térmica 0,032 W/(mK).
+Canal raíl de perfil galvanizado para entramados de fijación de placas de yeso de ancho 48 mm, según UNE-EN 14195.
+Montante de perfil de acero galvanizado de 48 mm de anchura, según UNE-EN 14195.
+Placa de yeso laminado A / UNE-EN 520 - 1200 / longitud / 15 / con los bordes longitudinales afinados.
+Tornillo autoperforante 3,5x25 mm.
+Fijación compuesta por taco y tornillo 5x27.
+Pasta de agarre, según UNE-EN 14496.
+Pasta para juntas, según UNE-EN 13963.
+Cinta de juntas.',''),
+
+(59,'','m2','alb_tabique_fabrica','Levantado y construcción de un tabique de fábrica
+.','','Construccion de tabique de fábrica','FFQ010','16.71','Formación de hoja de partición interior de 7 cm de espesor de fábrica, de ladrillo cerámico hueco doble, para revestir, 33x16x7 cm, recibida con mortero de cemento industrial, color gris, M-5, suministrado a granel, con banda elástica, de banda flexible de espuma de polietileno reticulado de celdas cerradas, de 10 mm de espesor y 110 mm de anchura, resistencia térmica 0,25 mÂ²K/W, conductividad térmica 0,04 W/(mK) y rigidez dinámica 57,7 MN/mÂ³, fijada a los forjados y a los encuentros con otros elementos verticales con pasta de yeso. Incluso p/p de replanteo, nivelación y aplomado, recibido de cercos y precercos, mermas y roturas, enjarjes, mochetas, ejecución de encuentros y limpieza.','Se comprobará que se ha terminado la ejecución completa de la estructura. Se dispondrá en obra de los cercos y precercos de puertas y armarios.
+Se suspenderán los trabajos cuando la temperatura ambiente sea inferior a 5ºC o superior a 40ºC, llueva, nieve o la velocidad del viento sea superior a 50 km/h.','Replanteo y trazado en el forjado de los tabiques a realizar. Marcado en los pilares de los niveles de referencia general de planta y de nivel de pavimento. Colocación de las bandas elásticas en la base y en los laterales. Colocación y aplomado de miras de referencia. Colocación, aplomado y nivelación de cercos y precercos de puertas y armarios. Tendido de hilos entre miras. Colocación de las piezas por hiladas a nivel. Colocación de las bandas elásticas en el encuentro de la fábrica con el forjado superior. Recibido a la obra de cercos y precercos. Encuentros de la fábrica con fachadas, pilares y tabiques. Encuentro de la fábrica con el forjado superior. Limpieza del paramento.','La fábrica quedará monolítica, estable frente a esfuerzos horizontales, plana y aplomada. Tendrá una composición uniforme en toda su altura y buen aspecto.','Oficial 1ª construcción en trabajos de albañilería.
+Peón ordinario construcción en trabajos de albañilería.','0.40','Ladrillo cerámico hueco doble, para revestir, 33x16x7 cm, según UNE-EN 771-1.
+Agua
+Mortero industrial para albañilería, de cemento, color gris, categoría M-5 (resistencia a compresión 5 N/mmÂ²), suministrado a granel, según UNE-EN 998-2.
+Pasta de yeso de construcción B1, según UNE-EN 13279-1.
+Banda flexible de espuma de polietileno reticulado de celdas cerradas, de 10 mm de espesor y 110 mm de anchura, resistencia térmica 0,25 mÂ²K/W, conductividad térmica 0,04 W/(mK) y rigidez dinámica 57,7 MN/mÂ³.
+Mezclador continuo con silo, para mortero industrial en seco, suministrado a granel.',''),
+
+(60,'','m2','alb_tabique_paves','Levantado y construcción de tabique de paves.','','M2 de tabique de paves','FFB010','123.64','Ejecución de partición interior de fábrica de bloques huecos de vidrio, recibidos con adhesivo cementoso, color blanco, y varillas de acero inoxidable, con juntas perimetrales de 3,5 cm de espesor y juntas entre bloques de 1 cm de espesor mínimo. Incluso bandas de dilatación perimetrales de PVC, crucetas, rejuntado de los bloques y sellado de juntas perimetrales con silicona. Totalmente acabado.','Se comprobará que está terminada la estructura y que las dimensiones y superficie máximas del hueco donde vaya a construirse la fábrica de vidrio se ajustan a la modulación y características de las piezas.','Replanteo. Colocación y aplomado de miras de referencia. Tendido de hilos entre miras. Colocación de las bandas de dilatación inferior y laterales. Colocación de adhesivo cementoso en la junta perimetral inferior. Colocación de los bloques por hiladas a nivel y de las crucetas entre bloques. Colocación de las varillas. Colocación de la banda de dilatación superior antes de la colocación de la última hilada de bloques. Rejuntado de los bloques. Sellado de juntas perimetrales. Repaso y limpieza de juntas.
+,La fábrica quedará monolítica, estable frente a esfuerzos horizontales, plana y aplomada. Tendrá una composición uniforme en toda su altura y buen aspecto.','Oficial 1ª construcción en trabajos de albañilería.
+Peón ordinario construcción en trabajos de albañilería.','0.90','Adhesivo cementoso color blanco, compuesto por cemento blanco de alta resistencia, áridos especiales de granulometría seleccionada y aditivos plastificantes, para el montaje y rejuntado de bloques de vidrio.
+Varilla de acero inoxidable AISI 304.
+Cartucho de silicona acética monocomponente, antimoho, color transparente, de 310 ml.
+Material auxiliar para la colocación de bloques de vidrio moldeado.','Bloque hueco de vidrio moldeado.'),
+
+(61,'','m2','alb_nivelacion_pared','Nivelado verticalidad pared para alicatado por medio de relleno adecuado. Totalmente terminado.','','Nivelado pared','','','','','','','','','',''),
+
+(62,'','ud','mont_sani_mampara','Montaje y colocación de mampara.','','Mampara','SMM020','105.67','Montaje de mampara para ducha. Incluso p/p de fijaciones y sellado de juntas. Totalmente instalada.','Se comprobará que el soporte sobre el que se va a colocar la mampara está totalmente terminado.','Replanteo y marcado de los puntos de fijación. Instalación de los perfiles que forman la mampara. Montaje de la puerta y del panel. Montaje de los accesorios. Sellado de las juntas.','El conjunto será resistente y estable. Quedará plano y aplomado.','Oficial 1ª montador. Ayudante montador.','2.50','','Mampara a elegir.'),
+
+(63,'','ud','mont_sani_mueble_bano','Montaje y colocación de Mueble bañ, grifo y espejo.','','Mueble bañ, grifo y espejo','SAL005','25.59','Instalación de lavabo y desagüe. Incluso conexión a la red de evacuación existente, fijación del aparato y sellado con silicona. Totalmente instalado, conexionado, probado y en funcionamiento.','Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas.','Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de accesorios y complementos. Sellado de juntas.','Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','1.25','Acoplamiento a pared acodado con plafón, ABS, serie B, acabado cromado, para evacuación de aguas residuales (a baja y alta temperatura) en el interior de los edificios, enlace mixto de 1 1/4''x40 mm de diámetro, según UNE-EN 1329-1.
+Material auxiliar para instalación de aparato sanitario.','Lavabo y resto de equipamiento, con juego de fijación, según UNE 67001.'),
+
+(64,
+'',
+'ud',
+'mont_sani_banera',
+'Montaje y colocación de Bañera.',
+'',
+'Bañera',
+'SAB005',
+'29.73',
+'Instalación de bañera. Incluso conexión a la red de evacuación existente, fijación del aparato y sellado con silicona. Totalmente instalada, conexionada, probada y en funcionamiento.',
+'Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas.',
+'Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de accesorios y complementos. Sellado de juntas.', 
+'Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.',
+'Oficial 1ª fontanero.',
+'1.37',
+'Desagüe automático de latón-cobre para bañera, acabado cromado. Material auxiliar para instalación de aparato sanitario.',
+'Bañera'),
+
+(65,'','ud','mont_sani_plato_ducha','Montaje y colocación de Plato de ducha.','','Plato de ducha','SAD005','26.07','Instalación de plato de ducha con juego de desagüe. Incluso conexión a la red de evacuación existente, fijación del aparato y sellado con silicona. Totalmente instalado, conexionado, probado y en funcionamiento.',
+'Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas.',
+'Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de accesorios y complementos. Sellado de juntas.',
+'Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.',
+'Oficial 1ª fontanero.',
+'1.30',
+'Material auxiliar para instalación de aparato sanitario.',
+'Plato de ducha acrílico, gama básica, color, de 75x75 cm, con juego de desagüe.'),
+
+(66,'','ud','mont_sani_bidet','Montaje y colocación de Bidet.','','Bidet','SAE005','22.00','Instalación de bidé  y desagüe. Incluso conexión a la red de evacuación existente, fijación del aparato y sellado con silicona. Totalmente instalado, conexionado, probado y en funcionamiento.','Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas.','Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de accesorios y complementos. Sellado de juntas.','Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','1.40','Acoplamiento a pared acodado con plafón, de PVC, serie B, color blanco, para evacuación de aguas residuales (a baja y alta temperatura) en el interior de los edificios, enlace mixto de 1 1/4''x40 mm de diámetro, según UNE-EN 1329-1.
+Material auxiliar para instalación de aparato sanitario.','Bidé, con juego de fijación, según UNE 67001.'),
+
+(67,'','ud','mont_sani_inodoro_normal','Montaje y colocación de Inodoro normal.','','Inodoro normal','SAI001','34.83','Instalación de taza de inodoro de tanque bajo. Incluso codo para evacuación vertical del inodoro, tornillos de seguridad de acero inoxidable, conexión a la red de agua fría y a la red de evacuación existentes, fijación del aparato y sellado con silicona. Totalmente instalado, conexionado, probado y en funcionamiento.', 
+'Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría y de salubridad están terminadas.',
+'Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de la grifería. Conexión a la red de agua fría. Montaje de accesorios y complementos. Sellado de juntas.', 
+'Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','1.48','Material auxiliar para instalación de aparato sanitario.','Inodoro con tanque bajo, con asiento y tapa, mecanismo de descarga, con juego de fijación y codo de evacuación, según UNE-EN 997.'),
+
+(68,'','ud','mont_sani_inodoro_suspendido','Montaje y colocación de Inodoro suspendido.','','Inodoro suspendido','SAI020','34.72','instalación de inodoro, con salida para conexión horizontal, con asiento y tapa. Incluso conexión a la red de evacuación existente, fijación del aparato y sellado con silicona. Totalmente instalado, conexionado, probado y en funcionamiento.','Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría y de salubridad están terminadas.','Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de accesorios y complementos. Sellado de juntas.','Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','1.70','Material auxiliar para instalación de aparato sanitario.','Inodoro  suspendido, con salida para conexión horizontal,  con asiento y tapa, según UNE-EN 997.'),
+
+(69,'','ud','mont_sani_inodoro_encastrado','Montaje y colocación de Inodoro encastrado en pared.','','Inodoro encastrado en pared','SAI110','44.26','Instalación de cisterna ligera para empotrar en muro de fábrica y pulsador mecánico de doble accionamiento. Incluso conexión a la red de agua fría existente.','Se comprobará que el paramento soporte está completamente acabado y que la instalación de agua fría está terminada.','Replanteo y trazado en el paramento soporte de la situación de la cisterna. Nivelación, aplomado y colocación de la cisterna. Conexión a la red de agua fría. Montaje de accesorios y complementos.','Quedará nivelada en ambas direcciones, en la posición prevista y fijada correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','1.14','','Cisterna ligera para empotrar en muro de fábrica, con anclajes, llave de regulación de 1/2'' premontada, mecanismo de descarga de 3/6 litros y elementos de conexión a alimentación y desagüe, para inodoro de pie.
+Pulsador mecánico de doble accionamiento, con embellecedor, para cisterna empotrada.'),
+
+(70,'','ud','mont_sani_grifo_ducha','Montaje y colocación de Grifo ducha.','','Grifo ducha','SGD020','11.81','Colocación de grifería monomando y equipo de ducha formado. Incluso elementos de conexión, válvula antirretorno y dos llaves de paso.','Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas. Se comprobará que su situación se corresponde con la de Proyecto y que hay espacio suficiente para su instalación.','Colocación. Conexionado y comprobación de su correcto funcionamiento.','Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','0.57','Material auxiliar para instalaciones de fontanería.','Grifo mezclador y equipo de ducha formado incluso elementos de conexión, válvula antirretorno y dos llaves de paso'),
+
+(71,'','ud','mont_sani_grifo_banera','Montaje y colocación de Grifo bañera.','','Grifo bañera','SGB020','13.39','Suministro y colocación de grifería y equipo de ducha. Incluso elementos de conexión, válvula antirretorno y dos llaves de paso. Totalmente instalada, conexionada, probada y en funcionamiento.','Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas. Se comprobará que su situación se corresponde con la de Proyecto y que hay espacio suficiente para su instalación.','Replanteo. Colocación del grifo. Conexionado.','Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','0.57','Material auxiliar para instalaciones de fontanería.','Grifo mezclador y equipo de ducha formado incluso elementos de conexión, válvula antirretorno y dos llaves de paso'.),
+
+(72,'','ud','mont_sani_acceso_atornillado','Montaje y colocación de Accesorio atornillado.','','Accesorio atornillado','SMA060','4.61','Colocación de elemento atornillado, fijado al soporte con las sujeciones suministradas por el fabricante. Totalmente montado.','Se comprobará que se ha finalizado el revestimiento de la superficie soporte.','Replanteo y trazado en el paramento de la situación del accesorio. Colocación y fijación de los accesorios de soporte.','La fijación y nivelación serán adecuadas.','Ayudante fontanero.','0.22','','Elemento atonillado y soportes necesarios.'),
+
+(73,'','ud','mont_sani_colum_hidromasaje','Montaje y colocación de Columna de hidromasaje.','','Columna de hidromasaje','','44.33','','','','','','','',''),
+
+(74,'','ud','mont_sani_cabina_ducha','Montaje y colocación de Cabina de ducha.','','Cabina de ducha','','150.00','','','','','','','',''),
+
+(75,'','ud','mont_sani_plato_ducha_obra','Construcción de 1 Plato de ducha de obra incluyendo la válvula de evacuación, la rejilla, la manta asislante y la solera.','','Plato de ducha de obra','','660.00','','','','','','','',''),
+
+(76,'','ud','mont_sani_lavabo_pedestal','Montaje y colocación de Lavabo y pedestal.','','Lavabo y pedestal','SAL045','25.55','Instalación de lavabo con pedestal,  y desagüe. Incluso conexión a la red de evacuación existente, fijación del aparato y sellado con silicona. Totalmente instalado, conexionado, probado y en funcionamiento.','Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas.','Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación de los elementos de fijación suministrados por el fabricante. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de accesorios y complementos. Sellado de juntas.','Quedará nivelado en ambas direcciones, en la posición prevista y fijado correctamente. Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','1.25','Material auxiliar para instalación de aparato sanitario.','Lavabo con pedestal, con juego de fijación, según UNE 67001
+Acoplamiento a pared acodado con plafón, para evacuación de aguas residuales (a baja y alta temperatura) en el interior de los edificios, enlace mixto de 1 1/4''x40 mm de diámetro, según UNE-EN 1329-1.'),
+
+(77,'','ml','mont_electro_mueble_alto_cocina','Montaje, colocación, nivelado y sujección de muebles altos de cocina.','','Muebles altos de cocina','SCM020','36.88','Colocación de mobiliario en cocina compuesto por  muebles altos. Incluso montaje de cajones y baldas del mismo material que el cuerpo, bisagras, patas regulables para muebles bajos guías de cajones y otros herrajes de calidad básica, instalados en los cuerpos de los muebles y tiradores, pomos, sistemas de apertura automática, y otros herrajes de la serie básica, fijados en los frentes de cocina. Totalmente montado, sin incluir encimera, electrodomésticos ni fregadero.
+,Se comprobará que su situación se corresponde con la de Proyecto. Se comprobará que los paramentos verticales y horizontales de la cocina están terminados.','Replanteo de la posición y de los puntos de sujeción. Colocación, fijación y nivelación de los cuerpos de los muebles. Colocación y fijación de bisagras y baldas. Colocación de frentes y cajones. Colocación de los tiradores en frentes y cajones. Colocación del zócalo. Limpieza y retirada de restos a contenedor.','La fijación será adecuada.','Oficial 1ª carpintero.
+Ayudante carpintero.','3.45','','Cuerpo de muebles altos de cocina, frente y zócalo.'),
+
+(78,'','ml','mont_electro_mueble_bajo_cocina','Montaje, colocación, nivelado y sujección de muebles muebles bajos de cocina.','','Muebles bajos de cocina','SCM020','36.88','Colocación de mobiliario en cocina compuesto por  muebles bajos. Incluso montaje de cajones y baldas del mismo material que el cuerpo, bisagras, patas regulables para muebles bajos guías de cajones y otros herrajes de calidad básica, instalados en los cuerpos de los muebles y tiradores, pomos, sistemas de apertura automática, y otros herrajes de la serie básica, fijados en los frentes de cocina. Totalmente montado, sin incluir encimera, electrodomésticos ni fregadero.', 'Se comprobará que su situación se corresponde con la de Proyecto. Se comprobará que los paramentos verticales y horizontales de la cocina están terminados.','Replanteo de la posición y de los puntos de sujeción. Colocación, fijación y nivelación de los cuerpos de los muebles. Colocación y fijación de bisagras y baldas. Colocación de frentes y cajones. Colocación de los tiradores en frentes y cajones. Colocación del zócalo. Limpieza y retirada de restos a contenedor.',
+'La fijación será adecuada.','Oficial 1ª carpintero.
+Ayudante carpintero.','3.45','','Cuerpo de muebles bajos de cocina, frente y zócalo.'),
+
+(79,'','ud','mont_electro_horno_electrico','Montaje, colocación, nivelado y sujección de horno electrico.','','Horno electrico','SCE040','11.51','Instalación de horno eléctrico convencional. Totalmente montado, instalado, conexionado y comprobado.','Se comprobará que su situación se corresponde con la de Proyecto.','Replanteo mediante plantilla. Fijación en paramento mediante elementos de anclaje. Colocación del aparato. Conexión a la red eléctrica','La conexión será adecuada.','Oficial 1ª electricista.
+Ayudante electricista.','0.23','','Horno eléctrico encastrable.'),
+
+(80,'','ud','mont_electro_placa_vitro','Horno electrico, Montaje, colocación, nivelado y sujección de Placa vitroceramica.','','Placa vitroceramica','SCE030','33.60','Instalación de placa vitrocerámica para encimera. Incluso sellado de la junta perimetral con la encimera. Totalmente montada, instalada, conexionada y comprobada.','Se comprobará que su situación se corresponde con la de Proyecto.','Replanteo mediante plantilla. Fijación en paramento mediante elementos de anclaje. Colocación del aparato. Sellado de juntas. Conexión a la red eléctrica.','La conexión será adecuada.','Oficial 1ª electricista.
+Ayudante electricista.','0.78','Sellador elástico de poliuretano monocomponente para juntas.','Placa vitrocerámica. Según UNE-EN 60335-1.'),
+
+(81,'','ud','mont_electro_placa_electrica','Montaje, colocación, nivelado y sujección de Placa electrica.','','Placa electrica','SCE030','33.60','Instalación de placa eléctrica para encimera. Incluso sellado de la junta perimetral con la encimera. Totalmente montada, instalada, conexionada y comprobada.','Se comprobará que su situación se corresponde con la de Proyecto.','Replanteo mediante plantilla. Fijación en paramento mediante elementos de anclaje. Colocación del aparato. Sellado de juntas. Conexión a la red eléctrica.','La conexión será adecuada.','Oficial 1ª electricista.
+Ayudante electricista.','0.78','Sellador elástico de poliuretano monocomponente para juntas.','Placa eléctrica. Según UNE-EN 60335-1.'),
+
+(82,'','ud','mont_electro_lavadora',' Montaje, colocación, nivelado y sujección de Lavadora.','','Lavadora','','43.33','','','','','','','',''),
+
+(83,'','ud','mont_electro_frigorifico','Montaje, colocación, nivelado y sujección de Frigorifico.','','Frigorifico','','41.68','','','','','','','',''),
+
+(84,'','ud','mont_electro_lavavajillas','Montaje, colocación, nivelado y sujección de Lavavajillas.','','Lavavajillas','','43.33','','','','','','','',''),
+
+(85,'','ud','mont_electro_microondas','Montaje, colocación, nivelado y sujección de Microondas.','','Microondas','','55.01','','','','','','','',''),
+
+(86,'','ud','mont_electro_secadora','Montaje, colocación, nivelado y sujección de Secadora.','','Secadora','','43.33','','','','','','','',''),
+
+(87,'','ud','mont_fregadero','Montaje y sujección de fregadero y grifo de fregadero.','','Fregadero','SCF010','27.45','Instalación de fregadero para instalación en encimera,  con válvula de desagüe, para encimera de cocina, equipado con grifería, válvula con desagüe y sifón. Incluso conexión a las redes de agua fría y caliente y a la red de evacuación existentes, fijación del aparato y sellado con silicona. Totalmente instalado y en funcionamiento.','Se comprobará que su situación se corresponde con la de Proyecto y que la zona de ubicación está completamente terminada.','Replanteo y trazado en el paramento soporte de la situación del aparato. Colocación, nivelación y fijación de los elementos de soporte. Nivelación, aplomado y colocación del aparato. Conexión a la red de evacuación. Montaje de la grifería. Conexión a las redes de agua fría y caliente. Montaje de accesorios y complementos. Sellado de juntas.','La fijación será adecuada. La conexión a las redes será correcta.','Oficial 1ª fontanero.
+Ayudante fontanero.','0.75','Llave de regulación de 1/2'', para fregadero o lavadero, acabado cromado.
+Sifón botella sencillo de 1 1/2'' para fregadero de 1 cubeta, con válvula extensible.','Fregadero para instalación en encimera, con válvula de desagüe.
+Grifería para fregadero y elementos de conexión, según UNE-EN 200.'),
+
+(88,'','ud','mont_grifo_fregadero','Montaje y sujección de fregadero y grifo de fregadero.','','Grifo fregadero','SGF020','11.65','Colocación de grifería para fregadero. Incluso elementos de conexión y enlaces de alimentación flexibles de 3/8'' de diámetro y 350 mm de longitud, válvula antirretorno y dos llaves de paso. Totalmente instalada, conexionada, probada y en funcionamiento.'
+, 'Se comprobará que el paramento soporte está completamente acabado y que las instalaciones de agua fría, de agua caliente y de salubridad están terminadas. Se comprobará que su situación se corresponde con la de Proyecto y que hay espacio suficiente para su instalación.','Replanteo. Colocación del grifo. Conexionado.','Se garantizará la estanqueidad de las conexiones y el sellado de las juntas.','Oficial 1ª fontanero.','0.57','Material auxiliar para instalaciones de fontanería.','Grifo mezclador para fregadero,  incluso elementos de conexión, enlaces de alimentación flexibles de 3/8'' de diámetro y 350 mm de longitud, válvula antirretorno y dos llaves de paso.'),
+
+(89,'','ud','colo_pmarcha_termo_elect_a','Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 50L. Se incluye la retirada del termo antiguo.','','Termo eléctrico de 50L','ICA010','148.06','Instalación de termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 50 l, potencia 2 kW, de 553 mm de altura y 450 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio. Incluso soporte y anclajes de fijación, válvula de seguridad antirretorno, llaves de corte de esfera y latiguillos flexibles, tanto en la entrada de agua como en la salida. Totalmente montado, conexionado y probado.','Se comprobará que el paramento soporte se encuentra completamente terminado.','Replanteo del aparato. Fijación en paramento mediante elementos de anclaje. Colocación del aparato y accesorios. Conexionado con las redes de conducción de agua, eléctrica y de tierra. Puesta en marcha.','El termo será accesible.','Oficial 1ª fontanero.
+Ayudante fontanero.','0.83',
+'Material auxiliar para instalaciones de A.C.S.',
+'Termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 50 l, potencia 2 kW, de 553 mm de altura y 450 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio.
+Latiguillo flexible de 20 cm y 1/2'' de diámetro.
+Válvula de esfera de latón niquelado para roscar de 1/2''.
+Válvula de seguridad antirretorno, de latón cromado, con rosca de 1/2'' de diámetro, tarada a 8 bar de presión, con maneta de purga.'),
+
+(90,',ud','colo_pmarcha_termo_elect_b','Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 80L. Se incluye la retirada del termo antiguo.','','Termo eléctrico de 80L','ICA010','160.00','Instalación de termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 50 l, potencia 2 kW, de 553 mm de altura y 450 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio. Incluso soporte y anclajes de fijación, válvula de seguridad antirretorno, llaves de corte de esfera y latiguillos flexibles, tanto en la entrada de agua como en la salida. Totalmente montado, conexionado y probado.','Se comprobará que el paramento soporte se encuentra completamente terminado.','Replanteo del aparato. Fijación en paramento mediante elementos de anclaje. Colocación del aparato y accesorios. Conexionado con las redes de conducción de agua, eléctrica y de tierra. Puesta en marcha.','El termo será accesible.','Oficial 1ª fontanero."
+Ayudante fontanero.','0.87','Material auxiliar para instalaciones de A.C.S.','Termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 80 l, potencia 2 kW, de 758 mm de altura y 450 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio.
+Latiguillo flexible de 20 cm y 1/2'' de diámetro.
+Válvula de esfera de latón niquelado para roscar de 1/2''.
+Válvula de seguridad antirretorno, de latón cromado, con rosca de 1/2'' de diámetro, tarada a 8 bar de presión, con maneta de purga.'),
+
+(91,'','ud','colo_pmarcha_termo_elect_c','Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 100L. Se incluye la retirada del termo antiguo.','','Termo eléctrico de 100L','ICA010','243.33','Suministro e instalación de termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 100 l, potencia 2,2 kW, de 913 mm de altura y 450 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio. Incluso soporte y anclajes de fijación, válvula de seguridad antirretorno, llaves de corte de esfera y latiguillos flexibles, tanto en la entrada de agua como en la salida. Totalmente montado, conexionado y probado.','Se comprobará que el paramento soporte se encuentra completamente terminado.','Replanteo del aparato. Fijación en paramento mediante elementos de anclaje. Colocación del aparato y accesorios. Conexionado con las redes de conducción de agua, eléctrica y de tierra. Puesta en marcha.','El termo será accesible.','Oficial 1ª fontanero.
+Ayudante fontanero.','0.92','Material auxiliar para instalaciones de A.C.S.','Termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 100 l, potencia 2,2 kW, de 913 mm de altura y 450 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio.
+Latiguillo flexible de 20 cm y 1/2'' de diámetro.
+Válvula de esfera de latón niquelado para roscar de 1/2''.
+Válvula de seguridad antirretorno, de latón cromado, con rosca de 1/2'' de diámetro, tarada a 8 bar de presión, con maneta de purga.'),
+
+(92,'','ud','colo_pmarcha_termo_elect_d','Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 150L. Se incluye la retirada del termo antiguo.','','Termo eléctrico de 150L','ICA010','256.66','Instalación de termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 150 l, potencia 2,2 kW, de 1240 mm de altura y 505 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio. Incluso soporte y anclajes de fijación, válvula de seguridad antirretorno, llaves de corte de esfera y latiguillos flexibles, tanto en la entrada de agua como en la salida. Totalmente montado, conexionado y probado.','Se comprobará que el paramento soporte se encuentra completamente terminado.','Replanteo del aparato. Fijación en paramento mediante elementos de anclaje. Colocación del aparato y accesorios. Conexionado con las redes de conducción de agua, eléctrica y de tierra. Puesta en marcha.','El termo será accesible.','Oficial 1ª fontanero.
+Ayudante fontanero.','0.97',
+'Material auxiliar para instalaciones de A.C.S.',
+'Termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 150 l, potencia 2,2 kW, de 1240 mm de altura y 505 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio.
+Latiguillo flexible de 20 cm y 1/2'' de diámetro.
+Válvula de esfera de latón niquelado para roscar de 1/2''.
+Válvula de seguridad antirretorno, de latón cromado, con rosca de 1/2'' de diámetro, tarada a 8 bar de presión, con maneta de purga.) 
+
+(93,',ud','colo_pmarcha_termo_elect_e','Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 200L. Se incluye la retirada del termo antiguo.','','Termo eléctrico de 200L','ICA010','296.66','Suministro e instalación de termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 200 l, potencia 2,2 kW, de 1570 mm de altura y 513 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio. Incluso soporte y anclajes de fijación, válvula de seguridad antirretorno, llaves de corte de esfera y latiguillos flexibles, tanto en la entrada de agua como en la salida. Totalmente montado, conexionado y probado.','Se comprobará que el paramento soporte se encuentra completamente terminado.','Replanteo del aparato. Fijación en paramento mediante elementos de anclaje. Colocación del aparato y accesorios. Conexionado con las redes de conducción de agua, eléctrica y de tierra. Puesta en marcha.','El termo será accesible.','Oficial 1ª fontanero."
+Ayudante fontanero.','1.03',
+'Material auxiliar para instalaciones de A.C.S.','Termo eléctrico para el servicio de A.C.S., mural vertical, resistencia blindada, capacidad 200 l, potencia 2,2 kW, de 1570 mm de altura y 513 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio.
+Latiguillo flexible de 20 cm y 1/2'' de diámetro.
+Válvula de esfera de latón niquelado para roscar de 1/2''.
+Válvula de seguridad antirretorno, de latón cromado, con rosca de 1/2'' de diámetro, tarada a 8 bar de presión, con maneta de purga.'),
+
+(94,',ud','colo_pmarcha_termo_elect_f','Colocación y puesta en marcha por servicio técnico autorizado de Termo eléctrico de 300L. Se incluye la retirada del termo antiguo.','','Termo eléctrico de 300L','ICA010','392.21','Suministro e instalación de termo eléctrico para el servicio de A.C.S., de suelo, resistencia blindada, capacidad 300 l, potencia de A.C.S. 3 kW, de 1820 mm de altura y 625 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio. Incluso soporte y anclajes de fijación, válvula de seguridad antirretorno, llaves de corte de esfera y latiguillos flexibles, tanto en la entrada de agua como en la salida. Totalmente montado, conexionado y probado.','Se comprobará que el paramento soporte se encuentra completamente terminado.','Replanteo del aparato. Fijación en paramento mediante elementos de anclaje. Colocación del aparato y accesorios. Conexionado con las redes de conducción de agua, eléctrica y de tierra. Puesta en marcha.','El termo será accesible.','Oficial 1ª fontanero."
+Ayudante fontanero.','1.08','Material auxiliar para instalaciones de A.C.S.','Termo eléctrico para el servicio de A.C.S., de suelo, resistencia blindada, capacidad 300 l, potencia de A.C.S. 3 kW, de 1820 mm de altura y 625 mm de diámetro, formado por cuba de acero vitrificado, aislamiento de espuma de poliuretano, ánodo de sacrificio de magnesio.
+Válvula de esfera de latón niquelado para roscar de 3/4''.
+Válvula de seguridad antirretorno, de latón cromado, con rosca de 3/4'' de diámetro, tarada a 8 bar de presión, con maneta de purga.'),
+
+(95,'','ud','colo_pmarcha_calde_atmos','Colocación y puesta en marcha por servicio técnico autorizado de caldera atmosférica. Se incluye la retirada de la antigua caldera.','','Caldera atmosférica','','486.66','','','','','','','',''),
+
+(96,'','ud','colo_pmarcha_calde_bajo_nox','Colocación y puesta en marcha por servicio técnico autorizado de caldera bajo nox. Se incluye la retirada de la antigua caldera.','','Caldera bajo nox','','490.56','','','','','','','',''),
+
+(97,'','ud','colo_pmarcha_calde_estanca','Colocación y puesta en marcha por servicio técnico autorizado de caldera estanca. Se incluye la retirada de la antigua caldera.','','Caldera estanca','','488.60','','','','','','','',''),
+
+(98,'','m2','techo_pintar','En techo aplicación de 2 manos de pintura plástica en color tapando mobiliario con plásticos, cinta y papel. Se incluye la reparación de desperfectos en techo.','','Pintar techo','RIP030','6.04','Aplicación manual de dos manos de pintura plástica, la primera mano diluida con un 20% de agua y la siguiente sin diluir, (rendimiento: 0,1 l/m² cada mano),
+Se suspenderán los trabajos cuando la temperatura ambiente sea inferior a 5ºC o superior a 35ºC o la humedad ambiental sea superior al 85%.','Preparación del soporte. Aplicación de una mano de fondo. Aplicación de dos manos de acabado.','Tendrá buen aspecto.','Oficial 1ª pintor.
+"Ayudante pintor.','0.15','	"
+Imprimación a base de copolímeros acrílicos en suspensión acuosa, para favorecer la cohesión de soportes poco consistentes y la adherencia de pinturas.','Pintura plástica para interior, a base de copolímeros acrílicos, pigmentos y aditivos especiales, color blanco, acabado mate, de gran resistencia al frote húmedo),
+(99,'','','techo_tipo_pintura','','','Pintura techo','','','','','','','','','',''),
+(100,'','m2','techo_alisar','Alisar techo aplicando dos manos de pasta cubregotele, una mano de acabado fino y lijado final.','','Alisar techo','','','','','','','','','',''),
+(101,'','m2','techo_reparar_humedad','Reparar 1 mancha de humedad mediante la aplicación de esmalte antihumedad, esmalte mate ó clorocaucho según proceda.','','Reparar mancha de humedad','','6.04','Aplicación manual de dos manos de pintura plástica, acabado mate, textura lisa, la primera mano diluida con un 20% de agua y la siguiente sin diluir, (rendimiento: 0,09 l/mÂ² cada mano),
+Se suspenderán los trabajos cuando la temperatura ambiente sea inferior a 5ºC o superior a 35ºC o la humedad ambiental sea superior al 85%.','Preparación del soporte. Aplicación de una mano de fondo. Aplicación de dos manos de acabado.','Tendrá buen aspecto.','Oficial 1ª pintor.
+Ayudante pintor.','0.15','Plaste en polvo de interior de 1,78 g/cmÂ³ de densidad, color blanco, para aplicar con espátula o llana.
+Solución de ácido clorhídrico diluido en diez partes de agua. Imprimación a base de copolímeros acrílicos en suspensión acuosa, para favorecer la cohesión de soportes poco consistentes y la adherencia de pinturas.', 
+'Pintura plástica para interior, a base de copolímeros acrílicos, pigmentos y aditivos especiales, color X, acabado X, de gran resistencia al frote húmedo.'),
+
+(102,'','m2','pared_empapelar','Empapelar paredes con papel decorativo.','','Empapelar','RDP010','3.42','Colocación de revestimiento ligero mediante tiras de papel de vinilo, fijadas con cola celulósica soluble en agua, sobre la superficie lisa y regularizada de paramentos verticales interiores. Incluso p/p de preparación y limpieza de la superficie, formación de encuentros, cortes del material y remates perimetrales.','Se comprobará la inexistencia de irregularidades en el soporte, cuya superficie debe ser lisa y estar seca y limpia.','Preparación y limpieza de la superficie a revestir. Replanteo de juntas, huecos y encuentros. Corte y preparación en tiras del papel. Aplicación de la cola sobre el paramento. Encolado, plegado y presentación de las tiras de papel. Colocación del papel. Limpieza de la cola sobrante y paso del rodillo aplastajuntas. Resolución del perímetro del revestimiento. Limpieza de la superficie empapelada.','La fijación al paramento será adecuada. Tendrá buen aspecto.','Oficial 1ª pintor.
+Ayudante pintor.','0.09','Cola celulósica en polvo, soluble en agua, para papeles pintados.','Papel a colocar.'),
+
+(103,'','m2','pared_quitar_papel','Quitar papel de las paredes por medios mecánicos o manuales según sea necesario.','','Quitar papel','DRD010','2.78','Levantado de revestimiento de papel en paramentos interiores, con medios manuales, sin deteriorar la superficie soporte, que quedará al descubierto y preparada para su posterior revestimiento, y carga manual sobre camión o contenedor.','Superficie medida según documentación gráfica de Proyecto.','Levantado del elemento. Retirada y acopio del material levantado. Limpieza de los restos de obra. Carga manual del material levantado y restos de obra sobre camión o contenedor.','','Peón ordinario construcción.','0.17','',''),
+
+(104,'','m2','pared_alisar','Alisar paredes aplicando dos manos de pasta cubregotele, una mano de acabado fino y lijado final.','','Alisar paredes','','','','','','','','','',''),
+
+(105,'','m2','pared_pintar','En paredes aplicación de 2 manos de pintura plástica en color tapando suelo y mobiliario con plásticos, cinta y papel. Se incluye la reparación de desperfectos en paredes.','','Pintar paredes','','6.04','Aplicación manual de dos manos de pintura plástica color blanco, acabado mate, textura lisa, la primera mano diluida con un 20% de agua y la siguiente sin diluir, (rendimiento: 0,1 l/mÂ² cada mano', 'Se comprobará que la superficie a revestir no presenta restos de anteriores aplicaciones de pintura ni manchas de óxido, de grasa o de humedad. Se suspenderán los trabajos cuando la temperatura ambiente sea inferior a 5ºC o superior a 35ºC o la humedad ambiental sea superior al 85%.','Preparación del soporte. Aplicación de una mano de fondo. Aplicación de dos manos de acabado.','Tendrá buen aspecto.','Oficial 1ª pintor.
+Ayudante pintor.','0.16','Imprimación a base de copolímeros acrílicos en suspensión acuosa, para favorecer la cohesión de soportes poco consistentes y la adherencia de pinturas.', 'Pintura plástica para interior, a base de copolímeros acrílicos, pigmentos y aditivos especiales, color blanco, acabado mate, de gran resistencia al frote húmedo.'),
+
+(106,'','m2','pared_reparar_humedad','Reparar 1 mancha de humedad mediante la aplicación de esmalte antihumedad, esmalte mate ó clorocaucho según proceda.','','Reparar humedad','','6.04','Aplicación manual de dos manos de pintura plástica color blanco, acabado mate, textura lisa, la primera mano diluida con un 20% de agua y la siguiente sin diluir, (rendimiento: 0,09 l/mÂ² cada mano),
+Se suspenderán los trabajos cuando la temperatura ambiente sea inferior a 5ºC o superior a 35ºC o la humedad ambiental sea superior al 85%.','Preparación del soporte. Aplicación de una mano de fondo. Aplicación de dos manos de acabado.','Tendrá buen aspecto.','Oficial 1ª pintor. Ayudante pintor.','0.16',
+'Plaste en polvo de interior de 1,78 g/cmÂ³ de densidad, color blanco, para aplicar con espátula o llana.
+Pintura tixotrópica mate para uso interior a base de resinas especiales y disolventes desodorizados, de acción selladora, aislante antigrasa, antimohos, antihumedad y sin olor, de gran blancura, adherencia y cubrición, lavable y resistente al amarilleamiento, para aplicar con brocha, rodillo o pistola. Imprimación a base de copolímeros acrílicos en suspensión acuosa, para favorecer la cohesión de soportes poco consistentes y la adherencia de pinturas', 
+'Pintura plástica para interior, a base de copolímeros acrílicos, pigmentos y aditivos especiales, color X, acabado X, de gran resistencia al frote húmedo.'),
+
+(107,'','m2','carpin_friso','Colocación de friso natural o sintético hasta una altura de 1 metro mediante rasteles dejando cámara de aire.','','Colocacion friso altura 1 metro','','','','','','','','','',''),
+
+(108,'','ud','puerta_colocar','Colocación y reglaje de 1 puerta de paso incluyendo, si fuese necesario, la retirada y desescombro de la puerta vieja hasta vertedero autorizado.','','Colocar Puerta','LPM010','47.58','Colocación de puerta interior abatible. Incluso bisagras, herrajes de colgar, de cierre y manivela sobre escudo largo de latón negro brillo, serie básica
+,Colocación de los herrajes de colgar. Colocación de la hoja. Colocación de los herrajes de cierre. Colocación de accesorios. Realización de pruebas de servicio.','El conjunto será sólido. Las hojas quedarán aplomadas y ajustadas.','Oficial 1ª carpintero.
+Ayudante carpintero.','1.08','','Precerco de madera, galce, puerta interior, tapajuntas, pernio, tornillo, cerradura de embutir y juego de manibela y escudo.'),
+
+(109,'','','puerta_tipo','','','Tipo de puerta','','','','','','','','','',''),
+
+(110,'','ud','puerta_cambio_precerco','Colocación de 1 precerco de madera para puerta de paso incluyendo, si fuese necesario, la retirada y desescombro del precerco actual hasta vertedero autorizado. En el precio se incluye el precerco de madera.','','Cambiar precerco a puerta','','70.00','','','','','','','',''),
+
+(111,'','ud','ventana_colocar','Colocación de 1 ventana de aluminio, pvc o madera incluyendo, si fuese necesario la retirada de la ventana vieja y su transporte hasta vertedero autorizado.','','Colocar Ventana','LCL060','36.60','Montaje de carpintería de aluminio, anodizado natural, con un espesor mínimo de 15 micras, para conformado de ventana, elementos de estanqueidad, accesorios y utillajes de mecanizado homologados. Cajón de persiana básico incorporado (monoblock). Incluso limpieza del premarco ya instalado, alojamiento y calzado del marco en el premarco, fijación del marco al premarco con tornillos de acero galvanizado, sellado perimetral de la junta exterior entre marco y obra, por medio de un cordón de silicona neutra y ajuste final en obra, sin incluir el recibido en obra del premarco con patillas de anclaje. Elaborada en taller, con clasificación a la permeabilidad al aire según UNE-EN 12207, clasificación a la estanqueidad al agua según UNE-EN 12208 y clasificación a la resistencia a la carga del viento según UNE-EN 12210. Totalmente montada y probada.','Se comprobará que la fábrica que va a recibir la carpintería está terminada, a falta de revestimientos. Se comprobará que el premarco está correctamente colocado, aplomado y a escuadra, y que las medidas de altura y anchura del hueco son constantes en toda su longitud.
+Se suspenderán los trabajos cuando llueva, nieve o la velocidad del viento sea superior a 50 km/h.','Colocación de la carpintería. Ajuste final de las hojas. Sellado de juntas perimetrales. Realización de pruebas de servicio.','La unión de la carpintería con la fábrica será sólida. La carpintería quedará totalmente estanca.','Oficial 1ª cerrajero.
+Ayudante cerrajero.','0.88','Cartucho de masilla de silicona neutra.','Premarco, perfil para conformado  de ventana con junta de estanqueidad. Perfil de aluminio para conformado de hoja de ventana. Perfil para el conformado de junquillo. Perfil para el conformado de inversora. Kit de escuadras, tapas de condensación y salida de agua, y herrajes de ventana practicable de apertura. Persina y guía de persiana.'),
+(112,'','','ventana_tipo','','','Tipo de ventana','','','','','','','','','',''),
+
+(113,'','ud','ventana_contraventana','Colocación de 1 contraventana de aluminio, pvc o madera incluyendo, si fuese necesario, la retirada de la contraventana vieja y su transporte hasta vertedero autorizado.','','Contraventanas a colocar','','','','','','','','','','');

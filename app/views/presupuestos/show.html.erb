@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%# notice %></p>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-1">
@@ -88,7 +88,7 @@
           <% if @habitacion != nil %>          
             <h1><%= @habitacion.nombre %></h1>
 
-            <% @presupuesto = Presupuesto.find_by(habitacion_id: @habitacion.id, reform_id: @habitacion.reform_id) %>
+            <% @presupuesto = Presupuesto.find_by(habitacion_id: @habitacion.id, reform_id: @habitacion.reform_id, user_id: current_user.id) %>
 
             <button type="button" class="btn btn-sm btn-default" style="padding: 10px; margin-top: 10px; border: 1px solid #d9534f; color: #d9534f;">
               <h3 style="margin: 0px; font-weight: normal; color: #d9534f; font-size: 14px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= link_to "Editar presupuesto", edit_presupuesto_path(@presupuesto, habitacion: @habitacion.id), style: "color: #d9534f;" %></h3>
@@ -7333,7 +7333,7 @@
 
 
 
-				<h5><%= link_to 'Back', presupuestos_path %></h5>
+				<h5><%# link_to 'Back', presupuestos_path %></h5>
 
 			</div>
 		</div>

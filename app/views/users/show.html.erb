@@ -39,6 +39,11 @@
               <% end %>            
             </li>
             <li>
+              <h3>Contacto</h3>
+              <h3 style="font-weight: 300;"><%= @user.email_publico %></h3> 
+              <h3 style="font-weight: 300;"><%= @user.telefono_publico %></h3>                            
+            </li>
+            <li>
               <h3>Descripcion</h3>
               <h3 style="font-weight: 300;"><%= @user.description %></h3>
             </li>
@@ -68,7 +73,7 @@
             </li>
             <li>
               <h3>Lo que opinan otros usuarios</h3>
-              <% if logged_in? %>
+              <% if logged_in? && @user.id != current_user.id %>
                 <%= render 'shared/valoracion_form' %>
               <% end %>
             </li>
@@ -86,31 +91,31 @@
                         <h5 style="margin: 0px;">
                           <% if valoracion.valoracion == 'Muy mala' %>
                             <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
                           <% end %>
                           <% if valoracion.valoracion == 'Mala' %>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
                           <% end %>
                           <% if valoracion.valoracion == 'Aceptable' %>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
                           <% end %>
                           <% if valoracion.valoracion == 'Recomendable' %>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
                             <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
                           <% end %>
                           <% if valoracion.valoracion == 'Muy recomendable' %>
                             <i class="fa fa-star" aria-hidden="true"></i>

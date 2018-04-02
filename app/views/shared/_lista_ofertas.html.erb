@@ -1,4 +1,4 @@
-<div class="campos" style="margin-top: 100px;">
+<div class="campos" style="margin-top: 50px;">
 
   <div class="iconos_inicio">
     <% if logged_in? %>
@@ -48,6 +48,8 @@
     <% end %>
   </div>         
 
+<%
+=begin%>
             <% if Partida.all.any? %>
                 <% @partidas = Partida.where.not(empresa: nil) %>
                 <h3 style="font-weight: bold;">Ofertas para tí</h3>
@@ -86,7 +88,7 @@
                                 <% @user_empresa = User.find(@empresa.user_id) %>
                               <% end %>
                               <span style="display: block; font-weight: 600;"><%= @user_empresa.name %></span>
-                              <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 0 valoraciones</span>
+                              <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
                             </li>                           
                             <li class="precio_oferta" style="padding-left: 0px;">
                               <span style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span></span>
@@ -118,7 +120,9 @@
                     <% end %>        
                 </ul>
 
-            <% end %>             
+            <% end %>  
+<%
+=end%>                      
 
     <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Propuestas destacadas:</h3>
     <ul class="lista_principal" style="">
@@ -146,7 +150,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Empresa Roberto construcciones y reformas</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 33 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 33 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>
@@ -195,7 +199,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Empresa SOLIMPLA Construcciones y Reformas</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 13 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 13 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>
@@ -244,7 +248,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Empresa Roberto construcciones y reformas</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 27 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 27 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>
@@ -293,7 +297,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Empresa SOLIMPLA Construcciones y reformas</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 59 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 59 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>
@@ -343,7 +347,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Empresa Roberto construcciones y reformas</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 89 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 89 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>
@@ -396,7 +400,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Hunter Douglas</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i> 16 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i> 16 valoraciones</span>
               </li>
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>
@@ -427,7 +431,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Brico Depot Getafe</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 22 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 22 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b>129 €/ud</b></span></span>
@@ -458,7 +462,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Brico Depot</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 5 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 5 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b>20.95 €/m²</b></span></span>
@@ -490,7 +494,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span style="display: block;">Mobimarket</span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 77 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 77 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b>159 €/ud</b></span></span>
@@ -527,7 +531,7 @@
                 </li>
                 <li class="empresa" style="padding-left: 0px;">
                   <%= link_to  "https://www.paratureforma.com/esquina-victorian-nou.html" do %><span>paratureforma.com</span><% end %>
-                  <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i> 53 valoraciones</span>
+                  <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i> 53 valoraciones</span>
                 </li>                
                 <li class="precio_oferta" style="padding-left: 0px;">
                   <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b>0.76 €/ud</b></span></span>
@@ -560,7 +564,7 @@
                 </li>
                 <li class="empresa" style="padding-left: 0px;">
                   <span style="display: block;"><%= link_to "https://www.paratureforma.com/cuarcita-azahar.html" do %>paratureforma.com<% end %></span>
-                  <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 29 valoraciones</span>
+                  <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 29 valoraciones</span>
                 </li>                
                 <li class="precio_oferta" style="padding-left: 0px;">
                   <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b>11.61 €/m²</b></span></span>
@@ -593,7 +597,7 @@
                 </li>
                 <li class="empresa" style="padding-left: 0px;">
                   <span style="display: block;"><%= link_to "https://www.paratureforma.com/paves-azul-ondulado-es.html" do %>paratureforma.com<% end %></span>
-                  <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i> 17 valoraciones</span>
+                  <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i> 17 valoraciones</span>
                 </li>                
                 <li class="precio_oferta" style="padding-left: 0px;">
                   <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b>5,84 € €/ud</b></span></span>
@@ -623,7 +627,7 @@
               </li>
               <li class="empresa" style="padding-left: 0px;">
                 <span> <%= link_to "https://www.paratureforma.com/inserto-pez-interleva.html" do %>planreforma.com<% end %></span>
-                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i> 23 valoraciones</span>
+                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 23 valoraciones</span>
               </li>                
               <li class="precio_oferta" style="padding-left: 0px;">
                 <span style="font-size: 14px; padding-top: 10px;">presupuesto: <span style="font-size: 16px;"><b><%= @task.importe if @task.importe != nil %> €/<%= @task.um %></b></span></span>

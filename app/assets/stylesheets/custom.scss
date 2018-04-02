@@ -535,7 +535,7 @@ img.img_prueba {
     width: 100vw;
   }
   .texto {
-    padding: 80px 250px;
+    padding: 60px 250px;
     @media(max-width: 768px) {
       padding: 15px;
     }
@@ -546,6 +546,26 @@ img.img_prueba {
     @media(max-width: 768px) {
       padding: 0px;
     }
+  }
+}
+
+.descripcion_empresa {
+  padding-top: 40px;
+  display: inline-flex;
+  text-align: left;
+  h5 {
+    font-weight: 400;
+    color: #008489 !important;
+    font-size: 16px;
+    padding-right: 20px;
+  }
+  i {
+    font-size: 22px;
+  }
+  @media(max-width: 768px) {
+    .imagen_ordena {
+      display: none;
+    }    
   }
 }
 
@@ -746,6 +766,26 @@ aside {
   }
 }
 
+.funcionamiento {
+  padding-top: 20px;
+  display: inline-flex;
+  .colum_funcionamiento {
+    padding: 10px;
+    display: block;
+    width: 33%;
+    @media(max-width: 768px) {
+      width: 100%;
+    }
+    h5 {
+      font-weight: 600;
+      color: #555;
+    }
+  }
+  @media(max-width: 768px) {
+    display: inline-block;
+  }
+}
+
 .campos {
   margin-top: 100px; 
   margin-bottom: 200px;  
@@ -836,6 +876,10 @@ aside {
           font-size: 18px;
           color: #444;
         }
+      }
+      li.medicion {
+        font-family: 'Open Sans';
+        margin: 5px;
       }
       li.comentario {
         textarea {
@@ -1135,6 +1179,9 @@ aside {
 }
 
 .nueva_partida {
+  .field {
+    border-bottom: 1px solid #ddd;
+  }
   h3 {
     font-size: 20px;
     color: #444;

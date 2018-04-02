@@ -89,6 +89,12 @@
 
             <% if @user.empresa == true %>
 
+            <h5 style="font-weight: bolder;"><%= f.label "", "Email de contacto para tus clientes", style: "color: #0084B4;" %></h5>
+            <h5 style="font-weight: bolder; color: #d9d9d9;"><%= f.text_field :email_publico, class: 'form-control', placeholder: "Un email de contacto que aparecerá en tu ficha" %></h5> 
+
+            <h5 style="font-weight: bolder;"><%= f.label "", "Teléfono de contacto", style: "color: #0084B4;" %></h5>
+            <h5 style="font-weight: bolder; color: #d9d9d9;"><%= f.text_field :telefono_publico, class: 'form-control', placeholder: "Un teléfono para que los usuarios se pongan en contacto contigo" %></h5>             
+
             <h5 style="font-weight: bolder;"><%= f.label "Add your linkedIN profile, just copy your link.", style: "color: #0084B4;" %></h5>
             <h5 style="font-weight: bolder; color: #d9d9d9;"><%= f.text_field :linkedin, class: 'form-control' %></h5>
 

@@ -4,6 +4,10 @@
   <% @partida = Partida.find(params[:partida]) %>
 <% end %>
 
+<% if current_user.empresa == true %>
+  <% @empresa = Empresa.find(current_user.empresa) %>
+<% end %>
+
 <%= form_for(presupuesto) do |f| %>
   <% if presupuesto.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +15,7 @@
 
       <ul>
       <% presupuesto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><%# message %></li>
       <% end %>
       </ul>
     </div>
@@ -67,12 +71,12 @@
               </div>      
 
               <div class="field">
-                <h3>Introducir importe total para la partida:</h3>
+                <h3 style="color: #008489;">Introduce el importe total para la partida:</h3>
                 <h5 style="font-size: 15px; font-weight: 700;"><%= f.text_field :partida_importe, style: "width: 40%; font-size: 15px; padding: 10px; border: 1px solid #bbb; border-radius: 5px; color: #444;", type: "number", step: "0.01", required: true, placeholder: 'ej 12.56' %></h5>
               </div>
 
               <div class="field">
-                <h3>Introducir tu comentario para el cliente</h3>
+                <h3 style="color: #008489;">Introducir tu comentario para el cliente explicando tu presupuesto</h3>
                 <h5 style="color: grey; font-weight: 500;"><%= f.text_area :partida_comentario, style: "font-size: 15px; padding: 10px; border: 1px solid #bbb; border-radius: 5px; height: 100px;", required: true, placeholder: 'Añade un comentario para ayudar al cliente a entender tu propuesta' %></h5>
               </div>      
             </div>
@@ -81,7 +85,7 @@
               <% if Presupuesto.find_by(id: presupuesto.id) != nil %>
               <h5 style="margin: 0px;">Actualizar tu precio para <%= f.submit @partida.titulo, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
               <% else %>
-                <h5 style="margin: 0px;">Introducir tu precio para <%= @partida.titulo %> <%= f.submit 'Crear tu precio', style:"background-color: white; padding: 10px; border: 1px solid green; border-radius: 15px; font-weight: 900; color: green;" %></h5>
+                <h5 style="margin: 0px;">Introducir tu precio para <%= @partida.titulo %> <%= f.submit 'Crea tu presupuesto', style:"background-color: white; padding: 10px; border: 1px solid green; border-radius: 15px; font-weight: 900; color: green;" %></h5>
               <% end %>
             </div>
 
@@ -6737,9 +6741,9 @@
 
     <div class="actions">
       <% if Presupuesto.find_by(id: presupuesto.id) != nil %>
-      <h5 style="margin: 0px;">Actualizar tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
+      <h5 style="margin: 0px;">Actualizar tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder; width: 100%;" %></h5>
       <% else %>
-        <h5 style="margin: 0px;">Introducir tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder;" %></h5>
+        <h5 style="margin: 0px;">Introducir tu precio para <%= f.submit @habitacion.nombre, style:"background-color: white; padding: 10px; border: 1px solid #aaa; border-radius: 15px; font-weight: bolder; width: 100%;" %></h5>
       <% end %>
     </div>
 

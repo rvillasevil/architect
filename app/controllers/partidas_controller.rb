@@ -16,7 +16,7 @@ class PartidasController < ApplicationController
   # GET /partidas/new
   def new
     @partida = Partida.new
-    if params[:empresa] != nil or params[:invitado] != nil
+    if current_user.empresa == true or params[:invitado] != nil
     else
       @reform = Reform.find(params[:reform_id])
     end
@@ -35,7 +35,7 @@ class PartidasController < ApplicationController
     respond_to do |format|
       if @partida.save
         if logged_in?
-          if params[:partida][:empresa] != nil
+          if current_user.empresa == true
             format.html { redirect_to empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.' }
             #format.html { redirect_back(fallback_location: empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.') }
             format.json { render :show, status: :created, location: @partida }          

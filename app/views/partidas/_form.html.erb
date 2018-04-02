@@ -13,8 +13,9 @@
 
   <% if logged_in? %>
 
-    <% if params[:empresa] != nil %>
-    <% @empresa = Empresa.find(params[:empresa]) %>
+    <% if current_user.empresa == true %>
+    <%# if params[:empresa] != nil %>
+    <% @empresa = Empresa.find(current_user.empresa) %>
       <div class="nueva_partida">
         <div class="field">
           <h3 style="">Título</h3>

@@ -17,6 +17,9 @@ class PresupuestosController < ApplicationController
   # GET /presupuestos/1.json
   def show
     if current_user.empresa == true
+      if @presupuesto.user_id != current_user.id 
+        redirect_to root_url, alert: "No estás aurotizado a ver contenido en esta página" 
+      end
       @habitacion = Habitacion.find_by(id: @presupuesto.habitacion_id)
       @partida = Partida.find_by(id: @presupuesto.partida_id)
       if @habitacion != nil

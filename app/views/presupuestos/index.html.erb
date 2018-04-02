@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%# notice %></p>
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -130,7 +130,7 @@
                               <% if Presupuesto.find_by(reform_id: @reforma.id, user_id: current_user.id) != nil %>
                                   <button type="button" class="btn btn-primary" style="background-color: white; color: #444; font-weight: bold; font-size: 16px; border: 1px solid #999; border-radius: 15px;">Resumen y presentar presupuesto</button>
                                   <% @budget = Budget.find_by(reform_id: @reforma.id) %>
-                                  <h5 style="">Coste estimado del cliente: <b><%= @budget.cost %> €.</b></h5>
+                                  <!--<h5 style="">Coste estimado del cliente: <b><%# @budget.cost %> €.</b></h5>-->
                               <% end %>
                             <% end %>
                           <% end %>
@@ -174,9 +174,11 @@
                         <button type="button" class="btn btn-sm btn-default" style="padding: 10px; margin-top: 10px; border: 1px solid #1DA1F2; border-radius: 10px;">
                           <h3 style="margin: 0px; font-weight: bold; font-size: 14px; color: #1DA1F2;"><%= habitacion.nombre %></h3>
                           <h5 style="font-size: 14px;">Aún no has presupuestado</h5>
-                          <%= link_to new_presupuesto_path(@presupuesto, habitacion: habitacion.id, tus_datos: true) ,style: "color: #1DA1F2;" do %>
-                            <h5>Rellenar con tus datos</h5>
-                          <% end %>                         
+                          <% if Empresa.find_by(user_id: current_user.id) %>
+                            <%= link_to new_presupuesto_path(@presupuesto, habitacion: habitacion.id, tus_datos: true) ,style: "color: #1DA1F2;" do %>
+                              <h5>Rellenar con tus datos</h5>
+                            <% end %>
+                          <% end %>                        
                         </button>                        
                       <% end %>
                     <% end %>
@@ -210,9 +212,11 @@
                         <button type="button" class="btn btn-sm btn-default" style="padding: 10px; margin-top: 10px; border: 1px solid #1DA1F2; border-radius: 10px;">
                           <h3 style="margin: 0px; font-weight: bold; font-size: 14px; color: #1DA1F2;"><%= partida.titulo %></h3>
                           <h5 style="font-size: 14px;">Aún no has presupuestado</h5>
-                          <%= link_to new_presupuesto_path(@presupuesto, partida: partida.id, tus_datos: true) ,style: "color: #1DA1F2;" do %>
-                            <h5>Rellenar con tus datos</h5>
-                          <% end %>                         
+                          <% if Empresa.find_by(user_id: current_user.id) %>                          
+                            <%= link_to new_presupuesto_path(@presupuesto, partida: partida.id, tus_datos: true) ,style: "color: #1DA1F2;" do %>
+                              <h5>Rellenar con tus datos</h5>
+                            <% end %>
+                          <% end %>                     
                         </button>                        
                       <% end %>
                     <% end %>
