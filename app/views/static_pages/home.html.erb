@@ -297,6 +297,7 @@
           <div class="campos" style="">
         <% end %>
 
+        <% if params[:tern] != nil %>
           <% if @partidas.where.not(empresa: nil).any? %>
             <h3 style="font-weight: bold;">Ofertas para tí</h3>
             <ul class="lista_principal" style="">
@@ -369,6 +370,7 @@
             <h5 style="font-weight: 600; font-size: 16px; margin-bottom: 0px;">Lo sentimos, aún no tenemos ningún producto relacionado con los términos de búsqueda, prueba con términos más generales.</h5>
             <h5>Nuestra base de datos crece muy rápido y en unos días tendremos, seguro, lo que estás buscando.</h5>
           <% end %> 
+        <% end %>
         </div>        
 
         <div class="constructor">
