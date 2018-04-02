@@ -5,7 +5,7 @@
 <% end %>
 
 <% if current_user.empresa == true %>
-  <% @empresa = Empresa.find(current_user.id) %>
+  <% @empresa = Empresa.find_by(user_id: current_user.id) %>
 <% end %>
 
 <%= form_for(presupuesto) do |f| %>
