@@ -476,9 +476,8 @@
                           <% if  presupuesto.demo_retir_electrodomesticos != nil %>
                           <li>
                               <ul class="elemento">
-                                <% if presupuesto.demo_quitar_mobi_cocina_comment != nil %>
                                   <% @task = Task.find_by(task: 'demo_retir_electrodomesticos') %>
-                                  <%= presupuesto.demo_quitar_mobi_cocina_commen%>
+
                                 <li>
                                   <% end %>
                                   <h5 style="font-weight: 900; font-size: 16px;"><%= @task.nombre %></h5>
