@@ -1188,11 +1188,6 @@
                                       Materiales a aportar por el cliente: <%= @task.mat_aportar %>
                                   </li>
                                 <% end %>
-                                <% if presupuesto.tub_tipo_comment != nil %>
-                                <li class="comments_presupuesto">  
-                                  <h5><%= presupuesto.tub_tipo_comment %></h5>
-                                </li>
-                                <% end %>
                               </ul>
                               
                           </li>
@@ -4367,7 +4362,7 @@
                                 <% end %>
                                 <% if presupuesto.ventana_contraventana_comment != nil %>
                                 <li class="comments_presupuesto">
-                                  <h5><%= ventana_contraventana_comment %></h5>
+                                  <h5><%=  presupuesto.ventana_contraventana_comment %></h5>
                                 </li>
                                 <% end %>
                               </ul>
