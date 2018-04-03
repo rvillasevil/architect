@@ -16,9 +16,13 @@ class PartidasController < ApplicationController
   # GET /partidas/new
   def new
     @partida = Partida.new
-    if current_user.empresa == true or params[:invitado] != nil
+    if logged_in?
+      if current_user.empresa == true
+      else
+        @reform = Reform.find(params[:reform_id])
+      end
     else
-      @reform = Reform.find(params[:reform_id])
+
     end
   end
 
@@ -33,8 +37,10 @@ class PartidasController < ApplicationController
     @partida = Partida.new(partida_params)
 
     respond_to do |format|
-      if @partida.save
-        if logged_in?
+
+      if logged_in? 
+
+        if @partida.save
           if current_user.empresa == true
             format.html { redirect_to empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.' }
             #format.html { redirect_back(fallback_location: empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.') }
@@ -43,14 +49,27 @@ class PartidasController < ApplicationController
             @reform = params[:partida][:reform_id]
             format.html { redirect_to reform_path(@reform), notice: 'La partida se ha creado correctamente.' }
             format.json { render :show, status: :created, location: @partida }
-          end
+          end        
         else
-          format.html { redirect_to root_url, notice: 'La partida se ha creado con éxito en breve nos pondremos en contacto con usted, gracias.' }
-          format.json { render :show, status: :created, location: @partida } 
-        end         
-      else
-        format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
-        format.json { render json: @partida.errors, status: :unprocessable_entity }
+          format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
+          format.json { render json: @partida.errors, status: :unprocessable_entity }
+        end
+
+      else        
+        if Partida.where(email_invitado: params[:partida][:email_invitado]).any?
+          format.html { redirect_back(fallback_location: root_url, notice: 'Ya has creado un proyecto asociado a este correo. No podemos gestionar varios proyectos en un mismo correo si no eres usuario, lo sentimos. Hazte usuario gratis en 2 sencillos pasos.') }
+        else
+
+          if @partida.save
+            format.html { redirect_to root_url, notice: 'La partida se ha creado con éxito, en breve nos pondremos en contacto, gracias.' }
+            format.json { render :show, status: :created, location: @partida } 
+          else
+            format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
+            format.json { render json: @partida.errors, status: :unprocessable_entity }
+          end
+
+        end
+
       end
     end
   end

@@ -46,13 +46,17 @@ class HabitacionsController < ApplicationController
         end
       end
     else
-      respond_to do |format|
-        if @habitacion.save
-          format.html { redirect_to root_url, notice: 'Se han mandado tu proyecto. En breve recibirán gratis las ofertas en tu correo, gracias.' }
-          format.json { render :show, status: :created, location: @habitacion }
-        else
-          format.html { redirect_back(fallback_location: root_url, notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
-          format.json { render json: @habitacion.errors, status: :unprocessable_entity }
+      if Habitacion.where(email_invitado: params[:habitacion][:email_invitado]).any?
+        redirect_back(fallback_location: root_url, notice: 'Ya has creado un proyecto asociado a este correo. No podemos gestionar varios proyectos en un mismo correo si no eres usuario, lo sentimos. Hazte usuario gratis en 2 sencillos pasos.')
+      else
+        respond_to do |format|
+          if @habitacion.save
+            format.html { redirect_to root_url, notice: 'Se han mandado tu proyecto. En breve recibirán gratis las ofertas en tu correo, gracias.' }
+            format.json { render :show, status: :created, location: @habitacion }
+          else
+            format.html { redirect_back(fallback_location: root_url, notice: 'La habitación no ha podido crearse. Inténtalo de nuevo y no te olvides del nombre.') }
+            format.json { render json: @habitacion.errors, status: :unprocessable_entity }
+          end
         end
       end
     end

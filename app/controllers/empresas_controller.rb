@@ -13,8 +13,8 @@ class EmpresasController < ApplicationController
   def show
     @user = User.find(params[:id])
     @empresa = Empresa.find_by(user_id: current_user.id)
-    if @empresa.user_id != current_user.id 
-      redirect_to root_url, alert: "No estás aurotizado a ver contenido en esta página" 
+    if current_user.id != @empresa.user_id
+      redirect_to root_url
     end    
   end
 
@@ -34,7 +34,7 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.save
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
+        format.html { redirect_to @empresa, notice: 'La información se ha creado con éxito.' }
         format.json { render :show, status: :created, location: @empresa }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class EmpresasController < ApplicationController
   def update
     respond_to do |format|
       if @empresa.update(empresa_params)
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully updated.' }
+        format.html { redirect_to @empresa, notice: 'Se han actualizado los datos correctamente.' }
         format.json { render :show, status: :ok, location: @empresa }
       else
         format.html { render :edit }

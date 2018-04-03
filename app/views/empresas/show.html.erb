@@ -5904,6 +5904,7 @@
             <div id="Div15" style="display: block;">
               <% @partidas = Partida.where(user_id: current_user.id) %>
               <h3 style="font-weight: bold;">Tus partidas</h3>
+              <h5>Fichas de productos o servicios que formarán parte del Marketplace, el primer ecommerce de servicios y obra. </h5>
               <ul class="lista_principal" style="">
                   <% @partidas.map do |partida| %>
                     <li>
@@ -5956,6 +5957,14 @@
                           </div>
                           <% end %>
                         </li>
+                        <li style="font-family: 'Open Sans';">
+                          <button type="btn" class="btn btn-info" style="border: 1px solid green; background-color: white; padding: 0px; padding-left: 5px;">
+                            <i class="far fa-edit"  style="color: green;"></i> <%= link_to "Editar partida", edit_partida_path(partida, empresa: @empresa, edit: true), style: "color: green; padding: 10px; font-weight: 600; padding-left: 0px;" %>
+                          </button>
+                          <button type="btn" class="btn btn-info" style="border: 1px solid #d9534f; background-color: white; padding: 0px;"><i class="far fa-trash-alt" style="color: #d9534f; padding-left: 5px;"></i>
+                             <%= link_to 'Destroy', partida, method: :delete, data: { confirm: 'Estás seguro?' }, style: "color: #d9534f; padding: 10px; font-weight: 600; padding-left: 0px; " %>
+                          </button>                              
+                        </li>                        
                       </ul>
                     </li>                      
                   <% end %>        
