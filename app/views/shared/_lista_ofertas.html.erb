@@ -3,7 +3,7 @@
   <div class="iconos_inicio">
     <% if logged_in? %>
       <% if  current_user.empresa == true %>
-        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre lo que ConstructUX puede hacer por tu empresa</h3>
+        <h3 style="font-weight: bold; margin-top: 100px; color: #444;">Descubre lo que ConstructUX puede hacer por tu empresa</h3>
         <ul class="ofertas" style="font-family: 'Open Sans'; font-weight: 600; font-size: 16px;">
           <li>
             <%= image_tag('nueva_vivienda_pequena.jpg', size: "40", class: 'oferta_imagen' ) %> <span style="display: block; align-items: center; padding-top: 15px;">Pásate a premium
@@ -19,7 +19,7 @@
           </li>                 
         </ul>
       <% else %>
-        <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre lo que ConstructUX puede hacer por tu reforma:</h3>
+        <h3 style="font-weight: bold; margin-top: 100px; color: #444;">Descubre lo que ConstructUX puede hacer por tu reforma:</h3>
         <ul class="ofertas" style="font-family: 'Open Sans'; font-weight: 600; font-size: 16px;">
           <li>
             <%= image_tag('nueva_vivienda_pequena.jpg', size: "40", class: 'oferta_imagen' ) %> <span>Presupuestos</span>
@@ -33,7 +33,7 @@
         </ul>  
       <% end %>
     <% else %>
-      <h3 style="font-weight: bold; margin-top: 50px; color: #444;">Descubre lo que ConstructUX puede hacer por tu reforma:</h3>
+      <h3 style="font-weight: bold; margin-top: 100px; color: #444;">Descubre lo que ConstructUX puede hacer por tu reforma:</h3>
         <ul class="ofertas" style="font-family: 'Open Sans'; font-weight: 600; font-size: 16px;">
           <li>
             <%= image_tag('nueva_vivienda_pequena.jpg', size: "40", class: 'oferta_imagen' ) %> <span>Presupuestos</span>

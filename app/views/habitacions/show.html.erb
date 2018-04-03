@@ -11,11 +11,11 @@
           <h5>
             <% if Confirmacion.find_by(reform_id: @habitacion.reform_id) == nil %>
               <%= link_to edit_reform_habitacion_path(id: @habitacion, reform_id: @habitacion.reform_id) do %>
-                <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid green; color: green; padding: 5px; margin: 5px; margin-left: 0px;"><h5 style="margin: 0px; color: green;"><i class="fa fa-pencil" aria-hidden="true"></i> Edita tu Habitación</h5></button>
+                <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid green; color: green; padding: 5px; margin: 5px; margin-left: 0px;"><h5 style="margin: 0px; color: green;"><i class="far fa-edit"></i> Edita tu Habitación</h5></button>
               <% end %>
               <%# link_to 'Back', reform_banos_path %>
               <%= link_to reform_habitacion_path(@habitacion, reform_id: @habitacion.reform_id), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #d9534f; color: #d9534f; padding: 5px; margin: 5px; margin-left: 0px;"><h5 style="margin: 0px; color: #d9534f;"><i class="fa fa-trash-o" aria-hidden="true"></i> Elimina la Habitación</h5></button>
+                <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #d9534f; color: #d9534f; padding: 5px; margin: 5px; margin-left: 0px;"><h5 style="margin: 0px; color: #d9534f;"><i class="far fa-trash-alt"></i> Elimina la Habitación</h5></button>
               <% end %>
             <% end %>
                           

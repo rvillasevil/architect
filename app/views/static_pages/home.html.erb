@@ -122,11 +122,14 @@
               <h5>
                 <% if post.hashtag1 == "cliente" %>
                   <% @cliente = User.find(post.user_id) %>
-                  <% @reforma = Reform.find(post.hashtag2) %>
-                  <%= @cliente.name %>
-                  <%= post.created_at %>
-                  <%= @reforma.nombre %>
-                  <%= @reforma.id %>
+                  <% @reforma = Reform.where(post.hashtag2) %>
+                  <% if @reforma.nil? %>
+                    <% @reforma = Reform.find(post.hashtag2) %>
+                    <%= @cliente.name %>
+                    <%= post.created_at %>
+                    <%= @reforma.nombre %>
+                    <%= @reforma.id %>
+                  <% end %>
                 <% end %>
               </h5>
               <% end %>
@@ -141,7 +144,8 @@
 
                   <li style="align-items: center; text-align: center; padding: 10px;">
                     <% if Empresa.find_by(user_id: current_user.id) != nil %>
-                      <%= image_tag('contractor_partidas.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-shopping-basket"></i> <%= link_to "Marketplace", empresa_path(id: current_user.id, partidas_ofertadas: true), style: "color: #444;" %></b></h5> <h5><span style="font-size: 14px; line-height: 10px;">Partidas personalizadas creadas y diseñadas por tí, que formarán parte del marketplace.</span></h5></span>
+                    <% @empresa = Empresa.find_by(user_id: current_user.id) %>
+                      <%= image_tag('contractor_partidas.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-shopping-basket"></i> <%= link_to "Marketplace", empresa_path(id: @empresa.id, partidas_ofertadas: true), style: "color: #444;" %></b></h5> <h5><span style="font-size: 14px; line-height: 10px;">Partidas personalizadas creadas y diseñadas por tí, que formarán parte del marketplace.</span></h5></span>
                     <% else %>
                     <% end %>
                   </li>
