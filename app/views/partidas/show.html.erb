@@ -1,3 +1,16 @@
+<% content_for :head do %>
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="<%= @partida.titulo %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida.id %>" />
+  <meta property="og:description" content="ConstructUX, <%= @partida.description %>" />
+  <% if @partida.foto? %>
+    <meta property="og:image" content="<%= image_url(@partida.foto.url) %>" />  
+  <% else %>
+    <meta property="og:image" content="<%= image_url('partida_default.jpg') %>" />  
+  <% end %>
+<% end %> 
+
 <div class="container">
   <div class="row">
     <% if @partida.empresa != nil %>
@@ -35,6 +48,21 @@
                     <h5 style="font-size: 16px; margin: 0px; font-weight: 400; color: #666;">Empresa constructora</h5>
                     <h5 style="font-size: 16px; margin: 0px; font-weight: 400; color: #666;">Empresa: <%= link_to @user_empresa.name, user_path(@user_empresa), style: "color: #008489;" %></h5>
                     <% end %>
+                </li>
+                <li>
+                  <div style="text-align: left;">
+                    <h3 style="font-weight: 400;">Comparte esta partida con todos, gracias!!</h3>
+                    <!-- FACEBOOK share button -->
+                    <div class="fb-share-button" 
+                    data-href="https://www.constructux.com" 
+                    data-layout="button_count"
+                    data-size="large"
+                    style= "display: inline-flex; padding-left: 0px;"></div> 
+
+                    <!-- TWITTER share button -->
+                    <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com" data-size="large"></a></div>
+                    <script src="//platform.twitter.com/widgets.js"></script>                      
+                  </div>                   
                 </li>
                 <li>
                   <div class="description">
