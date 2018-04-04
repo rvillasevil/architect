@@ -56,7 +56,7 @@
                     <h3 style="font-weight: 400;">Comparte esta partida con todos, gracias!!</h3>
                     <!-- FACEBOOK share button -->
                     <div class="fb-share-button" 
-                    data-href="https://www.constructux.com/partida/<%= @partida.id %>" 
+                    data-href="https://www.constructux.com/partidas/<%= @partida.id %>" 
                     data-layout="button_count"
                     data-size="large"
                     style= "display: inline-flex; padding-left: 0px;"></div> 
@@ -125,7 +125,7 @@
                 <% if @partida.importe? %>
                   <li class="field">
                     <h3>Importe:</h3>
-                    <h5 style="font-weight: 600; font-size: 18px;"><i class="fa fa-euro" aria-hidden="true" style="color: #d9534f;"></i> <%= @partida.importe %> <span style="margin-left: 40px;"> (<%= @partida.um %>)</span> </h5>
+                    <h5 style="font-weight: 600; font-size: 18px;"><i class="fa fa-euro" aria-hidden="true" style="color: #d9534f;"></i> <%= @partida.importe %> <span style="margin-left: 40px;"> (€/<%= @partida.um %>)</span> </h5>
                   </li>                
                   
                 <% end %>
