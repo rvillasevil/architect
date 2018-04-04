@@ -42,7 +42,7 @@ class PartidasController < ApplicationController
 
         if @partida.save
           if current_user.empresa == true
-            format.html { redirect_to empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.' }
+            format.html { redirect_to root_url, notice: 'La partida personalizada se ha añadido correctamente.' }
             #format.html { redirect_back(fallback_location: empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.') }
             format.json { render :show, status: :created, location: @partida }          
           else

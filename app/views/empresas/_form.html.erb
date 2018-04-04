@@ -13,7 +13,7 @@
 
   <% if params[:action] == "edit" %>  
     <button class="btn btn-info" style="background-color: white; border: 1px solid green; font-family: 'Open Sans'; font-weight: 600;">
-      <% if Partida.where(user_id: current_user.id).count < 20 %>
+      <% if Partida.where(user_id: current_user.id).count < 10 %>
       <%= link_to "Crear una partida personalizada", new_partida_path(empresa: empresa.id), style: "color: green;" %>
       <% else %>
       <h5>Has llegado al límite de partidas, ¿Necesitas más? Mándanos un correo a constructux@constructux.com.</h5>
@@ -5641,7 +5641,7 @@
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
-    <h5><%= f.submit style:"background-color: white; padding: 10px; border-radius: 15px; font-weight: bolder; color: #444; width: 100%;" %></h5>
+    <h5><%= f.submit "Actualizar tus datos", style:"background-color: white; padding: 10px; border-radius: 15px; font-weight: bolder; color: #444; width: 100%;" %></h5>
   </div>
 <% end %>
 
