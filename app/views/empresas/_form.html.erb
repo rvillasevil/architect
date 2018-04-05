@@ -12,13 +12,15 @@
   <% end %>
 
   <% if params[:action] == "edit" %>  
-    <button class="btn btn-info" style="background-color: white; border: 1px solid green; font-family: 'Open Sans'; font-weight: 600;">
-      <% if Partida.where(user_id: current_user.id).count < 10 %>
-      <%= link_to "Crear una partida personalizada", new_partida_path(empresa: empresa.id), style: "color: green;" %>
+    
+      <% if Partida.where(user_id: current_user.id).count < 5 %>
+      <button class="btn btn-info" style="background-color: white; border: 1px solid green; font-family: 'Open Sans'; font-weight: 600;">
+        <%= link_to "Crear una partida personalizada", new_partida_path(empresa: empresa.id), style: "color: green;" %>
+      </button>
       <% else %>
-      <h5>Has llegado al límite de partidas, ¿Necesitas más? Mándanos un correo a constructux@constructux.com.</h5>
+      <h5>Has llegado al límite de partidas disponibles, ¿Necesitas más? Mándanos un correo a constructux@constructux.com.</h5>
       <% end %>
-    </button>
+    
     <!--<h5>En la suscripción basic podrás añadir hasta 5 partidas. Actualizate a premium para poder las partidas que quieras.</h5>-->
   <% end %>
 

@@ -16,103 +16,107 @@
     <% if current_user.empresa == true %>
     <%# if params[:empresa] != nil %>
     <% @empresa = Empresa.find_by(user_id: current_user.id) %>
-      <div class="nueva_partida">
-        <div class="field">
-          <h3 style="">Título</h3>
-          <h5><%= f.text_field :titulo, placeholder: 'Título para la partida', style: "width:100%;", maxlength: 40 %></h5>
+      <% if Partida.where(user_id: current_user.id).count < 5 %>
+        <div class="nueva_partida">
+          <div class="field">
+            <h3 style="">Título</h3>
+            <h5><%= f.text_field :titulo, placeholder: 'Título para la partida', style: "width:100%;", maxlength: 40 %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Descripción</h3>
+            <h5><%= f.text_field :description, placeholder: 'Describe de forma más detallada la partida de obra', style: "width:100%;" %></h5>
+          </div>
+
+          <!--<div class="field">
+            <h3>Descripción detallada</h3>
+            <h5><%# f.text_area :desc_tecnica, placeholder: 'Describe de forma más detallada la partida de obra' %></h5>
+          </div> -->
+
+          <div class="field">
+            <h3>Materiales a emplear</h3>
+            <h5><%= f.text_area :material, placeholder: 'Háblanos los materiales que vas a utilizar en la obra, calidades, caracteríscticas...' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Añade alguna foto para la partida, una foto de referencia</h3>
+            <h5><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Unidad de medida</h3>
+            <h5><%= f.text_field :um, placeholder: 'Por ejemplo, unidades, m², ml...', style: "" %></h5>
+          </div>  
+
+          <h3 style="font-weight: 600;">Condiciones y carácterísticas para que el cliente tenga toda la información</h3>
+          <div class="field">
+            <h3>Condiciones previas</h3>
+            <h5><%= f.text_area :cond_previas, placeholder: 'Qué condicidiones tienes que encontrarte los elementos para que puedas trabajar bajo el coste inidicado' %></h5>
+          </div>  
+
+          <div class="field">
+            <h3>Condiciones de terminación</h3>
+            <h5><%= f.text_area :cond_terminacion, placeholder: 'Cómo dejarás el trabajo, ejemplo, El solado tendrá planeidad, ausencia de cejas y buen aspecto.' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Fases</h3>
+            <h5><%= f.text_area :fases, placeholder: 'Descríbenos el proceso muy breve de cómo ejecutarás la partida de obra' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Mano de obra</h3>
+            <h5><%= f.text_area :man_obra, placeholder: 'Número de personas que seréis en la ejecución.' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Rendimiento</h3>
+            <h5><%= f.text_area :rendimiento, style: " border: 1 px solid grey; padding: 5px; border-radius: 10px; height: 60px;", placeholder: "Cantidad de la partida que se termina por cada hora, ejemplo, si la partida son 4 h de trabajo, el rendimiento será 0.25.", type: "number", step: "0.01"  %></h5>
+          </div>    
+
+          <div class="field">
+            <h3>Materiales incluidos</h3>
+            <h5><%= f.text_area :mat_incluidos, placeholder: 'Los materiales que entran en el precio'%></h5>
+          </div> 
+
+          <div class="field">
+            <h3>Materiales a aportar por el cliente</h3>
+            <h5><%= f.text_area :mat_aportar, placeholder: 'Los materiales que el cliente tiene que aportar, pr ejemplo la baldosa, el WC...'%></h5>
+          </div>                              
+
+          <div class="field">
+            <h3>Importe de la partida por las unidades que nos has indicado</h3>
+            <h5 style="font-weight: bolder;"><%= f.text_field :importe, style: "width: 40%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(Um)</span> </h5>
+          </div>
+
+          <div class="field">
+            <h3>Comentario</h3>
+            <h5><%= f.text_area :comentario, placeholder: "Añade algún comentario para que se pueda valorar mejor lo que buscas." %></h5>
+          </div>
+
+          <% if params[:empresa] != nil %>
+          <%= f.hidden_field :empresa, value: params[:empresa] %>
+          <% end %>
+
+          <% if params[:reform_id] != nil %>
+            <%= f.hidden_field :reform_id, value: params[:reform_id] %>
+          <% end %> 
+
+          <% if params[:habitacion_id] != nil %>
+            <%= f.number_field :habitacion_id, value: params[:habitacion_id] %>
+          <% end %>
+
+          <%= f.hidden_field :user_id, value: current_user.id %>
+
+          <div class="actions" style="font-weight: bolder;">
+            <h3><%# f.submit %><h3>
+            <h5><input type="button" value="Crear partida personalizada" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px; color: green; border: 1px solid green; width: 100%;">
+            </h5>         
+          </div>
         </div>
-
-        <div class="field">
-          <h3>Descripción</h3>
-          <h5><%= f.text_field :description, placeholder: 'Describe de forma más detallada la partida de obra', style: "width:100%;" %></h5>
-        </div>
-
-        <!--<div class="field">
-          <h3>Descripción detallada</h3>
-          <h5><%# f.text_area :desc_tecnica, placeholder: 'Describe de forma más detallada la partida de obra' %></h5>
-        </div> -->
-
-        <div class="field">
-          <h3>Materiales a emplear</h3>
-          <h5><%= f.text_area :material, placeholder: 'Háblanos los materiales que vas a utilizar en la obra, calidades, caracteríscticas...' %></h5>
-        </div>
-
-        <div class="field">
-          <h3>Añade alguna foto para la partida, una foto de referencia</h3>
-          <h5><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %></h5>
-        </div>
-
-        <div class="field">
-          <h3>Unidad de medida</h3>
-          <h5><%= f.text_field :um, placeholder: 'Por ejemplo, unidades, m², ml...', style: "" %></h5>
-        </div>  
-
-        <h3 style="font-weight: 600;">Condiciones y carácterísticas para que el cliente tenga toda la información</h3>
-        <div class="field">
-          <h3>Condiciones previas</h3>
-          <h5><%= f.text_area :cond_previas, placeholder: 'Qué condicidiones tienes que encontrarte los elementos para que puedas trabajar bajo el coste inidicado' %></h5>
-        </div>  
-
-        <div class="field">
-          <h3>Condiciones de terminación</h3>
-          <h5><%= f.text_area :cond_terminacion, placeholder: 'Cómo dejarás el trabajo, ejemplo, El solado tendrá planeidad, ausencia de cejas y buen aspecto.' %></h5>
-        </div>
-
-        <div class="field">
-          <h3>Fases</h3>
-          <h5><%= f.text_area :fases, placeholder: 'Descríbenos el proceso muy breve de cómo ejecutarás la partida de obra' %></h5>
-        </div>
-
-        <div class="field">
-          <h3>Mano de obra</h3>
-          <h5><%= f.text_area :man_obra, placeholder: 'Número de personas que seréis en la ejecución.' %></h5>
-        </div>
-
-        <div class="field">
-          <h3>Rendimiento</h3>
-          <h5><%= f.text_area :rendimiento, style: " border: 1 px solid grey; padding: 5px; border-radius: 10px; height: 60px;", placeholder: "Cantidad de la partida que se termina por cada hora, ejemplo, si la partida son 4 h de trabajo, el rendimiento será 0.25.", type: "number", step: "0.01"  %></h5>
-        </div>    
-
-        <div class="field">
-          <h3>Materiales incluidos</h3>
-          <h5><%= f.text_area :mat_incluidos, placeholder: 'Los materiales que entran en el precio'%></h5>
-        </div> 
-
-        <div class="field">
-          <h3>Materiales a aportar por el cliente</h3>
-          <h5><%= f.text_area :mat_aportar, placeholder: 'Los materiales que el cliente tiene que aportar, pr ejemplo la baldosa, el WC...'%></h5>
-        </div>                              
-
-        <div class="field">
-          <h3>Importe de la partida por las unidades que nos has indicado</h3>
-          <h5 style="font-weight: bolder;"><%= f.text_field :importe, style: "width: 40%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(Um)</span> </h5>
-        </div>
-
-        <div class="field">
-          <h3>Comentario</h3>
-          <h5><%= f.text_area :comentario, placeholder: "Añade algún comentario para que se pueda valorar mejor lo que buscas." %></h5>
-        </div>
-
-        <% if params[:empresa] != nil %>
-        <%= f.hidden_field :empresa, value: params[:empresa] %>
-        <% end %>
-
-        <% if params[:reform_id] != nil %>
-          <%= f.hidden_field :reform_id, value: params[:reform_id] %>
-        <% end %> 
-
-        <% if params[:habitacion_id] != nil %>
-          <%= f.number_field :habitacion_id, value: params[:habitacion_id] %>
-        <% end %>
-
-        <%= f.hidden_field :user_id, value: current_user.id %>
-
-        <div class="actions" style="font-weight: bolder;">
-          <h3><%# f.submit %><h3>
-          <h5><input type="button" value="Crear partida personalizada" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px; color: green; border: 1px solid green; width: 100%;">
-          </h5>         
-        </div>
-      </div>
+      <% else %>
+        <h5>Has llegado al límite de partidas, ¿Necesitas más? Mándanos un correo a constructux@constructux.com.</h5>
+      <% end %>
     <% else %>
       
       <div class="nueva_partida">

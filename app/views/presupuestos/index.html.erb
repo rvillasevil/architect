@@ -6,7 +6,7 @@
 
         <h1>Tenemos <%= @ofertas.count %> presupuestos para tí</h1>
 
-        <% @ofertas.order(created_at: :desc).each do |oferta| %>
+        <% @ofertas.order(created_at: :desc).take(3).each do |oferta| %>
           <% @reforma = Reform.find_by(id: oferta.reform_id) %>
           <% if @reforma != nil %>
             <div style="margin-top: 50px;">
