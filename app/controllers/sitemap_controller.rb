@@ -6,6 +6,7 @@ class SitemapController < ApplicationController
 
   	@habitacions = Habitacion.all
   	@reforms = Reform.all
+  	@partidas = Partida.where.not(empresa: nil)
 
     respond_to do |format|
       format.xml
