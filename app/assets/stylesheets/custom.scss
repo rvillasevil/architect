@@ -829,7 +829,11 @@ aside {
     padding: 0px;
     @media (max-width: 768px) {
     }
+    li.lista_elemento {
+      border-bottom: 1px solid #ddd;
+    }
     li {
+      border-bottom: 1px solid #ddd;
       width: 30%;
       display: inline-block;
       /*border: 1px solid $gray-lighter;*/
@@ -842,14 +846,16 @@ aside {
     li.lista_oferta {
       font-family: 'Open Sans';
       width: 23%;
+      margin-bottom: 25px;
       @media (max-width: 768px) {
       width: 100%;
       display: block;
       }
     }    
     ul.elemento {
+      margin-bottom: 25px;
       .texto {
-        width: 205px;
+        width: 213px;
         @media(max-width: 768px) {
           width: 300px;
         }
@@ -871,9 +877,10 @@ aside {
         margin: 0px;
       }
       li.nombre {
-        padding-top: 10px;
-        font-weight: bold;
+        font-weight: 700;
+        letter-spacing: -1px;
         font-size: 20px;
+        color: #444;
         font-family: 'Open Sans';
         height: 60px;
         .nombre {
@@ -951,8 +958,8 @@ aside {
       }
       li.precio_medio {
         padding-left: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }      
     }
 /*    img {

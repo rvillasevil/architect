@@ -106,7 +106,11 @@ class PartidasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_partida
-      @partida = Partida.find(params[:id])
+      if params[:id] != nil
+        @partida = Partida.find(params[:id])
+      else
+        @partida = Partida.find_by(titulo: params[:titulo])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
