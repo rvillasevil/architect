@@ -1,6 +1,6 @@
 <% content_for :head do %>
   <!-- Open Graph tags -->
-  <meta property="og:title" content="<%= @partida.titulo %>" />
+  <meta property="og:title" content="Oferta en <%= @partida.titulo %>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida.id %>" />
   <meta property="og:description" content="ConstructUX, <%= @partida.description %>" />
@@ -144,7 +144,11 @@
                 <% end %>
               </ul>
             </li>
-          </ul>        
+          </ul>    
+
+          <% if @partida.empresa != nil %>
+            <button>Estoy interesado, pide información y en breve se pondrán en contacto</button>
+          <% end %>    
 
           <h5 style="margin: 0px;"><%# link_to 'Back', reform_path(id: params[:reform_id]) %></h5>
           
@@ -152,18 +156,12 @@
       </div>
 
       <div class="col-sm-4">
-        <div class="imagen_usuario_web">
-          <div class="card mb-3" style="width: 300px; border: 1px solid #ddd; border-radius: 10px; display: block;">
-            <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 250px; border-radius: 10px;">
-              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">          
-                <% if @partida.foto? %>
-                  <%= image_tag @partida.foto.url, class: "img_prueba" %>
-                <% else %>
-                  <%= image_tag('partida_default.jpg', size: 300, class: "img_prueba") %>  
-                <% end %>
-              </div>
-            </div>
-          </div>
+        <div class="container-image-wrapper" style="width: auto; height: auto; overflow: hidden;">         
+          <% if @partida.foto? %>
+            <%= image_tag @partida.foto.url, style: "overflow: hidden; width: 100%; border-radius: 7px;" %>
+          <% else %>
+            <%= image_tag('partida_default.jpg', size: 300, class: "") %>  
+          <% end %>
         </div>
       </div>           
 

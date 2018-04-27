@@ -161,7 +161,7 @@
                             <% @empresa = Empresa.find( partida.empresa) %>
                             <% @user_empresa = User.find(@empresa.user_id) %>
                           <% end %>
-                          <span style="display: block; font-weight: 600;"><%= @user_empresa.name %></span>
+                          <div style="display: block; font-weight: 600; line-height: 14px; height: 30px;"><%= @user_empresa.name %></div>
                           <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
                         </li>                           
                         <li class="precio_oferta" style="padding-left: 0px;">
