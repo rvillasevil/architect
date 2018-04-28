@@ -11,6 +11,8 @@ class PartidasController < ApplicationController
   # GET /partidas/1
   # GET /partidas/1.json
   def show
+    @partida_show = Partida.find(params[:id])
+    @partida = Partida.new
   end
 
   # GET /partidas/new
@@ -19,7 +21,9 @@ class PartidasController < ApplicationController
     if logged_in?
       if current_user.empresa == true
       else
-        @reform = Reform.find(params[:reform_id])
+        if params[:partida][:partida_id] == nil
+          @reform = Reform.find(params[:reform_id])
+        end
       end
     else
 
@@ -32,29 +36,35 @@ class PartidasController < ApplicationController
 
   # POST /partidas
   # POST /partidas.json
-
   def create
     @partida = Partida.new(partida_params)
 
     respond_to do |format|
-
       if logged_in? 
-
-        if @partida.save
-          if current_user.empresa == true
-            format.html { redirect_to root_url, notice: 'La partida personalizada se ha añadido correctamente.' }
-            #format.html { redirect_back(fallback_location: empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.') }
-            format.json { render :show, status: :created, location: @partida }          
+        if params[:partida][:partida_id] == nil
+          if @partida.save
+            if current_user.empresa == true
+              format.html { redirect_to root_url, notice: 'La partida personalizada se ha añadido correctamente.' }
+              #format.html { redirect_back(fallback_location: empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha añadido correctamente.') }
+              format.json { render :show, status: :created, location: @partida }          
+            else
+              @reform = params[:partida][:reform_id]
+              format.html { redirect_to reform_path(@reform), notice: 'La partida se ha creado correctamente.' }
+              format.json { render :show, status: :created, location: @partida }
+            end        
           else
-            @reform = params[:partida][:reform_id]
-            format.html { redirect_to reform_path(@reform), notice: 'La partida se ha creado correctamente.' }
-            format.json { render :show, status: :created, location: @partida }
-          end        
+            format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
+            format.json { render json: @partida.errors, status: :unprocessable_entity }
+          end
         else
-          format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
-          format.json { render json: @partida.errors, status: :unprocessable_entity }
-        end
-
+          if @partida.save
+            format.html { redirect_to root_url, notice: 'Hemos solicitado la información, en breve recbirá toda la información.' }
+            format.json { render :show, status: :created, location: @partida } 
+          else
+            format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
+            format.json { render json: @partida.errors, status: :unprocessable_entity }
+          end          
+        end          
       else        
         if Partida.where(email_invitado: params[:partida][:email_invitado]).any?
           format.html { redirect_back(fallback_location: root_url, notice: 'Ya has creado un proyecto asociado a este correo. No podemos gestionar varios proyectos en un mismo correo si no eres usuario, lo sentimos. Hazte usuario gratis en 2 sencillos pasos.') }
@@ -67,9 +77,7 @@ class PartidasController < ApplicationController
             format.html { redirect_to root_url, notice: 'Partida no ha podido crearse correctamente, inténtalo de nuevo.' }
             format.json { render json: @partida.errors, status: :unprocessable_entity }
           end
-
         end
-
       end
     end
   end
@@ -115,6 +123,6 @@ class PartidasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def partida_params
-      params.require(:partida).permit(:titulo, :description, :medicion, :comentario, :foto, :categoria, :reform_id, :habitacion_id, :user_id, :um, :desc_tecnica, :material, :cond_previas, :fases, :cond_terminacion, :man_obra, :rendimiento, :mat_incluidos, :mat_aportar, :importe, :empresa, :nombre_invitado, :email_invitado, :provincia_invitado, :plazo_invitado)
+      params.require(:partida).permit(:titulo, :description, :medicion, :comentario, :foto, :categoria, :reform_id, :habitacion_id, :user_id, :um, :desc_tecnica, :material, :cond_previas, :fases, :cond_terminacion, :man_obra, :rendimiento, :mat_incluidos, :mat_aportar, :importe, :empresa, :nombre_invitado, :email_invitado, :provincia_invitado, :plazo_invitado, :partida_id)
     end
 end

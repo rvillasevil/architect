@@ -3,7 +3,7 @@
   <meta property="og:title" content="ConstructUX" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.constructux.com" />
-  <meta property="og:description" content="ConstructUX, donde diseñar tu reforma y tu presupuesto a tu medida." />
+  <meta property="og:description" content="ConstructUX, ofertas, presupuestos y materiales de construcción." />
   <meta property="og:image" content="<%= image_url('background_image.jpg') %>"  />  
 
 <% end %> 
@@ -225,15 +225,15 @@
       <div class="texto" style="text-align: center;">
         <% if params[:tern] == nil %>
           <div class="oculto">
-            <h1 style="font-weight: lighter; color: white;">Ofertas en materiales, obras y productos de la construcción.</h1>
-            <h2 class="encabezado_gordo" style="font-weight: bolder; color: white;">Marketplace del sector de la construcción.</h2>
+            <h1 style="font-weight: lighter; color: white; text-align: center;">Ofertas, presupuestos y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción.</span></h1>
+            
 
           </div>
         <% end %>    
 
         <div class="wrapper" style="padding-bottom: 30px;">
-          <h3 style="font-weight: 400; color: white; font-weight: 700;"></h3>
-          <%= link_to "Crea tu primer proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %>
+          <h3 style="font-weight: 400; color: white; font-weight: 700;">Diseña tu primer proyecto en nuestro diseñador de reformas</h3>
+          <%= link_to "Diseña tu reforma a medida", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %>
         </div> 
 
         <h2 class="encabezado_gordo" style="font-weight: bolder; color: white; text-align: center;">¿Qué quieres renovar de casa?</h2>

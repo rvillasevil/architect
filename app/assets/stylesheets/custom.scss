@@ -702,6 +702,7 @@ img.img_prueba {
 }
 
 .titulos {
+  font-family: 'Open Sans';
   ul {
     padding: 0px;
     margin: 0px;
@@ -709,7 +710,7 @@ img.img_prueba {
   .botones {
     list-style: none;
     display: inline-block;
-    columns: 2;
+    columns: 3;
     @media (max-width: 768px) {
       columns: 1;
     }
@@ -809,10 +810,11 @@ aside {
 }
 
 .campos {
+  
   margin-top: 100px; 
   margin-bottom: 200px;  
   @media (max-width: 768px) {
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 0px;
   }
   h3 {
@@ -821,7 +823,7 @@ aside {
     color: #484848 !important;
     letter-spacing: -1px;
   }  
-  font-family: 'Helvetica';
+  /*font-family: 'Helvetica';*/
   ul.lista_principal {
     margin-top: 20px;
     list-style: none;
@@ -830,10 +832,9 @@ aside {
     @media (max-width: 768px) {
     }
     li.lista_elemento {
-      border-bottom: 1px solid #ddd;
+      
     }
     li {
-      border-bottom: 1px solid #ddd;
       width: 30%;
       display: inline-block;
       /*border: 1px solid $gray-lighter;*/
@@ -1208,7 +1209,17 @@ aside {
 }
 
 .actions {
+  font-family: 'Open Sans';
   margin-top: 50px;
+  .form_usuario {
+    width: 60%;
+    input {
+      width: 100%;
+    }
+    @media(max-width: 768px) {
+      width: 100%;
+    }
+  }
 }
 
 .nueva_partida {

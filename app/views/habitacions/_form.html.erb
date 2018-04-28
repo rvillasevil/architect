@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <h1 style="font-size: 16px; letter-spacing: -1px; color: #444; margin: 0px;">Calculador de presupuestos de reformas</h1>
+  <h1 style="font-size: 16px; letter-spacing: -1px; color: #444; margin: 0px;">Diseñador de reformas , ¿Que estancia quieres renovar de casa?</h1>
   <% if logged_in? %>
     
   <% else %>
@@ -26,7 +26,7 @@
   <% if params[:bano] == "true" %>
     <h1 style="color: #444;">Nuevo Baño o Aseo</h1>
 
-    <h3 style="font-weight: normal;">Empezemos por ponerle nombre a tu estancia</h3>
+    <h3 style="font-weight: normal; margin-bottom: 5px;">Empezemos por ponerle nombre a tu estancia</h3>
     <h3 class="nombre" style="color: none;"> <%= f.text_field :nombre, placeholder: "Nueva estancia de @user.name", class: "nombre", style: "border: 1 px solid grey; padding: 10px; display: block;", placeholder: "Nombre" %> </h3>
   <% else %>
     <% if params[:cocina] == "true" %>
@@ -49,12 +49,12 @@
       <% end %>                     
     <% end %>                     
   <% end %>
-   
-<h5 style="font-weight: normal; line-height: 13px;">Pulsa en cada capítulo de tu obra para seleccionar lo que te interesa:</h5>
+
     <div class="titulos">
         <ul class="botones">
 
           <% if params[:bano] == "true" %>
+
 
             <li style="" onclick="divVisibility('Div0');">
                 <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
@@ -145,7 +145,7 @@
                 </li>
               <% else %>
 
-
+                <li style="font-weight: 600; padding-top: 10px;">Quitar cosas</li>
 
                 <li style="" onclick="divVisibility('Div0');">
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Demoliciones</button>
@@ -162,8 +162,8 @@
                     
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Retirar elementos salón</button>
                 </li>
+                <li style="font-weight: 600; padding-top: 10px;">Instalar algo</li>
                 <li onclick="divVisibility('Div4');">
-                    
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación tuberías</button>
                 </li>
                 <li onclick="divVisibility('Div5');">
@@ -178,8 +178,17 @@
                     
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación eléctrica</button>
                 </li>
-                <li onclick="divVisibility('Div8');">
+                <li onclick="divVisibility('Div11');">
                     
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
+                </li>
+                <li onclick="divVisibility('Div12');">
+                    
+                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Caldera</button>
+                </li>                
+
+                <li style="font-weight: 600; padding-top: 10px;">Albañilería</li>
+                <li onclick="divVisibility('Div8');">
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería</button>
                 </li>
                 <li onclick="divVisibility('Div9');">
@@ -190,14 +199,7 @@
                     
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Albañilería Cocina</button>
                 </li>
-                <li onclick="divVisibility('Div11');">
-                    
-                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Termos eléctricos</button>
-                </li>
-                <li onclick="divVisibility('Div12');">
-                    
-                    <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Instalación Caldera</button>
-                </li>
+
                 <li onclick="divVisibility('Div13');">
                     
                     <button type="button" class="btn btn-primary" style="background-color: white; border: 1px solid #1DA1F2; color: #1DA1F2;">Pintores</button>
@@ -217,7 +219,7 @@
 
     <div class="campos">
       <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">¿Y ahora qué?</div>
-    <div style="font-size: 18px; font-weight: 600; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Explora por los botones azules de arriba lo que necesitas de tu proyecto, a continución introduce los datos para cada partida que vayas a solicitar y listo, un consejo, ajusta siempre tu reforma a un presupuesto fijo (por ejemplo 5000€) bajando o subiendo las medidas de cada partida.</div>
+    <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Explora por los botones azules de arriba y busca lo que necesites, introduce los datos para cada partida y listo, en un click puedes pedir tu presupuesto a medida.</div>
         <div id="Div0" style="display: block;">
             <h3 style="font-weight: bold;">Demoliciones</h3>
             <ul class="lista_principal" style="">
@@ -5642,7 +5644,7 @@
                           <div class="card mb-3" style="width: 270px; border: 1px solid #ddd; border-radius: 10px; display: block;">
                             <div class="" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
                               <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">                            
-                              <%= image_tag(('reparar_humedad_techo.jpg'), class: "img_prueba") %>
+                              <%= image_tag(('pintor_tabiques.jpg'), class: "img_prueba") %>
                             </div>
                           </div>
                         </div>
@@ -6250,7 +6252,9 @@
 
     </div>
 
-    <h1 style="font-size: 28px; font-weight: 600;">¿No encuentras lo que buscas en el diseñador?</h1> <h3 style="display: inline-flex; margin-top: 5px; font-weight: 600;">Tenemos la solución, crea tu propia propuesta personalizada y explica exactamente qué quieres hacer en tu reforma</h3>
+    <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">¿No encuentras los que buscas en nuestro diseñador?</div>
+    <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Tenemos la solución, crea tu propuesta personalizada y explica exactamente qué quieres hacer en tu reforma.</div>    
+
     <h3><%= link_to "Crea tu proyecto personalizado", new_partida_path(invitado: true), class: "btn", style: "color: red; border: 1px solid red; padding: 10px; border-radius: 10px; font-weight: 600;" %></h3>
 
   <% if logged_in? %>
@@ -6264,20 +6268,22 @@
       <h5 style=""><input type="button" class="" value="Enviar" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px;"></h5>
     <% else %>
 
-      <h1 style="font-size: 28px; margin-bottom: 5px; font-weight: 600;">¿Quieres pedir presupuestos a las mejores empresas? <h3 style="display: inline-flex; margin-top: 5px; font-weight: 600;">Es gratis, rápido y sin compromiso. Hazte usuario de ConstructUX y podrás diseñar tantas estancias como quieras por cada proyecto.</h3></h1>
+    <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">¿Has terminado tu reforma? Pide presupuestos y ofertas con un solo click</div>
+    <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Es gratis, rápido y sin compromiso. Tienes dos opciones, hacerte usuario de Construct.UX y  podrás hacer tantas estancias como quieras por reforma además de tener los presupuestos a un solo click:</div>
+
       <ul style="display: inline-block; list-style: none; padding: 0px;">
         <li>
-          <button style="background-color: white; padding: 10px; color: #0084B4; font-weight: 900; border-radius: 10px; border-color: #0084B4; display: block; "><h5 style="margin: 0px;"><%= link_to "Crea tu cuenta gratis", signup_path, style: "font-weight: 600; padding: 5px;" %></h5></button>
+          <button style="background-color: white; padding: 10px; color: #0084B4; font-weight: 900; border-radius: 10px; border-color: #0084B4; display: block; margin-top: 20px;"><h5 style="margin: 0px;"><%= link_to "Crea tu cuenta gratis", signup_path, style: "font-weight: 600; padding: 5px;" %></h5></button>
         </li>
         <li style="padding-top: 30px;">
-          <div style="display: block;">
-            <h3 style="margin-top: 0px; font-weight: 600;">O si lo prefieres escríbenos tus datos para mandarte tus presupuestos y la información a tu correo.<span style="display: inline-flex; margin: 0px; font-size: 15px; font-weight: 500; padding-bottom: 15px; padding-top: 15px;">En breve recibirás tus presupuestos personalizados, gracias por confiar en nosotros!</span>
-            <%= f.text_field :nombre_invitado, placeholder: "Tu nombre", style: "display: block; width: 60%; padding: 10px; " %>
-            <%= f.text_field :email_invitado, placeholder: "Tu correo donde recibirás los presupuestos", style: "display: block; width: 60%; padding: 10px;" %>
-            <%= f.text_field :provincia_invitado, placeholder: "Dinos tu provincia", style: "display: block; width: 60%; padding: 10px;" %>
-            <%= f.text_field :plazo_invitado, placeholder: "¿Sabes cuando quieres realizar la reforma?", style: "display: block; width: 60%; padding: 10px;" %>
+          <div class="form_usuario" style="display: block; font-family: 'Open Sans';">
+            <h3 style="margin-top: 0px; font-weight: 600; font-size: 16px;">O si prefieres mándanos tus datos y nos pondremos en contacto.</h3>
+            <%= f.text_field :nombre_invitado, placeholder: "Tu nombre", style: "display: block; padding: 10px; " %>
+            <%= f.text_field :email_invitado, placeholder: "Tu correo donde recibirás los presupuestos", style: "display: block; padding: 10px;" %>
+            <%= f.text_field :provincia_invitado, placeholder: "Dinos tu provincia", style: "display: block; padding: 10px;" %>
+            <%= f.text_field :plazo_invitado, placeholder: "¿Sabes cuando quieres realizar la reforma?", style: "display: block; padding: 10px;" %>
             <h5 style="font-size: 13px; color: #666; line-height: 14px;">Estos datos son privados y nadie ajeno a ConstructUX tendrá acceso a ellos. Al mandar esta información estás aceptando las normas de uso y su política de privacidad y aceptas recibir mensajes email de vez en cuando sobre campañas en ConstructUX. Se puede dar de baja en cualquier momento.</h5>
-            <h5><input type="button" value="Pedir presupuestos" onclick="form.submit();" style="background-color: white; padding: 10px; color: #0084B4; font-weight: 900; border-radius: 15px; border-color: #0084B4; display: block;"></h3>
+            <h5><input type="button" value="Solicitar oferta" onclick="form.submit();" style="background-color: white; padding: 10px; color: #222; font-weight: 600; border-radius: 15px; border-color: #0084B4; display: block;"></h3>
           </div>          
         </li> 
 

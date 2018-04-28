@@ -176,7 +176,6 @@ class User < ApplicationRecord
     end
   end
 
-
   private
 
     # Converts email to all lower-case.
