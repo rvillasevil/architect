@@ -1,11 +1,11 @@
 <% content_for :head do %>
   <!-- Open Graph tags -->
-  <meta property="og:title" content="Oferta en <%= @partida.titulo %>" />
+  <meta property="og:title" content="Oferta en <%= @partida_show.titulo %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida.id %>" />
-  <meta property="og:description" content="ConstructUX, <%= @partida.description %>" />
+  <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida_show.id %>" />
+  <meta property="og:description" content="ConstructUX, <%= @partida_show.description %>" />
   <% if @partida.foto? %>
-    <meta property="og:image" content="<%= image_url(@partida.foto.url) %>" />  
+    <meta property="og:image" content="<%= image_url(@partida_show.foto.url) %>" />  
   <% else %>
     <meta property="og:image" content="<%= image_url('partida_default.jpg') %>" />  
   <% end %>
@@ -152,7 +152,7 @@
                 <div class="actions">
                   <% if logged_in? %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
-                    <%= f.text_field :comentario, placeholder: "Añade un comentario", style: "display: block; width: 60%; padding: 10px;" %>
+                    <%= f.ºtext_field :comentario, placeholder: "Añade un comentario", style: "display: block; width: 60%; padding: 10px;" %>
                     <h5 style=""><%= f.submit "Estoy interesado" %></h5>
                   <% else %>
 
