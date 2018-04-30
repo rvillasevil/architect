@@ -209,4 +209,19 @@ require 'will_paginate/array'
 
   def contact
   end
+
+  def jefazo
+    if logged_in?
+      if current_user.admin?
+        @partidas = Partida.all.where.not(partida_id: nil)
+        @habitacion_invitados = Habitacion.where.not(email_invitado: nil)
+        @confirmaciones = Confirmacion.where.not(empresa: true)
+        @users = User.all
+      else
+        redirect_to root_url, notice: "no tienes los privilegios para acceder a esta página"
+      end
+    else
+      redirect_to root_url, notice: "No tienes los priviliegios de acceder a esta página"
+    end
+  end
 end

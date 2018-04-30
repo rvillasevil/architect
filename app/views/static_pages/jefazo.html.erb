@@ -1,0 +1,43 @@
+<h3>Partidas (<%= @partidas.count %>)</h3>
+<% @partidas.order('created_at Desc').each do |partida| %>
+	<div style="display: block;">
+		<%= partida.id %> | 
+		<%= partida.nombre_invitado  %> | 
+		<%= partida.email_invitado  %> | 
+		<%= partida.provincia_invitado  %> | 
+		<%= partida.plazo_invitado  %> | 
+		<%= partida.comentario  %> | 
+		<%= partida.partida_id  %> | 
+		<b><%= partida.created_at.strftime("%Y-%m-%d / %H:%M")  %></b>
+	</div>
+<% end %>
+
+<h3>Habitaciones (<%= @habitacion_invitados.count %>)</h3>
+<% @habitacion_invitados.order('created_at Desc').each do |habitacion_invitados| %>
+	<div style="display: block;">
+		<%= habitacion_invitados.id %> | 
+		<%= habitacion_invitados.nombre_invitado  %> | 
+		<%= habitacion_invitados.email_invitado  %> | 
+		<%= habitacion_invitados.provincia_invitado  %> | 
+		<%= habitacion_invitados.plazo_invitado  %> | 
+		<b><%= habitacion_invitados.created_at.strftime("%Y-%m-%d / %H:%M") %></b>
+	</div>
+<% end %>
+
+<h3>Confirmaciones (<%= @confirmaciones.count %>)</h3>
+<% @confirmaciones.order('created_at Desc').each do |confirmacion| %>
+	<div style="display: block;">
+		<%= confirmacion.id %> | 
+		<%= confirmacion.user_id  %> | 
+		<%= confirmacion.reform_id  %> | 
+		<b><%= confirmacion.created_at.strftime("%Y-%m-%d / %H:%M") %></b>
+	</div>
+<% end %>
+
+<h3>Usuarios (<%= @users.count %>)</h3>
+<% @users.order('created_at Desc').each do |user| %>
+	<div style="display: block;">
+		<%= user.name  %> |  
+		<b><%= user.created_at.strftime("%Y-%m-%d / %H:%M") %></b>
+	</div>
+<% end %>

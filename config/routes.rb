@@ -67,6 +67,8 @@ Rails.application.routes.draw do
   get     '/cocinas', to: 'cocinas#index'
   get     '/habitacions', to: 'habitacions#index'
 
+  get     '/jefazo', to: 'static_pages#jefazo'
+
 
   resources :users do
     member do

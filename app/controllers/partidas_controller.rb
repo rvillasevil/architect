@@ -1,5 +1,5 @@
 class PartidasController < ApplicationController
-  before_action :set_partida, only: [:show, :edit, :update, :destroy]
+  before_action :set_partida, only: [:edit, :update, :destroy] #:show, 
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
   # GET /partidas

@@ -152,7 +152,7 @@
                 <div class="actions">
                   <% if logged_in? %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
-                    <%= f.ºtext_field :comentario, placeholder: "Añade un comentario", style: "display: block; width: 60%; padding: 10px;" %>
+                    <%= f.text_field :comentario, placeholder: "Añade un comentario", style: "display: block; width: 60%; padding: 10px;" %>
                     <h5 style=""><%= f.submit "Estoy interesado" %></h5>
                   <% else %>
 
