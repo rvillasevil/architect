@@ -69,6 +69,8 @@ Rails.application.routes.draw do
 
   get     '/jefazo', to: 'static_pages#jefazo'
 
+  get     'ux_arquitectos',   to: 'static_pages#ux_arquitectos'
+
 
   resources :users do
     member do

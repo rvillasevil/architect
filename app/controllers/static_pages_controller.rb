@@ -224,4 +224,8 @@ require 'will_paginate/array'
       redirect_to root_url, notice: "No tienes los priviliegios de acceder a esta página"
     end
   end
+
+  def ux_arquitectos
+    
+  end
 end
