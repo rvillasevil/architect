@@ -127,80 +127,77 @@
           <% @ofertas_partidas = Partida.all %>
           <% if @ofertas_partidas.where.not(empresa: nil).any? %>
             <h3 style="font-weight: bold; font-size: 20px;">Ofertas para tí</h3>
-              <ul class="lista_principal" >
-                <div itemscope itemtype="http://schema.org/ItemList" style="">
-                  <% @ofertas_partidas.where.not(empresa: nil).order("created_at DESC").take(8).map do |partida| %>
-                      <li class="lista_oferta"  style="width: 23%; margin: 5px; margin-bottom: 30px;">
-                        <div itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-                          <ul class="elemento" style=" font-family: 'Open Sans'; width: 230px; margin: 5px;">
-                            <%= link_to partida_path(partida), itemprop: "url" do %>
-                              <li>
-                                <div class="card mb-3" style="">
-                                  <div class="card2" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
-                                    <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">
-                                      <% if partida.foto? %>
-                                        <%= image_tag(partida.foto.url, class: "img_prueba", alt: "Photo of product", itemprop: "image") %>
-                                      <% else %>
-                                        <%= image_tag(("partida_default.jpg"), class: "img_prueba", alt: "Photo of product", itemprop: "image") %>
-                                      <% end %>
-                                    </div>
+              <ul class="lista_principal" style="">
+                  <% @ofertas_partidas.where.not(empresa: nil).order("created_at DESC").take(12).map do |partida| %>
+                      <li class="lista_oferta" itemscope itemtype="http://schema.org/Product" style="width: 23%; margin: 5px; margin-bottom: 30px;">
+                        <ul class="elemento" style=" font-family: 'Open Sans'; width: 230px; margin: 5px;">
+                          <%= link_to partida_path(partida), itemprop: "url" do %>
+                            <li>
+                              <div class="card mb-3" style="">
+                                <div class="card2" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
+                                  <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">
+                                    <% if partida.foto? %>
+                                      <%= image_tag(partida.foto.url, class: "img_prueba", alt: "Photo of product", itemprop: "image") %>
+                                    <% else %>
+                                      <%= image_tag(("partida_default.jpg"), class: "img_prueba", alt: "Photo of product", itemprop: "image") %>
+                                    <% end %>
                                   </div>
                                 </div>
+                              </div>
+                          </li>
+                          <div class="texto" style="padding: 5px;">
+                            <li class="nombre">
+                              <div class="nombre" itemprop= "name">
+                                  <!---->
+                                  <%= partida.titulo if partida.titulo != nil %>
+                              </div>
                             </li>
-                            <div class="texto" style="padding: 5px;">
-                              <li class="nombre">
-                                <div class="nombre" itemprop= "name">
-                                    <!---->
-                                    <%= partida.titulo if partida.titulo != nil %>
-                                </div>
-                              </li>
-                              <!--<li>
-                                <div class="description" style="height: 50px; overflow: hidden;"><h5><%# partida.description if partida.description != nil %></h5> </div>
-                              </li>-->
-                              <li class="empresa" style="padding-left: 0px;">
-                                <% if partida.empresa != nil %>
-                                  <% @empresa = Empresa.find( partida.empresa) %>
-                                  <% @user_empresa = User.find(@empresa.user_id) %>
-                                <% end %>
-                                <div style="display: block; font-weight: 600; line-height: 14px; height: 30px;"><%= @user_empresa.name %></div>
-                                <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
-                              </li>                           
-                              <li class="precio_oferta" style="padding-left: 0px;">
-                                <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span></span>
-                              </li>
+                            <!--<li>
+                              <div class="description" style="height: 50px; overflow: hidden;"><h5><%# partida.description if partida.description != nil %></h5> </div>
+                            </li>-->
+                            <li class="empresa" style="padding-left: 0px;">
+                              <% if partida.empresa != nil %>
+                                <% @empresa = Empresa.find( partida.empresa) %>
+                                <% @user_empresa = User.find(@empresa.user_id) %>
                               <% end %>
-                              <li class="iconos">
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= partida.rendimiento if partida.rendimiento != nil %> h/<%= partida.um %>" style="background-color: white; border: none; padding: 5px 5px;" ><i class="far fa-clock" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <div style="display: block; font-weight: 600; line-height: 14px; height: 30px;"><%= @user_empresa.name %></div>
+                              <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
+                            </li>                           
+                            <li class="precio_oferta" style="padding-left: 0px;">
+                              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span></span>
+                            </li>
+                            <% end %>
+                            <li class="iconos">
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= partida.rendimiento if partida.rendimiento != nil %> h/<%= partida.um %>" style="background-color: white; border: none; padding: 5px 5px;" ><i class="far fa-clock" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= partida.man_obra if partida.man_obra != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
-                                
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= partida.mat_incluidos if partida.mat_incluidos != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= partida.man_obra if partida.man_obra != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= partida.mat_incluidos if partida.mat_incluidos != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= partida.fases if partida.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= partida.fases if partida.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= partida.cond_terminacion if partida.cond_terminacion != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= partida.cond_terminacion if partida.cond_terminacion != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
 
-                                <% if partida.mat_aportar != nil %>
-                                <div style="float: right;">
-                                    <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar por usuario" data-content="<%= partida.mat_aportar if partida.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
-                                </div>
-                                <% end %>
-                              </li>
-                            </div>
-                          </ul>
-                        </div>
+                              <% if partida.mat_aportar != nil %>
+                              <div style="float: right;">
+                                  <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar por usuario" data-content="<%= partida.mat_aportar if partida.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                              </div>
+                              <% end %>
+                            </li>
+                          </div>
+                        </ul>
+                        <meta itemprop="position" content="<%= @ofertas_partidas.index(partida.id) %>" />
                       </li>
-                  <% end %>
-                </div>        
+                  <% end %>        
               </ul>
           <% end %>
 
 
     <h3 style="font-weight: bold; margin-top: 50px; color: #444; font-size: 20px;">Propuestas destacadas:</h3>
-              <ul class="lista_principal" itemscope itemtype="http://schema.org/ItemList" style="">
+              <ul class="lista_principal" style="">
     <ul class="lista_principal"  style="">
 
-        <li class="lista_oferta" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+        <li class="lista_oferta">
             <ul class="elemento">
                 <% @task = Task.find_by(task: 'alb_baldosa') %>
                 <li>
