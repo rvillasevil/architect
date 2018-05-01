@@ -147,7 +147,8 @@
                           </li>
                           <div class="texto" style="padding: 5px;">
                             <li class="nombre">
-                              <div class="nombre" itemprop= "name" style="font-weight: 700;">
+                              <div class="nombre" itemprop= "name">
+                                  <!---->
                                   <%= partida.titulo if partida.titulo != nil %>
                               </div>
                             </li>
@@ -163,7 +164,7 @@
                               <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
                             </li>                           
                             <li class="precio_oferta" style="padding-left: 0px;">
-                              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span><span style="font-weight: 600; font-size: 13px; display: block;"><link itemprop="availability" href="http://schema.org/InStock" />Disponibilidad:  Disponible</span></span>
+                              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %></b></span> <span itemprop="priceCurrency" content="EUR" style="display: inline-flex; font-size: 13px; font-weight: 600;">€/<%= partida.um if partida.um %></span><span style="font-weight: 600; font-size: 13px; display: block;"><link itemprop="availability" href="http://schema.org/InStock" />Disponible</span></span>
                             </li>
                             <% end %>
                             <li class="iconos">
