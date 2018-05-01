@@ -147,8 +147,7 @@
                           </li>
                           <div class="texto" style="padding: 5px;">
                             <li class="nombre">
-                              <div class="nombre" itemprop= "name">
-                                  <!---->
+                              <div class="nombre" itemprop= "name" style="font-weight: 700;">
                                   <%= partida.titulo if partida.titulo != nil %>
                               </div>
                             </li>
@@ -164,7 +163,7 @@
                               <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
                             </li>                           
                             <li class="precio_oferta" style="padding-left: 0px;">
-                              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span></span>
+                              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span><span style="font-weight: 600; font-size: 13px; display: block;"><link itemprop="availability" href="http://schema.org/InStock" />Disponibilidad:  Disponible</span></span>
                             </li>
                             <% end %>
                             <li class="iconos">
@@ -186,7 +185,6 @@
                             </li>
                           </div>
                         </ul>
-                        <meta itemprop="position" content="<%= @ofertas_partidas.index(partida.id) %>" />
                       </li>
                   <% end %>        
               </ul>
