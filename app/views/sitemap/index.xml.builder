@@ -9,4 +9,5 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9', 'xm
 	xml << (render :partial => 'sitemap/reforms', items: @reforms)
 	#xml << (render :partial => 'sitemap/habitacions', items: @habitacions)
 	xml << (render :partial => 'sitemap/presupuesto', items: @reforms)
+	xml << (render :partial => 'sitemap/blog', items: @blogs)
 end

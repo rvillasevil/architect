@@ -38,7 +38,14 @@ class PartidasController < ApplicationController
   # POST /partidas
   # POST /partidas.json
   def create
-    @partida = Partida.new(partida_params)
+    #@partida = Partida.new(partida_params)
+    if params[:partida][:partida_id] != nil
+      slug = nil
+    else
+      slug = params[:partida][:titulo].parameterize.truncate(80, omission: '')
+    end
+    #slug = params[:partida][:titulo].parameterize.truncate(80, omission: '')
+    @partida = Partida.new(titulo: params[:partida][:titulo], description: params[:partida][:description], medicion: params[:partida][:medicion], comentario: params[:partida][:comentario], foto: params[:partida][:foto], categoria: params[:partida][:categoria], reform_id: params[:partida][:reform_id], habitacion_id: params[:partida][:habitacion_id], user_id: params[:partida][:user_id], um: params[:partida][:um], desc_tecnica: params[:partida][:desc_tecnica], material: params[:partida][:material], cond_previas: params[:partida][:cond_previas], fases: params[:partida][:fases], cond_terminacion: params[:partida][:cond_terminacion], man_obra: params[:partida][:man_obra], rendimiento: params[:partida][:rendimiento], mat_incluidos: params[:partida][:mat_incluidos], mat_aportar: params[:partida][:mat_aportar], importe: params[:partida][:importe], empresa: params[:partida][:empresa], nombre_invitado: params[:partida][:nombre_invitado], email_invitado: params[:partida][:email_invitado], provincia_invitado: params[:partida][:provincia_invitado], plazo_invitado: params[:partida][:plazo_invitado], partida_id: params[:partida][:partida_id], slug: slug)
 
     respond_to do |format|
       if logged_in? 
@@ -125,6 +132,6 @@ class PartidasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def partida_params
-      params.require(:partida).permit(:titulo, :description, :medicion, :comentario, :foto, :categoria, :reform_id, :habitacion_id, :user_id, :um, :desc_tecnica, :material, :cond_previas, :fases, :cond_terminacion, :man_obra, :rendimiento, :mat_incluidos, :mat_aportar, :importe, :empresa, :nombre_invitado, :email_invitado, :provincia_invitado, :plazo_invitado, :partida_id)
+      params.require(:partida).permit(:titulo, :description, :medicion, :comentario, :foto, :categoria, :reform_id, :habitacion_id, :user_id, :um, :desc_tecnica, :material, :cond_previas, :fases, :cond_terminacion, :man_obra, :rendimiento, :mat_incluidos, :mat_aportar, :importe, :empresa, :nombre_invitado, :email_invitado, :provincia_invitado, :plazo_invitado, :partida_id, :slug)
     end
 end
