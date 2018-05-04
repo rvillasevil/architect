@@ -12,3 +12,16 @@
 	border-bottom: 2px solid #ccc;
 	display: inline-flex;
 }
+
+.pregunta {
+	ul {
+		list-style: none;
+		padding: 0px;
+	}
+	li {
+		list-style: none;
+	}
+	.titulo {
+		padding-left: 55px;
+	}
+}

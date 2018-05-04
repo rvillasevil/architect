@@ -21,6 +21,17 @@
       <button style="background-color: white; border: 1px solid #bbb; border-radius: 5px; font-family: 'Open Sans'; font-weight: 600; font-size: 15px; padding: 10px;"><%= link_to "Nuevo salón/comedor", new_habitacion_path(habitacion: true, salon: true) %></button>
       <button style="background-color: white; border: 1px solid #bbb; border-radius: 5px; font-family: 'Open Sans'; font-weight: 600; font-size: 15px; padding: 10px;"><%= link_to "Nueva habitación", new_habitacion_path(habitacion: true) %></button>
       <button style="background-color: white; border: 1px solid #bbb; border-radius: 5px; font-family: 'Open Sans'; font-weight: 600; font-size: 15px; padding: 10px;"><%= link_to "Habitaciones auxiliares", new_habitacion_path(habitacion: true) %></button>
+
+      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px; padding-top: 170px;">¿Tienes un proyecto más grande? </div>
+      <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Hazte usuario y diseña todas las habitaciones que quieras de un mismo proyecto.</div> 
+      <button style="background-color: white; color: #333; border: 1px solid #333; border-radius: 10px; padding: 10px; margin-top: 10px;"><h5 style="margin: 0px;"><%= link_to "Crea tu cuenta gratis", signup_path, style: "font-weight: 600; padding: 0px;" %></h5></button>
+
+
+      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px; padding-top: 30px;">¿Quieres simplemente describir lo que quieres hacer?</div>
+      <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Descríbenos en unas palabras qué quieres hacer en tu proyecto.</div>    
+
+      <h3><%= link_to "Crea tu proyecto personalizado", new_partida_path(invitado: true), class: "btn", style: "color: red; border: 1px solid red; padding: 10px; border-radius: 10px; font-weight: 600;" %></h3>
+
     <% end %>
   <% else %>
   <!-- Fin del condicional del tipo de habitacion -->
@@ -6211,6 +6222,8 @@
 
       </div>
 
+      <% if logged_in? %>
+      <% else %>
         <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">¿Tienes un proyecto más grande? </div>
         <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Hazte usuario y diseña todas las habitaciones que quieras bajo un mismo proyecto.</div> 
         <button style="background-color: white; padding: 10px; color: #0084B4; font-weight: 900; border-radius: 10px; border-color: #0084B4; display: block; margin-top: 20px;"><h5 style="margin: 0px;"><%= link_to "Crea tu cuenta gratis", signup_path, style: "font-weight: 600; padding: 5px;" %></h5></button>
@@ -6220,6 +6233,7 @@
         <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Tenemos la solución, crea tu propuesta personalizada y explica exactamente qué quieres hacer en tu reforma.</div>    
 
         <h3><%= link_to "Crea tu proyecto personalizado", new_partida_path(invitado: true), class: "btn", style: "color: red; border: 1px solid red; padding: 10px; border-radius: 10px; font-weight: 600;" %></h3>
+        <% end %>
 
         <% if logged_in? %>
           <%= f.hidden_field :reform_id, value: params[:reform_id] %>

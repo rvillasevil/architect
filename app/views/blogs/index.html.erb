@@ -1,0 +1,64 @@
+<body style="background-color: rgb(244, 244, 244);">
+
+<div class="container" style="padding: 0px;">
+  <div class="col-md-3" style="padding: 5px; max-width: 200px;">
+    <div class="hashtags">
+      <span class="hashtag" style="padding-bottom: 20px; font-weight: 600;">Artículos de ConstructUX</span>
+      <span class="hashtag">Arquitectura</span>
+      <span class="hashtag">Diseño</span>
+      <span class="hashtag">Decoración</span>      
+      <span class="hashtag">Reformas</span>
+      <span class="hashtag">Baño</span>
+      <span class="hashtag">Cocina</span>
+      <span class="hashtag">Dormitorio</span>
+      <span class="hashtag">Infantil</span>
+      <span class="hashtag">Otros espacios</span>      
+      <span class="hashtag">Prespuestos reforma</span>
+      <span class="hashtag">Antes y después</span>
+      <span class="hashtag">Hazlo tú mismo</span>
+      <span class="hashtag">Exterior</span>   
+    </div>
+  </div>
+  <div class="col-md-9" style="padding: 5px;">
+    <div class="index_blog">
+      <h1>Blog de ConstructUX</h1>
+
+      <% if params[:hashtag] != nil %>
+        <% @blogs = Blog.where(hashtag: params[:hashtag]) && Blog.where(hashtag_segundo: params[:hashtag]) && Blog.where(hashtag_tercero: params[:hashtag]) %>
+      <% end %>
+
+      <% @blogs.order("created_at DESC").each do |blog| %>
+        <div class="post">
+          <div class="row" style="border-bottom: 1px solid #eee; padding: 5px;">
+          <div class="col-md-6">
+          <div class="image-wrapper">
+          <%= image_tag(blog.foto_primera.url, class: "", style: "" ) if blog.foto_primera? %>
+          </div></div>
+          <div class="col-md-6">
+          <div class="textos_blog">
+            <div class="titulo"><%= link_to blog.title, blog, style: "" %></div>
+            <div class="description"><%= truncate(blog.content, length: 200) %></div>
+            <% if blog.hashtag? %>
+              <div class="hashtag" style="display: inline-flex;">#<%= blog.hashtag %></div>
+            <% end %>
+            <% if blog.hashtag_segundo? %>
+              &nbsp;<div class="hashtag" style="display: inline-flex;">#<%= blog.hashtag_segundo %></div>
+            <% end %>
+            <% if blog.hashtag_tercero? %>
+              &nbsp;<div class="hashtag" style="display: inline-flex;">#<%= blog.hashtag_tercero %></div>
+            <% end %>
+          </div>
+          </div>                       
+        </div>
+      <% end %>
+
+      <% if logged_in? && current_user.admin? %>
+        <%= link_to 'New Blog', new_blog_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+</body>
+
+

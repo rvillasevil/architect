@@ -1,0 +1,2 @@
+class AddSlugToPartida < ApplicationRecord
+end

@@ -48,6 +48,43 @@
               <%# end %>
             </li>
 
+<%
+=begin%>
+            <li class="dropdown" style="">
+              <div class="icon_mobile">
+                <%= link_to '/comunidad' do %>
+                  <div class="glyphicon glyphicon-briefcase" style="font-size: 20px; color: #666;"></div>
+                <% end %>
+              </div>                                   
+            
+              <%= link_to '/comunidad' do %>
+              <div class="icon_web">
+                <div class="glyphicon glyphicon-briefcase" style="font-size: 16px; color: #666;"></div>
+                <div class="logo" style="display: inline-flex; align-items: center;">
+                  <span class="icon"> Comunidad</span>
+              </div>
+              <% end %> 
+            </li> 
+<%
+=end%>              
+
+            <li class="dropdown" style="">
+              
+              <div class="icon_mobile">
+                <%= link_to '/blog' do %>
+                  <div class="" style="font-size: 14px; color: #666; display: inline-flex; letter-spacing: 1px;">BLOG</div>
+                <% end %>
+              </div>                                  
+            
+              <%= link_to '/blog' do %>
+              <div class="icon_web">
+                <div class="glyphicon glyphicon-th-large" style="font-size: 16px; color: #666;"></div>
+                <div class="logo" style="display: inline-flex; align-items: center;">
+                  <span class="icon" style="letter-spacing: 1px;"> BLOG</span>
+              </div>
+              <% end %> 
+            </li>                     
+
             <% if current_user.empresa != true %>
               <li class="dropdown" style="">
                 
@@ -113,6 +150,40 @@
                   <span style=" font-size: 18px; font-weight: 900; margin-top: 10px;">ConstructUX<span style="font-size: 10px; display: inline-flex;">Beta</span></span>
                 <% end %>
               </li>
+<%
+=begin%>
+              <li class="dropdown" style="">
+                <div class="icon_mobile">
+                  <%= link_to '/comunidad' do %>
+                    <div class="glyphicon glyphicon-briefcase" style="font-size: 20px; color: #666;"></div>
+                  <% end %>
+                </div>                                   
+              
+                <%= link_to '/comunidad' do %>
+                <div class="icon_web">
+                  <div class="glyphicon glyphicon-briefcase" style="font-size: 16px; color: #666;"></div>
+                  <div class="logo" style="display: inline-flex; align-items: center;">
+                    <span class="icon"> Comunidad</span>
+                </div>
+                <% end %> 
+              </li>
+<%
+=end%>               
+              <li class="dropdown" style="">
+                <div class="icon_mobile">
+                  <%= link_to '/blog' do %>
+                    <div class="" style="font-size: 14px; color: #666; display: inline-flex; letter-spacing: 1px;">BLOG</div>
+                  <% end %>
+                </div>                                   
+              
+                <%= link_to '/blog' do %>
+                <div class="icon_web">
+                  <div class="glyphicon glyphicon-th-large" style="font-size: 16px; color: #666;"></div>
+                  <div class="logo" style="display: inline-flex; align-items: center;">
+                    <span class="icon" style="letter-spacing: 1px;"> BLOG</span>
+                </div>
+                <% end %> 
+              </li>                           
               <li class="dropdown-home" style="width: 20%;">
                 <%= link_to login_path do %>
                     <span style="color: #666">Login</span>

@@ -6,6 +6,7 @@ require 'will_paginate/array'
   def home
     @reforms = Reform.all
 
+
     @partidas = if params[:tern]
       Partida.where('titulo @@ :t or description @@ :t or desc_tecnica @@ :t or material @@ :t', t: params[:tern]).where.not(empresa: nil).order('created_at DESC')
     else
@@ -136,6 +137,18 @@ require 'will_paginate/array'
       @hashtag10 = @hashtag10_array.group_by(&:to_s).values.max_by(&:size).try(:first) 
 
       @array_off_hashtags = [@hot_hashtags_numero, @hashtag1, @hashtag2, @hashtag3, @hashtag4, @hashtag5, @hashtag6, @hashtag7, @hashtag8, @hashtag9, @hashtag10]     
+    else
+      @posts_masvotados = Micropost.find_by_sql(
+        'SELECT     microposts.id,
+        COUNT       (votes.micropost_id)
+        AS          numbersOfVotes
+        FROM        votes
+        LEFT JOIN   microposts
+        ON          votes.micropost_id = microposts.id
+        GROUP BY    microposts.id
+        ORDER BY    count(votes.micropost_id) 
+        DESC
+        ')
 
     end
   end
@@ -226,6 +239,9 @@ require 'will_paginate/array'
   end
 
   def ux_arquitectos
-    
+  end
+
+  def comunidad
+    @preguntas = Micropost.all.where.not(user_valorado: nil)
   end
 end

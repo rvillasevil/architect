@@ -1,0 +1,123 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background-color: rgb(244, 244, 244);
+}
+
+.hashtags {
+	border: 1px solid #eee;
+	background-color: white;
+	padding: 10px;
+		.hashtag {
+		display: block;
+	}
+}
+.index_blog {
+	border: 1px solid #eee;
+	background-color: white;
+	padding: 10px;	
+	display: block;
+	.post {
+		padding-top: 10px;
+		.image-wrapper {
+			max-width: 400px;
+		  height: 200px;
+		  overflow: hidden;
+		  @media(max-width: 768px) {
+		    height: 30vw;
+		    max-width: 100%;
+		  }
+		}
+		.image-wrapper img {
+			width: 500px;
+		  position: relative;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  @media(max-width: 768px) {
+		  	width: 100%;
+		  }
+		}			
+		.textos_blog {
+			display: inline-block;
+			.titulo {
+				padding-top: 15px;
+				a {
+					font-size: 26px;
+					font-weight: 200;
+					color: #333;	
+				}
+			}
+			.description {
+				display: block;
+				font-size: 18px;
+				font-weight: 200;
+				color: #888;	
+				padding-top: 20px;	
+			}				
+		}
+		.hashtag {
+			font-family: 'Open Sans';
+			font-weight: 400;
+			padding-top: 10px;
+			font-size: 13px;
+			font-weight: 600;		
+		}
+		@media(max-width: 768px) {
+			padding: 20px;
+		}
+	}
+	h1 {
+		font-weight: 200;
+		font-size: 32px;
+	}
+}
+
+.hashtags {
+	.hashtag {
+		font-family: 'Open Sans';
+		font-weight: 400;
+		padding-top: 10px;
+	}
+}
+
+.blog {
+	font-family: 'Open Sans';
+	font-size: 15px;
+	font-weight: 400;
+	display: block;
+	background-color: white;
+	border: 1px solid #eee;
+	padding: 20px;
+	img {
+		width: 100%;
+	}
+	.titulo {
+		font-size: 28px;
+		font-weight: 300;
+		color: #333;
+		display: block;
+		padding-bottom: 20px;
+		line-height: 26px;
+	}
+	.description {
+		font-size: 22px;
+		font-weight: 600;
+		color: #333;
+		display: block;	
+		padding-bottom: 10px;	
+	}
+	.content {
+		padding-top: 15px;
+		margin-bottom: 15px;
+	}
+	.col-md-1 {
+		@media(max-width: 768px) {
+			display: none;
+		}
+	}
+}
+
+

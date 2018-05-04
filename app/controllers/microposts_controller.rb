@@ -2,11 +2,13 @@ class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy, :hashtag]
   before_action :correct_user,   only: :destroy
 
+
   require 'open-uri'
   require 'will_paginate/array'  
 
 
   def create
+    #slug = params[:blog][:title].parameterize.truncate(80, omission: '')
     @micropost = Micropost.new(micropost_params)
     if @micropost.save
       flash[:success] = "Realizado con éxito!"
@@ -36,7 +38,7 @@ class MicropostsController < ApplicationController
 
   def show
     @user = current_user
-    @micropost = Micropost.find(params[:id])
+    @micropost = Micropost.find_by_id(params[:format])
   end
 
   def petition_index
@@ -90,7 +92,7 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture, :video, :hashtag1, :hashtag2,:hashtag3, :link, :plaza_id, :id, :petition, :title, :title_link, :photo_link, :valoracion, :user_valorado, :user_id)
+      params.require(:micropost).permit(:content, :picture, :video, :hashtag1, :hashtag2,:hashtag3, :link, :plaza_id, :id, :petition, :title, :title_link, :photo_link, :valoracion, :user_valorado, :user_id, :slug)
     end
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])

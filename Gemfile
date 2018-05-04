@@ -26,6 +26,8 @@ gem 'pg', '~> 0.20'
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
+gem 'friendly_id', '~> 5.1.0' #para las url users, partidas y presupuestos
+
 
 require 'open-uri'
 

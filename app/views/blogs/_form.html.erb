@@ -1,0 +1,110 @@
+<%= form_for(blog) do |f| %>
+  <% if blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, style: "width: 100%;" %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, style: "width: 100%;" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :foto_primera %>
+    <%= f.file_field :foto_primera %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_segundo %>
+    <%= f.text_area :content_segundo %>
+  </div>  
+
+  <div class="field">
+    <%= f.label :foto_segunda %>
+    <%= f.file_field :foto_segunda %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content_tercero %>
+    <%= f.text_area :content_tercero %>
+  </div> 
+
+  <div class="field">
+    <%= f.label :foto_tercera %>
+    <%= f.file_field :foto_tercera %>
+  </div>
+
+  <%= f.select :hashtag, [
+    'Arquitectura',
+    'Diseño',
+    'Decoración',
+    'Hazlo tú mismo',
+    'Reformas',
+    'Baño',
+    'Cocina',
+    'Dormitorio',
+    'Infantil',
+    'Otros espacios',
+    'Presupuestos reforma',
+    'Antes y después',
+    'Exterior'] %>
+  <div style="padding-top: 10px;">
+    <%= f.select :hashtag_segundo, [
+      'Arquitectura',
+      'Diseño',
+      'Decoración',
+      'Hazlo tú mismo',
+      'Reformas',
+      'Baño',
+      'Cocina',
+      'Dormitorio',
+      'Infantil',
+      'Otros espacios',
+      'Presupuestos reforma',
+      'Antes y después',
+      'Exterior'] %>  
+  </div>
+
+  <div style="padding-top: 10px;">
+    <%= f.select :hashtag_tercero, [
+      'Arquitectura',
+      'Diseño',
+      'Decoración',
+      'Hazlo tú mismo',
+      'Reformas',
+      'Baño',
+      'Cocina',
+      'Dormitorio',
+      'Infantil',
+      'Otros espacios',
+      'Presupuestos reforma',
+      'Antes y después',
+      'Exterior'] %>    
+  </div>
+        
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

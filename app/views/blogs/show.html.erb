@@ -1,0 +1,38 @@
+<body style="background-color: rgb(244, 244, 244);">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2" style="padding: 0px;">
+      <div class="blog">
+        <div class="row" style="padding-top: 20px;">
+          <div class="col-md-1" style="padding-right: 0px;">
+            <% @blog_user = User.find(@blog.user_id) %>
+            <%= image_tag(@blog_user.foto.url, class: "img-circle", size: 40, style: "width: auto;") %>
+          </div>
+          <div class="col-md-11" style="">            
+            <span class="titulo"><%= @blog.title %></span>
+            <div class="content" style=" padding-top: 0px;">Autor: <%= link_to @blog_user.name, @blog_user, style: "margin-bottom: 10px; font-weight: 600;" %></div>
+            <span class="description">topics: <%= @blog.description %></span>
+            <div class="content"><%= simple_format(@blog.content) if @blog.content? %></div>
+            <%= image_tag(@blog.foto_primera.url) if @blog.foto_primera? %>
+
+            <div class="content"><%= simple_format(@blog.content_segundo) if @blog.content_segundo? %></div>
+            <%= image_tag(@blog.foto_segunda.url) if @blog.foto_segunda? %>
+
+            <div class="boton_reforma" style=" text-align: center;">
+              <%= link_to "Diseña tu propio proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 2px solid #ff5050; color: #ff5050; font-weight: 600; border-radius: 15px; font-size: 13px; padding: 10px; margin-top: 10px;" %>
+            </div>
+
+            <div class="content"><%= simple_format(@blog.content_tercero) if @blog.content_tercero? %></div>
+            <%= image_tag(@blog.foto_tercera.url) if @blog.foto_tercera? %> 
+
+            <div class="boton_reforma" style=" text-align: center;">
+              <%= link_to "Diseña tu propio proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 2px solid #ff5050; color: #ff5050; font-weight: 600; border-radius: 15px; font-size: 13px; margin-top: 10px; text-align: center;" %>
+            </div>         
+          </div>          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+</body> 

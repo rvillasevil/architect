@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :blogs, param: :slug
   get "/sitemap.xml" => "sitemap#index", :format => "xml", :as => :sitemap
  
-  resources :partidas
+  resources :partidas, param: :slug
   resources :confirmacions
   resources :presupuestos
   resources :budgets
@@ -69,8 +70,10 @@ Rails.application.routes.draw do
 
   get     '/jefazo', to: 'static_pages#jefazo'
 
-  get     'ux_arquitectos',   to: 'static_pages#ux_arquitectos'
+  get     '/ux_arquitectos',   to: 'static_pages#ux_arquitectos'
 
+  get     '/comunidad',    to: 'static_pages#comunidad'
+  get     '/blog',         to: 'blogs#index'
 
   resources :users do
     member do
@@ -93,8 +96,6 @@ Rails.application.routes.draw do
     member do
       get :hashtag
     end
-  end
-  resources :microposts do
     resources :comments do
       member do
         put :create
@@ -106,8 +107,9 @@ Rails.application.routes.draw do
         put :update_dislike
         put :update_circles_adminstrative
       end
-    end
+    end    
   end
+
 
   resources :users do
     resources :comments

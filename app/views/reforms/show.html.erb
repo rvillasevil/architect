@@ -67,7 +67,7 @@
               <% @partidas = Partida.where(reform_id: @reform.id) %>
               <% if @partidas != nil %>
                 <% @partidas.map do |partida| %>
-                  <%= link_to reform_partida_path(reform_id: @reform.id, id: partida) do %>
+                  <%= link_to reform_partida_path(reform_id: @reform.id, id: partida.id) do %>
                     <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid #41a34b; color: #1DA1F2; padding: 10px; margin: 5px; border-radius: 10px;"><h3 style="; margin: 0px; color: #555; font-weight: 600;"><%= partida.titulo %></h3>
                     </button>
                   <% end %>

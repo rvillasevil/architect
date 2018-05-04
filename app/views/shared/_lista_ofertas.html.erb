@@ -155,6 +155,7 @@
                             <!--<li>
                               <div class="description" style="height: 50px; overflow: hidden;"><h5><%# partida.description if partida.description != nil %></h5> </div>
                             </li>-->
+                            <span itemprop="description" style="font-size: 14px; font-weight: 200; "><% partida.description if partida.description != nil %></span>                           
                             <li class="empresa" style="padding-left: 0px;">
                               <% if partida.empresa != nil %>
                                 <% @empresa = Empresa.find( partida.empresa) %>

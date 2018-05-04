@@ -9,13 +9,14 @@ class Micropost < ApplicationRecord
   has_many :comments
   has_many :votes
 
+  validates :title, uniqueness: true 
 
   private
-
     # Validates the size of an uploaded picture.
     def picture_size
       if picture.size > 2.megabytes
         errors.add(:picture, "should be less than 2MB")
       end
     end
+
 end

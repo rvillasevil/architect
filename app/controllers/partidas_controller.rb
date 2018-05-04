@@ -11,7 +11,7 @@ class PartidasController < ApplicationController
   # GET /partidas/1
   # GET /partidas/1.json
   def show
-    @partida_show = Partida.find(params[:id])
+    @partida_show = Partida.find_by_slug(params[:slug])
     @partida = Partida.new
   end
 
@@ -21,7 +21,8 @@ class PartidasController < ApplicationController
     if logged_in?
       if current_user.empresa == true
       else
-        if params[:partida][:partida_id] == nil
+        # si está logeado puede hacer partidas sin que este dentro de la reforma?? ya hemos visto que si pero
+        if params[:reform_id] != nil
           @reform = Reform.find(params[:reform_id])
         end
       end
@@ -69,7 +70,6 @@ class PartidasController < ApplicationController
         if Partida.where(email_invitado: params[:partida][:email_invitado]).any?
           format.html { redirect_back(fallback_location: root_url, notice: 'Ya has creado un proyecto asociado a este correo. No podemos gestionar varios proyectos en un mismo correo si no eres usuario, lo sentimos. Hazte usuario gratis en 2 sencillos pasos.') }
         else
-
           if @partida.save
             format.html { redirect_to root_url, notice: 'La partida se ha creado con éxito, en breve nos pondremos en contacto, gracias.' }
             format.json { render :show, status: :created, location: @partida } 
@@ -111,13 +111,15 @@ class PartidasController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_partida
       if params[:id] != nil
-        @partida = Partida.find(params[:id])
+        @partida = Partida.find_by_slug(params[:slug])
       else
-        @partida = Partida.find_by(titulo: params[:titulo])
+        @partida = Partida.find_by_slug(params[:slug])
       end
     end
 

@@ -51,10 +51,10 @@
                         <% else %>
                           <b><%= link_to @micropost.user.name, @micropost.user %></b>
                         <% end %>                          
-                        <% if @micropost.hashtag1? %><span style="font-size: 13px; line-height: 17px; margin: 0px;">
+                        <!--<%# if @micropost.hashtag1? %><span style="font-size: 13px; line-height: 17px; margin: 0px;">
                           &nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-comments-o" style="color: #9542f4;"></i>
-                                <b><%= link_to @micropost.hashtag1, hashtag_micropost_path(id: @micropost.hashtag1), style: "color: #9542f4;" %></b>
-                        <% end %>
+                                <b><%# link_to @micropost.hashtag1, hashtag_micropost_path(id: @micropost.hashtag1), style: "color: #9542f4;" %></b>-->
+                        <%# end %>
                           </span>
                         
                         <span class="timestamp">
@@ -147,7 +147,7 @@
               <%= simple_format(@micropost.content) %>
             <% end %>  
           </div>
-               
+             
           <!-- votos -->
           <!-- votos positivos -->
           <ul class="social_elements">
@@ -248,8 +248,7 @@
 
           </ul>
         </li>
-
-
+        
         <!-- create comment -->
         <% if logged_in? %>
           <!-- create comment -->

@@ -1,0 +1,13 @@
+<% if logged_in? %>
+<%= link_to "Nueva Pregunta de la comunidad", '/petition' %>
+<% end %>
+
+<% @preguntas.each do |post| %>
+
+	<div class="pregunta">
+		<%= render 'microposts/micropost', micropost: post %>
+	</div>
+
+
+
+<% end %>
