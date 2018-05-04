@@ -2,7 +2,7 @@
   <!-- Open Graph tags -->
   <meta property="og:title" content="Oferta en <%= @partida_show.titulo %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida_show.id %>" />
+  <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida_show.slug %>" />
   <meta property="og:description" content="ConstructUX, <%= @partida_show.description %>" />
   <% if @partida.foto? %>
     <meta property="og:image" content="<%= image_url(@partida_show.foto.url) %>" />  
@@ -56,7 +56,7 @@
                       <h3 style="font-weight: 600; font-size: 15px; ">Comparte esta oferta</h3>
                       <!-- FACEBOOK share button -->
                       <div class="fb-share-button" 
-                      data-href="https://www.constructux.com/partidas/<%= @partida_show.id %>" 
+                      data-href="https://www.constructux.com/partidas/<%= @partida_show.slug %>" 
                       data-layout="button_count"
                       data-size="large"
                       style= "display: inline-flex; padding-left: 0px;"></div> 
