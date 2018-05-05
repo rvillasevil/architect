@@ -1,6 +1,6 @@
 <% content_for :head do %>
   <!-- Open Graph tags -->
-  <meta property="og:title" content="Oferta en <%= @partida_show.titulo %> <%= @partida_show.importe %>
+  <meta property="og:title" content="<%= @partida_show.titulo %> <%= @partida_show.importe %>
   (€/<%= @partida_show.um %>)" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.constructux.com/partidas/<%= @partida_show.slug %>" />
