@@ -511,7 +511,7 @@ footer ul li {
   border-radius: 10px; 
   display: block;
   @media(max-width: 768px) {
-    width: 350px;
+    width: 80vw;
   }
   .card2 {
     overflow-x: hidden; 
@@ -806,6 +806,7 @@ aside {
     width: 33%;
     @media(max-width: 768px) {
       width: 100%;
+      padding-top: 20px;
     }
     h5 {
       font-weight: 600;
@@ -866,7 +867,7 @@ aside {
       .texto {
         width: 213px;
         @media(max-width: 768px) {
-          width: 350px;
+          width: 80vw;
           margin-bottom: 5px;
           border-bottom: 1px solid #eee;
         }
