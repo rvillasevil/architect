@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504153541) do
+ActiveRecord::Schema.define(version: 20180508115434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,8 +153,8 @@ ActiveRecord::Schema.define(version: 20180504153541) do
     t.string   "foto_primera"
     t.string   "foto_segunda"
     t.string   "foto_tercera"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "description"
     t.string   "slug"
     t.string   "content_segundo"
@@ -162,6 +162,16 @@ ActiveRecord::Schema.define(version: 20180504153541) do
     t.string   "hashtag"
     t.string   "hashtag_segundo"
     t.string   "hashtag_tercero"
+    t.string   "description_segunda"
+    t.string   "subtitle"
+    t.string   "subtitle_segundo"
+    t.string   "content_cuarto"
+    t.string   "subtitle_tercero"
+    t.string   "content_quinto"
+    t.string   "subtitle_cuarto"
+    t.string   "content_sexto"
+    t.string   "subtitle_quinto"
+    t.string   "content_septimo"
   end
 
   create_table "budgets", force: :cascade do |t|

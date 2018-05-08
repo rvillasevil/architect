@@ -27,7 +27,16 @@ class BlogsController < ApplicationController
   def create
     slug = params[:blog][:description].parameterize.truncate(80, omission: '')
     #@blog = Blog.new(blog_params)
-    @blog = current_user.blogs.build(content: params[:blog][:content], title: params[:blog][:title], slug: slug, description: params[:blog][:description], foto_primera: params[:blog][:foto_primera], foto_segunda: params[:blog][:foto_segunda], foto_tercera: params[:blog][:foto_tercera], content_segundo: params[:blog][:content_segundo], content_tercero: params[:blog][:content_tercero], hashtag: params[:blog][:hashtag], hashtag_segundo: params[:blog][:hashtag_segundo], hashtag_tercero: params[:blog][:hashtag_tercero])
+    @blog = current_user.blogs.build(content: params[:blog][:content], title: params[:blog][:title], slug: slug, description: params[:blog][:description], foto_primera: params[:blog][:foto_primera], foto_segunda: params[:blog][:foto_segunda], foto_tercera: params[:blog][:foto_tercera], content_segundo: params[:blog][:content_segundo], content_tercero: params[:blog][:content_tercero], hashtag: params[:blog][:hashtag], hashtag_segundo: params[:blog][:hashtag_segundo], hashtag_tercero: params[:blog][:hashtag_tercero], description_segunda: params[:blog][:description_segunda],
+    subtitle: params[:blog][:subtitle],
+    subtitle_segundo: params[:blog][:subtitle_segundo],
+    content_cuarto: params[:blog][:content_cuarto],
+    subtitle_tercero: params[:blog][:subtitle_tercero],
+    content_quinto: params[:blog][:content_quinto],
+    subtitle_cuarto: params[:blog][:subtitle_cuarto],
+    content_sexto: params[:blog][:content_sexto],
+    subtitle_quinto: params[:blog][:subtitle_quinto],
+    content_septimo: params[:blog][:content_septimo] )
 
     respond_to do |format|
       if @blog.save
@@ -72,6 +81,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:user_id, :content, :title, :foto_primera, :foto_segunda, :foto_tercera, :slug, :description, :content_segundo, :content_tercero, :hashtag, :hashtag_segundo, :hashtag_tercero)
+      params.require(:blog).permit(:user_id, :content, :title, :foto_primera, :foto_segunda, :foto_tercera, :slug, :description, :content_segundo, :content_tercero, :hashtag, :hashtag_segundo, :hashtag_tercero, :description_segunda, :subtitle, :subtitle_segundo, :content_cuarto, :subtitle_tercero, :content_quinto, :subtitle_cuarto, :content_sexto, :subtitle_quinto, :content_septimo)
     end
 end

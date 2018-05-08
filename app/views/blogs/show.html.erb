@@ -41,31 +41,55 @@
             <h2><span class="description">topics: <%= @blog.description %></span></h2>
 
             <p><div class="content"><%= simple_format(@blog.content) if @blog.content? %></div></p>
+
             <%= image_tag(@blog.foto_primera.url, alt:@blog.title) if @blog.foto_primera? %>
 
+            <h2><span class="description" style="padding-top: 15px;">topics: <%= @blog.description_segunda %></span></h2>            
+
             <p><div class="content"><%= simple_format(@blog.content_segundo) if @blog.content_segundo? %></div></p>
+
+            <h3><%= simple_format(@blog.subtitle) if @blog.subtitle %></h3>
+
+            <p><div class="content"><%= simple_format(@blog.content_tercero) if @blog.content_tercero? %></div></p>    
+
             <%= image_tag(@blog.foto_segunda.url, alt:@blog.description) if @blog.foto_segunda? %>
 
             <div class="boton_reforma" style=" text-align: center;">
               <%= link_to "Diseña tu propio proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 2px solid #ff5050; color: #ff5050; font-weight: 600; border-radius: 15px; font-size: 13px; padding: 10px; margin-top: 10px;" %>
-            </div>
+            </div>            
 
-            <p><div class="content"><%= simple_format(@blog.content_tercero) if @blog.content_tercero? %></div></p>
-            <%= image_tag(@blog.foto_tercera.url, alt:@blog.hashtag) if @blog.foto_tercera? %> 
+            <h3><%= simple_format(@blog.subtitle_segundo) if @blog.subtitle_segundo %></h3>
 
+            <p><div class="content"><%= simple_format(@blog.content_cuarto) if @blog.content_cuarto? %></div></p>
+
+
+            <h3><%= simple_format(@blog.subtitle_tercero) if @blog.subtitle_tercero %></h3>
+
+            <p><div class="content"><%= simple_format(@blog.content_quinto) if @blog.content_quinto? %></div></p>
+
+            <%= image_tag(@blog.foto_tercera.url, alt:@blog.hashtag) if @blog.foto_tercera? %>             
+
+            <h3><%= simple_format(@blog.subtitle_cuarto) if @blog.subtitle_cuarto %></h3>
+
+            <p><div class="content"><%= simple_format(@blog.content_sexto) if @blog.content_sexto? %></div></p>
+
+
+            <h3><%= simple_format(@blog.subtitle_quinto) if @blog.subtitle_quinto %></h3>
+
+            <p><div class="content"><%= simple_format(@blog.content_septimo) if @blog.content_septimo? %></div></p>                                                
             <div class="boton_reforma" style=" text-align: center;">
               <%= link_to "Diseña tu propio proyecto", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 2px solid #ff5050; color: #ff5050; font-weight: 600; border-radius: 15px; font-size: 13px; margin-top: 10px; text-align: center;" %>
             </div> 
             <div class="topics">
-              <div class="hashtag" style="display: inline-flex;">#<%= @blog.description %></div> | 
+              <div class="hashtag" style="display: inline-flex;"><h4>#<%= @blog.description %></h4></div> | 
               <% if @blog.hashtag? %>
-                <div class="hashtag" style="display: inline-flex;">#<%= @blog.hashtag %></div> | 
+                <div class="hashtag" style="display: inline-flex;"><h4>#<%= @blog.hashtag %></h4></div> | 
               <% end %>
               <% if @blog.hashtag_segundo? %>
-                &nbsp;<div class="hashtag" style="display: inline-flex;">#<%= @blog.hashtag_segundo %></div> | 
+                &nbsp;<div class="hashtag" style="display: inline-flex;"><h4>#<%= @blog.hashtag_segundo %></h4></div> | 
               <% end %>
               <% if @blog.hashtag_tercero? %>
-                &nbsp;<div class="hashtag" style="display: inline-flex;">#<%= @blog.hashtag_tercero %></div>
+                &nbsp;<div class="hashtag" style="display: inline-flex;"><h4>#<%= @blog.hashtag_tercero %></h4></div>
               <% end %>              
             </div>
           </div>          

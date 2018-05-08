@@ -11,29 +11,40 @@
 <% provide(:title) %>
 <% if logged_in? %>
 
+    <div class="col-md-1"></div>
+      <div class="texto" style="text-align: center;">
+        <% if params[:tern] == nil %>
+          <div class="oculto">
+            <h1 style="font-weight: lighter; text-align: center; font-size: 22px; letter-spacing: -1px;">Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; display: block;">Marketplace del sector de la construcción</span></h1>
+          </div>
+        <% end %>    
+        <h2 class="encabezado_gordo" style="font-weight: bolder; text-align: center; font-size: 20px; letter-spacing: -1px; color: #444;">¿Qué te gustaría reformar de tu casa?</h2>
+          <% if current_user.empresa != true %>
+          <div class="texto"> 
+            <li class="search" style="list-style: none; padding: 0px; width: 100%;">
+              <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
+                <%= form_tag(root_url, method: :get) do %>
+                <li style="display: inline-flex; width: 100%;">
+                  <h5 class="search" style="width: 100%; "><%= text_field_tag :tern, params[:tern], placeholder: 'Prueba con albañiles, baldosas...', style: "margin: 0px; width: 100%; padding: 10px; border-radius: 15px;" %><%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px; background-color: white; color: #46b8da; border: 2px solid #46b8da; font-weight: 600; margin-left: -80px; font-size: 15px; border-radius: 10px;" %></h5>
+                </li>
+                <li class="boton_search" style="display: inline-flex;">
+                  <h5 style="font-weight: 600;"></h5>
+                </li>
+                <% end %>
+              </ul>
+            </li>  
+
+          </div> 
+          <% end %>  
+      </div>
+
   <div class="container">
     <div class="row">
 
       <div class="col-md-10 col-md-offset-1">
 
 
-      <% if current_user.empresa != true %>
-      <div class="texto"> 
-        <li class="search" style="list-style: none; padding: 0px; width: 100%;">
-          <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
-            <%= form_tag(root_url, method: :get) do %>
-            <li style="display: inline-flex; width: 100%;">
-              <h5 class="search" style="width: 100%; "><%= text_field_tag :tern, params[:tern], placeholder: 'Prueba con albañiles, baldosas...', style: "margin: 0px; width: 100%; padding: 10px; border-radius: 15px;" %><%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px; background-color: white; color: #46b8da; border: 2px solid #46b8da; font-weight: 600; margin-left: -80px; font-size: 15px; border-radius: 10px;" %></h5>
-            </li>
-            <li class="boton_search" style="display: inline-flex;">
-              <h5 style="font-weight: 600;"></h5>
-            </li>
-            <% end %>
-          </ul>
-        </li>  
-
-      </div> 
-      <% end %>  
+ 
 
       <% if params[:tern] != nil %>
         <div class="campos" style="">
@@ -235,7 +246,7 @@
           <h2 style="letter-spacing: -1px;"><%= link_to "Calculador de reformas", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %></h2>
         </div> 
 
-        <h2 class="encabezado_gordo" style="font-weight: bolder; color: white; text-align: center;">¿Qué te gustaría reformar de tu casa?</h2>
+        <h2 class="encabezado_gordo" style="font-weight: 700; color: white; text-align: center; font-size: 24px; letter-spacing: -1px; ">¿Qué te gustaría reformar de tu casa?</h2>
         <li class="search" style="list-style: none; padding: 0px; width: 100%;">
           <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
             <%= form_tag(root_url, method: :get) do %>

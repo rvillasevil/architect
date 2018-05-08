@@ -14,44 +14,96 @@
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <div class="field">
-    <%= f.label :title %>
+    h1
     <%= f.text_field :title, style: "width: 100%;" %>
   </div>  
 
   <div class="field">
-    <%= f.label :description %>
+    h2
     <%= f.text_field :description, style: "width: 100%;" %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
+    p
     <%= f.text_area :content %>
   </div>
 
   <div class="field">
-    <%= f.label :foto_primera %>
+   imagen
     <%= f.file_field :foto_primera %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content_segundo %>
-    <%= f.text_area :content_segundo %>
   </div>  
 
   <div class="field">
-    <%= f.label :foto_segunda %>
-    <%= f.file_field :foto_segunda %>
-  </div>
+    h2
+    <%= f.text_area :description_segunda %>
+  </div> 
 
   <div class="field">
-    <%= f.label :content_tercero %>
-    <%= f.text_area :content_tercero %>
+    p
+    <%= f.text_area :content_segundo %>
   </div> 
+
+  <div class="field">
+    h3
+    <%= f.text_field :subtitle, style: "width: 100%;" %>
+  </div> 
+
+  <div class="field">
+    p
+    <%= f.text_area :content_tercero %>
+  </div>   
+
+  <div class="field">
+    Imagen
+    <%= f.file_field :foto_segunda %>
+  </div>    
+
+  <div class="field">
+    h3
+    <%= f.text_field :subtitle_segundo, style: "width: 100%;" %>
+  </div> 
+
+  <div class="field">
+    p
+    <%= f.text_area :content_cuarto %>
+  </div>   
+
+  <div class="field">
+    h3
+    <%= f.text_field :subtitle_tercero, style: "width: 100%;" %>
+  </div> 
+
+  <div class="field">
+    p
+    <%= f.text_area :content_quinto %>
+  </div>  
 
   <div class="field">
     <%= f.label :foto_tercera %>
     <%= f.file_field :foto_tercera %>
-  </div>
+  </div>     
+
+  <div class="field">
+    h3
+    <%= f.text_field :subtitle_cuarto, style: "width: 100%;" %>
+  </div>   
+
+  <div class="field">
+    p
+    <%= f.text_area :content_sexto %>
+  </div>  
+
+  <div class="field">
+    h3
+    <%= f.text_field :subtitle_quinto, style: "width: 100%;" %>
+  </div>  
+
+  <div class="field">
+    p
+    <%= f.text_area :content_septimo %>
+  </div>   
+
+   
 
   <%= f.select :hashtag, [
     'Arquitectura',

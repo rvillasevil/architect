@@ -1,156 +1,289 @@
+<% content_for :head do %>
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="<%= @user.name %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.constructux.com/users/<%= @user.name %>" />
+  <meta property="og:description" content="ConstructUX, <%= @user.description %>" />
+  <% if @user.foto? %>
+    <meta property="og:image" content="<%= image_url(@user.foto.url) %>" />  
+  <% else %>
+    <meta property="og:image" content="<%= image_url('partida_default.jpg') %>" />  
+  <% end %>
+<% end %> 
+
 <div class="container">
   <% provide(:title, @user.name) %>
   <div class="row">
     <div class="constructor_show_user">
-      <div class="col-sm-1">
-        <div class="imagen_usuario">
-          <%= image_tag @user.foto.url, class: "img", size: 300  if @user.foto? %>
-          <%= render 'follow_form' if logged_in? %>
-        </div>
-      </div>
+      <div class="col-md-12">
 
-      <div class="col-sm-6">
-        <% if @user.empresa == true %>
-          <ul>
-            <li>
-              <h1 style="font-weight: 700; color: #666 !important; letter-spacing: -2px;"><%= @user.name %></h1>
-            </li>
-            <li>
-              <h3>Experiencia</h3>
-              <h3 style="font-weight: 300;"><%= @user.experiencia %></h3>
-            </li>
-            <li>
-              <h3>Redes Sociales</h3>
-              <% if @user.linkedin? %>
-                <div class="">
-                  <%= link_to "#{@user.linkedin}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-linkedin" aria-hidden="true"></i></span>
-                  <% end %> 
-                  <%= link_to "#{@user.facebook}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
-                  <% end %>
-                  <%= link_to "#{@user.twitter}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-twitter" aria-hidden="true"></i></span>
-                  <% end %>
-                  <%= link_to "#{@user.pinterest}" do %>
-                    <span style="font-size: 36px; padding-right: 20px;"><i class="fab fa-pinterest" aria-hidden="true"></i></span>
-                  <% end %>                                
-                </div>
-              <% end %>            
-            </li>
-            <li>
-              <h3>Contacto</h3>
-              <h3 style="font-weight: 300;"><%= @user.email_publico %></h3> 
-              <h3 style="font-weight: 300;"><%= @user.telefono_publico %></h3>                            
-            </li>
-            <li>
-              <h3>Descripcion</h3>
-              <h3 style="font-weight: 300;"><%= @user.description %></h3>
-            </li>
-            <li>
-              <h3>Donde estamos</h3>
-              <h3 style="font-weight: 300;"><%= @user.direccion %></h3>
-            </li>
-            <li>
-              <h3>Qué hacemos</h3>
-              <div style="columns: 2">
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio1? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio2? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio3? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio4? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio5? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio6? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio7? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio8? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio9? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio1 if @user.servicio10? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio2 if @user.servicio11? %></h3>
-                <h3 style="font-weight: 300; margin: 0px;"><%= @user.servicio3 if @user.servicio12? %></h3>
-              </div>
-            </li>          
-            <li>
-              <h3>Pregúntanos algo</h3>
-            </li>
-            <li>
-              <h3>Lo que opinan otros usuarios</h3>
-              <% if logged_in? && @user.id != current_user.id %>
-                <%= render 'shared/valoracion_form' %>
-              <% end %>
-            </li>
-            <li>
-              <h3>Posts</h3>
-              <% if (@valoraciones = Micropost.where(user_valorado: @user.id)).any? %>
-                <% @valoraciones.map do |valoracion| %> 
-                  <% @user_valoracion = User.find(valoracion.user_id) %>
-                  <ul style="border-bottom: 1px solid #ddd;">
-                    <li style="display: inline-flex; border: none;">
-                      <%= image_tag @user_valoracion.foto.url, class: "img-circle", size: 60  if @user.foto? %>
-                      <div style="display: block; padding-left: 10px;">
-                        <h3 style="display: inline-flex; margin: 0px;"><%= @user_valoracion.name %></h3>
-                        <h5 style="display: block; margin: 0px; font-weight: 300;"><%= valoracion.created_at %> ago.</h5>
-                        <h5 style="margin: 0px;">
-                          <% if valoracion.valoracion == 'Muy mala' %>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                          <% end %>
-                          <% if valoracion.valoracion == 'Mala' %>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                          <% end %>
-                          <% if valoracion.valoracion == 'Aceptable' %>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                          <% end %>
-                          <% if valoracion.valoracion == 'Recomendable' %>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                          <% end %>
-                          <% if valoracion.valoracion == 'Muy recomendable' %>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                          <% end %>                                                                        
-                        </h5>
-                      </div>
-                    </li>
-                    <li>
-                      <h3 style="font-weight: 300; margin: 0px;"><%= valoracion.content %></h3>
-                    </li>
-                  </ul>
+        <div class="col-sm-1">
+          <div class="imagen_usuario" style="max-height: 300px; overflow: hidden;">
+            <div class="image-wrapper">
+            <%= image_tag @user.foto.url, class: "img", style: "width: 100%;"  if @user.foto? %>
+            </div>
+            <%# render 'follow_form' if logged_in? %>
+          </div>
+        </div> 
+
+        <div class="col-md-6">
+          <h1 style="font-weight: 700; color: #666 !important; letter-spacing: -2px; font-size: 32px;"><%= @user.name %></h1>
+          <% if @user.empresa == true %>
+            <ul>
+              <li style="border-bottom: 0px;">
+                <h2 style="font-weight: 300;"><%= @user.description %></h2>
+              </li>
+              <li>
+                <% if @user.linkedin? %>
+                  <div class="">
+                    <%= link_to "#{@user.linkedin}" do %>
+                      <span style="font-size: 25px; padding-right: 20px;"><i class="fab fa-linkedin" aria-hidden="true"></i></span>
+                    <% end %> 
+                    <%= link_to "#{@user.facebook}" do %>
+                      <span style="font-size: 25px; padding-right: 20px;"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
+                    <% end %>
+                    <%= link_to "#{@user.twitter}" do %>
+                      <span style="font-size: 25px; padding-right: 20px;"><i class="fab fa-twitter" aria-hidden="true"></i></span>
+                    <% end %>
+                    <%= link_to "#{@user.pinterest}" do %>
+                      <span style="font-size: 25px; padding-right: 20px;"><i class="fab fa-pinterest" aria-hidden="true"></i></span>
+                    <% end %>                                
+                  </div>
+                <% end %>            
+              </li>             
+            </ul>
+            <div style="text-align: left; padding-top: 10px;">
+              <% if logged_in? %>
+                <% if current_user.id == @user.id %>
+                  <span style="font-weight: 400;">Comparte tu tienda por todo internet</span>
                 <% end %>
+              <% else %>
+                <div style="font-weight: 600; padding-bottom: 5px;">Ayuda a <%= @user.name %> a encontar clientes:</div>
               <% end %>
-            </li>
-          </ul>
-        <% else %>
-          <ul>
-            <li>
-              <h1 style="font-weight: 700; color: #666 !important; letter-spacing: -2px;"><%= @user.name %></h1>
-              <h3 style="font-weight: 300; margin: 0px;">Cliente privado</h3>
-            </li>
-          </ul>
-        <% end %>
-        
+              <!-- FACEBOOK share button -->
+              <div class="fb-share-button" 
+              data-href="https://www.constructux.com/users/<%= @user.name %>" 
+              data-layout="button_count"
+              data-size="large"
+              style= "display: inline-flex; padding-left: 0px;"></div> 
+
+              <!-- TWITTER share button -->
+              <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com/users/<%= @user.name %>" data-size="large"></a></div>
+              <script src="//platform.twitter.com/widgets.js"></script>                      
+            </div>              
+          <% end %>          
+        </div>
+
+        <div class="col-md-4">
+          <div class="oculto_movil">
+            <div class="image-wrapper">
+              <%= image_tag @user.foto.url, class: "img", style: "width:100%;"  if @user.foto? %> 
+            </div>
+            <%= render 'follow_form' if logged_in? %>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-10 col-md-offset-1">        
+        <div class="campos" style="margin-top: 0px;">
+          <% @ofertas_partidas = Partida.where(user_id: @user.id) %>
+          <% if @ofertas_partidas.where.not(empresa: nil).any? %>
+            <h3 style="font-weight: bold; font-size: 20px; font-weight: 600; font-size: 20px;">Productos de <%= @user.name %></h3>
+              <ul class="lista_principal" style="">
+                  <% @ofertas_partidas.where.not(empresa: nil).order("created_at DESC").take(12).map do |partida| %>
+                      <li class="lista_oferta" itemscope itemtype="http://schema.org/Product" style="width: 23%; margin: 5px; margin-bottom: 30px;">
+                        <ul class="elemento" style=" font-family: 'Open Sans'; width: 230px; margin: 5px;">
+                          <%= link_to partida_path(partida), itemprop: "url" do %>
+                            <li>
+                              <div class="card mb-3" style="">
+                                <div class="card2" style="overflow-x: hidden; overflow-y: hidden; border-radius: 10px;">
+                                  <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">
+                                    <% if partida.foto? %>
+                                      <%= image_tag(partida.foto.url, class: "img_prueba", alt: "Photo of product", itemprop: "image") %>
+                                    <% else %>
+                                      <%= image_tag(("partida_default.jpg"), class: "img_prueba", alt: "Photo of product", itemprop: "image") %>
+                                    <% end %>
+                                  </div>
+                                </div>
+                              </div>
+                          </li>
+                          <div class="texto" style="padding: 5px;">
+                            <li class="nombre">
+                              <div class="nombre" itemprop= "name">
+                                  <!---->
+                                  <h3 style="font-size: 20px; margin: 0px; font-weight: 600;"><%= truncate(partida.titulo, length: 50) if partida.titulo != nil %></h3>
+                              </div>
+                            </li>
+                            <!--<li>
+                              <div class="description" style="height: 50px; overflow: hidden;"><h5><%# partida.description if partida.description != nil %></h5> </div>
+                            </li>-->
+                            <span itemprop="description" style="font-size: 14px; font-weight: 200; "><% partida.description if partida.description != nil %></span>                           
+                            <li class="empresa" style="padding-left: 0px;">
+                              <% if partida.empresa != nil %>
+                                <% @empresa = Empresa.find( partida.empresa) %>
+                                <% @user_empresa = User.find(@empresa.user_id) %>
+                              <% end %>
+                              <!--<div style="display: block; font-weight: 600; line-height: 14px; height: 20px;"><%# truncate(@user_empresa.name, length: 40) %></div>-->
+                              <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
+                            </li>                           
+                            <li class="precio_oferta" style="padding-left: 0px;">
+                              <span itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="font-size: 14px; padding-top: 10px;">Presupuesto: <span itemprop="price" style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %></b></span> <span itemprop="priceCurrency" content="EUR" style="display: inline-flex; font-size: 13px; font-weight: 600;">€/<%= partida.um if partida.um %></span><!--<span style="font-weight: 600; font-size: 13px; display: block;"><link itemprop="availability" href="http://schema.org/InStock" />Disponible</span></span>-->
+                            </li>
+                            <% end %>
+                            <li class="iconos">
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= partida.rendimiento if partida.rendimiento != nil %> h/<%= partida.um %>" style="background-color: white; border: none; padding: 5px 5px;" ><i class="far fa-clock" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= partida.man_obra if partida.man_obra != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
+                              
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= partida.mat_incluidos if partida.mat_incluidos != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= partida.fases if partida.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= partida.cond_terminacion if partida.cond_terminacion != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
+
+                              <% if partida.mat_aportar != nil %>
+                              <div style="float: right;">
+                                  <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar por usuario" data-content="<%= partida.mat_aportar if partida.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
+                              </div>
+                              <% end %>
+                            </li>
+                          </div>
+                        </ul>
+                      </li>
+                  <% end %>        
+              </ul>
+          <% end %> 
+        </div>
       </div>
 
-      <div class="col-sm-4">
-        <div class="imagen_usuario_web">
-          <%= image_tag @user.foto.url, class: "img", size: 300  if @user.foto? %> 
-          <%= render 'follow_form' if logged_in? %>
+      <div class="col-md-12">
+
+        <div class="col-sm-1">
+          <div class="imagen_usuario">
+            <%= image_tag @user.foto.url, class: "img", style: "width: 100%;"  if @user.foto? %>
+            <%= render 'follow_form' if logged_in? %>
+          </div>
         </div>
+
+        <div class="col-sm-6">
+          <% if @user.empresa == true %>
+            <ul>
+              <li>
+                <h1 style="font-weight: 700; color: #666 !important; letter-spacing: -2px; font-size: 32px;"><%= @user.name %></h1>
+              </li>
+              <li>
+                <div class="encabezado">Contacto</div>
+                <div class="contenido" style=""><%= @user.email_publico %></div> 
+                <div class="contenido" style=""><%= @user.telefono_publico %></div>                            
+              </li>
+              <li>
+                <div class="encabezado">Descripcion</div>
+                <div class="contenido" style=""><%= @user.description %></div>
+              </li>
+              <li>
+                <div class="encabezado">Donde estamos</div>
+                <div class="contenido" style=""><%= @user.direccion %></div>
+              </li>
+              <li>
+                <div class="encabezado">Qué hacemos</div>
+                <div style="columns: 2">
+                  <div class="contenido" style=""><%= @user.servicio1 if @user.servicio1? %></div>
+                  <div class="contenido" style=""><%= @user.servicio2 if @user.servicio2? %></div>
+                  <div class="contenido" style=""><%= @user.servicio3 if @user.servicio3? %></div>
+                  <div class="contenido" style=""><%= @user.servicio1 if @user.servicio4? %></div>
+                  <div class="contenido" style=""><%= @user.servicio2 if @user.servicio5? %></div>
+                  <div class="contenido" style=""><%= @user.servicio3 if @user.servicio6? %></div>
+                  <div class="contenido" style=""><%= @user.servicio1 if @user.servicio7? %></div>
+                  <div class="contenido" style=""><%= @user.servicio2 if @user.servicio8? %></div>
+                  <div class="contenido" style=""><%= @user.servicio3 if @user.servicio9? %></div>
+                  <div class="contenido" style=""><%= @user.servicio1 if @user.servicio10? %></div>
+                  <div class="contenido" style=""><%= @user.servicio2 if @user.servicio11? %></div>
+                  <div class="contenido" style=""><%= @user.servicio3 if @user.servicio12? %></div>
+                </div>
+              </li>          
+              <li>
+                <div class="encabezado">Pregúntanos algo</div>
+              </li>
+              <li>
+                <div class="encabezado">Lo que opinan otros usuarios</div>
+                <% if logged_in? && @user.id != current_user.id %>
+                  <%= render 'shared/valoracion_form' %>
+                <% end %>
+              </li>
+              <li>
+                <div class="encabezado">Posts</div>
+                <% if (@valoraciones = Micropost.where(user_valorado: @user.id)).any? %>
+                  <% @valoraciones.map do |valoracion| %> 
+                    <% @user_valoracion = User.find(valoracion.user_id) %>
+                      <li style="display: inline-flex; border: none; padding-top: 10px;">
+                        <%= image_tag @user_valoracion.foto.url, class: "img-circle", size: 60  if @user.foto? %>
+                        <div style="display: block; padding-left: 10px;">
+                          <div style="display: inline-flex; margin: 0px; font-weight: 600;"><%= @user_valoracion.name %></div>
+                          <h5 style="display: block; margin: 0px; font-weight: 300;"><%= valoracion.created_at %> ago.</h5>
+                          <h5 style="margin: 0px;">
+                            <% if valoracion.valoracion == 'Muy mala' %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                            <% end %>
+                            <% if valoracion.valoracion == 'Mala' %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                            <% end %>
+                            <% if valoracion.valoracion == 'Aceptable' %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                            <% end %>
+                            <% if valoracion.valoracion == 'Recomendable' %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="far fa-star" aria-hidden="true"></i>
+                            <% end %>
+                            <% if valoracion.valoracion == 'Muy recomendable' %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                            <% end %>                                                                        
+                          </h5>
+                        </div>
+                      </li>
+                      <li>
+                        <div style="font-weight: 400; margin: 0px;"><%= valoracion.content %></div>
+                      </li>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          <% else %>
+            <ul>
+              <li>
+                <h1 style="font-weight: 700; color: #666 !important; letter-spacing: -2px;"><%= @user.name %></h1>
+                <div class="contenido" style="font-weight: 300; margin: 0px;">Cliente privado</div>
+              </li>
+            </ul>
+          <% end %>
+          
+        </div>
+
+        <div class="col-sm-4">
+          <div class="imagen_usuario_web">
+            <%= image_tag @user.foto.url, class: "img", style: "width:100%;"  if @user.foto? %> 
+            <%= render 'follow_form' if logged_in? %>
+          </div>
+        </div>
+
       </div>
 
     </div>

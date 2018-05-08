@@ -1,3 +1,47 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.constructor_show_user {
+	font-family: 'Open Sans';
+	h2 {
+		font-size: 20px;
+		letter-spacing: 0px;
+	}
+	.encabezado {
+		font-size: 20px;
+		font-weight: 500;
+		color: #444;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.contenido {
+		font-size: 18px;
+		font-weight: 300;
+	}
+	.oculto_movil {
+		@media(max-width: 928px) {
+			display: none;
+		}
+	}
+	.campos {
+		li {
+			padding: 0px;
+		}
+	}
+	.image-wrapper {
+	  width: 100%;
+	  max-height: 200px;
+	  overflow: hidden;
+	  @media(max-width: 768px) {
+	    height: 100px;
+	  }
+	}
+
+	.image-wrapper img {
+	  position: relative;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	}	
+}
