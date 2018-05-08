@@ -2,7 +2,7 @@
   <!-- Open Graph tags -->
   <meta property="og:title" content="<%= @user.name %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.constructux.com/users/<%= @user.name %>" />
+  <meta property="og:url" content="https://www.constructux.com/users/<%= @user.slug %>" />
   <meta property="og:description" content="ConstructUX, <%= @user.description %>" />
   <% if @user.foto? %>
     <meta property="og:image" content="<%= image_url(@user.foto.url) %>" />  
@@ -62,13 +62,13 @@
               <% end %>
               <!-- FACEBOOK share button -->
               <div class="fb-share-button" 
-              data-href="https://www.constructux.com/users/<%= @user.name %>" 
+              data-href="https://www.constructux.com/users/<%= @user.slug %>" 
               data-layout="button_count"
               data-size="large"
               style= "display: inline-flex; padding-left: 0px;"></div> 
 
               <!-- TWITTER share button -->
-              <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com/users/<%= @user.name %>" data-size="large"></a></div>
+              <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com/users/<%= @user.slug %>" data-size="large"></a></div>
               <script src="//platform.twitter.com/widgets.js"></script>                      
             </div>              
           <% end %>          
