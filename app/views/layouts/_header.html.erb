@@ -147,7 +147,7 @@
               <li class="dropdown-home" style="width: 60%; padding-top: 12px; text-align: left; align-items: center;">
                 <%= link_to root_path do %>                
                   <%= image_tag 'logo_ux.png', size: 30 %>
-                  <span style=" font-size: 17px; font-weight: 900; margin-top: 10px; letter-spacing: -1px;">ConstructUX<span style="font-size: 10px; display: inline-flex;">Beta</span></span>
+                  <span style=" font-size: 17px; font-weight: 700; margin-top: 10px; letter-spacing: -1px;">ConstructUX<span style="font-size: 10px; display: inline-flex;">Beta</span></span>
                 <% end %>
               </li>
 <%
@@ -183,17 +183,28 @@
                     <span class="icon" style="letter-spacing: 1px;"> BLOG</span>
                 </div>
                 <% end %> 
-              </li>                           
+              </li> 
+<%
+=begin%> 
+              <li class="dropdown-home">
+                <%= link_to "UX_arquitectos", '/ux_arquitectos', style: "color: #444;" %>
+              </li>
+<%
+=end%>                 
               <li class="dropdown-home" style="width: 20%;">
                 <%= link_to login_path do %>
-                    <span style="color: #666">Login</span>
+                    <span style="color: #666">Entrar</span>
                 <% end %>
               </li>
+<%
+=begin%>              
               <li class="dropdown-home" style="width: 20%;">
                 <%= link_to signup_path do %>
                     <span style="color: #666">Signup</span>
                 <% end %>
               </li>
+<%
+=end%>              
             </ul>
         <% end %>
       </div>

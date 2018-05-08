@@ -29,7 +29,7 @@
                   <% if @partida_show.foto? %>
                     <%= image_tag @partida_show.foto.url, class: "img_prueba" %>
                   <% else %>
-                    <%= image_tag('partida_default.jpg', size: 300, class: "img_prueba", alt: @partida_show.title) %>  
+                    <%= image_tag('partida_default.jpg', size: 300, class: "img_prueba", alt: @partida_show.titulo) %>  
                   <% end %>
                 </div>
               </div>

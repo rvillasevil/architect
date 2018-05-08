@@ -293,6 +293,7 @@
             <script src="//platform.twitter.com/widgets.js"></script>                      
           </div> 
           
+          <% if params[:tern] == nil %>
           <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Evita reformas desastrosas</h3></div>
           <div class="funcionamiento">
             <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i>
@@ -302,7 +303,8 @@
             <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="far fa-copy fa-4x" style="color: #555; margin-left: -10px;"></i><i class="fas fa-arrow-right fa-3x" style="color: #008489; margin-left: 0px;"></i><h5><span style="font-size: 24px;">3.</span><span style="color: #008489; font-weight: 700;">Somos 100% imparciales.</span> Estudiamos las mejores soluciones técnicas, te damos las mejores ofertas y filtramos las mejores empresas (licencias, seguros, valoraciones...).</h5></div>
             <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px;">4.</span>Tu eliges la mejor entre todas las propuestas, con un precio cerrado. Asesoramiento en el proceso de contratación y asistencia durante la obra ante cualquier problema.</h5>
             </div>
-          </div>         
+          </div>
+          <% end %>        
 
             <!-- <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2> -->
 
@@ -383,8 +385,8 @@
                 <% end %>        
             </ul>
           <% else %>
-            <h5 style="font-weight: 600; font-size: 16px; margin-bottom: 0px;">Lo sentimos, aún no tenemos ningún producto relacionado con los términos de búsqueda, prueba con términos más generales.</h5>
-            <h5>Nuestra base de datos crece muy rápido y en unos días tendremos, seguro, lo que estás buscando.</h5>
+            <h5 style="font-weight: 600; font-size: 16px; margin-bottom: 0px; line-height: 18px;">Lo sentimos, aún no tenemos ningún producto relacionado con los términos de búsqueda, prueba con términos más generales.</h5>
+            <h5 style="line-height: 16px;">Nuestra base de datos crece muy rápido y en unos días tendremos, seguro, lo que estás buscando.</h5>
           <% end %> 
         <% end %>
         </div>        
