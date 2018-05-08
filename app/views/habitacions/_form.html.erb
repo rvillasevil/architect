@@ -22,15 +22,15 @@
       <button style="background-color: white; border: 1px solid #bbb; border-radius: 5px; font-family: 'Open Sans'; font-weight: 600; font-size: 15px; padding: 10px;"><%= link_to "Nueva habitación", new_habitacion_path(habitacion: true) %></button>
       <button style="background-color: white; border: 1px solid #bbb; border-radius: 5px; font-family: 'Open Sans'; font-weight: 600; font-size: 15px; padding: 10px;"><%= link_to "Habitaciones auxiliares", new_habitacion_path(habitacion: true) %></button>
 
-      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px; padding-top: 170px;">¿Tienes un proyecto más grande? </div>
+      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px; padding-top: 170px;">¿Tienes un proyecto con varias estancias? </div>
       <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Hazte usuario y diseña todas las habitaciones que quieras de un mismo proyecto.</div> 
       <button style="background-color: white; color: #333; border: 1px solid #333; border-radius: 10px; padding: 10px; margin-top: 10px;"><h5 style="margin: 0px;"><%= link_to "Crea tu cuenta gratis", signup_path, style: "font-weight: 600; padding: 0px;" %></h5></button>
 
 
-      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px; padding-top: 30px;">¿Quieres simplemente describir lo que quieres hacer?</div>
+      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px; padding-top: 30px;">¿No encuentras lo que quieres o no lo tienes claro? Cuéntanos tu idea</div>
       <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Descríbenos en unas palabras qué quieres hacer en tu proyecto.</div>    
 
-      <h3><%= link_to "Crea tu proyecto personalizado", new_partida_path(invitado: true), class: "btn", style: "color: red; border: 1px solid red; padding: 10px; border-radius: 10px; font-weight: 600;" %></h3>
+      <h3><%= link_to "Describe tu proyecto", new_partida_path(invitado: true), class: "btn", style: "color: red; border: 1px solid red; padding: 10px; border-radius: 10px; font-weight: 600;" %></h3>
 
     <% end %>
   <% else %>

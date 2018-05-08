@@ -511,13 +511,19 @@ footer ul li {
   border-radius: 10px; 
   display: block;
   @media(max-width: 768px) {
-    width: 300px;
+    width: 350px;
   }
   .card2 {
     overflow-x: hidden; 
     overflow-y: hidden; 
     height: 150px; 
-    border-radius: 10px
+    border-radius: 10px;
+    img {
+      width: 100%;
+    }
+    @media(max-width: 768px) {
+      height: 200px; 
+    }    
   }
 }
 
@@ -791,6 +797,7 @@ aside {
 }
 
 .funcionamiento {
+  text-align: center;
   padding-top: 20px;
   display: inline-flex;
   .colum_funcionamiento {
@@ -820,7 +827,7 @@ aside {
   }
   h3 {
     font-size: 28px;
-    font-weight: 700 !important;
+    /*font-weight: 700 !important;*/
     color: #484848 !important;
     letter-spacing: -1px;
   }  
@@ -859,7 +866,9 @@ aside {
       .texto {
         width: 213px;
         @media(max-width: 768px) {
-          width: 300px;
+          width: 350px;
+          margin-bottom: 5px;
+          border-bottom: 1px solid #eee;
         }
       }
       .medicion {
@@ -885,6 +894,10 @@ aside {
         color: #444;
         font-family: 'Open Sans';
         height: 60px;
+        @media(max-width: 768px) {
+          height: 40px;
+          overflow: hidden;
+        }
         .nombre {
           display: inline-flex;
           width: 100%;

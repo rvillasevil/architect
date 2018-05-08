@@ -225,18 +225,17 @@
       <div class="texto" style="text-align: center;">
         <% if params[:tern] == nil %>
           <div class="oculto">
-            <h1 style="font-weight: lighter; color: white; text-align: center;">Diseñador de reformas con las mejores ofertas, presupuestos y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción.</span></h1>
+            <h1 style="font-weight: lighter; color: white; text-align: center;">Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span></h1>
             
 
           </div>
         <% end %>    
 
         <div class="wrapper" style="padding-bottom: 30px;">
-          <h3 style="font-weight: 400; color: white; font-weight: 700;">Diseña tu primer proyecto en nuestro diseñador de reformas</h3>
-          <%= link_to "Diseña tu reforma a medida", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %>
+          <h2 style="letter-spacing: -1px;"><%= link_to "Calculador de reformas", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %></h2>
         </div> 
 
-        <h2 class="encabezado_gordo" style="font-weight: bolder; color: white; text-align: center;">¿Qué quieres renovar de casa?</h2>
+        <h2 class="encabezado_gordo" style="font-weight: bolder; color: white; text-align: center;">¿Qué te gustaría reformar de tu casa?</h2>
         <li class="search" style="list-style: none; padding: 0px; width: 100%;">
           <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
             <%= form_tag(root_url, method: :get) do %>
@@ -293,11 +292,17 @@
             <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com" data-size="large"></a></div>
             <script src="//platform.twitter.com/widgets.js"></script>                      
           </div> 
-
-          <h3>(ConstructUX marketplace del sector de la construcción en internet, selecciona entre las mejores ofertas o diseña tu proyecto a medida con las mejores sugerencias, y con un click al día siguiente estamos en tu casa comprobamos el proyecto y la oferta y nos encargamos de gestionar todo el proyecto sin ningún coste. Optimizamos aprovechando las nuevas tecnologías para aportar valor al cliente ahorrando costes y controlando todos los procesos colaborando con todas las empresas del sector).</h3>
           
-          <h3 style="font-size: 22px; font-size: 20px;">¿Eres una empresa del sector de la construcción? <span style="font-weight: 400;display: block;">Publica tus mejores ofertas de la manera más sencilla y totalmente gratis</span></h3>
-          <div class="" style="color: #008489; font-size: 18px; font-family: 'Open Sans'; font-weight: 600"> Mándanos un correo a constructux@constructux.com y nosotros nos encargamos del resto</div>          
+          <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Evita reformas desastrosas</h3></div>
+          <div class="funcionamiento">
+            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i>
+              <h5><span style="font-size: 24px;">1.</span> Diseña tu reforma en nuestro: <%= link_to "Calculador de reformas", '/reforma', class: "btn", style: "color: #008489; border: 1px solid #008489; padding: 10px; border-radius: 10px; font-weight: 700;" %> <div style="display: block; padding-top: 15px;">o cuéntanos tu proyecto: <%= link_to "Tu proyecto", new_partida_path(invitado: true), class: "btn", style: "color: #008489; border: 1px solid #008489; padding: 10px; border-radius: 10px; font-weight: 700;" %></div></h5></div>
+            <div class="colum_funcionamiento"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
+              <h5 style="margin-top: -10px;"><span style="font-size: 24px;">2.</span> Un gestor de proyectos de constructUX se hará cargo de tu proyecto y se pondrá en contacto contigo (<span style="color: #008489; font-weight: 700;">totalmente gratis todo el proceso</span>).</div>
+            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="far fa-copy fa-4x" style="color: #555; margin-left: -10px;"></i><i class="fas fa-arrow-right fa-3x" style="color: #008489; margin-left: 0px;"></i><h5><span style="font-size: 24px;">3.</span><span style="color: #008489; font-weight: 700;">Somos 100% imparciales.</span> Estudiamos las mejores soluciones técnicas, te damos las mejores ofertas y filtramos las mejores empresas (licencias, seguros, valoraciones...).</h5></div>
+            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px;">4.</span>Tu eliges la mejor entre todas las propuestas, con un precio cerrado. Asesoramiento en el proceso de contratación y asistencia durante la obra ante cualquier problema.</h5>
+            </div>
+          </div>         
 
             <!-- <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2> -->
 
@@ -431,9 +436,19 @@
 =end%>
 
 
-          <h5 style="margin-top: 80px;">Necesitas más información o contactar con nosotros, mándanos un correo a la siguiente dirección y en breve nos pondremos en contacto: </h5>
-          <h3 style="font-size: 26px; color: #444; margin-top: 0px;">constructux@constructux.com</h3>
- 
+          <h3 style="color: #444; text-align: left; margin-top: 30px;">Eres un profesional y te gustaría trabajar con nosotros</h3>
+          <h3 style="color: #444; text-align: left; margin-top: 30px; font-weight: 400; margin-top: 10px;">Mándanos un correo a <span style="font-size: 24px; font-weight: 600;">constructux@constructux.com</span> y nosotros nos encargamos de todo</h3>
+<%
+=begin%>          
+          <div class="funcionamiento">
+            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i>
+              <h5>Crea tus partidas personalizadas, aquellas que mejor haces y que te gustaría promocionar. </h5></div>
+            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="fab fa-facebook-f fa-3x" style="color: #008489; margin-left: 0px;"></i>&nbsp;<i class="fab fa-twitter fa-3x" style="color: #008489; margin-left: 0px;"></i>
+              <h5>Una vez creada, compártela en tus redes sociales y copia la url para distribuirla por todo internet, hará que la gente te asocie a tu partida y especialidad.</div>
+            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5>Los usuarios contactan directamente contigo</h5></div>
+          </div>
+<%
+=end%>
 
         <h3 style="font-size: 18px; padding-top: 40px;">Mira otras reformas creadas por otros usuarios</h3>
 

@@ -17,3 +17,25 @@
 	   font-weight: 500;
 	}	
 }
+
+.constructor {
+	h1.title {
+		font-size: 28px;
+	}
+	h2.description {
+		margin: 0px;
+		letter-spacing: normal;
+	}
+	.titulo_lista {
+		font-family: 'Open Sans';
+		margin-top: 20px;
+		margin-bottom: 10px;
+		line-height: 1.1;
+		font-size: 20px;
+		color: #444;
+		font-weight: 400;
+	}
+	input {
+		width: 100%;
+	}
+}

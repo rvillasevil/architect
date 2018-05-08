@@ -29,7 +29,7 @@
                   <% if @partida_show.foto? %>
                     <%= image_tag @partida_show.foto.url, class: "img_prueba" %>
                   <% else %>
-                    <%= image_tag('partida_default.jpg', size: 300, class: "img_prueba") %>  
+                    <%= image_tag('partida_default.jpg', size: 300, class: "img_prueba", alt: @partida_show.title) %>  
                   <% end %>
                 </div>
               </div>
@@ -46,7 +46,7 @@
               <li class="lista_elemento" style=" border: none;">
                 <ul class="elemento" id="" style="list-style: none; padding-left: 0px;">
                   <li class="">
-                      <h1 style="color: #666; margin-top: 0px;"><%= @partida_show.titulo if @partida_show.titulo? %></h1>
+                      <h1 class="title" style="color: #666; margin-top: 0px;"><%= @partida_show.titulo if @partida_show.titulo? %></h1>
                       <% if @empresa != nil %>
                       <h5 style="font-size: 16px; margin: 0px; font-weight: 400; color: #666;">Empresa constructora</h5>
                       <h5 style="font-size: 16px; margin: 0px; font-weight: 400; color: #666;"><%= image_tag @user_empresa.foto.url, class: "img-circle", size: 80 %> <%= link_to @user_empresa.name, user_path(@user_empresa), style: "color: #008489; font-weight: 600;" %></h5>
@@ -54,7 +54,7 @@
                   </li>
                   <li>
                     <div style="text-align: left;">
-                      <h3 style="font-weight: 600; font-size: 15px; ">Comparte esta oferta</h3>
+                      <div class="titulo_lista" style="font-weight: 600; font-size: 15px; ">Comparte esta oferta</div>
                       <!-- FACEBOOK share button -->
                       <div class="fb-share-button" 
                       data-href="https://www.constructux.com/partidas/<%= @partida_show.slug %>" 
@@ -69,22 +69,22 @@
                   </li>
                   <li>
                     <div class="description">
-                      <h3>Descripción</h3>
-                      <h5 style="font-weight: 400; color: #666; font-size: 16px;"><%= @partida_show.description if @partida_show.description? %></h5> 
+                      <div class="titulo_lista">Descripción</div>
+                      <h2 class="description" style="font-weight: 400; color: #666; font-size: 16px;"><%= @partida_show.description if @partida_show.description? %></h2> 
                     </div>
                   </li>
                   <% if @partida_show.desc_tecnica? %>
                     <li>
                       <div class="description">
-                        <h3>Descripción técnica más detallada de la partida</h3>
-                        <h5 style="font-weight: 400; color: #666; font-size: 16px;"><%= @partida_show.desc_tecnica %></h5> 
+                        <div class="titulo_lista">Descripción técnica más detallada de la partida</div>
+                        <h2 class="description" style="font-weight: 400; color: #666; font-size: 16px;"><%= @partida_show.desc_tecnica %></h2> 
                       </div>
                     </li>                
                   <% end %>
                   <% if @partida_show.material? %>
                     <li>
                       <div class="description">
-                        <h3>Los materiales que utilizaremos</h3>
+                        <div class="titulo_lista">Los materiales que utilizaremos</div>
                         <h5 style="font-weight: 400; color: #666; font-size: 16px;"><%= @partida_show.material %></h5> 
                       </div>
                     </li> 
@@ -93,7 +93,7 @@
                   <% if @empresa != nil %>
                     <li>
                       <div class="description">
-                        <h3>Datos importantes:</h3>
+                        <div class="titulo_lista">Datos importantes:</div>
                     
                         <% if @partida_show.cond_previas? %>
                           <h5 style="font-weight: 400; color: #666; font-size: 16px;"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: #d9534f;"></i>&nbsp;<span style="font-weight: 600;">Condiciones previas:</span> <%= @partida_show.cond_previas %></h5>
@@ -125,21 +125,21 @@
                   <% end %>                             
                   <% if @partida_show.importe? %>
                     <li class="field">
-                      <h3>Importe:</h3>
+                      <div class="titulo_lista">Importe:</div>
                       <h5 style="font-weight: 600; font-size: 18px;"><i class="fa fa-euro" aria-hidden="true" style="color: #d9534f;"></i> <%= @partida_show.importe %> <span style="margin-left: 40px;"> (€/<%= @partida_show.um %>)</span> </h5>
                     </li>                
                     
                   <% end %>
                   <% if @partida_show.medicion? %>
                     <li class="field">
-                      <h3>Tus medidas:</h3>
+                      <div class="titulo_lista">Tus medidas:</div>
                       <h5 style="font-weight: 400;"><%= @partida_show.medicion %> <span style="margin-left: 40px;">(Um)</span> </h5>
                     </li>                
                   <% end %>                
 
                   <% if @partida_show.comentario? %>
                   <li class="comentarios">
-                    <h3>Comentarios:</h3>
+                    <div class="titulo_lista">Comentarios:</div>
                     <h5 style="color: #666;"><%= @partida_show.comentario %></h5>
                   </li>
                   <% end %>
@@ -157,21 +157,21 @@
                     <h5 style=""><%= f.submit "Estoy interesado" %></h5>
                   <% else %>
 
-                    <h5 style="font-size: 18px; margin-bottom: 5px; font-weight: 600;">¿Estás interesado en esta oferta? 
+                    <h5 style="font-size: 18px; margin-bottom: 5px; font-weight: 600; color: #444;">¿Estás interesado en esta oferta? 
                     <ul style="display: inline-block; list-style: none; padding: 0px;">
                       <li style="border: none;">
                         <button style="background-color: white; padding: 10px; border-radius: 10px; display: block; margin-top: 15px; border: 1px solid #0084B4;"><h5 style="margin: 0px;"><%= link_to "Solicita más información desde tu cuenta de usuario", signup_path, style: "font-weight: 600; color: #333;" %> </h5></button>
                       </li>
-                      <li style="padding-top: 10px;">
+                      <li style="padding-top: 10px; border: none; padding-bottom: 0px;">
                         <div class="form_usuario" style="display: block; width: 100%;">
-                          <h3 style="margin-top: 0px; font-weight: 600; font-size: 16px;">O si prefieres mándanos tus datos y si tienes alguna duda y nos pondremos en contacto.</h3>
+                          <div class="titulo_lista" style="margin-top: 0px; font-weight: 600; font-size: 16px;">Estoy interesado pero no soy usuario: </h3>
                           <%= f.text_field :nombre_invitado, placeholder: "Tu nombre", style: "display: block; padding: 10px; border-color: #ccc;" %>
                           <%= f.text_field :email_invitado, placeholder: "Tu correo donde recibirás los presupuestos", style: "display: block; padding: 10px; border-color: #ccc;" %>
                           <%= f.text_field :provincia_invitado, placeholder: "Dinos tu provincia", style: "display: block; padding: 10px; border-color: #ccc;" %>
                           <%= f.text_field :plazo_invitado, placeholder: "Tienes alguna fecha en mente", style: "display: block; padding: 10px; border-color: #ccc;" %>
                           <h5 style="font-size: 13px; color: #666; line-height: 14px;">Estos datos son privados y nadie ajeno a ConstructUX tendrá acceso a ellos. Al mandar esta información estás aceptando las normas de uso y su política de privacidad y aceptas recibir mensajes email de vez en cuando sobre campañas en ConstructUX. Se puede dar de baja en cualquier momento.</h5>
                           <%= f.text_area :comentario, placeholder: "Añade un comentario", style: "display: block; padding: 10px; color: #444;" %>
-                          <h5><input type="button" value="Solicitar oferta" onclick="form.submit();" style="background-color: white; padding: 10px; color: #0084B4; font-weight: 700; border-radius: 10px; border-color: #0084B4; display: block; color: #333;"></h3>
+                          <h5><input type="button" value="Solicitar oferta" onclick="form.submit();" style="background-color: white; padding: 10px; color: #0084B4; font-weight: 700; border-radius: 10px; border-color: #0084B4; display: block; color: #333;"></div>
                         </div>          
                       </li> 
 
@@ -181,22 +181,19 @@
                 </div>
               <% end %> 
             <% end %>   
-
-            <h5 style="margin: 0px;"><%# link_to 'Back', reform_path(id: params[:reform_id]) %></h5>
-            
           </div>
+       
+
+          <div class="col-sm-4">
+            <div class="container-image-wrapper" style="width: auto; height: auto; overflow: hidden;">         
+              <% if @partida_show.foto? %>
+                <%= image_tag @partida_show.foto.url, style: "overflow: hidden; width: 100%; border-radius: 7px;" %>
+              <% else %>
+                <%= image_tag('partida_default.jpg', size: 300, class: "") %>  
+              <% end %>
+            </div>
+          </div>           
         </div>
-
-        <div class="col-sm-4">
-          <div class="container-image-wrapper" style="width: auto; height: auto; overflow: hidden;">         
-            <% if @partida_show.foto? %>
-              <%= image_tag @partida_show.foto.url, style: "overflow: hidden; width: 100%; border-radius: 7px;" %>
-            <% else %>
-              <%= image_tag('partida_default.jpg', size: 300, class: "") %>  
-            <% end %>
-          </div>
-        </div>           
-
       </div>
     </div>
   </div>

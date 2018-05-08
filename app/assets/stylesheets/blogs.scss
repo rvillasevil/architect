@@ -48,6 +48,7 @@ body {
 		  }
 		}			
 		.textos_blog {
+			font-family: 'Open Sans';
 			display: inline-block;
 			.titulo {
 				padding-top: 15px;
@@ -59,8 +60,8 @@ body {
 			}
 			.description {
 				display: block;
-				font-size: 18px;
-				font-weight: 200;
+				font-size: 17px;
+				font-weight: 400;
 				color: #888;	
 				padding-top: 20px;	
 			}				
@@ -98,6 +99,14 @@ body {
 	background-color: white;
 	border: 1px solid #eee;
 	padding: 20px;
+	h1 {
+		margin: 0px;
+		letter-spacing: normal;
+	}
+	h2 {
+		margin: 0px;
+		letter-spacing: normal;
+	}
 	img {
 		width: 100%;
 	}
@@ -119,8 +128,20 @@ body {
 	.content {
 		padding-top: 15px;
 		margin-bottom: 15px;
-		font-size: 15px;
-		font-weight: 200;
+		font-size: 16px;
+		font-weight: 400;
+		@media(max-width: 768px) {
+			font-size: 15px;
+		}
+	}
+	.topics {
+		margin-top: 20px;
+		padding-top: 10px;
+		border-top: 1px solid #ddd;
+		.hashtag {
+			font-weight: 600;
+			font-size: 13px;
+		}
 	}
 	.col-md-1 {
 		@media(max-width: 768px) {
