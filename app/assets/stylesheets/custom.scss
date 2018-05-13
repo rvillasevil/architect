@@ -11,7 +11,7 @@
 @import "font-awesome";
 
 body {
-  padding-top: 50px;
+  padding-top: 40px;
   margin: 0px;
   /*background-color: #eaeeee;*/
   /*background-color: #f5f5f5;*/
@@ -366,6 +366,20 @@ footer ul li {
   @include box_sizing;
 }
 
+::placeholder { /* Most modern browsers support this now. */
+  font-family: 'Open Sans';
+  padding: 0px;
+  color: #bbb;
+  font-weight: 600;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
 /* home */
 
 .home_page {
@@ -496,6 +510,21 @@ footer ul li {
   }  
 }
 
+.render_user {
+  width: 100%;
+  select {
+    border: 1px solid #bbb;
+    border-radius: 0px;
+    border-bottom: none;
+  }
+  input {
+    width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+    border-bottom: none;
+  }
+}
+
 .texto_titulo {
 
 }
@@ -542,7 +571,7 @@ img.img_prueba {
     width: 100vw;
   }
   .texto {
-    padding: 60px 250px;
+    /*padding: 60px 250px;*/
     @media(max-width: 768px) {
       padding: 15px;
     }
@@ -552,6 +581,17 @@ img.img_prueba {
     padding-right: 20%;
     @media(max-width: 768px) {
       padding: 0px;
+    }
+  }
+}
+
+.image_trabajador {
+  background-image: url("trabajador.jpg");
+  min-height: 20vw;
+  .descripcion_texto {
+    width: 30%;
+    @media(max-width: 768px) {
+      width: 100%;
     }
   }
 }
@@ -682,6 +722,13 @@ img.img_prueba {
       padding: 15px;
     }
   }
+
+}
+
+.new_inicio_webpage {
+  input {
+    margin: 0px;
+  }
 }
 
 /* edit_user */
@@ -811,6 +858,12 @@ aside {
     h5 {
       font-weight: 600;
       color: #555;
+    }
+  }
+  .colum_funcionamiento.empresas {
+    width: 50%;
+    @media(max-width: 768px) {
+      width: 100%;
     }
   }
   @media(max-width: 768px) {

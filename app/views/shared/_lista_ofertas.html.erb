@@ -3,7 +3,7 @@
   <div class="iconos_inicio">
     <% if logged_in? %>
       <% if  current_user.empresa == true %>
-        <h3 style="font-weight: bold; margin-top: 100px; color: #444; font-size: 20px; font-weight: 400;">Descubre lo que ConstructUX puede hacer por tu empresa</h3>
+        <h3 style="font-weight: bold; margin-top: 100px; color: #444; font-size: 20px; font-weight: 400;">Descubre lo que TUx puede hacer por tu empresa</h3>
         <ul class="ofertas" style="font-family: 'Open Sans'; font-weight: 600; font-size: 16px;">
           <li>
             <%= image_tag('nueva_vivienda_pequena.jpg', size: "40", class: 'oferta_imagen' ) %> <span style="display: block; align-items: center; padding-top: 15px;">Pásate a premium
@@ -19,7 +19,7 @@
           </li>                 
         </ul>
       <% else %>
-        <h3 style="font-weight: bold; margin-top: 100px; color: #444; font-size: 20px; font-weight: 400;">Descubre lo que ConstructUX puede hacer por tu reforma:</h3>
+        <h3 style="font-weight: bold; margin-top: 100px; color: #444; font-size: 20px; font-weight: 400;">Descubre ofertas de nuestros socios:</h3>
         <ul class="ofertas" style="font-family: 'Open Sans'; font-weight: 600; font-size: 16px;">
           <li>
             <%= image_tag('nueva_vivienda_pequena.jpg', size: "40", class: 'oferta_imagen' ) %> <span>Ofertas</span>
@@ -33,7 +33,7 @@
         </ul>  
       <% end %>
     <% else %>
-      <h3 style="font-weight: bold; margin-top: 100px; color: #444; font-size: 20px; font-weight: 600; font-size: 20px;">Descubre lo que ConstructUX puede hacer por tu reforma:</h3>
+      <h3 style="font-weight: bold; margin-top: 100px; color: #444; font-size: 20px; font-weight: 600; font-size: 20px;">Descubre ofertas de nuestros socios:</h3>
         <ul class="ofertas" style="font-family: 'Open Sans'; font-weight: 600; font-size: 16px;">
           <li>
             <%= image_tag('nueva_vivienda_pequena.jpg', size: "40", class: 'oferta_imagen' ) %> <span>Ofertas</span>
@@ -126,7 +126,7 @@
 
           <% @ofertas_partidas = Partida.all %>
           <% if @ofertas_partidas.where.not(empresa: nil).any? %>
-            <h3 style="font-weight: bold; font-size: 20px; font-weight: 600; font-size: 20px;">Ofertas para tí</h3>
+            <h3 style="font-weight: bold; font-size: 20px; font-weight: 600; font-size: 20px;">Ofertas especiales para tí:</h3>
               <ul class="lista_principal" style="">
                   <% @ofertas_partidas.where.not(empresa: nil).order("created_at DESC").take(12).map do |partida| %>
                       <li class="lista_oferta" itemscope itemtype="http://schema.org/Product" style="width: 23%; margin: 5px; margin-bottom: 30px;">

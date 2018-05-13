@@ -67,6 +67,14 @@ class EmpresasController < ApplicationController
     end
   end
 
+  def marketplace
+    @user = current_user
+    @empresa = Empresa.find_by(user_id: current_user.id)
+    if current_user.id != @empresa.user_id
+      redirect_to root_url
+    end   
+  end  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_empresa

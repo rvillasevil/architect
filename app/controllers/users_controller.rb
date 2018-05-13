@@ -110,7 +110,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def edit_administrative
@@ -206,7 +206,7 @@ class UsersController < ApplicationController
 
     # Confirms the correct user.
     def correct_user
-      @user = User.find(params[:id])
+      @user = current_user
       redirect_to(root_url) unless current_user?(@user)
     end
 

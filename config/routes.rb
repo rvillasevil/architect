@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :contactos
   resources :blogs, param: :slug
   get "/sitemap.xml" => "sitemap#index", :format => "xml", :as => :sitemap
  
@@ -68,12 +69,14 @@ Rails.application.routes.draw do
   get     '/cocinas', to: 'cocinas#index'
   get     '/habitacions', to: 'habitacions#index'
 
+  get     '/marketplace',   to: 'empresas#marketplace'
+
   get     '/jefazo', to: 'static_pages#jefazo'
 
   get     '/ux_arquitectos',   to: 'static_pages#ux_arquitectos'
 
   get     '/comunidad',    to: 'static_pages#comunidad'
-  get     '/blog',         to: 'blogs#index'
+  get     '/blog',         to: 'blogs#index'  
 
   resources :users do
     member do

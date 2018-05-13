@@ -1,0 +1,242 @@
+<%= form_for(partida, onsubmit: "return false") do |f| %>
+  <% if partida.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(partida.errors.count, "error") %> prohibited this partida from being saved:</h2>
+
+      <ul>
+      <% partida.errors.full_messages.each do |message| %>
+        <li><%# message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if logged_in? %>
+
+    <% if current_user.empresa == true %>
+    <%# if params[:empresa] != nil %>
+    <% @empresa = Empresa.find_by(user_id: current_user.id) %>
+      <% if Partida.where(user_id: current_user.id).count < 5 %>
+        <div class="nueva_partida">
+          <div class="field">
+            <h3 style="">Título</h3>
+            <h5><%= f.text_field :titulo, placeholder: 'Título para la partida', style: "width:100%;", maxlength: 40 %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Descripción</h3>
+            <h5><%= f.text_field :description, placeholder: 'Describe de forma más detallada la partida de obra', style: "width:100%;" %></h5>
+          </div>
+
+          <!--<div class="field">
+            <h3>Descripción detallada</h3>
+            <h5><%# f.text_area :desc_tecnica, placeholder: 'Describe de forma más detallada la partida de obra' %></h5>
+          </div> -->
+
+          <div class="field">
+            <h3>Materiales a emplear</h3>
+            <h5><%= f.text_area :material, placeholder: 'Háblanos los materiales que vas a utilizar en la obra, calidades, caracteríscticas...' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Añade alguna foto para la partida, una foto de referencia</h3>
+            <h5><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Unidad de medida</h3>
+            <h5><%= f.text_field :um, placeholder: 'Por ejemplo, unidades, m², ml...', style: "" %></h5>
+          </div>  
+
+          <h3 style="font-weight: 600;">Condiciones y carácterísticas para que el cliente tenga toda la información</h3>
+          <div class="field">
+            <h3>Condiciones previas</h3>
+            <h5><%= f.text_area :cond_previas, placeholder: 'Qué condicidiones tienes que encontrarte los elementos para que puedas trabajar bajo el coste inidicado' %></h5>
+          </div>  
+
+          <div class="field">
+            <h3>Condiciones de terminación</h3>
+            <h5><%= f.text_area :cond_terminacion, placeholder: 'Cómo dejarás el trabajo, ejemplo, El solado tendrá planeidad, ausencia de cejas y buen aspecto.' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Fases</h3>
+            <h5><%= f.text_area :fases, placeholder: 'Descríbenos el proceso muy breve de cómo ejecutarás la partida de obra' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Mano de obra</h3>
+            <h5><%= f.text_area :man_obra, placeholder: 'Número de personas que seréis en la ejecución.' %></h5>
+          </div>
+
+          <div class="field">
+            <h3>Rendimiento</h3>
+            <h5><%= f.text_area :rendimiento, style: " border: 1 px solid grey; padding: 5px; border-radius: 10px; height: 60px;", placeholder: "Cantidad de la partida que se termina por cada hora, ejemplo, si la partida son 4 h de trabajo, el rendimiento será 0.25.", type: "number", step: "0.01"  %></h5>
+          </div>    
+
+          <div class="field">
+            <h3>Materiales incluidos</h3>
+            <h5><%= f.text_area :mat_incluidos, placeholder: 'Los materiales que entran en el precio'%></h5>
+          </div> 
+
+          <div class="field">
+            <h3>Materiales a aportar por el cliente</h3>
+            <h5><%= f.text_area :mat_aportar, placeholder: 'Los materiales que el cliente tiene que aportar, pr ejemplo la baldosa, el WC...'%></h5>
+          </div>                              
+
+          <div class="field">
+            <h3>Importe de la partida por las unidades que nos has indicado</h3>
+            <h5 style="font-weight: bolder;"><%= f.text_field :importe, style: "width: 40%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(Um)</span> </h5>
+          </div>
+
+          <div class="field">
+            <h3>Comentario</h3>
+            <h5><%= f.text_area :comentario, placeholder: "Añade algún comentario para que se pueda valorar mejor lo que buscas." %></h5>
+          </div>
+
+          <% if params[:empresa] != nil %>
+          <%= f.hidden_field :empresa, value: params[:empresa] %>
+          <% end %>
+
+          <% if params[:reform_id] != nil %>
+            <%= f.hidden_field :reform_id, value: params[:reform_id] %>
+          <% end %> 
+
+          <% if params[:habitacion_id] != nil %>
+            <%= f.number_field :habitacion_id, value: params[:habitacion_id] %>
+          <% end %>
+
+          <%= f.hidden_field :user_id, value: current_user.id %>
+
+          <div class="actions" style="font-weight: bolder;">
+            <h3><%# f.submit %><h3>
+            <h5><input type="button" value="Crear partida personalizada" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px; color: green; border: 1px solid green; width: 100%;">
+            </h5>         
+          </div>
+        </div>
+      <% else %>
+        <h5>Has llegado al límite de partidas, ¿Necesitas más? Mándanos un correo a constructux@constructux.com.</h5>
+      <% end %>
+    <% else %>
+      
+      <div class="nueva_partida">
+        <div class="field">
+          <h3 style="font-size: 16px;">Título</h3>
+          <h5><%= f.text_field :titulo, placeholder: 'Título para la partida', style: "width: 100%;", maxlength: 40 %></h5>
+        </div>
+
+        <div class="field">
+          <h3 style="font-size: 16px;">Descripción</h3>
+          <h5><%= f.text_area :description, placeholder: 'Describe en pocas palabras la partida' %></h5>
+        </div>  
+
+        <div class="field">
+          <h3 style="font-size: 16px;">Añade alguna foto para la partida, una foto de referencia</h3>
+          <h5><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %></h5>
+        </div>    
+
+        <div class="field">
+          <h3 style="font-size: 16px;">Medidas</h3>
+          <h5 style="font-weight: bolder;"><%= f.text_field :medicion, style: "width: 40%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(Um)</span> </h5>
+        </div>
+
+        <div class="field">
+          <h3 style="font-size: 16px;">Comentario</h3>
+          <h5><%= f.text_area :comentario, placeholder: "Añade algún comentario para que se pueda valorar mejor lo que buscas." %></h5>
+        </div>
+
+        <div class="field">
+          <h3 style="font-size: 16px;">Categoría</h3>
+          <h5><%= f.text_field :categoria, placeholder: "Por ejemplo, porches, tapicerías o vidrieras.", style: "width: 50%;" %></h5>
+        </div>
+
+        <% if params[:reform_id] != nil %>
+          <% @reform = Reform.find(params[:reform_id]) %>
+          <%= f.hidden_field :reform_id, value: params[:reform_id] %>
+        <% end %>
+
+        <% if params[:habitacion_id] != nil %>
+          <%= f.number_field :habitacion_id, value: params[:habitacion_id] %>
+        <% end %>
+
+        <% if logged_in? %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+
+        <div class="actions" style="font-weight: bolder;">
+          <h3><%# f.submit %><h3>
+          <h5><input type="button" value="Crear partida personalizada" onclick="form.submit();" style="background-color: white; padding: 10px; color: #444; font-weight: 900; border-radius: 15px; color: green; border: 1px solid green; width: 100%;"></h5>         
+        </div>
+      </div>
+    <% end %>  
+
+  <% else %>
+  <h5 style="font-weight: 600;">Vamos a rellenar los datos básicos para pedir los presupuestos gratis</h5>
+    <div class="nueva_partida">
+      <div class="field">
+        <h3 style="font-size: 16px;">Título</h3>
+        <h5><%= f.text_field :titulo, placeholder: 'Título para la partida', style: "width: 100%;", maxlength: 40 %></h5>
+      </div>
+
+      <div class="field">
+        <h3 style="font-size: 16px;">Descripción</h3>
+        <h5><%= f.text_area :description, placeholder: 'Describe en pocas palabras la partida' %></h5>
+      </div>  
+
+      <div class="field">
+        <h3 style="font-size: 16px;">Añade alguna foto para la partida, una foto de referencia</h3>
+        <h5><%= f.file_field :foto, accept: 'image/jpeg,image/gif,image/png', placeholder: "Jpeg, gif, png" %></h5>
+      </div>    
+
+      <div class="field">
+        <h3 style="font-size: 16px;">Medidas</h3>
+        <h5 style="font-weight: bolder;"><%= f.text_field :medicion, style: "width: 40%; border: 1 px solid grey; padding: 5px; border-radius: 10px;", placeholder: "10.25", type: "number", step: "0.01" %> <span style="margin-left: -60px;">(Um)</span> </h5>
+      </div>
+
+      <div class="field">
+        <h3 style="font-size: 16px;">Comentario</h3>
+        <h5><%= f.text_area :comentario, placeholder: "Añade algún comentario para que se pueda valorar mejor lo que buscas." %></h5>
+      </div>
+
+      <div class="field">
+        <h3 style="font-size: 16px;">Categoría</h3>
+        <h5><%= f.text_field :categoria, placeholder: "Por ejemplo, porches, tapicerías o vidrieras.", style: "width: 50%;" %></h5>
+      </div>
+
+      <% if params[:reform_id] != nil %>
+        <% @reform = Reform.find(params[:partida][:reform_id]) %>
+        <%= f.hidden_field :reform_id, value: params[:reform_id] %>
+      <% end %>
+
+      <% if params[:habitacion_id] != nil %>
+        <%= f.number_field :habitacion_id, value: params[:habitacion_id] %>
+      <% end %>
+
+      <% if logged_in? %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      <% end %>
+
+      <div style="font-size: 20px; font-weight: 700; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">¿Has terminado tu presupuesto? Pide presupuestos y ofertas con un solo click</div>
+          <div style="font-size: 16px; font-weight: 500; color: #444; font-family: 'Open Sans'; letter-spacing: -1px; line-height: 22px;">Es gratis, rápido y sin compromiso. Tienes dos opciones, hacerte usuario de Construct.UX y  podrás hacer tantas estancias como quieras por reforma además de tener los presupuestos a un solo click:</div>
+      <ul style="display: inline-block; list-style: none; padding: 0px;">
+        <li>
+          <button style="background-color: white; padding: 10px; color: #0084B4; font-weight: 900; border-radius: 15px; border-color: #0084B4; display: block; font-size: 14px; font-weight: 600;"><h5 style="margin: 0px; font-size: 14px;"><%= link_to "Hazte usuario de ConstructUX", signup_path %></h5></button>
+        </li>
+        <li style="padding-top: 30px;">
+          <div class="form_usuario" style="display: block;">
+            <h5 style="margin-top: 0px; font-weight: 600;">O déjanos tus datos para mandarte tus presupuestos y la información.<span style="display: inline-flex; margin: 0px; font-size: 15px; font-weight: 500; padding-bottom: 15px; padding-top: 15px;">En breve recibirás tus presupuestos personalizados, gracias por confiar en nosotros!</span></h5>
+            <%= f.text_field :nombre_invitado, placeholder: "Tu nombre", style: "display: block; width: 60%; padding: 10px; " %>
+            <%= f.text_field :email_invitado, placeholder: "Tu correo donde recibirás los presupuestos", style: "display: block; width: 60%; padding: 10px;" %>
+            <%= f.text_field :provincia_invitado, placeholder: "Dinos tu provincia", style: "display: block; width: 60%; padding: 10px;" %>
+            <%= f.text_field :plazo_invitado, placeholder: "¿Sabes cuando quieres realizar la reforma?", style: "display: block; width: 60%; padding: 10px;" %>
+            <h5 style="font-size: 13px; color: #666; line-height: 14px;">Estos datos son privados y nadie ajeno a ConstructUX tendrá acceso a ellos. Al mandar esta información estás aceptando las normas de uso y su política de privacidad y aceptas recibir mensajes email de vez en cuando sobre campañas en ConstructUX. Se puede dar de baja en cualquier momento.</h5>
+            <h5 style="font-size: 14px;"><input type="button" value="Pedir presupuestos" onclick="form.submit();" style="background-color: white; padding: 10px; color: #0084B4; font-weight: 700; border-radius: 15px; border-color: #0084B4; display: block; color: #222;"></h5>
+          </div>          
+        </li> 
+
+      </ul>      
+
+
+    </div>    
+  <% end %>
+<% end %>

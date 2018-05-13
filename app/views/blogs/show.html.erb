@@ -1,4 +1,9 @@
 <% content_for :head do %>
+  <meta charset="UTF-8">
+  <meta name="description" content="<%= @blog.title %>">
+  <meta name="keywords" content="<%= @blog.description %>">
+  <meta name="author" content="Contructu.X">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Open Graph tags -->
   <meta property="og:title" content="<%= @blog.title %>" />
   <meta property="og:type" content="website" />

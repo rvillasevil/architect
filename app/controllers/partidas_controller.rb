@@ -95,7 +95,7 @@ class PartidasController < ApplicationController
     respond_to do |format|
       if @partida.update(partida_params)
         if params[:partida][:empresa] != nil
-          format.html { redirect_to empresa_path(params[:partida][:empresa]), notice: 'La partida personalizada se ha actualizado correctamente.' }        
+          format.html { redirect_back(fallback_location: root_url, notice: 'La partida ha sido eliminada.') }        
         else
           format.html { redirect_to reform_path(@reform), notice: 'Partida was successfully updated.' }
           format.json { render :show, status: :ok, location: @partida }

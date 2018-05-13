@@ -123,6 +123,7 @@
                   <i class="fa fa-cogs" aria-hidden="true" style="color: #1DA1F2;"></i> <b>Configuración</b>
                   <% end %>
                 </li>
+                <!--
                 <% if current_user.empresa == true %>
                   <li style="text-align: left; margin-top: 10px;">
                     <% if Empresa.find_by(id: current_user.id) != nil %>
@@ -133,7 +134,8 @@
                       <%= link_to "Introduce tus datos", new_empresa_path %>
                     <% end %>    
                   </li>
-                <% end %>                                            
+                <% end %>
+                -->                                            
                 <li class="divider"></li>
                 <li>
                     <%= link_to logout_path, method: "delete" do %>

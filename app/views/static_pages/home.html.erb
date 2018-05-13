@@ -15,11 +15,11 @@
       <div class="texto" style="text-align: center;">
         <% if params[:tern] == nil %>
           <div class="oculto">
-            <h1 style="font-weight: lighter; text-align: center; font-size: 22px; letter-spacing: -1px;">Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; display: block;">Marketplace del sector de la construcción</span></h1>
+            <h1 style="font-weight: lighter; text-align: center; font-size: 22px; letter-spacing: -1px;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; display: block;">Marketplace del sector de la construcción</span>-->Uber para la construcción y reformas</h1>
           </div>
         <% end %>    
         <h2 class="encabezado_gordo" style="font-weight: bolder; text-align: center; font-size: 20px; letter-spacing: -1px; color: #444;">¿Qué te gustaría reformar de tu casa?</h2>
-          <% if current_user.empresa != true %>
+          <%# if current_user.empresa != true %>
           <div class="texto"> 
             <li class="search" style="list-style: none; padding: 0px; width: 100%;">
               <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
@@ -35,16 +35,13 @@
             </li>  
 
           </div> 
-          <% end %>  
+          <%# end %>  
       </div>
 
   <div class="container">
     <div class="row">
 
       <div class="col-md-10 col-md-offset-1">
-
-
- 
 
       <% if params[:tern] != nil %>
         <div class="campos" style="">
@@ -156,14 +153,14 @@
                   <li style="align-items: center; text-align: center; padding: 10px;">
                     <% if Empresa.find_by(user_id: current_user.id) != nil %>
                     <% @empresa = Empresa.find_by(user_id: current_user.id) %>
-                      <%= link_to empresa_path(id: @empresa.id, partidas_ofertadas: true), style: "color: #444;" do %>
+                      <%= link_to '/marketplace', style: "color: #444;" do %>
                       <%= image_tag('contractor_partidas.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-shopping-basket"></i>   Marketplace</b></h5> <h5><span style="font-size: 14px; line-height: 10px;">Partidas personalizadas creadas y diseñadas por tí, que formarán parte del marketplace.</span></h5></span>
                       <% end %>
                     <% else %>
                     <% end %>
                   </li>
 
-                  <li style="align-items: center; text-align: center; padding: 10px;">
+                  <!--<li style="align-items: center; text-align: center; padding: 10px;">
                     <% if Empresa.find_by(user_id: current_user.id) != nil %>
                       <%= link_to empresa_path(@empresa) do %>
                         <%= image_tag('tus_datos.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-database"></i> Tus Datos</b></h5><h5><span style="font-size: 14px;">Los datos que quieres compartir con nosotros. Desde los datos por partidas del diseñador de reformas hasta las partidas personalizadas.<span style="color: #666; font-size: 13px; font-weight: 600; line-height: 13px; display: block;">(Para tu seguridad los datos sólo son accesibles por tí)</span></span></h5></span>
@@ -181,7 +178,7 @@
                   </li>
                   <li style="align-items: center; text-align: center; padding: 10px;">
                     <%= image_tag('mercado.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Estadísticas y mercado</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>                    
-                  </li>                                         
+                  </li>   -->                                      
                 </ul>
 
               </div>
@@ -232,37 +229,45 @@
 </div>
 </div>
   <div class="background_image">
-    <div class="col-md-1"></div>
-      <div class="texto" style="text-align: center;">
-        <% if params[:tern] == nil %>
-          <div class="oculto">
-            <h1 style="font-weight: lighter; color: white; text-align: center;">Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span></h1>
-            
+    <div class="container">
+      <div class="row">
+      <div class="col-md-9">
+        <div class="texto" style="text-align: center;">
+          <% if params[:tern] == nil %>
+            <div class="oculto">
+              <h1 style="font-weight: lighter; color: white; text-align: center;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span>--><span class="encabezado_gordo" style="font-weight: 900; color: white;">TÜx</span>, Uber para la construcción y reformas</h1>
 
-          </div>
-        <% end %>    
+            </div>
+          <% end %>    
 
-        <div class="wrapper" style="padding-bottom: 30px;">
-          <h2 style="letter-spacing: -1px;"><%= link_to "Calculador de reformas", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %></h2>
-        </div> 
+          <div class="wrapper" style="padding-bottom: 30px;">
+            <h2 style="letter-spacing: -1px;"><%= link_to "Diseña tu reforma", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %></h2>
+            <h2 class="encabezado_gordo" style="font-weight: 600; color: white; text-align: center; font-size: 20px; letter-spacing: -1px; margin: 0px; line-height: 18px;">Diseña tu reforma online y modifícala hasta ajustarte a tu presupuesto.</h2>
+          </div> 
 
-        <h2 class="encabezado_gordo" style="font-weight: 700; color: white; text-align: center; font-size: 24px; letter-spacing: -1px; ">¿Qué te gustaría reformar de tu casa?</h2>
-        <li class="search" style="list-style: none; padding: 0px; width: 100%;">
-          <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
-            <%= form_tag(root_url, method: :get) do %>
-            <li style="display: inline-flex; width: 100%;">
-              <h5 class="search" style="width: 100%; "><%= text_field_tag :tern, params[:tern], placeholder: 'Prueba con albañiles, baldosas...', style: "margin: 0px; width: 100%; padding: 10px; border-radius: 15px;" %><%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px; background-color: white; color: #46b8da; border: 2px solid #46b8da; font-weight: 600; margin-left: -80px; font-size: 15px; border-radius: 10px;" %></h5>
-            </li>
-            <li class="boton_search" style="display: inline-flex;">
-              <h5 style="font-weight: 600;"></h5>
-            </li>
-            <% end %>
-          </ul>
-        </li>  
-
+          <h2 class="encabezado_gordo" style="font-weight: 700; color: white; text-align: center; font-size: 24px; letter-spacing: -1px; line-height: 20px;"><span style="font-weight: 500; font-size: 18px;">No lo tienes claro,</span> busca ofertas de nuetros socios:</h2>
+          <li class="search" style="list-style: none; padding: 0px; width: 100%;">
+            <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
+              <%= form_tag(root_url, method: :get) do %>
+              <li style="display: inline-flex; width: 100%;">
+                <h5 class="search" style="width: 100%; "><%= text_field_tag :tern, params[:tern], placeholder: 'Prueba fachada, suelo, baldosas...', style: "margin: 0px; width: 100%; padding: 10px; border-radius: 15px;" %><%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px; background-color: white; color: #46b8da; border: 2px solid #46b8da; font-weight: 600; margin-left: -80px; font-size: 15px; border-radius: 10px;" %></h5>
+              </li>
+              <li class="boton_search" style="display: inline-flex;">
+                <h5 style="font-weight: 600;"></h5>
+              </li>
+              <% end %>
+            </ul>
+          </li>  
+        </div>
       </div>
-      
+      <div class="col-md-3" style="background-color: #f5f5f5;">
+        <%= render 'contactos/contacto_usuario', contacto: @contacto %>
+        <%= render 'users/new' %>
+      </div>
+    </div>
   </div>
+  </div>
+
   <div class="col-sm-12" style="">   
   <div class="container">
     <div class="row">
@@ -291,7 +296,7 @@
 =end%>            
 
           <div style="text-align: center;">
-            <h3 style="font-weight: 400;">Conoces a alguien que tiene una empresa de construcción o reformas, mándaselo!!</h3>
+            <h3 style="font-weight: 400;">Tienes algún amigo manitas?!</h3>
             <!-- FACEBOOK share button -->
             <div class="fb-share-button" 
             data-href="https://www.constructux.com" 
@@ -303,18 +308,44 @@
             <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com" data-size="large"></a></div>
             <script src="//platform.twitter.com/widgets.js"></script>                      
           </div> 
-          
+
           <% if params[:tern] == nil %>
-          <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Evita reformas desastrosas</h3></div>
-          <div class="funcionamiento">
-            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i>
-              <h5><span style="font-size: 24px;">1.</span> Diseña tu reforma en nuestro: <%= link_to "Calculador de reformas", '/reforma', class: "btn", style: "color: #008489; border: 1px solid #008489; padding: 10px; border-radius: 10px; font-weight: 700;" %> <div style="display: block; padding-top: 15px;">o cuéntanos tu proyecto: <%= link_to "Tu proyecto", new_partida_path(invitado: true), class: "btn", style: "color: #008489; border: 1px solid #008489; padding: 10px; border-radius: 10px; font-weight: 700;" %></div></h5></div>
-            <div class="colum_funcionamiento"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
-              <h5 style="margin-top: -10px;"><span style="font-size: 24px;">2.</span> Un gestor de proyectos de constructUX se hará cargo de tu proyecto y se pondrá en contacto contigo (<span style="color: #008489; font-weight: 700;">totalmente gratis todo el proceso</span>).</div>
-            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="far fa-copy fa-4x" style="color: #555; margin-left: -10px;"></i><i class="fas fa-arrow-right fa-3x" style="color: #008489; margin-left: 0px;"></i><h5><span style="font-size: 24px;">3.</span><span style="color: #008489; font-weight: 700;">Somos 100% imparciales.</span> Estudiamos las mejores soluciones técnicas, te damos las mejores ofertas y filtramos las mejores empresas (licencias, seguros, valoraciones...).</h5></div>
-            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px;">4.</span>Tu eliges la mejor entre todas las propuestas, con un precio cerrado. Asesoramiento en el proceso de contratación y asistencia durante la obra ante cualquier problema.</h5>
+            <div class="funcionamiento">
+              <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i>
+                <h5><span style="font-size: 24px; font-weight: 200;">La forma más sencilla de construir</span> <div style="display: block; padding-top: 15px;">Olvídate de obras interminables, malos acabados, empresas sin seguro, trabajadores sin seguridad social, abandonos de obra...<span style="color: #008489; font-weight: 700;">eso ya no es tu trabajo</span></div></h5></div>
+
+              <div class="colum_funcionamiento"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Obras en un tiempo increíble</span> <div style="display: block; padding-top: 15px;"> Nuestro software diseña tu proyecto con todos los recursos disponibles y coordina <span style="color: #008489; font-weight: 700;">cientos de empresas, profesionales y materiales a tu alrededor a la vez para tu reforma terminándola en tiempo record.</span></div></div>
+
+              <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200;">Con sólo presionar un botón</span><div style="display: block; padding-top: 15px;">Tu gestor de proyectos se pondrá en contacto y diseñará el <span style="color: #008489; font-weight: 700;">mejor proyecto y mejor presupuesto totalmente gratis, cerrado y garantizado.</span> Estamos contigo todo el proyecto para solucionarte cualquier problema.</div></h5>
+              </div> 
+
+               <!--<div class="colum_funcionamiento"><i class="fas fa-euro-sign fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200;">Trabaja en tu propio proyecto</span><div style="display: block; padding-top: 15px;">Y ahorra en tu reforma o en cualquier otro, unas horas al día, los días que quieras.<span style="color: #008489; font-weight: 700;"> Trabaja cuando quieras, gana lo que necesites.</span> Trabajar con TUx significa flexibilidad y rentabilidad.</div></h5>
+              </div>-->
             </div>
-          </div>
+          <% end %>  
+
+          <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Buscamos profesionales y particulares</h3></div>
+
+          <% if params[:tern] == nil %>
+            <div class="col-md-12" style="padding: 0px; margin-bottom: 50px;">
+              <div class="image_trabajador" style="padding: 30px; padding-top: 10vw;">
+                <div class="descripcion_texto" style="height: 100%; background:rgba(0, 132, 137,0.35); padding: 10px; border-radius: 10px;">
+                  <h5 style="color: white;"><span style="font-size: 32px; font-weight: 400;">Trabaja cuando quieras</span> <div style="font-size: 24px; font-weight: 200; display: block;">Gana lo que necesitas</div> <div style="display: block; padding-top: 15px; font-size: 16px;">Trabajar en TUx te ofrece toda la flexibilidad y rentabilidad, trabaja cuando puedas o cuando quieras.</div></h5></div>                
+              </div>              
+            </div>
+
+            <div class="funcionamiento ">
+              <div class="colum_funcionamiento empresas"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Necesitamos builders</span> <div style="display: block; padding-top: 15px;"> Date de alta en nuestro sistema <span style="color: #008489; font-weight: 700;"> totalmente gratis</span> y ponte a trabajar. Selecciona cuando estás disponible o comprueba nuestros avisos para descubrir construcciones en marcha y partidas de obra disponibles.</div>
+                <%= render 'contactos/contacto_builder', contacto: @contacto %>
+                </div>
+
+              <div class="colum_funcionamiento empresas"><%= image_tag('partida_default_exec.jpg', size: 100, style: "margin-top: -30px;") %>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Necesitamos socios</span> <div style="display: block; padding-top: 15px;"> Necesitamos empresas contratistas que hagan realidad los proyectos de nuestros usuarios, <span style="color: #008489; font-weight: 700;"> disfrutando de todos los recursos a su alrededor.</span></div>
+                <%= render 'contactos/contacto_socio', contacto: @contacto %>
+                </div>          
+            </div>            
           <% end %>        
 
             <!-- <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2> -->
