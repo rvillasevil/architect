@@ -1,245 +1,34 @@
 <% content_for :head do %>
   <!-- Open Graph tags -->
-  <meta property="og:title" content="ConstructUX" />
+  <meta property="og:title" content="weconstru" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.constructux.com" />
-  <meta property="og:description" content="ConstructUX, ofertas, presupuestos y materiales de construcción." />
+  <meta property="og:url" content="https://www.weconstru.com" />
+  <meta property="og:description" content="weconstru, tu casa como siempre la has querido." />
   <meta property="og:image" content="<%= image_url('background_image.jpg') %>"  />  
 
 <% end %> 
 
 <% provide(:title) %>
-<% if logged_in? %>
-
-    <div class="col-md-1"></div>
-      <div class="texto" style="text-align: center;">
-        <% if params[:tern] == nil %>
-          <div class="oculto">
-            <h1 style="font-weight: lighter; text-align: center; font-size: 22px; letter-spacing: -1px;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; display: block;">Marketplace del sector de la construcción</span>-->Uber para la construcción y reformas</h1>
-          </div>
-        <% end %>    
-        <h2 class="encabezado_gordo" style="font-weight: bolder; text-align: center; font-size: 20px; letter-spacing: -1px; color: #444;">¿Qué te gustaría reformar de tu casa?</h2>
-          <%# if current_user.empresa != true %>
-          <div class="texto"> 
-            <li class="search" style="list-style: none; padding: 0px; width: 100%;">
-              <ul class="search_form" style="width: 100%; list-style: none; padding: 0px;">
-                <%= form_tag(root_url, method: :get) do %>
-                <li style="display: inline-flex; width: 100%;">
-                  <h5 class="search" style="width: 100%; "><%= text_field_tag :tern, params[:tern], placeholder: 'Prueba con albañiles, baldosas...', style: "margin: 0px; width: 100%; padding: 10px; border-radius: 15px;" %><%= submit_tag 'Search', class: "btn btn-primary btn-sm", style: "margin: 0px; padding: 3px 6px; background-color: white; color: #46b8da; border: 2px solid #46b8da; font-weight: 600; margin-left: -80px; font-size: 15px; border-radius: 10px;" %></h5>
-                </li>
-                <li class="boton_search" style="display: inline-flex;">
-                  <h5 style="font-weight: 600;"></h5>
-                </li>
-                <% end %>
-              </ul>
-            </li>  
-
-          </div> 
-          <%# end %>  
-      </div>
-
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-10 col-md-offset-1">
-
-      <% if params[:tern] != nil %>
-        <div class="campos" style="">
-
-          <% if @partidas.where.not(empresa: nil).any? %>
-            <h3 style="font-weight: bold;">Ofertas para tí</h3>
-            <ul class="lista_principal" style="">
-                <% @partidas.where.not(empresa: nil).take(10).map do |partida| %>
-                  <li class="lista_oferta" style="width: 23%; margin: 5px;">
-                    <ul class="elemento" style=" font-family: 'Open Sans'; width: 230px; margin: 5px;">
-                      <%= link_to partida_path(partida) do %>
-                        <li>
-                          <div class="card mb-3" style="">
-                            <div class="card2" style="overflow-x: hidden; overflow-y: hidden; height: 150px; border-radius: 10px;">
-                              <div class="img_prueba" style="position: relative; display: inline-block; bottom: -50%; right: -50%;">
-                                <% if partida.foto? %>
-                                  <%= image_tag(partida.foto.url, class: "img_prueba") %>
-                                <% else %>
-                                  <%= image_tag(("partida_default.jpg"), class: "img_prueba") %>
-                                <% end %>
-                              </div>
-                            </div>
-                          </div>
-                        
-                      </li>
-                      <div class="texto" style="">
-                        <li class="nombre">
-                          <div class="nombre">
-                              <button type="button" class="btn btn-sm btn-info" style="background-color: white; border: 1px solid grey;" ><i class="fa fa-info" aria-hidden="true" style="color: grey;"></i></button>
-                              <%= partida.titulo if partida.titulo != nil %>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="description" style="height: 80px; overflow: hidden;"><h5><%= partida.description if partida.description != nil %></h5> </div>
-                        </li>
-                        <li class="empresa" style="padding-left: 0px;">
-                          <% if partida.empresa != nil %>
-                            <% @empresa = Empresa.find( partida.empresa) %>
-                            <% @user_empresa = User.find(@empresa.user_id) %>
-                          <% end %>
-                          <span style="display: block; font-weight: 600;"><%= @user_empresa.name %></span>
-                          <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
-                        </li>                           
-                        <li class="precio_oferta" style="padding-left: 0px;">
-                          <span style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span></span>
-                        </li>
-                        <li>
-                          <h5 style="font-weight: 300; color: grey;"></h5>
-                        </li>
-                        <% end %>
-                        <li class="iconos">
-                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Tiempo" data-content="<%= partida.rendimiento if partida.rendimiento != nil %> h/<%= partida.um %>" style="background-color: white; border: none; padding: 5px 5px;" ><i class="far fa-clock" aria-hidden="true" style="color: #d9534f;"></i></button>
-
-                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Mano de Obra" data-content="<%= partida.man_obra if partida.man_obra != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-users" aria-hidden="true" style="color: #d9534f;"></i></button>
-                          
-                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Material incluido" data-content="<%= partida.mat_incluidos if partida.mat_incluidos != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"></i></button>
-
-                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Fases" data-content="<%= partida.fases if partida.fases != nil %>" style="border: none; background-color: white; border: none;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
-
-                          <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Cond. Terminación" data-content="<%= partida.cond_terminacion if partida.cond_terminacion != nil %>" style="border: none; background-color: white; border: none; padding: 5px 5px;" ><i class="fa fa-info-circle" aria-hidden="true" style="color: #d9534f;"></i></button>
-
-                          <% if partida.mat_aportar != nil %>
-                          <div style="float: right;">
-                              <button type="button" class="btn btn-sm btn-info" data-toggle="popover" title="Aportar" data-content="<%= partida.mat_aportar if partida.mat_aportar != nil %>" data-placement="left" style="background-color: white; border: 1px solid #d9534f; padding: 5px 5px;" ><i class="fa fa-briefcase" aria-hidden="true" style="color: #d9534f;"><i class="fa fa-plus" aria-hidden="true" style="color: #d9534f;"></i></i></button>
-                          </div>
-                          <% end %>
-                        </li>
-                      </div>
-                    </ul>
-                  </li>                      
-                <% end %>        
-            </ul>
-          <% else %>
-            <h3>Lo sentimos, aún no tenemos ninguna oferta relacionada con los términos de búsqueda, prueba con términos más generales.</h3>
-            <h5>Nuestra base de datos crece muy rápido y en unos días tendremos, seguro, lo que estás buscando.</h5>
-          <% end %>
-        </div> 
-      <% end %>           
-
-        <div class="constructor">
-
-          <div class="campos" style="">
-
-            <% if current_user.admin? %>
-              <% Micropost.all.each do |post| %>
-              <h5>
-                <% if post.hashtag1 == "cliente" %>
-                  <% @cliente = User.find(post.user_id) %>
-                  <% @reforma = Reform.where(post.hashtag2) %>
-                  <% if @reforma.nil? %>
-                    <% @reforma = Reform.find(post.hashtag2) %>
-                    <%= @cliente.name %>
-                    <%= post.created_at %>
-                    <%= @reforma.nombre %>
-                    <%= @reforma.id %>
-                  <% end %>
-                <% end %>
-              </h5>
-              <% end %>
-            <% end %>
-
-            <% if  current_user.empresa == true %>
-
-              <div class="iconos_inicio">
-
-                <h3 style="font-weight: bold; margin-top: 50px;">Saca el máximo partido a tu empresa</h3>
-                <ul style="list-style: none; width: 100%; padding: 0px; margin: 0px;" class="">
-
-                  <li style="align-items: center; text-align: center; padding: 10px;">
-                    <% if Empresa.find_by(user_id: current_user.id) != nil %>
-                    <% @empresa = Empresa.find_by(user_id: current_user.id) %>
-                      <%= link_to '/marketplace', style: "color: #444;" do %>
-                      <%= image_tag('contractor_partidas.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-shopping-basket"></i>   Marketplace</b></h5> <h5><span style="font-size: 14px; line-height: 10px;">Partidas personalizadas creadas y diseñadas por tí, que formarán parte del marketplace.</span></h5></span>
-                      <% end %>
-                    <% else %>
-                    <% end %>
-                  </li>
-
-                  <!--<li style="align-items: center; text-align: center; padding: 10px;">
-                    <% if Empresa.find_by(user_id: current_user.id) != nil %>
-                      <%= link_to empresa_path(@empresa) do %>
-                        <%= image_tag('tus_datos.jpg', size: "80", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-database"></i> Tus Datos</b></h5><h5><span style="font-size: 14px;">Los datos que quieres compartir con nosotros. Desde los datos por partidas del diseñador de reformas hasta las partidas personalizadas.<span style="color: #666; font-size: 13px; font-weight: 600; line-height: 13px; display: block;">(Para tu seguridad los datos sólo son accesibles por tí)</span></span></h5></span>
-                      <% end %>
-                    <% else %>
-                      <%= link_to new_empresa_path do %>
-                        <%= image_tag('retirar_friso_madera.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="fas fa-database"></i> Tus datos</b></h5><h5><span style="font-size: 14px;">Los datos que quieres compartir con nosotros. Datos generales de partidas estandar junto con tus partidas personalizadas.</br>Para tu seguridad todo lo que ves aquí solo lo puedes ver tú con tu contraseña.</span></h5></span>
-                      <% end %>                    
-                    <% end %>
-                  </li>
-                  <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= link_to presupuestos_path do %>
-                        <%= image_tag('clientes.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b><i class="far fa-handshake"></i> Tus clientes</b></h5><h5><span style="font-size: 14px;">Clientes que buscan empresas para tu proyecto. Puedes rellenarlo con un solo click o personalizar el coste de cada partida</span></h5></span>
-                    <% end %> 
-                  </li>
-                  <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= image_tag('mercado.jpg', size: "60", class: 'oferta_imagen' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Estadísticas y mercado</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>                    
-                  </li>   -->                                      
-                </ul>
-
-              </div>
-
-            <% else %>
-
-              <div class="iconos_inicio">
-
-                <h3 style="font-weight: bold; margin-top: 50px;">Empieza en ConstructUX</h3>
-                <ul style="list-style: none; width: 100%; padding: 0px; margin: 0px;" class="">
-
-                  <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= image_tag('nueva_vivienda.jpg', size: "60", class: 'oferta_imagen_grande' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Nueva vivienda</b></h5> <h5><span style="font-size: 14px;">(* en desarrollo)</span></h5></span>
-                  </li>
-
-                  <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= link_to new_reform_path do %>
-                      <%= image_tag('retirar_friso_madera.jpg', size: "150x150", class: 'oferta_imagen_grande' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Nueva Reforma</b></h5></span>
-                    <% end %>
-                  </li>
-                  <li style="align-items: center; text-align: center; padding: 10px;">
-                    <%= link_to reforms_path do %>
-                        <%= image_tag('nuevo_proyecto.jpg', size: "60", class: 'oferta_imagen_grande' ) %> <span style=""><h5 style="font-size: 22px; color: #444;"><b>Tus proyectos</b></h5></span>
-                    <% end %> 
-                  </li>                         
-                </ul>
-
-              </div>
-
-            <% end %>
-
-            <% if current_user.empresa != true %>
-
-            <%= render 'shared/lista_ofertas' %>
-
-            <% end %>
-
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-
-<% else %>
 </div>
 </div>
 </div>
-  <div class="background_image">
-    <div class="container">
+
+
+  <div class="background_image" style="background-color: rgb(176, 205, 252, 0.6);">
+    <div class="container" style="padding-top: 7%;">
       <div class="row">
-      <div class="col-md-9">
-        <div class="texto" style="text-align: center;">
+      <div class="col-md-12" >
+        <div class="texto" style="text-align: center; margin-top: 6.5vw;">
           <% if params[:tern] == nil %>
             <div class="oculto">
-              <h1 style="font-weight: lighter; color: white; text-align: center;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span>--><span class="encabezado_gordo" style="font-weight: 900; color: white;">TÜx</span>, Uber para la construcción y reformas</h1>
+              <h1 class="encabezado" style="font-weight: lighter; color: #101f78; text-align: center;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezadoezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span>--><span class="encabezado_gordo" style="font-weight: 900;  color: white;">weconstru</span>, hacemos las obras sencillas</h1>
+              <h2 style="font-weight: 300; color: white;">Utilizamos tecnología para darte el mejor proyecto, las mejores empresas y el control de tu proyeto, <span style="font-weight: 600;">y totalmente gratis para tí.</span></h2>
 
             </div>
-          <% end %>    
+          <% end %> 
 
+<%
+=begin%> 
           <div class="wrapper" style="padding-bottom: 30px;">
             <h2 style="letter-spacing: -1px;"><%= link_to "Diseña tu reforma", '/reforma', class: "btn btn-lg btn-primary",  style: "background-color: white; border: 3px solid #ff5050; color: #ff5050; font-weight: 700; border-radius: 15px;" %></h2>
             <h2 class="encabezado_gordo" style="font-weight: 600; color: white; text-align: center; font-size: 20px; letter-spacing: -1px; margin: 0px; line-height: 18px;">Diseña tu reforma online y modifícala hasta ajustarte a tu presupuesto.</h2>
@@ -258,13 +47,17 @@
               <% end %>
             </ul>
           </li>  
+<%
+=end%>   
+
         </div>
       </div>
-      <div class="col-md-3" style="background-color: #f5f5f5;">
+      <div class="col-md-8 col-md-offset-2" style="margin-top: 7%;">
         <%= render 'contactos/contacto_usuario', contacto: @contacto %>
-        <%= render 'users/new' %>
+        <%# render 'users/new' %>
       </div>
     </div>
+
   </div>
   </div>
 
@@ -272,7 +65,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-12">
 
         <div style="background-color: white;">
           <!-- <h1 style="font-weight: lighter;">La mejor manera de diseñar tu reforma o construir tu vivienda.</h1> -->
@@ -296,7 +89,7 @@
 =end%>            
 
           <div style="text-align: center;">
-            <h3 style="font-weight: 400;">Tienes algún amigo manitas?!</h3>
+            <h3 style="font-weight: 400; margin-top: 5px;">Compártenos!</h3>
             <!-- FACEBOOK share button -->
             <div class="fb-share-button" 
             data-href="https://www.constructux.com" 
@@ -310,20 +103,59 @@
           </div> 
 
           <% if params[:tern] == nil %>
+          <h2 class="" style="text-align: center; letter-spacing: 1px; font-weight: 24px; font-weight: 700; padding-top: 10%;">EL MEJOR DISEÑO Y LAS MEJORES EMPRESAS. PUNTO. <span style="color: #101f78;">GRATIS.</h2>
             <div class="funcionamiento">
-              <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i>
-                <h5><span style="font-size: 24px; font-weight: 200;">La forma más sencilla de construir</span> <div style="display: block; padding-top: 15px;">Olvídate de obras interminables, malos acabados, empresas sin seguro, trabajadores sin seguridad social, abandonos de obra...<span style="color: #008489; font-weight: 700;">eso ya no es tu trabajo</span></div></h5></div>
 
               <div class="colum_funcionamiento"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
-                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Obras en un tiempo increíble</span> <div style="display: block; padding-top: 15px;"> Nuestro software diseña tu proyecto con todos los recursos disponibles y coordina <span style="color: #008489; font-weight: 700;">cientos de empresas, profesionales y materiales a tu alrededor a la vez para tu reforma terminándola en tiempo record.</span></div></div>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200; color: #101f78;">1. Uno de nuestros técnicos te visitan para diseñar la mejor solución para tus ideas (y la más económica)</span> <div style="display: block; padding-top: 15px;">  <span style="color: #101f78; font-weight: 700;"></span></div></div>              
 
-              <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200;">Con sólo presionar un botón</span><div style="display: block; padding-top: 15px;">Tu gestor de proyectos se pondrá en contacto y diseñará el <span style="color: #008489; font-weight: 700;">mejor proyecto y mejor presupuesto totalmente gratis, cerrado y garantizado.</span> Estamos contigo todo el proyecto para solucionarte cualquier problema.</div></h5>
+              <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #101f78; margin-left: -10px;"></i>
+                <h5><span style="font-size: 24px; font-weight: 200; color: #101f78;">2. Con nuestro software creamos el proyecto y lo compartimos con empresas auditadas, incluye planificación y contratos de obra.</span> <div style=" display: block; padding-top: 15px;"><span style="color: #101f78; font-weight: 700;"></span></div></h5></div>
+
+
+              <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200; color: #101f78;">3. Te acompañamos en el proceso de contratación y durante toda la obra.</span><div style="display: block; padding-top: 15px;"> <span style="color: #101f78; font-weight: 700;"></span></div></h5>
               </div> 
 
-               <!--<div class="colum_funcionamiento"><i class="fas fa-euro-sign fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200;">Trabaja en tu propio proyecto</span><div style="display: block; padding-top: 15px;">Y ahorra en tu reforma o en cualquier otro, unas horas al día, los días que quieras.<span style="color: #008489; font-weight: 700;"> Trabaja cuando quieras, gana lo que necesites.</span> Trabajar con TUx significa flexibilidad y rentabilidad.</div></h5>
+              <!--<div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #101f78; margin-left: -10px;"></i>
+                <h5><span style="font-size: 24px; font-weight: 200;">1. El mejor diseño</span> <div style=" display: block; padding-top: 15px;">Uno de nuestros ingenieros visita tu vivienda y te dice las mejores soluciones, materiales y tecnologías para conseguir tu proyecto; y todas las opciones disponibles para abaratar el coste final.<span style="color: #101f78; font-weight: 700;"></span></div></h5></div>
+
+              <div class="colum_funcionamiento"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">2. Las mejores empresas</span> <div style="display: block; padding-top: 15px;"> Nuestro software diseña tu proyecto con los datos obtenidos en la visita y lo manda a las empresas que han pasado nuestro exhaustivo filtro de calidad que cumplan con los requisitos. <span style="color: #101f78; font-weight: 700;"></span></div></div>
+
+              <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200;">3. No estás solo</span><div style="display: block; padding-top: 15px;">Asitencia en el proceso de contratación y en el contrato de obra. <span style="color: #101f78; font-weight: 700;">¿Durante la obra?</span> Asistencia para cualquier problema o duda que tengas.</div></h5>
+              </div> 
+
+               <div class="colum_funcionamiento"><i class="fas fa-euro-sign fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5><span style="font-size: 24px; font-weight: 200;">Trabaja en tu propio proyecto</span><div style="display: block; padding-top: 15px;">Y ahorra en tu reforma o en cualquier otro, unas horas al día, los días que quieras.<span style="color: #101f78; font-weight: 700;"> Trabaja cuando quieras, gana lo que necesites.</span> Trabajar con TUx significa flexibilidad y rentabilidad.</div></h5>
               </div>-->
             </div>
           <% end %>  
+
+          <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Algunos de nuestros clientes satisfechos</h2>
+          <h5 style="font-size: 18px; font-weight: 300; color: #666;">Los clientes de weconstru tienen proyectos optimizados en precio y en calidad, se ahorran todas las visitas de constructores y todas las llamadas posteriores, y tienen la tranquilidad de contar con una empresa de calidad.</h5>
+
+          <div class="funcionamiento ">
+            <div class="colum_funcionamiento empresas">
+              <div class="image-wrapper" style="max-height: 250px;">
+                <%= image_tag('old_couple.jpg', style: "max-width: 100%;") %>
+              </div>
+              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Querían renovar su nueva vivienda en Madrid pero no encontraban empresas con la que entenderse. Gracias a weconstru consiguieron la reforma que querían con total transparencia y todo en su idioma. Durante la obra consultaban con nuetros asesores todas las dudas que tenían.</h5>
+              <h5 style="font-size: 14px; font-weight: 600; color: #101f78; text-align: left;">Harry y Amelia. Madrid.</h5>
+            </div>
+            <div class="colum_funcionamiento empresas">
+              <div class="" style="max-height: 250px; overflow: hidden;">
+                <%= image_tag('men.jpg', style: "max-width: 100%;") %>
+              </div>
+              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Por su trabajo no se podía permitir el tiempo perdido en llamadas, proyectos, visitas.... Con weconstru, enseñó una sola vez y en 15 días tenía su vivienda adaptada a su nueva oficina.</h5>
+              <h5 style="font-size: 14px; font-weight: 600; color: #101f78; text-align: left;">Juan. Madrid.</h5>
+            </div>
+            <div class="colum_funcionamiento empresas">
+              <div class="image-wrapper" style="max-height: 250px;">
+                <%= image_tag('old_couple.jpg', style: "max-width: 100%;") %>
+              </div>
+              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Con muy mala experiencia en reformas anteriores no les era posible seleccionar una empresa con la que confiar. Weconstru les ofreció el mejor proyecto al mejor precio y le facilitó empresas de total confianza con las que no tuvieron ni un solo problema.</h5>
+              <h5 style="font-size: 14px; font-weight: 600; color: #101f78; text-align: left;">Harry y Amelia. Madrid.</h5>
+            </div>
+          </div>
 
           <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Buscamos profesionales y particulares</h3></div>
 
@@ -337,12 +169,12 @@
 
             <div class="funcionamiento ">
               <div class="colum_funcionamiento empresas"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
-                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Necesitamos builders</span> <div style="display: block; padding-top: 15px;"> Date de alta en nuestro sistema <span style="color: #008489; font-weight: 700;"> totalmente gratis</span> y ponte a trabajar. Selecciona cuando estás disponible o comprueba nuestros avisos para descubrir construcciones en marcha y partidas de obra disponibles.</div>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Necesitamos builders</span> <div style="display: block; padding-top: 15px;"> Date de alta en nuestro sistema <span style="color: #101f78; font-weight: 700;"> totalmente gratis</span> y ponte a trabajar. Selecciona cuando estás disponible o comprueba nuestros avisos para descubrir construcciones en marcha y partidas de obra disponibles.</div>
                 <%= render 'contactos/contacto_builder', contacto: @contacto %>
                 </div>
 
               <div class="colum_funcionamiento empresas"><%= image_tag('partida_default_exec.jpg', size: 100, style: "margin-top: -30px;") %>
-                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Necesitamos socios</span> <div style="display: block; padding-top: 15px;"> Necesitamos empresas contratistas que hagan realidad los proyectos de nuestros usuarios, <span style="color: #008489; font-weight: 700;"> disfrutando de todos los recursos a su alrededor.</span></div>
+                <h5 style="margin-top: -10px;"><span style="font-size: 24px; font-weight: 200;">Necesitamos socios</span> <div style="display: block; padding-top: 15px;"> Necesitamos empresas contratistas que hagan realidad los proyectos de nuestros usuarios, <span style="color: #101f78; font-weight: 700;"> disfrutando de todos los recursos a su alrededor.</span></div>
                 <%= render 'contactos/contacto_socio', contacto: @contacto %>
                 </div>          
             </div>            
@@ -351,6 +183,9 @@
             <!-- <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2> -->
 
         </div>
+
+<%
+=begin%>        
         <% if params[:tern] != nil %>
           <div class="campos" style="margin-top: 30px;">
         <% else %>
@@ -395,7 +230,7 @@
                             <% @user_empresa = User.find(@empresa.user_id) %>
                           <% end %>
                           <div style="display: block; font-weight: 600; line-height: 12px; height: 35px;"><%= @user_empresa.name %></div>
-                          <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #008489 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
+                          <span class="stars" style="display: block; padding-bottom: 10px;font-weight: 600; color: #101f78 !important;"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> 0 valoraciones</span>
                         </li>                           
                         <li class="precio_oferta" style="padding-left: 0px;">
                           <span style="font-size: 14px; padding-top: 10px;">Presupuesto: <span style="font-size: 16px;"><b><%= partida.importe if partida.importe != nil %> €/<%= partida.um if partida.um %></b></span></span>
@@ -436,14 +271,15 @@
         <div class="constructor">
           <%= render 'shared/lista_ofertas' %>
         </div>
-
+<%
+=end%> 
 <%
 =begin%>
         <div class="wrapper" style="margin-top: 100px;">
           
           <h3>¿Eres una empresa del sector de la construcción y te gustaría trabajar con nosotros?</h3>
           <h1 style="font-size: 28px;">Una nueva forma de conseguir clientes. Marketplace donde promocionarte y presupuestos a 1 click.</h1>
-          <%= link_to "Registrarme gratis", signup_path(empresa: true), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #008489; color: #008489;" %>
+          <%= link_to "Registrarme gratis", signup_path(empresa: true), class: "btn btn-lg btn-primary",  style: "background-color: white; border: 1px solid #101f78; color: #101f78;" %>
 
           <div class="descripcion_empresa">
             <div>
@@ -460,20 +296,20 @@
 
           <h3 style="color: #444; text-align: left; margin-top: 30px;">¿Cómo funciona?</h3>
           <div class="funcionamiento">
-            <div class="colum_funcionamiento"><i class="far fa-file-powerpoint fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i>
+            <div class="colum_funcionamiento"><i class="far fa-file-powerpoint fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i>
               <h5>Los usuarios completan su proyecto y piden presupuesto en nuestras páginas </h5></div>
-            <div class="colum_funcionamiento"><i class="far fa-file-powerpoint fa-4x" style="color: #555;"></i><i class="far fa-share-square fa-3x" style="color: #008489; margin-left: 0px;"></i>
+            <div class="colum_funcionamiento"><i class="far fa-file-powerpoint fa-4x" style="color: #555;"></i><i class="far fa-share-square fa-3x" style="color: #101f78; margin-left: 0px;"></i>
               <h5>Al instante mandamos la información seleccionada para tí</div>
-            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5>Eliges cómo creas el presupuesto, desde nuestra web con un solo click, o mandando el presupuesto directamente al cliente</h5></div>
+            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5>Eliges cómo creas el presupuesto, desde nuestra web con un solo click, o mandando el presupuesto directamente al cliente</h5></div>
           </div>
 
           <h3 style="color: #444; text-align: left; margin-top: 30px;">¿Quieres promocionar tu negocio? Únete a nuestro marketplace gratis</h3>
           <div class="funcionamiento">
-            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i>
+            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i>
               <h5>Crea tus partidas personalizadas, aquellas que mejor haces y que te gustaría promocionar. </h5></div>
-            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="fab fa-facebook-f fa-3x" style="color: #008489; margin-left: 0px;"></i>&nbsp;<i class="fab fa-twitter fa-3x" style="color: #008489; margin-left: 0px;"></i>
+            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="fab fa-facebook-f fa-3x" style="color: #101f78; margin-left: 0px;"></i>&nbsp;<i class="fab fa-twitter fa-3x" style="color: #101f78; margin-left: 0px;"></i>
               <h5>Una vez creada, compártela en tus redes sociales y copia la url para distribuirla por todo internet, hará que la gente te asocie a tu partida y especialidad.</div>
-            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5>Los usuarios contactan directamente contigo</h5></div>
+            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5>Los usuarios contactan directamente contigo</h5></div>
           </div>
         </div>                    
 <%
@@ -482,31 +318,29 @@
 
           <h3 style="color: #444; text-align: left; margin-top: 30px;">Eres un profesional y te gustaría trabajar con nosotros</h3>
           <h3 style="color: #444; text-align: left; margin-top: 30px; font-weight: 400; margin-top: 10px;">Mándanos un correo a <span style="font-size: 24px; font-weight: 600;">constructux@constructux.com</span> y nosotros nos encargamos de todo</h3>
-<%
-=begin%>          
+       
           <div class="funcionamiento">
-            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i>
+            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i>
               <h5>Crea tus partidas personalizadas, aquellas que mejor haces y que te gustaría promocionar. </h5></div>
-            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="fab fa-facebook-f fa-3x" style="color: #008489; margin-left: 0px;"></i>&nbsp;<i class="fab fa-twitter fa-3x" style="color: #008489; margin-left: 0px;"></i>
+            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="fab fa-facebook-f fa-3x" style="color: #101f78; margin-left: 0px;"></i>&nbsp;<i class="fab fa-twitter fa-3x" style="color: #101f78; margin-left: 0px;"></i>
               <h5>Una vez creada, compártela en tus redes sociales y copia la url para distribuirla por todo internet, hará que la gente te asocie a tu partida y especialidad.</div>
-            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5>Los usuarios contactan directamente contigo</h5></div>
+            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5>Los usuarios contactan directamente contigo</h5></div>
           </div>
-<%
-=end%>
+
 
         <h3 style="font-size: 18px; padding-top: 40px;">Mira otras reformas creadas por otros usuarios</h3>
 
         <% @reforms.each do |reform| %>
           <div style="display: block; font-family: 'Open Sans'; font-size: 16px; ">
             <span style="margin-top: 25px; display: inline-flex;">reforma:</span> <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #666; font-weight: bolder;"><%= link_to reform.nombre, "/reforma/#{reform.id}" %></span>
-          <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #008489 !important; font-weight: 500; font-size: 15px;"><%= link_to "Ver presupuesto ", "/reforma/presupuesto/#{reform.id}", style: "color: #008489 !important;" %></span>
+          <span style="margin-top: 0px; margin-bottom: 15px; display: inline-flex; color: #101f78 !important; font-weight: 500; font-size: 15px;"><%= link_to "Ver presupuesto ", "/reforma/presupuesto/#{reform.id}", style: "color: #101f78 !important;" %></span>
           </div>
         <% end %>
 
       </div>
     </div>
   </div>
-<% end %>
+  
 
 
    

@@ -120,6 +120,14 @@ h1 {
     font-size: 28px;
   }    
 }
+
+h1.encabezado {
+  font-size: 60px;
+  @media(max-width: 768px) {
+    font-size: 40px;
+  }
+}
+
 h2.encabezado_gordo {
   line-height: 40px; 
   @media(max-width: 768px) {
@@ -566,9 +574,15 @@ img.img_prueba {
 }
 
 .background_image {
-  background-image: url("background_image.jpg");
+  background-image: url('home_fondo.png');
+  background-size: cover;
+  background-position: center;
+  height: 95vh;
+  margin-top: -12vh;
+  position: relative;
   img {
-    width: 100vw;
+   /*max-width: 100vw;
+    height: 50vw;*/
   }
   .texto {
     /*padding: 60px 250px;*/

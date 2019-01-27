@@ -7,20 +7,71 @@
     </div>
   </div>
 
-  <div class="paddings" style="background-color: white;">
+  <div class="" style="background-color: white; text-align: center;">
     <div class="container" style="padding-top: 40px; width: 100%; padding-bottom: 100px;">
       <div class="row">    
         <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Evita reformas desastrosas</h3></div>
-        <div class="funcionamiento">
-          <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i>
-            <h5><span style="font-size: 24px;">1.</span> Diseña tu reforma en nuestro: <%= link_to "Calculador de reformas", '/reforma', class: "btn", style: "color: #008489; border: 1px solid #008489; padding: 10px; border-radius: 10px; font-weight: 700;" %> <div style="display: block; padding-top: 15px;">o cuéntanos tu proyecto: <%= link_to "Tu proyecto", new_partida_path(invitado: true), class: "btn", style: "color: #008489; border: 1px solid #008489; padding: 10px; border-radius: 10px; font-weight: 700;" %></div></h5></div>
+            <div class="col-md-12">
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">La visita de nuestros técnicos</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">Nuestros técnicos son 100% imparciales y son los mejores en lo suyo. Les explicarás que reforma te gustaría hacer en tu vivienda y el presupuesto aproximado para hacerlo. Nuestro técnico te aconsejará y te dirá tus mejores opciones para conseguir tus ideas y mirará por que el coste sea el que tú necesitas.</h5>                
+              </div>
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Método tradicional</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">Una buena empresa de construcción lo es todo, y sabemos que no todas son de fiar. Que te la reforma esté diseñada por la empresa que te la va a construir no es una buena idea.</h5>                
+              </div>              
+            </div>
 
-          <div class="colum_funcionamiento"><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
+            <div class="col-md-12">
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">El proyecto</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">Utilizamos nuestro software y la información extraída de la visita de nuestro técnico para preparar información gráfica de tu idea en caso de ser necesaria y una documentación con las mediciones y partidas que serán necesarias, con un presupuesto estimado.</h5>                
+              </div>
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Método tradicional</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">Tendrás que seleccionar un mínimo de tres empresas para poder comparar presupuestos y cada una de estas empresas tendrá que ir a tu casa y realizar cada una su proyecto y sus mediciones y partidas. En weconstru gestionamos esta parte para que sólo tenga que realizarse una sola vez ahorrando visitas y muchas horas de trabajo a nuestras empresas y a nuestros propietarios que no tendrán que estar explicando el proyecto ni atender todas las llamadas y todo el tiempo perdido.</h5>
+              </div>              
+            </div>
+
+            <div class="col-md-12">
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Los presupuestos</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">Todas las obras son muy complicadas pero realmente no lo son, como los bancos, cuánto más complicado sea el presupuesto más oportunidades tendrán de sacar partido. En weconstru generamos un presupuesto totalmente transparente con todo lo que está incluido y el tiempo que requiere cada proceso para que puedas tener claro desde el principio que estás pagando.</h5>                
+              </div>
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Método tradicional</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">Los presupuestos de las constructoras son a veces complejos y muy probablemente no incluyan partidas que serán necesarias de hacer pero que no se incluyen para que sean elegidos como adjudicatarios, pero tarde o temprano si se coloca un ladrillo tendrás que pagar un ladrillo.</h5>
+              </div>              
+            </div>  
+
+            <div class="col-md-12">
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Adjudicaciones</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">En wecosntru estudiamos ciudadosamente a todas nuestras empresas y comprobamos que esté todo en regla. Es una inversión muy importante y queremos que este todo controlado. La reforma consta de materiales y mano de obra, todas son iguales, y si una empresa te dice que lo hace más barato es que va a perder dinero, y no lo va a perder.</h5>                
+              </div>
+              <div class="col-md-3"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-heart fa-3x" style="color: #008489; margin-left: -10px;"></i></div>
+              <div class="col-md-9">
+                <h2 style="letter-spacing: -0.5px; font-size: 24px; color: #215096;">Método tradicional</h2>
+                <h5 style="font-size: 18px; font-weight: 300; color: #666;">La eleccion de una buena empresa es fundamental y un buen contrato también.</h5>
+              </div>              
+            </div>                      
+
+          <div class="">
+            </div>
+
+          <div class=""><%= image_tag('partida_default.jpg', size: 100, style: "margin-top: -30px;") %>
             <h5 style="margin-top: -10px;"><span style="font-size: 24px;">2.</span> Un gestor de proyectos de constructUX se hará cargo de tu proyecto y se pondrá en contacto contigo (<span style="color: #008489; font-weight: 700;">totalmente gratis todo el proceso</span>).</div>
 
-          <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="far fa-copy fa-4x" style="color: #555; margin-left: -10px;"></i><i class="fas fa-arrow-right fa-3x" style="color: #008489; margin-left: 0px;"></i><h5><span style="font-size: 24px;">3.</span><span style="color: #008489; font-weight: 700;">Nuestro software diseña el proyecto óptimo</span> y utiliza todos los recursos de mano de obra y materiales a tu alrededor para ofrecerte un proyecto con el mínimo presupuesto y los máximos recursos.</h5></div>
+          <div class=""><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="far fa-copy fa-4x" style="color: #555; margin-left: -10px;"></i><i class="fas fa-arrow-right fa-3x" style="color: #008489; margin-left: 0px;"></i><h5><span style="font-size: 24px;">3.</span><span style="color: #008489; font-weight: 700;">Nuestro software diseña el proyecto óptimo</span> y utiliza todos los recursos de mano de obra y materiales a tu alrededor para ofrecerte un proyecto con el mínimo presupuesto y los máximos recursos.</h5></div>
 
-          <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px;">4.</span>Nuestros colaboradores son autónomos o empresas de tu alrededor coordinadas por nuestros técnicos, por lo tanto estaremos controlando toda la duración del proyecto. </h5>
+          <div class=""><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #008489; margin-left: -10px;"></i><h5><span style="font-size: 24px;">4.</span>Nuestros colaboradores son autónomos o empresas de tu alrededor coordinadas por nuestros técnicos, por lo tanto estaremos controlando toda la duración del proyecto. </h5>
           </div>
         </div>
       </div>

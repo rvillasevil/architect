@@ -2,7 +2,7 @@ module ApplicationHelper
   
   # Returns the full title on a per-page basis.
   def full_title(page_title = '')
-    base_title = "ConstructUX, construye con nosotros o deja que te construyamos."
+    base_title = "weconstru, tu casa como siempre la has querido."
     if page_title.empty?
       base_title
     else
