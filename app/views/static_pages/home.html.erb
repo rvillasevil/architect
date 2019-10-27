@@ -98,17 +98,39 @@
             <h3 style="font-weight: 400; margin-top: 5px;">Compártenos!</h3>
             <!-- FACEBOOK share button -->
             <div class="fb-share-button" 
-            data-href="https://www.constructux.com" 
+            data-href="https://www.weconstru.com" 
             data-layout="button_count"
             data-size="large"
             style= "display: inline-flex; padding-left: 0px;"></div> 
 
             <!-- TWITTER share button -->
-            <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.constructux.com" data-size="large"></a></div>
+            <div style="display: inline-flex;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.weconstru.com" data-size="large"></a></div>
             <script src="//platform.twitter.com/widgets.js"></script>                      
           </div> 
 
           <% if params[:tern] == nil %>
+          <h1>¿QUÉ RECIBES CUANDO HACES EL PROYECTO CON NOSOTROS?</h1>
+
+          <div class="titulos">
+            <div class="row">
+
+              <div class="col-md-3"><h2 class="encabezado_gordo">Diseño</h2></div>
+              <div class="col-md-9"><h3>Diseño de tu proyecto por un Arquitecto que trabaja únicamente para ti. Tu proyecto no tiene que estar diseñado por constructoras que cuanto peor sea el proyecto más beneficio obtienen.</h3></div>
+              
+              <div class="col-md-3"><h2 class="encabezado_gordo">Tiempo</h2></div>
+              <div class="col-md-9"><h2>Para poder establecer el precio de mercado se necesitan al menos 4 presupuestos con los que trabajar. ¿Te imaginas el tiempo y los inconvenientes que supone 4 visitas, multitud de llamadas, 4 diseños y tu sin tener ni idea de lo mejor para ti? Con weconstru diseñamos y hacemos el proyecto en una única visita. En esta visita se diseña, se mide y se digitaliza tu vivienda para crear un banco de datos para valorar y compartir esta información con empresas ofertantes.</h2></div>
+
+              <div class="col-md-3"><h2 class="encabezado_gordo">En tu móvil</h2></div>
+              <div class="col-md-9"><h2>La información obtenida en la visita se transforma en una plataforma móvil en la que podrás ajustar tu proyecto al máximo según diferentes opciones y precios. Utilizamos esta información para generar la documentación necesaria para compartirla con empresas y poder ofertar por tu proyecto</h2></div>
+
+              <div class="col-md-3"><h2 class="encabezado_gordo">Garantía</h2></div>
+              <div class="col-md-9"><h2>Obtienes 4 ofertas de empresas auditadas para garantizar los resultados, ligado a una programación óptima para reducir al máximo los tiempos de obra y ligado a un contrato que cubre todas tus garantías, como retrasos, desviaciones de precio... con weconstru duerme tranquilo.</h2></div>              
+
+              <div class="col-md-3"><h2 class="encabezado_gordo">Obra</h2></div>
+              <div class="col-md-9"><h2>¿Tienes problemas durante la obra? No te preocupes nosotros te cubrimos. Somos un equipo de profesionales que entre todos sumamos la dirección de proyectos de +100 M€ para garantizarte que tu proyecto se realiza en plazo y al precio que tu quieras.</h2></div>
+            </div>
+          </div>
+
           <h2 class="" style="text-align: center; letter-spacing: 1px; font-weight: 24px; font-weight: 700; padding-top: 10%;">EL MEJOR DISEÑO Y LAS MEJORES EMPRESAS. PUNTO. <span style="color: #101f78;">GRATIS.</h2>
             <div class="funcionamiento">
 
@@ -142,16 +164,16 @@
           <div class="funcionamiento ">
             <div class="colum_funcionamiento empresas">
               <div class="image-wrapper" style="max-height: 250px;">
-                <%= image_tag('universal.jpg', style: "max-width: 100%;") %>
+                <%= image_tag('old_couple.jpg', style: "max-width: 100%;") %>
               </div>
-              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Querían renovar su nueva vivienda en Madrid pero no encontraban empresas con la que entenderse. Gracias a weconstru consiguieron la reforma que querían con total transparencia y todo en su idioma. Durante la obra consultaban con nuetros asesores todas las dudas que tenían.</h5>
+              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Querían renovar su nueva vivienda en Madrid pero no encontraban empresas con la que entenderse. Gracias a weconstru consiguieron la reforma que querían con total transparencia y todo en su idioma. Durante la obra consultaban con nuestros asesores todas las dudas que tenían.</h5>
               <h5 style="font-size: 14px; font-weight: 600; color: #101f78; text-align: left;">Harry y Amelia. Madrid.</h5>
             </div>
             <div class="colum_funcionamiento empresas">
               <div class="" style="max-height: 250px; overflow: hidden;">
                 <%= image_tag('men.jpg', style: "max-width: 100%;") %>
               </div>
-              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Por su trabajo no se podía permitir el tiempo perdido en llamadas, proyectos, visitas.... Con weconstru, enseñó una sola vez y en 15 días tenía su vivienda adaptada a su nueva oficina.</h5>
+              <h5 style="font-size: 16px; font-weight: 300; color: #101f78; text-align: left;">Por su trabajo no se podía permitir el tiempo perdido en llamadas, proyectos, visitas.... Con weconstru, enseñó recibió una sola visita (la nuestra) y en 15 días tenía su vivienda adaptada a su nueva oficina.</h5>
               <h5 style="font-size: 14px; font-weight: 600; color: #101f78; text-align: left;">Juan. Madrid.</h5>
             </div>
             <div class="colum_funcionamiento empresas">
@@ -162,6 +184,10 @@
               <h5 style="font-size: 14px; font-weight: 600; color: #101f78; text-align: left;">Harry y Amelia. Madrid.</h5>
             </div>
           </div>
+
+
+<%
+=begin%>
 
           <div style="text-align: center;"><h3 style="font-size: 32px; font-weight: 500; padding: 20px;">Buscamos profesionales y particulares</h3></div>
 
@@ -318,16 +344,9 @@
 =end%>
 
 
-          <h3 style="color: #444; text-align: left; margin-top: 30px;">Eres un profesional y te gustaría trabajar con nosotros</h3>
-          <h3 style="color: #444; text-align: left; margin-top: 30px; font-weight: 400; margin-top: 10px;">Mándanos un correo a <span style="font-size: 24px; font-weight: 600;">constructux@constructux.com</span> y nosotros nos encargamos de todo</h3>
+          <h3 style="color: #444; text-align: left; margin-top: 30px;">¿Tienes alguna duda?</h3>
+          <h3 style="color: #444; text-align: left; margin-top: 30px; font-weight: 400; margin-top: 10px;">Mándanos un correo a <span style="font-size: 24px; font-weight: 600;">weconstru@weconstru.com</span> y nosotros nos encargamos de todo</h3>
        
-          <div class="funcionamiento">
-            <div class="colum_funcionamiento"><i class="far fa-file-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i>
-              <h5>Crea tus partidas personalizadas, aquellas que mejor haces y que te gustaría promocionar. </h5></div>
-            <div class="colum_funcionamiento"><i class="far fa-copy fa-4x" style="color: #555;"></i><i class="fab fa-facebook-f fa-3x" style="color: #101f78; margin-left: 0px;"></i>&nbsp;<i class="fab fa-twitter fa-3x" style="color: #101f78; margin-left: 0px;"></i>
-              <h5>Una vez creada, compártela en tus redes sociales y copia la url para distribuirla por todo internet, hará que la gente te asocie a tu partida y especialidad.</div>
-            <div class="colum_funcionamiento"><i class="fas fa-mobile-alt fa-4x" style="color: #555;"></i><i class="far fa-check-circle fa-3x" style="color: #101f78; margin-left: -10px;"></i><h5>Los usuarios contactan directamente contigo</h5></div>
-          </div>
 
 <%
 =begin%>

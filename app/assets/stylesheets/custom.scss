@@ -130,6 +130,7 @@ h1.encabezado {
 
 h2.encabezado_gordo {
   line-height: 40px; 
+  font-weight: 900;
   @media(max-width: 768px) {
     line-height: 30px;
     letter-spacing: -1px;
@@ -164,6 +165,17 @@ h5 {
   line-height: 25px;
 }
 
+.titulos {
+  h2 {
+    color: #222;
+  }
+  h3 {
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: -3px;
+    color: #333;
+  }
+}
 
 /* universal */
 
