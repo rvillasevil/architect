@@ -212,7 +212,7 @@
               </li>
               <li>
                 <div class="encabezado">Posts</div>
-                <% if (@valoraciones = Micropost.where(user_valorado: @user.id)).any? %>
+                <% if (@valoraciones = Micropost.where(user_valorado: @parti.id)).any? %>
                   <% @valoraciones.map do |valoracion| %> 
                     <% @user_valoracion = User.find(valoracion.user_id) %>
                       <li style="display: inline-flex; border: none; padding-top: 10px;">

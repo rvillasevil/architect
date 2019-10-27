@@ -14,22 +14,22 @@
 </div>
 
 
-  <div class="background_image" style="background-color: rgb(176, 205, 252, 0.6);background-image: url(<%= asset_path 'home_fondo_reducido.png' %>);
+  <div class="background_image" style="background-color: rgb(176, 205, 252, 0.6);background-image: url(<%= asset_path 'people-talking.jpg' %>);
   background-size: cover;
   background-position: center;
-  height: 95vh;
+  height: 100vh;
   margin-top: -12vh;
-  position: relative;">
+  position: relative;
+  ">
     <div class="container" style="padding-top: 7%;">
       <div class="row">
       <div class="col-md-12" >
         <div class="texto" style="text-align: center; margin-top: 6.5vw;">
           <% if params[:tern] == nil %>
             <div class="oculto">
-              <h1 class="encabezado" style="font-weight: lighter; color: #101f78; text-align: center;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezadoezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span>--><span class="encabezado_gordo" style="
-               font-weight: 900;  color: white;">weconstru</span>, hacemos las obras sencillas</h1>
-              <h2 style="font-weight: 300; color: white;">Utilizamos tecnología para darte el mejor proyecto, las mejores empresas y el control de tu proyeto, <span style="font-weight: 600;">y totalmente gratis para tí.</span></h2>
-
+              <h1 class="encabezado" style="font-weight: lighter; color: white; text-align: center;"><!--Diseñador de reformas con las mejores ofertas, profesionales y materiales de construcción en el primer <span class="encabezadoezado_gordo" style="font-weight: 900; color: white; display: block;">Marketplace del sector de la construcción</span>--><span class="encabezado_gordo" style="
+               font-weight: 900; ">weconstru</span>, la construcción del futuro</h1>
+              <h2 style="font-weight: 300; color: white;">Utilizamos nuestra tecnología para darte el mejor proyecto, el mejor precio y todo el control de tu reforma, <span style="font-weight: 600;">y totalmente gratis para tí.</span></h2>
             </div>
           <% end %> 
 
@@ -189,9 +189,7 @@
             <!-- <h2>Una vez tengas diseñado el presupuesto de tu reforma, lo mandamos a las mejores empresas constructoras, albañiles, fontaneros, carpinteros... valoradas por los usuarios para que en muy poco tengas todas los prespuestos de las empresas en tu móvil, sin hancer nada. A claro, es GRATIS, para siempre. </h2> -->
 
         </div>
-
-<%
-=begin%>        
+        
         <% if params[:tern] != nil %>
           <div class="campos" style="margin-top: 30px;">
         <% else %>
@@ -277,8 +275,6 @@
         <div class="constructor">
           <%= render 'shared/lista_ofertas' %>
         </div>
-<%
-=end%> 
 <%
 =begin%>
         <div class="wrapper" style="margin-top: 100px;">
