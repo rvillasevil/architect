@@ -7,8 +7,8 @@
   <!-- Open Graph tags -->
   <meta property="og:title" content="<%= @blog.title %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.constructux.com/blogs/<%= @blog.slug %>" />
-  <meta property="og:description" content="ConstructUX, <%= @blog.description %>" />
+  <meta property="og:url" content="https://www.weconstru.com/blogs/<%= @blog.slug %>" />
+  <meta property="og:description" content="weconstru, <%= @blog.description %>" />
   <% if @blog.foto_primera? %>
     <meta property="og:image" content="<%= image_url(@blog.foto_primera.url) %>" />  
   <% else %>
@@ -33,12 +33,12 @@
             <div class="compartir" style="text-align: left;">
               <!-- FACEBOOK share button -->
               <h3 style="margin: 0px; display: inline-flex;">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.constructux.com/blogs/<%= @blog.slug %>" style="color: #444;">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.weconstru.com/blogs/<%= @blog.slug %>" style="color: #444;">
                   <i class="fab fa-facebook fa-lg"></i>
               </a>              
 
               <!-- TWITTER share button -->
-              <div style="display: inline-flex; margin-top: -5px; padding-top: 5px; padding-left: 10px;"><a href="https://twitter.com/share"  data-url="=https://www.constructux.com/blogs/<%= @blog.slug %>" data-size="large" style="color: #444;"><i class="fab fa-twitter fa-lg"></i></a></div>
+              <div style="display: inline-flex; margin-top: -5px; padding-top: 5px; padding-left: 10px;"><a href="https://twitter.com/share"  data-url="=https://www.weconstru.com/blogs/<%= @blog.slug %>" data-size="large" style="color: #444;"><i class="fab fa-twitter fa-lg"></i></a></div>
               <script src="//platform.twitter.com/widgets.js"></script></h3>                     
             </div>                   
             <div class="content" style=" padding-top: 0px;">Autor: <%= link_to @blog_user.name, @blog_user, style: "margin-bottom: 10px; font-weight: 600;" %></div>
