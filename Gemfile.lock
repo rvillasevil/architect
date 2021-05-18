@@ -251,7 +251,9 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.2)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.5.1)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
@@ -291,8 +293,8 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
       spoon (~> 0.0)
-    puma (3.4.0)
-    puma (3.4.0-java)
+    puma (3.12.6)
+    puma (3.12.6-java)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -378,7 +380,6 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
-    wdm (0.1.1)
     web-console (3.1.1)
       activemodel (>= 4.2)
       debug_inspector
@@ -418,7 +419,7 @@ DEPENDENCIES
   minitest-reporters (= 1.1.9)
   octicons_helper
   pg (~> 0.20)
-  puma (= 3.4.0)
+  puma (= 3.12.6)
   rails (= 5.0.0.1)
   rails-controller-testing (= 0.1.1)
   rails_12factor
@@ -428,7 +429,6 @@ DEPENDENCIES
   turbolinks (= 5.0.0)
   tzinfo-data
   uglifier (= 3.0.0)
-  wdm (>= 0.1.0)
   web-console (= 3.1.1)
   will_paginate (= 3.1.0)
 
